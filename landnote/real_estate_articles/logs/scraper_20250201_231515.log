@@ -11,3 +11,26 @@
 2025-02-01 23:15:16,232 - ERROR - [ThreadPoolExecutor-4_2] - 處理文章 913367 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
 2025-02-01 23:15:16,285 - ERROR - [MainThread] - 執行過程中發生錯誤: name 'futures' is not defined
 2025-02-01 23:15:16,285 - INFO - [MainThread] - 程式結束執行
+2025-02-01 23:15:24,759 - INFO - [MainThread] - 開始執行文章爬蟲程序 (模式: all)
+2025-02-01 23:15:24,765 - INFO - [MainThread] - 開始掃描新文章...
+2025-02-01 23:15:24,772 - INFO - [MainThread] - 開始掃描 forward 方向的文章 (913332 -> 915000)
+2025-02-01 23:15:24,889 - ERROR - [ThreadPoolExecutor-5_1] - 處理文章 913339 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,020 - ERROR - [ThreadPoolExecutor-5_1] - 處理文章 913363 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,054 - ERROR - [ThreadPoolExecutor-5_3] - 處理文章 913361 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,079 - ERROR - [ThreadPoolExecutor-5_0] - 處理文章 913364 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,156 - ERROR - [ThreadPoolExecutor-5_1] - 處理文章 913365 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,263 - ERROR - [ThreadPoolExecutor-5_2] - 處理文章 913362 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,289 - ERROR - [ThreadPoolExecutor-5_3] - 處理文章 913366 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,307 - ERROR - [ThreadPoolExecutor-5_0] - 處理文章 913367 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:25,358 - ERROR - [MainThread] - 執行過程中發生錯誤: name 'futures' is not defined
+2025-02-01 23:15:25,358 - INFO - [MainThread] - 程式結束執行
+2025-02-01 23:18:10,627 - INFO - [MainThread] - 開始執行文章爬蟲程序 (模式: all)
+2025-02-01 23:18:10,635 - INFO - [MainThread] - 開始掃描新文章...
+2025-02-01 23:18:10,640 - INFO - [MainThread] - 開始掃描 forward 方向的文章 (913332 -> 915000)
+2025-02-01 23:18:51,421 - INFO - [MainThread] - 開始掃描舊文章...
+2025-02-01 23:18:51,448 - INFO - [MainThread] - 開始掃描 backward 方向的文章 (913330 -> 900000)
+2025-02-01 23:21:19,351 - ERROR - [ThreadPoolExecutor-134_2] - 下載圖片失敗 http://real-estate.get.com.tw/Columns/File/image/20230727_AB’.jpg: 404 Client Error: Not Found for url: http://real-estate.get.com.tw/Columns/File/image/20230727_AB%E2%80%99.jpg
+2025-02-01 23:21:19,615 - ERROR - [ThreadPoolExecutor-134_2] - 下載圖片失敗 http://real-estate.get.com.tw/Columns/File/image/20230727_CD’.jpg: 404 Client Error: Not Found for url: http://real-estate.get.com.tw/Columns/File/image/20230727_CD%E2%80%99.jpg
+2025-02-01 23:21:19,753 - ERROR - [ThreadPoolExecutor-134_2] - 下載圖片失敗 http://real-estate.get.com.tw/Columns/File/image/20230727_EF’.jpg: 404 Client Error: Not Found for url: http://real-estate.get.com.tw/Columns/File/image/20230727_EF%E2%80%99.jpg
+2025-02-01 23:26:28,505 - INFO - [MainThread] - 完成文章掃描
+2025-02-01 23:26:28,518 - INFO - [MainThread] - 程式結束執行

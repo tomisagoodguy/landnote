@@ -1,3 +1,10 @@
 2025-02-01 23:18:10,627 - INFO - [MainThread] - 開始執行文章爬蟲程序 (模式: all)
 2025-02-01 23:18:10,635 - INFO - [MainThread] - 開始掃描新文章...
 2025-02-01 23:18:10,640 - INFO - [MainThread] - 開始掃描 forward 方向的文章 (913332 -> 915000)
+2025-02-01 23:18:51,421 - INFO - [MainThread] - 開始掃描舊文章...
+2025-02-01 23:18:51,448 - INFO - [MainThread] - 開始掃描 backward 方向的文章 (913330 -> 900000)
+2025-02-01 23:21:19,351 - ERROR - [ThreadPoolExecutor-134_2] - 下載圖片失敗 http://real-estate.get.com.tw/Columns/File/image/20230727_AB’.jpg: 404 Client Error: Not Found for url: http://real-estate.get.com.tw/Columns/File/image/20230727_AB%E2%80%99.jpg
+2025-02-01 23:21:19,615 - ERROR - [ThreadPoolExecutor-134_2] - 下載圖片失敗 http://real-estate.get.com.tw/Columns/File/image/20230727_CD’.jpg: 404 Client Error: Not Found for url: http://real-estate.get.com.tw/Columns/File/image/20230727_CD%E2%80%99.jpg
+2025-02-01 23:21:19,753 - ERROR - [ThreadPoolExecutor-134_2] - 下載圖片失敗 http://real-estate.get.com.tw/Columns/File/image/20230727_EF’.jpg: 404 Client Error: Not Found for url: http://real-estate.get.com.tw/Columns/File/image/20230727_EF%E2%80%99.jpg
+2025-02-01 23:26:28,505 - INFO - [MainThread] - 完成文章掃描
+2025-02-01 23:26:28,518 - INFO - [MainThread] - 程式結束執行
