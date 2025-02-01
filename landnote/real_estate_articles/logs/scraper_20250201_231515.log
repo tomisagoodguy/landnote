@@ -1,0 +1,13 @@
+2025-02-01 23:15:15,715 - INFO - [MainThread] - 開始執行文章爬蟲程序 (模式: all)
+2025-02-01 23:15:15,728 - INFO - [MainThread] - 開始掃描新文章...
+2025-02-01 23:15:15,733 - INFO - [MainThread] - 開始掃描 forward 方向的文章 (913332 -> 915000)
+2025-02-01 23:15:15,936 - ERROR - [ThreadPoolExecutor-4_0] - 處理文章 913339 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,045 - ERROR - [ThreadPoolExecutor-4_1] - 處理文章 913362 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,099 - ERROR - [ThreadPoolExecutor-4_3] - 處理文章 913361 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,099 - ERROR - [ThreadPoolExecutor-4_2] - 處理文章 913363 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,124 - ERROR - [ThreadPoolExecutor-4_0] - 處理文章 913364 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,192 - ERROR - [ThreadPoolExecutor-4_1] - 處理文章 913365 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,217 - ERROR - [ThreadPoolExecutor-4_3] - 處理文章 913366 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,232 - ERROR - [ThreadPoolExecutor-4_2] - 處理文章 913367 時發生錯誤: 'RecentArticleScraper' object has no attribute 'parse_date'
+2025-02-01 23:15:16,285 - ERROR - [MainThread] - 執行過程中發生錯誤: name 'futures' is not defined
+2025-02-01 23:15:16,285 - INFO - [MainThread] - 程式結束執行
