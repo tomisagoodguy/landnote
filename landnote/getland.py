@@ -29,7 +29,7 @@ class RecentArticleScraper:
 
         # 時間範圍設定（近五年）
         self.end_date = datetime.now()
-        self.start_date = self.end_date - timedelta(days=5*365)
+        self.start_date = self.end_date - timedelta(days=9*365)
 
         # 日期格式設定
         self.date_formats = [
@@ -39,8 +39,8 @@ class RecentArticleScraper:
         ]
 
         # 文章編號範圍設定
-        self.start_no = 900000  # 起始編號
-        self.max_no = 915000    # 最大編號
+        self.start_no = 409187  # 起始編號
+        self.max_no = 995000    # 最大編號
 
         # 最新已知文章編號列表（用於參考）
         self.known_article_numbers = [
@@ -55,8 +55,8 @@ class RecentArticleScraper:
 
         # 掃描設定
         self.scan_mode = scan_mode
-        self.batch_size = 50    # 每批次處理的文章數
-        self.max_workers = 4    # 最大執行緒數
+        self.batch_size = 200    # 每批次處理的文章數
+        self.max_workers = 8    # 最大執行緒數
 
         # 建立目錄結構
         self.setup_directories()
