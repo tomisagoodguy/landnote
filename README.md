@@ -7,8 +7,21 @@
 > *"The journey of a thousand miles begins with a single step."*
 > *千里之行，始於足下*
 
-[![學習文章](https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github)](https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles)
-[![考古題庫](https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github)](https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題)
+</div>
+
+## 📍 快速導航
+
+<div align="center" style="margin: 30px 0;">
+
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
+  <img src="https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="學習文章" width="300">
+</a>
+
+<br><br>
+
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
+  <img src="https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="300">
+</a>
 
 </div>
 
@@ -24,13 +37,26 @@
 
 ## 📑 資源內容
 
-### 📝 學習文章區
-
-精心整理的地政相關知識文章，涵蓋各大考試科目，系統性地幫助您掌握重點知識。
-
-### 📋 考古題庫區
-
-收錄歷屆地政相關考試試題，所有PDF檔案已解鎖，可自由註解、標記與列印，按科目分類整理，方便查找與複習。
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <h3>📝 學習文章區</h3>
+      <p>精心整理的地政相關知識文章，涵蓋各大考試科目，系統性地幫助您掌握重點知識。</p>
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
+        <b>👉 前往文章區 👈</b>
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <h3>📋 考古題庫區</h3>
+      <p>收錄歷屆地政相關考試試題，所有PDF檔案已解鎖，可自由註解、標記與列印，按科目分類整理。</p>
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
+        <b>👉 前往題庫區 👈</b>
+      </a>
+    </td>
+  </tr>
+</table>
+</div>
 
 ## ⚠️ 重要聲明
 
@@ -86,14 +112,22 @@
 - 📧 Email：[tom890108159@gmail.com]
 - 💬 GitHub Issues
 
-## 🔄 更新日誌
-
-- **2025/03/08**：新增地政考古題資料庫，所有PDF已解鎖可編輯
-- **2025/02/02**：更新學習文章區，新增土地法相關文章
 
 ---
 
 <div align="center">
+
+<h3>👇 立即開始您的學習之旅 👇</h3>
+
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
+  <img src="https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="學習文章" width="250">
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
+  <img src="https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="250">
+</a>
+
+<br><br>
 
 **✨ 願每個奮鬥的靈魂都能綻放光芒 ✨**
 
