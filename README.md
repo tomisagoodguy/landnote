@@ -17,7 +17,6 @@
   <img src="https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="學習文章" width="300">
 </a>
 
-<br><br>
 
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
   <img src="https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="300">
@@ -112,7 +111,6 @@
 - 📧 Email：[tom890108159@gmail.com]
 - 💬 GitHub Issues
 
-
 ---
 
 <div align="center">
@@ -122,12 +120,11 @@
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
   <img src="https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="學習文章" width="250">
 </a>
-&nbsp;&nbsp;&nbsp;
+   
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
   <img src="https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="250">
 </a>
 
-<br><br>
 
 **✨ 願每個奮鬥的靈魂都能綻放光芒 ✨**
 
