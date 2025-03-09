@@ -17,9 +17,12 @@
   <img src="https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="學習文章" width="300">
 </a>
 
-
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
-  <img src="https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="300">
+  <img src="https://img.shields.io/badge/各年度考古題-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="300">
+</a>
+
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E5%9C%B0%E6%94%BF%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+  <img src="https://img.shields.io/badge/合併版考古題-一次瀏覽所有題目-orange?style=for-the-badge&logo=github" alt="合併版考古題" width="300">
 </a>
 
 </div>
@@ -39,18 +42,25 @@
 <div align="center">
 <table>
   <tr>
-    <td align="center" width="50%">
+    <td align="center" width="33%">
       <h3>📝 學習文章區</h3>
       <p>精心整理的地政相關知識文章，涵蓋各大考試科目，系統性地幫助您掌握重點知識。</p>
       <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
         <b>👉 前往文章區 👈</b>
       </a>
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="33%">
       <h3>📋 考古題庫區</h3>
-      <p>收錄歷屆地政相關考試試題，所有PDF檔案已解鎖，可自由註解、標記與列印，按科目分類整理。</p>
+      <p>收錄歷屆地政相關考試試題，所有PDF檔案已解鎖，可自由註解、標記與列印，按科目與年度分類整理。</p>
       <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
         <b>👉 前往題庫區 👈</b>
+      </a>
+    </td>
+    <td align="center" width="33%">
+      <h3>📚 合併版考古題</h3>
+      <p>各科目考古題的合併版本，方便一次瀏覽所有年度的題目，提升學習效率。</p>
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E5%9C%B0%E6%94%BF%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+        <b>👉 前往合併版區 👈</b>
       </a>
     </td>
   </tr>
@@ -72,6 +82,7 @@
 2. **錯題集建立**：整理做錯的題目，定期複習弱點
 3. **知識點連結**：將相關概念串聯，建立知識網絡
 4. **時間管理**：每天固定時間學習，養成規律習慣
+5. **合併版活用**：使用合併版考古題進行全面複習，掌握題型變化
 
 ### 💪 心理建設
 
@@ -120,16 +131,19 @@
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
   <img src="https://img.shields.io/badge/學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="學習文章" width="250">
 </a>
-   
+   
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
-  <img src="https://img.shields.io/badge/考古題庫-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="250">
+  <img src="https://img.shields.io/badge/各年度考古題-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="考古題庫" width="250">
 </a>
 
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E5%9C%B0%E6%94%BF%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+  <img src="https://img.shields.io/badge/合併版考古題-一次瀏覽所有題目-orange?style=for-the-badge&logo=github" alt="合併版考古題" width="250">
+</a>
 
 **✨ 願每個奮鬥的靈魂都能綻放光芒 ✨**
 
 *"The future belongs to those who believe in the beauty of their dreams."*
 
-*最後更新時間：2025/03/08*
+*最後更新時間：2025/03/09*
 
 </div>
