@@ -885,17 +885,17 @@ if __name__ == "__main__":
 
 '''
 正常執行：程式會自動檢查是否有上次的中斷進度，如果有則從中斷處繼續
-python getlawarticle.py
+python getlawarticle1.py
 
 
 不使用恢復功能：強制從頭開始執行
-python getlawarticle.py - -no-resume
+python getlawarticle1.py - -no-resume
 
 清除所有進度記錄：清除檢查點和下載進度，重新開始
-python getlawarticle.py - -clear-checkpoint
+python getlawarticle1.py - -clear-checkpoint
 
 
 其他參數保持不變：您仍然可以使用原有的參數控制爬蟲行為
-python getlawarticle.py - -min-delay 10 --max-delay 20 --retry-delay 60 --batch-size 5 --batch-delay 120
+python getlawarticle1.py - -min-delay 10 --max-delay 20 --retry-delay 60 --batch-size 5 --batch-delay 120
 
 '''
