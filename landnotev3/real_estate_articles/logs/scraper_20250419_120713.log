@@ -7686,3 +7686,1303 @@
 2025-04-19 12:12:37,923 - INFO - 文章 410662 響應內容長度: 129
 2025-04-19 12:12:37,925 - INFO - 已保存文章 410662 的原始響應到: real_estate_articles\logs\article_410662_response.html
 2025-04-19 12:12:37,927 - ERROR - 文章 410662 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:38,198 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410665
+2025-04-19 12:12:38,211 - INFO - 文章 410665 請求狀態碼: 200
+2025-04-19 12:12:38,213 - INFO - 文章 410665 響應內容長度: 129
+2025-04-19 12:12:38,214 - INFO - 已保存文章 410665 的原始響應到: real_estate_articles\logs\article_410665_response.html
+2025-04-19 12:12:38,216 - ERROR - 文章 410665 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:38,469 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410664
+2025-04-19 12:12:38,482 - INFO - 文章 410664 請求狀態碼: 200
+2025-04-19 12:12:38,484 - INFO - 文章 410664 響應內容長度: 129
+2025-04-19 12:12:38,486 - INFO - 已保存文章 410664 的原始響應到: real_estate_articles\logs\article_410664_response.html
+2025-04-19 12:12:38,488 - ERROR - 文章 410664 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:38,490 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410669
+2025-04-19 12:12:38,507 - INFO - 文章 410669 請求狀態碼: 200
+2025-04-19 12:12:38,508 - INFO - 文章 410669 響應內容長度: 129
+2025-04-19 12:12:38,511 - INFO - 已保存文章 410669 的原始響應到: real_estate_articles\logs\article_410669_response.html
+2025-04-19 12:12:38,512 - ERROR - 文章 410669 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:38,550 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410667
+2025-04-19 12:12:38,573 - INFO - 文章 410667 請求狀態碼: 200
+2025-04-19 12:12:38,574 - INFO - 文章 410667 響應內容長度: 129
+2025-04-19 12:12:38,577 - INFO - 已保存文章 410667 的原始響應到: real_estate_articles\logs\article_410667_response.html
+2025-04-19 12:12:38,580 - ERROR - 文章 410667 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:38,821 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410666
+2025-04-19 12:12:38,835 - INFO - 文章 410666 請求狀態碼: 200
+2025-04-19 12:12:38,837 - INFO - 文章 410666 響應內容長度: 129
+2025-04-19 12:12:38,840 - INFO - 已保存文章 410666 的原始響應到: real_estate_articles\logs\article_410666_response.html
+2025-04-19 12:12:38,843 - ERROR - 文章 410666 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:38,903 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410668
+2025-04-19 12:12:38,918 - INFO - 文章 410668 請求狀態碼: 200
+2025-04-19 12:12:38,919 - INFO - 文章 410668 響應內容長度: 129
+2025-04-19 12:12:38,921 - INFO - 已保存文章 410668 的原始響應到: real_estate_articles\logs\article_410668_response.html
+2025-04-19 12:12:38,922 - ERROR - 文章 410668 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:39,279 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410672
+2025-04-19 12:12:39,294 - INFO - 文章 410672 請求狀態碼: 200
+2025-04-19 12:12:39,295 - INFO - 文章 410672 響應內容長度: 129
+2025-04-19 12:12:39,298 - INFO - 已保存文章 410672 的原始響應到: real_estate_articles\logs\article_410672_response.html
+2025-04-19 12:12:39,299 - ERROR - 文章 410672 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:39,890 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410671
+2025-04-19 12:12:39,908 - INFO - 文章 410671 請求狀態碼: 200
+2025-04-19 12:12:39,909 - INFO - 文章 410671 響應內容長度: 129
+2025-04-19 12:12:39,911 - INFO - 已保存文章 410671 的原始響應到: real_estate_articles\logs\article_410671_response.html
+2025-04-19 12:12:39,913 - ERROR - 文章 410671 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:40,148 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410673
+2025-04-19 12:12:40,162 - INFO - 文章 410673 請求狀態碼: 200
+2025-04-19 12:12:40,163 - INFO - 文章 410673 響應內容長度: 129
+2025-04-19 12:12:40,165 - INFO - 已保存文章 410673 的原始響應到: real_estate_articles\logs\article_410673_response.html
+2025-04-19 12:12:40,167 - ERROR - 文章 410673 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:40,347 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410670
+2025-04-19 12:12:40,418 - INFO - 文章 410670 請求狀態碼: 200
+2025-04-19 12:12:40,419 - INFO - 文章 410670 響應內容長度: 129
+2025-04-19 12:12:40,420 - INFO - 已保存文章 410670 的原始響應到: real_estate_articles\logs\article_410670_response.html
+2025-04-19 12:12:40,422 - ERROR - 文章 410670 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:40,422 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410677
+2025-04-19 12:12:40,439 - INFO - 文章 410677 請求狀態碼: 200
+2025-04-19 12:12:40,440 - INFO - 文章 410677 響應內容長度: 129
+2025-04-19 12:12:40,442 - INFO - 已保存文章 410677 的原始響應到: real_estate_articles\logs\article_410677_response.html
+2025-04-19 12:12:40,443 - ERROR - 文章 410677 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:40,524 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410676
+2025-04-19 12:12:40,539 - INFO - 文章 410676 請求狀態碼: 200
+2025-04-19 12:12:40,540 - INFO - 文章 410676 響應內容長度: 129
+2025-04-19 12:12:40,542 - INFO - 已保存文章 410676 的原始響應到: real_estate_articles\logs\article_410676_response.html
+2025-04-19 12:12:40,543 - ERROR - 文章 410676 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:40,569 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410675
+2025-04-19 12:12:40,584 - INFO - 文章 410675 請求狀態碼: 200
+2025-04-19 12:12:40,585 - INFO - 文章 410675 響應內容長度: 129
+2025-04-19 12:12:40,588 - INFO - 已保存文章 410675 的原始響應到: real_estate_articles\logs\article_410675_response.html
+2025-04-19 12:12:40,590 - ERROR - 文章 410675 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:40,616 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410674
+2025-04-19 12:12:40,628 - INFO - 文章 410674 請求狀態碼: 200
+2025-04-19 12:12:40,629 - INFO - 文章 410674 響應內容長度: 129
+2025-04-19 12:12:40,631 - INFO - 已保存文章 410674 的原始響應到: real_estate_articles\logs\article_410674_response.html
+2025-04-19 12:12:40,632 - ERROR - 文章 410674 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:41,135 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410681
+2025-04-19 12:12:41,147 - INFO - 文章 410681 請求狀態碼: 200
+2025-04-19 12:12:41,148 - INFO - 文章 410681 響應內容長度: 129
+2025-04-19 12:12:41,150 - INFO - 已保存文章 410681 的原始響應到: real_estate_articles\logs\article_410681_response.html
+2025-04-19 12:12:41,152 - ERROR - 文章 410681 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:41,755 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410679
+2025-04-19 12:12:41,769 - INFO - 文章 410679 請求狀態碼: 200
+2025-04-19 12:12:41,771 - INFO - 文章 410679 響應內容長度: 129
+2025-04-19 12:12:41,773 - INFO - 已保存文章 410679 的原始響應到: real_estate_articles\logs\article_410679_response.html
+2025-04-19 12:12:41,776 - ERROR - 文章 410679 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:41,915 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410680
+2025-04-19 12:12:41,928 - INFO - 文章 410680 請求狀態碼: 200
+2025-04-19 12:12:41,930 - INFO - 文章 410680 響應內容長度: 129
+2025-04-19 12:12:41,934 - INFO - 已保存文章 410680 的原始響應到: real_estate_articles\logs\article_410680_response.html
+2025-04-19 12:12:41,936 - ERROR - 文章 410680 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:42,079 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410678
+2025-04-19 12:12:42,092 - INFO - 文章 410678 請求狀態碼: 200
+2025-04-19 12:12:42,093 - INFO - 文章 410678 響應內容長度: 129
+2025-04-19 12:12:42,095 - INFO - 已保存文章 410678 的原始響應到: real_estate_articles\logs\article_410678_response.html
+2025-04-19 12:12:42,096 - ERROR - 文章 410678 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:42,098 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410685
+2025-04-19 12:12:42,111 - INFO - 文章 410685 請求狀態碼: 200
+2025-04-19 12:12:42,112 - INFO - 文章 410685 響應內容長度: 129
+2025-04-19 12:12:42,114 - INFO - 已保存文章 410685 的原始響應到: real_estate_articles\logs\article_410685_response.html
+2025-04-19 12:12:42,119 - ERROR - 文章 410685 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:42,205 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410682
+2025-04-19 12:12:42,223 - INFO - 文章 410682 請求狀態碼: 200
+2025-04-19 12:12:42,225 - INFO - 文章 410682 響應內容長度: 129
+2025-04-19 12:12:42,227 - INFO - 已保存文章 410682 的原始響應到: real_estate_articles\logs\article_410682_response.html
+2025-04-19 12:12:42,229 - ERROR - 文章 410682 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:42,246 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410684
+2025-04-19 12:12:42,258 - INFO - 文章 410684 請求狀態碼: 200
+2025-04-19 12:12:42,260 - INFO - 文章 410684 響應內容長度: 129
+2025-04-19 12:12:42,264 - INFO - 已保存文章 410684 的原始響應到: real_estate_articles\logs\article_410684_response.html
+2025-04-19 12:12:42,265 - ERROR - 文章 410684 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:42,391 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410683
+2025-04-19 12:12:42,405 - INFO - 文章 410683 請求狀態碼: 200
+2025-04-19 12:12:42,406 - INFO - 文章 410683 響應內容長度: 129
+2025-04-19 12:12:42,409 - INFO - 已保存文章 410683 的原始響應到: real_estate_articles\logs\article_410683_response.html
+2025-04-19 12:12:42,411 - ERROR - 文章 410683 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:43,113 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410687
+2025-04-19 12:12:43,124 - INFO - 文章 410687 請求狀態碼: 200
+2025-04-19 12:12:43,125 - INFO - 文章 410687 響應內容長度: 129
+2025-04-19 12:12:43,126 - INFO - 已保存文章 410687 的原始響應到: real_estate_articles\logs\article_410687_response.html
+2025-04-19 12:12:43,127 - ERROR - 文章 410687 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:43,694 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410688
+2025-04-19 12:12:43,706 - INFO - 文章 410688 請求狀態碼: 200
+2025-04-19 12:12:43,706 - INFO - 文章 410688 響應內容長度: 129
+2025-04-19 12:12:43,708 - INFO - 已保存文章 410688 的原始響應到: real_estate_articles\logs\article_410688_response.html
+2025-04-19 12:12:43,709 - ERROR - 文章 410688 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:43,713 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410689
+2025-04-19 12:12:43,726 - INFO - 文章 410689 請求狀態碼: 200
+2025-04-19 12:12:43,726 - INFO - 文章 410689 響應內容長度: 129
+2025-04-19 12:12:43,727 - INFO - 已保存文章 410689 的原始響應到: real_estate_articles\logs\article_410689_response.html
+2025-04-19 12:12:43,728 - ERROR - 文章 410689 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:44,002 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410686
+2025-04-19 12:12:44,013 - INFO - 文章 410686 請求狀態碼: 200
+2025-04-19 12:12:44,014 - INFO - 文章 410686 響應內容長度: 129
+2025-04-19 12:12:44,016 - INFO - 已保存文章 410686 的原始響應到: real_estate_articles\logs\article_410686_response.html
+2025-04-19 12:12:44,018 - ERROR - 文章 410686 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:44,019 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410693
+2025-04-19 12:12:44,032 - INFO - 文章 410693 請求狀態碼: 200
+2025-04-19 12:12:44,033 - INFO - 文章 410693 響應內容長度: 129
+2025-04-19 12:12:44,035 - INFO - 已保存文章 410693 的原始響應到: real_estate_articles\logs\article_410693_response.html
+2025-04-19 12:12:44,036 - ERROR - 文章 410693 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:44,048 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410690
+2025-04-19 12:12:44,060 - INFO - 文章 410690 請求狀態碼: 200
+2025-04-19 12:12:44,062 - INFO - 文章 410690 響應內容長度: 129
+2025-04-19 12:12:44,064 - INFO - 已保存文章 410690 的原始響應到: real_estate_articles\logs\article_410690_response.html
+2025-04-19 12:12:44,066 - ERROR - 文章 410690 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:44,140 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410692
+2025-04-19 12:12:44,154 - INFO - 文章 410692 請求狀態碼: 200
+2025-04-19 12:12:44,155 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410691
+2025-04-19 12:12:44,155 - INFO - 文章 410692 響應內容長度: 129
+2025-04-19 12:12:44,160 - INFO - 已保存文章 410692 的原始響應到: real_estate_articles\logs\article_410692_response.html
+2025-04-19 12:12:44,161 - ERROR - 文章 410692 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:44,169 - INFO - 文章 410691 請求狀態碼: 200
+2025-04-19 12:12:44,170 - INFO - 文章 410691 響應內容長度: 129
+2025-04-19 12:12:44,172 - INFO - 已保存文章 410691 的原始響應到: real_estate_articles\logs\article_410691_response.html
+2025-04-19 12:12:44,173 - ERROR - 文章 410691 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:44,702 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410695
+2025-04-19 12:12:44,714 - INFO - 文章 410695 請求狀態碼: 200
+2025-04-19 12:12:44,715 - INFO - 文章 410695 響應內容長度: 129
+2025-04-19 12:12:44,716 - INFO - 已保存文章 410695 的原始響應到: real_estate_articles\logs\article_410695_response.html
+2025-04-19 12:12:44,718 - ERROR - 文章 410695 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,297 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410696
+2025-04-19 12:12:45,310 - INFO - 文章 410696 請求狀態碼: 200
+2025-04-19 12:12:45,311 - INFO - 文章 410696 響應內容長度: 129
+2025-04-19 12:12:45,313 - INFO - 已保存文章 410696 的原始響應到: real_estate_articles\logs\article_410696_response.html
+2025-04-19 12:12:45,314 - ERROR - 文章 410696 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,621 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410697
+2025-04-19 12:12:45,636 - INFO - 文章 410697 請求狀態碼: 200
+2025-04-19 12:12:45,636 - INFO - 文章 410697 響應內容長度: 129
+2025-04-19 12:12:45,638 - INFO - 已保存文章 410697 的原始響應到: real_estate_articles\logs\article_410697_response.html
+2025-04-19 12:12:45,640 - ERROR - 文章 410697 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,644 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410694
+2025-04-19 12:12:45,657 - INFO - 文章 410694 請求狀態碼: 200
+2025-04-19 12:12:45,658 - INFO - 文章 410694 響應內容長度: 129
+2025-04-19 12:12:45,661 - INFO - 已保存文章 410694 的原始響應到: real_estate_articles\logs\article_410694_response.html
+2025-04-19 12:12:45,663 - ERROR - 文章 410694 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,665 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410701
+2025-04-19 12:12:45,677 - INFO - 文章 410701 請求狀態碼: 200
+2025-04-19 12:12:45,678 - INFO - 文章 410701 響應內容長度: 129
+2025-04-19 12:12:45,680 - INFO - 已保存文章 410701 的原始響應到: real_estate_articles\logs\article_410701_response.html
+2025-04-19 12:12:45,681 - ERROR - 文章 410701 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,733 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410700
+2025-04-19 12:12:45,746 - INFO - 文章 410700 請求狀態碼: 200
+2025-04-19 12:12:45,747 - INFO - 文章 410700 響應內容長度: 129
+2025-04-19 12:12:45,749 - INFO - 已保存文章 410700 的原始響應到: real_estate_articles\logs\article_410700_response.html
+2025-04-19 12:12:45,750 - ERROR - 文章 410700 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,757 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410699
+2025-04-19 12:12:45,778 - INFO - 文章 410699 請求狀態碼: 200
+2025-04-19 12:12:45,779 - INFO - 文章 410699 響應內容長度: 129
+2025-04-19 12:12:45,781 - INFO - 已保存文章 410699 的原始響應到: real_estate_articles\logs\article_410699_response.html
+2025-04-19 12:12:45,783 - ERROR - 文章 410699 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:45,907 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410698
+2025-04-19 12:12:45,920 - INFO - 文章 410698 請求狀態碼: 200
+2025-04-19 12:12:45,922 - INFO - 文章 410698 響應內容長度: 129
+2025-04-19 12:12:45,925 - INFO - 已保存文章 410698 的原始響應到: real_estate_articles\logs\article_410698_response.html
+2025-04-19 12:12:45,927 - ERROR - 文章 410698 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:46,452 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410705
+2025-04-19 12:12:46,471 - INFO - 文章 410705 請求狀態碼: 200
+2025-04-19 12:12:46,472 - INFO - 文章 410705 響應內容長度: 129
+2025-04-19 12:12:46,475 - INFO - 已保存文章 410705 的原始響應到: real_estate_articles\logs\article_410705_response.html
+2025-04-19 12:12:46,477 - ERROR - 文章 410705 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,257 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410703
+2025-04-19 12:12:47,269 - INFO - 文章 410703 請求狀態碼: 200
+2025-04-19 12:12:47,270 - INFO - 文章 410703 響應內容長度: 129
+2025-04-19 12:12:47,272 - INFO - 已保存文章 410703 的原始響應到: real_estate_articles\logs\article_410703_response.html
+2025-04-19 12:12:47,274 - ERROR - 文章 410703 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,275 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410707
+2025-04-19 12:12:47,283 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410704
+2025-04-19 12:12:47,286 - INFO - 文章 410707 請求狀態碼: 200
+2025-04-19 12:12:47,287 - INFO - 文章 410707 響應內容長度: 129
+2025-04-19 12:12:47,288 - INFO - 已保存文章 410707 的原始響應到: real_estate_articles\logs\article_410707_response.html
+2025-04-19 12:12:47,290 - ERROR - 文章 410707 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,291 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410708
+2025-04-19 12:12:47,294 - INFO - 文章 410704 請求狀態碼: 200
+2025-04-19 12:12:47,296 - INFO - 文章 410704 響應內容長度: 129
+2025-04-19 12:12:47,297 - INFO - 已保存文章 410704 的原始響應到: real_estate_articles\logs\article_410704_response.html
+2025-04-19 12:12:47,299 - ERROR - 文章 410704 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,306 - INFO - 文章 410708 請求狀態碼: 200
+2025-04-19 12:12:47,308 - INFO - 文章 410708 響應內容長度: 129
+2025-04-19 12:12:47,310 - INFO - 已保存文章 410708 的原始響應到: real_estate_articles\logs\article_410708_response.html
+2025-04-19 12:12:47,311 - ERROR - 文章 410708 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,412 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410702
+2025-04-19 12:12:47,423 - INFO - 文章 410702 請求狀態碼: 200
+2025-04-19 12:12:47,424 - INFO - 文章 410702 響應內容長度: 129
+2025-04-19 12:12:47,426 - INFO - 已保存文章 410702 的原始響應到: real_estate_articles\logs\article_410702_response.html
+2025-04-19 12:12:47,428 - ERROR - 文章 410702 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,429 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410711
+2025-04-19 12:12:47,442 - INFO - 文章 410711 請求狀態碼: 200
+2025-04-19 12:12:47,443 - INFO - 文章 410711 響應內容長度: 129
+2025-04-19 12:12:47,445 - INFO - 已保存文章 410711 的原始響應到: real_estate_articles\logs\article_410711_response.html
+2025-04-19 12:12:47,446 - ERROR - 文章 410711 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:47,494 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410706
+2025-04-19 12:12:47,506 - INFO - 文章 410706 請求狀態碼: 200
+2025-04-19 12:12:47,507 - INFO - 文章 410706 響應內容長度: 129
+2025-04-19 12:12:47,510 - INFO - 已保存文章 410706 的原始響應到: real_estate_articles\logs\article_410706_response.html
+2025-04-19 12:12:47,511 - ERROR - 文章 410706 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:48,133 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410713
+2025-04-19 12:12:48,146 - INFO - 文章 410713 請求狀態碼: 200
+2025-04-19 12:12:48,148 - INFO - 文章 410713 響應內容長度: 129
+2025-04-19 12:12:48,150 - INFO - 已保存文章 410713 的原始響應到: real_estate_articles\logs\article_410713_response.html
+2025-04-19 12:12:48,153 - ERROR - 文章 410713 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,151 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410710
+2025-04-19 12:12:49,164 - INFO - 文章 410710 請求狀態碼: 200
+2025-04-19 12:12:49,165 - INFO - 文章 410710 響應內容長度: 129
+2025-04-19 12:12:49,167 - INFO - 已保存文章 410710 的原始響應到: real_estate_articles\logs\article_410710_response.html
+2025-04-19 12:12:49,169 - ERROR - 文章 410710 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,169 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410715
+2025-04-19 12:12:49,179 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410709
+2025-04-19 12:12:49,182 - INFO - 文章 410715 請求狀態碼: 200
+2025-04-19 12:12:49,183 - INFO - 文章 410715 響應內容長度: 129
+2025-04-19 12:12:49,184 - INFO - 已保存文章 410715 的原始響應到: real_estate_articles\logs\article_410715_response.html
+2025-04-19 12:12:49,185 - ERROR - 文章 410715 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,186 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410716
+2025-04-19 12:12:49,191 - INFO - 文章 410709 請求狀態碼: 200
+2025-04-19 12:12:49,192 - INFO - 文章 410709 響應內容長度: 129
+2025-04-19 12:12:49,194 - INFO - 已保存文章 410709 的原始響應到: real_estate_articles\logs\article_410709_response.html
+2025-04-19 12:12:49,195 - ERROR - 文章 410709 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,198 - INFO - 文章 410716 請求狀態碼: 200
+2025-04-19 12:12:49,199 - INFO - 文章 410716 響應內容長度: 129
+2025-04-19 12:12:49,201 - INFO - 已保存文章 410716 的原始響應到: real_estate_articles\logs\article_410716_response.html
+2025-04-19 12:12:49,202 - ERROR - 文章 410716 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,317 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410712
+2025-04-19 12:12:49,331 - INFO - 文章 410712 請求狀態碼: 200
+2025-04-19 12:12:49,332 - INFO - 文章 410712 響應內容長度: 129
+2025-04-19 12:12:49,334 - INFO - 已保存文章 410712 的原始響應到: real_estate_articles\logs\article_410712_response.html
+2025-04-19 12:12:49,336 - ERROR - 文章 410712 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,338 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410719
+2025-04-19 12:12:49,353 - INFO - 文章 410719 請求狀態碼: 200
+2025-04-19 12:12:49,355 - INFO - 文章 410719 響應內容長度: 129
+2025-04-19 12:12:49,356 - INFO - 已保存文章 410719 的原始響應到: real_estate_articles\logs\article_410719_response.html
+2025-04-19 12:12:49,357 - ERROR - 文章 410719 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,400 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410714
+2025-04-19 12:12:49,419 - INFO - 文章 410714 請求狀態碼: 200
+2025-04-19 12:12:49,420 - INFO - 文章 410714 響應內容長度: 129
+2025-04-19 12:12:49,422 - INFO - 已保存文章 410714 的原始響應到: real_estate_articles\logs\article_410714_response.html
+2025-04-19 12:12:49,423 - ERROR - 文章 410714 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:49,945 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410721
+2025-04-19 12:12:49,957 - INFO - 文章 410721 請求狀態碼: 200
+2025-04-19 12:12:49,957 - INFO - 文章 410721 響應內容長度: 129
+2025-04-19 12:12:49,960 - INFO - 已保存文章 410721 的原始響應到: real_estate_articles\logs\article_410721_response.html
+2025-04-19 12:12:49,962 - ERROR - 文章 410721 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:50,853 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410718
+2025-04-19 12:12:50,867 - INFO - 文章 410718 請求狀態碼: 200
+2025-04-19 12:12:50,869 - INFO - 文章 410718 響應內容長度: 129
+2025-04-19 12:12:50,872 - INFO - 已保存文章 410718 的原始響應到: real_estate_articles\logs\article_410718_response.html
+2025-04-19 12:12:50,877 - ERROR - 文章 410718 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:50,879 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410723
+2025-04-19 12:12:50,895 - INFO - 文章 410723 請求狀態碼: 200
+2025-04-19 12:12:50,897 - INFO - 文章 410723 響應內容長度: 129
+2025-04-19 12:12:50,900 - INFO - 已保存文章 410723 的原始響應到: real_estate_articles\logs\article_410723_response.html
+2025-04-19 12:12:50,903 - ERROR - 文章 410723 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:50,926 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410720
+2025-04-19 12:12:50,943 - INFO - 文章 410720 請求狀態碼: 200
+2025-04-19 12:12:50,945 - INFO - 文章 410720 響應內容長度: 129
+2025-04-19 12:12:50,947 - INFO - 已保存文章 410720 的原始響應到: real_estate_articles\logs\article_410720_response.html
+2025-04-19 12:12:50,950 - ERROR - 文章 410720 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:50,952 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410725
+2025-04-19 12:12:50,966 - INFO - 文章 410725 請求狀態碼: 200
+2025-04-19 12:12:50,968 - INFO - 文章 410725 響應內容長度: 129
+2025-04-19 12:12:50,971 - INFO - 已保存文章 410725 的原始響應到: real_estate_articles\logs\article_410725_response.html
+2025-04-19 12:12:50,974 - ERROR - 文章 410725 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:51,125 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410717
+2025-04-19 12:12:51,140 - INFO - 文章 410717 請求狀態碼: 200
+2025-04-19 12:12:51,141 - INFO - 文章 410717 響應內容長度: 129
+2025-04-19 12:12:51,142 - INFO - 已保存文章 410717 的原始響應到: real_estate_articles\logs\article_410717_response.html
+2025-04-19 12:12:51,144 - ERROR - 文章 410717 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:51,146 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410727
+2025-04-19 12:12:51,161 - INFO - 文章 410727 請求狀態碼: 200
+2025-04-19 12:12:51,162 - INFO - 文章 410727 響應內容長度: 129
+2025-04-19 12:12:51,164 - INFO - 已保存文章 410727 的原始響應到: real_estate_articles\logs\article_410727_response.html
+2025-04-19 12:12:51,165 - ERROR - 文章 410727 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:51,191 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410722
+2025-04-19 12:12:51,204 - INFO - 文章 410722 請求狀態碼: 200
+2025-04-19 12:12:51,205 - INFO - 文章 410722 響應內容長度: 129
+2025-04-19 12:12:51,206 - INFO - 已保存文章 410722 的原始響應到: real_estate_articles\logs\article_410722_response.html
+2025-04-19 12:12:51,207 - ERROR - 文章 410722 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:51,946 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410729
+2025-04-19 12:12:51,957 - INFO - 文章 410729 請求狀態碼: 200
+2025-04-19 12:12:51,958 - INFO - 文章 410729 響應內容長度: 129
+2025-04-19 12:12:51,960 - INFO - 已保存文章 410729 的原始響應到: real_estate_articles\logs\article_410729_response.html
+2025-04-19 12:12:51,962 - ERROR - 文章 410729 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,588 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410724
+2025-04-19 12:12:52,613 - INFO - 文章 410724 請求狀態碼: 200
+2025-04-19 12:12:52,614 - INFO - 文章 410724 響應內容長度: 129
+2025-04-19 12:12:52,615 - INFO - 已保存文章 410724 的原始響應到: real_estate_articles\logs\article_410724_response.html
+2025-04-19 12:12:52,617 - ERROR - 文章 410724 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,617 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410731
+2025-04-19 12:12:52,630 - INFO - 文章 410731 請求狀態碼: 200
+2025-04-19 12:12:52,631 - INFO - 文章 410731 響應內容長度: 129
+2025-04-19 12:12:52,633 - INFO - 已保存文章 410731 的原始響應到: real_estate_articles\logs\article_410731_response.html
+2025-04-19 12:12:52,634 - ERROR - 文章 410731 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,638 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410726
+2025-04-19 12:12:52,649 - INFO - 文章 410726 請求狀態碼: 200
+2025-04-19 12:12:52,650 - INFO - 文章 410726 響應內容長度: 129
+2025-04-19 12:12:52,652 - INFO - 已保存文章 410726 的原始響應到: real_estate_articles\logs\article_410726_response.html
+2025-04-19 12:12:52,653 - ERROR - 文章 410726 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,653 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410733
+2025-04-19 12:12:52,665 - INFO - 文章 410733 請求狀態碼: 200
+2025-04-19 12:12:52,666 - INFO - 文章 410733 響應內容長度: 129
+2025-04-19 12:12:52,668 - INFO - 已保存文章 410733 的原始響應到: real_estate_articles\logs\article_410733_response.html
+2025-04-19 12:12:52,669 - ERROR - 文章 410733 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,732 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410728
+2025-04-19 12:12:52,744 - INFO - 文章 410728 請求狀態碼: 200
+2025-04-19 12:12:52,745 - INFO - 文章 410728 響應內容長度: 129
+2025-04-19 12:12:52,747 - INFO - 已保存文章 410728 的原始響應到: real_estate_articles\logs\article_410728_response.html
+2025-04-19 12:12:52,748 - ERROR - 文章 410728 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,749 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410735
+2025-04-19 12:12:52,761 - INFO - 文章 410735 請求狀態碼: 200
+2025-04-19 12:12:52,763 - INFO - 文章 410735 響應內容長度: 129
+2025-04-19 12:12:52,765 - INFO - 已保存文章 410735 的原始響應到: real_estate_articles\logs\article_410735_response.html
+2025-04-19 12:12:52,767 - ERROR - 文章 410735 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:52,822 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410730
+2025-04-19 12:12:52,836 - INFO - 文章 410730 請求狀態碼: 200
+2025-04-19 12:12:52,837 - INFO - 文章 410730 響應內容長度: 129
+2025-04-19 12:12:52,839 - INFO - 已保存文章 410730 的原始響應到: real_estate_articles\logs\article_410730_response.html
+2025-04-19 12:12:52,840 - ERROR - 文章 410730 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:53,573 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410737
+2025-04-19 12:12:53,587 - INFO - 文章 410737 請求狀態碼: 200
+2025-04-19 12:12:53,588 - INFO - 文章 410737 響應內容長度: 129
+2025-04-19 12:12:53,590 - INFO - 已保存文章 410737 的原始響應到: real_estate_articles\logs\article_410737_response.html
+2025-04-19 12:12:53,591 - ERROR - 文章 410737 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:54,281 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410732
+2025-04-19 12:12:54,292 - INFO - 文章 410732 請求狀態碼: 200
+2025-04-19 12:12:54,293 - INFO - 文章 410732 響應內容長度: 129
+2025-04-19 12:12:54,294 - INFO - 已保存文章 410732 的原始響應到: real_estate_articles\logs\article_410732_response.html
+2025-04-19 12:12:54,295 - ERROR - 文章 410732 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:54,297 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410739
+2025-04-19 12:12:54,353 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410738
+2025-04-19 12:12:54,365 - INFO - 文章 410738 請求狀態碼: 200
+2025-04-19 12:12:54,367 - INFO - 文章 410738 響應內容長度: 129
+2025-04-19 12:12:54,369 - INFO - 已保存文章 410738 的原始響應到: real_estate_articles\logs\article_410738_response.html
+2025-04-19 12:12:54,371 - ERROR - 文章 410738 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:54,423 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410736
+2025-04-19 12:12:54,424 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410734
+2025-04-19 12:12:54,437 - INFO - 文章 410736 請求狀態碼: 200
+2025-04-19 12:12:54,438 - INFO - 文章 410736 響應內容長度: 129
+2025-04-19 12:12:54,440 - INFO - 已保存文章 410736 的原始響應到: real_estate_articles\logs\article_410736_response.html
+2025-04-19 12:12:54,441 - ERROR - 文章 410736 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:54,442 - INFO - 文章 410734 請求狀態碼: 200
+2025-04-19 12:12:54,443 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410741
+2025-04-19 12:12:54,444 - INFO - 文章 410734 響應內容長度: 129
+2025-04-19 12:12:54,444 - INFO - 文章 410739 請求狀態碼: 200
+2025-04-19 12:12:54,450 - INFO - 文章 410739 響應內容長度: 129
+2025-04-19 12:12:54,451 - INFO - 已保存文章 410734 的原始響應到: real_estate_articles\logs\article_410734_response.html
+2025-04-19 12:12:54,454 - ERROR - 文章 410734 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:54,454 - INFO - 已保存文章 410739 的原始響應到: real_estate_articles\logs\article_410739_response.html
+2025-04-19 12:12:54,457 - ERROR - 文章 410739 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:54,639 - INFO - 文章 410741 請求狀態碼: 200
+2025-04-19 12:12:54,640 - INFO - 文章 410741 響應內容長度: 34766
+2025-04-19 12:12:54,643 - INFO - 已保存文章 410741 的原始響應到: real_estate_articles\logs\article_410741_response.html
+2025-04-19 12:12:54,673 - INFO - 從 meta 標籤找到文章資訊
+2025-04-19 12:12:54,678 - INFO - 文章 410741 找到 12 個資料列
+2025-04-19 12:12:54,681 - INFO - 文章 410741 成功解析 6 個欄位
+2025-04-19 12:12:54,682 - WARNING - 文章 410741 作者不符合目標: 高點建國醫護網
+2025-04-19 12:12:54,683 - ERROR - 文章 410741 解析失敗或不符合條件
+2025-04-19 12:12:55,454 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410740
+2025-04-19 12:12:55,467 - INFO - 文章 410740 請求狀態碼: 200
+2025-04-19 12:12:55,468 - INFO - 文章 410740 響應內容長度: 129
+2025-04-19 12:12:55,470 - INFO - 已保存文章 410740 的原始響應到: real_estate_articles\logs\article_410740_response.html
+2025-04-19 12:12:55,472 - ERROR - 文章 410740 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:55,983 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410745
+2025-04-19 12:12:55,994 - INFO - 文章 410745 請求狀態碼: 200
+2025-04-19 12:12:55,995 - INFO - 文章 410745 響應內容長度: 129
+2025-04-19 12:12:55,997 - INFO - 已保存文章 410745 的原始響應到: real_estate_articles\logs\article_410745_response.html
+2025-04-19 12:12:55,999 - ERROR - 文章 410745 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:56,157 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410742
+2025-04-19 12:12:56,169 - INFO - 文章 410742 請求狀態碼: 200
+2025-04-19 12:12:56,170 - INFO - 文章 410742 響應內容長度: 129
+2025-04-19 12:12:56,172 - INFO - 已保存文章 410742 的原始響應到: real_estate_articles\logs\article_410742_response.html
+2025-04-19 12:12:56,174 - ERROR - 文章 410742 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:56,174 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410747
+2025-04-19 12:12:56,187 - INFO - 文章 410747 請求狀態碼: 200
+2025-04-19 12:12:56,188 - INFO - 文章 410747 響應內容長度: 129
+2025-04-19 12:12:56,191 - INFO - 已保存文章 410747 的原始響應到: real_estate_articles\logs\article_410747_response.html
+2025-04-19 12:12:56,193 - ERROR - 文章 410747 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:56,298 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410744
+2025-04-19 12:12:56,311 - INFO - 文章 410744 請求狀態碼: 200
+2025-04-19 12:12:56,312 - INFO - 文章 410744 響應內容長度: 129
+2025-04-19 12:12:56,314 - INFO - 已保存文章 410744 的原始響應到: real_estate_articles\logs\article_410744_response.html
+2025-04-19 12:12:56,316 - ERROR - 文章 410744 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:56,317 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410749
+2025-04-19 12:12:56,329 - INFO - 文章 410749 請求狀態碼: 200
+2025-04-19 12:12:56,330 - INFO - 文章 410749 響應內容長度: 129
+2025-04-19 12:12:56,333 - INFO - 已保存文章 410749 的原始響應到: real_estate_articles\logs\article_410749_response.html
+2025-04-19 12:12:56,334 - ERROR - 文章 410749 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:56,385 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410743
+2025-04-19 12:12:56,396 - INFO - 文章 410743 請求狀態碼: 200
+2025-04-19 12:12:56,397 - INFO - 文章 410743 響應內容長度: 129
+2025-04-19 12:12:56,400 - INFO - 已保存文章 410743 的原始響應到: real_estate_articles\logs\article_410743_response.html
+2025-04-19 12:12:56,401 - ERROR - 文章 410743 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:56,402 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410751
+2025-04-19 12:12:56,415 - INFO - 文章 410751 請求狀態碼: 200
+2025-04-19 12:12:56,417 - INFO - 文章 410751 響應內容長度: 129
+2025-04-19 12:12:56,419 - INFO - 已保存文章 410751 的原始響應到: real_estate_articles\logs\article_410751_response.html
+2025-04-19 12:12:56,420 - ERROR - 文章 410751 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:57,080 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410746
+2025-04-19 12:12:57,097 - INFO - 文章 410746 請求狀態碼: 200
+2025-04-19 12:12:57,098 - INFO - 文章 410746 響應內容長度: 129
+2025-04-19 12:12:57,101 - INFO - 已保存文章 410746 的原始響應到: real_estate_articles\logs\article_410746_response.html
+2025-04-19 12:12:57,102 - ERROR - 文章 410746 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:57,680 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410748
+2025-04-19 12:12:57,691 - INFO - 文章 410748 請求狀態碼: 200
+2025-04-19 12:12:57,692 - INFO - 文章 410748 響應內容長度: 129
+2025-04-19 12:12:57,694 - INFO - 已保存文章 410748 的原始響應到: real_estate_articles\logs\article_410748_response.html
+2025-04-19 12:12:57,696 - ERROR - 文章 410748 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:57,697 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410754
+2025-04-19 12:12:57,714 - INFO - 文章 410754 請求狀態碼: 200
+2025-04-19 12:12:57,715 - INFO - 文章 410754 響應內容長度: 129
+2025-04-19 12:12:57,717 - INFO - 已保存文章 410754 的原始響應到: real_estate_articles\logs\article_410754_response.html
+2025-04-19 12:12:57,718 - ERROR - 文章 410754 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:57,773 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410753
+2025-04-19 12:12:57,785 - INFO - 文章 410753 請求狀態碼: 200
+2025-04-19 12:12:57,786 - INFO - 文章 410753 響應內容長度: 129
+2025-04-19 12:12:57,788 - INFO - 已保存文章 410753 的原始響應到: real_estate_articles\logs\article_410753_response.html
+2025-04-19 12:12:57,790 - ERROR - 文章 410753 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:58,164 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410752
+2025-04-19 12:12:58,176 - INFO - 文章 410752 請求狀態碼: 200
+2025-04-19 12:12:58,177 - INFO - 文章 410752 響應內容長度: 129
+2025-04-19 12:12:58,179 - INFO - 已保存文章 410752 的原始響應到: real_estate_articles\logs\article_410752_response.html
+2025-04-19 12:12:58,180 - ERROR - 文章 410752 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:58,181 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410757
+2025-04-19 12:12:58,194 - INFO - 文章 410757 請求狀態碼: 200
+2025-04-19 12:12:58,195 - INFO - 文章 410757 響應內容長度: 129
+2025-04-19 12:12:58,197 - INFO - 已保存文章 410757 的原始響應到: real_estate_articles\logs\article_410757_response.html
+2025-04-19 12:12:58,198 - ERROR - 文章 410757 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:58,251 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410750
+2025-04-19 12:12:58,263 - INFO - 文章 410750 請求狀態碼: 200
+2025-04-19 12:12:58,264 - INFO - 文章 410750 響應內容長度: 129
+2025-04-19 12:12:58,265 - INFO - 已保存文章 410750 的原始響應到: real_estate_articles\logs\article_410750_response.html
+2025-04-19 12:12:58,267 - ERROR - 文章 410750 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:58,268 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410759
+2025-04-19 12:12:58,281 - INFO - 文章 410759 請求狀態碼: 200
+2025-04-19 12:12:58,282 - INFO - 文章 410759 響應內容長度: 129
+2025-04-19 12:12:58,286 - INFO - 已保存文章 410759 的原始響應到: real_estate_articles\logs\article_410759_response.html
+2025-04-19 12:12:58,287 - ERROR - 文章 410759 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:58,668 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410756
+2025-04-19 12:12:58,692 - INFO - 文章 410756 請求狀態碼: 200
+2025-04-19 12:12:58,694 - INFO - 文章 410756 響應內容長度: 129
+2025-04-19 12:12:58,696 - INFO - 已保存文章 410756 的原始響應到: real_estate_articles\logs\article_410756_response.html
+2025-04-19 12:12:58,698 - ERROR - 文章 410756 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:59,500 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410761
+2025-04-19 12:12:59,512 - INFO - 文章 410761 請求狀態碼: 200
+2025-04-19 12:12:59,513 - INFO - 文章 410761 響應內容長度: 129
+2025-04-19 12:12:59,515 - INFO - 已保存文章 410761 的原始響應到: real_estate_articles\logs\article_410761_response.html
+2025-04-19 12:12:59,516 - ERROR - 文章 410761 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:59,690 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410755
+2025-04-19 12:12:59,704 - INFO - 文章 410755 請求狀態碼: 200
+2025-04-19 12:12:59,705 - INFO - 文章 410755 響應內容長度: 129
+2025-04-19 12:12:59,706 - INFO - 已保存文章 410755 的原始響應到: real_estate_articles\logs\article_410755_response.html
+2025-04-19 12:12:59,707 - ERROR - 文章 410755 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:59,708 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410763
+2025-04-19 12:12:59,722 - INFO - 文章 410763 請求狀態碼: 200
+2025-04-19 12:12:59,722 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410758
+2025-04-19 12:12:59,722 - INFO - 文章 410763 響應內容長度: 129
+2025-04-19 12:12:59,727 - INFO - 已保存文章 410763 的原始響應到: real_estate_articles\logs\article_410763_response.html
+2025-04-19 12:12:59,728 - ERROR - 文章 410763 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:59,728 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410764
+2025-04-19 12:12:59,736 - INFO - 文章 410758 請求狀態碼: 200
+2025-04-19 12:12:59,737 - INFO - 文章 410758 響應內容長度: 129
+2025-04-19 12:12:59,738 - INFO - 已保存文章 410758 的原始響應到: real_estate_articles\logs\article_410758_response.html
+2025-04-19 12:12:59,740 - ERROR - 文章 410758 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:12:59,742 - INFO - 文章 410764 請求狀態碼: 200
+2025-04-19 12:12:59,743 - INFO - 文章 410764 響應內容長度: 129
+2025-04-19 12:12:59,745 - INFO - 已保存文章 410764 的原始響應到: real_estate_articles\logs\article_410764_response.html
+2025-04-19 12:12:59,747 - ERROR - 文章 410764 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:00,148 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410760
+2025-04-19 12:13:00,163 - INFO - 文章 410760 請求狀態碼: 200
+2025-04-19 12:13:00,164 - INFO - 文章 410760 響應內容長度: 129
+2025-04-19 12:13:00,166 - INFO - 已保存文章 410760 的原始響應到: real_estate_articles\logs\article_410760_response.html
+2025-04-19 12:13:00,168 - ERROR - 文章 410760 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:00,169 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410769
+2025-04-19 12:13:00,188 - INFO - 文章 410769 請求狀態碼: 200
+2025-04-19 12:13:00,189 - INFO - 文章 410769 響應內容長度: 129
+2025-04-19 12:13:00,190 - INFO - 已保存文章 410769 的原始響應到: real_estate_articles\logs\article_410769_response.html
+2025-04-19 12:13:00,192 - ERROR - 文章 410769 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:00,475 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410762
+2025-04-19 12:13:00,487 - INFO - 文章 410762 請求狀態碼: 200
+2025-04-19 12:13:00,487 - INFO - 文章 410762 響應內容長度: 129
+2025-04-19 12:13:00,489 - INFO - 已保存文章 410762 的原始響應到: real_estate_articles\logs\article_410762_response.html
+2025-04-19 12:13:00,491 - ERROR - 文章 410762 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,246 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410768
+2025-04-19 12:13:01,272 - INFO - 文章 410768 請求狀態碼: 200
+2025-04-19 12:13:01,273 - INFO - 文章 410768 響應內容長度: 129
+2025-04-19 12:13:01,275 - INFO - 已保存文章 410768 的原始響應到: real_estate_articles\logs\article_410768_response.html
+2025-04-19 12:13:01,277 - ERROR - 文章 410768 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,278 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410772
+2025-04-19 12:13:01,324 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410771
+2025-04-19 12:13:01,333 - INFO - 文章 410772 請求狀態碼: 200
+2025-04-19 12:13:01,334 - INFO - 文章 410772 響應內容長度: 129
+2025-04-19 12:13:01,335 - INFO - 文章 410771 請求狀態碼: 200
+2025-04-19 12:13:01,337 - INFO - 文章 410771 響應內容長度: 129
+2025-04-19 12:13:01,338 - INFO - 已保存文章 410772 的原始響應到: real_estate_articles\logs\article_410772_response.html
+2025-04-19 12:13:01,340 - INFO - 已保存文章 410771 的原始響應到: real_estate_articles\logs\article_410771_response.html
+2025-04-19 12:13:01,341 - ERROR - 文章 410772 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,343 - ERROR - 文章 410771 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,568 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410767
+2025-04-19 12:13:01,589 - INFO - 文章 410767 請求狀態碼: 200
+2025-04-19 12:13:01,590 - INFO - 文章 410767 響應內容長度: 129
+2025-04-19 12:13:01,591 - INFO - 已保存文章 410767 的原始響應到: real_estate_articles\logs\article_410767_response.html
+2025-04-19 12:13:01,592 - ERROR - 文章 410767 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,593 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410775
+2025-04-19 12:13:01,607 - INFO - 文章 410775 請求狀態碼: 200
+2025-04-19 12:13:01,607 - INFO - 文章 410775 響應內容長度: 129
+2025-04-19 12:13:01,609 - INFO - 已保存文章 410775 的原始響應到: real_estate_articles\logs\article_410775_response.html
+2025-04-19 12:13:01,610 - ERROR - 文章 410775 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,827 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410770
+2025-04-19 12:13:01,839 - INFO - 文章 410770 請求狀態碼: 200
+2025-04-19 12:13:01,840 - INFO - 文章 410770 響應內容長度: 129
+2025-04-19 12:13:01,842 - INFO - 已保存文章 410770 的原始響應到: real_estate_articles\logs\article_410770_response.html
+2025-04-19 12:13:01,843 - ERROR - 文章 410770 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:01,844 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410777
+2025-04-19 12:13:01,856 - INFO - 文章 410777 請求狀態碼: 200
+2025-04-19 12:13:01,857 - INFO - 文章 410777 響應內容長度: 129
+2025-04-19 12:13:01,859 - INFO - 已保存文章 410777 的原始響應到: real_estate_articles\logs\article_410777_response.html
+2025-04-19 12:13:01,860 - ERROR - 文章 410777 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:02,197 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410774
+2025-04-19 12:13:02,212 - INFO - 文章 410774 請求狀態碼: 200
+2025-04-19 12:13:02,213 - INFO - 文章 410774 響應內容長度: 129
+2025-04-19 12:13:02,216 - INFO - 已保存文章 410774 的原始響應到: real_estate_articles\logs\article_410774_response.html
+2025-04-19 12:13:02,217 - ERROR - 文章 410774 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:02,338 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410773
+2025-04-19 12:13:02,350 - INFO - 文章 410773 請求狀態碼: 200
+2025-04-19 12:13:02,351 - INFO - 文章 410773 響應內容長度: 129
+2025-04-19 12:13:02,354 - INFO - 已保存文章 410773 的原始響應到: real_estate_articles\logs\article_410773_response.html
+2025-04-19 12:13:02,356 - ERROR - 文章 410773 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:02,915 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410779
+2025-04-19 12:13:02,928 - INFO - 文章 410779 請求狀態碼: 200
+2025-04-19 12:13:02,928 - INFO - 文章 410779 響應內容長度: 129
+2025-04-19 12:13:02,930 - INFO - 已保存文章 410779 的原始響應到: real_estate_articles\logs\article_410779_response.html
+2025-04-19 12:13:02,932 - ERROR - 文章 410779 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:03,231 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410780
+2025-04-19 12:13:03,245 - INFO - 文章 410780 請求狀態碼: 200
+2025-04-19 12:13:03,245 - INFO - 文章 410780 響應內容長度: 129
+2025-04-19 12:13:03,248 - INFO - 已保存文章 410780 的原始響應到: real_estate_articles\logs\article_410780_response.html
+2025-04-19 12:13:03,249 - ERROR - 文章 410780 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:03,423 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410776
+2025-04-19 12:13:03,435 - INFO - 文章 410776 請求狀態碼: 200
+2025-04-19 12:13:03,436 - INFO - 文章 410776 響應內容長度: 129
+2025-04-19 12:13:03,438 - INFO - 已保存文章 410776 的原始響應到: real_estate_articles\logs\article_410776_response.html
+2025-04-19 12:13:03,440 - ERROR - 文章 410776 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:03,441 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410783
+2025-04-19 12:13:03,455 - INFO - 文章 410783 請求狀態碼: 200
+2025-04-19 12:13:03,456 - INFO - 文章 410783 響應內容長度: 129
+2025-04-19 12:13:03,457 - INFO - 已保存文章 410783 的原始響應到: real_estate_articles\logs\article_410783_response.html
+2025-04-19 12:13:03,458 - ERROR - 文章 410783 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:03,721 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410778
+2025-04-19 12:13:03,733 - INFO - 文章 410778 請求狀態碼: 200
+2025-04-19 12:13:03,734 - INFO - 文章 410778 響應內容長度: 129
+2025-04-19 12:13:03,736 - INFO - 已保存文章 410778 的原始響應到: real_estate_articles\logs\article_410778_response.html
+2025-04-19 12:13:03,738 - ERROR - 文章 410778 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:03,739 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410785
+2025-04-19 12:13:03,755 - INFO - 文章 410785 請求狀態碼: 200
+2025-04-19 12:13:03,756 - INFO - 文章 410785 響應內容長度: 129
+2025-04-19 12:13:03,757 - INFO - 已保存文章 410785 的原始響應到: real_estate_articles\logs\article_410785_response.html
+2025-04-19 12:13:03,758 - ERROR - 文章 410785 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:03,777 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410781
+2025-04-19 12:13:03,789 - INFO - 文章 410781 請求狀態碼: 200
+2025-04-19 12:13:03,790 - INFO - 文章 410781 響應內容長度: 129
+2025-04-19 12:13:03,792 - INFO - 已保存文章 410781 的原始響應到: real_estate_articles\logs\article_410781_response.html
+2025-04-19 12:13:03,793 - ERROR - 文章 410781 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:04,065 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410782
+2025-04-19 12:13:04,078 - INFO - 文章 410782 請求狀態碼: 200
+2025-04-19 12:13:04,079 - INFO - 文章 410782 響應內容長度: 129
+2025-04-19 12:13:04,080 - INFO - 已保存文章 410782 的原始響應到: real_estate_articles\logs\article_410782_response.html
+2025-04-19 12:13:04,081 - ERROR - 文章 410782 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:04,604 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410787
+2025-04-19 12:13:04,617 - INFO - 文章 410787 請求狀態碼: 200
+2025-04-19 12:13:04,618 - INFO - 文章 410787 響應內容長度: 129
+2025-04-19 12:13:04,620 - INFO - 已保存文章 410787 的原始響應到: real_estate_articles\logs\article_410787_response.html
+2025-04-19 12:13:04,621 - ERROR - 文章 410787 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:05,003 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410788
+2025-04-19 12:13:05,014 - INFO - 文章 410788 請求狀態碼: 200
+2025-04-19 12:13:05,015 - INFO - 文章 410788 響應內容長度: 129
+2025-04-19 12:13:05,016 - INFO - 已保存文章 410788 的原始響應到: real_estate_articles\logs\article_410788_response.html
+2025-04-19 12:13:05,017 - ERROR - 文章 410788 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:05,256 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410784
+2025-04-19 12:13:05,292 - INFO - 文章 410784 請求狀態碼: 200
+2025-04-19 12:13:05,293 - INFO - 文章 410784 響應內容長度: 31894
+2025-04-19 12:13:05,295 - INFO - 已保存文章 410784 的原始響應到: real_estate_articles\logs\article_410784_response.html
+2025-04-19 12:13:05,331 - INFO - 從 meta 標籤找到文章資訊
+2025-04-19 12:13:05,335 - INFO - 文章 410784 找到 10 個資料列
+2025-04-19 12:13:05,337 - INFO - 文章 410784 成功解析 6 個欄位
+2025-04-19 12:13:05,338 - WARNING - 文章 410784 作者不符合目標: 張家瑋
+2025-04-19 12:13:05,340 - ERROR - 文章 410784 解析失敗或不符合條件
+2025-04-19 12:13:05,341 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410791
+2025-04-19 12:13:05,353 - INFO - 文章 410791 請求狀態碼: 200
+2025-04-19 12:13:05,354 - INFO - 文章 410791 響應內容長度: 129
+2025-04-19 12:13:05,356 - INFO - 已保存文章 410791 的原始響應到: real_estate_articles\logs\article_410791_response.html
+2025-04-19 12:13:05,357 - ERROR - 文章 410791 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:05,475 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410786
+2025-04-19 12:13:05,493 - INFO - 文章 410786 請求狀態碼: 200
+2025-04-19 12:13:05,494 - INFO - 文章 410786 響應內容長度: 129
+2025-04-19 12:13:05,495 - INFO - 已保存文章 410786 的原始響應到: real_estate_articles\logs\article_410786_response.html
+2025-04-19 12:13:05,496 - ERROR - 文章 410786 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:05,497 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410793
+2025-04-19 12:13:05,509 - INFO - 文章 410793 請求狀態碼: 200
+2025-04-19 12:13:05,511 - INFO - 文章 410793 響應內容長度: 129
+2025-04-19 12:13:05,512 - INFO - 已保存文章 410793 的原始響應到: real_estate_articles\logs\article_410793_response.html
+2025-04-19 12:13:05,514 - ERROR - 文章 410793 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:05,639 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410789
+2025-04-19 12:13:05,651 - INFO - 文章 410789 請求狀態碼: 200
+2025-04-19 12:13:05,652 - INFO - 文章 410789 響應內容長度: 129
+2025-04-19 12:13:05,654 - INFO - 已保存文章 410789 的原始響應到: real_estate_articles\logs\article_410789_response.html
+2025-04-19 12:13:05,655 - ERROR - 文章 410789 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:05,746 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410790
+2025-04-19 12:13:05,758 - INFO - 文章 410790 請求狀態碼: 200
+2025-04-19 12:13:05,759 - INFO - 文章 410790 響應內容長度: 129
+2025-04-19 12:13:05,761 - INFO - 已保存文章 410790 的原始響應到: real_estate_articles\logs\article_410790_response.html
+2025-04-19 12:13:05,762 - ERROR - 文章 410790 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:06,612 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410795
+2025-04-19 12:13:06,671 - INFO - 文章 410795 請求狀態碼: 200
+2025-04-19 12:13:06,672 - INFO - 文章 410795 響應內容長度: 32682
+2025-04-19 12:13:06,674 - INFO - 已保存文章 410795 的原始響應到: real_estate_articles\logs\article_410795_response.html
+2025-04-19 12:13:06,694 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410796
+2025-04-19 12:13:06,703 - INFO - 從 meta 標籤找到文章資訊
+2025-04-19 12:13:06,714 - INFO - 文章 410795 找到 11 個資料列
+2025-04-19 12:13:06,716 - INFO - 文章 410795 成功解析 6 個欄位
+2025-04-19 12:13:06,717 - WARNING - 文章 410795 作者不符合目標: 張家瑋
+2025-04-19 12:13:06,717 - ERROR - 文章 410795 解析失敗或不符合條件
+2025-04-19 12:13:06,718 - INFO - 文章 410796 請求狀態碼: 200
+2025-04-19 12:13:06,721 - INFO - 文章 410796 響應內容長度: 129
+2025-04-19 12:13:06,723 - INFO - 已保存文章 410796 的原始響應到: real_estate_articles\logs\article_410796_response.html
+2025-04-19 12:13:06,725 - ERROR - 文章 410796 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:07,174 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410792
+2025-04-19 12:13:07,186 - INFO - 文章 410792 請求狀態碼: 200
+2025-04-19 12:13:07,187 - INFO - 文章 410792 響應內容長度: 129
+2025-04-19 12:13:07,190 - INFO - 已保存文章 410792 的原始響應到: real_estate_articles\logs\article_410792_response.html
+2025-04-19 12:13:07,192 - ERROR - 文章 410792 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:07,193 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410799
+2025-04-19 12:13:07,205 - INFO - 文章 410799 請求狀態碼: 200
+2025-04-19 12:13:07,206 - INFO - 文章 410799 響應內容長度: 129
+2025-04-19 12:13:07,209 - INFO - 已保存文章 410799 的原始響應到: real_estate_articles\logs\article_410799_response.html
+2025-04-19 12:13:07,210 - ERROR - 文章 410799 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:07,484 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410794
+2025-04-19 12:13:07,497 - INFO - 文章 410794 請求狀態碼: 200
+2025-04-19 12:13:07,498 - INFO - 文章 410794 響應內容長度: 129
+2025-04-19 12:13:07,499 - INFO - 已保存文章 410794 的原始響應到: real_estate_articles\logs\article_410794_response.html
+2025-04-19 12:13:07,501 - ERROR - 文章 410794 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:07,501 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410801
+2025-04-19 12:13:07,514 - INFO - 文章 410801 請求狀態碼: 200
+2025-04-19 12:13:07,515 - INFO - 文章 410801 響應內容長度: 129
+2025-04-19 12:13:07,516 - INFO - 已保存文章 410801 的原始響應到: real_estate_articles\logs\article_410801_response.html
+2025-04-19 12:13:07,518 - ERROR - 文章 410801 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:07,521 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410797
+2025-04-19 12:13:07,536 - INFO - 文章 410797 請求狀態碼: 200
+2025-04-19 12:13:07,537 - INFO - 文章 410797 響應內容長度: 129
+2025-04-19 12:13:07,539 - INFO - 已保存文章 410797 的原始響應到: real_estate_articles\logs\article_410797_response.html
+2025-04-19 12:13:07,540 - ERROR - 文章 410797 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:07,715 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410798
+2025-04-19 12:13:07,727 - INFO - 文章 410798 請求狀態碼: 200
+2025-04-19 12:13:07,729 - INFO - 文章 410798 響應內容長度: 129
+2025-04-19 12:13:07,731 - INFO - 已保存文章 410798 的原始響應到: real_estate_articles\logs\article_410798_response.html
+2025-04-19 12:13:07,732 - ERROR - 文章 410798 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:08,490 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410804
+2025-04-19 12:13:08,502 - INFO - 文章 410804 請求狀態碼: 200
+2025-04-19 12:13:08,503 - INFO - 文章 410804 響應內容長度: 129
+2025-04-19 12:13:08,504 - INFO - 已保存文章 410804 的原始響應到: real_estate_articles\logs\article_410804_response.html
+2025-04-19 12:13:08,506 - ERROR - 文章 410804 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:08,551 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410803
+2025-04-19 12:13:08,564 - INFO - 文章 410803 請求狀態碼: 200
+2025-04-19 12:13:08,565 - INFO - 文章 410803 響應內容長度: 129
+2025-04-19 12:13:08,567 - INFO - 已保存文章 410803 的原始響應到: real_estate_articles\logs\article_410803_response.html
+2025-04-19 12:13:08,569 - ERROR - 文章 410803 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:09,093 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410800
+2025-04-19 12:13:09,105 - INFO - 文章 410800 請求狀態碼: 200
+2025-04-19 12:13:09,105 - INFO - 文章 410800 響應內容長度: 129
+2025-04-19 12:13:09,107 - INFO - 已保存文章 410800 的原始響應到: real_estate_articles\logs\article_410800_response.html
+2025-04-19 12:13:09,108 - ERROR - 文章 410800 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:09,109 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410807
+2025-04-19 12:13:09,122 - INFO - 文章 410807 請求狀態碼: 200
+2025-04-19 12:13:09,123 - INFO - 文章 410807 響應內容長度: 129
+2025-04-19 12:13:09,125 - INFO - 已保存文章 410807 的原始響應到: real_estate_articles\logs\article_410807_response.html
+2025-04-19 12:13:09,126 - ERROR - 文章 410807 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:09,442 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410802
+2025-04-19 12:13:09,454 - INFO - 文章 410802 請求狀態碼: 200
+2025-04-19 12:13:09,455 - INFO - 文章 410802 響應內容長度: 129
+2025-04-19 12:13:09,457 - INFO - 已保存文章 410802 的原始響應到: real_estate_articles\logs\article_410802_response.html
+2025-04-19 12:13:09,459 - ERROR - 文章 410802 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:09,461 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410809
+2025-04-19 12:13:09,476 - INFO - 文章 410809 請求狀態碼: 200
+2025-04-19 12:13:09,478 - INFO - 文章 410809 響應內容長度: 129
+2025-04-19 12:13:09,480 - INFO - 已保存文章 410809 的原始響應到: real_estate_articles\logs\article_410809_response.html
+2025-04-19 12:13:09,481 - ERROR - 文章 410809 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:09,488 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410806
+2025-04-19 12:13:09,501 - INFO - 文章 410806 請求狀態碼: 200
+2025-04-19 12:13:09,502 - INFO - 文章 410806 響應內容長度: 129
+2025-04-19 12:13:09,504 - INFO - 已保存文章 410806 的原始響應到: real_estate_articles\logs\article_410806_response.html
+2025-04-19 12:13:09,505 - ERROR - 文章 410806 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:09,575 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410805
+2025-04-19 12:13:09,593 - INFO - 文章 410805 請求狀態碼: 200
+2025-04-19 12:13:09,594 - INFO - 文章 410805 響應內容長度: 129
+2025-04-19 12:13:09,596 - INFO - 已保存文章 410805 的原始響應到: real_estate_articles\logs\article_410805_response.html
+2025-04-19 12:13:09,597 - ERROR - 文章 410805 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:10,322 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410811
+2025-04-19 12:13:10,333 - INFO - 文章 410811 請求狀態碼: 200
+2025-04-19 12:13:10,334 - INFO - 文章 410811 響應內容長度: 129
+2025-04-19 12:13:10,335 - INFO - 已保存文章 410811 的原始響應到: real_estate_articles\logs\article_410811_response.html
+2025-04-19 12:13:10,337 - ERROR - 文章 410811 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:10,413 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410812
+2025-04-19 12:13:10,425 - INFO - 文章 410812 請求狀態碼: 200
+2025-04-19 12:13:10,426 - INFO - 文章 410812 響應內容長度: 129
+2025-04-19 12:13:10,429 - INFO - 已保存文章 410812 的原始響應到: real_estate_articles\logs\article_410812_response.html
+2025-04-19 12:13:10,430 - ERROR - 文章 410812 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:10,859 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410808
+2025-04-19 12:13:10,875 - INFO - 文章 410808 請求狀態碼: 200
+2025-04-19 12:13:10,876 - INFO - 文章 410808 響應內容長度: 129
+2025-04-19 12:13:10,879 - INFO - 已保存文章 410808 的原始響應到: real_estate_articles\logs\article_410808_response.html
+2025-04-19 12:13:10,881 - ERROR - 文章 410808 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:10,883 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410815
+2025-04-19 12:13:10,895 - INFO - 文章 410815 請求狀態碼: 200
+2025-04-19 12:13:10,896 - INFO - 文章 410815 響應內容長度: 129
+2025-04-19 12:13:10,898 - INFO - 已保存文章 410815 的原始響應到: real_estate_articles\logs\article_410815_response.html
+2025-04-19 12:13:10,900 - ERROR - 文章 410815 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:11,347 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410810
+2025-04-19 12:13:11,348 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410813
+2025-04-19 12:13:11,360 - INFO - 文章 410810 請求狀態碼: 200
+2025-04-19 12:13:11,361 - INFO - 文章 410810 響應內容長度: 129
+2025-04-19 12:13:11,361 - INFO - 文章 410813 請求狀態碼: 200
+2025-04-19 12:13:11,363 - INFO - 已保存文章 410810 的原始響應到: real_estate_articles\logs\article_410810_response.html
+2025-04-19 12:13:11,364 - INFO - 文章 410813 響應內容長度: 129
+2025-04-19 12:13:11,365 - ERROR - 文章 410810 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:11,368 - INFO - 已保存文章 410813 的原始響應到: real_estate_articles\logs\article_410813_response.html
+2025-04-19 12:13:11,369 - ERROR - 文章 410813 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:11,560 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410814
+2025-04-19 12:13:11,580 - INFO - 文章 410814 請求狀態碼: 200
+2025-04-19 12:13:11,581 - INFO - 文章 410814 響應內容長度: 129
+2025-04-19 12:13:11,584 - INFO - 已保存文章 410814 的原始響應到: real_estate_articles\logs\article_410814_response.html
+2025-04-19 12:13:11,585 - ERROR - 文章 410814 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:12,024 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410821
+2025-04-19 12:13:12,036 - INFO - 文章 410821 請求狀態碼: 200
+2025-04-19 12:13:12,036 - INFO - 文章 410821 響應內容長度: 129
+2025-04-19 12:13:12,039 - INFO - 已保存文章 410821 的原始響應到: real_estate_articles\logs\article_410821_response.html
+2025-04-19 12:13:12,040 - ERROR - 文章 410821 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:12,263 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410817
+2025-04-19 12:13:12,302 - INFO - 文章 410817 請求狀態碼: 200
+2025-04-19 12:13:12,303 - INFO - 文章 410817 響應內容長度: 30822
+2025-04-19 12:13:12,305 - INFO - 已保存文章 410817 的原始響應到: real_estate_articles\logs\article_410817_response.html
+2025-04-19 12:13:12,337 - INFO - 文章 410817 找到 8 個資料列
+2025-04-19 12:13:12,338 - INFO - 文章 410817 成功解析 2 個欄位
+2025-04-19 12:13:12,338 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410820
+2025-04-19 12:13:12,339 - WARNING - 文章 410817 作者不符合目標: None
+2025-04-19 12:13:12,343 - ERROR - 文章 410817 解析失敗或不符合條件
+2025-04-19 12:13:12,354 - INFO - 文章 410820 請求狀態碼: 200
+2025-04-19 12:13:12,355 - INFO - 文章 410820 響應內容長度: 129
+2025-04-19 12:13:12,356 - INFO - 已保存文章 410820 的原始響應到: real_estate_articles\logs\article_410820_response.html
+2025-04-19 12:13:12,358 - ERROR - 文章 410820 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:12,702 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410816
+2025-04-19 12:13:12,714 - INFO - 文章 410816 請求狀態碼: 200
+2025-04-19 12:13:12,715 - INFO - 文章 410816 響應內容長度: 129
+2025-04-19 12:13:12,716 - INFO - 已保存文章 410816 的原始響應到: real_estate_articles\logs\article_410816_response.html
+2025-04-19 12:13:12,717 - ERROR - 文章 410816 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:12,718 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410825
+2025-04-19 12:13:12,731 - INFO - 文章 410825 請求狀態碼: 200
+2025-04-19 12:13:12,732 - INFO - 文章 410825 響應內容長度: 129
+2025-04-19 12:13:12,734 - INFO - 已保存文章 410825 的原始響應到: real_estate_articles\logs\article_410825_response.html
+2025-04-19 12:13:12,735 - ERROR - 文章 410825 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:12,890 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410823
+2025-04-19 12:13:12,907 - INFO - 文章 410823 請求狀態碼: 200
+2025-04-19 12:13:12,908 - INFO - 文章 410823 響應內容長度: 129
+2025-04-19 12:13:12,910 - INFO - 已保存文章 410823 的原始響應到: real_estate_articles\logs\article_410823_response.html
+2025-04-19 12:13:12,911 - ERROR - 文章 410823 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:13,212 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410822
+2025-04-19 12:13:13,225 - INFO - 文章 410822 請求狀態碼: 200
+2025-04-19 12:13:13,226 - INFO - 文章 410822 響應內容長度: 129
+2025-04-19 12:13:13,230 - INFO - 已保存文章 410822 的原始響應到: real_estate_articles\logs\article_410822_response.html
+2025-04-19 12:13:13,232 - ERROR - 文章 410822 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:13,249 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410824
+2025-04-19 12:13:13,276 - INFO - 文章 410824 請求狀態碼: 200
+2025-04-19 12:13:13,277 - INFO - 文章 410824 響應內容長度: 129
+2025-04-19 12:13:13,279 - INFO - 已保存文章 410824 的原始響應到: real_estate_articles\logs\article_410824_response.html
+2025-04-19 12:13:13,282 - ERROR - 文章 410824 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:13,830 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410828
+2025-04-19 12:13:13,844 - INFO - 文章 410828 請求狀態碼: 200
+2025-04-19 12:13:13,844 - INFO - 文章 410828 響應內容長度: 129
+2025-04-19 12:13:13,846 - INFO - 已保存文章 410828 的原始響應到: real_estate_articles\logs\article_410828_response.html
+2025-04-19 12:13:13,848 - ERROR - 文章 410828 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:13,988 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410829
+2025-04-19 12:13:14,002 - INFO - 文章 410829 請求狀態碼: 200
+2025-04-19 12:13:14,002 - INFO - 文章 410829 響應內容長度: 129
+2025-04-19 12:13:14,004 - INFO - 已保存文章 410829 的原始響應到: real_estate_articles\logs\article_410829_response.html
+2025-04-19 12:13:14,005 - ERROR - 文章 410829 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:14,328 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410827
+2025-04-19 12:13:14,340 - INFO - 文章 410827 請求狀態碼: 200
+2025-04-19 12:13:14,341 - INFO - 文章 410827 響應內容長度: 129
+2025-04-19 12:13:14,342 - INFO - 已保存文章 410827 的原始響應到: real_estate_articles\logs\article_410827_response.html
+2025-04-19 12:13:14,343 - ERROR - 文章 410827 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:14,383 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410826
+2025-04-19 12:13:14,395 - INFO - 文章 410826 請求狀態碼: 200
+2025-04-19 12:13:14,396 - INFO - 文章 410826 響應內容長度: 129
+2025-04-19 12:13:14,398 - INFO - 已保存文章 410826 的原始響應到: real_estate_articles\logs\article_410826_response.html
+2025-04-19 12:13:14,399 - ERROR - 文章 410826 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:14,400 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410833
+2025-04-19 12:13:14,415 - INFO - 文章 410833 請求狀態碼: 200
+2025-04-19 12:13:14,416 - INFO - 文章 410833 響應內容長度: 129
+2025-04-19 12:13:14,417 - INFO - 已保存文章 410833 的原始響應到: real_estate_articles\logs\article_410833_response.html
+2025-04-19 12:13:14,418 - ERROR - 文章 410833 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:14,582 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410832
+2025-04-19 12:13:14,594 - INFO - 文章 410832 請求狀態碼: 200
+2025-04-19 12:13:14,596 - INFO - 文章 410832 響應內容長度: 129
+2025-04-19 12:13:14,598 - INFO - 已保存文章 410832 的原始響應到: real_estate_articles\logs\article_410832_response.html
+2025-04-19 12:13:14,599 - ERROR - 文章 410832 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:15,036 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410831
+2025-04-19 12:13:15,049 - INFO - 文章 410831 請求狀態碼: 200
+2025-04-19 12:13:15,050 - INFO - 文章 410831 響應內容長度: 129
+2025-04-19 12:13:15,052 - INFO - 已保存文章 410831 的原始響應到: real_estate_articles\logs\article_410831_response.html
+2025-04-19 12:13:15,054 - ERROR - 文章 410831 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:15,078 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410830
+2025-04-19 12:13:15,090 - INFO - 文章 410830 請求狀態碼: 200
+2025-04-19 12:13:15,092 - INFO - 文章 410830 響應內容長度: 129
+2025-04-19 12:13:15,094 - INFO - 已保存文章 410830 的原始響應到: real_estate_articles\logs\article_410830_response.html
+2025-04-19 12:13:15,096 - ERROR - 文章 410830 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:15,504 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410837
+2025-04-19 12:13:15,516 - INFO - 文章 410837 請求狀態碼: 200
+2025-04-19 12:13:15,517 - INFO - 文章 410837 響應內容長度: 129
+2025-04-19 12:13:15,519 - INFO - 已保存文章 410837 的原始響應到: real_estate_articles\logs\article_410837_response.html
+2025-04-19 12:13:15,520 - ERROR - 文章 410837 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:15,774 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410836
+2025-04-19 12:13:15,787 - INFO - 文章 410836 請求狀態碼: 200
+2025-04-19 12:13:15,788 - INFO - 文章 410836 響應內容長度: 129
+2025-04-19 12:13:15,790 - INFO - 已保存文章 410836 的原始響應到: real_estate_articles\logs\article_410836_response.html
+2025-04-19 12:13:15,791 - ERROR - 文章 410836 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:15,930 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410835
+2025-04-19 12:13:15,943 - INFO - 文章 410835 請求狀態碼: 200
+2025-04-19 12:13:15,944 - INFO - 文章 410835 響應內容長度: 129
+2025-04-19 12:13:15,945 - INFO - 已保存文章 410835 的原始響應到: real_estate_articles\logs\article_410835_response.html
+2025-04-19 12:13:15,946 - ERROR - 文章 410835 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:16,302 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410834
+2025-04-19 12:13:16,314 - INFO - 文章 410834 請求狀態碼: 200
+2025-04-19 12:13:16,315 - INFO - 文章 410834 響應內容長度: 129
+2025-04-19 12:13:16,316 - INFO - 已保存文章 410834 的原始響應到: real_estate_articles\logs\article_410834_response.html
+2025-04-19 12:13:16,317 - ERROR - 文章 410834 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:16,318 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410841
+2025-04-19 12:13:16,333 - INFO - 文章 410841 請求狀態碼: 200
+2025-04-19 12:13:16,334 - INFO - 文章 410841 響應內容長度: 129
+2025-04-19 12:13:16,336 - INFO - 已保存文章 410841 的原始響應到: real_estate_articles\logs\article_410841_response.html
+2025-04-19 12:13:16,337 - ERROR - 文章 410841 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:16,569 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410840
+2025-04-19 12:13:16,582 - INFO - 文章 410840 請求狀態碼: 200
+2025-04-19 12:13:16,583 - INFO - 文章 410840 響應內容長度: 129
+2025-04-19 12:13:16,585 - INFO - 已保存文章 410840 的原始響應到: real_estate_articles\logs\article_410840_response.html
+2025-04-19 12:13:16,587 - ERROR - 文章 410840 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:16,593 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410839
+2025-04-19 12:13:16,606 - INFO - 文章 410839 請求狀態碼: 200
+2025-04-19 12:13:16,607 - INFO - 文章 410839 響應內容長度: 129
+2025-04-19 12:13:16,609 - INFO - 已保存文章 410839 的原始響應到: real_estate_articles\logs\article_410839_response.html
+2025-04-19 12:13:16,611 - ERROR - 文章 410839 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:16,814 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410838
+2025-04-19 12:13:16,827 - INFO - 文章 410838 請求狀態碼: 200
+2025-04-19 12:13:16,828 - INFO - 文章 410838 響應內容長度: 129
+2025-04-19 12:13:16,830 - INFO - 已保存文章 410838 的原始響應到: real_estate_articles\logs\article_410838_response.html
+2025-04-19 12:13:16,831 - ERROR - 文章 410838 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:17,275 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410847
+2025-04-19 12:13:17,308 - INFO - 文章 410847 請求狀態碼: 200
+2025-04-19 12:13:17,309 - INFO - 文章 410847 響應內容長度: 29605
+2025-04-19 12:13:17,311 - INFO - 已保存文章 410847 的原始響應到: real_estate_articles\logs\article_410847_response.html
+2025-04-19 12:13:17,340 - INFO - 文章 410847 找到 7 個資料列
+2025-04-19 12:13:17,342 - INFO - 文章 410847 成功解析 2 個欄位
+2025-04-19 12:13:17,343 - WARNING - 文章 410847 作者不符合目標: None
+2025-04-19 12:13:17,344 - ERROR - 文章 410847 解析失敗或不符合條件
+2025-04-19 12:13:17,358 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410844
+2025-04-19 12:13:17,395 - INFO - 文章 410844 請求狀態碼: 200
+2025-04-19 12:13:17,395 - INFO - 文章 410844 響應內容長度: 47434
+2025-04-19 12:13:17,397 - INFO - 已保存文章 410844 的原始響應到: real_estate_articles\logs\article_410844_response.html
+2025-04-19 12:13:17,441 - INFO - 從 meta 標籤找到文章資訊
+2025-04-19 12:13:17,449 - INFO - 文章 410844 找到 12 個資料列
+2025-04-19 12:13:17,451 - INFO - 文章 410844 成功解析 6 個欄位
+2025-04-19 12:13:17,452 - WARNING - 文章 410844 作者不符合目標: 高點建國醫護網
+2025-04-19 12:13:17,453 - ERROR - 文章 410844 解析失敗或不符合條件
+2025-04-19 12:13:17,587 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410843
+2025-04-19 12:13:17,600 - INFO - 文章 410843 請求狀態碼: 200
+2025-04-19 12:13:17,601 - INFO - 文章 410843 響應內容長度: 129
+2025-04-19 12:13:17,602 - INFO - 已保存文章 410843 的原始響應到: real_estate_articles\logs\article_410843_response.html
+2025-04-19 12:13:17,603 - ERROR - 文章 410843 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:17,894 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410842
+2025-04-19 12:13:17,906 - INFO - 文章 410842 請求狀態碼: 200
+2025-04-19 12:13:17,907 - INFO - 文章 410842 響應內容長度: 129
+2025-04-19 12:13:17,908 - INFO - 已保存文章 410842 的原始響應到: real_estate_articles\logs\article_410842_response.html
+2025-04-19 12:13:17,909 - ERROR - 文章 410842 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:17,910 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410851
+2025-04-19 12:13:17,941 - INFO - 文章 410851 請求狀態碼: 200
+2025-04-19 12:13:17,942 - INFO - 文章 410851 響應內容長度: 29757
+2025-04-19 12:13:17,943 - INFO - 已保存文章 410851 的原始響應到: real_estate_articles\logs\article_410851_response.html
+2025-04-19 12:13:17,968 - INFO - 文章 410851 找到 8 個資料列
+2025-04-19 12:13:17,970 - INFO - 文章 410851 成功解析 2 個欄位
+2025-04-19 12:13:17,970 - WARNING - 文章 410851 作者不符合目標: None
+2025-04-19 12:13:17,972 - ERROR - 文章 410851 解析失敗或不符合條件
+2025-04-19 12:13:18,216 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410850
+2025-04-19 12:13:18,270 - INFO - 文章 410850 請求狀態碼: 200
+2025-04-19 12:13:18,271 - INFO - 文章 410850 響應內容長度: 29754
+2025-04-19 12:13:18,273 - INFO - 已保存文章 410850 的原始響應到: real_estate_articles\logs\article_410850_response.html
+2025-04-19 12:13:18,303 - INFO - 文章 410850 找到 8 個資料列
+2025-04-19 12:13:18,305 - INFO - 文章 410850 成功解析 2 個欄位
+2025-04-19 12:13:18,306 - WARNING - 文章 410850 作者不符合目標: None
+2025-04-19 12:13:18,306 - ERROR - 文章 410850 解析失敗或不符合條件
+2025-04-19 12:13:18,357 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410849
+2025-04-19 12:13:18,399 - INFO - 文章 410849 請求狀態碼: 200
+2025-04-19 12:13:18,400 - INFO - 文章 410849 響應內容長度: 29566
+2025-04-19 12:13:18,402 - INFO - 已保存文章 410849 的原始響應到: real_estate_articles\logs\article_410849_response.html
+2025-04-19 12:13:18,433 - INFO - 文章 410849 找到 8 個資料列
+2025-04-19 12:13:18,435 - INFO - 文章 410849 成功解析 2 個欄位
+2025-04-19 12:13:18,436 - WARNING - 文章 410849 作者不符合目標: None
+2025-04-19 12:13:18,437 - ERROR - 文章 410849 解析失敗或不符合條件
+2025-04-19 12:13:18,501 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410848
+2025-04-19 12:13:18,534 - INFO - 文章 410848 請求狀態碼: 200
+2025-04-19 12:13:18,535 - INFO - 文章 410848 響應內容長度: 29607
+2025-04-19 12:13:18,538 - INFO - 已保存文章 410848 的原始響應到: real_estate_articles\logs\article_410848_response.html
+2025-04-19 12:13:18,568 - INFO - 文章 410848 找到 8 個資料列
+2025-04-19 12:13:18,570 - INFO - 文章 410848 成功解析 2 個欄位
+2025-04-19 12:13:18,571 - WARNING - 文章 410848 作者不符合目標: None
+2025-04-19 12:13:18,572 - ERROR - 文章 410848 解析失敗或不符合條件
+2025-04-19 12:13:19,049 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410855
+2025-04-19 12:13:19,083 - INFO - 文章 410855 請求狀態碼: 200
+2025-04-19 12:13:19,084 - INFO - 文章 410855 響應內容長度: 29560
+2025-04-19 12:13:19,086 - INFO - 已保存文章 410855 的原始響應到: real_estate_articles\logs\article_410855_response.html
+2025-04-19 12:13:19,114 - INFO - 文章 410855 找到 8 個資料列
+2025-04-19 12:13:19,116 - INFO - 文章 410855 成功解析 2 個欄位
+2025-04-19 12:13:19,117 - WARNING - 文章 410855 作者不符合目標: None
+2025-04-19 12:13:19,117 - ERROR - 文章 410855 解析失敗或不符合條件
+2025-04-19 12:13:19,129 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410854
+2025-04-19 12:13:19,159 - INFO - 文章 410854 請求狀態碼: 200
+2025-04-19 12:13:19,160 - INFO - 文章 410854 響應內容長度: 29606
+2025-04-19 12:13:19,161 - INFO - 已保存文章 410854 的原始響應到: real_estate_articles\logs\article_410854_response.html
+2025-04-19 12:13:19,188 - INFO - 文章 410854 找到 8 個資料列
+2025-04-19 12:13:19,190 - INFO - 文章 410854 成功解析 2 個欄位
+2025-04-19 12:13:19,191 - WARNING - 文章 410854 作者不符合目標: None
+2025-04-19 12:13:19,192 - ERROR - 文章 410854 解析失敗或不符合條件
+2025-04-19 12:13:19,532 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410853
+2025-04-19 12:13:19,565 - INFO - 文章 410853 請求狀態碼: 200
+2025-04-19 12:13:19,566 - INFO - 文章 410853 響應內容長度: 29599
+2025-04-19 12:13:19,568 - INFO - 已保存文章 410853 的原始響應到: real_estate_articles\logs\article_410853_response.html
+2025-04-19 12:13:19,595 - INFO - 文章 410853 找到 7 個資料列
+2025-04-19 12:13:19,597 - INFO - 文章 410853 成功解析 2 個欄位
+2025-04-19 12:13:19,598 - WARNING - 文章 410853 作者不符合目標: None
+2025-04-19 12:13:19,598 - ERROR - 文章 410853 解析失敗或不符合條件
+2025-04-19 12:13:19,678 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410852
+2025-04-19 12:13:19,708 - INFO - 文章 410852 請求狀態碼: 200
+2025-04-19 12:13:19,709 - INFO - 文章 410852 響應內容長度: 29381
+2025-04-19 12:13:19,710 - INFO - 已保存文章 410852 的原始響應到: real_estate_articles\logs\article_410852_response.html
+2025-04-19 12:13:19,744 - INFO - 文章 410852 找到 7 個資料列
+2025-04-19 12:13:19,747 - INFO - 文章 410852 成功解析 2 個欄位
+2025-04-19 12:13:19,747 - WARNING - 文章 410852 作者不符合目標: None
+2025-04-19 12:13:19,748 - ERROR - 文章 410852 解析失敗或不符合條件
+2025-04-19 12:13:19,748 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410859
+2025-04-19 12:13:19,781 - INFO - 文章 410859 請求狀態碼: 200
+2025-04-19 12:13:19,782 - INFO - 文章 410859 響應內容長度: 29659
+2025-04-19 12:13:19,783 - INFO - 已保存文章 410859 的原始響應到: real_estate_articles\logs\article_410859_response.html
+2025-04-19 12:13:19,812 - INFO - 文章 410859 找到 7 個資料列
+2025-04-19 12:13:19,814 - INFO - 文章 410859 成功解析 2 個欄位
+2025-04-19 12:13:19,814 - WARNING - 文章 410859 作者不符合目標: None
+2025-04-19 12:13:19,815 - ERROR - 文章 410859 解析失敗或不符合條件
+2025-04-19 12:13:19,913 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410858
+2025-04-19 12:13:19,946 - INFO - 文章 410858 請求狀態碼: 200
+2025-04-19 12:13:19,947 - INFO - 文章 410858 響應內容長度: 29553
+2025-04-19 12:13:19,950 - INFO - 已保存文章 410858 的原始響應到: real_estate_articles\logs\article_410858_response.html
+2025-04-19 12:13:19,988 - INFO - 文章 410858 找到 7 個資料列
+2025-04-19 12:13:19,990 - INFO - 文章 410858 成功解析 2 個欄位
+2025-04-19 12:13:19,991 - WARNING - 文章 410858 作者不符合目標: None
+2025-04-19 12:13:19,992 - ERROR - 文章 410858 解析失敗或不符合條件
+2025-04-19 12:13:20,287 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410856
+2025-04-19 12:13:20,319 - INFO - 文章 410856 請求狀態碼: 200
+2025-04-19 12:13:20,320 - INFO - 文章 410856 響應內容長度: 29493
+2025-04-19 12:13:20,322 - INFO - 已保存文章 410856 的原始響應到: real_estate_articles\logs\article_410856_response.html
+2025-04-19 12:13:20,355 - INFO - 文章 410856 找到 8 個資料列
+2025-04-19 12:13:20,356 - INFO - 文章 410856 成功解析 2 個欄位
+2025-04-19 12:13:20,357 - WARNING - 文章 410856 作者不符合目標: None
+2025-04-19 12:13:20,358 - ERROR - 文章 410856 解析失敗或不符合條件
+2025-04-19 12:13:20,403 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410857
+2025-04-19 12:13:20,527 - INFO - 文章 410857 請求狀態碼: 200
+2025-04-19 12:13:20,528 - INFO - 文章 410857 響應內容長度: 29718
+2025-04-19 12:13:20,531 - INFO - 已保存文章 410857 的原始響應到: real_estate_articles\logs\article_410857_response.html
+2025-04-19 12:13:20,559 - INFO - 文章 410857 找到 8 個資料列
+2025-04-19 12:13:20,562 - INFO - 文章 410857 成功解析 2 個欄位
+2025-04-19 12:13:20,562 - WARNING - 文章 410857 作者不符合目標: None
+2025-04-19 12:13:20,563 - ERROR - 文章 410857 解析失敗或不符合條件
+2025-04-19 12:13:20,801 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410862
+2025-04-19 12:13:20,833 - INFO - 文章 410862 請求狀態碼: 200
+2025-04-19 12:13:20,834 - INFO - 文章 410862 響應內容長度: 29556
+2025-04-19 12:13:20,836 - INFO - 已保存文章 410862 的原始響應到: real_estate_articles\logs\article_410862_response.html
+2025-04-19 12:13:20,864 - INFO - 文章 410862 找到 8 個資料列
+2025-04-19 12:13:20,866 - INFO - 文章 410862 成功解析 2 個欄位
+2025-04-19 12:13:20,867 - WARNING - 文章 410862 作者不符合目標: None
+2025-04-19 12:13:20,867 - ERROR - 文章 410862 解析失敗或不符合條件
+2025-04-19 12:13:21,060 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410863
+2025-04-19 12:13:21,091 - INFO - 文章 410863 請求狀態碼: 200
+2025-04-19 12:13:21,092 - INFO - 文章 410863 響應內容長度: 29496
+2025-04-19 12:13:21,094 - INFO - 已保存文章 410863 的原始響應到: real_estate_articles\logs\article_410863_response.html
+2025-04-19 12:13:21,120 - INFO - 文章 410863 找到 8 個資料列
+2025-04-19 12:13:21,122 - INFO - 文章 410863 成功解析 2 個欄位
+2025-04-19 12:13:21,122 - WARNING - 文章 410863 作者不符合目標: None
+2025-04-19 12:13:21,124 - ERROR - 文章 410863 解析失敗或不符合條件
+2025-04-19 12:13:21,401 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410861
+2025-04-19 12:13:21,409 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410860
+2025-04-19 12:13:21,433 - INFO - 文章 410861 請求狀態碼: 200
+2025-04-19 12:13:21,434 - INFO - 文章 410861 響應內容長度: 29585
+2025-04-19 12:13:21,436 - INFO - 已保存文章 410861 的原始響應到: real_estate_articles\logs\article_410861_response.html
+2025-04-19 12:13:21,463 - INFO - 文章 410861 找到 8 個資料列
+2025-04-19 12:13:21,465 - INFO - 文章 410861 成功解析 2 個欄位
+2025-04-19 12:13:21,466 - INFO - 文章 410860 請求狀態碼: 200
+2025-04-19 12:13:21,467 - WARNING - 文章 410861 作者不符合目標: None
+2025-04-19 12:13:21,469 - INFO - 文章 410860 響應內容長度: 29738
+2025-04-19 12:13:21,469 - ERROR - 文章 410861 解析失敗或不符合條件
+2025-04-19 12:13:21,472 - INFO - 已保存文章 410860 的原始響應到: real_estate_articles\logs\article_410860_response.html
+2025-04-19 12:13:21,473 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410866
+2025-04-19 12:13:21,502 - INFO - 文章 410860 找到 8 個資料列
+2025-04-19 12:13:21,506 - INFO - 文章 410860 成功解析 2 個欄位
+2025-04-19 12:13:21,508 - WARNING - 文章 410860 作者不符合目標: None
+2025-04-19 12:13:21,509 - ERROR - 文章 410860 解析失敗或不符合條件
+2025-04-19 12:13:21,535 - INFO - 文章 410866 請求狀態碼: 200
+2025-04-19 12:13:21,536 - INFO - 文章 410866 響應內容長度: 29467
+2025-04-19 12:13:21,539 - INFO - 已保存文章 410866 的原始響應到: real_estate_articles\logs\article_410866_response.html
+2025-04-19 12:13:21,574 - INFO - 文章 410866 找到 7 個資料列
+2025-04-19 12:13:21,575 - INFO - 文章 410866 成功解析 2 個欄位
+2025-04-19 12:13:21,577 - WARNING - 文章 410866 作者不符合目標: None
+2025-04-19 12:13:21,577 - ERROR - 文章 410866 解析失敗或不符合條件
+2025-04-19 12:13:22,101 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410864
+2025-04-19 12:13:22,131 - INFO - 文章 410864 請求狀態碼: 200
+2025-04-19 12:13:22,132 - INFO - 文章 410864 響應內容長度: 29622
+2025-04-19 12:13:22,133 - INFO - 已保存文章 410864 的原始響應到: real_estate_articles\logs\article_410864_response.html
+2025-04-19 12:13:22,141 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410865
+2025-04-19 12:13:22,170 - INFO - 文章 410864 找到 8 個資料列
+2025-04-19 12:13:22,174 - INFO - 文章 410864 成功解析 2 個欄位
+2025-04-19 12:13:22,176 - WARNING - 文章 410864 作者不符合目標: None
+2025-04-19 12:13:22,177 - ERROR - 文章 410864 解析失敗或不符合條件
+2025-04-19 12:13:22,201 - INFO - 文章 410865 請求狀態碼: 200
+2025-04-19 12:13:22,203 - INFO - 文章 410865 響應內容長度: 29420
+2025-04-19 12:13:22,206 - INFO - 已保存文章 410865 的原始響應到: real_estate_articles\logs\article_410865_response.html
+2025-04-19 12:13:22,245 - INFO - 文章 410865 找到 7 個資料列
+2025-04-19 12:13:22,247 - INFO - 文章 410865 成功解析 2 個欄位
+2025-04-19 12:13:22,248 - WARNING - 文章 410865 作者不符合目標: None
+2025-04-19 12:13:22,250 - ERROR - 文章 410865 解析失敗或不符合條件
+2025-04-19 12:13:22,768 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410869
+2025-04-19 12:13:22,804 - INFO - 文章 410869 請求狀態碼: 200
+2025-04-19 12:13:22,805 - INFO - 文章 410869 響應內容長度: 29902
+2025-04-19 12:13:22,807 - INFO - 已保存文章 410869 的原始響應到: real_estate_articles\logs\article_410869_response.html
+2025-04-19 12:13:22,834 - INFO - 文章 410869 找到 8 個資料列
+2025-04-19 12:13:22,835 - INFO - 文章 410869 成功解析 2 個欄位
+2025-04-19 12:13:22,836 - WARNING - 文章 410869 作者不符合目標: None
+2025-04-19 12:13:22,837 - ERROR - 文章 410869 解析失敗或不符合條件
+2025-04-19 12:13:22,874 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410870
+2025-04-19 12:13:22,962 - INFO - 文章 410870 請求狀態碼: 200
+2025-04-19 12:13:22,962 - INFO - 文章 410870 響應內容長度: 29614
+2025-04-19 12:13:22,964 - INFO - 已保存文章 410870 的原始響應到: real_estate_articles\logs\article_410870_response.html
+2025-04-19 12:13:22,990 - INFO - 文章 410870 找到 7 個資料列
+2025-04-19 12:13:22,992 - INFO - 文章 410870 成功解析 2 個欄位
+2025-04-19 12:13:22,993 - WARNING - 文章 410870 作者不符合目標: None
+2025-04-19 12:13:22,993 - ERROR - 文章 410870 解析失敗或不符合條件
+2025-04-19 12:13:23,130 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410867
+2025-04-19 12:13:23,163 - INFO - 文章 410867 請求狀態碼: 200
+2025-04-19 12:13:23,165 - INFO - 文章 410867 響應內容長度: 29582
+2025-04-19 12:13:23,167 - INFO - 已保存文章 410867 的原始響應到: real_estate_articles\logs\article_410867_response.html
+2025-04-19 12:13:23,244 - INFO - 文章 410867 找到 8 個資料列
+2025-04-19 12:13:23,248 - INFO - 文章 410867 成功解析 2 個欄位
+2025-04-19 12:13:23,249 - WARNING - 文章 410867 作者不符合目標: None
+2025-04-19 12:13:23,252 - ERROR - 文章 410867 解析失敗或不符合條件
+2025-04-19 12:13:23,253 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410873
+2025-04-19 12:13:23,265 - INFO - 文章 410873 請求狀態碼: 200
+2025-04-19 12:13:23,266 - INFO - 文章 410873 響應內容長度: 129
+2025-04-19 12:13:23,269 - INFO - 已保存文章 410873 的原始響應到: real_estate_articles\logs\article_410873_response.html
+2025-04-19 12:13:23,271 - ERROR - 文章 410873 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:23,300 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410868
+2025-04-19 12:13:23,334 - INFO - 文章 410868 請求狀態碼: 200
+2025-04-19 12:13:23,335 - INFO - 文章 410868 響應內容長度: 29610
+2025-04-19 12:13:23,337 - INFO - 已保存文章 410868 的原始響應到: real_estate_articles\logs\article_410868_response.html
+2025-04-19 12:13:23,374 - INFO - 文章 410868 找到 8 個資料列
+2025-04-19 12:13:23,376 - INFO - 文章 410868 成功解析 2 個欄位
+2025-04-19 12:13:23,377 - WARNING - 文章 410868 作者不符合目標: None
+2025-04-19 12:13:23,378 - ERROR - 文章 410868 解析失敗或不符合條件
+2025-04-19 12:13:23,379 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410875
+2025-04-19 12:13:23,391 - INFO - 文章 410875 請求狀態碼: 200
+2025-04-19 12:13:23,392 - INFO - 文章 410875 響應內容長度: 129
+2025-04-19 12:13:23,394 - INFO - 已保存文章 410875 的原始響應到: real_estate_articles\logs\article_410875_response.html
+2025-04-19 12:13:23,395 - ERROR - 文章 410875 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:24,085 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410872
+2025-04-19 12:13:24,099 - INFO - 文章 410872 請求狀態碼: 200
+2025-04-19 12:13:24,100 - INFO - 文章 410872 響應內容長度: 129
+2025-04-19 12:13:24,101 - INFO - 已保存文章 410872 的原始響應到: real_estate_articles\logs\article_410872_response.html
+2025-04-19 12:13:24,102 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410871
+2025-04-19 12:13:24,102 - ERROR - 文章 410872 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:24,115 - INFO - 文章 410871 請求狀態碼: 200
+2025-04-19 12:13:24,116 - INFO - 文章 410871 響應內容長度: 129
+2025-04-19 12:13:24,118 - INFO - 已保存文章 410871 的原始響應到: real_estate_articles\logs\article_410871_response.html
+2025-04-19 12:13:24,119 - ERROR - 文章 410871 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:24,344 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410877
+2025-04-19 12:13:24,357 - INFO - 文章 410877 請求狀態碼: 200
+2025-04-19 12:13:24,358 - INFO - 文章 410877 響應內容長度: 129
+2025-04-19 12:13:24,359 - INFO - 已保存文章 410877 的原始響應到: real_estate_articles\logs\article_410877_response.html
+2025-04-19 12:13:24,361 - ERROR - 文章 410877 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:24,419 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410878
+2025-04-19 12:13:24,437 - INFO - 文章 410878 請求狀態碼: 200
+2025-04-19 12:13:24,439 - INFO - 文章 410878 響應內容長度: 129
+2025-04-19 12:13:24,440 - INFO - 已保存文章 410878 的原始響應到: real_estate_articles\logs\article_410878_response.html
+2025-04-19 12:13:24,442 - ERROR - 文章 410878 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:24,993 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410876
+2025-04-19 12:13:25,006 - INFO - 文章 410876 請求狀態碼: 200
+2025-04-19 12:13:25,008 - INFO - 文章 410876 響應內容長度: 129
+2025-04-19 12:13:25,010 - INFO - 已保存文章 410876 的原始響應到: real_estate_articles\logs\article_410876_response.html
+2025-04-19 12:13:25,011 - ERROR - 文章 410876 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:25,012 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410881
+2025-04-19 12:13:25,024 - INFO - 文章 410881 請求狀態碼: 200
+2025-04-19 12:13:25,025 - INFO - 文章 410881 響應內容長度: 129
+2025-04-19 12:13:25,027 - INFO - 已保存文章 410881 的原始響應到: real_estate_articles\logs\article_410881_response.html
+2025-04-19 12:13:25,028 - ERROR - 文章 410881 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:25,208 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410874
+2025-04-19 12:13:25,219 - INFO - 文章 410874 請求狀態碼: 200
+2025-04-19 12:13:25,220 - INFO - 文章 410874 響應內容長度: 129
+2025-04-19 12:13:25,221 - INFO - 已保存文章 410874 的原始響應到: real_estate_articles\logs\article_410874_response.html
+2025-04-19 12:13:25,222 - ERROR - 文章 410874 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:25,224 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410883
+2025-04-19 12:13:25,235 - INFO - 文章 410883 請求狀態碼: 200
+2025-04-19 12:13:25,235 - INFO - 文章 410883 響應內容長度: 129
+2025-04-19 12:13:25,237 - INFO - 已保存文章 410883 的原始響應到: real_estate_articles\logs\article_410883_response.html
+2025-04-19 12:13:25,238 - ERROR - 文章 410883 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:25,750 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410879
+2025-04-19 12:13:25,764 - INFO - 文章 410879 請求狀態碼: 200
+2025-04-19 12:13:25,765 - INFO - 文章 410879 響應內容長度: 129
+2025-04-19 12:13:25,767 - INFO - 已保存文章 410879 的原始響應到: real_estate_articles\logs\article_410879_response.html
+2025-04-19 12:13:25,768 - ERROR - 文章 410879 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:25,801 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410880
+2025-04-19 12:13:25,814 - INFO - 文章 410880 請求狀態碼: 200
+2025-04-19 12:13:25,814 - INFO - 文章 410880 響應內容長度: 129
+2025-04-19 12:13:25,816 - INFO - 已保存文章 410880 的原始響應到: real_estate_articles\logs\article_410880_response.html
+2025-04-19 12:13:25,817 - ERROR - 文章 410880 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:25,966 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410886
+2025-04-19 12:13:25,978 - INFO - 文章 410886 請求狀態碼: 200
+2025-04-19 12:13:25,979 - INFO - 文章 410886 響應內容長度: 129
+2025-04-19 12:13:25,980 - INFO - 已保存文章 410886 的原始響應到: real_estate_articles\logs\article_410886_response.html
+2025-04-19 12:13:25,981 - ERROR - 文章 410886 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:26,209 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410885
+2025-04-19 12:13:26,222 - INFO - 文章 410885 請求狀態碼: 200
+2025-04-19 12:13:26,223 - INFO - 文章 410885 響應內容長度: 129
+2025-04-19 12:13:26,225 - INFO - 已保存文章 410885 的原始響應到: real_estate_articles\logs\article_410885_response.html
+2025-04-19 12:13:26,227 - ERROR - 文章 410885 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:26,819 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410882
+2025-04-19 12:13:26,832 - INFO - 文章 410882 請求狀態碼: 200
+2025-04-19 12:13:26,833 - INFO - 文章 410882 響應內容長度: 129
+2025-04-19 12:13:26,835 - INFO - 已保存文章 410882 的原始響應到: real_estate_articles\logs\article_410882_response.html
+2025-04-19 12:13:26,836 - ERROR - 文章 410882 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:26,837 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410889
+2025-04-19 12:13:26,848 - INFO - 文章 410889 請求狀態碼: 200
+2025-04-19 12:13:26,848 - INFO - 文章 410889 響應內容長度: 129
+2025-04-19 12:13:26,850 - INFO - 已保存文章 410889 的原始響應到: real_estate_articles\logs\article_410889_response.html
+2025-04-19 12:13:26,851 - ERROR - 文章 410889 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:27,078 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410884
+2025-04-19 12:13:27,090 - INFO - 文章 410884 請求狀態碼: 200
+2025-04-19 12:13:27,091 - INFO - 文章 410884 響應內容長度: 129
+2025-04-19 12:13:27,094 - INFO - 已保存文章 410884 的原始響應到: real_estate_articles\logs\article_410884_response.html
+2025-04-19 12:13:27,096 - ERROR - 文章 410884 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:27,097 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410891
+2025-04-19 12:13:27,109 - INFO - 文章 410891 請求狀態碼: 200
+2025-04-19 12:13:27,110 - INFO - 文章 410891 響應內容長度: 129
+2025-04-19 12:13:27,111 - INFO - 已保存文章 410891 的原始響應到: real_estate_articles\logs\article_410891_response.html
+2025-04-19 12:13:27,112 - ERROR - 文章 410891 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:27,608 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410887
+2025-04-19 12:13:27,622 - INFO - 文章 410887 請求狀態碼: 200
+2025-04-19 12:13:27,622 - INFO - 文章 410887 響應內容長度: 129
+2025-04-19 12:13:27,624 - INFO - 已保存文章 410887 的原始響應到: real_estate_articles\logs\article_410887_response.html
+2025-04-19 12:13:27,625 - ERROR - 文章 410887 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:27,626 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410893
+2025-04-19 12:13:27,636 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410888
+2025-04-19 12:13:27,639 - INFO - 文章 410893 請求狀態碼: 200
+2025-04-19 12:13:27,640 - INFO - 文章 410893 響應內容長度: 129
+2025-04-19 12:13:27,641 - INFO - 已保存文章 410893 的原始響應到: real_estate_articles\logs\article_410893_response.html
+2025-04-19 12:13:27,642 - ERROR - 文章 410893 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:27,648 - INFO - 文章 410888 請求狀態碼: 200
+2025-04-19 12:13:27,649 - INFO - 文章 410888 響應內容長度: 129
+2025-04-19 12:13:27,650 - INFO - 已保存文章 410888 的原始響應到: real_estate_articles\logs\article_410888_response.html
+2025-04-19 12:13:27,651 - ERROR - 文章 410888 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:27,985 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410894
+2025-04-19 12:13:27,998 - INFO - 文章 410894 請求狀態碼: 200
+2025-04-19 12:13:27,999 - INFO - 文章 410894 響應內容長度: 129
+2025-04-19 12:13:28,001 - INFO - 已保存文章 410894 的原始響應到: real_estate_articles\logs\article_410894_response.html
+2025-04-19 12:13:28,003 - ERROR - 文章 410894 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:28,090 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410895
+2025-04-19 12:13:28,102 - INFO - 文章 410895 請求狀態碼: 200
+2025-04-19 12:13:28,102 - INFO - 文章 410895 響應內容長度: 129
+2025-04-19 12:13:28,104 - INFO - 已保存文章 410895 的原始響應到: real_estate_articles\logs\article_410895_response.html
+2025-04-19 12:13:28,105 - ERROR - 文章 410895 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:28,780 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410890
+2025-04-19 12:13:28,793 - INFO - 文章 410890 請求狀態碼: 200
+2025-04-19 12:13:28,794 - INFO - 文章 410890 響應內容長度: 129
+2025-04-19 12:13:28,796 - INFO - 已保存文章 410890 的原始響應到: real_estate_articles\logs\article_410890_response.html
+2025-04-19 12:13:28,798 - ERROR - 文章 410890 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:28,799 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410898
+2025-04-19 12:13:28,812 - INFO - 文章 410898 請求狀態碼: 200
+2025-04-19 12:13:28,813 - INFO - 文章 410898 響應內容長度: 129
+2025-04-19 12:13:28,816 - INFO - 已保存文章 410898 的原始響應到: real_estate_articles\logs\article_410898_response.html
+2025-04-19 12:13:28,818 - ERROR - 文章 410898 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:28,839 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410892
+2025-04-19 12:13:28,852 - INFO - 文章 410892 請求狀態碼: 200
+2025-04-19 12:13:28,853 - INFO - 文章 410892 響應內容長度: 129
+2025-04-19 12:13:28,855 - INFO - 已保存文章 410892 的原始響應到: real_estate_articles\logs\article_410892_response.html
+2025-04-19 12:13:28,856 - ERROR - 文章 410892 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:28,858 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410900
+2025-04-19 12:13:28,871 - INFO - 文章 410900 請求狀態碼: 200
+2025-04-19 12:13:28,872 - INFO - 文章 410900 響應內容長度: 129
+2025-04-19 12:13:28,873 - INFO - 已保存文章 410900 的原始響應到: real_estate_articles\logs\article_410900_response.html
+2025-04-19 12:13:28,874 - ERROR - 文章 410900 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:29,316 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410896
+2025-04-19 12:13:29,328 - INFO - 文章 410896 請求狀態碼: 200
+2025-04-19 12:13:29,330 - INFO - 文章 410896 響應內容長度: 129
+2025-04-19 12:13:29,331 - INFO - 已保存文章 410896 的原始響應到: real_estate_articles\logs\article_410896_response.html
+2025-04-19 12:13:29,332 - ERROR - 文章 410896 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:29,335 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410897
+2025-04-19 12:13:29,353 - INFO - 文章 410897 請求狀態碼: 200
+2025-04-19 12:13:29,354 - INFO - 文章 410897 響應內容長度: 129
+2025-04-19 12:13:29,356 - INFO - 已保存文章 410897 的原始響應到: real_estate_articles\logs\article_410897_response.html
+2025-04-19 12:13:29,358 - ERROR - 文章 410897 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:29,679 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410902
+2025-04-19 12:13:29,709 - INFO - 文章 410902 請求狀態碼: 200
+2025-04-19 12:13:29,710 - INFO - 文章 410902 響應內容長度: 31026
+2025-04-19 12:13:29,712 - INFO - 已保存文章 410902 的原始響應到: real_estate_articles\logs\article_410902_response.html
+2025-04-19 12:13:29,736 - INFO - 從 meta 標籤找到文章資訊
+2025-04-19 12:13:29,740 - INFO - 文章 410902 找到 10 個資料列
+2025-04-19 12:13:29,741 - INFO - 文章 410902 成功解析 6 個欄位
+2025-04-19 12:13:29,742 - WARNING - 文章 410902 作者不符合目標: 張家瑋
+2025-04-19 12:13:29,744 - ERROR - 文章 410902 解析失敗或不符合條件
+2025-04-19 12:13:30,058 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410903
+2025-04-19 12:13:30,075 - INFO - 文章 410903 請求狀態碼: 200
+2025-04-19 12:13:30,076 - INFO - 文章 410903 響應內容長度: 129
+2025-04-19 12:13:30,078 - INFO - 已保存文章 410903 的原始響應到: real_estate_articles\logs\article_410903_response.html
+2025-04-19 12:13:30,080 - ERROR - 文章 410903 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:30,569 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410899
+2025-04-19 12:13:30,582 - INFO - 文章 410899 請求狀態碼: 200
+2025-04-19 12:13:30,582 - INFO - 文章 410899 響應內容長度: 129
+2025-04-19 12:13:30,583 - INFO - 已保存文章 410899 的原始響應到: real_estate_articles\logs\article_410899_response.html
+2025-04-19 12:13:30,585 - ERROR - 文章 410899 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:30,585 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410906
+2025-04-19 12:13:30,598 - INFO - 文章 410906 請求狀態碼: 200
+2025-04-19 12:13:30,599 - INFO - 文章 410906 響應內容長度: 129
+2025-04-19 12:13:30,600 - INFO - 已保存文章 410906 的原始響應到: real_estate_articles\logs\article_410906_response.html
+2025-04-19 12:13:30,601 - ERROR - 文章 410906 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:30,621 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410901
+2025-04-19 12:13:30,652 - INFO - 文章 410901 請求狀態碼: 200
+2025-04-19 12:13:30,652 - INFO - 文章 410901 響應內容長度: 31455
+2025-04-19 12:13:30,654 - INFO - 已保存文章 410901 的原始響應到: real_estate_articles\logs\article_410901_response.html
+2025-04-19 12:13:30,677 - INFO - 從 meta 標籤找到文章資訊
+2025-04-19 12:13:30,680 - INFO - 文章 410901 找到 10 個資料列
+2025-04-19 12:13:30,682 - INFO - 文章 410901 成功解析 6 個欄位
+2025-04-19 12:13:30,683 - WARNING - 文章 410901 作者不符合目標: 張家瑋
+2025-04-19 12:13:30,683 - ERROR - 文章 410901 解析失敗或不符合條件
+2025-04-19 12:13:30,684 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410908
+2025-04-19 12:13:30,715 - INFO - 文章 410908 請求狀態碼: 200
+2025-04-19 12:13:30,716 - INFO - 文章 410908 響應內容長度: 29582
+2025-04-19 12:13:30,717 - INFO - 已保存文章 410908 的原始響應到: real_estate_articles\logs\article_410908_response.html
+2025-04-19 12:13:30,744 - INFO - 文章 410908 找到 8 個資料列
+2025-04-19 12:13:30,745 - INFO - 文章 410908 成功解析 2 個欄位
+2025-04-19 12:13:30,746 - WARNING - 文章 410908 作者不符合目標: None
+2025-04-19 12:13:30,747 - ERROR - 文章 410908 解析失敗或不符合條件
+2025-04-19 12:13:31,051 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410905
+2025-04-19 12:13:31,066 - INFO - 文章 410905 請求狀態碼: 200
+2025-04-19 12:13:31,068 - INFO - 文章 410905 響應內容長度: 129
+2025-04-19 12:13:31,071 - INFO - 已保存文章 410905 的原始響應到: real_estate_articles\logs\article_410905_response.html
+2025-04-19 12:13:31,073 - ERROR - 文章 410905 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:31,325 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410904
+2025-04-19 12:13:31,337 - INFO - 文章 410904 請求狀態碼: 200
+2025-04-19 12:13:31,339 - INFO - 文章 410904 響應內容長度: 129
+2025-04-19 12:13:31,341 - INFO - 已保存文章 410904 的原始響應到: real_estate_articles\logs\article_410904_response.html
+2025-04-19 12:13:31,342 - ERROR - 文章 410904 頁面結構不符合預期，未找到 .columnsDetail_tableRow
+2025-04-19 12:13:31,344 - INFO - 開始請求文章 URL: https://real-estate.get.com.tw/Columns/detail.aspx?no=410911
+2025-04-19 12:13:31,376 - INFO - 文章 410911 請求狀態碼: 200
+2025-04-19 12:13:31,378 - INFO - 文章 410911 響應內容長度: 29564
+2025-04-19 12:13:31,382 - INFO - 已保存文章 410911 的原始響應到: real_estate_articles\logs\article_410911_response.html
+2025-04-19 12:13:31,436 - INFO - 文章 410911 找到 7 個資料列
+2025-04-19 12:13:31,438 - INFO - 文章 410911 成功解析 2 個欄位
+2025-04-19 12:13:31,439 - WARNING - 文章 410911 作者不符合目標: None
+2025-04-19 12:13:31,440 - ERROR - 文章 410911 解析失敗或不符合條件
