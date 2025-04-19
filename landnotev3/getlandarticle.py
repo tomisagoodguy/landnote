@@ -1,3 +1,4 @@
+import argparse
 from typing import Optional, Dict, Any, List
 import urllib3
 import re
@@ -14,6 +15,7 @@ import pandas as pd
 import random
 import time
 import os
+
 
 
 class ArticleScraper:
@@ -37,14 +39,9 @@ class ArticleScraper:
             },
             'ARTICLE_RANGES': [
                 {
-                    "start": 900000,
+                    "start": 914900,
                     "end": 915000,
-                    "description": "新年份範圍"
-                },
-                {
-                    "start": 409187,
-                    "end": 421516,
-                    "description": "早期年份範圍"
+                    "description": "近期文章範圍"
                 }
             ]
         }
@@ -153,6 +150,14 @@ class ArticleScraper:
             if '文章編號' in df.columns:
                 self.processed_articles = set(df['文章編號'].astype(str))
 
+    def load_specific_articles(self):
+        """載入特定文章清單"""
+        specific_file = self.base_dir / "specific_articles.txt"
+        if specific_file.exists():
+            with open(specific_file, 'r') as f:
+                return [int(line.strip()) for line in f if line.strip().isdigit()]
+        return [913706, 913623, 913646]
+
     def wait_between_requests(self):
         """控制請求間隔"""
         current_time = time.time()
@@ -222,6 +227,14 @@ class ArticleScraper:
         if str(article_no) in self.processed_articles:
             self.logger.debug(f"文章 {article_no} 已處理過，跳過")
             return None
+        invalid_file = self.base_dir / "invalid_articles.txt"
+        invalid_articles = set()
+        if invalid_file.exists():
+            with open(invalid_file, 'r') as f:
+                invalid_articles = set(line.strip() for line in f)
+        if str(article_no) in invalid_articles:
+            self.logger.debug(f"文章 {article_no} 已知無效，跳過")
+            return None
         for retry in range(self.max_retries):
             try:
                 self.wait_between_requests()
@@ -232,13 +245,18 @@ class ArticleScraper:
                     f"文章 {article_no} 請求狀態碼: {response.status_code}")
                 if response.status_code == 404:
                     self.logger.error(f"文章 {article_no} 不存在 (404)")
+                    with open(invalid_file, 'a') as f:
+                        f.write(f"{article_no}\n")
                     return None
                 response.raise_for_status()
                 response.encoding = 'utf-8'
                 content_length = len(response.text)
                 self.logger.info(f"文章 {article_no} 響應內容長度: {content_length}")
-                if content_length < 100:
-                    self.logger.error(f"文章 {article_no} 響應內容過短，可能是無效響應")
+                if content_length < 500:
+                    self.logger.error(f"文章 {article_no} 響應內容過短，可能是無效頁面")
+                    self.logger.debug(f"響應內容樣本: {response.text[:100]}")
+                    with open(invalid_file, 'a') as f:
+                        f.write(f"{article_no}\n")
                     return None
                 debug_file = self.logs_dir / \
                     f"article_{article_no}_response.html"
@@ -249,6 +267,9 @@ class ArticleScraper:
                 if not soup.select('.columnsDetail_tableRow'):
                     self.logger.error(
                         f"文章 {article_no} 頁面結構不符合預期，未找到 .columnsDetail_tableRow")
+                    self.logger.debug(f"響應內容樣本: {response.text[:100]}")
+                    with open(invalid_file, 'a') as f:
+                        f.write(f"{article_no}\n")
                     return None
                 article_data = self.parse_article(soup, article_no)
                 if article_data and self.validate_article(article_data):
@@ -400,7 +421,7 @@ class ArticleScraper:
                 '日期': article_info.get('日期', ''),
                 '內文': content,
                 'URL': f"{self.detail_url}?no={article_no}",
-                '爬取時間': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                '爬取時間': datetime.now().strftime("%Y-%m-d %H:%M:%S")
             }
             return article_data
         except Exception as e:
@@ -586,32 +607,35 @@ class ArticleScraper:
         try:
             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 futures = []
-                # 從期刊頁面獲取文章
-                max_page = self.get_max_page_number()
-                self.logger.info(f"檢測到期刊總頁數: {max_page}")
                 article_numbers = set()
-                for page_no in range(1, max_page + 1):
-                    self.logger.info(f"正在檢查第 {page_no} 頁的文章列表")
-                    page_articles = self.get_article_urls_from_journal(page_no)
+                if self.scan_mode == "recent":
+                    page_articles = self.get_article_urls_from_journal(1)
                     article_numbers.update(page_articles)
-                    if not page_articles and page_no > 10:
-                        self.logger.info(f"第 {page_no} 頁沒有新文章，停止檢查")
-                        break
-                self.logger.info(
-                    f"從期刊頁面共找到 {len(article_numbers)} 篇新文章: {sorted(list(article_numbers))}")
-                # 如果是全量模式，掃描所有編號範圍
-                if self.scan_mode == "all":
-                    for range_info in self.article_ranges:
+                    self.logger.info(f"近期模式：第一頁找到 {len(page_articles)} 篇新文章")
+                    if page_articles:
+                        min_article = min(page_articles)
+                        max_article = max(page_articles)
                         self.logger.info(
-                            f"開始處理範圍 {range_info['start']} 到 {range_info['end']}")
+                            f"期刊頁面文章範圍: {min_article} 到 {max_article}")
+                        article_numbers.update(
+                            range(max(min_article, 914900), 915001))
+                else:
+                    max_page = self.get_max_page_number()
+                    for page_no in range(1, max_page + 1):
+                        page_articles = self.get_article_urls_from_journal(
+                            page_no)
+                        article_numbers.update(page_articles)
+                        if not page_articles and page_no > 10:
+                            self.logger.info(f"第 {page_no} 頁沒有新文章，停止檢查")
+                            break
+                    for range_info in self.article_ranges:
                         for article_no in range(range_info['start'], range_info['end'] + 1, self.batch_size):
                             batch = range(article_no, min(
                                 article_no + self.batch_size, range_info['end'] + 1))
-                            article_numbers.update([
-                                no for no in batch
-                                if str(no) not in self.processed_articles
-                            ])
-                # 處理所有文章
+                            article_numbers.update(
+                                [no for no in batch if str(no) not in self.processed_articles])
+                self.logger.info(
+                    f"共找到 {len(article_numbers)} 篇新文章: {sorted(list(article_numbers))}")
                 for article_no in article_numbers:
                     if str(article_no) not in self.processed_articles:
                         futures.append(executor.submit(
@@ -638,12 +662,23 @@ class ArticleScraper:
 
 
 if __name__ == "__main__":
-    scraper = ArticleScraper(scan_mode="all", check_specific=True)
+    parser = argparse.ArgumentParser(
+        description="Article Scraper for real-estate.get.com.tw")
+    parser.add_argument('--scan_mode', type=str, default='all',
+                        choices=['all', 'recent'], help="Scan mode: 'all' or 'recent'")
+    parser.add_argument('--check_specific', type=lambda x: (str(x).lower() ==
+                        'true'), default=True, help="Check specific articles: True or False")
+    args = parser.parse_args()
+
+    scraper = ArticleScraper(scan_mode=args.scan_mode,
+                             check_specific=args.check_specific)
     if scraper.check_specific:
-        specific_articles = [913706, 913623, 913646]  # 測試特定文章
+        specific_articles = scraper.load_specific_articles()
         for article_no in specific_articles:
             scraper.check_specific_article(article_no)
     scraper.run()
 
 
+
+# python getlandarticle.py --scan_mode recent --check_specific True
 # python getlandarticle.py --scan_mode all --check_specific True
