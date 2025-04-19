@@ -1,32 +1,29 @@
 import os
 import re
 import sys
-from PyPDF2 import PdfMerger
 import logging
 import warnings
+from PyPDF2 import PdfMerger
 import fitz  # PyMuPDF，用於驗證 PDF
 
-# 完全禁用 PyPDF2 的警告輸出
+# 設置 PyPDF2 日誌和警告過濾
 logging.getLogger('PyPDF2').setLevel(logging.ERROR)
-
-# 自定義警告過濾器
 
 
 def custom_warning_filter(message, category, filename, lineno, file=None, line=None):
     if "Illegal character in Name Object" in str(message):
-        return None  # 不顯示這類警告
+        return None
     return warnings.defaultaction(message, category, filename, lineno, file, line)
 
 
-# 設置警告過濾器
 warnings.showwarning = custom_warning_filter
 
 
-class PdfProcessor:
-    def __init__(self):
+class PdfMergerProcessor:
+    def __init__(self, base_folder="."):
+        self.base_folder = base_folder
+        self.output_folder = os.path.join(base_folder, "合併後PDF檔案")
         self._setup_logging()
-        # 創建合併檔案的輸出資料夾
-        self.output_folder = "合併後PDF檔案"
 
     def _setup_logging(self):
         """設置日誌系統"""
@@ -34,13 +31,12 @@ class PdfProcessor:
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
             handlers=[
-                logging.FileHandler('pdf_merge.log', encoding='utf-8'),
+                logging.FileHandler(os.path.join(
+                    self.base_folder, 'pdf_merge.log'), encoding='utf-8'),
                 logging.StreamHandler()
             ]
         )
         self.logger = logging.getLogger(__name__)
-
-        # 禁用 PyPDF2 的警告日誌
         for handler in self.logger.handlers:
             handler.addFilter(
                 lambda record: "Illegal character in Name Object" not in record.getMessage())
@@ -72,12 +68,9 @@ class PdfProcessor:
 
         try:
             # 取得所有PDF檔案
-            pdf_files = [f for f in os.listdir(folder_path)
-                         if f.lower().endswith('.pdf')]
-
-            # 按照檔名中的數字排序，數字大的在前（新的考古題在前）
+            pdf_files = [f for f in os.listdir(
+                folder_path) if f.lower().endswith('.pdf')]
             pdf_files.sort(key=self.extract_year, reverse=True)
-
             self.logger.info(f"排序後的檔案順序: {pdf_files}")
 
             if not pdf_files:
@@ -90,34 +83,24 @@ class PdfProcessor:
                 self.logger.info(f"處理檔案: {pdf_file}")
 
                 try:
-                    # 驗證 PDF 文件
                     is_valid, page_count = self.verify_pdf(file_path)
                     if not is_valid:
                         self.logger.warning(f"檔案 {pdf_file} 無法正常打開，跳過")
                         continue
 
                     total_pages += page_count
-
-                    # 暫時重定向標準錯誤輸出以抑制警告
                     original_stderr = sys.stderr
                     sys.stderr = open(os.devnull, 'w')
-
-                    # 添加PDF到合併器
                     merger.append(file_path)
                     pdf_count += 1
-
-                    # 恢復標準錯誤輸出
                     sys.stderr.close()
                     sys.stderr = original_stderr
 
                 except Exception as e:
-                    # 恢復標準錯誤輸出（如果異常發生）
                     if 'original_stderr' in locals() and sys.stderr != original_stderr:
                         sys.stderr.close()
                         sys.stderr = original_stderr
-
                     self.logger.error(f"添加檔案 {pdf_file} 時發生錯誤: {str(e)}")
-                    self.logger.error(f"跳過此檔案並繼續處理其他檔案")
                     continue
 
             # 確保輸出目錄存在
@@ -127,14 +110,9 @@ class PdfProcessor:
 
             # 儲存合併後的檔案
             output_path = os.path.join(output_dir, output_filename)
-
-            # 暫時重定向標準錯誤輸出以抑制警告
             original_stderr = sys.stderr
             sys.stderr = open(os.devnull, 'w')
-
             merger.write(output_path)
-
-            # 恢復標準錯誤輸出
             sys.stderr.close()
             sys.stderr = original_stderr
 
@@ -151,58 +129,43 @@ class PdfProcessor:
             )
 
         except Exception as e:
-            # 確保標準錯誤輸出已恢復
             if 'original_stderr' in locals() and sys.stderr != original_stderr:
                 sys.stderr.close()
                 sys.stderr = original_stderr
-
             self.logger.error(f"合併過程發生錯誤: {str(e)}")
         finally:
             merger.close()
 
         return pdf_count
 
-    def process_directory(self, root_path):
+    def process_directory(self):
         """處理指定目錄下的所有資料夾"""
-        self.logger.info(f"開始處理路徑: {root_path}")
+        self.logger.info(f"開始處理路徑: {self.base_folder}")
 
-        if not os.path.exists(root_path):
-            self.logger.error(f"路徑不存在: {root_path}")
+        if not os.path.exists(self.base_folder):
+            self.logger.error(f"路徑不存在: {self.base_folder}")
             return
 
-        # 創建輸出主資料夾
-        output_main_dir = os.path.join(root_path, self.output_folder)
-        if not os.path.exists(output_main_dir):
-            os.makedirs(output_main_dir)
-            self.logger.info(f"創建主輸出資料夾: {output_main_dir}")
-
-        for folder_name in os.listdir(root_path):
-            folder_path = os.path.join(root_path, folder_name)
-            if os.path.isdir(folder_path) and folder_name != self.output_folder:
+        for folder_name in os.listdir(self.base_folder):
+            folder_path = os.path.join(self.base_folder, folder_name)
+            if os.path.isdir(folder_path) and folder_name != "合併後PDF檔案":
                 try:
                     output_filename = f"{folder_name}_合併.pdf"
                     self.logger.info(f"處理資料夾: {folder_name}")
                     pdf_count = self.merge_pdfs(
-                        folder_path,
-                        output_filename,
-                        output_main_dir
-                    )
+                        folder_path, output_filename, self.output_folder)
                     if pdf_count > 0:
                         self.logger.info(
-                            f"完成 {folder_name} 資料夾處理，合併了 {pdf_count} 個PDF檔案"
-                        )
+                            f"完成 {folder_name} 資料夾處理，合併了 {pdf_count} 個PDF檔案")
                 except Exception as e:
                     self.logger.error(f"處理 {folder_name} 時發生錯誤: {str(e)}")
 
 
 def main():
-    # 設定目標路徑
-    root_path = r"C:\Users\tom89\Documents\GitHub\landnote\landnotev3\地政考古題"
-
-    # 建立處理器實例並執行
-    processor = PdfProcessor()
+    """主函數，執行PDF合併"""
+    processor = PdfMergerProcessor()
     processor.logger.info("=== 開始執行PDF合併程式 ===")
-    processor.process_directory(root_path)
+    processor.process_directory()
     processor.logger.info("=== PDF合併程式執行完成 ===")
 
 
