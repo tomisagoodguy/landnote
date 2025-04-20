@@ -26,11 +26,15 @@
 </a>
 
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C">
-  <img src="https://img.shields.io/badge/高點法律考古題-專業法律題庫-red?style=for-the-badge&logo=github" alt="高點法律考古題" width="300">
+  <img src="https://img.shields.io/badge/高點法律考古題-法律題庫-red?style=for-the-badge&logo=github" alt="高點法律考古題" width="300">
 </a>
 
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
   <img src="https://img.shields.io/badge/法律合併考古題-法律專業綜合題庫-purple?style=for-the-badge&logo=github" alt="法律合併考古題" width="300">
+</a>
+
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/concept_groups">
+  <img src="https://img.shields.io/badge/地政觀念分類學習-相同概念文章整合-teal?style=for-the-badge&logo=lightbulb" alt="觀念分類學習" width="300">
 </a>
 
 </div>
@@ -86,6 +90,16 @@
       </a>
     </td>
   </tr>
+  <!-- 新增的觀念分類區塊 -->
+  <tr>
+    <td align="center" colspan="5">
+      <h3>🧠 地政依觀念分類學習</h3>
+      <p>將相同概念的地政文章整合在一起，幫助您系統性地理解跨科目的關聯知識點，建立完整知識體系。</p>
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/concept_groups">
+        <b>👉 前往觀念分類區 👈</b>
+      </a>
+    </td>
+  </tr>
 </table>
 </div>
 
@@ -98,20 +112,7 @@
 > *"Success is not final, failure is not fatal:
 > it is the courage to continue that counts."*
 
-### 📚 高效學習策略
 
-1. **循環學習法**：先閱讀文章掌握概念，再做考古題檢驗理解
-2. **錯題集建立**：整理做錯的題目，定期複習弱點
-3. **知識點連結**：將相關概念串聯，建立知識網絡
-4. **時間管理**：每天固定時間學習，養成規律習慣
-5. **合併版活用**：使用合併版考古題進行全面複習，掌握題型變化
-
-### 💪 心理建設
-
-- 相信自己的潛力
-- 保持耐心與毅力
-- 享受學習的過程
-- 正向面對挫折
 
 ## 📜 使用規範
 
@@ -153,7 +154,7 @@
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/real_estate_articles">
   <img src="https://img.shields.io/badge/地政學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="地政學習文章" width="250">
 </a>
-   
+
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
   <img src="https://img.shields.io/badge/地政各年度考古題-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="地政各年度考古題" width="250">
 </a>
@@ -163,17 +164,21 @@
 </a>
 
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C">
-  <img src="https://img.shields.io/badge/高點法律考古題-專業法律題庫-red?style=for-the-badge&logo=github" alt="高點法律考古題" width="250">
+  <img src="https://img.shields.io/badge/高點法律考古題-法律題庫-red?style=for-the-badge&logo=github" alt="高點法律考古題" width="250">
 </a>
 
 <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
   <img src="https://img.shields.io/badge/法律合併考古題-法律專業綜合題庫-purple?style=for-the-badge&logo=github" alt="法律合併考古題" width="250">
 </a>
 
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/concept_groups">
+  <img src="https://img.shields.io/badge/地政觀念分類學習-相同概念文章整合-teal?style=for-the-badge&logo=lightbulb" alt="觀念分類學習" width="250">
+</a>
+
 **✨ 願每個奮鬥的靈魂都能綻放光芒 ✨**
 
 *"The future belongs to those who believe in the beauty of their dreams."*
 
-*最後更新時間：2025/04/14*
+*最後更新時間：2025/04/20*
 
 </div>
