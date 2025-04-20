@@ -6,11 +6,39 @@ from fuzzywuzzy import fuzz
 from datetime import datetime
 import logging
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import inch
+from reportlab.lib.units import inch, cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.platypus.tableofcontents import TableOfContents
+from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
+from reportlab.platypus.frames import Frame
+from reportlab.pdfgen import canvas
+
+
+# 自訂文件模板，用於添加頁碼
+class NumberedCanvas(canvas.Canvas):
+    def __init__(self, *args, **kwargs):
+        canvas.Canvas.__init__(self, *args, **kwargs)
+        self._saved_page_states = []
+
+    def showPage(self):
+        self._saved_page_states.append(dict(self.__dict__))
+        self._startPage()
+
+    def save(self):
+        """添加頁碼到每一頁"""
+        num_pages = len(self._saved_page_states)
+        for state in self._saved_page_states:
+            self.__dict__.update(state)
+            self.setFont("Helvetica", 9)
+            # 在頁面底部中間添加頁碼
+            page_width = self._pagesize[0]
+            self.drawCentredString(
+                page_width / 2, 2*cm, f"{self._pageNumber}")
+            canvas.Canvas.showPage(self)
+        canvas.Canvas.save(self)
 
 
 class ArticleGrouper:
@@ -243,39 +271,63 @@ class ArticleGrouper:
             self.logger.error(f"生成索引失敗：{str(e)}")
 
     def generate_pdf(self, groups: List[List[Dict]]):
-        """生成包含所有文章內容的 PDF 檔案"""
+        """生成包含所有文章內容的 PDF 檔案，每組使用新頁面，並添加頁碼"""
         pdf_path = self.output_dir / "all_articles.pdf"
-        doc = SimpleDocTemplate(str(pdf_path), pagesize=A4, rightMargin=72,
-                                leftMargin=72, topMargin=72, bottomMargin=18)
+
+        # 使用自訂文件模板來添加頁碼
+        doc = BaseDocTemplate(str(pdf_path), pagesize=A4,
+                              rightMargin=72, leftMargin=72,
+                              topMargin=72, bottomMargin=72)
+
+        # 創建頁面模板
+        frame = Frame(doc.leftMargin, doc.bottomMargin,
+                      doc.width, doc.height - 2*cm,
+                      id='normal')
+        template = PageTemplate(id='normal', frames=[frame])
+        doc.addPageTemplates([template])
+
         styles = getSampleStyleSheet()
 
         # 使用已註冊的中文字型
         # 自訂樣式
         styles.add(ParagraphStyle(name='ChineseTitle',
-                fontName=self.chinese_font_name, fontSize=16, leading=20, spaceAfter=12))
+                                  fontName=self.chinese_font_name, fontSize=16, leading=20, spaceAfter=12))
         styles.add(ParagraphStyle(name='ChineseSubtitle',
-                fontName=self.chinese_font_name, fontSize=14, leading=18, spaceAfter=10))
+                                  fontName=self.chinese_font_name, fontSize=14, leading=18, spaceAfter=10))
         styles.add(ParagraphStyle(name='ChineseBody',
-                fontName=self.chinese_font_name, fontSize=12, leading=15, spaceAfter=8))
+                                  fontName=self.chinese_font_name, fontSize=12, leading=15, spaceAfter=8))
+        styles.add(ParagraphStyle(name='ChineseHeading1',
+                                  fontName=self.chinese_font_name, fontSize=18, leading=22, spaceAfter=12,
+                                  keepWithNext=True))  # keepWithNext 確保標題不會單獨出現在頁面底部
 
         story = []
-        story.append(Paragraph("所有文章合併", styles['ChineseTitle']))
+        story.append(Paragraph("所有文章合併", styles['ChineseHeading1']))
         story.append(Spacer(1, 0.2 * inch))
         story.append(Paragraph(
             f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['ChineseBody']))
         story.append(Spacer(1, 0.3 * inch))
 
+        # 為每個組別創建內容
         for i, group in enumerate(groups, 1):
+            # 除了第一組外，其他組別前添加分頁符
+            if i > 1:
+                story.append(PageBreak())
+
             group_title = group[0]['title']
             for keyword in [",許文昌老師", ",曾榮耀老師", "許文昌老師", "曾榮耀老師"]:
                 group_title = group_title.replace(keyword, "").strip()
-            story.append(
-                Paragraph(f"組 {i}：{group_title}", styles['ChineseSubtitle']))
+
+            # 使用 keepWithNext 確保組標題不會單獨出現在頁面底部
+            group_heading = Paragraph(
+                f"組 {i}：{group_title}", styles['ChineseHeading1'])
+            story.append(group_heading)
             story.append(Spacer(1, 0.2 * inch))
 
             for article in group:
-                story.append(
-                    Paragraph(article['title'], styles['ChineseSubtitle']))
+                # 使用 keepWithNext 確保文章標題不會單獨出現在頁面底部
+                article_title = Paragraph(
+                    article['title'], styles['ChineseSubtitle'])
+                story.append(article_title)
                 story.append(
                     Paragraph(f"文章編號：{article['article_no']}", styles['ChineseBody']))
                 story.append(
@@ -289,12 +341,11 @@ class ArticleGrouper:
                         title_idx += 1
                         continue
 
-                    # 處理圖片 - 修正正則表達式問題
+                    # 處理圖片
                     try:
                         img_match = re.match(r'!\[.*?\]\((.*?)\)', line)
                         if img_match:
                             img_path = img_match.group(1)
-                            # 使用 raw string 或雙斜線來避免轉義問題
                             img_path = img_path.replace(
                                 './images/', str(self.image_dir) + '/')
                             if Path(img_path).exists():
@@ -317,11 +368,13 @@ class ArticleGrouper:
                             story.append(
                                 Paragraph(clean_line, styles['ChineseBody']))
                     except Exception as e:
-                        self.logger.warning(f"處理行時出錯：{str(e)}，原始行：{line[:30]}...")
+                        self.logger.warning(
+                            f"處理行時出錯：{str(e)}，原始行：{line[:30]}...")
                         # 嘗試使用更安全的方式添加
                         try:
                             safe_line = ''.join(
-                                c for c in line if ord(c) < 128)  # 只保留 ASCII 字符
+                                # 只保留 ASCII 字符
+                                c for c in line if ord(c) < 128)
                             if safe_line.strip():
                                 story.append(
                                     Paragraph(safe_line, styles['ChineseBody']))
@@ -329,23 +382,31 @@ class ArticleGrouper:
                             pass
 
                 story.append(Spacer(1, 0.2 * inch))
-            story.append(Spacer(1, 0.3 * inch))
 
         try:
-            doc.build(story)
+            doc.build(story, canvasmaker=NumberedCanvas)
             self.logger.info(f"已生成 PDF 檔案：{pdf_path}")
         except Exception as e:
             self.logger.error(f"生成 PDF 失敗：{str(e)}")
             # 嘗試使用更簡單的方式生成 PDF
             self._generate_simple_pdf(groups, pdf_path)
 
-
     def _generate_simple_pdf(self, groups: List[List[Dict]], pdf_path: Path):
         """使用更簡單的方式生成 PDF，作為備選方案"""
         try:
             self.logger.info("嘗試使用簡化方式生成 PDF...")
             from reportlab.lib import colors
-            doc = SimpleDocTemplate(str(pdf_path), pagesize=A4)
+
+            # 使用自訂文件模板來添加頁碼
+            doc = BaseDocTemplate(str(pdf_path), pagesize=A4)
+
+            # 創建頁面模板
+            frame = Frame(doc.leftMargin, doc.bottomMargin,
+                          doc.width, doc.height - 2*cm,
+                          id='normal')
+            template = PageTemplate(id='normal', frames=[frame])
+            doc.addPageTemplates([template])
+
             styles = getSampleStyleSheet()
             story = []
 
@@ -357,24 +418,27 @@ class ArticleGrouper:
             story.append(Spacer(1, 0.3 * inch))
 
             for i, group in enumerate(groups, 1):
+                # 除了第一組外，其他組別前添加分頁符
+                if i > 1:
+                    story.append(PageBreak())
+
                 group_title = group[0]['title']
                 for keyword in [",許文昌老師", ",曾榮耀老師", "許文昌老師", "曾榮耀老師"]:
                     group_title = group_title.replace(keyword, "").strip()
 
                 story.append(
-                    Paragraph(f"組 {i}：{group_title}", styles['Heading2']))
+                    Paragraph(f"組 {i}：{group_title}", styles['Heading1']))
 
                 for article in group:
                     story.append(
-                        Paragraph(article['title'], styles['Heading3']))
+                        Paragraph(article['title'], styles['Heading2']))
                     story.append(
                         Paragraph(f"文章編號：{article['article_no']}", styles['Normal']))
                     story.append(
                         Paragraph(f"發布日期：{article['date']}", styles['Normal']))
                     story.append(Spacer(1, 0.1 * inch))
-                story.append(Spacer(1, 0.2 * inch))
 
-            doc.build(story)
+            doc.build(story, canvasmaker=NumberedCanvas)
             self.logger.info(f"已使用簡化方式生成 PDF 檔案：{pdf_path}")
         except Exception as e:
             self.logger.error(f"簡化 PDF 生成也失敗：{str(e)}")
@@ -400,6 +464,8 @@ class ArticleGrouper:
 if __name__ == "__main__":
     grouper = ArticleGrouper()
     grouper.run()
+
+
 
 
 
