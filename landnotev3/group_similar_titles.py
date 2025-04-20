@@ -292,9 +292,34 @@ class ArticleGrouper:
             return '/'.join(parts)
         return path
 
+    def _group_by_year(self, groups: List[List[Dict]]) -> Dict[str, List[List[Dict]]]:
+        """將文章按年份分組"""
+        year_groups = {}
+        for group in groups:
+            # 使用第一篇文章的年份作為分組依據
+            if group and group[0]['date_obj']:
+                year = str(group[0]['date_obj'].year)
+                if year not in year_groups:
+                    year_groups[year] = []
+                year_groups[year].append(group)
+
+        # 按年份排序（從新到舊）
+        return dict(sorted(year_groups.items(), key=lambda x: x[0], reverse=True))
+
     def generate_pdf(self, groups: List[List[Dict]]):
-        """生成包含所有文章內容的 PDF 檔案，每組使用新頁面，並添加頁碼"""
-        pdf_path = self.output_dir / "all_articles.pdf"
+        """按年份生成包含文章內容的PDF檔案，每組使用新頁面，並添加頁碼"""
+        # 按年份分組
+        year_groups = self._group_by_year(groups)
+        self.logger.info(f"將文章按年份分組：共{len(year_groups)}個年份")
+
+        # 為每個年份生成PDF
+        for year, year_groups in year_groups.items():
+            pdf_path = self.output_dir / f"articles_{year}.pdf"
+            self._generate_pdf_for_year(year, year_groups, pdf_path)
+
+    def _generate_pdf_for_year(self, year: str, groups: List[List[Dict]], pdf_path: Path):
+        """為特定年份生成PDF檔案"""
+        self.logger.info(f"開始生成{year}年的PDF檔案：{pdf_path}")
 
         # 使用自訂文件模板來添加頁碼
         doc = BaseDocTemplate(str(pdf_path), pagesize=A4,
@@ -323,7 +348,7 @@ class ArticleGrouper:
                                   keepWithNext=True))  # keepWithNext 確保標題不會單獨出現在頁面底部
 
         story = []
-        story.append(Paragraph("所有文章合併", styles['ChineseHeading1']))
+        story.append(Paragraph(f"{year}年文章合集", styles['ChineseHeading1']))
         story.append(Spacer(1, 0.2 * inch))
         story.append(Paragraph(
             f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['ChineseBody']))
@@ -408,16 +433,16 @@ class ArticleGrouper:
 
         try:
             doc.build(story, canvasmaker=NumberedCanvas)
-            self.logger.info(f"已生成 PDF 檔案：{pdf_path}")
+            self.logger.info(f"已生成 {year}年 PDF 檔案：{pdf_path}")
         except Exception as e:
-            self.logger.error(f"生成 PDF 失敗：{str(e)}")
+            self.logger.error(f"生成 {year}年 PDF 失敗：{str(e)}")
             # 嘗試使用更簡單的方式生成 PDF
-            self._generate_simple_pdf(groups, pdf_path)
+            self._generate_simple_pdf_for_year(year, groups, pdf_path)
 
-    def _generate_simple_pdf(self, groups: List[List[Dict]], pdf_path: Path):
-        """使用更簡單的方式生成 PDF，作為備選方案"""
+    def _generate_simple_pdf_for_year(self, year: str, groups: List[List[Dict]], pdf_path: Path):
+        """使用更簡單的方式為特定年份生成PDF，作為備選方案"""
         try:
-            self.logger.info("嘗試使用簡化方式生成 PDF...")
+            self.logger.info(f"嘗試使用簡化方式生成 {year}年 PDF...")
             from reportlab.lib import colors
 
             # 使用自訂文件模板來添加頁碼
@@ -434,7 +459,7 @@ class ArticleGrouper:
             story = []
 
             # 使用預設字型
-            story.append(Paragraph("所有文章合併", styles['Title']))
+            story.append(Paragraph(f"{year}年文章合集", styles['Title']))
             story.append(Spacer(1, 0.2 * inch))
             story.append(Paragraph(
                 f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
@@ -462,9 +487,9 @@ class ArticleGrouper:
                     story.append(Spacer(1, 0.1 * inch))
 
             doc.build(story, canvasmaker=NumberedCanvas)
-            self.logger.info(f"已使用簡化方式生成 PDF 檔案：{pdf_path}")
+            self.logger.info(f"已使用簡化方式生成 {year}年 PDF 檔案：{pdf_path}")
         except Exception as e:
-            self.logger.error(f"簡化 PDF 生成也失敗：{str(e)}")
+            self.logger.error(f"{year}年 簡化 PDF 生成也失敗：{str(e)}")
             self.logger.info("建議使用其他工具如 Pandoc 將 Markdown 轉換為 PDF")
 
     def run(self):
