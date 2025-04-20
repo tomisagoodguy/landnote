@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import re
-from typing import List, Dict
+from typing import List, Dict, Set
 from fuzzywuzzy import fuzz
 from datetime import datetime
 import logging
@@ -15,6 +15,7 @@ from reportlab.platypus.tableofcontents import TableOfContents
 from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
 from reportlab.platypus.frames import Frame
 from reportlab.pdfgen import canvas
+from collections import defaultdict
 
 
 # 自訂文件模板，用於添加頁碼
@@ -46,12 +47,23 @@ class ArticleGrouper:
         """初始化分組器"""
         self.articles_dir = Path(articles_dir)
         self.output_dir = Path(output_dir)
-        self.merged_dir = self.output_dir / "merged"
+
+        # 獨立資料夾設置
+        self.merged_md_dir = self.output_dir / "merged/md"  # 合併的 MD 檔案
+        self.merged_pdf_dir = self.output_dir / "merged/pdf"  # 合併的 PDF 檔案
+        self.keyword_md_dir = self.output_dir / "keywords/md"  # 關鍵詞的 MD 檔案
+        self.keyword_pdf_dir = self.output_dir / "keywords/pdf"  # 關鍵詞的 PDF 檔案
+        self.pdf_dir = self.output_dir / "pdf"  # 年份分組的 PDF 檔案
+
         self.image_dir = self.articles_dir / "images"
         self.similarity_threshold = 80
         self.articles = []
         self.logger = self.setup_logger()
         self.chinese_font_name = 'Helvetica'  # 預設字型
+
+        # 關鍵詞分類相關設定
+        self.keyword_groups = defaultdict(list)  # 用於存儲按關鍵詞分類的文章
+        self.keyword_counts = defaultdict(int)   # 用於統計各關鍵詞出現次數
 
         # 嘗試註冊中文字型，使用完整路徑
         self._setup_chinese_font()
@@ -109,7 +121,7 @@ class ArticleGrouper:
         return logger
 
     def read_markdown_files(self):
-        """讀取所有 Markdown 檔案並提取標題與元資料"""
+        """讀取所有 Markdown 檔案並提取標題與元資料，包括關鍵詞"""
         self.articles = []
         for md_file in self.articles_dir.glob("*.md"):
             try:
@@ -154,19 +166,55 @@ class ArticleGrouper:
                         date = date_obj.strftime('%Y-%m-%d')
                         self.logger.warning(
                             f"檔案 {md_file.name} 未找到有效日期，使用修改時間：{date}")
-                    self.articles.append({
+
+                    # 提取關鍵詞
+                    keywords = []
+                    keywords_match = re.search(r'- 關鍵詞：(.*?)(?:\n|$)', content)
+                    if keywords_match:
+                        keywords_text = keywords_match.group(1).strip()
+                        # 處理不同的分隔符號
+                        for separator in [',', '，', '、', ';', '；', ' ']:
+                            if separator in keywords_text:
+                                keywords = [k.strip() for k in keywords_text.split(
+                                    separator) if k.strip()]
+                                break
+                        # 如果沒有找到分隔符號，將整個字串視為一個關鍵詞
+                        if not keywords and keywords_text:
+                            keywords = [keywords_text]
+
+                        self.logger.info(f"檔案 {md_file.name} 關鍵詞：{keywords}")
+
+                    article_data = {
                         'file_path': md_file,
                         'title': title,
                         'article_no': article_no,
                         'date': date,
                         'date_obj': date_obj,
-                        'content': content
-                    })
+                        'content': content,
+                        'keywords': keywords
+                    }
+
+                    self.articles.append(article_data)
+
+                    # 將文章按關鍵詞分類
+                    if keywords:
+                        for keyword in keywords:
+                            self.keyword_groups[keyword].append(article_data)
+                            self.keyword_counts[keyword] += 1
+                    else:
+                        # 沒有關鍵詞的文章放入特殊分類
+                        self.keyword_groups['未分類'].append(article_data)
+
                     self.logger.info(
-                        f"讀取檔案 {md_file.name}，標題：{title}，日期：{date}")
+                        f"讀取檔案 {md_file.name}，標題：{title}，日期：{date}，關鍵詞：{keywords}")
             except Exception as e:
                 self.logger.error(f"讀取檔案 {md_file} 失敗：{str(e)}")
         self.logger.info(f"共讀取 {len(self.articles)} 篇文章")
+
+        # 按關鍵詞出現次數排序
+        self.sorted_keywords = sorted(
+            self.keyword_counts.items(), key=lambda x: x[1], reverse=True)
+        self.logger.info(f"關鍵詞統計：{self.sorted_keywords}")
 
     def compute_similarity(self, title1: str, title2: str) -> int:
         """計算兩個標題的相似度，忽略特定關鍵字"""
@@ -210,7 +258,7 @@ class ArticleGrouper:
 
     def merge_group_articles(self, groups: List[List[Dict]]):
         """合併每組文章到單個 Markdown 檔案"""
-        self.merged_dir.mkdir(parents=True, exist_ok=True)
+        self.merged_md_dir.mkdir(parents=True, exist_ok=True)
         for i, group in enumerate(groups, 1):
             if len(group) == 1:
                 self.logger.info(f"組 {i} 只有一篇文章，無需合併：{group[0]['title']}")
@@ -219,12 +267,27 @@ class ArticleGrouper:
             for keyword in [",許文昌老師", ",曾榮耀老師", "許文昌老師", "曾榮耀老師"]:
                 group_title = group_title.replace(keyword, "").strip()
             safe_title = re.sub(r'[^\w\s-]', '', group_title).replace(' ', '_')
-            merged_file = self.merged_dir / f"group_{i}_{safe_title}.md"
+            merged_file = self.merged_md_dir / f"group_{i}_{safe_title}.md"
             merged_content = [f"# 合併文章：{group_title}", ""]
+
+            # 收集此組所有文章的關鍵詞
+            all_keywords = set()
+            for article in group:
+                if article.get('keywords'):
+                    all_keywords.update(article['keywords'])
+
+            if all_keywords:
+                merged_content.append(f"## 相關關鍵詞")
+                merged_content.append(f"- {', '.join(sorted(all_keywords))}")
+                merged_content.append("")
+
             for article in group:
                 merged_content.append(f"## {article['title']}")
                 merged_content.append(f"- 文章編號：{article['article_no']}")
                 merged_content.append(f"- 發布日期：{article['date']}")
+                if article.get('keywords'):
+                    merged_content.append(
+                        f"- 關鍵詞：{', '.join(article['keywords'])}")
                 merged_content.append("")
                 content_lines = article['content'].split('\n')
                 title_idx = 0
@@ -244,32 +307,145 @@ class ArticleGrouper:
             except Exception as e:
                 self.logger.error(f"合併組 {i} 失敗：{str(e)}")
 
+    def generate_keyword_collections(self):
+        """根據關鍵詞生成文章集合"""
+        self.keyword_md_dir.mkdir(parents=True, exist_ok=True)
+
+        # 生成關鍵詞索引文件
+        index_path = self.keyword_md_dir / "README_keywords.md"
+        index_content = ["# 關鍵詞分類索引", "",
+                         f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", "",
+                         "## 關鍵詞統計", ""]
+
+        # 添加關鍵詞統計表格
+        index_content.append("| 關鍵詞 | 文章數量 |")
+        index_content.append("| --- | --- |")
+        for keyword, count in self.sorted_keywords:
+            safe_keyword = keyword.replace('|', '\\|')  # 轉義表格中的豎線
+            keyword_file = self._get_safe_filename(keyword)
+            index_content.append(
+                f"| [{safe_keyword}](keyword_{keyword_file}.md) | {count} |")
+
+        index_content.append("")
+
+        # 生成索引文件
+        try:
+            with open(index_path, 'w', encoding='utf-8') as f:
+                f.write('\n'.join(index_content))
+            self.logger.info(f"已生成關鍵詞索引：{index_path}")
+        except Exception as e:
+            self.logger.error(f"生成關鍵詞索引失敗：{str(e)}")
+
+        # 為每個關鍵詞生成文章集合
+        for keyword, articles in self.keyword_groups.items():
+            # 跳過文章數量太少的關鍵詞
+            if len(articles) < 1:
+                continue
+
+            safe_keyword = self._get_safe_filename(keyword)
+            keyword_file = self.keyword_md_dir / f"keyword_{safe_keyword}.md"
+
+            # 按日期排序文章（從新到舊）
+            articles = sorted(
+                articles, key=lambda x: x['date_obj'] if x['date_obj'] else datetime.now(), reverse=True)
+
+            content = [f"# 關鍵詞：{keyword}", "",
+                       f"包含 {len(articles)} 篇文章", "",
+                       "## 文章列表", ""]
+
+            for article in articles:
+                # 確保使用正斜線作為路徑分隔符，並處理特殊字符
+                relative_path = str(article['file_path'].relative_to(
+                    self.output_dir)).replace('\\', '/')
+                relative_path = self._github_safe_path(relative_path)
+
+                content.append(
+                    f"### {article['date']} [{article['title']}](../../{relative_path})")
+                content.append(f"- 文章編號：{article['article_no']}")
+                if article.get('keywords'):
+                    other_keywords = [
+                        k for k in article['keywords'] if k != keyword]
+                    if other_keywords:
+                        content.append(f"- 其他關鍵詞：{', '.join(other_keywords)}")
+                content.append("")
+
+                # 添加文章摘要（前100個字符）
+                article_text = re.sub(
+                    # 移除標題和圖片
+                    r'#.*?\n|!\[.*?\]\(.*?\)', '', article['content'])
+                article_text = re.sub(r'- .*?：.*?\n', '',
+                                      article_text)  # 移除元數據行
+                article_text = re.sub(
+                    r'\n+', ' ', article_text).strip()  # 移除多餘換行
+
+                if article_text:
+                    summary = article_text[:150] + \
+                        ('...' if len(article_text) > 150 else '')
+                    content.append(f"{summary}")
+                    content.append("")
+
+            try:
+                with open(keyword_file, 'w', encoding='utf-8') as f:
+                    f.write('\n'.join(content))
+                self.logger.info(f"已生成關鍵詞文章集合：{keyword_file}")
+            except Exception as e:
+                self.logger.error(f"生成關鍵詞 '{keyword}' 文章集合失敗：{str(e)}")
+
+    def _get_safe_filename(self, s):
+        """將字符串轉換為安全的文件名"""
+        # 移除非法字符，並將空格替換為下劃線
+        s = re.sub(r'[^\w\s-]', '', s).strip().replace(' ', '_')
+        return s
+
     def generate_index(self, groups: List[List[Dict]]):
         """生成分組索引檔案"""
         index_path = self.output_dir / "README_grouped.md"
         content = ["# 文章分組目錄", "",
-                   f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", ""]
+                   f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", "",
+                   "## 按關鍵詞分類", "",
+                   f"[查看關鍵詞分類](keywords/md/README_keywords.md)", "",
+                   "## 按標題相似度分組", ""]
+
         for i, group in enumerate(groups, 1):
             group_title = group[0]['title']
             content.append(f"## 組 {i}：{group_title}")
+
+            # 收集此組所有文章的關鍵詞
+            all_keywords = set()
+            for article in group:
+                if article.get('keywords'):
+                    all_keywords.update(article['keywords'])
+
+            if all_keywords:
+                content.append(f"- 相關關鍵詞：{', '.join(sorted(all_keywords))}")
+
             if len(group) > 1:
                 safe_title = re.sub(
                     r'[^\w\s-]', '', group_title).replace(' ', '_')
                 # 修正：確保使用正斜線作為路徑分隔符
                 merged_file = str(
-                    Path("merged") / f"group_{i}_{safe_title}.md").replace('\\', '/')
-                content.append(f"- [查看合併文章]({merged_file})")
+                    Path("merged/md") / f"group_{i}_{safe_title}.md").replace('\\', '/')
+                content.append(f"- [查看合併文章 (MD)]({merged_file})")
+
+                # 添加 PDF 版本的連結（如果存在）
+                merged_pdf = str(
+                    Path("merged/pdf") / f"group_{i}_{safe_title}.pdf").replace('\\', '/')
+                content.append(f"- [查看合併文章 (PDF)]({merged_pdf})")
+
             for article in group:
                 # 修正：確保使用正斜線作為路徑分隔符，並處理特殊字符
                 relative_path = str(article['file_path'].relative_to(
                     self.output_dir)).replace('\\', '/')
                 # 將逗號和其他特殊字符進行URL編碼
                 relative_path = self._github_safe_path(relative_path)
-                content.append(
-                    f"- {article['date']} [{article['title']}]({relative_path}) "
-                    f"(文章編號：{article['article_no']})"
-                )
+
+                article_line = f"- {article['date']} [{article['title']}]({relative_path}) (文章編號：{article['article_no']})"
+                if article.get('keywords'):
+                    article_line += f" 關鍵詞：{', '.join(article['keywords'])}"
+                content.append(article_line)
+
             content.append("")
+
         try:
             with open(index_path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(content))
@@ -308,14 +484,286 @@ class ArticleGrouper:
 
     def generate_pdf(self, groups: List[List[Dict]]):
         """按年份生成包含文章內容的PDF檔案，每組使用新頁面，並添加頁碼"""
+        # 創建 PDF 目錄
+        self.pdf_dir.mkdir(parents=True, exist_ok=True)
+        self.merged_pdf_dir.mkdir(parents=True, exist_ok=True)
+        self.keyword_pdf_dir.mkdir(parents=True, exist_ok=True)
+
         # 按年份分組
         year_groups = self._group_by_year(groups)
         self.logger.info(f"將文章按年份分組：共{len(year_groups)}個年份")
 
         # 為每個年份生成PDF
         for year, year_groups in year_groups.items():
-            pdf_path = self.output_dir / f"articles_{year}.pdf"
+            pdf_path = self.pdf_dir / f"articles_{year}.pdf"
             self._generate_pdf_for_year(year, year_groups, pdf_path)
+
+        # 生成按關鍵詞分類的PDF
+        self._generate_keyword_pdfs()
+
+        # 生成合併文章的PDF
+        self._generate_merged_pdfs(groups)
+
+    def _generate_merged_pdfs(self, groups: List[List[Dict]]):
+        """為合併的文章組生成PDF檔案"""
+        for i, group in enumerate(groups, 1):
+            if len(group) <= 1:
+                continue  # 跳過只有一篇文章的組
+
+            group_title = group[0]['title']
+            for keyword in [",許文昌老師", ",曾榮耀老師", "許文昌老師", "曾榮耀老師"]:
+                group_title = group_title.replace(keyword, "").strip()
+
+            safe_title = re.sub(r'[^\w\s-]', '', group_title).replace(' ', '_')
+            pdf_path = self.merged_pdf_dir / f"group_{i}_{safe_title}.pdf"
+
+            try:
+                # 使用自訂文件模板來添加頁碼
+                doc = BaseDocTemplate(str(pdf_path), pagesize=A4,
+                                      rightMargin=72, leftMargin=72,
+                                      topMargin=72, bottomMargin=72)
+
+                # 創建頁面模板
+                frame = Frame(doc.leftMargin, doc.bottomMargin,
+                              doc.width, doc.height - 2*cm,
+                              id='normal')
+                template = PageTemplate(id='normal', frames=[frame])
+                doc.addPageTemplates([template])
+
+                styles = getSampleStyleSheet()
+
+                # 使用已註冊的中文字型
+                styles.add(ParagraphStyle(name='ChineseTitle',
+                                          fontName=self.chinese_font_name, fontSize=16, leading=20, spaceAfter=12))
+                styles.add(ParagraphStyle(name='ChineseSubtitle',
+                                          fontName=self.chinese_font_name, fontSize=14, leading=18, spaceAfter=10))
+                styles.add(ParagraphStyle(name='ChineseBody',
+                                          fontName=self.chinese_font_name, fontSize=12, leading=15, spaceAfter=8))
+                styles.add(ParagraphStyle(name='ChineseHeading1',
+                                          fontName=self.chinese_font_name, fontSize=18, leading=22, spaceAfter=12,
+                                          keepWithNext=True))
+
+                story = []
+                story.append(
+                    Paragraph(f"合併文章：{group_title}", styles['ChineseHeading1']))
+                story.append(Spacer(1, 0.2 * inch))
+                story.append(Paragraph(
+                    f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['ChineseBody']))
+                story.append(Spacer(1, 0.3 * inch))
+
+                # 收集此組所有文章的關鍵詞
+                all_keywords = set()
+                for article in group:
+                    if article.get('keywords'):
+                        all_keywords.update(article['keywords'])
+
+                if all_keywords:
+                    story.append(
+                        Paragraph(f"相關關鍵詞：{', '.join(sorted(all_keywords))}", styles['ChineseBody']))
+                    story.append(Spacer(1, 0.2 * inch))
+
+                # 為每篇文章創建內容
+                for j, article in enumerate(group, 1):
+                    # 除了第一篇外，其他文章前添加分頁符
+                    if j > 1:
+                        story.append(PageBreak())
+
+                    story.append(
+                        Paragraph(article['title'], styles['ChineseHeading1']))
+                    story.append(
+                        Paragraph(f"文章編號：{article['article_no']}", styles['ChineseBody']))
+                    story.append(
+                        Paragraph(f"發布日期：{article['date']}", styles['ChineseBody']))
+                    if article.get('keywords'):
+                        story.append(
+                            Paragraph(f"關鍵詞：{', '.join(article['keywords'])}", styles['ChineseBody']))
+                    story.append(Spacer(1, 0.2 * inch))
+
+                    content_lines = article['content'].split('\n')
+                    title_idx = 0
+                    for line in content_lines:
+                        if line.startswith('# ') and title_idx == 0:
+                            title_idx += 1
+                            continue
+
+                        # 處理圖片
+                        try:
+                            img_match = re.match(r'!\[.*?\]\((.*?)\)', line)
+                            if img_match:
+                                img_path = img_match.group(1)
+                                # 確保圖片路徑使用正斜線
+                                img_path = img_path.replace(
+                                    './images/', str(self.image_dir) + '/').replace('\\', '/')
+                                if Path(img_path).exists():
+                                    try:
+                                        img = Image(
+                                            img_path, width=4 * inch, height=3*inch)
+                                        story.append(img)
+                                        story.append(Spacer(1, 0.1 * inch))
+                                    except Exception as e:
+                                        self.logger.warning(
+                                            f"無法處理圖片 {img_path}：{str(e)}")
+                                else:
+                                    self.logger.warning(
+                                        f"圖片 {img_path} 不存在，跳過嵌入")
+                                continue
+
+                            # 處理文字
+                            if line.strip():
+                                # 處理特殊字符，避免 ReportLab 解析錯誤
+                                clean_line = line.replace(
+                                    '\\', '\\\\')  # 雙重轉義反斜線
+                                story.append(
+                                    Paragraph(clean_line, styles['ChineseBody']))
+                        except Exception as e:
+                            self.logger.warning(
+                                f"處理行時出錯：{str(e)}，原始行：{line[:30]}...")
+                            # 嘗試使用更安全的方式添加
+                            try:
+                                safe_line = ''.join(
+                                    # 只保留 ASCII 字符
+                                    c for c in line if ord(c) < 128)
+                                if safe_line.strip():
+                                    story.append(
+                                        Paragraph(safe_line, styles['ChineseBody']))
+                            except:
+                                pass
+
+                    story.append(Spacer(1, 0.2 * inch))
+
+                doc.build(story, canvasmaker=NumberedCanvas)
+                self.logger.info(f"已生成合併文章 PDF：{pdf_path}")
+            except Exception as e:
+                self.logger.error(f"生成合併文章 PDF 失敗：{str(e)}")
+
+    def _generate_keyword_pdfs(self):
+        """生成按關鍵詞分類的PDF檔案"""
+        # 只處理包含至少3篇文章的關鍵詞
+        for keyword, articles in self.keyword_groups.items():
+            if len(articles) < 3:
+                continue
+
+            safe_keyword = self._get_safe_filename(keyword)
+            pdf_path = self.keyword_pdf_dir / f"keyword_{safe_keyword}.pdf"
+
+            try:
+                # 使用自訂文件模板來添加頁碼
+                doc = BaseDocTemplate(str(pdf_path), pagesize=A4,
+                                      rightMargin=72, leftMargin=72,
+                                      topMargin=72, bottomMargin=72)
+
+                # 創建頁面模板
+                frame = Frame(doc.leftMargin, doc.bottomMargin,
+                              doc.width, doc.height - 2*cm,
+                              id='normal')
+                template = PageTemplate(id='normal', frames=[frame])
+                doc.addPageTemplates([template])
+
+                styles = getSampleStyleSheet()
+
+                # 使用已註冊的中文字型
+                styles.add(ParagraphStyle(name='ChineseTitle',
+                                          fontName=self.chinese_font_name, fontSize=16, leading=20, spaceAfter=12))
+                styles.add(ParagraphStyle(name='ChineseSubtitle',
+                                          fontName=self.chinese_font_name, fontSize=14, leading=18, spaceAfter=10))
+                styles.add(ParagraphStyle(name='ChineseBody',
+                                          fontName=self.chinese_font_name, fontSize=12, leading=15, spaceAfter=8))
+                styles.add(ParagraphStyle(name='ChineseHeading1',
+                                          fontName=self.chinese_font_name, fontSize=18, leading=22, spaceAfter=12,
+                                          keepWithNext=True))
+
+                story = []
+                story.append(
+                    Paragraph(f"關鍵詞：{keyword} (共{len(articles)}篇文章)", styles['ChineseHeading1']))
+                story.append(Spacer(1, 0.2 * inch))
+                story.append(Paragraph(
+                    f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['ChineseBody']))
+                story.append(Spacer(1, 0.3 * inch))
+
+                # 按日期排序文章（從新到舊）
+                articles = sorted(
+                    articles, key=lambda x: x['date_obj'] if x['date_obj'] else datetime.now(), reverse=True)
+
+                # 為每篇文章創建內容
+                for i, article in enumerate(articles, 1):
+                    # 除了第一篇外，其他文章前添加分頁符
+                    if i > 1:
+                        story.append(PageBreak())
+
+                    # 使用 keepWithNext 確保文章標題不會單獨出現在頁面底部
+                    article_title = Paragraph(
+                        article['title'], styles['ChineseHeading1'])
+                    story.append(article_title)
+                    story.append(
+                        Paragraph(f"文章編號：{article['article_no']}", styles['ChineseBody']))
+                    story.append(
+                        Paragraph(f"發布日期：{article['date']}", styles['ChineseBody']))
+
+                    if article.get('keywords'):
+                        other_keywords = [
+                            k for k in article['keywords'] if k != keyword]
+                        if other_keywords:
+                            story.append(
+                                Paragraph(f"其他關鍵詞：{', '.join(other_keywords)}", styles['ChineseBody']))
+
+                    story.append(Spacer(1, 0.2 * inch))
+
+                    content_lines = article['content'].split('\n')
+                    title_idx = 0
+                    for line in content_lines:
+                        if line.startswith('# ') and title_idx == 0:
+                            title_idx += 1
+                            continue
+
+                        # 處理圖片
+                        try:
+                            img_match = re.match(r'!\[.*?\]\((.*?)\)', line)
+                            if img_match:
+                                img_path = img_match.group(1)
+                                # 修正：確保圖片路徑使用正斜線
+                                img_path = img_path.replace(
+                                    './images/', str(self.image_dir) + '/').replace('\\', '/')
+                                if Path(img_path).exists():
+                                    try:
+                                        img = Image(
+                                            img_path, width=4 * inch, height=3*inch)
+                                        story.append(img)
+                                        story.append(Spacer(1, 0.1 * inch))
+                                    except Exception as e:
+                                        self.logger.warning(
+                                            f"無法處理圖片 {img_path}：{str(e)}")
+                                else:
+                                    self.logger.warning(
+                                        f"圖片 {img_path} 不存在，跳過嵌入")
+                                continue
+
+                            # 處理文字
+                            if line.strip():
+                                # 處理特殊字符，避免 ReportLab 解析錯誤
+                                clean_line = line.replace(
+                                    '\\', '\\\\')  # 雙重轉義反斜線
+                                story.append(
+                                    Paragraph(clean_line, styles['ChineseBody']))
+                        except Exception as e:
+                            self.logger.warning(
+                                f"處理行時出錯：{str(e)}，原始行：{line[:30]}...")
+                            # 嘗試使用更安全的方式添加
+                            try:
+                                safe_line = ''.join(
+                                    # 只保留 ASCII 字符
+                                    c for c in line if ord(c) < 128)
+                                if safe_line.strip():
+                                    story.append(
+                                        Paragraph(safe_line, styles['ChineseBody']))
+                            except:
+                                pass
+
+                    story.append(Spacer(1, 0.2 * inch))
+
+                doc.build(story, canvasmaker=NumberedCanvas)
+                self.logger.info(f"已生成關鍵詞 '{keyword}' 的PDF檔案：{pdf_path}")
+            except Exception as e:
+                self.logger.error(f"生成關鍵詞 '{keyword}' PDF失敗：{str(e)}")
 
     def _generate_pdf_for_year(self, year: str, groups: List[List[Dict]], pdf_path: Path):
         """為特定年份生成PDF檔案"""
@@ -370,6 +818,17 @@ class ArticleGrouper:
             story.append(group_heading)
             story.append(Spacer(1, 0.2 * inch))
 
+            # 顯示此組的關鍵詞
+            all_keywords = set()
+            for article in group:
+                if article.get('keywords'):
+                    all_keywords.update(article['keywords'])
+
+            if all_keywords:
+                story.append(
+                    Paragraph(f"相關關鍵詞：{', '.join(sorted(all_keywords))}", styles['ChineseBody']))
+                story.append(Spacer(1, 0.1 * inch))
+
             for article in group:
                 # 使用 keepWithNext 確保文章標題不會單獨出現在頁面底部
                 article_title = Paragraph(
@@ -379,6 +838,9 @@ class ArticleGrouper:
                     Paragraph(f"文章編號：{article['article_no']}", styles['ChineseBody']))
                 story.append(
                     Paragraph(f"發布日期：{article['date']}", styles['ChineseBody']))
+                if article.get('keywords'):
+                    story.append(
+                        Paragraph(f"關鍵詞：{', '.join(article['keywords'])}", styles['ChineseBody']))
                 story.append(Spacer(1, 0.1 * inch))
 
                 content_lines = article['content'].split('\n')
@@ -477,6 +939,16 @@ class ArticleGrouper:
                 story.append(
                     Paragraph(f"組 {i}：{group_title}", styles['Heading1']))
 
+                # 顯示此組的關鍵詞
+                all_keywords = set()
+                for article in group:
+                    if article.get('keywords'):
+                        all_keywords.update(article['keywords'])
+
+                if all_keywords:
+                    story.append(
+                        Paragraph(f"相關關鍵詞：{', '.join(sorted(all_keywords))}", styles['Normal']))
+
                 for article in group:
                     story.append(
                         Paragraph(article['title'], styles['Heading2']))
@@ -484,6 +956,9 @@ class ArticleGrouper:
                         Paragraph(f"文章編號：{article['article_no']}", styles['Normal']))
                     story.append(
                         Paragraph(f"發布日期：{article['date']}", styles['Normal']))
+                    if article.get('keywords'):
+                        story.append(
+                            Paragraph(f"關鍵詞：{', '.join(article['keywords'])}", styles['Normal']))
                     story.append(Spacer(1, 0.1 * inch))
 
             doc.build(story, canvasmaker=NumberedCanvas)
@@ -495,23 +970,39 @@ class ArticleGrouper:
     def run(self):
         """執行分組流程"""
         self.logger.info("開始分組文章")
+
+        # 創建所有必要的目錄
+        self.merged_md_dir.mkdir(parents=True, exist_ok=True)
+        self.merged_pdf_dir.mkdir(parents=True, exist_ok=True)
+        self.keyword_md_dir.mkdir(parents=True, exist_ok=True)
+        self.keyword_pdf_dir.mkdir(parents=True, exist_ok=True)
+        self.pdf_dir.mkdir(parents=True, exist_ok=True)
+
         self.read_markdown_files()
         if not self.articles:
             self.logger.warning("未找到任何 Markdown 檔案")
             return
+
+        # 生成關鍵詞分類
+        self.generate_keyword_collections()
+
+        # 根據標題相似度分組
         groups = self.group_articles()
         self.merge_group_articles(groups)
         self.generate_index(groups)
+
         try:
             self.generate_pdf(groups)
         except Exception as e:
             self.logger.error(f"PDF 生成失敗，但不影響其他功能：{str(e)}")
-        self.logger.info("文章分組、合併與索引生成完成")
+
+        self.logger.info("文章分組、關鍵詞分類、合併與索引生成完成")
 
 
 if __name__ == "__main__":
     grouper = ArticleGrouper()
     grouper.run()
+
 
 
 

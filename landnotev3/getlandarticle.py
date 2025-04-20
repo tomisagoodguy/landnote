@@ -588,7 +588,7 @@ class ArticleScraper:
             self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
             return "*表格轉換失敗*"
 
-    def _wrap_text(self, text, max_width=25):
+    def _wrap_text(self, text, max_width=30):
         """智能地將文本按照自然斷句點換行"""
         if len(text) <= max_width:
             return text
