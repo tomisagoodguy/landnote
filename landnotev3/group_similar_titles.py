@@ -232,7 +232,9 @@ class ArticleGrouper:
                     if line.startswith('# ') and title_idx == 0:
                         title_idx += 1
                         continue
-                    line = re.sub(r'\./images/', '../articles/images/', line)
+                    # 修正：確保圖片路徑使用正斜線
+                    line = re.sub(
+                        r'\./images/', '../articles/images/', line).replace('\\', '/')
                     merged_content.append(line)
                 merged_content.append("")
             try:
@@ -253,11 +255,16 @@ class ArticleGrouper:
             if len(group) > 1:
                 safe_title = re.sub(
                     r'[^\w\s-]', '', group_title).replace(' ', '_')
-                merged_file = Path("merged") / f"group_{i}_{safe_title}.md"
+                # 修正：確保使用正斜線作為路徑分隔符
+                merged_file = str(
+                    Path("merged") / f"group_{i}_{safe_title}.md").replace('\\', '/')
                 content.append(f"- [查看合併文章]({merged_file})")
             for article in group:
-                relative_path = article['file_path'].relative_to(
-                    self.output_dir)
+                # 修正：確保使用正斜線作為路徑分隔符，並處理特殊字符
+                relative_path = str(article['file_path'].relative_to(
+                    self.output_dir)).replace('\\', '/')
+                # 將逗號和其他特殊字符進行URL編碼
+                relative_path = self._github_safe_path(relative_path)
                 content.append(
                     f"- {article['date']} [{article['title']}]({relative_path}) "
                     f"(文章編號：{article['article_no']})"
@@ -269,6 +276,21 @@ class ArticleGrouper:
             self.logger.info(f"已生成分組索引：{index_path}")
         except Exception as e:
             self.logger.error(f"生成索引失敗：{str(e)}")
+
+    def _github_safe_path(self, path: str) -> str:
+        """處理路徑使其在GitHub上安全顯示"""
+        # 將逗號和其他特殊字符替換為URL編碼形式
+        import urllib.parse
+        # 將路徑分割為目錄和文件名
+        parts = path.split('/')
+        # 只對最後一部分（文件名）進行編碼
+        if len(parts) > 0:
+            filename = parts[-1]
+            # 使用百分比編碼替換特殊字符
+            encoded_filename = urllib.parse.quote(filename)
+            parts[-1] = encoded_filename
+            return '/'.join(parts)
+        return path
 
     def generate_pdf(self, groups: List[List[Dict]]):
         """生成包含所有文章內容的 PDF 檔案，每組使用新頁面，並添加頁碼"""
@@ -346,8 +368,9 @@ class ArticleGrouper:
                         img_match = re.match(r'!\[.*?\]\((.*?)\)', line)
                         if img_match:
                             img_path = img_match.group(1)
+                            # 修正：確保圖片路徑使用正斜線
                             img_path = img_path.replace(
-                                './images/', str(self.image_dir) + '/')
+                                './images/', str(self.image_dir) + '/').replace('\\', '/')
                             if Path(img_path).exists():
                                 try:
                                     img = Image(img_path, width=4 *
