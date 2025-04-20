@@ -5,6 +5,12 @@ from typing import List, Dict
 from fuzzywuzzy import fuzz
 from datetime import datetime
 import logging
+from reportlab.lib.pagesizes import A4
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 
 class ArticleGrouper:
@@ -17,6 +23,42 @@ class ArticleGrouper:
         self.similarity_threshold = 80
         self.articles = []
         self.logger = self.setup_logger()
+        self.chinese_font_name = 'Helvetica'  # 預設字型
+
+        # 嘗試註冊中文字型，使用完整路徑
+        self._setup_chinese_font()
+
+    def _setup_chinese_font(self):
+        """設置中文字型，嘗試多個可能的路徑"""
+        # 常見的中文字型路徑
+        possible_font_paths = [
+            "C:/Windows/Fonts/msjh.ttf",  # Windows 微軟正黑體
+            "C:/Windows/Fonts/msyh.ttf",  # Windows 微軟雅黑
+            "C:/Windows/Fonts/SimSun.ttc",  # Windows 宋體
+            "C:/Windows/Fonts/SimHei.ttf",  # Windows 黑體
+            "/System/Library/Fonts/PingFang.ttc",  # macOS
+            "/usr/share/fonts/truetype/arphic/uming.ttc",  # Linux
+        ]
+
+        for font_path in possible_font_paths:
+            try:
+                if os.path.exists(font_path):
+                    font_name = os.path.basename(font_path).split('.')[0]
+                    pdfmetrics.registerFont(TTFont(font_name, font_path))
+                    self.chinese_font_name = font_name
+                    self.logger.info(f"成功載入中文字型：{font_path}")
+                    return
+            except Exception as e:
+                self.logger.warning(f"嘗試載入字型 {font_path} 失敗：{str(e)}")
+
+        # 如果所有嘗試都失敗，使用 ReportLab 內建的字型
+        try:
+            from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+            pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
+            self.chinese_font_name = 'STSong-Light'
+            self.logger.info("使用 STSong-Light 作為中文字型")
+        except Exception as e:
+            self.logger.warning(f"無法載入 CID 字型：{str(e)}，將使用預設字型 Helvetica")
 
     def setup_logger(self):
         """設定日誌系統"""
@@ -45,15 +87,12 @@ class ArticleGrouper:
             try:
                 with open(md_file, 'r', encoding='utf-8') as f:
                     content = f.read()
-                    # 提取標題（第一行以 # 開頭）
                     title_match = re.search(r'^# (.+)$', content, re.MULTILINE)
                     title = title_match.group(
                         1).strip() if title_match else md_file.stem
-                    # 提取文章編號
                     article_no_match = re.search(r'文章編號：(\d+)', content)
                     article_no = article_no_match.group(
                         1) if article_no_match else md_file.stem.split('_')[0]
-                    # 提取日期
                     date = None
                     date_obj = None
                     date_patterns = [
@@ -203,6 +242,144 @@ class ArticleGrouper:
         except Exception as e:
             self.logger.error(f"生成索引失敗：{str(e)}")
 
+    def generate_pdf(self, groups: List[List[Dict]]):
+        """生成包含所有文章內容的 PDF 檔案"""
+        pdf_path = self.output_dir / "all_articles.pdf"
+        doc = SimpleDocTemplate(str(pdf_path), pagesize=A4, rightMargin=72,
+                                leftMargin=72, topMargin=72, bottomMargin=18)
+        styles = getSampleStyleSheet()
+
+        # 使用已註冊的中文字型
+        # 自訂樣式
+        styles.add(ParagraphStyle(name='ChineseTitle',
+                fontName=self.chinese_font_name, fontSize=16, leading=20, spaceAfter=12))
+        styles.add(ParagraphStyle(name='ChineseSubtitle',
+                fontName=self.chinese_font_name, fontSize=14, leading=18, spaceAfter=10))
+        styles.add(ParagraphStyle(name='ChineseBody',
+                fontName=self.chinese_font_name, fontSize=12, leading=15, spaceAfter=8))
+
+        story = []
+        story.append(Paragraph("所有文章合併", styles['ChineseTitle']))
+        story.append(Spacer(1, 0.2 * inch))
+        story.append(Paragraph(
+            f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['ChineseBody']))
+        story.append(Spacer(1, 0.3 * inch))
+
+        for i, group in enumerate(groups, 1):
+            group_title = group[0]['title']
+            for keyword in [",許文昌老師", ",曾榮耀老師", "許文昌老師", "曾榮耀老師"]:
+                group_title = group_title.replace(keyword, "").strip()
+            story.append(
+                Paragraph(f"組 {i}：{group_title}", styles['ChineseSubtitle']))
+            story.append(Spacer(1, 0.2 * inch))
+
+            for article in group:
+                story.append(
+                    Paragraph(article['title'], styles['ChineseSubtitle']))
+                story.append(
+                    Paragraph(f"文章編號：{article['article_no']}", styles['ChineseBody']))
+                story.append(
+                    Paragraph(f"發布日期：{article['date']}", styles['ChineseBody']))
+                story.append(Spacer(1, 0.1 * inch))
+
+                content_lines = article['content'].split('\n')
+                title_idx = 0
+                for line in content_lines:
+                    if line.startswith('# ') and title_idx == 0:
+                        title_idx += 1
+                        continue
+
+                    # 處理圖片 - 修正正則表達式問題
+                    try:
+                        img_match = re.match(r'!\[.*?\]\((.*?)\)', line)
+                        if img_match:
+                            img_path = img_match.group(1)
+                            # 使用 raw string 或雙斜線來避免轉義問題
+                            img_path = img_path.replace(
+                                './images/', str(self.image_dir) + '/')
+                            if Path(img_path).exists():
+                                try:
+                                    img = Image(img_path, width=4 *
+                                                inch, height=3*inch)
+                                    story.append(img)
+                                    story.append(Spacer(1, 0.1 * inch))
+                                except Exception as e:
+                                    self.logger.warning(
+                                        f"無法處理圖片 {img_path}：{str(e)}")
+                            else:
+                                self.logger.warning(f"圖片 {img_path} 不存在，跳過嵌入")
+                            continue
+
+                        # 處理文字
+                        if line.strip():
+                            # 處理特殊字符，避免 ReportLab 解析錯誤
+                            clean_line = line.replace('\\', '\\\\')  # 雙重轉義反斜線
+                            story.append(
+                                Paragraph(clean_line, styles['ChineseBody']))
+                    except Exception as e:
+                        self.logger.warning(f"處理行時出錯：{str(e)}，原始行：{line[:30]}...")
+                        # 嘗試使用更安全的方式添加
+                        try:
+                            safe_line = ''.join(
+                                c for c in line if ord(c) < 128)  # 只保留 ASCII 字符
+                            if safe_line.strip():
+                                story.append(
+                                    Paragraph(safe_line, styles['ChineseBody']))
+                        except:
+                            pass
+
+                story.append(Spacer(1, 0.2 * inch))
+            story.append(Spacer(1, 0.3 * inch))
+
+        try:
+            doc.build(story)
+            self.logger.info(f"已生成 PDF 檔案：{pdf_path}")
+        except Exception as e:
+            self.logger.error(f"生成 PDF 失敗：{str(e)}")
+            # 嘗試使用更簡單的方式生成 PDF
+            self._generate_simple_pdf(groups, pdf_path)
+
+
+    def _generate_simple_pdf(self, groups: List[List[Dict]], pdf_path: Path):
+        """使用更簡單的方式生成 PDF，作為備選方案"""
+        try:
+            self.logger.info("嘗試使用簡化方式生成 PDF...")
+            from reportlab.lib import colors
+            doc = SimpleDocTemplate(str(pdf_path), pagesize=A4)
+            styles = getSampleStyleSheet()
+            story = []
+
+            # 使用預設字型
+            story.append(Paragraph("所有文章合併", styles['Title']))
+            story.append(Spacer(1, 0.2 * inch))
+            story.append(Paragraph(
+                f"生成時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
+            story.append(Spacer(1, 0.3 * inch))
+
+            for i, group in enumerate(groups, 1):
+                group_title = group[0]['title']
+                for keyword in [",許文昌老師", ",曾榮耀老師", "許文昌老師", "曾榮耀老師"]:
+                    group_title = group_title.replace(keyword, "").strip()
+
+                story.append(
+                    Paragraph(f"組 {i}：{group_title}", styles['Heading2']))
+
+                for article in group:
+                    story.append(
+                        Paragraph(article['title'], styles['Heading3']))
+                    story.append(
+                        Paragraph(f"文章編號：{article['article_no']}", styles['Normal']))
+                    story.append(
+                        Paragraph(f"發布日期：{article['date']}", styles['Normal']))
+                    story.append(Spacer(1, 0.1 * inch))
+                story.append(Spacer(1, 0.2 * inch))
+
+            doc.build(story)
+            self.logger.info(f"已使用簡化方式生成 PDF 檔案：{pdf_path}")
+        except Exception as e:
+            self.logger.error(f"簡化 PDF 生成也失敗：{str(e)}")
+            self.logger.info("建議使用其他工具如 Pandoc 將 Markdown 轉換為 PDF")
+
     def run(self):
         """執行分組流程"""
         self.logger.info("開始分組文章")
@@ -213,12 +390,17 @@ class ArticleGrouper:
         groups = self.group_articles()
         self.merge_group_articles(groups)
         self.generate_index(groups)
-        self.logger.info("文章分組與合併完成")
+        try:
+            self.generate_pdf(groups)
+        except Exception as e:
+            self.logger.error(f"PDF 生成失敗，但不影響其他功能：{str(e)}")
+        self.logger.info("文章分組、合併與索引生成完成")
 
 
 if __name__ == "__main__":
     grouper = ArticleGrouper()
     grouper.run()
+
 
 
 # python group_similar_titles.py
