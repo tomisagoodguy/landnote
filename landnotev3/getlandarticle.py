@@ -456,10 +456,13 @@ class ArticleScraper:
             return None
 
     def process_content(self, html_content: str, article_no: int) -> str:
-        """處理文章內容，包括下載圖片和清理HTML"""
+        """處理文章內容，包括下載圖片和清理HTML，並保留表格格式"""
         if not html_content:
             return ""
+
         soup = BeautifulSoup(html_content, 'html.parser')
+
+        # 處理圖片
         image_references = []
         for index, img in enumerate(soup.find_all('img'), 1):
             img_url = img.get('src', '')
@@ -471,10 +474,152 @@ class ArticleScraper:
                     img.replace_with(f"[圖片{index}]")
                 else:
                     img.replace_with("[圖片下載失敗]")
+
+        # 處理表格
+        tables = soup.find_all('table')
+        table_placeholders = {}
+        for i, table in enumerate(tables, 1):
+            md_table = self._html_table_to_markdown(table)
+            placeholder = f"TABLE_PLACEHOLDER_{i}"
+            table_placeholders[placeholder] = md_table
+            table.replace_with(f"{placeholder}")
+
+        # 處理其他內容
         content = self._format_content(soup)
+
+        # 替換表格佔位符
+        for placeholder, md_table in table_placeholders.items():
+            content = content.replace(placeholder, f"\n\n{md_table}\n\n")
+
+        # 添加圖片
         if image_references:
             content += "\n\n## 文章圖片\n" + "".join(image_references)
+
         return content
+
+    def _html_table_to_markdown(self, table) -> str:
+        """將 HTML 表格轉換為 Markdown 表格，並處理長文本換行"""
+        try:
+            # 收集所有表格數據
+            headers = []
+            data_rows = []
+
+            # 尋找表頭行
+            thead = table.find('thead')
+            if thead:
+                header_row = thead.find('tr')
+                if header_row:
+                    headers = [th.get_text().strip()
+                            for th in header_row.find_all(['th', 'td'])]
+
+            # 如果沒有找到表頭，嘗試從第一行獲取
+            if not headers and table.find('tr'):
+                first_row = table.find('tr')
+                if first_row.find('th'):
+                    headers = [th.get_text().strip()
+                            for th in first_row.find_all('th')]
+                else:
+                    headers = [td.get_text().strip()
+                            for td in first_row.find_all('td')]
+                    # 如果使用第一行作為表頭，從數據行中移除
+                    data_rows = []
+
+            # 收集數據行
+            for tr in table.find_all('tr'):
+                # 跳過已處理的表頭行
+                if tr == table.find('tr') and not thead and headers == [td.get_text().strip() for td in tr.find_all('td')]:
+                    continue
+
+                row_data = []
+                for td in tr.find_all(['td', 'th']):
+                    # 處理合併單元格
+                    colspan = int(td.get('colspan', 1))
+                    cell_text = td.get_text().strip()
+                    cell_text = re.sub(r'\s+', ' ', cell_text)
+                    
+                    # 處理長文本自動換行
+                    cell_text = self._wrap_text(cell_text, 25)
+
+                    # 添加單元格文本
+                    row_data.append(cell_text)
+
+                    # 如果有合併單元格，添加額外的空單元格
+                    for _ in range(colspan - 1):
+                        row_data.append('')
+
+                if row_data and not (len(row_data) == len(headers) and all(cell == '' for cell in row_data)):
+                    data_rows.append(row_data)
+
+            # 如果仍然沒有表頭，創建默認表頭
+            if not headers:
+                max_cols = max(len(row)
+                            for row in data_rows) if data_rows else 0
+                headers = [f"欄位 {i+1}" for i in range(max_cols)]
+
+            # 確保所有數據行的列數與表頭一致
+            for i in range(len(data_rows)):
+                while len(data_rows[i]) < len(headers):
+                    data_rows[i].append('')
+                # 截斷過長的行
+                data_rows[i] = data_rows[i][:len(headers)]
+
+            # 生成 Markdown 表格
+            md_table = []
+
+            # 添加表頭
+            md_table.append('| ' + ' | '.join(headers) + ' |')
+
+            # 添加分隔行
+            md_table.append('| ' + ' | '.join(['---' for _ in headers]) + ' |')
+
+            # 添加數據行
+            for row in data_rows:
+                md_table.append('| ' + ' | '.join(row) + ' |')
+
+            return '\n'.join(md_table)
+        except Exception as e:
+            self.logger.error(f"轉換表格失敗: {str(e)}")
+            import traceback
+            self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
+            return "*表格轉換失敗*"
+
+    def _wrap_text(self, text, max_width=25):
+        """智能地將文本按照自然斷句點換行"""
+        if len(text) <= max_width:
+            return text
+            
+        # 嘗試在標點符號處換行
+        punctuation = ['.', '，', '。', '；', '：', '、', '!', '?', '；', '：']
+        wrapped_text = []
+        current_chunk = ""
+        
+        for char in text:
+            current_chunk += char
+            
+            # 如果當前塊達到最大寬度，尋找合適的換行點
+            if len(current_chunk) >= max_width:
+                # 尋找最後的標點符號位置
+                last_punct = -1
+                for p in punctuation:
+                    pos = current_chunk.rfind(p)
+                    if pos > last_punct:
+                        last_punct = pos
+                
+                # 如果找到標點符號且不是在開頭，則在標點後換行
+                if last_punct > 0 and last_punct < len(current_chunk) - 1:
+                    wrapped_text.append(current_chunk[:last_punct+1])
+                    current_chunk = current_chunk[last_punct+1:]
+                else:
+                    # 如果沒有找到合適的標點，則直接在最大寬度處換行
+                    wrapped_text.append(current_chunk)
+                    current_chunk = ""
+        
+        # 添加剩餘的文本
+        if current_chunk:
+            wrapped_text.append(current_chunk)
+            
+        return "<br>".join(wrapped_text)
+
 
     def _format_content(self, soup: BeautifulSoup) -> str:
         """格式化文章內容，處理換行和縮排"""
@@ -526,6 +671,8 @@ class ArticleScraper:
             article_no = article_data['文章編號']
             title = re.sub(r'[<>:"/\\|?*]', '', article_data['標題'])[:100]
             markdown_content = f"""# {article_data['標題']}
+            
+    
 
 ## 文章資訊
 - 文章編號：{article_no}
@@ -547,6 +694,119 @@ class ArticleScraper:
             self.logger.info(f"文章 {article_no} 已保存到 {file_path}")
         except Exception as e:
             self.logger.error(f"儲存文章 {article_data.get('文章編號')} 失敗: {str(e)}")
+
+    def reprocess_articles(self, article_numbers=None):
+        """重新處理已爬取的文章，修復表格格式"""
+        self.logger.info("開始重新處理已爬取文章的表格格式")
+
+        try:
+            if not self.data_file.exists():
+                self.logger.error("未找到 articles.xlsx，無法重新處理文章")
+                return
+
+            df = pd.read_excel(self.data_file)
+            if '文章編號' not in df.columns:
+                self.logger.error("文章資料中缺少文章編號欄位")
+                return
+
+            # 如果指定了文章編號，確保它們是字符串類型
+            if article_numbers is not None:
+                article_numbers = [str(num) for num in article_numbers]
+            # 如果沒有指定文章編號，處理所有已爬取的文章
+            else:
+                article_numbers = df['文章編號'].astype(str).tolist()
+
+            self.logger.info(f"將重新處理 {len(article_numbers)} 篇文章")
+
+            success_count = 0
+            fail_count = 0
+
+            for article_no in tqdm(article_numbers, desc="重新處理文章"):
+                try:
+                    # 檢查文章檔案是否存在
+                    article_files = list(
+                        self.articles_dir.glob(f"{article_no}_*.md"))
+                    if not article_files:
+                        self.logger.warning(f"找不到文章 {article_no} 的檔案")
+                        fail_count += 1
+                        continue
+
+                    article_file = article_files[0]
+
+                    # 讀取原始 HTML 檔案
+                    html_file = self.logs_dir / \
+                        f"article_{article_no}_response.html"
+                    if not html_file.exists():
+                        self.logger.warning(f"找不到文章 {article_no} 的原始 HTML 檔案")
+                        fail_count += 1
+                        continue
+
+                    with open(html_file, 'r', encoding='utf-8') as f:
+                        html_content = f.read()
+
+                    # 解析 HTML 並提取內文
+                    soup = BeautifulSoup(html_content, 'html.parser')
+                    content_div = None
+
+                    # 查找內文區域
+                    for row in soup.select('.columnsDetail_tableRow'):
+                        th = row.select_one('.columnsDetail_tableth')
+                        td = row.select_one('.columnsDetail_tabletd')
+                        if th and td and th.text.strip() == '內文':
+                            content_div = td
+                            break
+
+                    if not content_div:
+                        content_div = soup.select_one(
+                            '.columnsDetail_tabletd#SearchItem')
+
+                    if not content_div:
+                        self.logger.warning(f"文章 {article_no} 找不到內文區域")
+                        fail_count += 1
+                        continue
+
+                    # 重新處理內文，特別是表格
+                    new_content = self.process_content(
+                        str(content_div), article_no)
+
+                    # 讀取原始 Markdown 檔案
+                    with open(article_file, 'r', encoding='utf-8') as f:
+                        markdown_content = f.read()
+
+                    # 找到內文部分並替換
+                    content_pattern = re.compile(
+                        r'## 內文\n(.*?)(?=\n---|\n## 文章圖片|\Z)', re.DOTALL)
+                    match = content_pattern.search(markdown_content)
+
+                    if match:
+                        updated_markdown = markdown_content.replace(
+                            match.group(0),
+                            f"## 內文\n{new_content}"
+                        )
+
+                        # 寫回檔案
+                        with open(article_file, 'w', encoding='utf-8') as f:
+                            f.write(updated_markdown)
+
+                        self.logger.info(f"成功更新文章 {article_no} 的表格格式")
+                        success_count += 1
+                    else:
+                        self.logger.warning(f"無法在文章 {article_no} 中找到內文部分")
+                        fail_count += 1
+
+                except Exception as e:
+                    self.logger.error(f"重新處理文章 {article_no} 時發生錯誤: {str(e)}")
+                    import traceback
+                    self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
+                    fail_count += 1
+
+            self.logger.info(f"重新處理完成：成功 {success_count} 篇，失敗 {fail_count} 篇")
+
+        except Exception as e:
+            self.logger.error(f"重新處理文章時發生未預期錯誤: {str(e)}")
+            import traceback
+            self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
+
 
     def create_index(self):
         """創建文章索引，整合原有目錄內容"""
@@ -743,6 +1003,10 @@ if __name__ == "__main__":
                         'true'), default=True, help="Check specific articles: True or False")
     parser.add_argument('--buffer_size', type=int, default=500,
                         help="Buffer size for article number range")
+    parser.add_argument('--reprocess', action='store_true',
+                        help="Reprocess existing articles to fix table formatting")
+    parser.add_argument('--article_numbers', type=str, default=None,
+                        help="Comma-separated list of article numbers to reprocess")
     args = parser.parse_args()
 
     scraper = ArticleScraper(scan_mode=args.scan_mode,
@@ -750,11 +1014,20 @@ if __name__ == "__main__":
     if args.buffer_size:
         scraper.buffer_size = args.buffer_size
 
-    if scraper.check_specific:
-        specific_articles = scraper.load_specific_articles()
-        for article_no in specific_articles:
-            scraper.check_specific_article(article_no)
-    scraper.run()
+    if args.reprocess:
+        article_numbers = None
+        if args.article_numbers:
+            article_numbers = [num.strip()
+                               for num in args.article_numbers.split(',')]
+        scraper.reprocess_articles(article_numbers)
+    else:
+        if scraper.check_specific:
+            specific_articles = scraper.load_specific_articles()
+            for article_no in specific_articles:
+                scraper.check_specific_article(article_no)
+        scraper.run()
+
+
 
 
 
@@ -767,5 +1040,12 @@ python getlandarticle.py --scan_mode all --check_specific True
 
 # 近期模式，檢查特定文章，使用自訂緩衝區大小(1000)
 python getlandarticle.py --scan_mode recent --check_specific True --buffer_size 1000
+
+使用以下命令重新處理所有已爬取的文章：
+python getlandarticle.py --reprocess
+
+或者指定特定文章編號進行重新處理：
+python getlandarticle.py --reprocess --article_numbers 912898
+
 
 '''
