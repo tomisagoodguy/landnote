@@ -17,7 +17,6 @@ import time
 import os
 
 
-
 class ArticleScraper:
     def __init__(self, scan_mode="all", data_file="articles.xlsx", check_specific=True):
         """初始化爬蟲設定"""
@@ -43,7 +42,8 @@ class ArticleScraper:
                     "end": 915000,
                     "description": "近期文章範圍"
                 }
-            ]
+            ],
+            'BUFFER_SIZE': 500  # 新增：文章編號範圍緩衝區大小
         }
 
         # 基本設定
@@ -55,6 +55,7 @@ class ArticleScraper:
         self.scan_mode = scan_mode
         self.data_file = Path(data_file)
         self.check_specific = check_specific
+        self.buffer_size = self.SETTINGS['BUFFER_SIZE']
 
         # 期刊參數設定
         self.journal_params = self.SETTINGS['JOURNAL_PARAMS']
@@ -72,6 +73,9 @@ class ArticleScraper:
 
         # 文章編號範圍設定
         self.article_ranges = self.SETTINGS['ARTICLE_RANGES']
+
+        # 最新文章編號緩存
+        self.latest_article_number = None
 
         # 初始化其他組件
         self.setup_directories()
@@ -599,6 +603,57 @@ class ArticleScraper:
         except Exception as e:
             self.logger.error(f"更新目錄失敗: {str(e)}")
 
+    def _get_latest_article_number(self) -> Optional[int]:
+        """獲取最新的文章編號，並緩存結果"""
+        if self.latest_article_number is not None:
+            return self.latest_article_number
+
+        try:
+            # 從第一頁獲取文章編號
+            page_articles = self.get_article_urls_from_journal(1)
+            if page_articles:
+                self.latest_article_number = max(page_articles)
+                self.logger.info(f"檢測到最新文章編號: {self.latest_article_number}")
+                return self.latest_article_number
+
+            # 如果第一頁沒有找到文章，嘗試檢查已處理的文章
+            if self.processed_articles:
+                try:
+                    processed_numbers = [int(no)
+                                         for no in self.processed_articles]
+                    latest = max(processed_numbers)
+                    self.logger.info(f"從已處理文章中獲取最新編號: {latest}")
+                    self.latest_article_number = latest
+                    return latest
+                except (ValueError, TypeError):
+                    pass
+
+            # 如果都沒有找到，返回配置中的最大值
+            max_end = max(range_info['end']
+                          for range_info in self.article_ranges)
+            self.logger.info(f"使用配置中的最大編號: {max_end}")
+            return max_end
+        except Exception as e:
+            self.logger.error(f"獲取最新文章編號失敗: {str(e)}")
+            return None
+
+    def _update_article_ranges(self):
+        """根據最新文章編號更新文章範圍"""
+        latest_no = self._get_latest_article_number()
+        if not latest_no:
+            self.logger.warning("無法獲取最新文章編號，使用原有範圍")
+            return
+
+        # 更新每個範圍的結束編號
+        for range_info in self.article_ranges:
+            if latest_no > range_info['end']:
+                old_end = range_info['end']
+                range_info['end'] = latest_no + self.buffer_size
+                self.logger.info(
+                    f"更新文章範圍 '{range_info['description']}' 結束編號: "
+                    f"{old_end} -> {range_info['end']} (增加緩衝區 {self.buffer_size})"
+                )
+
     def run(self):
         """執行文章更新"""
         self.logger.info(f"開始執行爬蟲 (模式: {self.scan_mode})")
@@ -608,17 +663,27 @@ class ArticleScraper:
             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 futures = []
                 article_numbers = set()
+
+                # 先獲取最新文章編號並更新範圍
+                self._update_article_ranges()
+
                 if self.scan_mode == "recent":
                     page_articles = self.get_article_urls_from_journal(1)
                     article_numbers.update(page_articles)
                     self.logger.info(f"近期模式：第一頁找到 {len(page_articles)} 篇新文章")
+
                     if page_articles:
                         min_article = min(page_articles)
                         max_article = max(page_articles)
                         self.logger.info(
                             f"期刊頁面文章範圍: {min_article} 到 {max_article}")
+
+                        # 使用動態上限，加上緩衝區
+                        latest_end = max_article + self.buffer_size
+                        self.logger.info(
+                            f"設定動態上限: {latest_end} (原始最大值 {max_article} + 緩衝區 {self.buffer_size})")
                         article_numbers.update(
-                            range(max(min_article, 914900), 915001))
+                            range(max(min_article, self.article_ranges[0]['start']), latest_end + 1))
                 else:
                     max_page = self.get_max_page_number()
                     for page_no in range(1, max_page + 1):
@@ -628,18 +693,26 @@ class ArticleScraper:
                         if not page_articles and page_no > 10:
                             self.logger.info(f"第 {page_no} 頁沒有新文章，停止檢查")
                             break
+
+                    # 使用更新後的文章範圍
                     for range_info in self.article_ranges:
+                        self.logger.info(
+                            f"處理文章範圍: {range_info['description']} - "
+                            f"從 {range_info['start']} 到 {range_info['end']}"
+                        )
                         for article_no in range(range_info['start'], range_info['end'] + 1, self.batch_size):
                             batch = range(article_no, min(
                                 article_no + self.batch_size, range_info['end'] + 1))
                             article_numbers.update(
                                 [no for no in batch if str(no) not in self.processed_articles])
+
                 self.logger.info(
-                    f"共找到 {len(article_numbers)} 篇新文章: {sorted(list(article_numbers))}")
+                    f"共找到 {len(article_numbers)} 篇新文章: {sorted(list(article_numbers))[:20]}...")
                 for article_no in article_numbers:
                     if str(article_no) not in self.processed_articles:
                         futures.append(executor.submit(
                             self.fetch_article, article_no))
+
                 with tqdm(total=len(futures), desc="處理文章") as pbar:
                     for future in futures:
                         try:
@@ -668,10 +741,15 @@ if __name__ == "__main__":
                         choices=['all', 'recent'], help="Scan mode: 'all' or 'recent'")
     parser.add_argument('--check_specific', type=lambda x: (str(x).lower() ==
                         'true'), default=True, help="Check specific articles: True or False")
+    parser.add_argument('--buffer_size', type=int, default=500,
+                        help="Buffer size for article number range")
     args = parser.parse_args()
 
     scraper = ArticleScraper(scan_mode=args.scan_mode,
                              check_specific=args.check_specific)
+    if args.buffer_size:
+        scraper.buffer_size = args.buffer_size
+
     if scraper.check_specific:
         specific_articles = scraper.load_specific_articles()
         for article_no in specific_articles:
@@ -680,5 +758,14 @@ if __name__ == "__main__":
 
 
 
-# python getlandarticle.py --scan_mode recent --check_specific True
-# python getlandarticle.py --scan_mode all --check_specific True
+'''
+# 近期模式，檢查特定文章，使用預設緩衝區大小(500)
+python getlandarticle.py --scan_mode recent --check_specific True
+
+# 完整模式，檢查特定文章，使用預設緩衝區大小(500)
+python getlandarticle.py --scan_mode all --check_specific True
+
+# 近期模式，檢查特定文章，使用自訂緩衝區大小(1000)
+python getlandarticle.py --scan_mode recent --check_specific True --buffer_size 1000
+
+'''
