@@ -357,8 +357,7 @@ class ArticleScraper:
             # 優先從 meta 標籤獲取資訊
             meta_author = soup.select_one('meta[name="citation_author"]')
             meta_title = soup.select_one('meta[name="citation_title"]')
-            meta_date = soup.select_one(
-                'meta[name="citation_publication_date"]')
+            meta_date = soup.select_one('meta[name="citation_publication_date"]')
             if meta_author and meta_title and meta_date:
                 self.logger.info(f"從 meta 標籤找到文章資訊")
                 article_info['作者'] = meta_author.get('content', '').strip()
@@ -388,6 +387,9 @@ class ArticleScraper:
                     elif key == '內文':
                         article_info['內文HTML'] = str(td)
                         found_fields += 1
+                    elif key == '關鍵詞':  # 新增關鍵詞提取
+                        article_info['關鍵詞'] = value
+                        found_fields += 1
             self.logger.info(f"文章 {article_no} 成功解析 {found_fields} 個欄位")
             # 如果不是目標作者，直接返回
             author = article_info.get('作者')
@@ -408,8 +410,7 @@ class ArticleScraper:
                     return None
             # 處理內文
             if '內文HTML' not in article_info:
-                content_div = soup.select_one(
-                    '.columnsDetail_tabletd#SearchItem')
+                content_div = soup.select_one('.columnsDetail_tabletd#SearchItem')
                 if content_div:
                     article_info['內文HTML'] = str(content_div)
                     self.logger.info("從頁面中提取內文 HTML")
@@ -427,12 +428,16 @@ class ArticleScraper:
                 'URL': f"{self.detail_url}?no={article_no}",
                 '爬取時間': datetime.now().strftime("%Y-%m-d %H:%M:%S")
             }
+            # 添加關鍵詞到文章數據中
+            if '關鍵詞' in article_info:
+                article_data['關鍵詞'] = article_info.get('關鍵詞', '')
             return article_data
         except Exception as e:
             self.logger.error(f"解析文章 {article_no} 失敗: {str(e)}")
             import traceback
             self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
             return None
+
 
     def download_image(self, img_url: str, article_no: int) -> Optional[str]:
         """下載圖片並返回本地檔名"""
@@ -620,23 +625,27 @@ class ArticleScraper:
             
         return "<br>".join(wrapped_text)
 
-
     def _format_content(self, soup: BeautifulSoup) -> str:
-        """格式化文章內容，處理換行和縮排"""
+        """格式化文章內容，處理換行和縮排，並自動處理列表項目"""
         allowed_tags = {'p', 'br', 'h1', 'h2', 'h3',
                         'h4', 'h5', 'h6', 'ul', 'ol', 'li'}
         for tag in soup.find_all():
             if tag.name not in allowed_tags:
                 tag.unwrap()
+
+        # 處理段落和標題
         for p in soup.find_all('p'):
             text = p.get_text().strip()
             if text:
                 p.string = ' '.join(text.split())
                 p.append('\n\n')
+
         for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
             level = int(h.name[1])
             prefix = '#' * level + ' '
             h.string = f'\n{prefix}{h.get_text().strip()}\n'
+
+        # 處理已有的列表
         for li in soup.find_all('li'):
             indent = '  '
             if li.parent.name == 'ol':
@@ -645,18 +654,70 @@ class ArticleScraper:
             else:
                 li.insert(0, f'{indent}• ')
             li.append('\n')
+
+        # 獲取基本文本內容
         content = soup.get_text()
+
+        # 自動檢測和處理未標記的列表項目
+        lines = content.split('\n')
+        processed_lines = []
+
+        list_patterns = [
+            # 數字列表: 1. 2. 3.
+            (r'^(\d+)\.(.+)$', lambda m: f"  {m.group(1)}. {m.group(2).strip()}"),
+            # 中文數字列表: 一、二、三、
+            (r'^([一二三四五六七八九十百千]+)、(.+)$',
+            lambda m: f"  • {m.group(1)}、{m.group(2).strip()}"),
+            # 帶括號的數字: (1) (2) (3)
+            (r'^\((\d+)\)(.+)$',
+            lambda m: f"  • ({m.group(1)}) {m.group(2).strip()}"),
+            # 帶括號的中文數字: (一) (二) (三)
+            (r'^\(([一二三四五六七八九十百千]+)\)(.+)$',
+            lambda m: f"  • ({m.group(1)}) {m.group(2).strip()}"),
+            # 英文字母列表: A. B. C. 或 A B C
+            (r'^([A-Za-z])\.?(.+)$',
+            lambda m: f"  • {m.group(1)}. {m.group(2).strip()}")
+        ]
+
+        for line in lines:
+            line = line.strip()
+            if not line:
+                processed_lines.append('')
+                continue
+
+            # 檢查是否匹配任何列表模式
+            matched = False
+            for pattern, replacement in list_patterns:
+                if re.match(pattern, line):
+                    processed_line = re.sub(pattern, replacement, line)
+                    processed_lines.append(processed_line)
+                    matched = True
+                    break
+
+            # 如果沒有匹配任何列表模式，保持原樣
+            if not matched:
+                processed_lines.append(line)
+
+        # 合併處理後的行
+        content = '\n'.join(processed_lines)
+
+        # 清理多餘的空白和換行
         content = re.sub(r'\n{3,}', '\n\n', content)
         content = re.sub(r'[ \t]+', ' ', content)
         content = re.sub(r' *\n *', '\n', content)
+
+        # 將內容分段並重新組合
         paragraphs = [p.strip() for p in content.split('\n') if p.strip()]
         formatted_content = '\n\n'.join(paragraphs)
+
         return formatted_content.strip()
+
 
     def validate_article(self, article_data: Dict) -> bool:
         """驗證文章資料完整性"""
         required_fields = ['標題', '作者', '日期', '內文']
         return all(field in article_data and article_data[field] for field in required_fields)
+
 
     def save_article(self, article_data: Dict) -> None:
         """儲存文章"""
@@ -670,23 +731,28 @@ class ArticleScraper:
             df.to_excel(self.data_file, index=False)
             article_no = article_data['文章編號']
             title = re.sub(r'[<>:"/\\|?*]', '', article_data['標題'])[:100]
+
+            # 添加關鍵詞部分
+            keywords_section = ""
+            if '關鍵詞' in article_data and article_data['關鍵詞']:
+                keywords_section = f"- 關鍵詞：{article_data['關鍵詞']}\n"
+
             markdown_content = f"""# {article_data['標題']}
             
-    
 
-## 文章資訊
-- 文章編號：{article_no}
-- 作者：{article_data['作者']}
-- 發布日期：{article_data['日期']}
-- 爬取時間：{article_data['爬取時間']}
-- 原文連結：[閱讀原文]({article_data['URL']})
+    ## 文章資訊
+    - 文章編號：{article_no}
+    - 作者：{article_data['作者']}
+    - 發布日期：{article_data['日期']}
+    {keywords_section}- 爬取時間：{article_data['爬取時間']}
+    - 原文連結：[閱讀原文]({article_data['URL']})
 
-## 內文
-{article_data['內文']}
+    ## 內文
+    {article_data['內文']}
 
----
-*注：本文圖片存放於 ./images/ 目錄下*
-"""
+    ---
+    *注：本文圖片存放於 ./images/ 目錄下*
+    """
             file_path = self.articles_dir / f"{article_no}_{title}.md"
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(markdown_content)
@@ -696,8 +762,8 @@ class ArticleScraper:
             self.logger.error(f"儲存文章 {article_data.get('文章編號')} 失敗: {str(e)}")
 
     def reprocess_articles(self, article_numbers=None):
-        """重新處理已爬取的文章，修復表格格式"""
-        self.logger.info("開始重新處理已爬取文章的表格格式")
+        """重新處理已爬取的文章，修復表格格式並添加關鍵詞"""
+        self.logger.info("開始重新處理已爬取文章的表格格式和關鍵詞")
 
         try:
             if not self.data_file.exists():
@@ -736,11 +802,28 @@ class ArticleScraper:
                     # 讀取原始 HTML 檔案
                     html_file = self.logs_dir / \
                         f"article_{article_no}_response.html"
-                    if not html_file.exists():
-                        self.logger.warning(f"找不到文章 {article_no} 的原始 HTML 檔案")
-                        fail_count += 1
-                        continue
 
+                    # 如果找不到原始 HTML 檔案，嘗試重新爬取
+                    if not html_file.exists():
+                        self.logger.info(f"找不到文章 {article_no} 的原始 HTML 檔案，嘗試重新爬取")
+                        try:
+                            self.wait_between_requests()
+                            url = f"{self.detail_url}?no={article_no}"
+                            response = self.session.get(
+                                url, timeout=30, verify=False)
+                            response.raise_for_status()
+                            response.encoding = 'utf-8'
+
+                            # 保存重新爬取的 HTML
+                            with open(html_file, 'w', encoding='utf-8') as f:
+                                f.write(response.text)
+                            self.logger.info(f"成功重新爬取文章 {article_no} 的 HTML")
+                        except Exception as e:
+                            self.logger.error(f"重新爬取文章 {article_no} 失敗: {str(e)}")
+                            fail_count += 1
+                            continue
+
+                    # 讀取 HTML 內容
                     with open(html_file, 'r', encoding='utf-8') as f:
                         html_content = f.read()
 
@@ -765,6 +848,17 @@ class ArticleScraper:
                         fail_count += 1
                         continue
 
+                    # 提取關鍵詞
+                    keywords = None
+                    for row in soup.select('.columnsDetail_tableRow'):
+                        th = row.select_one('.columnsDetail_tableth')
+                        td = row.select_one('.columnsDetail_tabletd')
+                        if th and td and th.text.strip() == '關鍵詞':
+                            keywords = td.text.strip()
+                            self.logger.info(
+                                f"從文章 {article_no} 中提取到關鍵詞: {keywords}")
+                            break
+
                     # 重新處理內文，特別是表格
                     new_content = self.process_content(
                         str(content_div), article_no)
@@ -784,11 +878,38 @@ class ArticleScraper:
                             f"## 內文\n{new_content}"
                         )
 
+                        # 添加關鍵詞（如果有）
+                        if keywords:
+                            # 檢查 Markdown 是否已經有關鍵詞部分
+                            if '- 關鍵詞：' not in updated_markdown:
+                                # 在發布日期後添加關鍵詞
+                                pattern = r'- 發布日期：(.*?)\n'
+                                replacement = r'- 發布日期：\1\n- 關鍵詞：' + keywords + '\n'
+                                updated_markdown = re.sub(
+                                    pattern, replacement, updated_markdown)
+                                self.logger.info(
+                                    f"已添加關鍵詞到文章 {article_no} 的 Markdown 文件")
+                            else:
+                                # 更新已存在的關鍵詞
+                                pattern = r'- 關鍵詞：(.*?)\n'
+                                replacement = r'- 關鍵詞：' + keywords + '\n'
+                                updated_markdown = re.sub(
+                                    pattern, replacement, updated_markdown)
+                                self.logger.info(f"已更新文章 {article_no} 的關鍵詞")
+
                         # 寫回檔案
                         with open(article_file, 'w', encoding='utf-8') as f:
                             f.write(updated_markdown)
 
-                        self.logger.info(f"成功更新文章 {article_no} 的表格格式")
+                        # 更新 Excel 中的關鍵詞
+                        if keywords and '關鍵詞' in df.columns:
+                            df.loc[df['文章編號'].astype(
+                                str) == article_no, '關鍵詞'] = keywords
+                        elif keywords:
+                            df.loc[df['文章編號'].astype(
+                                str) == article_no, '關鍵詞'] = keywords
+
+                        self.logger.info(f"成功更新文章 {article_no} 的表格格式和關鍵詞")
                         success_count += 1
                     else:
                         self.logger.warning(f"無法在文章 {article_no} 中找到內文部分")
@@ -800,12 +921,18 @@ class ArticleScraper:
                     self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
                     fail_count += 1
 
+            # 保存更新後的 Excel 文件
+            df.to_excel(self.data_file, index=False)
+            self.logger.info(f"已更新 Excel 文件中的關鍵詞資訊")
+
             self.logger.info(f"重新處理完成：成功 {success_count} 篇，失敗 {fail_count} 篇")
 
         except Exception as e:
             self.logger.error(f"重新處理文章時發生未預期錯誤: {str(e)}")
             import traceback
             self.logger.error(f"錯誤堆疊: {traceback.format_exc()}")
+
+
 
 
     def create_index(self):
