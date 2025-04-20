@@ -17,19 +17,19 @@
   <img src="https://img.shields.io/badge/地政學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="地政學習文章" width="300">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/past_exams">
   <img src="https://img.shields.io/badge/地政各年度考古題-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="地政各年度考古題" width="300">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E5%9C%B0%E6%94%BF%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/merged_exams">
   <img src="https://img.shields.io/badge/地政合併考古題-一次瀏覽所有題目-orange?style=for-the-badge&logo=github" alt="地政合併考古題" width="300">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/legal_exams">
   <img src="https://img.shields.io/badge/高點法律考古題-法律題庫-red?style=for-the-badge&logo=github" alt="高點法律考古題" width="300">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/merged_legal_exams">
   <img src="https://img.shields.io/badge/法律合併考古題-法律專業綜合題庫-purple?style=for-the-badge&logo=github" alt="法律合併考古題" width="300">
 </a>
 
@@ -64,28 +64,28 @@
     <td align="center" width="20%">
       <h3>📋 地政各年度考古題</h3>
       <p>收錄歷屆地政相關考試試題，所有PDF檔案已解鎖，可自由註解、標記與列印，按科目與年度分類整理。</p>
-      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/past_exams">
         <b>👉 前往題庫區 👈</b>
       </a>
     </td>
     <td align="center" width="20%">
       <h3>📚 地政合併考古題</h3>
       <p>各科目地政考古題的合併版本，方便一次瀏覽所有年度的題目，提升學習效率。</p>
-      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E5%9C%B0%E6%94%BF%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/merged_exams">
         <b>👉 前往合併版區 👈</b>
       </a>
     </td>
     <td align="center" width="20%">
       <h3>⚖️ 高點法律題庫</h3>
       <p>專業法律考古題集，涵蓋民法等關鍵科目，幫助深入理解法律概念與應用。</p>
-      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C">
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/legal_exams">
         <b>👉 前往法律題庫 👈</b>
       </a>
     </td>
     <td align="center" width="20%">
       <h3>📑 法律合併考古題</h3>
       <p>法律類考古題的合併版本，包含中華郵政、中華電信、地方特考及專技高考等多種法律考題。</p>
-      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/merged_legal_exams">
         <b>👉 前往法律合併題庫 👈</b>
       </a>
     </td>
@@ -155,19 +155,19 @@
   <img src="https://img.shields.io/badge/地政學習文章-立即前往文章區-brightgreen?style=for-the-badge&logo=github" alt="地政學習文章" width="250">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/地政考古題">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/past_exams">
   <img src="https://img.shields.io/badge/地政各年度考古題-立即前往題庫區-blue?style=for-the-badge&logo=github" alt="地政各年度考古題" width="250">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E5%9C%B0%E6%94%BF%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/merged_exams">
   <img src="https://img.shields.io/badge/地政合併考古題-一次瀏覽所有題目-orange?style=for-the-badge&logo=github" alt="地政合併考古題" width="250">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/legal_exams">
   <img src="https://img.shields.io/badge/高點法律考古題-法律題庫-red?style=for-the-badge&logo=github" alt="高點法律考古題" width="250">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/%E9%AB%98%E9%BB%9E%E6%B3%95%E5%BE%8B%E8%80%83%E5%8F%A4%E9%A1%8C/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88">
+<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/merged_legal_exams">
   <img src="https://img.shields.io/badge/法律合併考古題-法律專業綜合題庫-purple?style=for-the-badge&logo=github" alt="法律合併考古題" width="250">
 </a>
 
