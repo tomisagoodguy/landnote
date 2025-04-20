@@ -33,7 +33,7 @@
   <img src="https://img.shields.io/badge/法律合併考古題-法律專業綜合題庫-purple?style=for-the-badge&logo=github" alt="法律合併考古題" width="300">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/concept_groups">
+<a href="https://github.com/tomisagoodguy/landnote/blob/main/landnotev3/real_estate_articles/README_grouped.md">
   <img src="https://img.shields.io/badge/地政觀念分類學習-相同概念文章整合-teal?style=for-the-badge&logo=lightbulb" alt="觀念分類學習" width="300">
 </a>
 
@@ -95,7 +95,7 @@
     <td align="center" colspan="5">
       <h3>🧠 地政依觀念分類學習</h3>
       <p>將相同概念的地政文章整合在一起，幫助您系統性地理解跨科目的關聯知識點，建立完整知識體系。</p>
-      <a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/concept_groups">
+      <a href="https://github.com/tomisagoodguy/landnote/blob/main/landnotev3/real_estate_articles/README_grouped.md">
         <b>👉 前往觀念分類區 👈</b>
       </a>
     </td>
@@ -171,7 +171,7 @@
   <img src="https://img.shields.io/badge/法律合併考古題-法律專業綜合題庫-purple?style=for-the-badge&logo=github" alt="法律合併考古題" width="250">
 </a>
 
-<a href="https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/concept_groups">
+<a href="https://github.com/tomisagoodguy/landnote/blob/main/landnotev3/real_estate_articles/README_grouped.md">
   <img src="https://img.shields.io/badge/地政觀念分類學習-相同概念文章整合-teal?style=for-the-badge&logo=lightbulb" alt="觀念分類學習" width="250">
 </a>
 
