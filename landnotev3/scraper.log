@@ -1,0 +1,429 @@
+2025-04-23 07:47:15,378 - WARNING - Proxy 無效: http://203.77.215.45:10000
+2025-04-23 07:47:18,277 - INFO - Proxy 有效: http://47.90.167.27:8081
+2025-04-23 07:47:20,676 - INFO - Proxy 有效: http://156.244.11.6:20000
+2025-04-23 07:47:30,701 - WARNING - Proxy 無效: http://117.54.114.102:80
+2025-04-23 07:47:30,767 - ERROR - 執行過程中出錯: Cannot set verify_mode to CERT_NONE when check_hostname is enabled.
+2025-04-23 07:51:30,630 - WARNING - Proxy 無效: http://203.77.215.45:10000, 錯誤: HTTPConnectionPool(host='203.77.215.45', port=10000): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E439FBF0>, 'Connection to 203.77.215.45 timed out. (connect timeout=10)')))
+2025-04-23 07:51:33,731 - INFO - Proxy 有效: http://47.90.167.27:8081
+2025-04-23 07:51:36,123 - INFO - Proxy 有效: http://156.244.11.6:20000
+2025-04-23 07:51:46,127 - WARNING - Proxy 無效: http://117.54.114.102:80, 錯誤: HTTPConnectionPool(host='117.54.114.102', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E509D910>, 'Connection to 117.54.114.102 timed out. (connect timeout=10)')))
+2025-04-23 07:51:46,245 - WARNING - Proxy 無效: https://47.236.163.74:8080, 錯誤: HTTPSConnectionPool(host='47.236.163.74', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:51:47,062 - INFO - Proxy 有效: https://18.223.25.15:80
+2025-04-23 07:51:47,349 - WARNING - Proxy 無效: https://43.159.152.105:13001, 錯誤: HTTPSConnectionPool(host='43.159.152.105', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:51:48,430 - INFO - Proxy 有效: https://15.236.106.236:3128
+2025-04-23 07:51:58,493 - WARNING - Proxy 無效: http://8.210.38.209:1081, 錯誤: HTTPConnectionPool(host='8.210.38.209', port=1081): Read timed out. (read timeout=10)
+2025-04-23 07:51:58,978 - INFO - Proxy 有效: http://165.232.129.150:80
+2025-04-23 07:51:59,432 - WARNING - Proxy 無效 (狀態碼 500): http://43.159.139.163:13001
+2025-04-23 07:51:59,703 - WARNING - Proxy 無效: http://170.106.195.109:13001, 錯誤: HTTPConnectionPool(host='170.106.195.109', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:51:59,996 - WARNING - Proxy 無效: http://43.153.112.28:13001, 錯誤: HTTPConnectionPool(host='43.153.112.28', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:00,290 - WARNING - Proxy 無效: http://170.106.76.17:13001, 錯誤: HTTPConnectionPool(host='170.106.76.17', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:00,576 - WARNING - Proxy 無效: http://43.153.113.33:13001, 錯誤: HTTPConnectionPool(host='43.153.113.33', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:00,856 - WARNING - Proxy 無效: http://170.106.151.90:13001, 錯誤: HTTPConnectionPool(host='170.106.151.90', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:01,139 - WARNING - Proxy 無效: http://43.135.147.75:13001, 錯誤: HTTPConnectionPool(host='43.135.147.75', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:01,554 - INFO - Proxy 有效: http://49.51.200.62:13001
+2025-04-23 07:52:01,838 - WARNING - Proxy 無效 (狀態碼 500): http://43.153.74.136:13001
+2025-04-23 07:52:02,116 - WARNING - Proxy 無效: http://43.135.177.135:13001, 錯誤: HTTPConnectionPool(host='43.135.177.135', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:02,389 - WARNING - Proxy 無效: https://43.153.79.36:13001, 錯誤: HTTPSConnectionPool(host='43.153.79.36', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:52:02,667 - WARNING - Proxy 無效: http://43.135.180.61:13001, 錯誤: HTTPConnectionPool(host='43.135.180.61', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:02,925 - WARNING - Proxy 無效: http://43.153.21.13:13001, 錯誤: HTTPConnectionPool(host='43.153.21.13', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:11,362 - INFO - Proxy 有效: http://47.252.29.28:11222
+2025-04-23 07:52:19,918 - INFO - Proxy 有效: http://23.247.136.248:80
+2025-04-23 07:52:20,448 - INFO - Proxy 有效: http://3.71.239.218:3128
+2025-04-23 07:52:21,271 - INFO - Proxy 有效: https://3.12.144.146:3128
+2025-04-23 07:52:21,807 - INFO - Proxy 有效: http://51.20.29.120:80
+2025-04-23 07:52:23,039 - INFO - Proxy 有效: https://51.17.91.82:3128
+2025-04-23 07:52:23,324 - INFO - Proxy 有效: http://54.177.187.64:80
+2025-04-23 07:52:23,888 - INFO - Proxy 有效: http://13.49.84.200:3128
+2025-04-23 07:52:25,173 - INFO - Proxy 有效: https://51.17.38.108:3128
+2025-04-23 07:52:26,454 - INFO - Proxy 有效: https://51.16.113.105:80
+2025-04-23 07:52:27,714 - INFO - Proxy 有效: https://51.17.27.173:3128
+2025-04-23 07:52:28,297 - INFO - Proxy 有效: http://51.17.58.162:3128
+2025-04-23 07:52:29,162 - INFO - Proxy 有效: https://3.97.176.251:3128
+2025-04-23 07:52:29,570 - INFO - Proxy 有效: http://3.97.167.115:3128
+2025-04-23 07:52:30,798 - INFO - Proxy 有效: https://51.16.179.113:1080
+2025-04-23 07:52:31,418 - INFO - Proxy 有效: http://51.20.19.159:3128
+2025-04-23 07:52:31,816 - INFO - Proxy 有效: http://13.59.156.167:3128
+2025-04-23 07:52:32,095 - WARNING - Proxy 無效: http://43.159.133.199:13001, 錯誤: HTTPConnectionPool(host='43.159.133.199', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:32,363 - WARNING - Proxy 無效: http://43.153.88.171:13001, 錯誤: HTTPConnectionPool(host='43.153.88.171', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:32,643 - WARNING - Proxy 無效: http://43.153.98.70:13001, 錯誤: HTTPConnectionPool(host='43.153.98.70', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:32,927 - WARNING - Proxy 無效: https://43.153.16.91:13001, 錯誤: HTTPSConnectionPool(host='43.153.16.91', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:52:33,209 - WARNING - Proxy 無效 (狀態碼 500): http://43.153.11.82:13001
+2025-04-23 07:52:45,000 - INFO - Proxy 有效: http://185.21.13.91:40969
+2025-04-23 07:52:45,580 - INFO - Proxy 有效: http://43.153.4.121:13001
+2025-04-23 07:52:55,588 - WARNING - Proxy 無效: https://129.154.225.163:8100, 錯誤: HTTPSConnectionPool(host='129.154.225.163', port=8100): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000233E509CA70>, 'Connection to 129.154.225.163 timed out. (connect timeout=10)')))
+2025-04-23 07:52:55,639 - WARNING - Proxy 無效: http://47.56.110.204:8989, 錯誤: HTTPConnectionPool(host='47.56.110.204', port=8989): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:52:55,639 - INFO - 過濾後剩餘 25 個有效 Proxy
+2025-04-23 07:52:56,331 - INFO - 已抓取 300 個免費 Proxy
+2025-04-23 07:52:56,616 - WARNING - Proxy 無效: http://170.106.193.157:13001, 錯誤: HTTPConnectionPool(host='170.106.193.157', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:53:08,048 - WARNING - Proxy 無效: https://95.47.239.65:3128, 錯誤: HTTPSConnectionPool(host='95.47.239.65', port=3128): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ReadTimeoutError("HTTPSConnectionPool(host='95.47.239.65', port=3128): Read timed out. (read timeout=10)")))
+2025-04-23 07:53:08,633 - INFO - Proxy 有效: http://13.38.153.36:80
+2025-04-23 07:53:09,678 - INFO - Proxy 有效: https://13.37.89.201:80
+2025-04-23 07:53:10,672 - INFO - Proxy 有效: https://13.36.104.85:80
+2025-04-23 07:53:12,049 - INFO - Proxy 有效: https://13.36.87.105:3128
+2025-04-23 07:53:13,085 - INFO - Proxy 有效: https://15.236.106.236:3128
+2025-04-23 07:53:13,606 - INFO - Proxy 有效: http://13.37.73.214:80
+2025-04-23 07:53:23,615 - WARNING - Proxy 無效: http://38.252.213.63:999, 錯誤: HTTPConnectionPool(host='38.252.213.63', port=999): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58369F0>, 'Connection to 38.252.213.63 timed out. (connect timeout=10)')))
+2025-04-23 07:53:33,622 - WARNING - Proxy 無效: http://50.174.7.153:80, 錯誤: HTTPConnectionPool(host='50.174.7.153', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E5837890>, 'Connection to 50.174.7.153 timed out. (connect timeout=10)')))
+2025-04-23 07:53:43,630 - WARNING - Proxy 無效: http://50.202.75.26:80, 錯誤: HTTPConnectionPool(host='50.202.75.26', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E5837F80>, 'Connection to 50.202.75.26 timed out. (connect timeout=10)')))
+2025-04-23 07:53:53,638 - WARNING - Proxy 無效: http://50.169.37.50:80, 錯誤: HTTPConnectionPool(host='50.169.37.50', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E5837770>, 'Connection to 50.169.37.50 timed out. (connect timeout=10)')))
+2025-04-23 07:53:55,705 - WARNING - Proxy 無效: http://165.232.129.150:80, 錯誤: HTTPConnectionPool(host='165.232.129.150', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, '遠端主機已強制關閉一個現存的連線。', None, 10054, None)))
+2025-04-23 07:54:05,712 - WARNING - Proxy 無效: http://50.239.72.18:80, 錯誤: HTTPConnectionPool(host='50.239.72.18', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E509FCE0>, 'Connection to 50.239.72.18 timed out. (connect timeout=10)')))
+2025-04-23 07:54:15,734 - WARNING - Proxy 無效: http://50.175.212.66:80, 錯誤: HTTPConnectionPool(host='50.175.212.66', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E54E8620>, 'Connection to 50.175.212.66 timed out. (connect timeout=10)')))
+2025-04-23 07:54:25,744 - WARNING - Proxy 無效: http://190.58.248.86:80, 錯誤: HTTPConnectionPool(host='190.58.248.86', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E54E8C20>, 'Connection to 190.58.248.86 timed out. (connect timeout=10)')))
+2025-04-23 07:54:35,752 - WARNING - Proxy 無效: http://50.175.212.74:80, 錯誤: HTTPConnectionPool(host='50.175.212.74', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E54E9550>, 'Connection to 50.175.212.74 timed out. (connect timeout=10)')))
+2025-04-23 07:54:45,768 - WARNING - Proxy 無效: http://50.122.86.118:80, 錯誤: HTTPConnectionPool(host='50.122.86.118', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E509E030>, 'Connection to 50.122.86.118 timed out. (connect timeout=10)')))
+2025-04-23 07:54:46,348 - INFO - Proxy 有效: https://54.67.125.45:3128
+2025-04-23 07:54:49,361 - INFO - Proxy 有效: https://13.56.192.187:80
+2025-04-23 07:54:50,070 - WARNING - Proxy 無效: https://179.96.28.58:80, 錯誤: HTTPSConnectionPool(host='179.96.28.58', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy. Your proxy appears to only use HTTP and not HTTPS, try changing your proxy URL to be HTTP. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#https-proxy-error-http-proxy', SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))))
+2025-04-23 07:54:50,351 - WARNING - Proxy 無效 (狀態碼 500): http://43.130.12.5:13001
+2025-04-23 07:54:50,653 - WARNING - Proxy 無效: https://170.106.199.99:13001, 錯誤: HTTPSConnectionPool(host='170.106.199.99', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:54:50,938 - WARNING - Proxy 無效: http://43.153.8.65:13001, 錯誤: HTTPConnectionPool(host='43.153.8.65', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:51,218 - WARNING - Proxy 無效: http://43.135.136.212:13001, 錯誤: HTTPConnectionPool(host='43.135.136.212', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:51,481 - WARNING - Proxy 無效: http://43.135.129.37:13001, 錯誤: HTTPConnectionPool(host='43.135.129.37', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:51,766 - WARNING - Proxy 無效: http://43.130.15.85:13001, 錯誤: HTTPConnectionPool(host='43.130.15.85', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:52,067 - WARNING - Proxy 無效: http://43.135.129.244:13001, 錯誤: HTTPConnectionPool(host='43.135.129.244', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:52,348 - WARNING - Proxy 無效: http://43.153.18.46:13001, 錯誤: HTTPConnectionPool(host='43.153.18.46', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:52,621 - WARNING - Proxy 無效: http://43.153.32.127:13001, 錯誤: HTTPConnectionPool(host='43.153.32.127', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:52,897 - WARNING - Proxy 無效: https://43.153.46.29:13001, 錯誤: HTTPSConnectionPool(host='43.153.46.29', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:54:53,188 - WARNING - Proxy 無效: http://43.135.180.61:13001, 錯誤: HTTPConnectionPool(host='43.135.180.61', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:53,704 - WARNING - Proxy 無效: http://95.216.148.196:80, 錯誤: HTTPConnectionPool(host='95.216.148.196', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:53,974 - WARNING - Proxy 無效: http://43.153.27.33:13001, 錯誤: HTTPConnectionPool(host='43.153.27.33', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:54:55,042 - INFO - Proxy 有效: https://3.71.239.218:3128
+2025-04-23 07:54:55,560 - INFO - Proxy 有效: http://3.127.62.252:80
+2025-04-23 07:54:56,622 - INFO - Proxy 有效: https://3.124.133.93:3128
+2025-04-23 07:54:57,679 - INFO - Proxy 有效: https://18.185.169.150:3128
+2025-04-23 07:54:58,723 - INFO - Proxy 有效: https://3.127.121.101:80
+2025-04-23 07:54:59,261 - INFO - Proxy 有效: http://3.123.150.192:80
+2025-04-23 07:54:59,646 - INFO - Proxy 有效: http://3.139.242.184:80
+2025-04-23 07:55:00,057 - INFO - Proxy 有效: http://3.12.144.146:3128
+2025-04-23 07:55:00,329 - WARNING - Proxy 無效: https://43.135.166.82:13001, 錯誤: HTTPSConnectionPool(host='43.135.166.82', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:55:00,615 - WARNING - Proxy 無效: http://43.153.45.169:13001, 錯誤: HTTPConnectionPool(host='43.153.45.169', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:55:00,880 - WARNING - Proxy 無效: https://43.159.152.200:13001, 錯誤: HTTPSConnectionPool(host='43.159.152.200', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:55:02,099 - INFO - Proxy 有效: https://51.17.26.160:3128
+2025-04-23 07:55:02,921 - INFO - Proxy 有效: https://107.20.192.76:3128
+2025-04-23 07:55:04,196 - INFO - Proxy 有效: https://54.207.127.14:80
+2025-04-23 07:55:05,481 - INFO - Proxy 有效: https://35.182.168.151:3128
+2025-04-23 07:55:06,635 - INFO - Proxy 有效: https://13.49.84.200:3128
+2025-04-23 07:55:06,830 - INFO - Proxy 有效: https://15.152.14.140:3128
+2025-04-23 07:55:07,754 - INFO - Proxy 有效: https://15.223.105.115:80
+2025-04-23 07:55:09,042 - INFO - Proxy 有效: https://51.17.38.108:3128
+2025-04-23 07:55:10,313 - INFO - Proxy 有效: https://18.229.214.109:3128
+2025-04-23 07:55:11,537 - INFO - Proxy 有效: https://51.16.254.248:3128
+2025-04-23 07:55:12,799 - INFO - Proxy 有效: https://51.16.113.105:80
+2025-04-23 07:55:14,006 - INFO - Proxy 有效: https://51.17.27.173:3128
+2025-04-23 07:55:14,611 - INFO - Proxy 有效: http://13.51.231.191:3128
+2025-04-23 07:55:14,822 - INFO - Proxy 有效: https://15.168.57.13:3128
+2025-04-23 07:55:15,225 - INFO - Proxy 有效: http://3.129.184.210:80
+2025-04-23 07:55:16,919 - INFO - Proxy 有效: https://13.246.209.48:1080
+2025-04-23 07:55:17,971 - INFO - Proxy 有效: https://99.80.11.54:3128
+2025-04-23 07:55:19,647 - INFO - Proxy 有效: https://13.246.184.110:3128
+2025-04-23 07:55:20,514 - INFO - Proxy 有效: https://15.156.24.206:3128
+2025-04-23 07:55:21,385 - INFO - Proxy 有效: https://52.65.193.254:3128
+2025-04-23 07:55:22,243 - INFO - Proxy 有效: https://3.97.176.251:3128
+2025-04-23 07:55:22,744 - INFO - Proxy 有效: http://52.16.232.164:3128
+2025-04-23 07:55:23,603 - INFO - Proxy 有效: https://3.97.167.115:3128
+2025-04-23 07:55:24,889 - INFO - Proxy 有效: https://51.16.179.113:1080
+2025-04-23 07:55:25,942 - INFO - Proxy 有效: https://63.32.1.88:3128
+2025-04-23 07:55:26,962 - INFO - Proxy 有效: https://54.228.164.102:3128
+2025-04-23 07:55:27,956 - INFO - Proxy 有效: http://134.209.29.120:80
+2025-04-23 07:55:28,857 - INFO - Proxy 有效: https://54.66.27.238:3128
+2025-04-23 07:55:29,724 - INFO - Proxy 有效: https://3.98.231.179:3128
+2025-04-23 07:55:29,996 - WARNING - Proxy 無效: https://49.51.206.38:13001, 錯誤: HTTPSConnectionPool(host='49.51.206.38', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:55:30,254 - WARNING - Proxy 無效: http://43.153.75.63:13001, 錯誤: HTTPConnectionPool(host='43.153.75.63', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:55:40,283 - WARNING - Proxy 無效: http://190.15.192.169:8080, 錯誤: HTTPConnectionPool(host='190.15.192.169', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58378F0>, 'Connection to 190.15.192.169 timed out. (connect timeout=10)')))
+2025-04-23 07:55:40,550 - WARNING - Proxy 無效: http://43.153.36.97:13001, 錯誤: HTTPConnectionPool(host='43.153.36.97', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:55:40,824 - WARNING - Proxy 無效: http://43.130.56.110:13001, 錯誤: HTTPConnectionPool(host='43.130.56.110', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:55:41,117 - WARNING - Proxy 無效: https://43.153.92.210:13001, 錯誤: HTTPSConnectionPool(host='43.153.92.210', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:55:51,137 - WARNING - Proxy 無效: https://78.108.41.124:9111, 錯誤: HTTPSConnectionPool(host='78.108.41.124', port=9111): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000233E5836690>, 'Connection to 78.108.41.124 timed out. (connect timeout=10)')))
+2025-04-23 07:55:51,851 - WARNING - Proxy 無效: https://185.255.4.41:8888, 錯誤: HTTPSConnectionPool(host='185.255.4.41', port=8888): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy. Your proxy appears to only use HTTP and not HTTPS, try changing your proxy URL to be HTTP. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#https-proxy-error-http-proxy', SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))))
+2025-04-23 07:55:58,559 - WARNING - Proxy 無效: https://40.76.69.94:8080, 錯誤: HTTPSConnectionPool(host='40.76.69.94', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:08,579 - WARNING - Proxy 無效: http://50.217.226.43:80, 錯誤: HTTPConnectionPool(host='50.217.226.43', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E581CB00>, 'Connection to 50.217.226.43 timed out. (connect timeout=10)')))
+2025-04-23 07:56:18,586 - WARNING - Proxy 無效: http://50.239.72.17:80, 錯誤: HTTPConnectionPool(host='50.239.72.17', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58370E0>, 'Connection to 50.239.72.17 timed out. (connect timeout=10)')))
+2025-04-23 07:56:19,217 - INFO - Proxy 有效: https://204.236.137.68:80
+2025-04-23 07:56:19,636 - INFO - Proxy 有效: http://3.85.187.24:8080
+2025-04-23 07:56:29,660 - WARNING - Proxy 無效: http://211.128.96.206:80, 錯誤: HTTPConnectionPool(host='211.128.96.206', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E5837DA0>, 'Connection to 211.128.96.206 timed out. (connect timeout=10)')))
+2025-04-23 07:56:39,680 - WARNING - Proxy 無效: http://50.174.7.156:80, 錯誤: HTTPConnectionPool(host='50.174.7.156', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E581D100>, 'Connection to 50.174.7.156 timed out. (connect timeout=10)')))
+2025-04-23 07:56:39,964 - WARNING - Proxy 無效: https://43.130.2.77:13001, 錯誤: HTTPSConnectionPool(host='43.130.2.77', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:40,238 - WARNING - Proxy 無效: https://43.153.109.164:13001, 錯誤: HTTPSConnectionPool(host='43.153.109.164', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:40,511 - WARNING - Proxy 無效: https://170.106.80.79:13001, 錯誤: HTTPSConnectionPool(host='170.106.80.79', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:40,791 - WARNING - Proxy 無效: https://43.153.12.131:13001, 錯誤: HTTPSConnectionPool(host='43.153.12.131', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:41,076 - WARNING - Proxy 無效: https://49.51.200.62:13001, 錯誤: HTTPSConnectionPool(host='49.51.200.62', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:41,360 - WARNING - Proxy 無效: http://43.153.48.134:13001, 錯誤: HTTPConnectionPool(host='43.153.48.134', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:56:41,655 - WARNING - Proxy 無效: https://170.106.136.235:13001, 錯誤: HTTPSConnectionPool(host='170.106.136.235', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:42,919 - INFO - Proxy 有效: https://18.228.198.164:80
+2025-04-23 07:56:43,195 - WARNING - Proxy 無效: https://43.153.32.146:13001, 錯誤: HTTPSConnectionPool(host='43.153.32.146', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:43,476 - WARNING - Proxy 無效: https://43.153.16.91:13001, 錯誤: HTTPSConnectionPool(host='43.153.16.91', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:56:51,177 - INFO - Proxy 有效: http://198.49.68.80:80
+2025-04-23 07:56:54,488 - INFO - Proxy 有效: http://103.21.69.192:83
+2025-04-23 07:57:04,501 - WARNING - Proxy 無效: http://41.65.103.8:1981, 錯誤: HTTPConnectionPool(host='41.65.103.8', port=1981): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58366C0>, 'Connection to 41.65.103.8 timed out. (connect timeout=10)')))
+2025-04-23 07:57:14,502 - WARNING - Proxy 無效: http://182.253.39.206:8080, 錯誤: HTTPConnectionPool(host='182.253.39.206', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58362A0>, 'Connection to 182.253.39.206 timed out. (connect timeout=10)')))
+2025-04-23 07:57:24,505 - WARNING - Proxy 無效: http://115.245.89.250:8080, 錯誤: HTTPConnectionPool(host='115.245.89.250', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E581D220>, 'Connection to 115.245.89.250 timed out. (connect timeout=10)')))
+2025-04-23 07:57:34,516 - WARNING - Proxy 無效: http://103.127.220.98:1413, 錯誤: HTTPConnectionPool(host='103.127.220.98', port=1413): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E49C4950>, 'Connection to 103.127.220.98 timed out. (connect timeout=10)')))
+2025-04-23 07:57:44,531 - WARNING - Proxy 無效: http://201.220.112.98:999, 錯誤: HTTPConnectionPool(host='201.220.112.98', port=999): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E49C4050>, 'Connection to 201.220.112.98 timed out. (connect timeout=10)')))
+2025-04-23 07:57:46,198 - INFO - Proxy 有效: http://203.77.215.45:10000
+2025-04-23 07:57:48,607 - INFO - Proxy 有效: http://47.90.167.27:8081
+2025-04-23 07:57:50,978 - INFO - Proxy 有效: http://156.244.11.6:20000
+2025-04-23 07:57:51,632 - INFO - Proxy 有效: http://117.54.114.102:80
+2025-04-23 07:57:51,949 - WARNING - Proxy 無效: https://47.236.163.74:8080, 錯誤: HTTPSConnectionPool(host='47.236.163.74', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, '遠端主機已強制關閉一個現存的連線。', None, 10054, None)))
+2025-04-23 07:57:52,783 - INFO - Proxy 有效: https://18.223.25.15:80
+2025-04-23 07:57:53,075 - WARNING - Proxy 無效: https://43.159.152.105:13001, 錯誤: HTTPSConnectionPool(host='43.159.152.105', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:57:59,151 - INFO - Proxy 有效: http://8.210.38.209:1081
+2025-04-23 07:57:59,422 - WARNING - Proxy 無效: http://43.159.139.163:13001, 錯誤: HTTPConnectionPool(host='43.159.139.163', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:57:59,703 - WARNING - Proxy 無效: http://170.106.195.109:13001, 錯誤: HTTPConnectionPool(host='170.106.195.109', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:00,138 - INFO - Proxy 有效: http://43.153.112.28:13001
+2025-04-23 07:58:00,527 - INFO - Proxy 有效: http://170.106.76.17:13001
+2025-04-23 07:58:00,818 - WARNING - Proxy 無效: http://43.153.113.33:13001, 錯誤: HTTPConnectionPool(host='43.153.113.33', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:01,212 - INFO - Proxy 有效: http://170.106.151.90:13001
+2025-04-23 07:58:01,632 - INFO - Proxy 有效: http://43.135.147.75:13001
+2025-04-23 07:58:01,922 - WARNING - Proxy 無效: http://43.153.74.136:13001, 錯誤: HTTPConnectionPool(host='43.153.74.136', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:02,213 - WARNING - Proxy 無效 (狀態碼 500): http://43.135.177.135:13001
+2025-04-23 07:58:02,494 - WARNING - Proxy 無效: https://43.153.79.36:13001, 錯誤: HTTPSConnectionPool(host='43.153.79.36', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:58:02,775 - WARNING - Proxy 無效: http://43.153.21.13:13001, 錯誤: HTTPConnectionPool(host='43.153.21.13', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:12,799 - WARNING - Proxy 無效: http://47.252.29.28:11222, 錯誤: HTTPConnectionPool(host='47.252.29.28', port=11222): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E581D700>, 'Connection to 47.252.29.28 timed out. (connect timeout=10)')))
+2025-04-23 07:58:14,248 - INFO - Proxy 有效: http://23.247.136.248:80
+2025-04-23 07:58:14,820 - INFO - Proxy 有效: http://51.20.29.120:80
+2025-04-23 07:58:16,028 - INFO - Proxy 有效: https://51.17.91.82:3128
+2025-04-23 07:58:16,329 - INFO - Proxy 有效: http://54.177.187.64:80
+2025-04-23 07:58:16,921 - INFO - Proxy 有效: http://51.17.58.162:3128
+2025-04-23 07:58:18,517 - INFO - Proxy 有效: http://51.20.19.159:3128
+2025-04-23 07:58:18,921 - INFO - Proxy 有效: http://13.59.156.167:3128
+2025-04-23 07:58:19,343 - INFO - Proxy 有效: http://43.159.133.199:13001
+2025-04-23 07:58:19,620 - WARNING - Proxy 無效: http://43.153.88.171:13001, 錯誤: HTTPConnectionPool(host='43.153.88.171', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:19,896 - WARNING - Proxy 無效 (狀態碼 500): http://43.153.98.70:13001
+2025-04-23 07:58:20,162 - WARNING - Proxy 無效: http://43.153.11.82:13001, 錯誤: HTTPConnectionPool(host='43.153.11.82', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:25,469 - INFO - Proxy 有效: http://185.21.13.91:40969
+2025-04-23 07:58:25,755 - WARNING - Proxy 無效: http://43.153.4.121:13001, 錯誤: HTTPConnectionPool(host='43.153.4.121', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:58:31,431 - WARNING - Proxy 無效: https://129.154.225.163:8100, 錯誤: HTTPSConnectionPool(host='129.154.225.163', port=8100): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:58:31,974 - INFO - Proxy 有效: http://47.56.110.204:8989
+2025-04-23 07:58:32,124 - WARNING - Proxy 無效: https://8.217.124.178:49440, 錯誤: HTTPSConnectionPool(host='8.217.124.178', port=49440): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 07:58:33,403 - WARNING - Proxy 無效: https://34.143.143.61:7777, 錯誤: HTTPSConnectionPool(host='34.143.143.61', port=7777): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy. Your proxy appears to only use HTTP and not HTTPS, try changing your proxy URL to be HTTP. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#https-proxy-error-http-proxy', SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))))
+2025-04-23 07:58:43,427 - WARNING - Proxy 無效: http://50.174.7.159:80, 錯誤: HTTPConnectionPool(host='50.174.7.159', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E18B56A0>, 'Connection to 50.174.7.159 timed out. (connect timeout=10)')))
+2025-04-23 07:58:53,451 - WARNING - Proxy 無效: http://50.207.199.87:80, 錯誤: HTTPConnectionPool(host='50.207.199.87', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E49C7C80>, 'Connection to 50.207.199.87 timed out. (connect timeout=10)')))
+2025-04-23 07:59:03,460 - WARNING - Proxy 無效: http://32.223.6.94:80, 錯誤: HTTPConnectionPool(host='32.223.6.94', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E49C5D60>, 'Connection to 32.223.6.94 timed out. (connect timeout=10)')))
+2025-04-23 07:59:05,215 - INFO - Proxy 有效: http://128.199.202.122:8080
+2025-04-23 07:59:06,047 - INFO - Proxy 有效: https://44.218.183.55:80
+2025-04-23 07:59:16,071 - WARNING - Proxy 無效: http://50.217.226.40:80, 錯誤: HTTPConnectionPool(host='50.217.226.40', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58379E0>, 'Connection to 50.217.226.40 timed out. (connect timeout=10)')))
+2025-04-23 07:59:26,092 - WARNING - Proxy 無效: http://50.221.74.130:80, 錯誤: HTTPConnectionPool(host='50.221.74.130', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E5836B10>, 'Connection to 50.221.74.130 timed out. (connect timeout=10)')))
+2025-04-23 07:59:36,106 - WARNING - Proxy 無效: http://50.207.199.82:80, 錯誤: HTTPConnectionPool(host='50.207.199.82', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E581D460>, 'Connection to 50.207.199.82 timed out. (connect timeout=10)')))
+2025-04-23 07:59:36,842 - INFO - Proxy 有效: http://65.21.52.41:8888
+2025-04-23 07:59:37,119 - WARNING - Proxy 無效: http://43.153.105.141:13001, 錯誤: HTTPConnectionPool(host='43.153.105.141', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 07:59:37,459 - INFO - Proxy 有效: https://43.202.154.212:80
+2025-04-23 07:59:45,521 - INFO - Proxy 有效: https://43.200.77.128:3128
+2025-04-23 07:59:47,028 - INFO - Proxy 有效: https://54.233.119.172:3128
+2025-04-23 07:59:55,718 - INFO - Proxy 有效: https://52.196.1.182:80
+2025-04-23 07:59:56,108 - WARNING - Proxy 無效 (狀態碼 503): http://198.12.85.211:80
+2025-04-23 07:59:56,708 - INFO - Proxy 有效: https://13.56.47.50:3128
+2025-04-23 07:59:57,626 - INFO - Proxy 有效: https://13.54.47.197:80
+2025-04-23 08:00:01,642 - INFO - Proxy 有效: https://13.247.14.165:80
+2025-04-23 08:00:02,045 - INFO - Proxy 有效: https://54.255.94.130:3128
+2025-04-23 08:00:03,672 - INFO - Proxy 有效: https://13.246.215.127:3128
+2025-04-23 08:00:13,690 - WARNING - Proxy 無效: https://52.31.138.3:3128, 錯誤: HTTPSConnectionPool(host='52.31.138.3', port=3128): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000233E49C47A0>, 'Connection to 52.31.138.3 timed out. (connect timeout=10)')))
+2025-04-23 08:00:15,388 - INFO - Proxy 有效: https://13.247.19.136:80
+2025-04-23 08:00:15,732 - INFO - Proxy 有效: https://15.168.110.227:80
+2025-04-23 08:00:18,647 - INFO - Proxy 有效: https://54.179.39.14:3128
+2025-04-23 08:00:19,637 - INFO - Proxy 有效: https://13.55.210.141:3128
+2025-04-23 08:00:29,670 - WARNING - Proxy 無效: http://80.228.235.6:80, 錯誤: HTTPConnectionPool(host='80.228.235.6', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E49C5310>, 'Connection to 80.228.235.6 timed out. (connect timeout=10)')))
+2025-04-23 08:00:39,685 - WARNING - Proxy 無效: http://194.219.134.234:80, 錯誤: HTTPConnectionPool(host='194.219.134.234', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E581D430>, 'Connection to 194.219.134.234 timed out. (connect timeout=10)')))
+2025-04-23 08:00:49,697 - WARNING - Proxy 無效: http://203.99.240.179:80, 錯誤: HTTPConnectionPool(host='203.99.240.179', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E5837E30>, 'Connection to 203.99.240.179 timed out. (connect timeout=10)')))
+2025-04-23 08:00:59,710 - WARNING - Proxy 無效: http://83.1.176.118:80, 錯誤: HTTPConnectionPool(host='83.1.176.118', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000233E58366C0>, 'Connection to 83.1.176.118 timed out. (connect timeout=10)')))
+2025-04-23 08:01:30,823 - WARNING - Proxy 無效: http://203.77.215.45:10000, 錯誤: HTTPConnectionPool(host='203.77.215.45', port=10000): Read timed out. (read timeout=10)
+2025-04-23 08:01:31,225 - WARNING - Proxy 無效: http://47.90.167.27:8081, 錯誤: HTTPConnectionPool(host='47.90.167.27', port=8081): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, '遠端主機已強制關閉一個現存的連線。', None, 10054, None)))
+2025-04-23 08:01:31,629 - WARNING - Proxy 無效: http://156.244.11.6:20000, 錯誤: HTTPConnectionPool(host='156.244.11.6', port=20000): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, '遠端主機已強制關閉一個現存的連線。', None, 10054, None)))
+2025-04-23 08:01:41,646 - WARNING - Proxy 無效: http://117.54.114.102:80, 錯誤: HTTPConnectionPool(host='117.54.114.102', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE18D1F0>, 'Connection to 117.54.114.102 timed out. (connect timeout=10)')))
+2025-04-23 08:01:41,994 - WARNING - Proxy 無效: https://47.236.163.74:8080, 錯誤: HTTPSConnectionPool(host='47.236.163.74', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectionResetError(10054, '遠端主機已強制關閉一個現存的連線。', None, 10054, None)))
+2025-04-23 08:01:42,828 - INFO - Proxy 有效: https://18.223.25.15:80
+2025-04-23 08:01:43,104 - WARNING - Proxy 無效: https://43.159.152.105:13001, 錯誤: HTTPSConnectionPool(host='43.159.152.105', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:01:44,148 - INFO - Proxy 有效: https://15.236.106.236:3128
+2025-04-23 08:01:54,177 - WARNING - Proxy 無效: http://8.210.38.209:1081, 錯誤: HTTPConnectionPool(host='8.210.38.209', port=1081): Read timed out. (read timeout=10)
+2025-04-23 08:01:54,671 - INFO - Proxy 有效: http://165.232.129.150:80
+2025-04-23 08:01:54,965 - WARNING - Proxy 無效: http://43.159.139.163:13001, 錯誤: HTTPConnectionPool(host='43.159.139.163', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:55,239 - WARNING - Proxy 無效: http://170.106.195.109:13001, 錯誤: HTTPConnectionPool(host='170.106.195.109', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:56,531 - WARNING - Proxy 無效: http://43.153.112.28:13001, 錯誤: HTTPConnectionPool(host='43.153.112.28', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:56,818 - WARNING - Proxy 無效: http://170.106.76.17:13001, 錯誤: HTTPConnectionPool(host='170.106.76.17', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:57,098 - WARNING - Proxy 無效 (狀態碼 500): http://43.153.113.33:13001
+2025-04-23 08:01:57,371 - WARNING - Proxy 無效: http://170.106.151.90:13001, 錯誤: HTTPConnectionPool(host='170.106.151.90', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:57,656 - WARNING - Proxy 無效: http://43.135.147.75:13001, 錯誤: HTTPConnectionPool(host='43.135.147.75', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:57,934 - WARNING - Proxy 無效: http://49.51.200.62:13001, 錯誤: HTTPConnectionPool(host='49.51.200.62', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:58,224 - WARNING - Proxy 無效 (狀態碼 500): http://43.153.74.136:13001
+2025-04-23 08:01:58,493 - WARNING - Proxy 無效 (狀態碼 500): http://43.135.177.135:13001
+2025-04-23 08:01:58,766 - WARNING - Proxy 無效: https://43.153.79.36:13001, 錯誤: HTTPSConnectionPool(host='43.153.79.36', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:01:59,060 - WARNING - Proxy 無效: http://43.135.180.61:13001, 錯誤: HTTPConnectionPool(host='43.135.180.61', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:01:59,331 - WARNING - Proxy 無效 (狀態碼 500): http://43.153.21.13:13001
+2025-04-23 08:02:16,586 - WARNING - Proxy 無效: http://47.252.29.28:11222, 錯誤: HTTPConnectionPool(host='47.252.29.28', port=11222): Read timed out. (read timeout=10)
+2025-04-23 08:02:33,775 - WARNING - Proxy 無效: http://23.247.136.248:80, 錯誤: HTTPConnectionPool(host='23.247.136.248', port=80): Read timed out. (read timeout=10)
+2025-04-23 08:02:34,298 - INFO - Proxy 有效: http://3.71.239.218:3128
+2025-04-23 08:02:35,122 - INFO - Proxy 有效: https://3.12.144.146:3128
+2025-04-23 08:02:35,665 - INFO - Proxy 有效: http://51.20.29.120:80
+2025-04-23 08:02:36,899 - INFO - Proxy 有效: https://51.17.91.82:3128
+2025-04-23 08:02:37,177 - INFO - Proxy 有效: http://54.177.187.64:80
+2025-04-23 08:02:37,717 - INFO - Proxy 有效: http://13.49.84.200:3128
+2025-04-23 08:02:38,916 - INFO - Proxy 有效: https://51.17.38.108:3128
+2025-04-23 08:02:40,138 - INFO - Proxy 有效: https://51.16.113.105:80
+2025-04-23 08:02:41,371 - INFO - Proxy 有效: https://51.17.27.173:3128
+2025-04-23 08:02:41,970 - INFO - Proxy 有效: http://51.17.58.162:3128
+2025-04-23 08:02:42,838 - INFO - Proxy 有效: https://3.97.176.251:3128
+2025-04-23 08:02:43,272 - INFO - Proxy 有效: http://3.97.167.115:3128
+2025-04-23 08:02:44,539 - INFO - Proxy 有效: https://51.16.179.113:1080
+2025-04-23 08:02:45,158 - INFO - Proxy 有效: http://51.20.19.159:3128
+2025-04-23 08:02:45,560 - INFO - Proxy 有效: http://13.59.156.167:3128
+2025-04-23 08:02:45,862 - WARNING - Proxy 無效: http://43.159.133.199:13001, 錯誤: HTTPConnectionPool(host='43.159.133.199', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:02:46,357 - INFO - Proxy 有效: http://43.153.88.171:13001
+2025-04-23 08:02:46,763 - INFO - Proxy 有效: http://43.153.98.70:13001
+2025-04-23 08:02:47,052 - WARNING - Proxy 無效: https://43.153.16.91:13001, 錯誤: HTTPSConnectionPool(host='43.153.16.91', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:02:47,334 - WARNING - Proxy 無效: http://43.153.11.82:13001, 錯誤: HTTPConnectionPool(host='43.153.11.82', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:02:54,673 - INFO - Proxy 有效: http://185.21.13.91:40969
+2025-04-23 08:02:54,945 - WARNING - Proxy 無效: http://43.153.4.121:13001, 錯誤: HTTPConnectionPool(host='43.153.4.121', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:03:06,318 - WARNING - Proxy 無效: https://129.154.225.163:8100, 錯誤: HTTPSConnectionPool(host='129.154.225.163', port=8100): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ReadTimeoutError("HTTPSConnectionPool(host='129.154.225.163', port=8100): Read timed out. (read timeout=10)")))
+2025-04-23 08:03:06,376 - WARNING - Proxy 無效: http://47.56.110.204:8989, 錯誤: HTTPConnectionPool(host='47.56.110.204', port=8989): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:03:06,376 - INFO - 過濾後剩餘 21 個有效 Proxy
+2025-04-23 08:03:07,109 - INFO - 已抓取 300 個免費 Proxy
+2025-04-23 08:03:07,392 - WARNING - Proxy 無效: https://43.153.112.164:13001, 錯誤: HTTPSConnectionPool(host='43.153.112.164', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:03:08,210 - INFO - Proxy 有效: https://18.223.25.15:80
+2025-04-23 08:03:08,994 - INFO - Proxy 有效: http://198.199.86.11:8080
+2025-04-23 08:03:09,645 - WARNING - Proxy 無效: https://34.143.143.61:7777, 錯誤: HTTPSConnectionPool(host='34.143.143.61', port=7777): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy. Your proxy appears to only use HTTP and not HTTPS, try changing your proxy URL to be HTTP. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#https-proxy-error-http-proxy', SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))))
+2025-04-23 08:03:19,659 - WARNING - Proxy 無效: http://78.80.228.150:80, 錯誤: HTTPConnectionPool(host='78.80.228.150', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE923050>, 'Connection to 78.80.228.150 timed out. (connect timeout=10)')))
+2025-04-23 08:03:29,669 - WARNING - Proxy 無效: http://50.223.246.237:80, 錯誤: HTTPConnectionPool(host='50.223.246.237', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE923980>, 'Connection to 50.223.246.237 timed out. (connect timeout=10)')))
+2025-04-23 08:03:30,663 - INFO - Proxy 有效: https://13.38.153.36:80
+2025-04-23 08:03:31,673 - INFO - Proxy 有效: https://13.38.176.104:3128
+2025-04-23 08:03:32,682 - INFO - Proxy 有效: https://13.36.104.85:80
+2025-04-23 08:03:33,697 - INFO - Proxy 有效: https://15.236.106.236:3128
+2025-04-23 08:03:34,561 - INFO - Proxy 有效: https://44.218.183.55:80
+2025-04-23 08:03:44,582 - WARNING - Proxy 無效: http://50.207.199.80:80, 錯誤: HTTPConnectionPool(host='50.207.199.80', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE923050>, 'Connection to 50.207.199.80 timed out. (connect timeout=10)')))
+2025-04-23 08:03:54,591 - WARNING - Proxy 無效: http://50.217.226.40:80, 錯誤: HTTPConnectionPool(host='50.217.226.40', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE922ED0>, 'Connection to 50.217.226.40 timed out. (connect timeout=10)')))
+2025-04-23 08:04:04,603 - WARNING - Proxy 無效: http://50.175.212.74:80, 錯誤: HTTPConnectionPool(host='50.175.212.74', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE18DA00>, 'Connection to 50.175.212.74 timed out. (connect timeout=10)')))
+2025-04-23 08:04:14,615 - WARNING - Proxy 無效: http://66.191.31.158:80, 錯誤: HTTPConnectionPool(host='66.191.31.158', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE18E9C0>, 'Connection to 66.191.31.158 timed out. (connect timeout=10)')))
+2025-04-23 08:04:15,319 - INFO - Proxy 有效: https://54.67.125.45:3128
+2025-04-23 08:04:15,920 - INFO - Proxy 有效: https://184.169.154.119:80
+2025-04-23 08:04:16,554 - INFO - Proxy 有效: https://13.56.192.187:80
+2025-04-23 08:04:18,094 - INFO - Proxy 有效: http://103.75.117.85:80
+2025-04-23 08:04:18,839 - WARNING - Proxy 無效: https://179.96.28.58:80, 錯誤: HTTPSConnectionPool(host='179.96.28.58', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy. Your proxy appears to only use HTTP and not HTTPS, try changing your proxy URL to be HTTP. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#https-proxy-error-http-proxy', SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)'))))
+2025-04-23 08:04:19,111 - WARNING - Proxy 無效: https://43.153.27.248:13001, 錯誤: HTTPSConnectionPool(host='43.153.27.248', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:04:20,061 - INFO - Proxy 有效: http://65.21.52.41:8888
+2025-04-23 08:04:20,332 - WARNING - Proxy 無效: https://170.106.80.79:13001, 錯誤: HTTPSConnectionPool(host='170.106.80.79', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:04:20,617 - WARNING - Proxy 無效: http://43.135.149.110:13001, 錯誤: HTTPConnectionPool(host='43.135.149.110', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:04:20,905 - WARNING - Proxy 無效: https://43.135.158.86:13001, 錯誤: HTTPSConnectionPool(host='43.135.158.86', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:04:21,181 - WARNING - Proxy 無效: https://43.135.186.62:13001, 錯誤: HTTPSConnectionPool(host='43.135.186.62', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:04:21,639 - INFO - Proxy 有效: http://23.247.136.248:80
+2025-04-23 08:04:31,659 - WARNING - Proxy 無效: http://130.245.32.202:80, 錯誤: HTTPConnectionPool(host='130.245.32.202', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE5D9820>, 'Connection to 130.245.32.202 timed out. (connect timeout=10)')))
+2025-04-23 08:04:32,718 - INFO - Proxy 有效: https://3.71.239.218:3128
+2025-04-23 08:04:33,060 - INFO - Proxy 有效: https://43.202.154.212:80
+2025-04-23 08:04:33,381 - INFO - Proxy 有效: https://35.76.62.196:80
+2025-04-23 08:04:34,515 - INFO - Proxy 有效: https://18.185.169.150:3128
+2025-04-23 08:04:35,565 - INFO - Proxy 有效: https://3.127.121.101:80
+2025-04-23 08:04:36,788 - INFO - Proxy 有效: https://46.51.249.135:3128
+2025-04-23 08:04:37,113 - INFO - Proxy 有效: https://43.200.77.128:3128
+2025-04-23 08:04:37,467 - INFO - Proxy 有效: https://43.201.121.81:80
+2025-04-23 08:04:37,696 - INFO - Proxy 有效: https://52.196.1.182:80
+2025-04-23 08:04:38,506 - INFO - Proxy 有效: https://3.12.144.146:3128
+2025-04-23 08:04:39,786 - INFO - Proxy 有效: https://52.67.10.183:80
+2025-04-23 08:04:40,461 - INFO - Proxy 有效: https://54.151.37.26:3128
+2025-04-23 08:04:41,108 - INFO - Proxy 有效: https://18.144.153.151:3128
+2025-04-23 08:04:42,410 - INFO - Proxy 有效: https://51.17.26.160:3128
+2025-04-23 08:04:43,628 - INFO - Proxy 有效: https://51.17.91.82:3128
+2025-04-23 08:04:44,861 - INFO - Proxy 有效: https://51.17.39.65:3128
+2025-04-23 08:04:45,696 - INFO - Proxy 有效: https://107.20.192.76:3128
+2025-04-23 08:04:46,981 - INFO - Proxy 有效: https://18.231.33.117:80
+2025-04-23 08:04:48,248 - INFO - Proxy 有效: https://54.207.127.14:80
+2025-04-23 08:04:48,471 - INFO - Proxy 有效: https://15.152.203.118:3128
+2025-04-23 08:04:49,822 - INFO - Proxy 有效: https://18.229.62.3:3128
+2025-04-23 08:04:51,084 - INFO - Proxy 有效: https://13.49.84.200:3128
+2025-04-23 08:04:51,431 - INFO - Proxy 有效: https://54.150.100.19:80
+2025-04-23 08:04:51,829 - INFO - Proxy 有效: https://15.152.14.140:3128
+2025-04-23 08:04:52,719 - INFO - Proxy 有效: https://15.223.105.115:80
+2025-04-23 08:04:54,199 - INFO - Proxy 有效: https://51.17.38.108:3128
+2025-04-23 08:04:55,492 - INFO - Proxy 有效: https://18.229.214.109:3128
+2025-04-23 08:04:56,712 - INFO - Proxy 有效: https://51.16.254.248:3128
+2025-04-23 08:04:57,973 - INFO - Proxy 有效: https://51.17.27.173:3128
+2025-04-23 08:04:58,841 - INFO - Proxy 有效: https://54.85.222.237:3128
+2025-04-23 08:04:59,074 - INFO - Proxy 有效: https://15.168.57.13:3128
+2025-04-23 08:04:59,692 - INFO - Proxy 有效: https://204.236.176.61:3128
+2025-04-23 08:05:00,525 - INFO - Proxy 有效: https://3.129.184.210:80
+2025-04-23 08:05:01,343 - INFO - Proxy 有效: https://3.130.65.162:3128
+2025-04-23 08:05:03,020 - INFO - Proxy 有效: https://13.246.209.48:1080
+2025-04-23 08:05:03,895 - INFO - Proxy 有效: https://52.63.129.110:3128
+2025-04-23 08:05:05,551 - INFO - Proxy 有效: https://13.246.184.110:3128
+2025-04-23 08:05:06,431 - INFO - Proxy 有效: https://15.156.24.206:3128
+2025-04-23 08:05:07,649 - INFO - Proxy 有效: https://51.17.58.162:3128
+2025-04-23 08:05:08,600 - INFO - Proxy 有效: https://52.65.193.254:3128
+2025-04-23 08:05:08,987 - INFO - Proxy 有效: https://13.213.114.238:3128
+2025-04-23 08:05:10,268 - INFO - Proxy 有效: https://51.16.179.113:1080
+2025-04-23 08:05:11,135 - INFO - Proxy 有效: https://13.55.210.141:3128
+2025-04-23 08:05:11,558 - INFO - Proxy 有效: http://43.153.21.33:13001
+2025-04-23 08:05:12,408 - INFO - Proxy 有效: https://3.212.148.199:3128
+2025-04-23 08:05:13,237 - INFO - Proxy 有效: https://13.59.156.167:3128
+2025-04-23 08:05:13,804 - WARNING - Proxy 無效: https://45.140.143.77:18080, 錯誤: HTTPSConnectionPool(host='45.140.143.77', port=18080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:05:14,671 - INFO - Proxy 有效: https://54.66.27.238:3128
+2025-04-23 08:05:15,589 - INFO - Proxy 有效: https://3.98.231.179:3128
+2025-04-23 08:05:15,884 - WARNING - Proxy 無效: https://43.153.22.138:13001, 錯誤: HTTPSConnectionPool(host='43.153.22.138', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:05:16,169 - WARNING - Proxy 無效: http://170.106.104.171:13001, 錯誤: HTTPConnectionPool(host='170.106.104.171', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-23 08:05:17,023 - INFO - Proxy 有效: https://3.90.100.12:80
+2025-04-23 08:05:19,152 - INFO - Proxy 有效: http://185.255.4.41:8888
+2025-04-23 08:05:20,503 - WARNING - Proxy 無效: https://40.76.69.94:8080, 錯誤: HTTPSConnectionPool(host='40.76.69.94', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:05:20,723 - INFO - Proxy 有效: https://54.248.238.110:80
+2025-04-23 08:05:21,003 - WARNING - Proxy 無效: https://43.153.8.210:13001, 錯誤: HTTPSConnectionPool(host='43.153.8.210', port=13001): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:05:24,911 - INFO - Proxy 有效: http://54.95.25.15:8080
+2025-04-23 08:05:34,952 - WARNING - Proxy 無效: http://50.174.7.155:80, 錯誤: HTTPConnectionPool(host='50.174.7.155', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE18E2D0>, 'Connection to 50.174.7.155 timed out. (connect timeout=10)')))
+2025-04-23 08:05:44,975 - WARNING - Proxy 無效: http://213.143.113.82:80, 錯誤: HTTPConnectionPool(host='213.143.113.82', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE922D50>, 'Connection to 213.143.113.82 timed out. (connect timeout=10)')))
+2025-04-23 08:05:45,492 - INFO - Proxy 有效: http://162.223.90.150:80
+2025-04-23 08:05:46,082 - INFO - Proxy 有效: https://204.236.137.68:80
+2025-04-23 08:05:56,094 - WARNING - Proxy 無效: http://181.41.194.186:80, 錯誤: HTTPConnectionPool(host='181.41.194.186', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE5D8A40>, 'Connection to 181.41.194.186 timed out. (connect timeout=10)')))
+2025-04-23 08:05:56,809 - INFO - Proxy 有效: http://103.153.65.53:8889
+2025-04-23 08:05:57,105 - WARNING - Proxy 無效: https://43.153.60.220:18088, 錯誤: HTTPSConnectionPool(host='43.153.60.220', port=18088): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))))
+2025-04-23 08:05:59,259 - INFO - Proxy 有效: https://44.219.175.186:80
+2025-04-23 08:05:59,844 - INFO - Proxy 有效: http://198.49.68.80:80
+2025-04-23 08:06:00,247 - INFO - Proxy 有效: http://3.85.187.24:8080
+2025-04-23 08:06:10,260 - WARNING - Proxy 無效: http://50.207.199.86:80, 錯誤: HTTPConnectionPool(host='50.207.199.86', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE5D8170>, 'Connection to 50.207.199.86 timed out. (connect timeout=10)')))
+2025-04-23 08:06:10,293 - WARNING - Proxy 無效: http://0.0.0.0:80, 錯誤: HTTPConnectionPool(host='0.0.0.0', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000279AE5D8BF0>: Failed to establish a new connection: [WinError 10049] 內容中所要求的位址不正確。')))
+2025-04-23 08:06:12,886 - INFO - Proxy 有效: http://87.248.129.26:80
+2025-04-23 08:06:22,896 - WARNING - Proxy 無效: http://50.207.199.81:80, 錯誤: HTTPConnectionPool(host='50.207.199.81', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE9228D0>, 'Connection to 50.207.199.81 timed out. (connect timeout=10)')))
+2025-04-23 08:06:24,932 - WARNING - Proxy 無效: http://127.0.0.7:80, 錯誤: HTTPConnectionPool(host='127.0.0.7', port=80): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000279AE90DA90>: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')))
+2025-04-23 08:06:34,938 - WARNING - Proxy 無效: http://64.227.174.149:9090, 錯誤: HTTPConnectionPool(host='64.227.174.149', port=9090): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D130>, 'Connection to 64.227.174.149 timed out. (connect timeout=10)')))
+2025-04-23 08:06:41,051 - INFO - Proxy 有效: http://103.169.187.221:8080
+2025-04-23 08:06:51,063 - WARNING - Proxy 無效: http://182.160.103.220:8090, 錯誤: HTTPConnectionPool(host='182.160.103.220', port=8090): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90C0E0>, 'Connection to 182.160.103.220 timed out. (connect timeout=10)')))
+2025-04-23 08:07:01,077 - WARNING - Proxy 無效: http://114.7.162.94:8080, 錯誤: HTTPConnectionPool(host='114.7.162.94', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE922E70>, 'Connection to 114.7.162.94 timed out. (connect timeout=10)')))
+2025-04-23 08:07:11,088 - WARNING - Proxy 無效: http://8.242.184.213:9992, 錯誤: HTTPConnectionPool(host='8.242.184.213', port=9992): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90CE90>, 'Connection to 8.242.184.213 timed out. (connect timeout=10)')))
+2025-04-23 08:07:21,099 - WARNING - Proxy 無效: http://202.65.171.68:8080, 錯誤: HTTPConnectionPool(host='202.65.171.68', port=8080): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D850>, 'Connection to 202.65.171.68 timed out. (connect timeout=10)')))
+2025-04-23 08:07:31,997 - WARNING - Proxy 無效: http://103.140.238.113:17500, 錯誤: HTTPConnectionPool(host='103.140.238.113', port=17500): Read timed out. (read timeout=10)
+2025-04-23 08:07:42,016 - WARNING - Proxy 無效: http://190.97.243.20:999, 錯誤: HTTPConnectionPool(host='190.97.243.20', port=999): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB5F40>, 'Connection to 190.97.243.20 timed out. (connect timeout=10)')))
+2025-04-23 08:07:52,025 - WARNING - Proxy 無效: http://103.83.97.11:8090, 錯誤: HTTPConnectionPool(host='103.83.97.11', port=8090): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB4230>, 'Connection to 103.83.97.11 timed out. (connect timeout=10)')))
+2025-04-23 08:08:02,034 - WARNING - Proxy 無效: http://193.163.207.230:8085, 錯誤: HTTPConnectionPool(host='193.163.207.230', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D7C0>, 'Connection to 193.163.207.230 timed out. (connect timeout=10)')))
+2025-04-23 08:08:12,054 - WARNING - Proxy 無效: http://83.97.119.50:8085, 錯誤: HTTPConnectionPool(host='83.97.119.50', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90CEF0>, 'Connection to 83.97.119.50 timed out. (connect timeout=10)')))
+2025-04-23 08:08:22,081 - WARNING - Proxy 無效: http://185.68.155.176:8085, 錯誤: HTTPConnectionPool(host='185.68.155.176', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE922E70>, 'Connection to 185.68.155.176 timed out. (connect timeout=10)')))
+2025-04-23 08:08:32,094 - WARNING - Proxy 無效: http://91.243.91.91:8085, 錯誤: HTTPConnectionPool(host='91.243.91.91', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB6030>, 'Connection to 91.243.91.91 timed out. (connect timeout=10)')))
+2025-04-23 08:08:42,109 - WARNING - Proxy 無效: http://193.233.138.28:8085, 錯誤: HTTPConnectionPool(host='193.233.138.28', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB4860>, 'Connection to 193.233.138.28 timed out. (connect timeout=10)')))
+2025-04-23 08:08:52,129 - WARNING - Proxy 無效: http://176.126.111.124:8085, 錯誤: HTTPConnectionPool(host='176.126.111.124', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB7020>, 'Connection to 176.126.111.124 timed out. (connect timeout=10)')))
+2025-04-23 08:09:02,152 - WARNING - Proxy 無效: http://193.233.82.72:8085, 錯誤: HTTPConnectionPool(host='193.233.82.72', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE923A10>, 'Connection to 193.233.82.72 timed out. (connect timeout=10)')))
+2025-04-23 08:09:12,161 - WARNING - Proxy 無效: http://193.202.16.43:8085, 錯誤: HTTPConnectionPool(host='193.202.16.43', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D220>, 'Connection to 193.202.16.43 timed out. (connect timeout=10)')))
+2025-04-23 08:09:22,172 - WARNING - Proxy 無效: http://166.88.171.163:8085, 錯誤: HTTPConnectionPool(host='166.88.171.163', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90DD60>, 'Connection to 166.88.171.163 timed out. (connect timeout=10)')))
+2025-04-23 08:09:32,180 - WARNING - Proxy 無效: http://185.88.101.139:8085, 錯誤: HTTPConnectionPool(host='185.88.101.139', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB4A10>, 'Connection to 185.88.101.139 timed out. (connect timeout=10)')))
+2025-04-23 08:09:42,188 - WARNING - Proxy 無效: http://140.235.0.54:8085, 錯誤: HTTPConnectionPool(host='140.235.0.54', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB6060>, 'Connection to 140.235.0.54 timed out. (connect timeout=10)')))
+2025-04-23 08:09:42,794 - WARNING - Proxy 無效 (狀態碼 407): http://31.59.33.4:6580
+2025-04-23 08:09:52,815 - WARNING - Proxy 無效: http://193.31.127.120:8085, 錯誤: HTTPConnectionPool(host='193.31.127.120', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D910>, 'Connection to 193.31.127.120 timed out. (connect timeout=10)')))
+2025-04-23 08:10:02,841 - WARNING - Proxy 無效: http://193.233.229.21:8085, 錯誤: HTTPConnectionPool(host='193.233.229.21', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D3A0>, 'Connection to 193.233.229.21 timed out. (connect timeout=10)')))
+2025-04-23 08:10:12,852 - WARNING - Proxy 無效: http://64.49.37.84:8085, 錯誤: HTTPConnectionPool(host='64.49.37.84', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE923A70>, 'Connection to 64.49.37.84 timed out. (connect timeout=10)')))
+2025-04-23 08:10:13,490 - WARNING - Proxy 無效 (狀態碼 407): http://84.46.204.202:6505
+2025-04-23 08:10:23,511 - WARNING - Proxy 無效: http://193.233.142.54:8085, 錯誤: HTTPConnectionPool(host='193.233.142.54', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB4980>, 'Connection to 193.233.142.54 timed out. (connect timeout=10)')))
+2025-04-23 08:10:33,525 - WARNING - Proxy 無效: http://193.93.195.42:8085, 錯誤: HTTPConnectionPool(host='193.93.195.42', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB53A0>, 'Connection to 193.93.195.42 timed out. (connect timeout=10)')))
+2025-04-23 08:10:43,535 - WARNING - Proxy 無效: http://146.19.91.92:8085, 錯誤: HTTPConnectionPool(host='146.19.91.92', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279ADAB5490>, 'Connection to 146.19.91.92 timed out. (connect timeout=10)')))
+2025-04-23 08:10:53,537 - WARNING - Proxy 無效: http://146.19.39.183:8085, 錯誤: HTTPConnectionPool(host='146.19.39.183', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE923A70>, 'Connection to 146.19.39.183 timed out. (connect timeout=10)')))
+2025-04-23 08:11:03,545 - WARNING - Proxy 無效: http://45.159.23.208:8085, 錯誤: HTTPConnectionPool(host='45.159.23.208', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90D7C0>, 'Connection to 45.159.23.208 timed out. (connect timeout=10)')))
+2025-04-23 08:11:13,568 - WARNING - Proxy 無效: http://91.247.163.44:8085, 錯誤: HTTPConnectionPool(host='91.247.163.44', port=8085): Max retries exceeded with url: http://httpbin.org/ip (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000279AE90DB50>, 'Connection to 91.247.163.44 timed out. (connect timeout=10)')))
+2025-04-23 08:14:21,234 - INFO - Proxy 有效: http://203.77.215.45:10000
+2025-04-23 08:14:24,742 - INFO - Proxy 有效: http://47.90.167.27:8081
+2025-04-23 08:14:27,108 - INFO - Proxy 有效: http://156.244.11.6:20000
+2025-04-23 08:14:27,108 - INFO - 過濾後找到 3 個有效 Proxy
+2025-04-23 08:14:27,108 - INFO - 檢查更新: https://www.jasper-realestate.com/posts/
+2025-04-23 08:14:27,124 - INFO - 嘗試獲取頁面 https://www.jasper-realestate.com/posts/ (第 1 次嘔試，使用 Proxy: http://156.244.11.6:20000)
+2025-04-23 08:14:32,734 - INFO - 檢查更新: https://www.jasper-realestate.com/posts/page/2/
+2025-04-23 08:14:32,734 - INFO - 嘗試獲取頁面 https://www.jasper-realestate.com/posts/page/2/ (第 1 次嘔試，使用 Proxy: http://203.77.215.45:10000)
+2025-04-23 08:14:33,502 - INFO - 正在爬取第 1 頁: https://www.jasper-realestate.com/posts/
+2025-04-23 08:14:33,519 - INFO - 嘗試獲取頁面 https://www.jasper-realestate.com/posts/ (第 1 次嘔試，使用 Proxy: http://203.77.215.45:10000)
+2025-04-23 08:14:41,299 - WARNING - 在頁面上找不到文章: https://www.jasper-realestate.com/posts/
+2025-04-23 08:14:41,299 - INFO - 爬取完成，共獲取 0 篇文章
+2025-04-23 08:14:41,299 - INFO - 結果已保存至 scraped_data\jasper_articles_20250423_081441.json
+2025-04-23 08:14:41,299 - INFO - 組織後的結果已保存至 scraped_data\jasper_articles_organized_20250423_081441.json
+2025-04-23 08:14:41,299 - INFO - 摘要已保存至 scraped_data\jasper_articles_summary_20250423_081441.txt
+2025-04-23 08:14:41,299 - INFO - README.md 已生成至 scraped_data\README.md
+2025-04-23 08:14:41,299 - INFO - 總目錄Markdown已保存至: scraped_data\markdown_articles\00_總目錄.md
+2025-04-23 08:14:41,299 - INFO - 所有文章合集Markdown已保存至: scraped_data\markdown_articles\所有文章合集.md
+2025-04-23 08:14:41,299 - ERROR - 生成PDF時出錯: 'latin-1' codec can't encode characters in position 58-64: ordinal not in range(256)
