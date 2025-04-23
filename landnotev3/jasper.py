@@ -42,6 +42,7 @@ class JasperRealEstateScraper:
         self.results = []
         self.current_page = 1
         self.scraped_urls = set()  # 用於追蹤已經爬取過的URL
+        self.latest_article_date = 'N/A'  # 最新文章日期
         self.checkpoint_file = os.path.join(
             output_dir, "scraper_checkpoint.json")
 
@@ -79,10 +80,25 @@ class JasperRealEstateScraper:
             self.results = []
 
     def save_checkpoint(self):
-        """保存當前爬取的檢查點，包括當前頁碼和已爬取的URL"""
+        """保存當前爬取的檢查點，包括當前頁碼、已爬取的URL和最新文章日期"""
+        latest_date = 'N/A'
+        if self.results:
+            valid_dates = []
+            for article in self.results:
+                if article['date'] != 'N/A':
+                    try:
+                        date = datetime.strptime(article['date'], "%Y-%m-%d")
+                        valid_dates.append(date)
+                    except ValueError as e:
+                        logger.warning(
+                            f"無法解析檢查點中的日期: {article['date']}，錯誤: {str(e)}")
+            if valid_dates:
+                latest_date = max(valid_dates).strftime("%Y-%m-%d")
+
         checkpoint = {
             'current_page': self.current_page,
-            'scraped_urls': list(self.scraped_urls)
+            'scraped_urls': list(self.scraped_urls),
+            'latest_article_date': latest_date
         }
 
         with open(self.checkpoint_file, 'w', encoding='utf-8') as f:
@@ -98,19 +114,21 @@ class JasperRealEstateScraper:
 
             self.current_page = checkpoint.get('current_page', 1)
             self.scraped_urls = set(checkpoint.get('scraped_urls', []))
+            self.latest_article_date = checkpoint.get(
+                'latest_article_date', 'N/A')
 
             print(
-                f"已加載檢查點: 當前頁碼 {self.current_page}, 已爬取 {len(self.scraped_urls)} 個URL")
+                f"已加載檢查點: 當前頁碼 {self.current_page}, 已爬取 {len(self.scraped_urls)} 個URL, 最新文章日期 {self.latest_article_date}")
         except Exception as e:
             print(f"加載檢查點時出錯: {str(e)}")
 
     def random_sleep(self, min_seconds=2, max_seconds=5):
         """
-        隨機休息一段時間，避免過快請求
+        隨機休息一段時間Avoid too fast requests
         
         Args:
-            min_seconds: 最小休息秒數
-            max_seconds: 最大休息秒數
+            min_seconds: Minimum sleep seconds
+            max_seconds: Maximum sleep seconds
         """
         sleep_time = random.uniform(min_seconds, max_seconds)
         print(f"休息 {sleep_time:.2f} 秒...")
@@ -187,6 +205,12 @@ class JasperRealEstateScraper:
         logger.error(f"已達最大重試次數，放棄獲取頁面: {url}")
         return None
 
+    def log_invalid_date(self, date, article_title):
+        """記錄無效日期到日誌文件"""
+        log_file = os.path.join(self.output_dir, "invalid_dates.log")
+        with open(log_file, 'a', encoding='utf-8') as f:
+            f.write(f"{datetime.now()}: 無法解析日期 '{date}' 在文章 '{article_title}'\n")
+
     def extract_article_preview(self, article):
         """
         從文章預覽中提取信息
@@ -214,9 +238,24 @@ class JasperRealEstateScraper:
         else:
             excerpt, legal_basis = 'N/A', 'N/A'
 
-        # 提取發布日期
+        # 提取發布日期並標準化
         date_elem = article.find('span', class_='elementor-post-date')
-        date = date_elem.text.strip() if date_elem else 'N/A'
+        raw_date = date_elem.text.strip() if date_elem else 'N/A'
+        date = 'N/A'
+        if raw_date != 'N/A':
+            try:
+                # 嘗試解析 'YYYY 年 MM 月 DD 日' 格式
+                parsed_date = datetime.strptime(
+                    raw_date, "%Y 年 %m 月 %d 日")
+                date = parsed_date.strftime("%Y-%m-%d")
+            except ValueError:
+                # 如果失敗，嘗試 '%Y-%m-%d' 格式
+                try:
+                    parsed_date = datetime.strptime(raw_date, "%Y-%m-%d")
+                    date = parsed_date.strftime("%Y-%m-%d")
+                except ValueError as e:
+                    logger.warning(f"無法解析日期: {raw_date}，錯誤: {str(e)}")
+                    self.log_invalid_date(raw_date, title)
 
         # 提取縮圖 URL
         thumbnail_elem = article.find(
@@ -264,7 +303,7 @@ class JasperRealEstateScraper:
         if legal_basis == 'N/A':
             return legal_basis
 
-        # 移除"條文依據："前綴
+        # 移除"條布置據："前綴
         legal_basis = legal_basis.replace("條文依據：", "").strip()
 
         # 移除多餘的空白和換行符
@@ -578,7 +617,7 @@ class JasperRealEstateScraper:
         """
         # 先按日期排序
         sorted_by_date = sorted(
-            self.results, key=lambda x: x['date'], reverse=True)
+            self.results, key=lambda x: x['date'] if x['date'] != 'N/A' else '0000-00-00', reverse=True)
 
         # 然後按法律依據分組
         grouped_by_legal_basis = defaultdict(list)
@@ -588,6 +627,46 @@ class JasperRealEstateScraper:
             grouped_by_legal_basis[legal_basis].append(article)
 
         return grouped_by_legal_basis
+
+    def group_articles_by_law_type(self):
+        """
+        將文章按法律類型（如民法、土地法等）分組，每個法律類型下按法律依據分組
+        
+        Returns:
+            按法律類型和法律依據組織的文章字典
+        """
+        # 先按法律依據分組
+        organized = self.organize_articles_by_date_and_legal_basis()
+
+        # 定義法律類型關鍵詞（根據提供的法律依據清單）
+        law_types = [
+            '民法', '土地法', '土地稅法', '土地登記規則', '地籍測量實施規則',
+            '公平交易法', '土地徵收條例', '經紀業管理條例', '遺產及贈與稅法',
+            '不動產估價技術規則', '平均地權條例', '房屋稅條例', '所得稅法',
+            '地政士法', '契稅條例', '公寓大廈管理條例', '消費者保護法',
+            '都市計畫法', '大法官釋字', '民事訴訟法', '憲法', '遺贈法'
+        ]
+
+        # 初始化按法律類型分組的字典
+        grouped_by_law_type = defaultdict(lambda: defaultdict(list))
+
+        # 將文章分配到對應的法律類型
+        for legal_basis, articles in organized.items():
+            assigned = False
+            for law_type in law_types:
+                if law_type in legal_basis or legal_basis.startswith(law_type):
+                    grouped_by_law_type[law_type][legal_basis] = articles
+                    assigned = True
+                    break
+            if not assigned:
+                # 如果不屬於任何已知法律類型，放入「其他」或「未分類」
+                grouped_by_law_type['未分類文章'][legal_basis] = articles
+
+        # 將「未分類文章」中的「N/A」移到「未分類文章」類型
+        if 'N/A' in organized:
+            grouped_by_law_type['未分類文章']['N/A'] = organized['N/A']
+
+        return grouped_by_law_type
 
     def save_organized_results(self):
         """保存按日期和法律依據組織的結果"""
@@ -682,7 +761,7 @@ class JasperRealEstateScraper:
         text_dir = os.path.join(self.output_dir, "text_articles")
         if not os.path.exists(text_dir):
             os.makedirs(text_dir)
-        
+
         # 生成總目錄
         index_text_path = os.path.join(text_dir, "00_總目錄.txt")
         with open(index_text_path, 'w', encoding='utf-8') as f:
@@ -693,7 +772,7 @@ class JasperRealEstateScraper:
             for i, (legal_basis, articles) in enumerate(sorted(organized.items())):
                 basis_name = legal_basis if legal_basis != "N/A" else "未分類文章"
                 f.write(f"{i+1}. {basis_name} ({len(articles)}篇)\n")
-        
+
         # 生成各分類文本文件
         for legal_basis, articles in organized.items():
             basis_name = legal_basis if legal_basis != "N/A" else "未分類文章"
@@ -711,22 +790,24 @@ class JasperRealEstateScraper:
                     if article['link'] != 'N/A':
                         f.write(f"原文連結: {article['link']}\n")
                     f.write("\n文章內容:\n")
-                    f.write(article['full_content'] if article['full_content'] else "無法獲取文章內容")
+                    f.write(article['full_content']
+                            if article['full_content'] else "無法獲取文章內容")
                     f.write("\n\n" + "-" * 50 + "\n\n")
             logger.info(f"文本文件已保存至: {text_path}")
-        
+
         logger.info(f"所有文本文件已保存至目錄: {text_dir}")
         return text_dir
 
     def generate_pdfs(self):
-        """生成PDF文件，按法律依據分類整理文章"""
+        """生成單一PDF文件，包含所有文章，按法律類型和法律依據分類整理，每篇文章從新頁開始，無原文連結，包含頁碼"""
         try:
             from reportlab.lib.pagesizes import letter
-            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
             from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
             from reportlab.pdfbase import pdfmetrics
             from reportlab.pdfbase.ttfonts import TTFont
-            
+            from reportlab.lib.units import inch
+
             # 嘗試註冊中文字體
             try:
                 # 嘗試註冊微軟正黑體（Windows系統）
@@ -736,90 +817,137 @@ class JasperRealEstateScraper:
             except:
                 try:
                     # 嘗試註冊思源黑體（跨平台）
-                    pdfmetrics.registerFont(TTFont('NotoSansCJK', 'NotoSansCJK-Regular.ttc'))
+                    pdfmetrics.registerFont(
+                        TTFont('NotoSansCJK', 'NotoSansCJK-Regular.ttc'))
                     chinese_font = 'NotoSansCJK'
                     logger.info("已註冊思源黑體字體")
                 except:
                     # 如果都失敗，使用文本文件代替
                     logger.error("無法找到合適的中文字體，將生成文本文件代替PDF")
                     return self.generate_text_files()
-            
-            organized = self.organize_articles_by_date_and_legal_basis()
+
+            # 按法律類型和法律依據分組文章
+            grouped_by_law_type = self.group_articles_by_law_type()
             pdf_dir = os.path.join(self.output_dir, "pdf_articles")
             if not os.path.exists(pdf_dir):
                 os.makedirs(pdf_dir)
-            
+
             # 創建樣式
             styles = getSampleStyleSheet()
-            styles.add(ParagraphStyle(name='Chinese', 
-                                     fontName=chinese_font,
-                                     fontSize=10,
-                                     leading=12))
-            styles.add(ParagraphStyle(name='ChineseTitle', 
-                                     fontName=chinese_font,
-                                     fontSize=14,
-                                     leading=16,
-                                     alignment=1)) # 居中
-            
-            # 生成索引PDF
-            index_pdf_path = os.path.join(pdf_dir, "00_總目錄.pdf")
-            doc = SimpleDocTemplate(index_pdf_path, pagesize=letter)
+            styles.add(ParagraphStyle(name='Chinese',
+                                      fontName=chinese_font,
+                                      fontSize=10,
+                                      leading=12,
+                                      wordWrap='CJK'))
+            styles.add(ParagraphStyle(name='ChineseTitle',
+                                      fontName=chinese_font,
+                                      fontSize=14,
+                                      leading=16,
+                                      alignment=1))  # 居中
+            styles.add(ParagraphStyle(name='ChineseLawType',
+                                      fontName=chinese_font,
+                                      fontSize=13,
+                                      leading=15,
+                                      spaceAfter=12))
+            styles.add(ParagraphStyle(name='ChineseHeading',
+                                      fontName=chinese_font,
+                                      fontSize=12,
+                                      leading=14))
+
+            # 定義頁碼函數
+            def add_page_number(canvas, doc):
+                page_num = canvas.getPageNumber()
+                canvas.setFont(chinese_font, 10)
+                page_width = letter[0]  # 612 points
+                text = str(page_num)
+                text_width = canvas.stringWidth(text, chinese_font, 10)
+                canvas.drawString(
+                    (page_width - text_width) / 2, 0.5 * inch, text)
+
+            # 生成單一PDF
+            pdf_path = os.path.join(pdf_dir, "jasper_articles_combined.pdf")
+            doc = SimpleDocTemplate(pdf_path, pagesize=letter)
             story = []
-            
+
+            # 添加封面
             story.append(Paragraph("Jasper 不動產文章集合", styles['ChineseTitle']))
             story.append(Spacer(1, 12))
-            story.append(Paragraph(f"爬取日期: {datetime.now().strftime('%Y-%m-%d')}", styles['Chinese']))
-            story.append(Paragraph(f"共爬取 {len(self.results)} 篇文章", styles['Chinese']))
+            story.append(
+                Paragraph(f"爬取日期: {datetime.now().strftime('%Y-%m-%d')}", styles['Chinese']))
+            story.append(
+                Paragraph(f"共爬取 {len(self.results)} 篇文章", styles['Chinese']))
             story.append(Spacer(1, 24))
-            
-            for i, (legal_basis, articles) in enumerate(sorted(organized.items())):
-                basis_name = legal_basis if legal_basis != "N/A" else "未分類文章"
-                story.append(Paragraph(f"{i+1}. {basis_name} ({len(articles)}篇)", styles['Chinese']))
+
+            # 添加目錄
+            story.append(Paragraph("目錄", styles['ChineseTitle']))
+            story.append(Spacer(1, 12))
+            for law_type, legal_bases in sorted(grouped_by_law_type.items()):
+                total_articles = sum(len(articles)
+                                     for articles in legal_bases.values())
+                story.append(
+                    Paragraph(f"{law_type} ({total_articles}篇)", styles['ChineseLawType']))
+                for legal_basis, articles in sorted(legal_bases.items()):
+                    basis_name = legal_basis if legal_basis != "N/A" else "未分類"
+                    story.append(
+                        Paragraph(f"  - {basis_name} ({len(articles)}篇)", styles['Chinese']))
                 story.append(Spacer(1, 6))
-            
-            doc.build(story)
-            logger.info(f"總目錄PDF已保存至: {index_pdf_path}")
-            
-            # 生成各分類PDF
-            for i, (legal_basis, articles) in enumerate(sorted(organized.items())):
-                basis_name = legal_basis if legal_basis != "N/A" else "未分類文章"
-                safe_name = re.sub(r'[\\/*?:"<>|]', "_", basis_name)
-                pdf_filename = f"{i+1:02d}_{safe_name}_{len(articles)}篇.pdf"
-                pdf_path = os.path.join(pdf_dir, pdf_filename)
-                
-                doc = SimpleDocTemplate(pdf_path, pagesize=letter)
-                story = []
-                
-                story.append(Paragraph(f"{basis_name} 相關文章", styles['ChineseTitle']))
+            story.append(PageBreak())
+
+            # 添加各法律類型和文章
+            for i, (law_type, legal_bases) in enumerate(sorted(grouped_by_law_type.items())):
+                total_articles = sum(len(articles)
+                                     for articles in legal_bases.values())
+                story.append(
+                    Paragraph(f"{law_type} 相關文章", styles['ChineseLawType']))
                 story.append(Spacer(1, 12))
-                story.append(Paragraph(f"共 {len(articles)} 篇文章", styles['Chinese']))
+                story.append(
+                    Paragraph(f"共 {total_articles} 篇文章", styles['Chinese']))
                 story.append(Spacer(1, 24))
-                
-                for j, article in enumerate(articles):
-                    story.append(Paragraph(f"{j+1}. {article['title']}", styles['Chinese']))
-                    story.append(Spacer(1, 6))
-                    story.append(Paragraph(f"發布日期: {article['date']}", styles['Chinese']))
-                    story.append(Paragraph(f"摘要: {article['excerpt']}", styles['Chinese']))
-                    if article['link'] != 'N/A':
-                        story.append(Paragraph(f"原文連結: {article['link']}", styles['Chinese']))
+
+                for legal_basis, articles in sorted(legal_bases.items()):
+                    basis_name = legal_basis if legal_basis != "N/A" else "未分類"
+                    story.append(
+                        Paragraph(f"{basis_name} 相關文章", styles['ChineseHeading']))
                     story.append(Spacer(1, 12))
-                    
-                    if article['full_content'] and article['full_content'] != "無法獲取文章內容":
-                        content = re.sub(r'##\s+', '', article['full_content'])
-                        content = re.sub(r'\*\*|\*', '', content)
-                        paragraphs = content.split('\n\n')
-                        for para in paragraphs:
-                            if para.strip():
-                                story.append(Paragraph(para.strip(), styles['Chinese']))
-                                story.append(Spacer(1, 6))
-                    
+                    story.append(
+                        Paragraph(f"共 {len(articles)} 篇文章", styles['Chinese']))
+                    story.append(Spacer(1, 12))
+
+                    for j, article in enumerate(articles):
+                        if j > 0:
+                            story.append(PageBreak())  # 每篇文章從新頁開始（除了第一篇）
+                        story.append(
+                            Paragraph(f"{j+1}. {article['title']}", styles['Chinese']))
+                        story.append(Spacer(1, 6))
+                        story.append(
+                            Paragraph(f"發布日期: {article['date']}", styles['Chinese']))
+                        story.append(
+                            Paragraph(f"摘要: {article['excerpt']}", styles['Chinese']))
+                        story.append(Spacer(1, 12))
+
+                        if article['full_content'] and article['full_content'] != "無法獲取文章內容":
+                            content = re.sub(
+                                r'##\s+', '', article['full_content'])
+                            content = re.sub(r'\*\*|\*', '', content)
+                            paragraphs = content.split('\n\n')
+                            for para in paragraphs:
+                                if para.strip():
+                                    story.append(
+                                        Paragraph(para.strip(), styles['Chinese']))
+                                    story.append(Spacer(1, 6))
+
                     story.append(Spacer(1, 24))
-                
-                doc.build(story)
-                logger.info(f"PDF已保存至: {pdf_path}")
-            
-            logger.info(f"所有PDF文件已保存至目錄: {pdf_dir}")
+
+                # 在每個法律類型後添加分頁（除了最後一個）
+                if i < len(grouped_by_law_type) - 1:
+                    story.append(PageBreak())
+
+            # 應用頁碼
+            doc.build(story, onFirstPage=add_page_number,
+                      onLaterPages=add_page_number)
+            logger.info(f"單一PDF已保存至: {pdf_path}")
             return pdf_dir
+
         except Exception as e:
             logger.error(f"生成PDF時出錯: {str(e)}")
             # 如果PDF生成失敗，則生成文本文件
@@ -829,7 +957,7 @@ class JasperRealEstateScraper:
         """生成Markdown文件，按法律依據分類整理文章"""
         organized = self.organize_articles_by_date_and_legal_basis()
 
-        # 創建Markdown輸出目錄
+        # 創建Markdown 輸出目錄
         md_dir = os.path.join(self.output_dir, "markdown_articles")
         if not os.path.exists(md_dir):
             os.makedirs(md_dir)
@@ -898,7 +1026,7 @@ class JasperRealEstateScraper:
 
             # 按日期排序所有文章
             all_articles = sorted(
-                self.results, key=lambda x: x['date'], reverse=True)
+                self.results, key=lambda x: x['date'] if x['date'] != 'N/A' else '0000-00-00', reverse=True)
 
             # 添加所有文章
             for i, article in enumerate(all_articles):
@@ -925,7 +1053,6 @@ class JasperRealEstateScraper:
         return md_dir
 
 
-# 主程序
 def check_for_updates(scraper):
     """檢查網站是否有新文章或內容更新"""
     print("正在檢查是否有新文章或內容更新...")
@@ -950,18 +1077,45 @@ def check_for_updates(scraper):
     # 獲取已爬取的最新文章日期
     latest_date = None
     if scraper.results:
-        latest_date = max(
-            (datetime.strptime(article['date'], "%Y-%m-%d")
-             for article in scraper.results if article['date'] != 'N/A'),
-            default=None
-        )
+        valid_dates = []
+        for article in scraper.results:
+            if article['date'] != 'N/A':
+                try:
+                    # 嘗試解析 '%Y-%m-%d' 格式
+                    date = datetime.strptime(article['date'], "%Y-%m-%d")
+                    valid_dates.append(date)
+                except ValueError:
+                    # 如果失敗，嘗試 'YYYY 年 MM 月 DD 日' 格式
+                    try:
+                        date = datetime.strptime(
+                            article['date'], "%Y 年 %m 月 %d 日")
+                        valid_dates.append(date)
+                    except ValueError as e:
+                        logger.warning(
+                            f"無法解析文章日期: {article['date']}，錯誤: {str(e)}")
+                        scraper.log_invalid_date(
+                            article['date'], article['title'])
+                        continue
+        if valid_dates:
+            latest_date = max(valid_dates)
 
     for article in articles[:5]:  # 只檢查最新的 5 篇文章
         article_info = scraper.extract_article_preview(article)
         if article_info['link'] != 'N/A' and article_info['link'] not in scraper.scraped_urls:
             # 檢查文章日期是否比已爬取的最新日期更新
-            article_date = datetime.strptime(
-                article_info['date'], "%Y-%m-%d") if article_info['date'] != 'N/A' else None
+            article_date = None
+            if article_info['date'] != 'N/A':
+                try:
+                    # 日期已經在 extract_article_preview 中標準化為 '%Y-%m-%d'
+                    article_date = datetime.strptime(
+                        article_info['date'], "%Y-%m-%d")
+                except ValueError as e:
+                    logger.warning(
+                        f"無法解析新文章日期: {article_info['date']}，錯誤: {str(e)}")
+                    scraper.log_invalid_date(
+                        article_info['date'], article_info['title'])
+                    continue
+
             if latest_date is None or (article_date and article_date > latest_date):
                 print(
                     f"發現新文章: {article_info['title']} ({article_info['date']})")
@@ -974,7 +1128,6 @@ def check_for_updates(scraper):
     return has_updates, new_articles
 
 
-# 執行爬蟲
 if __name__ == "__main__":
     # 檢查是否有之前的結果文件，如果有則提示用戶是否繼續
     output_dir = "scraped_data"
