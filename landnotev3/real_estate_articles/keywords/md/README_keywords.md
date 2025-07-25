@@ -1,12 +1,12 @@
 # 關鍵詞分類索引
 
-生成時間：2025-06-26 19:47:43
+生成時間：2025-07-25 20:32:52
 
 ## 關鍵詞統計
 
 | 關鍵詞 | 文章數量 |
 | --- | --- |
-| [土地增值稅](keyword_土地增值稅.md) | 62 |
+| [土地增值稅](keyword_土地增值稅.md) | 64 |
 | [優先購買權](keyword_優先購買權.md) | 47 |
 | [土地登記](keyword_土地登記.md) | 40 |
 | [共有人](keyword_共有人.md) | 25 |
@@ -15,9 +15,9 @@
 | [地上權](keyword_地上權.md) | 19 |
 | [土地徵收](keyword_土地徵收.md) | 18 |
 | [土地法](keyword_土地法.md) | 18 |
+| [區段徵收](keyword_區段徵收.md) | 17 |
+| [都市計畫](keyword_都市計畫.md) | 17 |
 | [房地合一所得稅](keyword_房地合一所得稅.md) | 17 |
-| [區段徵收](keyword_區段徵收.md) | 16 |
-| [都市計畫](keyword_都市計畫.md) | 16 |
 | [農業用地](keyword_農業用地.md) | 16 |
 | [房屋稅](keyword_房屋稅.md) | 15 |
 | [市地重劃](keyword_市地重劃.md) | 15 |
@@ -27,8 +27,8 @@
 | [實價登錄](keyword_實價登錄.md) | 12 |
 | [繼承登記](keyword_繼承登記.md) | 12 |
 | [繼承人](keyword_繼承人.md) | 12 |
+| [房地合一稅](keyword_房地合一稅.md) | 11 |
 | [全國國土計畫](keyword_全國國土計畫.md) | 11 |
-| [房地合一稅](keyword_房地合一稅.md) | 10 |
 | [公共設施保留地](keyword_公共設施保留地.md) | 10 |
 | [遺產稅](keyword_遺產稅.md) | 10 |
 | [典權](keyword_典權.md) | 10 |
@@ -38,6 +38,7 @@
 | [地政士](keyword_地政士.md) | 8 |
 | [土地法第104條](keyword_土地法第104條.md) | 8 |
 | [土地利用與土地政策](keyword_土地利用與土地政策.md) | 8 |
+| [地價](keyword_地價.md) | 8 |
 | [多數決](keyword_多數決.md) | 8 |
 | [不動產經紀人](keyword_不動產經紀人.md) | 7 |
 | [土地法規](keyword_土地法規.md) | 7 |
@@ -45,7 +46,6 @@
 | [容積移轉](keyword_容積移轉.md) | 7 |
 | [贈與稅](keyword_贈與稅.md) | 7 |
 | [國土計畫](keyword_國土計畫.md) | 7 |
-| [地價](keyword_地價.md) | 7 |
 | [不動產](keyword_不動產.md) | 7 |
 | [房地合一](keyword_房地合一.md) | 7 |
 | [農地](keyword_農地.md) | 7 |
@@ -65,6 +65,7 @@
 | [信託財產](keyword_信託財產.md) | 6 |
 | [所有權](keyword_所有權.md) | 6 |
 | [登記](keyword_登記.md) | 6 |
+| [公共設施](keyword_公共設施.md) | 6 |
 | [不動產估價師](keyword_不動產估價師.md) | 5 |
 | [公告地價](keyword_公告地價.md) | 5 |
 | [都市更新](keyword_都市更新.md) | 5 |
@@ -74,6 +75,7 @@
 | [信託行為](keyword_信託行為.md) | 5 |
 | [繼受取得](keyword_繼受取得.md) | 5 |
 | [原始取得](keyword_原始取得.md) | 5 |
+| [土地現值](keyword_土地現值.md) | 5 |
 | [信託法](keyword_信託法.md) | 5 |
 | [非都市土地](keyword_非都市土地.md) | 5 |
 | [遺產](keyword_遺產.md) | 5 |
@@ -83,12 +85,12 @@
 | [財產權](keyword_財產權.md) | 5 |
 | [退稅](keyword_退稅.md) | 5 |
 | [請求權](keyword_請求權.md) | 5 |
-| [公共設施](keyword_公共設施.md) | 5 |
+| [重購](keyword_重購.md) | 5 |
 | [登記遺漏](keyword_登記遺漏.md) | 4 |
 | [塗銷登記](keyword_塗銷登記.md) | 4 |
 | [土地法第12條](keyword_土地法第12條.md) | 4 |
+| [容積獎勵](keyword_容積獎勵.md) | 4 |
 | [土地稅法](keyword_土地稅法.md) | 4 |
-| [土地現值](keyword_土地現值.md) | 4 |
 | [土地稅](keyword_土地稅.md) | 4 |
 | [租賃住宅](keyword_租賃住宅.md) | 4 |
 | [租賃權](keyword_租賃權.md) | 4 |
@@ -104,7 +106,6 @@
 | [共有物](keyword_共有物.md) | 4 |
 | [特別犧牲](keyword_特別犧牲.md) | 4 |
 | [借名登記](keyword_借名登記.md) | 4 |
-| [重購](keyword_重購.md) | 4 |
 | [公寓大廈](keyword_公寓大廈.md) | 4 |
 | [配偶](keyword_配偶.md) | 4 |
 | [委託人](keyword_委託人.md) | 4 |
@@ -113,13 +114,13 @@
 | [不動產投資分析](keyword_不動產投資分析.md) | 3 |
 | [土地政策](keyword_土地政策.md) | 3 |
 | [公告土地現值](keyword_公告土地現值.md) | 3 |
+| [都市發展](keyword_都市發展.md) | 3 |
 | [遺產及贈與稅法](keyword_遺產及贈與稅法.md) | 3 |
 | [農舍](keyword_農舍.md) | 3 |
 | [農業發展條例](keyword_農業發展條例.md) | 3 |
 | [地政士法](keyword_地政士法.md) | 3 |
 | [三七五租約](keyword_三七五租約.md) | 3 |
 | [開發許可](keyword_開發許可.md) | 3 |
-| [容積獎勵](keyword_容積獎勵.md) | 3 |
 | [土地法34-1](keyword_土地法34-1.md) | 3 |
 | [重新規定地價](keyword_重新規定地價.md) | 3 |
 | [稅基](keyword_稅基.md) | 3 |
@@ -155,12 +156,14 @@
 | [土地利用](keyword_土地利用.md) | 3 |
 | [公同共有](keyword_公同共有.md) | 3 |
 | [優先承買權](keyword_優先承買權.md) | 3 |
+| [繼承](keyword_繼承.md) | 3 |
 | [剩餘財產](keyword_剩餘財產.md) | 3 |
 | [贈與](keyword_贈與.md) | 3 |
 | [建物](keyword_建物.md) | 3 |
 | [溫室氣體](keyword_溫室氣體.md) | 3 |
 | [稅率](keyword_稅率.md) | 3 |
 | [房價](keyword_房價.md) | 3 |
+| [租稅](keyword_租稅.md) | 3 |
 | [不動產經濟學](keyword_不動產經濟學.md) | 2 |
 | [土地法與土地相關稅法概要](keyword_土地法與土地相關稅法概要.md) | 2 |
 | [不動產經紀相關法規概要](keyword_不動產經紀相關法規概要.md) | 2 |
@@ -170,7 +173,6 @@
 | [抵價地補償](keyword_抵價地補償.md) | 2 |
 | [地籍測量實施規則](keyword_地籍測量實施規則.md) | 2 |
 | [屋簷](keyword_屋簷.md) | 2 |
-| [都市發展](keyword_都市發展.md) | 2 |
 | [仕紳化](keyword_仕紳化.md) | 2 |
 | [停車位產權](keyword_停車位產權.md) | 2 |
 | [公契](keyword_公契.md) | 2 |
@@ -248,6 +250,7 @@
 | [土地複丈](keyword_土地複丈.md) | 2 |
 | [土地合併](keyword_土地合併.md) | 2 |
 | [登記絕對效力](keyword_登記絕對效力.md) | 2 |
+| [先行區段徵收](keyword_先行區段徵收.md) | 2 |
 | [公平交易法](keyword_公平交易法.md) | 2 |
 | [消費者保護法](keyword_消費者保護法.md) | 2 |
 | [行政處分](keyword_行政處分.md) | 2 |
@@ -288,7 +291,6 @@
 | [既成道路](keyword_既成道路.md) | 2 |
 | [違章建築](keyword_違章建築.md) | 2 |
 | [時效取得](keyword_時效取得.md) | 2 |
-| [繼承](keyword_繼承.md) | 2 |
 | [過失](keyword_過失.md) | 2 |
 | [租約](keyword_租約.md) | 2 |
 | [平均地權](keyword_平均地權.md) | 2 |
@@ -310,8 +312,8 @@
 | [私有土地](keyword_私有土地.md) | 2 |
 | [消費者](keyword_消費者.md) | 2 |
 | [免稅額](keyword_免稅額.md) | 2 |
+| [受贈](keyword_受贈.md) | 2 |
 | [選擇權](keyword_選擇權.md) | 2 |
-| [租稅](keyword_租稅.md) | 2 |
 | [不動產估價實務](keyword_不動產估價實務.md) | 1 |
 | [不動產估價理論](keyword_不動產估價理論.md) | 1 |
 | [房屋租賃定型化契約應記載及不得記載事項](keyword_房屋租賃定型化契約應記載及不得記載事項.md) | 1 |
@@ -615,7 +617,6 @@
 | [融通物](keyword_融通物.md) | 1 |
 | [不融通物](keyword_不融通物.md) | 1 |
 | [住宅階梯](keyword_住宅階梯.md) | 1 |
-| [先行區段徵收](keyword_先行區段徵收.md) | 1 |
 | [債權](keyword_債權.md) | 1 |
 | [主登記](keyword_主登記.md) | 1 |
 | [附記登記](keyword_附記登記.md) | 1 |
@@ -1003,7 +1004,6 @@
 | [占有人](keyword_占有人.md) | 1 |
 | [友善農地](keyword_友善農地.md) | 1 |
 | [慣行農業](keyword_慣行農業.md) | 1 |
-| [受贈](keyword_受贈.md) | 1 |
 | [新青安](keyword_新青安.md) | 1 |
 | [購屋](keyword_購屋.md) | 1 |
 | [貸款](keyword_貸款.md) | 1 |
@@ -1044,3 +1044,13 @@
 | [國土保育區](keyword_國土保育區.md) | 1 |
 | [公同共有人](keyword_公同共有人.md) | 1 |
 | [權利行使](keyword_權利行使.md) | 1 |
+| [移轉現值](keyword_移轉現值.md) | 1 |
+| [機會成本](keyword_機會成本.md) | 1 |
+| [犠牲](keyword_犠牲.md) | 1 |
+| [自有資金](keyword_自有資金.md) | 1 |
+| [先賣後買](keyword_先賣後買.md) | 1 |
+| [先買後賣](keyword_先買後賣.md) | 1 |
+| [ESG](keyword_ESG.md) | 1 |
+| [環境保護](keyword_環境保護.md) | 1 |
+| [社會責任](keyword_社會責任.md) | 1 |
+| [公司治理](keyword_公司治理.md) | 1 |

@@ -429,7 +429,8 @@ if __name__ == "__main__":
 下載所有年份的「地政」相關考古題，跳過已存在的檔案，並開啟調試模式：
 python download_exam.py --all --update --debug
 
-僅下載最近 10 年的考古題：
+僅下載最近 10 python download_exam.py --all --update --debug
+
 python download_exam.py --years 10 --update --debug
 
 '''
