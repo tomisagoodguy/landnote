@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple
+from collections import defaultdict
 import yaml
 import json
 
@@ -30,24 +31,39 @@ class SiteGenerator:
         # 2. Process articles and move to docs/posts with YAML frontmatter
         self._process_articles()
         
-        # 3. Generate authors file
-        self._generate_authors_file()
+        # 4. Generate tags and authors statistics
+        all_tags = self._collect_all_tags()
         
-        # 4. Generate tags page
-        self._generate_tags_page()
+        # 5. Generate tags page
+        self._generate_tags_page(all_tags)
+        
+        # 6. Generate authors file
+        self._generate_authors_file()
 
-        # 5. Generate mkdocs.yml
+        # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()
         
-        # 6. Generate Homepage
+        # 8. Generate Homepage
         self._generate_homepage()
         
         self.logger.info("Site generation structure completed.")
 
     def _prepare_directories(self):
-        """Clean and create necessary directories."""
-        if self.site_src_dir.exists():
-            shutil.rmtree(self.site_src_dir)
+        """Clean and create necessary directories. Handles Windows file lock issues."""
+        try:
+            if self.site_src_dir.exists():
+                shutil.rmtree(self.site_src_dir)
+        except PermissionError:
+            self.logger.warning(f"Could not remove {self.site_src_dir}, cleaning contents instead.")
+            for item in self.site_src_dir.iterdir():
+                try:
+                    if item.is_dir():
+                        shutil.rmtree(item)
+                    else:
+                        item.unlink()
+                except:
+                    pass
+
         self.site_src_dir.mkdir(parents=True, exist_ok=True)
         self.docs_dir.mkdir(parents=True, exist_ok=True)
         self.posts_dir.mkdir(parents=True, exist_ok=True)
@@ -56,7 +72,10 @@ class SiteGenerator:
         src_images = self.source_dir / "images"
         dst_images = self.posts_dir / "images"
         if src_images.exists():
-            shutil.copytree(src_images, dst_images)
+            try:
+                shutil.copytree(src_images, dst_images, dirs_exist_ok=True)
+            except:
+                pass
 
     def _process_articles(self):
         """Transform raw markdown files into Hugo/MkDocs compatible files."""
@@ -157,9 +176,28 @@ class SiteGenerator:
                 continue 
                 
             if not in_info_block:
+                # Fix image paths in body (./images/ -> images/)
+                line = line.replace('(./images/', '(images/')
                 body_lines.append(line)
 
         return metadata, '\n'.join(body_lines).strip()
+
+    def _collect_all_tags(self) -> Dict[str, int]:
+        """Scan all processed articles to collect unique tags and their counts."""
+        tag_counts = defaultdict(int)
+        for file in self.posts_dir.glob("*.md"):
+            try:
+                content = file.read_text(encoding='utf-8')
+                if content.startswith('---'):
+                    parts = content.split('---', 2)
+                    if len(parts) >= 3:
+                        meta = yaml.safe_load(parts[1])
+                        tags = meta.get('tags', [])
+                        for t in tags:
+                            tag_counts[t] += 1
+            except:
+                continue
+        return dict(tag_counts)
 
     def _generate_authors_file(self):
         """Generate .authors.yml file for mkdocs."""
@@ -181,15 +219,31 @@ class SiteGenerator:
         with open(self.base_dir / 'site_src' / '.authors.yml', 'w', encoding='utf-8') as f:
             yaml.dump(authors_map, f, allow_unicode=True, sort_keys=False)
 
-    def _generate_tags_page(self):
-        """Generate tags.md for tag cloud/list."""
-        tags_content = """# 文章主題索引
-
-這裡彙整了所有的關鍵字，點擊即可查看相關文章：
-
-[TAGS]
-"""
-        (self.docs_dir / "tags.md").write_text(tags_content, encoding='utf-8')
+    def _generate_tags_page(self, tag_counts: Dict[str, int]):
+        """Generate tags.md with a manual tag cloud link list."""
+        sorted_tags = sorted(tag_counts.items(), key=lambda x: x[1], reverse=True)
+        
+        content = [
+            "# 文章主題索引",
+            "",
+            "這裡彙整了所有的關鍵字，您可以點擊進入特定主題查看相關文章：",
+            "",
+            "---",
+            ""
+        ]
+        
+        if not sorted_tags:
+            content.append("*(目前尚無標籤資料)*")
+        else:
+            # Generate a nice list with counts
+            # In MkDocs Material blog, tags are indexed at /blog/tags/tag-name/
+            for tag, count in sorted_tags:
+                safe_tag = tag.lower().replace(' ', '-')
+                # MkDocs Material Blog default tag URL pattern
+                url = f"../blog/category/{safe_tag}/"
+                content.append(f"-   [:material-tag-outline: **{tag}**]({url}) ({count})")
+        
+        (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
 
     def _generate_mkdocs_config(self):
         """Create mkdocs.yml"""
