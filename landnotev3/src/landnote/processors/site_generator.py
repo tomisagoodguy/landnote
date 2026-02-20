@@ -258,11 +258,13 @@ class SiteGenerator:
                 'features': [
                     'navigation.tabs',
                     'navigation.sections',
-                    'toc.integrate',
+                    'navigation.expand',
+                    'navigation.tracking', # 捲動時自動追蹤標題
+                    'navigation.indexes',
                     'search.suggest',
                     'search.highlight',
                     'content.code.copy',
-                    'navigation.top',
+                    'navigation.top', # 回到頂部按鈕
                 ],
                 'palette': [
                     {
@@ -271,7 +273,7 @@ class SiteGenerator:
                         'accent': 'indigo', 
                         'toggle': {
                             'icon': 'material/brightness-7', 
-                            'name': 'Switch to dark mode'
+                            'name': '切換至深色模式'
                         }
                     },
                     {
@@ -280,7 +282,7 @@ class SiteGenerator:
                         'accent': 'indigo',
                         'toggle': {
                             'icon': 'material/brightness-4', 
-                            'name': 'Switch to light mode'
+                            'name': '切換至淺色模式'
                         }
                     }
                 ]
@@ -293,6 +295,9 @@ class SiteGenerator:
                         'post_dir': 'blog/posts',
                         'blog_toc': True,
                         'post_url_format': '{date}/{slug}',
+                        'archive': True, # 顯示月份封存
+                        'categories': True, # 顯示分類
+                        'recent_posts': 5, # 顯示最近 5 篇文章
                     }
                 }
             ],
@@ -302,7 +307,13 @@ class SiteGenerator:
                 'pymdownx.superfences',
                 'pymdownx.highlight',
                 'attr_list',
-                'md_in_html'
+                'md_in_html',
+                {
+                    'toc': {
+                        'permalink': True, # 標題旁增加連結圖示
+                        'toc_depth': 3
+                    }
+                }
             ],
             'nav': [
                 {'首頁': 'index.md'},

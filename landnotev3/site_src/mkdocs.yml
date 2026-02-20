@@ -8,7 +8,9 @@ theme:
   features:
   - navigation.tabs
   - navigation.sections
-  - toc.integrate
+  - navigation.expand
+  - navigation.tracking
+  - navigation.indexes
   - search.suggest
   - search.highlight
   - content.code.copy
@@ -19,13 +21,13 @@ theme:
     accent: indigo
     toggle:
       icon: material/brightness-7
-      name: Switch to dark mode
+      name: 切換至深色模式
   - scheme: slate
     primary: indigo
     accent: indigo
     toggle:
       icon: material/brightness-4
-      name: Switch to light mode
+      name: 切換至淺色模式
 plugins:
 - search
 - tags
@@ -33,6 +35,9 @@ plugins:
     post_dir: blog/posts
     blog_toc: true
     post_url_format: '{date}/{slug}'
+    archive: true
+    categories: true
+    recent_posts: 5
 markdown_extensions:
 - admonition
 - pymdownx.details
@@ -40,6 +45,9 @@ markdown_extensions:
 - pymdownx.highlight
 - attr_list
 - md_in_html
+- toc:
+    permalink: true
+    toc_depth: 3
 nav:
 - 首頁: index.md
 - 最新文章: blog/
