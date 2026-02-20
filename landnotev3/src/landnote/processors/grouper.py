@@ -297,21 +297,67 @@ class ArticleGrouper:
             with open(kw_file, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(content))
 
+    def _get_safe_id(self, s):
+        """Generate a URL-safe anchor ID."""
+        return re.sub(r'[^\w\s-]', '', s).strip().replace(' ', '-')
+
     def generate_index(self, groups):
         # Consolidated Index
         index_path = self.output_dir / "README_grouped.md"
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # 1. Topic induction (Top 50 keywords)
+        core_tags = [kw for kw, count in self.sorted_keywords[:50] if kw != 'Uncategorized']
+        
         content = [
             "# 文章分組目錄", 
             "", 
             f"生成時間：{current_time}", 
             "", 
-            "## 按關鍵詞分類",
+            "## 🚀 核心主題專案 (Top 50)",
             "",
-            "[查看關鍵詞分類](keywords/md/README_keywords.md)",
-            "",
-            "## 按標題相似度分組"
+            "這裡列出了出現頻率最高的 50 個主題。點擊標籤可直接跳轉至該專案列表：",
+            ""
         ]
+        
+        # Quick Navigation (Grid-like)
+        nav_items = []
+        for kw in core_tags:
+            safe_id = self._get_safe_id(kw)
+            nav_items.append(f"[`{kw}`](#topic-{safe_id})")
+        
+        # Join into chunks of 5 for better readability
+        for i in range(0, len(nav_items), 5):
+            content.append(" | ".join(nav_items[i:i+5]))
+        
+        content.append("")
+        content.append("---")
+        content.append("")
+        content.append("## 📂 主題詳細列表")
+        
+        # Topic Groups
+        for kw in core_tags:
+            safe_id = self._get_safe_id(kw)
+            articles = self.keyword_groups[kw]
+            # Unique articles
+            unique_articles = {a['file_path']: a for a in articles}.values()
+            sorted_articles = sorted(unique_articles, key=lambda x: x['date_obj'], reverse=True)
+            
+            content.append("")
+            content.append(f"### <a name='topic-{safe_id}'></a>📌 主題：{kw}")
+            content.append(f"*(共 {len(sorted_articles)} 篇文章)*")
+            
+            for a in sorted_articles:
+                rel_path = self._get_rel_path(a['file_path'])
+                date_str = a['date']
+                line = f"- {date_str} [{a['title']}]({rel_path})"
+                content.append(line)
+        
+        content.append("")
+        content.append("---")
+        content.append("")
+        content.append("## 🤖 標題相似度自動分組 (AI 輔助)")
+        content.append("*(基於模糊匹配算法自動生成)*")
         
         for i, group in enumerate(groups, 1):
             if not group: continue
@@ -322,22 +368,19 @@ class ArticleGrouper:
             for article in group:
                 group_keywords.update(article.get('keywords', []))
             sorted_kws = sorted(list(group_keywords))
-            kw_str = ", ".join(sorted_kws)
+            kw_str = ", ".join(sorted_kws) if sorted_kws else "無"
             
             content.append("")
-            content.append(f"## 組 {i}：{title}")
+            content.append(f"### 組 {i}：{title}")
             content.append(f"- 相關關鍵詞：{kw_str}")
             
             for a in group:
                 rel_path = self._get_rel_path(a['file_path'])
-                # Format: - YYYY/MM/DD [Title](Path) (文章編號：ID) 關鍵詞：KW1, KW2
                 date_str = a['date']
-                # Ensure date format is YYYY/MM/DD if possible, or keep as is
-                
                 article_kws = ", ".join(a.get('keywords', []))
-                line = f"- {date_str} [{a['title']}]({rel_path}) (文章編號：{a['article_no']}) 關鍵詞：{article_kws}"
+                line = f"- {date_str} [{a['title']}]({rel_path}) (編號：{a['article_no']}) 關鍵詞：{article_kws}"
                 content.append(line)
-            
+        
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(content))
 
