@@ -76,6 +76,14 @@ pip install -r requirements.txt
   python src/landnote/main.py exams --type law --max-pages 5
   ```
 
+- **本機預覽網站 (數位圖書館)**：
+
+  ```bash
+  python src/landnote/main.py serve
+  ```
+
+  *(執行後，打開瀏覽器輸入 `http://127.0.0.1:8000` 即可)*
+
 ---
 
 ## 🛠 技術資訊 (Technical Details)

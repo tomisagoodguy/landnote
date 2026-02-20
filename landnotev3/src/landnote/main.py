@@ -34,6 +34,9 @@ def main():
     # Command: site (Generate Website)
     site_parser = subparsers.add_parser("site", help="Generate static site structure")
 
+    # Command: serve (Preview Website)
+    serve_parser = subparsers.add_parser("serve", help="Preview website locally")
+
     args = parser.parse_args()
 
     if args.command == "articles":
@@ -63,6 +66,20 @@ def main():
         from landnote.processors.site_generator import SiteGenerator
         generator = SiteGenerator()
         generator.run()
+
+    elif args.command == "serve":
+        from landnote.processors.site_generator import SiteGenerator
+        import subprocess
+        
+        # 1. Generate the site first
+        print("Generating site content...")
+        generator = SiteGenerator()
+        generator.run()
+        
+        # 2. Serve it
+        print("Starting local server...")
+        print("Please open http://127.0.0.1:8000 in your browser")
+        subprocess.run([sys.executable, "-m", "mkdocs", "serve"], cwd="site_src")
         
     else:
         parser.print_help()
