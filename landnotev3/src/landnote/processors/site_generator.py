@@ -32,11 +32,14 @@ class SiteGenerator:
         
         # 3. Generate authors file
         self._generate_authors_file()
+        
+        # 4. Generate tags page
+        self._generate_tags_page()
 
-        # 4. Generate mkdocs.yml
+        # 5. Generate mkdocs.yml
         self._generate_mkdocs_config()
         
-        # 5. Generate Homepage
+        # 6. Generate Homepage
         self._generate_homepage()
         
         self.logger.info("Site generation structure completed.")
@@ -178,6 +181,16 @@ class SiteGenerator:
         with open(self.base_dir / 'site_src' / '.authors.yml', 'w', encoding='utf-8') as f:
             yaml.dump(authors_map, f, allow_unicode=True, sort_keys=False)
 
+    def _generate_tags_page(self):
+        """Generate tags.md for tag cloud/list."""
+        tags_content = """# 文章主題索引
+
+這裡彙整了所有的關鍵字，點擊即可查看相關文章：
+
+[TAGS]
+"""
+        (self.docs_dir / "tags.md").write_text(tags_content, encoding='utf-8')
+
     def _generate_mkdocs_config(self):
         """Create mkdocs.yml"""
         config = {
@@ -220,6 +233,7 @@ class SiteGenerator:
             },
             'plugins': [
                 'search',
+                'tags', # Use mkdocs-plugin-tags
                 {
                     'blog': {
                         'post_dir': 'blog/posts',
@@ -239,6 +253,7 @@ class SiteGenerator:
             'nav': [
                 {'首頁': 'index.md'},
                 {'最新文章': 'blog/'},
+                {'主題索引': 'tags.md'}, # Direct link to tags page
                 {'考古題下載': 'exams.md'},
             ]
         }
@@ -276,8 +291,8 @@ class SiteGenerator:
 
 ## 🚀 開始學習
 
-- **[👉 瀏覽最新文章](blog/index.md)**：按時間排序，掌握最新動態。
-- **[👉 搜尋特定主題](blog/tags.md)**：利用標籤雲進行專題研讀。
+- **[👉 瀏覽最新文章](blog/)**：按時間排序，掌握最新動態。
+- **[👉 搜尋特定主題](tags.md)**：利用標籤雲進行專題研讀。
 
 ---
 *Created with :heart: by Landnote AI*
