@@ -195,9 +195,9 @@ class SiteGenerator:
         """Create mkdocs.yml"""
         config = {
             'site_name': 'Landnote 數位圖書館',
-            'site_url': 'https://your-username.github.io/landnote/',
+            'site_url': 'https://tomisagoodguy.github.io/landnote/',
             'site_author': 'Landnote AI',
-            'repo_url': 'https://github.com/your-username/landnote',
+            'repo_url': 'https://github.com/tomisagoodguy/landnote',
             'theme': {
                 'name': 'material',
                 'language': 'zh-TW',
