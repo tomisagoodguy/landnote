@@ -30,7 +30,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab mkdocs-material
+        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab "mkdocs<2.0" mkdocs-material
 
     - name: Run Crawler and Grouper
       env:
@@ -57,7 +57,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
         # Add changes to data directory only (site is handled by mkdocs gh-deploy)
-        git add data/
+        git add landnotev3/data/
         
         # Check if there are changes to commit
         if git diff --staged --quiet; then
