@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+
+# Logs
+*.log
+landnotev3/logs/
+landnotev3/crawler.log
+landnotev3/scraper.log
+landnotev3/mdpdf.log
+
+# Temporary/Data
+landnotev3/scraped_data/
+landnotev3/articles.xlsx
+landnotev3/posts.json
+landnotev3/test.ipynb
+
+# Node/MkDocs
+site/
+.ipynb_checkpoints/

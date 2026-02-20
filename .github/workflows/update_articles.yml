@@ -56,14 +56,15 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Add changes to all data-related directories
-        git add landnotev3/data/ landnotev3/real_estate_articles/ landnotev3/地政考古題/ landnotev3/高點法律考古題/
+        # Add all relevant changes (filtered by .gitignore)
+        git add .
         
         # Check if there are changes to commit
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
           git commit -m "docs: auto-update articles and reports [skip ci]"
+          # Use rebase to integrate remote changes smoothly
           git pull --rebase origin main
           git push
         fi
