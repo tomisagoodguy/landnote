@@ -300,15 +300,43 @@ class ArticleGrouper:
     def generate_index(self, groups):
         # Consolidated Index
         index_path = self.output_dir / "README_grouped.md"
-        content = ["# Grouped Articles", "", f"Generated: {datetime.now()}", "", "## Groups"]
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        content = [
+            "# 文章分組目錄", 
+            "", 
+            f"生成時間：{current_time}", 
+            "", 
+            "## 按關鍵詞分類",
+            "",
+            "[查看關鍵詞分類](keywords/md/README_keywords.md)",
+            "",
+            "## 按標題相似度分組"
+        ]
         
         for i, group in enumerate(groups, 1):
+            if not group: continue
             title = group[0]['title']
-            content.append(f"### Group {i}: {title}")
+            
+            # Aggregate keywords for the group
+            group_keywords = set()
+            for article in group:
+                group_keywords.update(article.get('keywords', []))
+            sorted_kws = sorted(list(group_keywords))
+            kw_str = ", ".join(sorted_kws)
+            
+            content.append("")
+            content.append(f"## 組 {i}：{title}")
+            content.append(f"- 相關關鍵詞：{kw_str}")
+            
             for a in group:
                 rel_path = self._get_rel_path(a['file_path'])
-                content.append(f"- [{a['date']} {a['title']}]({rel_path})")
-            content.append("")
+                # Format: - YYYY/MM/DD [Title](Path) (文章編號：ID) 關鍵詞：KW1, KW2
+                date_str = a['date']
+                # Ensure date format is YYYY/MM/DD if possible, or keep as is
+                
+                article_kws = ", ".join(a.get('keywords', []))
+                line = f"- {date_str} [{a['title']}]({rel_path}) (文章編號：{a['article_no']}) 關鍵詞：{article_kws}"
+                content.append(line)
             
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(content))

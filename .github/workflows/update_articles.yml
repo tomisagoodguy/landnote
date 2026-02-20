@@ -1,0 +1,68 @@
+name: Landnote Auto Update
+
+on:
+  schedule:
+    # 每個 UTC 週二、週四 00:00 (台北時間 08:00) 執行
+    - cron: '0 0 * * 2,4'
+  workflow_dispatch: # 允許手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  update-articles:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y fonts-noto-cjk
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab mkdocs-material
+
+    - name: Run Crawler and Grouper
+      env:
+        PYTHONPATH: ${{ github.workspace }}/landnotev3/src
+      run: |
+        echo "Starting update..."
+        python landnotev3/src/landnote/main.py articles --update --auto-group
+        echo "Update completed."
+
+    - name: Build and Deploy Site
+      env:
+        PYTHONPATH: ${{ github.workspace }}/landnotev3/src
+      run: |
+        echo "Generating site structure..."
+        python landnotev3/src/landnote/main.py site
+        echo "Building MkDocs site..."
+        cd landnotev3/site_src
+        mkdocs gh-deploy --force --clean --verbose
+        
+    - name: Commit and Push Data Changes
+      if: always() # Run even if site deploy fails (though site deploy pushes to gh-pages branch, we need to push data changes to main)
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Add changes to data directory only (site is handled by mkdocs gh-deploy)
+        git add data/
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "docs: auto-update articles and reports [skip ci]"
+          git push
+        fi
