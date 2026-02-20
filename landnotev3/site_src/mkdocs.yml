@@ -1,0 +1,45 @@
+site_name: Landnote 數位圖書館
+site_url: https://your-username.github.io/landnote/
+site_author: Landnote AI
+repo_url: https://github.com/your-username/landnote
+theme:
+  name: material
+  language: zh-TW
+  features:
+  - navigation.tabs
+  - navigation.sections
+  - toc.integrate
+  - search.suggest
+  - search.highlight
+  - content.code.copy
+  - navigation.top
+  palette:
+  - scheme: default
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - scheme: slate
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+plugins:
+- search
+- blog:
+    post_dir: blog/posts
+    blog_toc: true
+    post_url_format: '{date}/{slug}'
+markdown_extensions:
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.highlight
+- attr_list
+- md_in_html
+nav:
+- 首頁: index.md
+- 最新文章: blog/
+- 考古題下載: exams.md

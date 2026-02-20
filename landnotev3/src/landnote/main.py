@@ -31,6 +31,9 @@ def main():
     group_parser = subparsers.add_parser("group", help="Group processed articles")
     group_parser.add_argument("--threshold", type=int, default=80, help="Similarity threshold (0-100)")
 
+    # Command: site (Generate Website)
+    site_parser = subparsers.add_parser("site", help="Generate static site structure")
+
     args = parser.parse_args()
 
     if args.command == "articles":
@@ -55,6 +58,11 @@ def main():
     elif args.command == "group":
         grouper = ArticleGrouper(similarity_threshold=args.threshold)
         grouper.run()
+
+    elif args.command == "site":
+        from landnote.processors.site_generator import SiteGenerator
+        generator = SiteGenerator()
+        generator.run()
         
     else:
         parser.print_help()

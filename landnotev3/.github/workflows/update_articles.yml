@@ -30,7 +30,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab
+        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab mkdocs-material
 
     - name: Run Crawler and Grouper
       env:
@@ -40,12 +40,23 @@ jobs:
         python src/landnote/main.py articles --update --auto-group
         echo "Update completed."
 
-    - name: Commit and Push changes
+    - name: Build and Deploy Site
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
+      run: |
+        echo "Generating site structure..."
+        python src/landnote/main.py site
+        echo "Building MkDocs site..."
+        cd site_src
+        mkdocs gh-deploy --force --clean --verbose
+        
+    - name: Commit and Push Data Changes
+      if: always() # Run even if site deploy fails (though site deploy pushes to gh-pages branch, we need to push data changes to main)
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Add changes to data directory
+        # Add changes to data directory only (site is handled by mkdocs gh-deploy)
         git add data/
         
         # Check if there are changes to commit

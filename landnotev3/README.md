@@ -1,74 +1,85 @@
-# Landnote Unified Crawler
+# 🏠 Landnote 不動產文章與考古題小幫手
 
-A modular and unified crawler system for archiving land registration articles and exam papers.
+歡迎使用 Landnote！這是一個自動化收集不動產專欄文章與考古題的工具。
 
-## Project Structure
+<div align="center">
+
+## 🚀 **[點此查看最新文章整理 (PDF)](data/real_estate_articles/merged/pdf/)** 🚀
+
+</div>
+
+---
+
+## 🎯 快速傳送門 (點擊直接進入)
+
+這裡已經幫您整理好所有檔案，點擊下方的連結即可直接查看：
+
+### 📚 不動產專欄文章
+
+| 內容 | 說明 |
+| :--- | :--- |
+| **👉 [自動整理好的 PDF 報告](data/real_estate_articles/merged/pdf/)** | **(推薦)** 包含曾榮耀、許文昌等老師的文章，已按主題合併 |
+| **👉 [原始 Markdown 文章](data/real_estate_articles/articles/)** | 每一篇單獨的文章原始檔 |
+| **👉 [按關鍵字分類](data/real_estate_articles/keywords/md/)** | 依照主題關鍵字分類的文章列表 |
+
+### 📝 考古題下載
+
+| 內容 | 說明 |
+| :--- | :--- |
+| **👉 [地政考古題](data/地政考古題/)** | 歷年地政類科考試題目 (PDF) |
+| **👉 [法律考古題](data/高點法律考古題/)** | 歷年法律類科考試題目 (PDF) |
+
+---
+
+## ⚡ 自動更新機制
+
+**您不需要手動操作！**
+
+本專案已設定 **GitHub Actions 自動排程**：
+
+- **更新時間**：每週二、週四 早上 (配合老師發文時間)
+- **運作流程**：
+  1. 系統自動抓取最新文章
+  2. 自動分類、製作 PDF
+  3. 自動上傳回這裡
+- **如何確認**：只要看到上方的 [PDF 連結](data/real_estate_articles/merged/pdf/) 有新檔案，就是更新完成了！
+
+---
+
+## 💻 進階：手動執行 (工程師專用)
+
+如果您想在自己的電腦上手動跑程式，請參考以下指令：
+
+### 1. 安裝環境
 
 ```bash
-landnote/src/landnote
-├── config.py         # Central configuration
-├── core/             # Base scraper and core logic
-├── crawlers/         # Specific crawler implementations
-│   ├── article.py    # Real estate article crawler
-│   ├── exam_land.py  # Land exam paper crawler
-│   └── exam_law.py   # Law exam paper crawler
-├── processors/       # Data processing and analysis
-│   └── grouper.py    # Article grouping and PDF generation
-└── utils/            # Helper utilities (PDF, Text, Logger, etc.)
+pip install -r requirements.txt
 ```
 
-## Setup
+### 2. 常用指令
 
-1. **Install Dependencies**:
-   Ensure you have Python 3.10+ installed.
-   ```bash
-   pip install -r requirements.txt
-   # OR use the project dependencies directly
-   pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab
-   ```
+- **抓取最新文章並整理**：
 
-2. **Environment Variables**:
-   Create a `.env` file in the root if needed (see `config.py` for variables).
+  ```bash
+  python src/landnote/main.py articles --update --auto-group
+  ```
 
-## Usage
+- **下載地政考古題**：
 
-The project uses a unified CLI `src/landnote/main.py`.
+  ```bash
+  python src/landnote/main.py exams --type land --years 5 --update
+  ```
 
-### 1. Crawl Real Estate Articles
-Fetch articles from configured authors.
-```bash
-# Update new articles only
-python src/landnote/main.py articles --update
+- **下載法律考古題**：
 
-# Crawl all articles (full scan)
-python src/landnote/main.py articles
+  ```bash
+  python src/landnote/main.py exams --type law --max-pages 5
+  ```
 
-# Crawl and auto-group results
-python src/landnote/main.py articles --update --auto-group
-```
+---
 
-### 2. Crawl Exam Papers
-Download exam PDFs for Land Administration (地政) or Law (法律).
+## 🛠 技術資訊 (Technical Details)
 
-**Land Exams:**
-```bash
-# Download last 10 years of exams, skip existing
-python src/landnote/main.py exams --type land --years 10 --update
-```
-
-**Law Exams:**
-```bash
-# Download law exams up to page 5
-python src/landnote/main.py exams --type law --max-pages 5
-```
-
-### 3. Group Articles (Post-processing)
-Group downloaded articles by title similarity and generate PDF reports.
-```bash
-python src/landnote/main.py group --threshold 80
-```
-
-## Development
-
-- **Add New Crawler**: Create a new file in `crawlers/`, inherit from `BaseScraper`, and register it in `main.py`.
-- **Utils**: reusable logic for PDF unlocking, text processing, etc., is in `utils/`.
+- **Entry Point**: `src/landnote/main.py`
+- **Modules**: `core` (Base scraper), `crawlers` (Specific logic), `processors` (PDF gen)
+- **CI/CD**: `.github/workflows/update_articles.yml`
