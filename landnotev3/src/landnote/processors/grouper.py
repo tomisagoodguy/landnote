@@ -351,11 +351,10 @@ class ArticleGrouper:
                 rel_path = self._get_rel_path(a['file_path'])
                 date_str = a['date']
                 
-                # Construct Web URL (based on mkdocs-material blog format {date}/{slug})
-                # Slug is typically lowercase, spaces to dashes
+                # Construct Web URL (based on mkdocs-material blog format blog/{date}/{slug})
                 web_date = a['date_obj'].strftime('%Y/%m/%d')
                 slug = a['file_path'].stem.lower().replace(' ', '-').replace(',', '-')
-                web_url = f"https://tomisagoodguy.github.io/landnote/{web_date}/{slug}/"
+                web_url = f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
                 
                 line = f"- {date_str} [{a['title']}]({rel_path}) [[🌐 網頁版]({web_url})]"
                 content.append(line)
@@ -389,7 +388,7 @@ class ArticleGrouper:
                 # Construct Web URL
                 web_date = a['date_obj'].strftime('%Y/%m/%d')
                 slug = a['file_path'].stem.lower().replace(' ', '-').replace(',', '-')
-                web_url = f"https://tomisagoodguy.github.io/landnote/{web_date}/{slug}/"
+                web_url = f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
                 
                 line = f"- {date_str} [{a['title']}]({rel_path}) [[🌐 網頁版]({web_url})] (編號：{a['article_no']}) 關鍵詞：{article_kws}"
                 content.append(line)
