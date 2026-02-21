@@ -353,7 +353,11 @@ class ArticleGrouper:
                 
                 # Construct Web URL (based on mkdocs-material blog format blog/{date}/{slug})
                 web_date = a['date_obj'].strftime('%Y/%m/%d')
-                slug = a['file_path'].stem.lower().replace(' ', '-').replace(',', '-')
+                stem = a['file_path'].stem
+                # If filename starts with date (YYYY-MM-DD), the rest is the slug
+                date_match = re.match(r'^\d{4}-\d{2}-\d{2}-(.+)$', stem)
+                slug_raw = date_match.group(1) if date_match else stem
+                slug = slug_raw.lower().replace(' ', '-')
                 web_url = f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
                 
                 line = f"- {date_str} [{a['title']}]({rel_path}) [[🌐 網頁版]({web_url})]"
@@ -387,7 +391,10 @@ class ArticleGrouper:
                 
                 # Construct Web URL
                 web_date = a['date_obj'].strftime('%Y/%m/%d')
-                slug = a['file_path'].stem.lower().replace(' ', '-').replace(',', '-')
+                stem = a['file_path'].stem
+                date_match = re.match(r'^\d{4}-\d{2}-\d{2}-(.+)$', stem)
+                slug_raw = date_match.group(1) if date_match else stem
+                slug = slug_raw.lower().replace(' ', '-')
                 web_url = f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
                 
                 line = f"- {date_str} [{a['title']}]({rel_path}) [[🌐 網頁版]({web_url})] (編號：{a['article_no']}) 關鍵詞：{article_kws}"

@@ -245,7 +245,7 @@ class SiteGenerator:
             for tag, count in sorted_tags:
                 safe_tag = tag.lower().replace(' ', '-')
                 # MkDocs Material Blog default category URL pattern
-                url = f"../blog/category/{safe_tag}/"
+                url = f"blog/category/{safe_tag}/"
                 content.append(f"-   [:material-tag-outline: **{tag}**]({url}) ({count})")
         
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
@@ -347,4 +347,5 @@ class SiteGenerator:
         (self.docs_dir / 'index.md').write_text(content, encoding='utf-8')
         
         # Create a placeholder exams page
-        (self.docs_dir / 'exams.md').write_text("# 考古題下載專區\n\n請至 GitHub Repository 的 [data 資料夾](../data) 下載 PDF 檔案。", encoding='utf-8')
+        repo_data_url = "https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/data"
+        (self.docs_dir / 'exams.md').write_text(f"# 考古題下載專區\n\n請至 GitHub Repository 的 [data 資料夾]({repo_data_url}) 下載 PDF 檔案。", encoding='utf-8')
