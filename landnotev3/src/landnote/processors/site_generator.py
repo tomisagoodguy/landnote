@@ -68,6 +68,11 @@ class SiteGenerator:
         self.docs_dir.mkdir(parents=True, exist_ok=True)
         self.posts_dir.mkdir(parents=True, exist_ok=True)
         
+        # Create stylesheets directory
+        styles_dir = self.docs_dir / "stylesheets"
+        styles_dir.mkdir(exist_ok=True)
+        self._write_extra_css(styles_dir / "extra.css")
+
         # Copy images if they exist
         src_images = self.source_dir / "images"
         dst_images = self.posts_dir / "images"
@@ -76,6 +81,135 @@ class SiteGenerator:
                 shutil.copytree(src_images, dst_images, dirs_exist_ok=True)
             except:
                 pass
+
+    def _write_extra_css(self, path: Path):
+        """Write professional CSS for that 'WOW' factor."""
+        css = """
+:root {
+  --md-primary-fg-color: #0c111d;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: #7c3aed;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0c111d;
+  --md-accent-fg-color: #a78bfa;
+}
+
+/* Typography upgrade */
+body {
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Glassmorphism Hero Section */
+.hero-section {
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 80%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Feature Cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--md-card-bg-color);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--md-accent-fg-color);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  margin: 0 0 0.5rem 0 !important;
+  font-weight: 700 !important;
+  color: var(--md-typeset-color);
+}
+
+.feature-card p {
+  margin: 0 !important;
+  font-size: 0.95rem;
+  color: var(--md-typeset-color);
+  opacity: 0.8;
+}
+
+/* Custom Tag Cloud */
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  margin: 0.25rem;
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.tag-item:hover {
+  background: #7c3aed;
+  color: white;
+}
+"""
+        path.write_text(css, encoding='utf-8')
 
     def _process_articles(self):
         """Transform raw markdown files into Hugo/MkDocs compatible files."""
@@ -260,38 +394,48 @@ class SiteGenerator:
             'theme': {
                 'name': 'material',
                 'language': 'zh-TW',
+                'font': {
+                    'text': 'Outfit',
+                    'code': 'Fira Code'
+                },
                 'features': [
                     'navigation.tabs',
                     'navigation.sections',
                     'navigation.expand',
-                    'navigation.tracking', # 捲動時自動追蹤標題
+                    'navigation.tracking',
                     'navigation.indexes',
+                    'navigation.top',
+                    'navigation.instant',
                     'search.suggest',
                     'search.highlight',
+                    'search.share',
                     'content.code.copy',
-                    'navigation.top', # 回到頂部按鈕
+                    'header.autohide'
                 ],
                 'palette': [
                     {
-                        'scheme': 'default', 
-                        'primary': 'indigo', 
-                        'accent': 'indigo', 
-                        'toggle': {
-                            'icon': 'material/brightness-7', 
-                            'name': '切換至深色模式'
-                        }
-                    },
-                    {
                         'scheme': 'slate', 
-                        'primary': 'indigo', 
+                        'primary': 'custom', 
                         'accent': 'indigo',
                         'toggle': {
                             'icon': 'material/brightness-4', 
                             'name': '切換至淺色模式'
                         }
+                    },
+                    {
+                        'scheme': 'default', 
+                        'primary': 'custom', 
+                        'accent': 'indigo', 
+                        'toggle': {
+                            'icon': 'material/brightness-7', 
+                            'name': '切換至深色模式'
+                        }
                     }
                 ]
             },
+            'extra_css': [
+                'stylesheets/extra.css'
+            ],
             'plugins': [
                 'search',
                 {
@@ -299,9 +443,10 @@ class SiteGenerator:
                         'post_dir': 'blog/posts',
                         'blog_toc': True,
                         'post_url_format': '{date}/{slug}',
-                        'archive': True, # 顯示月份封存
-                        'categories': True, # 顯示分類
-                        'recent_posts': 5, # 顯示最近 5 篇文章
+                        'archive': True,
+                        'categories': True,
+                        'recent_posts': 5,
+                        'pagination_per_page': 10
                     }
                 }
             ],
@@ -310,11 +455,13 @@ class SiteGenerator:
                 'pymdownx.details',
                 'pymdownx.superfences',
                 'pymdownx.highlight',
+                'pymdownx.tabbed',
+                'pymdownx.emoji',
                 'attr_list',
                 'md_in_html',
                 {
                     'toc': {
-                        'permalink': True, # 標題旁增加連結圖示
+                        'permalink': True,
                         'toc_depth': 3
                     }
                 }
@@ -322,7 +469,7 @@ class SiteGenerator:
             'nav': [
                 {'首頁': 'index.md'},
                 {'最新文章': 'blog/'},
-                {'主題索引': 'tags.md'}, # Direct link to tags page
+                {'主題索引': 'tags.md'},
                 {'考古題下載': 'exams.md'},
             ]
         }
@@ -332,17 +479,40 @@ class SiteGenerator:
 
     def _generate_homepage(self):
         """Create a nice landing page."""
-        content = """# 歡迎來到 Landnote 數位圖書館
+        content = """
+<div class="hero-section">
+    <div class="hero-title">Landnote 數位圖書館</div>
+    <div class="hero-subtitle">由 AI 驅動的頂級不動產知識庫，匯聚最精準的法律解析與考點筆記</div>
+</div>
 
-
-
-## 🚀 開始學習
-
-- **[👉 瀏覽最新文章](blog/)**：按時間排序，掌握最新動態。
-- **[👉 搜尋特定主題](tags.md)**：利用標籤雲進行專題研讀。
+<div class="feature-grid">
+    <a href="blog/" class="feature-card">
+        <span class="feature-icon">�</span>
+        <h3>最新文章</h3>
+        <p>掌握不動產界最新動態、精闢法條解讀與市場脈動分析。</p>
+    </a>
+    <a href="tags.md/" class="feature-card">
+        <span class="feature-icon">🏷️</span>
+        <h3>主題索引</h3>
+        <p>利用專業標籤雲快速導航，深挖每一個專業不動產領域。</p>
+    </a>
+    <a href="exams.md/" class="feature-card">
+        <span class="feature-icon">📚</span>
+        <h3>考古題區</h3>
+        <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
+    </a>
+</div>
 
 ---
-*Created with :heart: by Landnote AI*
+
+## 💎 特色功能
+
+- **AI 驅動分組**：所有文章經由語義分析，自動歸納高相似度專題。
+- **極致閱讀體驗**：專為專業人士打造的深色模式與現代字體。
+- **秒級全域檢索**：即時尋找您需要的任何關鍵字或案號。
+
+---
+*Created with :heart: by Landnote AI Pro Max*
 """
         (self.docs_dir / 'index.md').write_text(content, encoding='utf-8')
         

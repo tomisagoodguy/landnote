@@ -5,29 +5,37 @@ repo_url: https://github.com/tomisagoodguy/landnote
 theme:
   name: material
   language: zh-TW
+  font:
+    text: Outfit
+    code: Fira Code
   features:
   - navigation.tabs
   - navigation.sections
   - navigation.expand
   - navigation.tracking
   - navigation.indexes
+  - navigation.top
+  - navigation.instant
   - search.suggest
   - search.highlight
+  - search.share
   - content.code.copy
-  - navigation.top
+  - header.autohide
   palette:
-  - scheme: default
-    primary: indigo
-    accent: indigo
-    toggle:
-      icon: material/brightness-7
-      name: 切換至深色模式
   - scheme: slate
-    primary: indigo
+    primary: custom
     accent: indigo
     toggle:
       icon: material/brightness-4
       name: 切換至淺色模式
+  - scheme: default
+    primary: custom
+    accent: indigo
+    toggle:
+      icon: material/brightness-7
+      name: 切換至深色模式
+extra_css:
+- stylesheets/extra.css
 plugins:
 - search
 - blog:
@@ -37,11 +45,14 @@ plugins:
     archive: true
     categories: true
     recent_posts: 5
+    pagination_per_page: 10
 markdown_extensions:
 - admonition
 - pymdownx.details
 - pymdownx.superfences
 - pymdownx.highlight
+- pymdownx.tabbed
+- pymdownx.emoji
 - attr_list
 - md_in_html
 - toc:
