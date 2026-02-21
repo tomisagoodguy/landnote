@@ -97,13 +97,54 @@ class SiteGenerator:
   --md-default-fg-color: #ffffff;
   --md-default-bg-color: #0c111d;
   --md-typeset-color: #ffffff;
+  --md-typeset-a-color: #ffffff;
 }
 
-/* Ensure TOC and secondary text are bright in dark mode */
+/* Force everything in typeset and nav to be white in dark mode */
+[data-md-color-scheme="slate"] .md-typeset,
+[data-md-color-scheme="slate"] .md-nav,
 [data-md-color-scheme="slate"] .md-nav__link,
 [data-md-color-scheme="slate"] .md-typeset a,
-[data-md-color-scheme="slate"] .toclink {
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset li,
+[data-md-color-scheme="slate"] .md-typeset strong,
+[data-md-color-scheme="slate"] .toclink,
+[data-md-color-scheme="slate"] .headerlink,
+[data-md-color-scheme="slate"] .md-meta__link,
+[data-md-color-scheme="slate"] .md-post__title a {
   color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #a78bfa !important;
+}
+
+/* Hide tag icons in blog and meta */
+.md-post__tags::before,
+.md-post__tag-icon,
+.md-tag-icon,
+[href*="category"]::before {
+  display: none !important;
+}
+
+/* If the text :material-tag-outline: is visible, hide it. 
+   Support both list style and blog tag style */
+.md-typeset li a, 
+.md-post__tags {
+  display: inline-flex;
+  align-items: center;
+}
+
+[href*="category"] {
+  font-size: 0 !important; /* Hide parent text including :material-tag-outline: */
+}
+
+[href*="category"] strong,
+[href*="category"] span {
+  font-size: 0.9rem !important; /* Restore font size for the actual label */
+  margin-left: 4px;
 }
 
 /* Typography upgrade */
@@ -391,7 +432,7 @@ body {
                 # MkDocs Material Blog default category URL pattern
                 # Use ../ since tags.md is at /tags/ and blog is at /blog/
                 url = f"../blog/category/{safe_tag}/"
-                content.append(f"-   [:material-tag-outline: **{tag}**]({url}) ({count})")
+                content.append(f"-   [🏷️ **{tag}**]({url}) ({count})")
         
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
 
@@ -478,7 +519,6 @@ body {
                 }
             ],
             'nav': [
-                {'首頁': 'index.md'},
                 {'最新文章': 'blog/'},
                 {'主題索引': 'tags.md'},
                 {'考古題下載': 'exams.md'},
@@ -489,25 +529,26 @@ body {
             yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
     def _generate_homepage(self):
-        """Create a nice landing page."""
+        """Create a minimalist landing page that redirects to blog if needed, 
+        or shows a clean 3-button launcher."""
         content = """
-    <div class="feature-grid">
-        <a href="blog/" class="feature-card">
-            <span class="feature-icon">📰</span>
-            <h3>最新文章</h3>
-            <p>掌握不動產界最新動態、精闢法條解讀與市場脈動分析。</p>
-        </a>
-        <a href="tags/" class="feature-card">
-            <span class="feature-icon">🏷️</span>
-            <h3>主題索引</h3>
-            <p>利用專業標籤雲快速導航，深挖每一個專業不動產領域。</p>
-        </a>
-        <a href="exams/" class="feature-card">
-            <span class="feature-icon">📚</span>
-            <h3>考古題區</h3>
-            <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
-        </a>
-    </div>
+<div class="feature-grid">
+    <a href="blog/" class="feature-card">
+        <span class="feature-icon">📰</span>
+        <h3>最新文章</h3>
+        <p>掌握不動產界最新動態、精闢法條解讀與市場脈動分析。</p>
+    </a>
+    <a href="tags/" class="feature-card">
+        <span class="feature-icon">🏷️</span>
+        <h3>主題索引</h3>
+        <p>利用專業標籤雲快速導航，深挖每一個專業不動產領域。</p>
+    </a>
+    <a href="exams/" class="feature-card">
+        <span class="feature-icon">📚</span>
+        <h3>考古題下載</h3>
+        <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
+    </a>
+</div>
 """
         (self.docs_dir / 'index.md').write_text(content, encoding='utf-8')
         

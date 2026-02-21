@@ -11,13 +11,54 @@
   --md-default-fg-color: #ffffff;
   --md-default-bg-color: #0c111d;
   --md-typeset-color: #ffffff;
+  --md-typeset-a-color: #ffffff;
 }
 
-/* Ensure TOC and secondary text are bright in dark mode */
+/* Force everything in typeset and nav to be white in dark mode */
+[data-md-color-scheme="slate"] .md-typeset,
+[data-md-color-scheme="slate"] .md-nav,
 [data-md-color-scheme="slate"] .md-nav__link,
 [data-md-color-scheme="slate"] .md-typeset a,
-[data-md-color-scheme="slate"] .toclink {
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset li,
+[data-md-color-scheme="slate"] .md-typeset strong,
+[data-md-color-scheme="slate"] .toclink,
+[data-md-color-scheme="slate"] .headerlink,
+[data-md-color-scheme="slate"] .md-meta__link,
+[data-md-color-scheme="slate"] .md-post__title a {
   color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #a78bfa !important;
+}
+
+/* Hide tag icons in blog and meta */
+.md-post__tags::before,
+.md-post__tag-icon,
+.md-tag-icon,
+[href*="category"]::before {
+  display: none !important;
+}
+
+/* If the text :material-tag-outline: is visible, hide it. 
+   Support both list style and blog tag style */
+.md-typeset li a, 
+.md-post__tags {
+  display: inline-flex;
+  align-items: center;
+}
+
+[href*="category"] {
+  font-size: 0 !important; /* Hide parent text including :material-tag-outline: */
+}
+
+[href*="category"] strong,
+[href*="category"] span {
+  font-size: 0.9rem !important; /* Restore font size for the actual label */
+  margin-left: 4px;
 }
 
 /* Typography upgrade */

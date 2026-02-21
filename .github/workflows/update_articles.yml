@@ -2,8 +2,8 @@ name: Landnote Auto Update
 
 on:
   schedule:
-    # 每個 UTC 週二、週四 00:00 (台北時間 08:00) 執行
-    - cron: '0 0 * * 2,4'
+    # 每個 UTC 週二、週四 12:00 (台北時間 20:00) 執行
+    - cron: '0 12 * * 2,4'
   workflow_dispatch: # 允許手動觸發
 
 permissions:

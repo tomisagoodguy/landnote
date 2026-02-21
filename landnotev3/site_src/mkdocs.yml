@@ -59,7 +59,6 @@ markdown_extensions:
     permalink: true
     toc_depth: 3
 nav:
-- 首頁: index.md
 - 最新文章: blog/
 - 主題索引: tags.md
 - 考古題下載: exams.md
