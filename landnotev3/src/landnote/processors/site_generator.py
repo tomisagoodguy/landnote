@@ -100,13 +100,18 @@ class SiteGenerator:
                 safe_title = re.sub(r'[\\/*?:"<>|]', '', raw_title).strip()
                 new_filename = f"{date_str}-{safe_title}.md"
                 
+                # Combine categories and tags into categories to ensure indexing by blog plugin
+                categories = ['Real Estate']
+                tags = metadata.get('tags', [])
+                categories.extend(tags)
+                
                 # Yamaha Frontmatter
                 frontmatter = {
                     'title': raw_title,
                     'date': metadata.get('date'), 
                     # 'authors': [author] if author else [], # Disable to avoid build errors
-                    'categories': ['Real Estate'],
-                    'tags': metadata.get('tags', [])
+                    'categories': categories,
+                    'tags': tags
                 }
                 
                 # Write new file
@@ -239,7 +244,7 @@ class SiteGenerator:
             # In MkDocs Material blog, tags are indexed at /blog/tags/tag-name/
             for tag, count in sorted_tags:
                 safe_tag = tag.lower().replace(' ', '-')
-                # MkDocs Material Blog default tag URL pattern
+                # MkDocs Material Blog default category URL pattern
                 url = f"../blog/category/{safe_tag}/"
                 content.append(f"-   [:material-tag-outline: **{tag}**]({url}) ({count})")
         
@@ -289,7 +294,6 @@ class SiteGenerator:
             },
             'plugins': [
                 'search',
-                'tags', # Use mkdocs-plugin-tags
                 {
                     'blog': {
                         'post_dir': 'blog/posts',

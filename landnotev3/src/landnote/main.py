@@ -9,6 +9,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from landnote.crawlers.article import ArticleCrawler
 from landnote.crawlers.exam_land import LandExamCrawler
 from landnote.crawlers.exam_law import LawExamCrawler
+from landnote.crawlers.jasper_crawler import JasperCrawler
 from landnote.processors.grouper import ArticleGrouper
 
 def main():
@@ -20,6 +21,10 @@ def main():
     articles_parser.add_argument("--update", action="store_true", help="Only update new articles")
     articles_parser.add_argument("--auto-group", action="store_true", help="Run grouping after crawling")
 
+    # Command: jasper (Jasper Articles)
+    jasper_parser = subparsers.add_parser("jasper", help="Crawl Jasper articles")
+    jasper_parser.add_argument("--update", action="store_true", help="Only update new articles")
+    
     # Command: exams (Exams)
     exams_parser = subparsers.add_parser("exams", help="Crawl exam papers")
     exams_parser.add_argument("--type", choices=["land", "law"], required=True, help="Type of exam (land or law)")
@@ -48,6 +53,11 @@ def main():
             print("Running auto-grouping...")
             grouper = ArticleGrouper()
             grouper.run()
+            
+    elif args.command == "jasper":
+        mode = "update" if args.update else "all"
+        crawler = JasperCrawler(mode=mode)
+        crawler.run()
         
     elif args.command == "exams":
         if args.type == "land":

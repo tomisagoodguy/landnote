@@ -30,7 +30,6 @@ theme:
       name: 切換至淺色模式
 plugins:
 - search
-- tags
 - blog:
     post_dir: blog/posts
     blog_toc: true

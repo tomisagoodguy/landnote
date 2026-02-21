@@ -1,6 +1,9 @@
 ---
 categories:
 - Real Estate
+- 機會成本
+- 犠牲
+- 自有資金
 date: 2025-07-10
 tags:
 - 機會成本
