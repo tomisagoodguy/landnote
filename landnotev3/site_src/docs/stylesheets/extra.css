@@ -8,6 +8,16 @@
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color: #0c111d;
   --md-accent-fg-color: #a78bfa;
+  --md-default-fg-color: #ffffff;
+  --md-default-bg-color: #0c111d;
+  --md-typeset-color: #ffffff;
+}
+
+/* Ensure TOC and secondary text are bright in dark mode */
+[data-md-color-scheme="slate"] .md-nav__link,
+[data-md-color-scheme="slate"] .md-typeset a,
+[data-md-color-scheme="slate"] .toclink {
+  color: #ffffff !important;
 }
 
 /* Typography upgrade */
