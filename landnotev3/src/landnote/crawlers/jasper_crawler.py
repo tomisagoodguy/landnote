@@ -344,17 +344,11 @@ class JasperCrawler(BaseScraper):
             'source_url': article['link']
         }
         
-        content = "---
-" + json.dumps(frontmatter, ensure_ascii=False) + "
----
-
-"
+        content = "---\n" + json.dumps(frontmatter, ensure_ascii=False) + "\n---\n\n"
         
         # Add summary/excerpt
         if article['excerpt'] != 'N/A':
-            content += f"> {article['excerpt']}
-
-"
+            content += f"> {article['excerpt']}\n\n"
             
         # Add content
         # Use simple HTML to Markdown conversion or just dump HTML
