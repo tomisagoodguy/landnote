@@ -1,0 +1,1185 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Landnote AI">
+      
+      
+        <link rel="canonical" href="https://tomisagoodguy.github.io/landnote/blog/category/%E7%B9%BC%E6%89%BF%E7%99%BB%E8%A8%98/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>繼承登記 - Landnote 數位圖書館</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="Landnote 數位圖書館" class="md-header__button md-logo" aria-label="Landnote 數位圖書館" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Landnote 數位圖書館
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              繼承登記
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tomisagoodguy/landnote" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  最新文章
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  主題索引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../exams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  考古題下載
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Landnote 數位圖書館" class="md-nav__button md-logo" aria-label="Landnote 數位圖書館" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Landnote 數位圖書館
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tomisagoodguy/landnote" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最新文章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主題索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    考古題下載
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共有人占用共有土地之默示分管關係
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        「台版地面師」未辦繼承不動產偽造詐騙案
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        遺贈及遺囑信託之登記與稅負
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逾期未辦繼承登記不動產標售時之優先購買權重點整理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        遺產稅繳納有困難之處理方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1091546" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有關未辦繼承登記之優先購買人資格（共有人）：參109年度台上字第1546號判決
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主張逾期未辦繼承登記之優先購買權要件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        未辦繼承登記之合法使用認定案例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有關繼承登記之申請文件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        繼承登記實例研習
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="_1">繼承登記<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-03-25 00:00:00+00:00">2025年3月25日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E5%85%B1%E6%9C%89%E4%BA%BA/" class="md-meta__link">共有人</a>, 
+              <a href="../%E7%B9%BC%E6%89%BF%E4%BA%BA/" class="md-meta__link">繼承人</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E9%BB%98%E7%A4%BA%E5%88%86%E7%AE%A1/" class="md-meta__link">默示分管</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2025/03/25/913623/">共有人占用共有土地之默示分管關係</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2025/03/25/913623/#_2">內文</a></h3>
+<p>今日專欄舉一篇有關共有人占用共有土地之默示分管關係案例供參</p>
+<p>甲有一筆位於某市的A地，其死亡後由13位繼承人共同繼承該地，且未辦理繼承登記。民國74年時，其中一位繼承人乙於該地上興建一B建物並居住，其他繼承人皆有到場祝賀遷居，後續亦由甲繳納該地之地價稅。民國100年時，其他共有之繼承人訴請拆屋還地，試問甲得否主張其他共有人長期不反對而成立「默示分管」，故具有合法權源？</p>
+<p>• 一、默示分管之定義</p>
+<p>所謂默示分管，係指依共有人之舉動或其他情事，足以間接推知其效果意思者而言，必共有人間實際上劃定使用範圍，對各自占有管領之部分，互相容忍，對於他共有人使用、收益，各自占有之土地，未予干涉，已歷有年所，始得認有默示分管契約之存在（最高法院29年上字第762號判例、80年度臺上字第1470號判決、83年度臺上字第237號判決意旨參照）</p>
+<p>• 二、不得主張成立默示分管之理由</p>
+<ol>
+<li>
+<p>縱B屋於74年落成時，共有人均前往祝賀，惟僅是單純沈默而未為制止，不生任何法律效果，亦非默許同意繼續使用。</p>
+</li>
+<li>
+<p>繳交地價稅，僅能說明其處理此部分事務，亦難作為其他共有人默許甲有單獨使用A地之權利。</p>
+</li>
+<li>
+<p>甲雖請求傳喚A地其他共有人全部到庭，以證共有人有默示合意分管事實，然A地之共有人間並無默示分管協議存在等情，已如前述，無庸再為傳訊證人必要，況部分甫因繼承登記才成為共有人，非B屋興建時之共有人，房屋興建時年紀尚輕，實難認為其知悉A地當時是否經全體共有人為默示分管協議。</p>
+</li>
+</ol>
+<p>綜上，甲並不能舉證證明A地有分管契約存在，自難徒憑A地共有人長期以來未向甲行使權利或經過時間之長短，遽以推論共有人間有明示或默示分管契約存在。</p>
+<p>提醒： 雖共有人可就長時間占用土地提出已有默示分管之適用，惟仍需有一定之事實證據得以佐證較為妥適。</p>
+<p>資料來源：臺灣高等法院102年度重上字第543號民事判決</p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-09-10 00:00:00+00:00">2024年9月10日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E5%9C%B0%E9%9D%A2%E5%B8%AB/" class="md-meta__link">地面師</a>, 
+              <a href="../%E5%81%BD%E9%80%A0%E9%81%BA%E5%9B%91/" class="md-meta__link">偽造遺囑</a>, 
+              <a href="../%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98/" class="md-meta__link">土地登記</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2024/09/10/912422/">「台版地面師」未辦繼承不動產偽造詐騙案</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2024/09/10/912422/#_2">內文</a></h3>
+<p>今日專欄主要研習一新的詐騙案例</p>
+<p>律師、警察、里長勾結「台版地面師」偽造老人遺囑騙1.4億房產：https://www.mirrormedia.mg/story/20240906soc006</p>
+<p>其詐騙手法涉及土法、民法與土地登記等觀念，同學可配合對照複習：</p>
+<p>首先，詐騙集團鎖定對象為「未辦繼承登記不動產」且最好是繼承人有無不明者。此可參見土地法第73條之1相關規定。</p>
+<p>其次，利用職權(警察、公務員)或人脈關係(里長)調查其身分資料。</p>
+<p>第三，偽造租賃契約，假裝是租戶，以欺騙鎖匠開門，進而得以進入搜尋權狀、印章等相關資料。</p>
+<p>第四，偽造遺囑，將該未辦繼承不動產遺贈給詐騙集團。此涉及民法繼承編第三章遺囑相關規定。</p>
+<p>第五，持偽造遺囑等文件，申辦繼承及遺贈登記。此涉及土地登記規則第119條繼承登記應備文件及第123條遺贈登記申請方式等。</p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-08-15 00:00:00+00:00">2024年8月15日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E9%81%BA%E5%9B%91%E4%BF%A1%E8%A8%97/" class="md-meta__link">遺囑信託</a>, 
+              <a href="../%E9%81%BA%E5%9B%91%E5%9F%B7%E8%A1%8C%E4%BA%BA/" class="md-meta__link">遺囑執行人</a>, 
+              <a href="../%E7%B9%BC%E6%89%BF%E4%BA%BA/" class="md-meta__link">繼承人</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2024/08/15/912206/">遺贈及遺囑信託之登記與稅負</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2024/08/15/912206/#_2">內文</a></h3>
+<p>遺贈登記規定於土地登記規則第123條，遺囑信託登記規定於同規則第126條，二者規定之內容大同小異。</p>
+<p>• (一) 遺贈之登記與稅負：</p>
+<ol>
+<li>遺贈，指立遺囑而為贈與。遺贈於立遺囑人（即遺贈人）死亡時，發生效力。</li>
+</ol>
+<p>2.</p>
+<p>遺贈發生效力後，分下列三種情形辦理登記：</p>
+<p>• (1) 無遺囑執行人：①登記：先由繼承人辦理繼承登記，再由繼承人會同受遺贈人辦理所有權移轉登記。②稅負：辦理繼承登記時，應課徵遺產稅（納稅義務人為繼承人及受遺贈人），免徵土地增值稅及契稅。辦理所有權移轉登記時，應課徵土地增值稅（納稅義務人為受遺贈人），不徵贈與稅及契稅。值得一提的是，繼承土地以繼承時（即被繼承人死亡日）之公告現值核定其移轉現值（即原地價更動為繼承時之公告現值），而遺贈時申報移轉現值審核標準，以遺贈人（即被繼承人）死亡日當期公告現值為準，二者相同，因此受遺贈人只要以被繼承人死亡日當期之公告現值而為申報（亦即不高報），就無土地增值稅。</p>
+<p>• (2) 有遺囑執行人：①登記：先由遺囑執行人辦理遺囑執行人登記及繼承登記，再由遺囑執行人會同受遺贈人辦理所有權移轉登記。②稅負：辦理繼承登記時，應課徵遺產稅（納稅義務人為遺囑執行人），免徵土地增值稅及契稅。辦理所有權移轉登記時，應課徵土地增值稅（納稅義務人為受遺贈人），不徵贈與稅及契稅。</p>
+<p>• (3) 繼承人有無不明：①登記：先由遺產管理人辦理遺產管理人登記，再由遺產管理人會同受遺贈人辦理所有權移轉登記。須特別強調的是，繼承人有無不明之情形，無須辦理繼承登記，另，繼承開始時，繼承人之有無不明者，由親屬會議選定遺產管理人；未能選定者，得聲請法院選任遺產管理人。②稅負：辦理遺產管理人登記時，應課徵遺產稅（納稅義務人為遺產管理人），免徵土地增值稅及契稅。辦理所有權移轉登記時，應課徵土地增值稅（納稅義務人為受遺贈人），不徵贈與稅及契稅。應注意者，繼承人有無不明之情形，雖未辦理繼承登記，但於辦理遺產管理人登記時，應課徵遺產稅。</p>
+<p>• (二) 遺囑信託之登記與稅負：</p>
+<ol>
+<li>遺囑信託，指立遺囑而為信託。遺囑信託於立遺囑人（即委託人）死亡時，發生效力。</li>
+</ol>
+<p>2.</p>
+<p>遺囑信託發生效力後，分下列三種情形辦理登記：</p>
+<p>• (1) 無遺囑執行人：①登記：先由繼承人辦理繼承登記，再由繼承人會同受託人辦理信託登記。②稅負：辦理繼承登記時，應課徵遺產稅（納稅義務人為繼承人），免徵土地增值稅及契稅。辦理信託登記時，不課徵土地增值稅及契稅。日後辦理信託歸屬登記時，不課徵贈與稅、土地增值稅及契稅。</p>
+<p>• (2) 有遺囑執行人：①登記：先由遺囑執行人辦理遺囑執行人登記及繼承登記，再由遺囑執行人會同受託人辦理信託登記。②稅負：辦理繼承登記時，應課徵遺產稅（納稅義務人為遺囑執行人），免徵土地增值稅及契稅。辦理信託登記時，不課徵土地增值稅及契稅。日後辦理信託歸屬登記時，不課徵贈與稅、土地增值稅及契稅。</p>
+<p>• (3) 繼承人有無不明：①登記：先由遺產管理人辦理遺產管理人登記，再由遺產管理人會同受託人辦理信託登記。須特別強調的是，繼承人有無不明之情形，無須辦理繼承登記。②稅負：辦理遺產管理人登記時，應課徵遺產稅（納稅義務人為遺產管理人），免徵土地增值稅及契稅。辦理信託登記時，不課徵土地增值稅及契稅。日後辦理信託歸屬登記時，不課徵贈與稅、土地增值稅及契稅。應注意者，繼承人有無不明之情形，雖未辦理繼承登記，但於辦理遺產管理人登記時，應課徵遺產稅。</p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-05-16 00:00:00+00:00">2023年5月16日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E5%85%B1%E6%9C%89%E4%BA%BA/" class="md-meta__link">共有人</a>, 
+              <a href="../%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="md-meta__link">優先購買權</a>, 
+              <a href="../%E4%B8%8D%E5%8B%95%E7%94%A2/" class="md-meta__link">不動產</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2023/05/16/907918/">逾期未辦繼承登記不動產標售時之優先購買權重點整理</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2023/05/16/907918/#_2">內文</a></h3>
+<p>各位同學好</p>
+<p>針對陳立夫教授於今年1月的月旦法學雜誌第332期（p.227-236）：「逾期未辦繼承登記不動產標售時之優先購買權」文章，因屬我們土地法重要考試範圍，本期專欄針對幾個重要部分進行整理。詳細文章內容則請另行參考該期雜誌。</p>
+<p>• 一、土地法第73條之1第3項規定優先購買權之規定</p>
+<p>「依第二項規定標售土地或建築改良物前應公告三個月，繼承人、合法使用人或其他共有人就其使用範圍依序有優先購買權。但優先購買權人未於決標後三十日內表示優先購買者，其優先購買權視為放棄。」</p>
+<p>• 二、優先購買權之立法目的</p>
+<p>係為兼顧確保繼承人等有居住事實之現使用人得以繼續居住之權益；準此，則法解釋上，所定優先購買權人自須限於有居住事實之現使用人，且其得優先購買之範圍，僅限於其「使用範圍」。如無居住事實者，即不得主張行使優先購買權。</p>
+<p>• 三、優先購買權人之意涵</p>
+<p>依序為：</p>
+<ol>
+<li>繼承人</li>
+</ol>
+<p>逾期未辦繼承登記不動產，於登記機關之登記簿所登載所有權人之法定繼承人。若有部分繼承人使用逾期未辦繼承登記不動產之全部或特定一部之情形，該繼承人之使用是否具合法權源並非所問，均得就其實際使用範圍行使優先購買權。</p>
+<p>按實務上，依法標售之逾期未辦繼承登記不動產，並非僅限於是項不動產之全部，亦有僅標售未辦繼承登記不動產之應有部分者。於此情形，則土地法第73 條之1 第3 項規定得優先購買之「使用範圍」，係依標售應有部分之比例計算。亦即，得優先購買之使用範圍＝優先購買權人之使用範圍面積÷不動產全面積×標售不動產之應有部分。</p>
+<ol>
+<li>合法使用人</li>
+</ol>
+<p>• (1) 前述繼承人以外具使用權源之其他共有人 (2)地上權等用益物權人 (3)租賃之承租人 (4)使用借貸關係之使用人</p>
+<ol>
+<li>其他共有人</li>
+</ol>
+<p>當分別共有之不動產，其各應有部分有逾期未辦繼承登記情形時，與該逾期未辦繼承登記應有部分具共有關係之共有人（但不包含前開繼承人及合法使用權源之其他共有人），其不以分別共有人為限，亦包括公同共有人。</p>
+<h3 id="_3"><a class="toclink" href="../../2023/05/16/907918/#_3">其他共有人只要有實際使用之情事即屬適格，其有無使用之合法權源，亦非所問。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-04-25 00:00:00+00:00">2023年4月25日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E9%81%BA%E7%94%A2%E7%A8%85/" class="md-meta__link">遺產稅</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E7%B4%8D%E7%A8%85%E7%BE%A9%E5%8B%99%E4%BA%BA/" class="md-meta__link">納稅義務人</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2023/04/25/907677/">遺產稅繳納有困難之處理方式</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2023/04/25/907677/#_2">內文</a></h3>
+<p>假設曾大哥與曾小弟一同繼承數筆不動產，應繼分一人二分之一，經國稅局核定應納遺產稅額為200萬元，依規定2個月內要繳納完成，惟曾小弟恰好缺現金繳納不出來，曾大哥擔心逾期繳稅受罰，也擔心無法順利辦完繼承登記而被罰登記費，請問有何處理方法？</p>
+<p>• 一、申請延期</p>
+<p>遺產稅納稅義務人，應於稽徵機關送達核定納稅通知書之日起二個月內，繳清應納稅款；必要時，得於限期內申請稽徵機關核准延期二個月。(遺贈§30I)</p>
+<p>• 二、申請分期繳納</p>
+<p>遺產稅應納稅額在三十萬元以上，納稅義務人確有困難，不能一次繳納現金時，得於納稅期限內，向該管稽徵機關申請，分十八期以內繳納，每期間隔以不超過二個月為限(遺贈§30II)。經申請分期繳納者，應自繳納期限屆滿之次日起，至納稅義務人繳納之日止，依郵政儲金一年期定期儲金固定利率，分別加計利息；利率有變動時，依變動後利率計算。(遺贈§30III)</p>
+<p>• 三、申請實物抵繳</p>
+<p>遺產稅應納稅額在三十萬元以上，納稅義務人確有困難，不能一次繳納現金時，得於納稅期限內，就現金不足繳納部分申請以在中華民國境內之課徵標的物或納稅義務人所有易於變價及保管之實物一次抵繳。中華民國境內之課徵標的物屬不易變價或保管（如畸零地），或申請抵繳日之時價較死亡日之時價為低者，其得抵繳之稅額，以該項財產價值占全部課徵標的物價值比例計算之應納稅額為限。(遺贈§30IV)</p>
+<p>因此，曾大哥與小弟可將繼承到的不動產或自己所有之不動產抵繳該稅金。</p>
+<p>• 四、提出納稅保證，先行移轉出售</p>
+<p>遺產稅未繳清前，不得分割遺產、交付遺贈或辦理移轉登記。但依規定，於事前申請該管稽徵機關核准發給同意移轉證明書，或經稽徵機關核發免稅證明書、不計入遺產總額證明書，不在此限。(遺贈§8)</p>
+<p>遺產稅納稅義務人繳清應納稅款、罰鍰及加徵之滯納金、利息後，主管稽徵機關應發給稅款繳清證明書；其經核定無應納稅款者，應發給核定免稅證明書；其有特殊原因必須於繳清稅款前辦理產權移轉者，得提出確切納稅保證，申請該管主管稽徵機關核發同意移轉證明書。(遺贈§41)</p>
+<p>因此，曾大哥與小弟可提供其中一筆土地作為擔保，先行取得國稅局核發之同意移轉證明書，而後將其他土地辦理出售移轉登記，待取得價金後，於繳稅期限內繳清遺產稅後，辦理繼承登記。</p>
+<p>• 五、先行辦理公同共有繼承登記</p>
+<p>繼承人為二人以上時，經部分繼承人按其法定應繼分繳納部分遺產稅款、罰鍰及加徵之滯納金、利息後，為辦理不動產之公同共有繼承登記，得申請主管稽徵機關核發同意移轉證明書；該登記為公同共有之不動產，在全部應納款項未繳清前，不得辦理遺產分割登記或就公同共有之不動產權利為處分、變更及設定負擔登記。(遺贈§41-1)</p>
+<h3 id="_3"><a class="toclink" href="../../2023/04/25/907677/#_3">因此，曾大哥可先就自己部分繳納，辦理公同共有繼承登記，得避免逾期辦理繼承登記而受罰。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-04-11 00:00:00+00:00">2023年4月11日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7/" class="md-meta__link">優先購買</a>, 
+              <a href="../%E5%85%B1%E6%9C%89%E4%BA%BA/" class="md-meta__link">共有人</a>, 
+              <a href="../%E5%9C%9F%E5%9C%B0/" class="md-meta__link">土地</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="1091546"><a class="toclink" href="../../2023/04/11/907569/">有關未辦繼承登記之優先購買人資格（共有人）：參109年度台上字第1546號判決</a></h2>
+<h3 id="_1"><a class="toclink" href="../../2023/04/11/907569/#_1">內文</a></h3>
+<p>• 一、案例事實</p>
+<p>甲、乙、丙為A地之所有權人，其應有部分各1/3，惟甲死亡後，其應有部分（下稱系爭土地持分）因無人辦理繼承登記，由臺中市政府列冊管理期滿，函請財政部國有財產署依土地法第73條之1規定，委託臺灣金融資產服務股份有限公司公開標售該系爭土地持分，由K得標。</p>
+<p>依同條第3項及逾期未辦繼承登記土地及建築改良物標售作業要點規定，繼承人、合法使用人或其他共有人就其實際使用範圍依序有優先購買權。乙為系爭土地之共有人，惟未證明其使用範圍。丙為系爭土地之共有人，與其他共有人有默示分管協議存在，並為該土地上建物之公同共有人，試問乙、丙得否主張優先購買權？</p>
+<p>• 二、判決要旨</p>
+<p>首先，土地法第73條之1立法目的，係在未辦繼承登記土地或建物標售後，使具有使用事實之繼承人、合法使用人或其他共有人，就其實際使用範圍有優先購買權，俾使土地之使用與所有權能合一，以利經濟效益。</p>
+<p>（補充：惟有學者認為此處應是兼顧確保繼承人、合法使用人等有居住事實之現使用人得以繼續居住之權益。亦即應限縮於居住之使用（陳立夫，2023，逾期未辦繼承登記不動產標售時之優先購買權，月旦法學雜誌，第332期））</p>
+<p>（一）乙無優先購買權</p>
+<p>乙為系爭土地之共有人，惟未證明其使用範圍，依土地法規定，僅得就實際使用範圍主張，未使用範圍即無適用餘地，而無優先購買權。</p>
+<p>（二）丙應有優先購買權</p>
+<p>依標售要點第11點第1項前段、第12點第1項規定，可知共有人行使土地法本條項之優先購買權，須為逾期未辦繼承登記土地或建物之共有人，及有實際使用之事實，且僅得就其實際使用之範圍主張優先購買權。至於該共有人有無使用之合法權源，則非所問。</p>
+<p>本條項所指之其他共有人，自不以分別共有人為限，包括公同共有人，以公同共有人就該土地或建築改良物之所有權與使用權，逐漸趨於合一之故。又本條規定之優先購買權人，係立法賦予其有取得優先購買權之資格，得行使之權利係優先購買權，該權利行使既係一種資格，非行使全體公同共有人之公同共有權利，自無需由公同共有人共同為之，與公同共有人權利行使無涉。</p>
+<h3 id="_2"><a class="toclink" href="../../2023/04/11/907569/#_2">因此，丙應有優先購買權。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-03-07 00:00:00+00:00">2023年3月7日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="md-meta__link">優先購買權</a>, 
+              <a href="../%E7%B9%BC%E6%89%BF%E4%BA%BA/" class="md-meta__link">繼承人</a>, 
+              <a href="../%E5%90%88%E6%B3%95%E4%BD%BF%E7%94%A8%E4%BA%BA/" class="md-meta__link">合法使用人</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2023/03/07/907249/">主張逾期未辦繼承登記之優先購買權要件</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2023/03/07/907249/#_2">內文</a></h3>
+<p>首先，根據土地法第73條之1規定：</p>
+<p>• (一) 土地或建築改良物，自繼承開始之日起逾一年未辦理繼承登記者，經該管直轄市或縣市地政機關查明後，應即公告繼承人於三個月內聲請登記，並以書面通知繼承人；逾期仍未聲請者，得由地政機關予以列冊管理。但有不可歸責於聲請人之事由，其期間應予扣除。</p>
+<p>• (二) 列冊管理期間為十五年，逾期仍未聲請登記者，由地政機關書面通知繼承人及將該土地或建築改良物清冊移請財政部國有財產署公開標售。繼承人占有或第三人占有無合法使用權者，於標售後喪失其占有之權利；土地或建築改良物租賃期間超過五年者，於標售後以五年為限。</p>
+<p>• (三) 依規定標售土地或建築改良物前應公告三個月，繼承人、合法使用人或其他共有人就其使用範圍依序有優先購買權。但優先購買權人未於決標後三十日內表示優先購買者，其優先購買權視為放棄。</p>
+<p>因此，其主張優先購買權要件如下：</p>
+<ol>
+<li>
+<p>主體：繼承人、合法使用人或其他共有人</p>
+</li>
+<li>
+<p>使用：必須於該未辦繼承土地上使用（學者就其立法意旨，主張應以有居住事實之現使用人為限）</p>
+</li>
+<li>
+<p>範圍：使用範圍（如標售應有部分，則得優先購買權範圍為該使用範圍占整筆土地之比例）</p>
+</li>
+<li>
+<p>順序：繼承人→合法使用人→其他共有人</p>
+</li>
+<li>
+<p>期限：決標後三十日內表示</p>
+</li>
+<li>
+<p>競合：本條之優先購買權與其他法律規定之優先購買權競合時，優先適用本條。不符本條優先購買權者，另依其他法律規定處理優先購買權。（未辦繼承登記土地及建築改良物標售作業要點）</p>
+</li>
+</ol>
+<h3 id="2023-332223-235"><a class="toclink" href="../../2023/03/07/907249/#2023-332223-235">參考來源：陳立夫，2023，土地法裁判精選－逾期未辦繼承登記不動產標售時之優先購買權，月旦法學雜誌，第332期，第223-235頁</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2022-08-30 00:00:00+00:00">2022年8月30日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="md-meta__link">優先購買權</a>, 
+              <a href="../%E5%9C%9F%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A/" class="md-meta__link">土地所有權</a>, 
+              <a href="../%E4%BD%BF%E7%94%A8%E6%AC%8A%E5%88%86%E9%9B%A2/" class="md-meta__link">使用權分離</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2022/08/30/905315/">未辦繼承登記之合法使用認定案例</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2022/08/30/905315/#_2">內文</a></h3>
+<p>未辦繼承登記之合法使用認定案例，參考臺灣高等法院臺中分院104年上易字第413號民事判決。</p>
+<p>案例</p>
+<p>系爭土地原為A所有，A死亡後因其繼承人逾期未辦理繼承登記，致系爭土地遭財政部國有財產署拍賣，經甲以新臺幣500萬元得標。於決標後10日內（注意現修法改為30日優先購買權行使期間），乙以繼承人身分出面稱系爭土地上未辦理保存登記房屋(系爭房屋)為其占有使用，主張就其實際使用範圍有土地法第73條之1之優先承買權，然而乙並未居住於此，而是將房間出租及保留作為經營零售食品之倉庫存貨使用，而乙目前為該水電。試問未居住於該處的繼承人乙主張優先購買，應否准許？</p>
+<p>爭點</p>
+<p>未辦繼承土地決標後的優先購買權行使，是否以優先購買權人有無居住該地或實際在該地親自使用為斷？或應以何標準作為判斷？</p>
+<p>判決重點摘要</p>
+<ol>
+<li>
+<p>就逾期未辦理繼承登記之土地，由地政機關列冊管理15年，逾期仍未聲請登記者，經地政機關將該土地清冊移請國有財產局依土地法第73條之1第2項規定公開標售，繼承人、合法使用人或其他共有人就其使用範圍依序有優先購買權，土地法第73條之1第3項前段定有明文；</p>
+</li>
+<li>
+<p>上開法條所稱優先購買權人之使用範圍，依標售作業要點第11點第1項規定，則應以實際使用範圍為準。</p>
+</li>
+<li>
+<p>土地法第73條之1第3項之所以規定繼承人等就使用範圍有優先購買權，其目的無非在使辦理標售土地之所有人與使用人合歸一人，以盡經濟上之效用；並避免土地所有權與使用權分離，以杜紛爭。故在辦理標售土地上建有房屋之情形，房屋所有人或事實上處分權人如具有繼承人等身分時，不論其本身有無居住在該房屋內，以及有無將房屋出租或出借他人使用，就房屋占用位置應可認係土地之實際（占有）使用人，並得就其實際使用範圍主張優先購買權，此要為上開法條之文義解釋及目的解釋上所當然；又該房屋之借用人或承租人，既無土地所有權與使用權分離之問題，自無主張優先購買權之餘地。</p>
+</li>
+</ol>
+<h3 id="4"><a class="toclink" href="../../2022/08/30/905315/#4">4. 因此，是否有優先購買權，自應以優先購買權人是否為坐落其上之系爭房屋所有人或事實上處分權人以為斷，不以其有實際居住使用系爭房屋為限。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2020-07-23 00:00:00+00:00">2020年7月23日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a>, 
+              <a href="../%E6%8B%8B%E6%A3%84%E7%B9%BC%E6%89%BF/" class="md-meta__link">拋棄繼承</a>, 
+              <a href="../%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E8%A6%8F%E5%89%87/" class="md-meta__link">土地登記規則</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2020/07/23/419239/">有關繼承登記之申請文件</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2020/07/23/419239/#_2">內文</a></h3>
+<p>各位同學好</p>
+<p>此次普考土地登記概要剛好考到上課提到，有關繼承登記有人拋棄繼承時之應檢附文件，茲再次幫同學整理說明如下：</p>
+<p>※首先，根據土地登記規則第119條第1項第5款規定，繼承人如有拋棄繼承，應依下列規定辦理：</p>
+<ol>
+<li>
+<p>繼承開始時在中華民國74年6月4日以前者，應檢附拋棄繼承權有關文件；其向其他繼承人表示拋棄者，拋棄人應親自到場在拋棄書內簽名。</p>
+</li>
+<li>
+<p>繼承開始時在中華民國74年6月5日以後者，應檢附法院准予備查之證明文件。</p>
+</li>
+</ol>
+<p>※配合民法第1174條規定繼承人得拋棄其繼承權。前項拋棄，應於知悉其得繼承之時起三個月內，以書面向法院為之。拋棄繼承後，應以書面通知因其拋棄而應為繼承之人。但不能通知者，不在此限。</p>
+<p>※暨根據繼承登記法令補充規定第1點繼承開始（即被繼承人死亡日期或經死亡宣告確定死亡日期）於台灣光復以前者（民國三十四年十月二十四日以前），應依有關台灣光復前繼承習慣辦理。繼承開始於台灣光復後（民國三十四年十月二十五日以後）至七十四年六月四日以前者，依修正前之民法親屬、繼承兩編及其施行法規定辦理。繼承開始於民國七十四年六月五日以後者，應依現行民法親屬、繼承兩編暨其施行法規定辦理。</p>
+<p>因此，可分為以下三個時段說明：</p>
+<ol>
+<li>
+<p>繼承開始於臺灣光復前 (34.10.24以前)日據時期台灣省人財產繼承習慣分為家產繼承與私產繼承兩種。家產為家屬（包括家長在內）之共有財產；私產係指家屬個人之特有財產。家產繼承因戶主喪失戶主權而開始；私產繼承則因家屬之死亡而開始。（繼承登記法令補充規定第2點）</p>
+</li>
+<li>
+<p>繼承開始於臺灣光復後至民國七十四年六月四日以前 (34.10.25-74.6.4)繼承開始於臺灣光復後至民國七十四年六月四日以前，繼承人拋棄其繼承權，應依修正前民法第一千一百七十四條規定於知悉其得繼承之時起二個月內以書面向法院、親屬會議或其他繼承人為之。所謂「知悉」其得繼承之時起二個月內拋棄繼承權，該期間之起算，係指知悉被繼承人死亡且自己已依民法第一千一百三十八條規定成為繼承人之時，始開始起算主張拋棄繼承之期間。申請登記時應檢附拋棄繼承權有關文件。其向其他繼承人表示拋棄者，拋棄人除符合土地登記規則第四十一條第二款、第五款至第八款及第十款規定之情形者外，應親自到場，並依同規則第四十條規定程序辦理。（繼承登記法令補充規定第89點第1項）</p>
+</li>
+<li>
+<p>繼承開始於民國七十四年六月五日以後 (74.6.5-至今)繼承開始於民國七十四年六月五日以後，而繼承人有拋棄繼承權者，應依照修正後民法第一千一百七十四條規定，應以書面向法院為之。申請繼承登記時，應檢附法院核發繼承權拋棄之證明文件。至於拋棄繼承權者是否以書面通知因其拋棄而應為繼承之人，非屬登記機關審查之範疇。（繼承登記法令補充規定第89點第2項）</p>
+</li>
+</ol>
+<p>繪圖整理如下：</p>
+<p>[圖片1]</p>
+<h3 id="_3"><a class="toclink" href="../../2020/07/23/419239/#_3">文章圖片</a></h3>
+<p><img alt="圖片1" src="../../images/419239_4244d424.png" /></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2018-11-19 00:00:00+00:00">2018年11月19日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">繼承登記</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2018/11/19/413800/">繼承登記實例研習</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2018/11/19/413800/#_2">內文</a></h3>
+<p>甲死亡後遺留一筆養殖用地，由其子女乙、丙二人共同繼承，乙之應繼分四分之三，丙之應繼分四分之一，乙為本國人，丙為日本人。試問： (一)逾一年未辦理繼承登記，政府應如何處理？ (二)乙可否單獨申請公同共有登記或分別共有登記？ (三)乙可否依土地法第34條之1採多數決辦理分別共有登記？ (四)乙可否依土地法第34條之1採多數決出售該土地全部？ (五)丙可否繼承取得而登記為該筆土地之所有權人？</p>
+<p>【解答】</p>
+<p>• (一) 政府應依土地法第73條之1規定處理。土地法第73條之1規定：「土地或建築改良物，自繼承開始之日起逾一年未辦理繼承登記者，經該管直轄市或縣市地政機關查明後，應即公告繼承人於三個月內聲請登記；逾期仍未聲請者，得由地政機關予以列冊管理。但有不可歸責於聲請人之事由，其期間應予扣除。</p>
+<p>前項列冊管理期間為十五年，逾期仍未聲請登記者，由地政機關將該土地或建築改良物清冊移請國有財產局公開標售。繼承人占有或第三人占有無合法使用權者，於標售後喪失其占有之權利；土地或建築改良物租賃期間超過五年者，於標售後以五年為限。</p>
+<p>依第二項規定標售土地或建築改良物前應公告三十日，繼承人、合法使用人或其他共有人就其使用範圍依序有優先購買權。但優先購買權人未於決標後十日內表示優先購買者，其優先購買權視為放棄。</p>
+<p>標售所得之價款應於國庫設立專戶儲存，繼承人得依其法定應繼分領取。逾十年無繼承人申請提領該價款者，歸屬國庫。</p>
+<p>第二項標售之土地或建築改良物無人應買或應買人所出最高價未達標售之最低價額者，由國有財產局定期再標售，於再行標售時，國有財產局應酌減拍賣最低價額，酌減數額不得逾百分之二十。經五次標售而未標出者，登記為國有並準用第二項後段喪失占有權及租賃期限之規定。自登記完畢之日起十年內，原權利人得檢附證明文件按其法定應繼分，向國有財產局申請就第四項專戶提撥發給價金；經審查無誤，公告九十日期滿無人異議時，按該土地或建築改良物第五次標售底價分算發給之。」</p>
+<p>• (二) 土地登記規則第120條第1項規定：「繼承人為二人以上，部分繼承人因故不能會同其他繼承人共同申請繼承登記時，得由其中一人或數人為全體繼承人之利益，就被繼承人之土地，申請為公同共有之登記。其經繼承人全體同意者，得申請為分別共有之登記。」準此，乙得單獨申請公同共有登記，但不可單獨申請分別共有登記。</p>
+<p>• (三) 繼承人辦理分別共有登記，屬於公同共有人終止公同共有之內部關係，故不可依土地法第34條之1採多數決處理。</p>
+<p>• (四) 應繼分視為潛在應有部分，乙之應繼分四分之三，已超過三分之二，人數不予計算，因此乙得依土地法第34條之1採多數決出售該土地全部。又，民法第759條規定：「因繼承、強制執行、徵收、法院之判決或其他非因法律行為，於登記前已取得不動產物權者，應經登記，使得處分其物權。」準此，未辦竣繼承登記，不得處分其物權（即辦理所有權移轉登記），但仍得處分其債權（即簽訂買賣契約）。本題出售土地屬於處分債權，故買賣契約仍然有效。惟日後乙應先單獨申請公同共有繼承登記，再依土地法第34條之1辦理買賣所有權移轉登記。</p>
+<h3 id="171217"><a class="toclink" href="../../2018/11/19/413800/#171217">• (五) 土地法第17條第1項及第2項規定：「左列土地不得移轉、設定負擔或租賃外國人：一、林地。二、漁地。三、狩獵地。四、鹽地。五、礦地。六、水源地。七、要塞軍備區域及領域邊境之土地。前項移轉，不包括因繼承而取得土地。但應於辦理繼承登記完畢之日起三年內出售與本國人，逾期未出售者，由直轄市、縣（市）地政機關移請國有財產局辦理公開標售，其標售程序準用第七十三條之一相關規定。」準此，本題養殖用地屬於土地法第17條之漁地，故不得移轉於外國人丙。但因繼承而取得不受限制，故丙得繼承取得而登記為該筆土地之所有權人；惟應於辦理繼承登記完畢之日起三年內出售於本國人。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a>
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

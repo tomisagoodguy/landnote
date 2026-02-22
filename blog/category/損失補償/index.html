@@ -1,0 +1,664 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Landnote AI">
+      
+      
+        <link rel="canonical" href="https://tomisagoodguy.github.io/landnote/blog/category/%E6%90%8D%E5%A4%B1%E8%A3%9C%E5%84%9F/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>損失補償 - Landnote 數位圖書館</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="Landnote 數位圖書館" class="md-header__button md-logo" aria-label="Landnote 數位圖書館" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Landnote 數位圖書館
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              損失補償
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tomisagoodguy/landnote" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  最新文章
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  主題索引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../exams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  考古題下載
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Landnote 數位圖書館" class="md-nav__button md-logo" aria-label="Landnote 數位圖書館" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Landnote 數位圖書館
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tomisagoodguy/landnote" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最新文章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主題索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    考古題下載
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        財產權侵害之損失補償
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重測面積短少之損害賠償
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="_1">損失補償<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-02-27 00:00:00+00:00">2024年2月27日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">損失補償</a>, 
+              <a href="../%E8%B2%A1%E7%94%A2%E6%AC%8A/" class="md-meta__link">財產權</a>, 
+              <a href="../%E7%89%B9%E5%88%A5%E7%8A%A7%E7%89%B2/" class="md-meta__link">特別犧牲</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2024/02/27/910617/">財產權侵害之損失補償</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2024/02/27/910617/#_2">內文</a></h3>
+<p>損失補償之主要特徵在於「因公益而形成個人利益之特別犧牲」，亦即，公權力對個人財產權之干預程度，相較於他人所受之干預，如顯失公平且無期待可能者，即屬逾越社會責任所應忍受之範圍，而構成特別犧牲，國家應予合理之補償1。因此，針對財產權侵害之損失補償，應可粗分為：</p>
+<ol>
+<li>
+<p>應予補償之徵收（剝奪財產權）</p>
+</li>
+<li>
+<p>應予補償之財產權限制（非至為輕微）</p>
+</li>
+<li>
+<p>不予補償之財產權限制（至為輕微）</p>
+</li>
+</ol>
+<p>申言之，若國家為公益而對人民財產權之限制，已至完全剝奪，或致該財產權之本來效用已無從發揮，即已形骸化而實質上形同剝奪者（如本院釋字第400 號解釋所稱已形成公用地役關係之既成道路土地），即屬應予補償之徵收；然若對財產權之限制並未至此程度依上開本院釋字第564號解釋，即限制係至為輕微，則屬財產權之社會義務，係不予補償之財產權限制；反之，若對財產權之限制已「非至為輕微」，則應認係已逾越財產權之社會義務範圍，而形成個人之特別犧牲，屬應予補償之財產權限制。2</p>
+<p>然究至何種程度始逾人民財產權所應忍受之範圍，應就行為之目的與限制手段及造成之結果予以衡量（司法院釋字第564號解釋理由書）。可就下列複數要素，綜合地對於財產權限制之個別情形，判斷其是否形成土地所有權人之特別犧牲3：1.限制之目的、2.手段形態、3.限制程度、4.損失程度、5.土地狀況及條件、6.社會需要（社會情狀）、7.限制期間、8.有無既得權益。</p>
+<h3 id="1-19983624-25-2-813-3-2017-7476417-302011-130-171"><a class="toclink" href="../../2024/02/27/910617/#1-19983624-25-2-813-3-2017-7476417-302011-130-171">1 李建良，1998，特別犧牲與損失補償，月旦法學雜誌第36期，第24-25頁。 2 楊惠欽大法官釋字第813號解釋協同意見書。 3 陳立夫，2017，土地利用限制形成特別犧牲之損失補償請求權－司法院釋字第747號解釋之意義，月旦裁判時報，第64期，第17-30頁；陳立夫，2011，台灣農地權利之管制與權利保障－以耕地三七五減租條例對耕地所有權之限制為中心，土地法研究（二），新學林，第130-171頁。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2022-06-21 00:00:00+00:00">2022年6月21日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E9%9D%A2%E7%A9%8D%E7%9F%AD%E5%B0%91/" class="md-meta__link">面積短少</a>, 
+              <a href="../%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/" class="md-meta__link">損害賠償</a>, 
+              <a href="./" class="md-meta__link">損失補償</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2022/06/21/904576/">重測面積短少之損害賠償</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2022/06/21/904576/#_2">內文</a></h3>
+<p>各位同學好</p>
+<p>今日專欄針對重測結果發現面積短少，是否得請求損害賠償之議題進行討論。以下參考地政研究所之相關考題來進行說明。</p>
+<p>某地區發生洪災，因泛濫嚴重，災後重新辦理地籍測量。A地在實施測量時，其界點經土地所有權人甲及鄰地所有權人指界，確定界址無誤，測量人員乙即據此界址實施測量。該管地政事務所依照乙之測量成果重製地籍原圖並辦理A地之標示變更登記，惟甲發現重測後A地面積比起重測前短少5平方公尺。問： (一)經甲主張異議並中請複丈，其結果與重測相符。請先說明何謂登記之公信力及公信力保護之標的，並分析甲得否主張登記之公信力，故地政事務所不得訂正該面積值？ (二)因A地面積變小，導致其市價降低，甲得否向地政事務所請求損害賠償還是損失補償？又其所依法理依據為何？</p>
+<p>（110年政大地政研究所考題）</p>
+<p>擬答：</p>
+<p>• (一) 甲不得就面積主張受登記公信力保護，地政事務所得訂正該面積值</p>
+<ol>
+<li>
+<p>登記公信力之意義按土地法第43條規定，依本法所為之登記，有絕對效力。因此，為確保交易安全，依民法第759條之1第2項，因信賴不動產登記之善意第三人，已依法律行為為物權變動之登記者，其變動之效力，不因原登記物權之不實而受影響。</p>
+</li>
+<li>
+<p>公信力保護之標的 首先，土地登記具公信力之要件如下： (1)須原登記有不真實之情事。 (2)需登記名義人與第三人間具有效之法律行為。（直接當事人間無公信力適用）（繼承無適用、贈與有爭議） (3)第三人取得權利須為善意。 (4)限於權利相關之登記事項：如所有權、限制物權、擔保物權。而純粹事實相關之登記事項則非公信力保護對象。如土地面積、地價、使用編定等。 (5)效力發生時期，已完成法定登記程序，計入登記簿為準，即善意第三人登記完畢時。 因此，土地登記公信力保護之標的為權利相關之登記事項，本題有關標示部之土地面積，並非公信力保護標的。</p>
+</li>
+<li>
+<p>綜合上述，土地登記公信力係為保護善意第三人取得登記不實之不動產權利，以維護交易安全，但針對非權利相關事項，則與權利變動之交易安全無關而不受保護，故甲不得就面積主張受登記公信力保護，地政事務所得訂正該面積。</p>
+</li>
+</ol>
+<p>• (二) 甲得否向地政事務所請求損害賠償需視是否有測量錯誤、遺漏或虛偽</p>
+<ol>
+<li>
+<p>損失補償與損害賠償之界定 (1)行政法上的「損失補償」：指行政機關基於公益目的，合法實施公權力，致人民之生命、身體或財產遭受損失，而由國家予以適當補償之制度。 (2) 國家責任之「損害賠償」：則係公務員於執行職務行使公權力時，因故意或過失不法侵害人民自由或權利者，國家應負損害賠償責任。 根據上述概念，損失補償之給予通常為國家合法行為，至於違法行為（故意或過失所致）則以國家損害賠償處理。爰此，測量因故意或過失導致結果有誤，造成民眾之侵害，應屬請求「損害賠償」之範疇。</p>
+</li>
+<li>
+<p>請求損害賠償之法理依據 根據土地法第68條第1項，「因登記錯誤遺漏或虛偽致受損害者，由該地政機關負損害賠償責任。但該地政機關證明其原因應歸責於受害人時，不在此限。」其中，所謂「登記錯誤」雖依土地登記規則第13條定義為登記事項與登記原因證明文件所載之內容不符，但該規定應屬例示規定，尚包括其他原因而發生登記錯誤者，亦即包含測量錯誤。 再者，地籍測量與土地登記具連結關係，須先辦理地籍測量方得辦理土地登記，故地籍測量屬土地登記之必要前置行為，以致不論哪個環節出錯，對於最後所造成損害結果並無不同。尤其，土地登記損害賠償之目的，在於保障民眾權益，確保土地登記之公信力，進而維護交易安全，故土地法第68條及土地登記規則第13條應作廣義解釋，亦即包含測量錯誤所延伸導致的登記面積錯誤。</p>
+</li>
+<li>
+<p>甲向地政事務所請求損害賠償仍需視是否有測量錯誤、遺漏或虛偽 根據上述土地法第68條請求地政事務所損害賠償之規定，A地面積短少，需視測量是否有錯誤遺漏或虛偽，或測量人員是否有故意、過失之不法行為所致，以及確認是否有損害發生。 根據土地法第46條之1、地籍測量實施規則第184條，「已辦地籍測量之地區，因地籍原圖破損、滅失、比例尺變更或其他重大原因，得重新實施地籍測量」。本題所述土地重測係依據甲及鄰地所有權人指界施測，並經異議複丈後，其結果與重測相符，如該程序皆合於土地法、及地籍測量實施規則等規定，即難謂乙及地政事務所就A地執行重測及登記，於執行職務行使公權力有何故意或過失之不法行為，或因故意或過失致登記錯誤、遺漏、虛偽之情事。 倘若經證實測量人員乙於重測時有故意或過失致地政事務所之登記錯誤、遺漏、虛偽之情事，例如原圖整理疏失、面積計算錯誤等導致土地面積短少，則甲得依據前述說明主張土地法第68條請求地政事務所損害賠償。惟尚需證實因重測錯誤而「受有損害」，例如當時取得所溢付之價款等，據此請求損害賠償。</p>
+</li>
+</ol>
+<p>參考文獻</p>
+<ol>
+<li>
+<p>李建良，1999，「行政法上損失補償制度之基本體系」，『東吳法律學報』，第11卷，第2期，第33-101頁。</p>
+</li>
+<li>
+<p>陳立夫，2009年，「土地登記之損害賠償」，『月旦法學教室』，第75期，第26-27頁。</p>
+</li>
+<li>
+<p>范文清，2016，「地籍重測後土地面積縮減之國家賠償責任」，『月旦法學雜誌』，第255期，第118-132頁。</p>
+</li>
+</ol>
+<h3 id="4-1096"><a class="toclink" href="../../2022/06/21/904576/#4-1096">4. 臺灣高等法院，臺中分院，109年度，上國字第6號判決。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,886 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Landnote AI">
+      
+      
+        <link rel="canonical" href="https://tomisagoodguy.github.io/landnote/blog/category/%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB%E6%B3%95/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>區域計畫法 - Landnote 數位圖書館</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../../.." title="Landnote 數位圖書館" class="md-header__button md-logo" aria-label="Landnote 數位圖書館" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Landnote 數位圖書館
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              區域計畫法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tomisagoodguy/landnote" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  最新文章
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  主題索引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../exams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  考古題下載
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Landnote 數位圖書館" class="md-nav__button md-logo" aria-label="Landnote 數位圖書館" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Landnote 數位圖書館
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tomisagoodguy/landnote" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最新文章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主題索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    考古題下載
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        美濃盜採砂石案違反區域計畫法之情形
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120430" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        國土計畫法延後至民國120年4月30日上路
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非都市土地使用管制架構
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        農地之定義
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非都市土地編定為鹽業用地之土地稅課徵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開發影響費與國土保育費、影響費之比較
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="_1">區域計畫法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-10-14 00:00:00+00:00">2025年10月14日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E7%BE%8E%E6%BF%83%E5%A4%A7%E5%B3%BD%E8%B0%B7/" class="md-meta__link">美濃大峽谷</a>, 
+              <a href="../%E5%9C%9F%E7%9F%B3%E6%8E%A1%E5%8F%96%E6%B3%95/" class="md-meta__link">土石採取法</a>, 
+              <a href="../%E5%BB%A2%E6%A3%84%E7%89%A9%E6%B8%85%E7%90%86%E6%B3%95/" class="md-meta__link">廢棄物清理法</a>, 
+              <a href="./" class="md-meta__link">區域計畫法</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2025/10/14/914642/">美濃盜採砂石案違反區域計畫法之情形</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2025/10/14/914642/#_2">內文</a></h3>
+<p>本週專欄針對進來時事－「美濃大峽谷」作法規說明，此與不動產經紀人、高普考及不動產估價師之計畫法規有關</p>
+<p>可先看新聞：美濃盜採砂石案 內政部國土署：高雄市政府已法移送地檢署調查 地方政府聯合查緝平台 持續查處不法土地使用行為</p>
+<p>主要是高雄市美濃區有23筆非都市土地農牧用地遭盜取砂石，甚至被挖成「大峽谷」顯見其嚴重程度，其違反法規包含土石採取法、廢棄物清理法、區域計畫法等。</p>
+<p>就地政相關法規而言，主要違反區域計畫法之土地使用管制，根據區域計畫法第15條規定：「區域計畫公告實施後，不屬第十一條之非都市土地(擬定都市計畫者)，應由有關直轄市或縣（市）政府，按照非都市土地分區使用計畫，製定非都市土地使用分區圖，並編定各種使用地，報經上級主管機關核備後，實施管制。變更之程序亦同。其管制規則，由中央主管機關定之。」因此，非都市土地使用分為上、中、下層管制，分別為非都市土地分區使用計畫→11種分區→19種使用地，再根據非都市土地使用管制規則第6條：「非都市土地經劃定使用分區並編定使用地類別，應依其容許使用之項目及許可使用細目使用。」只要未按照其所定容許使用項目及許可使用細目使用，即屬違規使用（違反土地使用管制）。</p>
+<p>違規使用之裁罰則依據區域計畫法第21條規定：「違反規定管制使用土地者，由該管直轄市、縣（市）政府處新臺幣六萬元以上三十萬元以下罰鍰，並得限期令其變更使用、停止使用或拆除其地上物恢復原狀。前項情形經限期變更使用、停止使用或拆除地上物恢復原狀而不遵從者，得按次處罰，並停止供水、供電、封閉、強制拆除或採取其他恢復原狀之措施，其費用由土地或地上物所有人、使用人或管理人負擔。前二項罰鍰，經限期繳納逾期不繳納者，移送法院強制執行。」</p>
+<p>又因為本案屆期仍未改善，所以可依據區域計畫法第22條刑責規定：「違反前條規定不依限變更土地使用或拆除建築物恢復土地原狀者，除依行政執行法辦理外，並得處六個月以下有期徒刑或拘役。」已移送地檢署調查中。</p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-01-23 00:00:00+00:00">2025年1月23日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E6%B3%95/" class="md-meta__link">國土計畫法</a>, 
+              <a href="./" class="md-meta__link">區域計畫法</a>, 
+              <a href="../%E8%BE%B2%E5%9C%B0/" class="md-meta__link">農地</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="120430"><a class="toclink" href="../../2025/01/23/913331/">國土計畫法延後至民國120年4月30日上路</a></h2>
+<h3 id="_1"><a class="toclink" href="../../2025/01/23/913331/#_1">內文</a></h3>
+<p>國土計畫法第45條原本規定，直轄市、縣（市）國土計畫法公告實施後四年內，公告國土功能分區圖。公告國土功能分區圖之日起，區域計畫法不再適用。準此，國土計畫法原訂民國114年4月30日上路。然，因民眾擔心農地未來使用受限，迫使朝野立法委員感受地方壓力，於民國113年12月31日將上開四年修正為十年。換言之，國土計畫法延後至民國120年4月30日上路。</p>
+<p>基上，政府應儘速提出延後六年上路之配套措施（如修正區域計畫法及非都市土地使用管制規則等），以遏止下列現象發生：</p>
+<p>• (一) 農地任意變更，農地持續流失。 (二)農地配合太陽能光電發展，因而假光電之名，行戕害農地之實。 (三)農地違規堆積廢土及殘渣，農地千瘡百孔，破壞肥沃土壤。 (四)農地浮濫開發，農地開發亂象層出不窮。</p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-07-23 00:00:00+00:00">2024年7月23日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E9%9D%9E%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0/" class="md-meta__link">非都市土地</a>, 
+              <a href="./" class="md-meta__link">區域計畫法</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2024/07/23/912059/">非都市土地使用管制架構</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2024/07/23/912059/#_2">內文</a></h3>
+<p>依據「區域計畫法」第15條第1項規定：「區域計畫公告實施後，不屬第11條之非都市土地（即變更為都市計畫者），應由有關直轄市或縣（市）政府，按照非都市土地分區使用計畫，製定非都市土地使用分區圖，並編定各種使用地，報經上級主管機關核備後，實施管制。變更之程序亦同。其管制規則，由中央主管機關定之。」因此，內政部依據該條文授權，訂定「非都市土地使用管制規則」，作為實施非都市土地使用管制之依據。依該規則第4條，非都市土地之使用，除國家公園區內土地，由國家公園主管機關依法管制外，按其編定使用地之類別，依本規則規定管制之。</p>
+<p>按「區域計畫法」第7條第9款、第15條及同法施行細則第5條規定，區域土地使用管制之結構，可分為三個層次：</p>
+<p>上層：土地分區使用計畫。 中層：非都市土地使用分區圖。 下層：編定各種使用地。</p>
+<p>上述三層次，分別具有上下位之指導關係，即製定非都市土地使用分區圖，須受土地分區使用計畫之指導；編定各種使用地，則須受非都市土地使用分區圖所定之使用區容許使用種類之限制。</p>
+<p>非都市土地使用管制架構如下圖所示：</p>
+<p>[圖片1]</p>
+<h3 id="_3"><a class="toclink" href="../../2024/07/23/912059/#_3">文章圖片</a></h3>
+<p><img alt="圖片1" src="../../images/912059_8d9aecca.png" /></p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-05 00:00:00+00:00">2024年3月5日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E8%BE%B2%E5%9C%B0/" class="md-meta__link">農地</a>, 
+              <a href="../%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0/" class="md-meta__link">農業用地</a>, 
+              <a href="./" class="md-meta__link">區域計畫法</a>, 
+              <a href="../%E5%9C%9F%E5%9C%B0/" class="md-meta__link">土地</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2024/03/05/910659/">農地之定義</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2024/03/05/910659/#_2">內文</a></h3>
+<p>凡供農業生產用的土地，即可稱為農地。</p>
+<p>由於農業生產的意義有廣狹之分，所以農地一詞也有廣狹之別：</p>
+<ol>
+<li>廣義：農業用地</li>
+</ol>
+<p>• (1) 平均地權條例第3條、農業發展條例第3條及土地稅法第10條指非都市土地或都市土地農業區、保護區範圍內土地，依法供下列使用者︰</p>
+<ol>
+<li>
+<p>供農作、森林、養殖、畜牧及保育使用者。</p>
+</li>
+<li>
+<p>供與農業經營不可分離之農舍、畜禽舍、倉儲設備、曬場、集貨場、農路、灌溉、排水及其他農用之土地。</p>
+</li>
+<li>
+<p>農民團體與合作農場所有直接供農業使用之倉庫、冷凍（藏）庫、農機中心、蠶種製造（繁殖）場、集貨場、檢驗場等用地。</p>
+</li>
+</ol>
+<p>• (2) 又依農業發展條例施行細則第2條，所稱依法供前述第一目至第三目使用之農業用地，其法律依據及範圍如下：</p>
+<ol>
+<li>
+<p>本條例第三條第十一款所稱之耕地。</p>
+</li>
+<li>
+<p>依區域計畫法劃定為各種使用分區內所編定之林業用地、養殖用地、水利用地、生態保護用地、國土保安用地及供農路使用之土地，或上開分區內暫未依法編定用地別之土地。</p>
+</li>
+<li>
+<p>依區域計畫法劃定為特定農業區、一般農業區、山坡地保育區、森林區以外之分區內所編定之農牧用地。</p>
+</li>
+<li>
+<p>依都市計畫法劃定為農業區、保護區內之土地。</p>
+</li>
+<li>
+<p>依國家公園法劃定為國家公園區內按各分區別及使用性質，經國家公園管理處會同有關機關認定合於前三款規定之土地。</p>
+</li>
+<li>
+<p>狹義：耕地</p>
+</li>
+</ol>
+<p>為農業生產力高的土地。依照農業發展條例第3條，耕地認定指依區域計畫法劃定為特定農業區、一般農業區、山坡地保育區及森林區之農牧用地。</p>
+<hr />
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2021-08-05 00:00:00+00:00">2021年8月5日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="../%E5%9C%9F%E5%9C%B0%E7%A8%85%E8%AA%B2%E5%BE%B5/" class="md-meta__link">土地稅課徵</a>, 
+              <a href="./" class="md-meta__link">區域計畫法</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2021/08/05/901262/">非都市土地編定為鹽業用地之土地稅課徵</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2021/08/05/901262/#_2">內文</a></h3>
+<p>• (一) 土地稅法第22條第1項規定：「非都市土地依法編定之農業用地或未規定地價者，徵收田賦。……」準此，非都市土地依法編定農業用地，課徵田賦，不徵地價稅。又，田賦自民國76年停徵迄今，因此上開農業用地等同免徵持有稅。所稱非都市土地依法編定之農業用地，指依區域計畫法編定之農牧用地、林業用地、養殖用地、鹽業用地、水利用地、生態保護用地、國土保安用地及國家公園區內由國家公園管理機關會同有關機關認定合於上述規定之土地（土稅施§21）。</p>
+<p>• (二) 土地稅法第39條之2第1項規定：「作農業使用之農業用地，移轉與自然人時，得申請不課徵土地增值稅。」所定農業用地，其法律依據及範圍如下：</p>
+<ol>
+<li>
+<p>農業發展條例第3條第11款所稱之耕地。</p>
+</li>
+<li>
+<p>依區域計畫法劃定為各種使用分區內所編定之林業用地、養殖用地、水利用地、生態保護用地、國土保安用地及供農路使用之土地，或上開分區內暫未依法編定用地別之土地。</p>
+</li>
+<li>
+<p>依區域計畫法劃定為特定農業區、一般農業區、山坡地保育區、森林區以外之分區內所編定之農牧用地。</p>
+</li>
+<li>
+<p>依都市計畫法劃定為農業區、保護區內之土地。</p>
+</li>
+<li>
+<p>依國家公園法劃定為國家公園區內按各分區別及使用性質，經國家公園管理機關會同有關機關認定合於前三款規定之土地。（土稅施§57）</p>
+</li>
+</ol>
+<h3 id="76"><a class="toclink" href="../../2021/08/05/901262/#76">• (三) 綜上，課徵田賦所適用之農業用地，於非都市土地編定為農牧用地、林業用地、養殖用地、鹽業用地、水利用地、生態保護用地及國土保安用地。另，不課徵土地增值稅所適用之農業用地，於非都市土地編定為農牧用地、林業用地、養殖用地、水利用地、生態保護用地及國土保安用地。二者相差在，前者有鹽業用地，後者無鹽業用地。換言之，鹽業用地持有時，屬於農業用地，因此課徵田賦（田賦於民國76年停徵迄今），不徵地價稅。但鹽業用地出售時，非屬於農業用地，因此應課徵土地增值稅。</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2020-11-12 00:00:00+00:00">2020年11月12日</time></li>
+        
+          <li class="md-meta__item">
+            於
+            
+              <a href="../real-estate/" class="md-meta__link">Real Estate</a>, 
+              <a href="./" class="md-meta__link">區域計畫法</a>, 
+              <a href="../%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E6%B3%95/" class="md-meta__link">國土計畫法</a>, 
+              <a href="../%E9%96%8B%E7%99%BC%E5%BD%B1%E9%9F%BF%E8%B2%BB/" class="md-meta__link">開發影響費</a>, 
+              <a href="../%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E8%B2%BB/" class="md-meta__link">國土保育費</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分鐘閱讀時間
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2020/11/12/420268/">開發影響費與國土保育費、影響費之比較</a></h2>
+<h3 id="_2"><a class="toclink" href="../../2020/11/12/420268/#_2">內文</a></h3>
+<p>剛好有同學問到區域計畫法下非都市土地使用管制之開發影響費，與國土計畫法之國土保育費、影響費的差異，本週專欄整理如下表，供同學們參考：</p>
+<h3 id="t-able_placeholder_1"><a class="toclink" href="../../2020/11/12/420268/#t-able_placeholder_1">• T. ABLE_PLACEHOLDER_1</a></h3>
+<p><em>注：本文圖片存放於 ./images/ 目錄下</em></p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
