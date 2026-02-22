@@ -137,12 +137,12 @@ class SiteGenerator:
   align-items: center;
 }
 
-[href*="category"] {
+[href*="category"]:not(.md-pagination__link) {
   font-size: 0 !important; /* Hide parent text including :material-tag-outline: */
 }
 
-[href*="category"] strong,
-[href*="category"] span {
+[href*="category"]:not(.md-pagination__link) strong,
+[href*="category"]:not(.md-pagination__link) span {
   font-size: 0.9rem !important; /* Restore font size for the actual label */
   margin-left: 4px;
 }
@@ -259,6 +259,75 @@ body {
   background: #7c3aed;
   color: white;
 }
+
+/* ===== Pagination 換頁元件 ===== */
+.md-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.md-pagination__link,
+.md-pagination__current {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* 淺色模式 */
+.md-pagination__link {
+  color: #374151 !important;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.md-pagination__link:hover {
+  color: #7c3aed !important;
+  background: rgba(124, 58, 237, 0.1);
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.15);
+}
+
+.md-pagination__current {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
+}
+
+/* 深色模式 */
+[data-md-color-scheme="slate"] .md-pagination__link {
+  color: #d1d5db !important;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-pagination__link:hover {
+  color: #a78bfa !important;
+  background: rgba(167, 139, 250, 0.15);
+  border-color: #a78bfa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(167, 139, 250, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-pagination__current {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(167, 139, 250, 0.3);
+}
 """
         path.write_text(css, encoding='utf-8')
 
@@ -373,8 +442,41 @@ body {
                 # Fix image paths in body (./images/ -> images/)
                 line = line.replace('(./images/', '(images/')
                 body_lines.append(line)
+        # 清理重複的「文章圖片」區塊：只保留不重複的圖片引用
+        body = '\n'.join(body_lines).strip()
+        body = self._deduplicate_image_sections(body)
+        return metadata, body
 
-        return metadata, '\n'.join(body_lines).strip()
+    def _deduplicate_image_sections(self, body: str) -> str:
+        """清理重複的「## 文章圖片」區塊，合併為單一區塊並去重圖片引用。"""
+        # 用 regex 找出所有 ## 文章圖片 區塊及其後續的圖片引用
+        pattern = r'##\s*文章圖片\s*\n'
+        sections = list(re.finditer(pattern, body))
+        
+        if len(sections) <= 1:
+            return body  # 無重複，不需處理
+        
+        # 收集所有圖片引用（去重）
+        seen_images: set = set()
+        unique_images: list = []
+        
+        # 從第一個 ## 文章圖片 開始到文末，提取所有 ![...](...)
+        first_pos = sections[0].start()
+        image_section_text = body[first_pos:]
+        
+        for match in re.finditer(r'!\[([^\]]*)\]\(([^)]+)\)', image_section_text):
+            img_path = match.group(2)  # 圖片路徑
+            if img_path not in seen_images:
+                seen_images.add(img_path)
+                unique_images.append(f"![{match.group(1)}]({img_path})")
+        
+        # 重建：移除所有文章圖片區塊，在文末附加去重後的單一區塊
+        clean_body = body[:first_pos].rstrip()
+        
+        if unique_images:
+            clean_body += "\n\n## 文章圖片\n\n" + "\n\n".join(unique_images) + "\n"
+        
+        return clean_body
 
     def _collect_all_tags(self) -> Dict[str, int]:
         """Scan all processed articles to collect unique tags and their counts.

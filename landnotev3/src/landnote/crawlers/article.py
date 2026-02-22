@@ -235,16 +235,20 @@ class ArticleCrawler(BaseScraper):
 
         soup = BeautifulSoup(html_content, 'html.parser')
 
-        # 1. 處理圖片
+        # 1. 處理圖片（去重：同一檔名只保留第一次出現）
         image_references = []
-        for index, img in enumerate(soup.find_all('img'), 1):
+        seen_filenames: Set[str] = set()
+        img_counter = 0
+        for img in soup.find_all('img'):
             img_url = img.get('src', '')
             if img_url:
                 local_filename = self.download_image(img_url, article_no)
                 if local_filename:
-                    # 使用相對路徑，假設 Markdown 檔案在 articles_dir 下
-                    image_references.append(f"\n![圖片{index}](./images/{local_filename})\n")
-                    img.replace_with(f"[圖片{index}]")
+                    img_counter += 1
+                    if local_filename not in seen_filenames:
+                        seen_filenames.add(local_filename)
+                        image_references.append(f"\n![圖片{img_counter}](./images/{local_filename})\n")
+                    img.replace_with(f"[圖片{img_counter}]")
                 else:
                     img.replace_with("[圖片下載失敗]")
 
