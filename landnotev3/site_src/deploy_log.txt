@@ -1,0 +1,22 @@
+
+ ????WARNING ??MkDocs 2.0 is incompatible with Material for MkDocs
+ ??
+ ??  MkDocs 1.x is unmaintained. We recommend switching to Zensical, our
+ ??  new static site generator, as soon as possible. We're providing an
+ ??  analysis of the situation in this article:
+ ??  
+ ??  https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
+
+WARNING -  Config value 'plugins': Plugin 'material/blog' option 'recent_posts': Unrecognised configuration name: recent_posts
+WARNING -  Config value 'plugins': Plugin 'material/blog' option 'tags': Unrecognised configuration name: tags
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: C:\Users\user\Documents\GitHub\landnote\landnotev3\site_src\site
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - index.md
+WARNING -  A reference to 'blog/' is included in the 'nav' configuration, which is not found in the documentation files.
+INFO    -  Doc file 'blog/posts/2020-06-25-419078-頞?蝝舫脰??券?蝝舫脖???md' contains an unrecognized relative link '1', it was left as is.
+INFO    -  Documentation built in 50.81 seconds
+INFO    -  Copying 'C:\Users\user\Documents\GitHub\landnote\landnotev3\site_src\site' to 'gh-pages' branch and pushing to GitHub.
+To https://github.com/tomisagoodguy/landnote.git
+   32073894..be546bd8  gh-pages -> gh-pages
+INFO    -  Your documentation should shortly be available at: https://tomisagoodguy.github.io/landnote/

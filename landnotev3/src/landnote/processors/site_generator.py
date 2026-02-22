@@ -129,24 +129,6 @@ class SiteGenerator:
   display: none !important;
 }
 
-/* If the text :material-tag-outline: is visible, hide it. 
-   Support both list style and blog tag style */
-.md-typeset li a, 
-.md-post__tags {
-  display: inline-flex;
-  align-items: center;
-}
-
-[href*="category"]:not(.md-pagination__link) {
-  font-size: 0 !important; /* Hide parent text including :material-tag-outline: */
-}
-
-[href*="category"]:not(.md-pagination__link) strong,
-[href*="category"]:not(.md-pagination__link) span {
-  font-size: 0.9rem !important; /* Restore font size for the actual label */
-  margin-left: 4px;
-}
-
 /* Typography upgrade */
 body {
   font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -242,22 +224,78 @@ body {
 }
 
 /* Custom Tag Cloud */
+.tag-cloud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 960px) {
+  .tag-cloud { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .tag-cloud { grid-template-columns: repeat(2, 1fr); }
+}
+
 .tag-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 0.4rem 0.8rem;
-  margin: 0.25rem;
-  background: rgba(124, 58, 237, 0.1);
-  color: #7c3aed;
-  border-radius: 2rem;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 0.6rem;
   font-weight: 600;
-  font-size: 0.85rem;
-  transition: all 0.2s;
+  font-size: 0.88rem;
+  color: #4c1d95 !important;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tag-item:hover {
-  background: #7c3aed;
-  color: white;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: #ffffff !important;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.tag-item:hover .tag-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.tag-count {
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  background: rgba(124, 58, 237, 0.12);
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7c3aed;
+  transition: all 0.25s;
+}
+
+/* 深色模式標籤雲 */
+[data-md-color-scheme="slate"] .tag-item {
+  background: rgba(167, 139, 250, 0.1);
+  border-color: rgba(167, 139, 250, 0.2);
+  color: #c4b5fd !important;
+}
+
+[data-md-color-scheme="slate"] .tag-item:hover {
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .tag-count {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
 }
 
 /* ===== Pagination 換頁元件 ===== */
@@ -521,7 +559,7 @@ body {
             yaml.dump(authors_map, f, allow_unicode=True, sort_keys=False)
 
     def _generate_tags_page(self, tag_counts: Dict[str, int]):
-        """Generate tags.md with a manual tag cloud link list."""
+        """Generate tags.md with an HTML tag cloud layout (4-5 per row)."""
         sorted_tags = sorted(tag_counts.items(), key=lambda x: x[1], reverse=True)
         
         content = [
@@ -536,19 +574,14 @@ body {
         if not sorted_tags:
             content.append("*(目前尚無標籤資料)*")
         else:
-            # Generate a nice list with counts
-            # In MkDocs Material blog, tags are indexed at /blog/tags/tag-name/
             import urllib.parse
+            content.append('<div class="tag-cloud">')
             for tag, count in sorted_tags:
-                # Use standard URL encoding for non-ASCII tags
-                # MkDocs Material blog uses the raw tag name usually, or slugified
-                # But when categories: true is used, it's blog/category/{tag}/
-                # We should match what MkDocs generates. 
-                # Material usually slugifies to lowercase and replaces spaces with hyphens
                 safe_tag_slug = tag.lower().replace(' ', '-')
                 encoded_tag = urllib.parse.quote(safe_tag_slug)
                 url = f"../blog/category/{encoded_tag}/"
-                content.append(f"-   [🏷️ **{tag}**]({url}) ({count})")
+                content.append(f'  <a href="{url}" class="tag-item">{tag} <span class="tag-count">{count}</span></a>')
+            content.append('</div>')
         
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
 
