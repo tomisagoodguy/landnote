@@ -431,11 +431,16 @@ body {
         else:
             # Generate a nice list with counts
             # In MkDocs Material blog, tags are indexed at /blog/tags/tag-name/
+            import urllib.parse
             for tag, count in sorted_tags:
-                safe_tag = tag.lower().replace(' ', '-')
-                # MkDocs Material Blog default category URL pattern
-                # Use ../ since tags.md is at /tags/ and blog is at /blog/
-                url = f"../blog/category/{safe_tag}/"
+                # Use standard URL encoding for non-ASCII tags
+                # MkDocs Material blog uses the raw tag name usually, or slugified
+                # But when categories: true is used, it's blog/category/{tag}/
+                # We should match what MkDocs generates. 
+                # Material usually slugifies to lowercase and replaces spaces with hyphens
+                safe_tag_slug = tag.lower().replace(' ', '-')
+                encoded_tag = urllib.parse.quote(safe_tag_slug)
+                url = f"../blog/category/{encoded_tag}/"
                 content.append(f"-   [🏷️ **{tag}**]({url}) ({count})")
         
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
@@ -501,6 +506,7 @@ body {
                         'post_url_format': '{date}/{slug}',
                         'archive': True,
                         'categories': True,
+                        'tags': True, # Enable native tags too
                         'recent_posts': 5,
                         'pagination_per_page': 10
                     }
