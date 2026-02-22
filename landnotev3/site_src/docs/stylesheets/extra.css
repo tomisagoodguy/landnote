@@ -51,12 +51,12 @@
   align-items: center;
 }
 
-[href*="category"] {
+[href*="category"]:not(.md-pagination__link) {
   font-size: 0 !important; /* Hide parent text including :material-tag-outline: */
 }
 
-[href*="category"] strong,
-[href*="category"] span {
+[href*="category"]:not(.md-pagination__link) strong,
+[href*="category"]:not(.md-pagination__link) span {
   font-size: 0.9rem !important; /* Restore font size for the actual label */
   margin-left: 4px;
 }
@@ -172,4 +172,73 @@ body {
 .tag-item:hover {
   background: #7c3aed;
   color: white;
+}
+
+/* ===== Pagination 換頁元件 ===== */
+.md-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.md-pagination__link,
+.md-pagination__current {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* 淺色模式 */
+.md-pagination__link {
+  color: #374151 !important;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.md-pagination__link:hover {
+  color: #7c3aed !important;
+  background: rgba(124, 58, 237, 0.1);
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.15);
+}
+
+.md-pagination__current {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
+}
+
+/* 深色模式 */
+[data-md-color-scheme="slate"] .md-pagination__link {
+  color: #d1d5db !important;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-pagination__link:hover {
+  color: #a78bfa !important;
+  background: rgba(167, 139, 250, 0.15);
+  border-color: #a78bfa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(167, 139, 250, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-pagination__current {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(167, 139, 250, 0.3);
 }
