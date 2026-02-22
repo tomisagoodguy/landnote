@@ -377,7 +377,11 @@ body {
         return metadata, '\n'.join(body_lines).strip()
 
     def _collect_all_tags(self) -> Dict[str, int]:
-        """Scan all processed articles to collect unique tags and their counts."""
+        """Scan all processed articles to collect unique tags and their counts.
+        
+        讀取 categories 欄位（排除 'Real Estate'），因為 MkDocs Material Blog
+        plugin 的分類頁面是依 categories 索引，計數必須與之一致。
+        """
         tag_counts = defaultdict(int)
         for file in self.posts_dir.glob("*.md"):
             try:
@@ -386,9 +390,10 @@ body {
                     parts = content.split('---', 2)
                     if len(parts) >= 3:
                         meta = yaml.safe_load(parts[1])
-                        tags = meta.get('tags', [])
-                        for t in tags:
-                            tag_counts[t] += 1
+                        categories = meta.get('categories', [])
+                        for c in categories:
+                            if c != 'Real Estate':
+                                tag_counts[c] += 1
             except:
                 continue
         return dict(tag_counts)
