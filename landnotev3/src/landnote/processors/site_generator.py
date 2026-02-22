@@ -272,8 +272,9 @@ body {
                 content = file_path.read_text(encoding='utf-8')
                 metadata, body = self._parse_article(content)
                 
-                # Construct new filename: YYYY-MM-DD-Title.md to help with sorting
+                # Construct new filename: YYYY-MM-DD-ID-Title.md to help with sorting and ensure uniqueness
                 date_str = str(metadata.get('date', '1970-01-01'))
+                article_id = metadata.get('id', '000000')
                 
                 # Collect author for Site Authors
                 author = metadata.get('author')
@@ -283,7 +284,9 @@ body {
                 # Sanitize title for filename
                 raw_title = metadata.get('title', 'Untitled')
                 safe_title = re.sub(r'[\\/*?:"<>|]', '', raw_title).strip()
-                new_filename = f"{date_str}-{safe_title}.md"
+                # Limit title length in filename
+                safe_title = safe_title[:50]
+                new_filename = f"{date_str}-{article_id}-{safe_title}.md"
                 
                 # Combine categories and tags into categories to ensure indexing by blog plugin
                 categories = ['Real Estate']
@@ -294,7 +297,7 @@ body {
                 frontmatter = {
                     'title': raw_title,
                     'date': metadata.get('date'), 
-                    # 'authors': [author] if author else [], # Disable to avoid build errors
+                    'slug': article_id, # Use ID as slug for cleaner URLs
                     'categories': categories,
                     'tags': tags
                 }
@@ -336,28 +339,29 @@ body {
                     body_started = True
                 elif line.strip().startswith('- '):
                     # Parse info fields
+                    # Handle both half-width ':' and full-width '：'
                     clean_line = line.strip()[2:]
-                    if '作者：' in clean_line:
-                        metadata['author'] = clean_line.split('：')[1].strip()
-                    elif '發布日期：' in clean_line:
-                        date_str = clean_line.split('：')[1].strip()
+                    if '作者' in clean_line and (':' in clean_line or '：' in clean_line):
+                        metadata['author'] = re.split(r'[:：]', clean_line, 1)[1].strip()
+                    elif '文章編號' in clean_line and (':' in clean_line or '：' in clean_line):
+                        metadata['id'] = re.split(r'[:：]', clean_line, 1)[1].strip()
+                    elif '發布日期' in clean_line and (':' in clean_line or '：' in clean_line):
+                        date_part = re.split(r'[:：]', clean_line, 1)[1].strip()
                         # Normalize date
                         try:
-                            if '/' in date_str:
-                                dt = datetime.strptime(date_str, "%Y/%m/%d").date()
-                            elif '-' in date_str:
-                                dt = datetime.strptime(date_str, "%Y-%m-%d").date()
-                            elif '年' in date_str: # 2024年05月07日
-                                dt = datetime.strptime(date_str, "%Y年%m月%d日").date()
+                            # Match YYYY/MM/DD or YYYY-MM-DD
+                            date_match = re.search(r'(\d{4})[/年-](\d{1,2})[/月-](\d{1,2})', date_part)
+                            if date_match:
+                                y, m, d = date_match.groups()
+                                metadata['date'] = datetime(int(y), int(m), int(d)).date()
                             else:
-                                dt = datetime.now().date() # Fallback
-                            metadata['date'] = dt
+                                metadata['date'] = datetime.now().date() # Fallback
                         except:
-                            metadata['date'] = date_str # Fallback to string if parsing fails
-                    elif '關鍵詞：' in clean_line:
-                        kws_part = clean_line.split('：')[1].strip()
+                            metadata['date'] = date_part # Fallback to string if parsing fails
+                    elif '關鍵詞' in clean_line and (':' in clean_line or '：' in clean_line):
+                        kws_part = re.split(r'[:：]', clean_line, 1)[1].strip()
                         # Split by common separators
-                        kws = re.split(r'[,、]', kws_part)
+                        kws = re.split(r'[,、，]', kws_part)
                         metadata['tags'] = [k.strip() for k in kws if k.strip()]
             
             # Decide what to keep in body
