@@ -1,0 +1,4 @@
+作者
+蘇偉強    100
+許文昌    100
+Name: count, dtype: int64
