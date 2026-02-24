@@ -4,1128 +4,1131 @@
 
 ---
 
--   [🏷️ **土地增值稅**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/) (67)
--   [🏷️ **優先購買權**](../blog/category/%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (48)
--   [🏷️ **土地登記**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98/) (40)
--   [🏷️ **共有人**](../blog/category/%E5%85%B1%E6%9C%89%E4%BA%BA/) (25)
--   [🏷️ **地價稅**](../blog/category/%E5%9C%B0%E5%83%B9%E7%A8%85/) (23)
--   [🏷️ **土地徵收**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6/) (21)
--   [🏷️ **登記錯誤**](../blog/category/%E7%99%BB%E8%A8%98%E9%8C%AF%E8%AA%A4/) (20)
--   [🏷️ **地上權**](../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A/) (19)
--   [🏷️ **房地合一所得稅**](../blog/category/%E6%88%BF%E5%9C%B0%E5%90%88%E4%B8%80%E6%89%80%E5%BE%97%E7%A8%85/) (18)
--   [🏷️ **土地法**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95/) (18)
--   [🏷️ **區段徵收**](../blog/category/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/) (18)
--   [🏷️ **都市計畫**](../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB/) (18)
--   [🏷️ **房屋稅**](../blog/category/%E6%88%BF%E5%B1%8B%E7%A8%85/) (17)
--   [🏷️ **市地重劃**](../blog/category/%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83/) (16)
--   [🏷️ **農業用地**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0/) (16)
--   [🏷️ **土地法第34條之1**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC34%E6%A2%9D%E4%B9%8B1/) (14)
--   [🏷️ **更正登記**](../blog/category/%E6%9B%B4%E6%AD%A3%E7%99%BB%E8%A8%98/) (13)
--   [🏷️ **預售屋**](../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B/) (13)
--   [🏷️ **繼承人**](../blog/category/%E7%B9%BC%E6%89%BF%E4%BA%BA/) (12)
--   [🏷️ **繼承登記**](../blog/category/%E7%B9%BC%E6%89%BF%E7%99%BB%E8%A8%98/) (12)
--   [🏷️ **實價登錄**](../blog/category/%E5%AF%A6%E5%83%B9%E7%99%BB%E9%8C%84/) (12)
--   [🏷️ **公共設施保留地**](../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E4%BF%9D%E7%95%99%E5%9C%B0/) (12)
--   [🏷️ **房地合一稅**](../blog/category/%E6%88%BF%E5%9C%B0%E5%90%88%E4%B8%80%E7%A8%85/) (11)
--   [🏷️ **遺產稅**](../blog/category/%E9%81%BA%E7%94%A2%E7%A8%85/) (11)
--   [🏷️ **全國國土計畫**](../blog/category/%E5%85%A8%E5%9C%8B%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB/) (11)
--   [🏷️ **土地所有權**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A/) (10)
--   [🏷️ **典權**](../blog/category/%E5%85%B8%E6%AC%8A/) (10)
--   [🏷️ **信託**](../blog/category/%E4%BF%A1%E8%A8%97/) (10)
--   [🏷️ **地價**](../blog/category/%E5%9C%B0%E5%83%B9/) (9)
--   [🏷️ **土地法第104條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC104%E6%A2%9D/) (9)
--   [🏷️ **損害賠償**](../blog/category/%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/) (8)
--   [🏷️ **平均地權條例**](../blog/category/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A%E6%A2%9D%E4%BE%8B/) (8)
--   [🏷️ **地政士**](../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB/) (8)
--   [🏷️ **不動產**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2/) (8)
--   [🏷️ **國土計畫法**](../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E6%B3%95/) (8)
--   [🏷️ **農地**](../blog/category/%E8%BE%B2%E5%9C%B0/) (8)
--   [🏷️ **所有權人**](../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/) (8)
--   [🏷️ **多數決**](../blog/category/%E5%A4%9A%E6%95%B8%E6%B1%BA/) (8)
--   [🏷️ **贈與稅**](../blog/category/%E8%B4%88%E8%88%87%E7%A8%85/) (8)
--   [🏷️ **土地利用與土地政策**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E8%88%87%E5%9C%9F%E5%9C%B0%E6%94%BF%E7%AD%96/) (8)
--   [🏷️ **土地法規**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E8%A6%8F/) (7)
--   [🏷️ **土地徵收條例**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6%E6%A2%9D%E4%BE%8B/) (7)
--   [🏷️ **不動產經紀人**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E4%BA%BA/) (7)
--   [🏷️ **不動產估價**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9/) (7)
--   [🏷️ **國土計畫**](../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB/) (7)
--   [🏷️ **容積移轉**](../blog/category/%E5%AE%B9%E7%A9%8D%E7%A7%BB%E8%BD%89/) (7)
--   [🏷️ **土地**](../blog/category/%E5%9C%9F%E5%9C%B0/) (7)
--   [🏷️ **房地合一**](../blog/category/%E6%88%BF%E5%9C%B0%E5%90%88%E4%B8%80/) (7)
--   [🏷️ **土地所有權人**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/) (7)
--   [🏷️ **照價收買**](../blog/category/%E7%85%A7%E5%83%B9%E6%94%B6%E8%B2%B7/) (6)
--   [🏷️ **徵收補償**](../blog/category/%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F/) (6)
--   [🏷️ **契稅**](../blog/category/%E5%A5%91%E7%A8%85/) (6)
--   [🏷️ **區域計畫法**](../blog/category/%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB%E6%B3%95/) (6)
--   [🏷️ **信託財產**](../blog/category/%E4%BF%A1%E8%A8%97%E8%B2%A1%E7%94%A2/) (6)
--   [🏷️ **所有權**](../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A/) (6)
--   [🏷️ **登記**](../blog/category/%E7%99%BB%E8%A8%98/) (6)
--   [🏷️ **優先購買**](../blog/category/%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7/) (6)
--   [🏷️ **土地登記規則**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E8%A6%8F%E5%89%87/) (6)
--   [🏷️ **定型化契約**](../blog/category/%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/) (6)
--   [🏷️ **耕地**](../blog/category/%E8%80%95%E5%9C%B0/) (6)
--   [🏷️ **都市更新**](../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0/) (6)
--   [🏷️ **所得稅**](../blog/category/%E6%89%80%E5%BE%97%E7%A8%85/) (6)
--   [🏷️ **公寓大廈**](../blog/category/%E5%85%AC%E5%AF%93%E5%A4%A7%E5%BB%88/) (6)
--   [🏷️ **公共設施**](../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD/) (6)
--   [🏷️ **非都市土地**](../blog/category/%E9%9D%9E%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0/) (6)
--   [🏷️ **財產權**](../blog/category/%E8%B2%A1%E7%94%A2%E6%AC%8A/) (6)
--   [🏷️ **建物所有權**](../blog/category/%E5%BB%BA%E7%89%A9%E6%89%80%E6%9C%89%E6%AC%8A/) (5)
--   [🏷️ **重購**](../blog/category/%E9%87%8D%E8%B3%BC/) (5)
--   [🏷️ **退稅**](../blog/category/%E9%80%80%E7%A8%85/) (5)
--   [🏷️ **公告地價**](../blog/category/%E5%85%AC%E5%91%8A%E5%9C%B0%E5%83%B9/) (5)
--   [🏷️ **不動產市場**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%B8%82%E5%A0%B4/) (5)
--   [🏷️ **信託行為**](../blog/category/%E4%BF%A1%E8%A8%97%E8%A1%8C%E7%82%BA/) (5)
--   [🏷️ **不動產估價師**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%B8%AB/) (5)
--   [🏷️ **囤房稅**](../blog/category/%E5%9B%A4%E6%88%BF%E7%A8%85/) (5)
--   [🏷️ **原始取得**](../blog/category/%E5%8E%9F%E5%A7%8B%E5%8F%96%E5%BE%97/) (5)
--   [🏷️ **繼受取得**](../blog/category/%E7%B9%BC%E5%8F%97%E5%8F%96%E5%BE%97/) (5)
--   [🏷️ **土地現值**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%8F%BE%E5%80%BC/) (5)
--   [🏷️ **公同共有**](../blog/category/%E5%85%AC%E5%90%8C%E5%85%B1%E6%9C%89/) (5)
--   [🏷️ **都市更新條例**](../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E6%A2%9D%E4%BE%8B/) (5)
--   [🏷️ **遺產**](../blog/category/%E9%81%BA%E7%94%A2/) (5)
--   [🏷️ **稅捐稽徵法**](../blog/category/%E7%A8%85%E6%8D%90%E7%A8%BD%E5%BE%B5%E6%B3%95/) (5)
--   [🏷️ **特別犧牲**](../blog/category/%E7%89%B9%E5%88%A5%E7%8A%A7%E7%89%B2/) (5)
--   [🏷️ **請求權**](../blog/category/%E8%AB%8B%E6%B1%82%E6%AC%8A/) (5)
--   [🏷️ **信託法**](../blog/category/%E4%BF%A1%E8%A8%97%E6%B3%95/) (5)
--   [🏷️ **優先承買權**](../blog/category/%E5%84%AA%E5%85%88%E6%89%BF%E8%B2%B7%E6%AC%8A/) (4)
--   [🏷️ **共有優先購買權**](../blog/category/%E5%85%B1%E6%9C%89%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (4)
--   [🏷️ **稅率**](../blog/category/%E7%A8%85%E7%8E%87/) (4)
--   [🏷️ **房價高漲**](../blog/category/%E6%88%BF%E5%83%B9%E9%AB%98%E6%BC%B2/) (4)
--   [🏷️ **土地政策**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%94%BF%E7%AD%96/) (4)
--   [🏷️ **塗銷登記**](../blog/category/%E5%A1%97%E9%8A%B7%E7%99%BB%E8%A8%98/) (4)
--   [🏷️ **借名登記**](../blog/category/%E5%80%9F%E5%90%8D%E7%99%BB%E8%A8%98/) (4)
--   [🏷️ **土地法第12條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC12%E6%A2%9D/) (4)
--   [🏷️ **通貨膨脹**](../blog/category/%E9%80%9A%E8%B2%A8%E8%86%A8%E8%84%B9/) (4)
--   [🏷️ **抵押權**](../blog/category/%E6%8A%B5%E6%8A%BC%E6%AC%8A/) (4)
--   [🏷️ **租賃住宅**](../blog/category/%E7%A7%9F%E8%B3%83%E4%BD%8F%E5%AE%85/) (4)
--   [🏷️ **受益人**](../blog/category/%E5%8F%97%E7%9B%8A%E4%BA%BA/) (4)
--   [🏷️ **受託人**](../blog/category/%E5%8F%97%E8%A8%97%E4%BA%BA/) (4)
--   [🏷️ **委託人**](../blog/category/%E5%A7%94%E8%A8%97%E4%BA%BA/) (4)
--   [🏷️ **累進稅**](../blog/category/%E7%B4%AF%E9%80%B2%E7%A8%85/) (4)
--   [🏷️ **納稅義務人**](../blog/category/%E7%B4%8D%E7%A8%85%E7%BE%A9%E5%8B%99%E4%BA%BA/) (4)
--   [🏷️ **土地稅**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85/) (4)
--   [🏷️ **租賃權**](../blog/category/%E7%A7%9F%E8%B3%83%E6%AC%8A/) (4)
--   [🏷️ **預告登記**](../blog/category/%E9%A0%90%E5%91%8A%E7%99%BB%E8%A8%98/) (4)
--   [🏷️ **稅基**](../blog/category/%E7%A8%85%E5%9F%BA/) (4)
--   [🏷️ **興建農舍**](../blog/category/%E8%88%88%E5%BB%BA%E8%BE%B2%E8%88%8D/) (4)
--   [🏷️ **共有物**](../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9/) (4)
--   [🏷️ **租稅**](../blog/category/%E7%A7%9F%E7%A8%85/) (4)
--   [🏷️ **土地稅法**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95/) (4)
--   [🏷️ **消費者**](../blog/category/%E6%B6%88%E8%B2%BB%E8%80%85/) (4)
--   [🏷️ **登記遺漏**](../blog/category/%E7%99%BB%E8%A8%98%E9%81%BA%E6%BC%8F/) (4)
--   [🏷️ **區段地價**](../blog/category/%E5%8D%80%E6%AE%B5%E5%9C%B0%E5%83%B9/) (4)
--   [🏷️ **配偶**](../blog/category/%E9%85%8D%E5%81%B6/) (4)
--   [🏷️ **市場失靈**](../blog/category/%E5%B8%82%E5%A0%B4%E5%A4%B1%E9%9D%88/) (4)
--   [🏷️ **容積獎勵**](../blog/category/%E5%AE%B9%E7%A9%8D%E7%8D%8E%E5%8B%B5/) (4)
--   [🏷️ **房價**](../blog/category/%E6%88%BF%E5%83%B9/) (3)
--   [🏷️ **房市泡沫**](../blog/category/%E6%88%BF%E5%B8%82%E6%B3%A1%E6%B2%AB/) (3)
--   [🏷️ **錯誤登記**](../blog/category/%E9%8C%AF%E8%AA%A4%E7%99%BB%E8%A8%98/) (3)
--   [🏷️ **公告土地現值**](../blog/category/%E5%85%AC%E5%91%8A%E5%9C%9F%E5%9C%B0%E7%8F%BE%E5%80%BC/) (3)
--   [🏷️ **溫室氣體**](../blog/category/%E6%BA%AB%E5%AE%A4%E6%B0%A3%E9%AB%94/) (3)
--   [🏷️ **土地利用**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8/) (3)
--   [🏷️ **聯合行為**](../blog/category/%E8%81%AF%E5%90%88%E8%A1%8C%E7%82%BA/) (3)
--   [🏷️ **收回權**](../blog/category/%E6%94%B6%E5%9B%9E%E6%AC%8A/) (3)
--   [🏷️ **處分**](../blog/category/%E8%99%95%E5%88%86/) (3)
--   [🏷️ **物權效力**](../blog/category/%E7%89%A9%E6%AC%8A%E6%95%88%E5%8A%9B/) (3)
--   [🏷️ **碳足跡**](../blog/category/%E7%A2%B3%E8%B6%B3%E8%B7%A1/) (3)
--   [🏷️ **債權效力**](../blog/category/%E5%82%B5%E6%AC%8A%E6%95%88%E5%8A%9B/) (3)
--   [🏷️ **共有土地分割**](../blog/category/%E5%85%B1%E6%9C%89%E5%9C%9F%E5%9C%B0%E5%88%86%E5%89%B2/) (3)
--   [🏷️ **共有土地合併**](../blog/category/%E5%85%B1%E6%9C%89%E5%9C%9F%E5%9C%B0%E5%90%88%E4%BD%B5/) (3)
--   [🏷️ **農舍**](../blog/category/%E8%BE%B2%E8%88%8D/) (3)
--   [🏷️ **農業發展條例**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95%E6%A2%9D%E4%BE%8B/) (3)
--   [🏷️ **繼承**](../blog/category/%E7%B9%BC%E6%89%BF/) (3)
--   [🏷️ **共有物分割**](../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9%E5%88%86%E5%89%B2/) (3)
--   [🏷️ **基地**](../blog/category/%E5%9F%BA%E5%9C%B0/) (3)
--   [🏷️ **危老條例**](../blog/category/%E5%8D%B1%E8%80%81%E6%A2%9D%E4%BE%8B/) (3)
--   [🏷️ **開發許可**](../blog/category/%E9%96%8B%E7%99%BC%E8%A8%B1%E5%8F%AF/) (3)
--   [🏷️ **土地法第三十四條之一**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E6%A2%9D%E4%B9%8B%E4%B8%80/) (3)
--   [🏷️ **發展權**](../blog/category/%E7%99%BC%E5%B1%95%E6%AC%8A/) (3)
--   [🏷️ **分管契約**](../blog/category/%E5%88%86%E7%AE%A1%E5%A5%91%E7%B4%84/) (3)
--   [🏷️ **土地參考資訊檔**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%8F%83%E8%80%83%E8%B3%87%E8%A8%8A%E6%AA%94/) (3)
--   [🏷️ **建物**](../blog/category/%E5%BB%BA%E7%89%A9/) (3)
--   [🏷️ **遺贈**](../blog/category/%E9%81%BA%E8%B4%88/) (3)
--   [🏷️ **地主**](../blog/category/%E5%9C%B0%E4%B8%BB/) (3)
--   [🏷️ **三七五租約**](../blog/category/%E4%B8%89%E4%B8%83%E4%BA%94%E7%A7%9F%E7%B4%84/) (3)
--   [🏷️ **區域計畫**](../blog/category/%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB/) (3)
--   [🏷️ **土地重劃**](../blog/category/%E5%9C%9F%E5%9C%B0%E9%87%8D%E5%8A%83/) (3)
--   [🏷️ **抵費地**](../blog/category/%E6%8A%B5%E8%B2%BB%E5%9C%B0/) (3)
--   [🏷️ **土地法第34條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC34%E6%A2%9D/) (3)
--   [🏷️ **免徵**](../blog/category/%E5%85%8D%E5%BE%B5/) (3)
--   [🏷️ **遺產及贈與稅法**](../blog/category/%E9%81%BA%E7%94%A2%E5%8F%8A%E8%B4%88%E8%88%87%E7%A8%85%E6%B3%95/) (3)
--   [🏷️ **土地法34-1**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%9534-1/) (3)
--   [🏷️ **信託登記**](../blog/category/%E4%BF%A1%E8%A8%97%E7%99%BB%E8%A8%98/) (3)
--   [🏷️ **平均地權**](../blog/category/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A/) (3)
--   [🏷️ **地政士法**](../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB%E6%B3%95/) (3)
--   [🏷️ **自用住宅**](../blog/category/%E8%87%AA%E7%94%A8%E4%BD%8F%E5%AE%85/) (3)
--   [🏷️ **地政士考試**](../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB%E8%80%83%E8%A9%A6/) (3)
--   [🏷️ **不動產投資分析**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%95%E8%B3%87%E5%88%86%E6%9E%90/) (3)
--   [🏷️ **註記登記**](../blog/category/%E8%A8%BB%E8%A8%98%E7%99%BB%E8%A8%98/) (3)
--   [🏷️ **申報地價**](../blog/category/%E7%94%B3%E5%A0%B1%E5%9C%B0%E5%83%B9/) (3)
--   [🏷️ **重新規定地價**](../blog/category/%E9%87%8D%E6%96%B0%E8%A6%8F%E5%AE%9A%E5%9C%B0%E5%83%B9/) (3)
--   [🏷️ **土地合併**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%90%88%E4%BD%B5/) (3)
--   [🏷️ **剩餘財產**](../blog/category/%E5%89%A9%E9%A4%98%E8%B2%A1%E7%94%A2/) (3)
--   [🏷️ **都市發展**](../blog/category/%E9%83%BD%E5%B8%82%E7%99%BC%E5%B1%95/) (3)
--   [🏷️ **土地分割**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%86%E5%89%B2/) (3)
--   [🏷️ **地號**](../blog/category/%E5%9C%B0%E8%99%9F/) (3)
--   [🏷️ **建號**](../blog/category/%E5%BB%BA%E8%99%9F/) (3)
--   [🏷️ **贈與**](../blog/category/%E8%B4%88%E8%88%87/) (3)
--   [🏷️ **公共設施用地**](../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E7%94%A8%E5%9C%B0/) (3)
--   [🏷️ **信託利益**](../blog/category/%E4%BF%A1%E8%A8%97%E5%88%A9%E7%9B%8A/) (3)
--   [🏷️ **不課徵**](../blog/category/%E4%B8%8D%E8%AA%B2%E5%BE%B5/) (3)
--   [🏷️ **記存**](../blog/category/%E8%A8%98%E5%AD%98/) (3)
--   [🏷️ **不動產役權**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%BD%B9%E6%AC%8A/) (3)
--   [🏷️ **公平交易法**](../blog/category/%E5%85%AC%E5%B9%B3%E4%BA%A4%E6%98%93%E6%B3%95/) (3)
--   [🏷️ **自住**](../blog/category/%E8%87%AA%E4%BD%8F/) (3)
--   [🏷️ **消費者保護法**](../blog/category/%E6%B6%88%E8%B2%BB%E8%80%85%E4%BF%9D%E8%AD%B7%E6%B3%95/) (3)
--   [🏷️ **不動產經紀業管理條例**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD%E7%AE%A1%E7%90%86%E6%A2%9D%E4%BE%8B/) (3)
--   [🏷️ **抵價地**](../blog/category/%E6%8A%B5%E5%83%B9%E5%9C%B0/) (3)
--   [🏷️ **移轉登記**](../blog/category/%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/) (2)
--   [🏷️ **土地總登記**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%B8%BD%E7%99%BB%E8%A8%98/) (2)
--   [🏷️ **市場機制**](../blog/category/%E5%B8%82%E5%A0%B4%E6%A9%9F%E5%88%B6/) (2)
--   [🏷️ **測量錯誤**](../blog/category/%E6%B8%AC%E9%87%8F%E9%8C%AF%E8%AA%A4/) (2)
--   [🏷️ **拋棄繼承**](../blog/category/%E6%8B%8B%E6%A3%84%E7%B9%BC%E6%89%BF/) (2)
--   [🏷️ **土地面積**](../blog/category/%E5%9C%9F%E5%9C%B0%E9%9D%A2%E7%A9%8D/) (2)
--   [🏷️ **公寓大廈管理條例**](../blog/category/%E5%85%AC%E5%AF%93%E5%A4%A7%E5%BB%88%E7%AE%A1%E7%90%86%E6%A2%9D%E4%BE%8B/) (2)
--   [🏷️ **土地徵用**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E7%94%A8/) (2)
--   [🏷️ **地方特考**](../blog/category/%E5%9C%B0%E6%96%B9%E7%89%B9%E8%80%83/) (2)
--   [🏷️ **空地限建**](../blog/category/%E7%A9%BA%E5%9C%B0%E9%99%90%E5%BB%BA/) (2)
--   [🏷️ **空地稅**](../blog/category/%E7%A9%BA%E5%9C%B0%E7%A8%85/) (2)
--   [🏷️ **房地市場價格**](../blog/category/%E6%88%BF%E5%9C%B0%E5%B8%82%E5%A0%B4%E5%83%B9%E6%A0%BC/) (2)
--   [🏷️ **地上權登記**](../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A%E7%99%BB%E8%A8%98/) (2)
--   [🏷️ **自住房屋**](../blog/category/%E8%87%AA%E4%BD%8F%E6%88%BF%E5%B1%8B/) (2)
--   [🏷️ **撤銷徵收**](../blog/category/%E6%92%A4%E9%8A%B7%E5%BE%B5%E6%94%B6/) (2)
--   [🏷️ **廢止徵收**](../blog/category/%E5%BB%A2%E6%AD%A2%E5%BE%B5%E6%94%B6/) (2)
--   [🏷️ **碳權**](../blog/category/%E7%A2%B3%E6%AC%8A/) (2)
--   [🏷️ **排放量**](../blog/category/%E6%8E%92%E6%94%BE%E9%87%8F/) (2)
--   [🏷️ **存續保障**](../blog/category/%E5%AD%98%E7%BA%8C%E4%BF%9D%E9%9A%9C/) (2)
--   [🏷️ **價值保障**](../blog/category/%E5%83%B9%E5%80%BC%E4%BF%9D%E9%9A%9C/) (2)
--   [🏷️ **信託關係消滅**](../blog/category/%E4%BF%A1%E8%A8%97%E9%97%9C%E4%BF%82%E6%B6%88%E6%BB%85/) (2)
--   [🏷️ **信託關係**](../blog/category/%E4%BF%A1%E8%A8%97%E9%97%9C%E4%BF%82/) (2)
--   [🏷️ **程序正義**](../blog/category/%E7%A8%8B%E5%BA%8F%E6%AD%A3%E7%BE%A9/) (2)
--   [🏷️ **共同約束**](../blog/category/%E5%85%B1%E5%90%8C%E7%B4%84%E6%9D%9F/) (2)
--   [🏷️ **債權行為**](../blog/category/%E5%82%B5%E6%AC%8A%E8%A1%8C%E7%82%BA/) (2)
--   [🏷️ **負擔行為**](../blog/category/%E8%B2%A0%E6%93%94%E8%A1%8C%E7%82%BA/) (2)
--   [🏷️ **物權行為**](../blog/category/%E7%89%A9%E6%AC%8A%E8%A1%8C%E7%82%BA/) (2)
--   [🏷️ **平民住宅**](../blog/category/%E5%B9%B3%E6%B0%91%E4%BD%8F%E5%AE%85/) (2)
--   [🏷️ **補償地價**](../blog/category/%E8%A3%9C%E5%84%9F%E5%9C%B0%E5%83%B9/) (2)
--   [🏷️ **借名登記契約**](../blog/category/%E5%80%9F%E5%90%8D%E7%99%BB%E8%A8%98%E5%A5%91%E7%B4%84/) (2)
--   [🏷️ **借名人**](../blog/category/%E5%80%9F%E5%90%8D%E4%BA%BA/) (2)
--   [🏷️ **出名人**](../blog/category/%E5%87%BA%E5%90%8D%E4%BA%BA/) (2)
--   [🏷️ **農民**](../blog/category/%E8%BE%B2%E6%B0%91/) (2)
--   [🏷️ **農業用地興建農舍辦法**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0%E8%88%88%E5%BB%BA%E8%BE%B2%E8%88%8D%E8%BE%A6%E6%B3%95/) (2)
--   [🏷️ **大陸地區人民在臺灣地區取得設定或移轉不動產物權許可辦法**](../blog/category/%E5%A4%A7%E9%99%B8%E5%9C%B0%E5%8D%80%E4%BA%BA%E6%B0%91%E5%9C%A8%E8%87%BA%E7%81%A3%E5%9C%B0%E5%8D%80%E5%8F%96%E5%BE%97%E8%A8%AD%E5%AE%9A%E6%88%96%E7%A7%BB%E8%BD%89%E4%B8%8D%E5%8B%95%E7%94%A2%E7%89%A9%E6%AC%8A%E8%A8%B1%E5%8F%AF%E8%BE%A6%E6%B3%95/) (2)
--   [🏷️ **炒房**](../blog/category/%E7%82%92%E6%88%BF/) (2)
--   [🏷️ **受贈**](../blog/category/%E5%8F%97%E8%B4%88/) (2)
--   [🏷️ **土地浮覆**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B5%AE%E8%A6%86/) (2)
--   [🏷️ **不動產價格**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%83%B9%E6%A0%BC/) (2)
--   [🏷️ **租賃契約**](../blog/category/%E7%A7%9F%E8%B3%83%E5%A5%91%E7%B4%84/) (2)
--   [🏷️ **土地複丈**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%A4%87%E4%B8%88/) (2)
--   [🏷️ **合併分割**](../blog/category/%E5%90%88%E4%BD%B5%E5%88%86%E5%89%B2/) (2)
--   [🏷️ **工業用地**](../blog/category/%E5%B7%A5%E6%A5%AD%E7%94%A8%E5%9C%B0/) (2)
--   [🏷️ **土地權利**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%E5%88%A9/) (2)
--   [🏷️ **實質審查**](../blog/category/%E5%AF%A6%E8%B3%AA%E5%AF%A9%E6%9F%A5/) (2)
--   [🏷️ **形式審查**](../blog/category/%E5%BD%A2%E5%BC%8F%E5%AF%A9%E6%9F%A5/) (2)
--   [🏷️ **空地**](../blog/category/%E7%A9%BA%E5%9C%B0/) (2)
--   [🏷️ **生態足跡**](../blog/category/%E7%94%9F%E6%85%8B%E8%B6%B3%E8%B7%A1/) (2)
--   [🏷️ **分區管制**](../blog/category/%E5%88%86%E5%8D%80%E7%AE%A1%E5%88%B6/) (2)
--   [🏷️ **私有土地**](../blog/category/%E7%A7%81%E6%9C%89%E5%9C%9F%E5%9C%B0/) (2)
--   [🏷️ **停車位產權**](../blog/category/%E5%81%9C%E8%BB%8A%E4%BD%8D%E7%94%A2%E6%AC%8A/) (2)
--   [🏷️ **不妨礙原登記之同一性**](../blog/category/%E4%B8%8D%E5%A6%A8%E7%A4%99%E5%8E%9F%E7%99%BB%E8%A8%98%E4%B9%8B%E5%90%8C%E4%B8%80%E6%80%A7/) (2)
--   [🏷️ **免稅額**](../blog/category/%E5%85%8D%E7%A8%85%E9%A1%8D/) (2)
--   [🏷️ **私契**](../blog/category/%E7%A7%81%E5%A5%91/) (2)
--   [🏷️ **公契**](../blog/category/%E5%85%AC%E5%A5%91/) (2)
--   [🏷️ **合法使用人**](../blog/category/%E5%90%88%E6%B3%95%E4%BD%BF%E7%94%A8%E4%BA%BA/) (2)
--   [🏷️ **其他共有人**](../blog/category/%E5%85%B6%E4%BB%96%E5%85%B1%E6%9C%89%E4%BA%BA/) (2)
--   [🏷️ **回復請求權**](../blog/category/%E5%9B%9E%E5%BE%A9%E8%AB%8B%E6%B1%82%E6%AC%8A/) (2)
--   [🏷️ **申報移轉現值**](../blog/category/%E7%94%B3%E5%A0%B1%E7%A7%BB%E8%BD%89%E7%8F%BE%E5%80%BC/) (2)
--   [🏷️ **一般徵收**](../blog/category/%E4%B8%80%E8%88%AC%E5%BE%B5%E6%94%B6/) (2)
--   [🏷️ **新建成屋**](../blog/category/%E6%96%B0%E5%BB%BA%E6%88%90%E5%B1%8B/) (2)
--   [🏷️ **買賣契約**](../blog/category/%E8%B2%B7%E8%B3%A3%E5%A5%91%E7%B4%84/) (2)
--   [🏷️ **先行區段徵收**](../blog/category/%E5%85%88%E8%A1%8C%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/) (2)
--   [🏷️ **耕地三七五減租條例**](../blog/category/%E8%80%95%E5%9C%B0%E4%B8%89%E4%B8%83%E4%BA%94%E6%B8%9B%E7%A7%9F%E6%A2%9D%E4%BE%8B/) (2)
--   [🏷️ **共有不動產**](../blog/category/%E5%85%B1%E6%9C%89%E4%B8%8D%E5%8B%95%E7%94%A2/) (2)
--   [🏷️ **信託法概要**](../blog/category/%E4%BF%A1%E8%A8%97%E6%B3%95%E6%A6%82%E8%A6%81/) (2)
--   [🏷️ **有償讓與**](../blog/category/%E6%9C%89%E5%84%9F%E8%AE%93%E8%88%87/) (2)
--   [🏷️ **耕地租佃**](../blog/category/%E8%80%95%E5%9C%B0%E7%A7%9F%E4%BD%83/) (2)
--   [🏷️ **租約**](../blog/category/%E7%A7%9F%E7%B4%84/) (2)
--   [🏷️ **權利變換**](../blog/category/%E6%AC%8A%E5%88%A9%E8%AE%8A%E6%8F%9B/) (2)
--   [🏷️ **環境保護**](../blog/category/%E7%92%B0%E5%A2%83%E4%BF%9D%E8%AD%B7/) (2)
--   [🏷️ **停滯性通貨膨脹**](../blog/category/%E5%81%9C%E6%BB%AF%E6%80%A7%E9%80%9A%E8%B2%A8%E8%86%A8%E8%84%B9/) (2)
--   [🏷️ **民法**](../blog/category/%E6%B0%91%E6%B3%95/) (2)
--   [🏷️ **規約**](../blog/category/%E8%A6%8F%E7%B4%84/) (2)
--   [🏷️ **地籍測量**](../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%AC%E9%87%8F/) (2)
--   [🏷️ **重複課稅**](../blog/category/%E9%87%8D%E8%A4%87%E8%AA%B2%E7%A8%85/) (2)
--   [🏷️ **稅額**](../blog/category/%E7%A8%85%E9%A1%8D/) (2)
--   [🏷️ **公眾通行**](../blog/category/%E5%85%AC%E7%9C%BE%E9%80%9A%E8%A1%8C/) (2)
--   [🏷️ **指界**](../blog/category/%E6%8C%87%E7%95%8C/) (2)
--   [🏷️ **重購退稅**](../blog/category/%E9%87%8D%E8%B3%BC%E9%80%80%E7%A8%85/) (2)
--   [🏷️ **相當補償**](../blog/category/%E7%9B%B8%E7%95%B6%E8%A3%9C%E5%84%9F/) (2)
--   [🏷️ **完全補償**](../blog/category/%E5%AE%8C%E5%85%A8%E8%A3%9C%E5%84%9F/) (2)
--   [🏷️ **虛偽登記**](../blog/category/%E8%99%9B%E5%81%BD%E7%99%BB%E8%A8%98/) (2)
--   [🏷️ **信託契約**](../blog/category/%E4%BF%A1%E8%A8%97%E5%A5%91%E7%B4%84/) (2)
--   [🏷️ **屋簷**](../blog/category/%E5%B1%8B%E7%B0%B7/) (2)
--   [🏷️ **比較標**](../blog/category/%E6%AF%94%E8%BC%83%E6%A8%99/) (2)
--   [🏷️ **不動產經紀相關法規概要**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E7%9B%B8%E9%97%9C%E6%B3%95%E8%A6%8F%E6%A6%82%E8%A6%81/) (2)
--   [🏷️ **既成道路**](../blog/category/%E6%97%A2%E6%88%90%E9%81%93%E8%B7%AF/) (2)
--   [🏷️ **所有權移轉**](../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E7%A7%BB%E8%BD%89/) (2)
--   [🏷️ **土地稅法規**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95%E8%A6%8F/) (2)
--   [🏷️ **建造執照**](../blog/category/%E5%BB%BA%E9%80%A0%E5%9F%B7%E7%85%A7/) (2)
--   [🏷️ **誠信原則**](../blog/category/%E8%AA%A0%E4%BF%A1%E5%8E%9F%E5%89%87/) (2)
--   [🏷️ **地方創生**](../blog/category/%E5%9C%B0%E6%96%B9%E5%89%B5%E7%94%9F/) (2)
--   [🏷️ **土地利用法規**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E6%B3%95%E8%A6%8F/) (2)
--   [🏷️ **不課徵土地增值稅**](../blog/category/%E4%B8%8D%E8%AA%B2%E5%BE%B5%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/) (2)
--   [🏷️ **違章建築**](../blog/category/%E9%81%95%E7%AB%A0%E5%BB%BA%E7%AF%89/) (2)
--   [🏷️ **所有權住宅**](../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E4%BD%8F%E5%AE%85/) (2)
--   [🏷️ **地上權住宅**](../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A%E4%BD%8F%E5%AE%85/) (2)
--   [🏷️ **使用權住宅**](../blog/category/%E4%BD%BF%E7%94%A8%E6%AC%8A%E4%BD%8F%E5%AE%85/) (2)
--   [🏷️ **規定地價**](../blog/category/%E8%A6%8F%E5%AE%9A%E5%9C%B0%E5%83%B9/) (2)
--   [🏷️ **照價徵稅**](../blog/category/%E7%85%A7%E5%83%B9%E5%BE%B5%E7%A8%85/) (2)
--   [🏷️ **漲價歸公**](../blog/category/%E6%BC%B2%E5%83%B9%E6%AD%B8%E5%85%AC/) (2)
--   [🏷️ **交通用地**](../blog/category/%E4%BA%A4%E9%80%9A%E7%94%A8%E5%9C%B0/) (2)
--   [🏷️ **滯納金**](../blog/category/%E6%BB%AF%E7%B4%8D%E9%87%91/) (2)
--   [🏷️ **調解**](../blog/category/%E8%AA%BF%E8%A7%A3/) (2)
--   [🏷️ **農業**](../blog/category/%E8%BE%B2%E6%A5%AD/) (2)
--   [🏷️ **共用地悲劇**](../blog/category/%E5%85%B1%E7%94%A8%E5%9C%B0%E6%82%B2%E5%8A%87/) (2)
--   [🏷️ **租賃**](../blog/category/%E7%A7%9F%E8%B3%83/) (2)
--   [🏷️ **農業發展**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95/) (2)
--   [🏷️ **現金補償**](../blog/category/%E7%8F%BE%E9%87%91%E8%A3%9C%E5%84%9F/) (2)
--   [🏷️ **抵價地補償**](../blog/category/%E6%8A%B5%E5%83%B9%E5%9C%B0%E8%A3%9C%E5%84%9F/) (2)
--   [🏷️ **私權爭執**](../blog/category/%E7%A7%81%E6%AC%8A%E7%88%AD%E5%9F%B7/) (2)
--   [🏷️ **釋字774**](../blog/category/%E9%87%8B%E5%AD%97774/) (2)
--   [🏷️ **選擇權**](../blog/category/%E9%81%B8%E6%93%87%E6%AC%8A/) (2)
--   [🏷️ **農業用地租賃**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0%E7%A7%9F%E8%B3%83/) (2)
--   [🏷️ **共有土地**](../blog/category/%E5%85%B1%E6%9C%89%E5%9C%9F%E5%9C%B0/) (2)
--   [🏷️ **書面通知**](../blog/category/%E6%9B%B8%E9%9D%A2%E9%80%9A%E7%9F%A5/) (2)
--   [🏷️ **浮覆地**](../blog/category/%E6%B5%AE%E8%A6%86%E5%9C%B0/) (2)
--   [🏷️ **租賃住宅市場發展及管理條例**](../blog/category/%E7%A7%9F%E8%B3%83%E4%BD%8F%E5%AE%85%E5%B8%82%E5%A0%B4%E7%99%BC%E5%B1%95%E5%8F%8A%E7%AE%A1%E7%90%86%E6%A2%9D%E4%BE%8B/) (2)
--   [🏷️ **容積**](../blog/category/%E5%AE%B9%E7%A9%8D/) (2)
--   [🏷️ **原地價**](../blog/category/%E5%8E%9F%E5%9C%B0%E5%83%B9/) (2)
--   [🏷️ **工程受益費**](../blog/category/%E5%B7%A5%E7%A8%8B%E5%8F%97%E7%9B%8A%E8%B2%BB/) (2)
--   [🏷️ **損失補償**](../blog/category/%E6%90%8D%E5%A4%B1%E8%A3%9C%E5%84%9F/) (2)
--   [🏷️ **地籍測量實施規則**](../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%AC%E9%87%8F%E5%AF%A6%E6%96%BD%E8%A6%8F%E5%89%87/) (2)
--   [🏷️ **過失**](../blog/category/%E9%81%8E%E5%A4%B1/) (2)
--   [🏷️ **土地法第25條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC25%E6%A2%9D/) (2)
--   [🏷️ **自辦市地重劃**](../blog/category/%E8%87%AA%E8%BE%A6%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83/) (2)
--   [🏷️ **徵收地上權**](../blog/category/%E5%BE%B5%E6%94%B6%E5%9C%B0%E4%B8%8A%E6%AC%8A/) (2)
--   [🏷️ **國土保育費**](../blog/category/%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E8%B2%BB/) (2)
--   [🏷️ **影響費**](../blog/category/%E5%BD%B1%E9%9F%BF%E8%B2%BB/) (2)
--   [🏷️ **肯定說**](../blog/category/%E8%82%AF%E5%AE%9A%E8%AA%AA/) (2)
--   [🏷️ **信託財產獨立性**](../blog/category/%E4%BF%A1%E8%A8%97%E8%B2%A1%E7%94%A2%E7%8D%A8%E7%AB%8B%E6%80%A7/) (2)
--   [🏷️ **仕紳化**](../blog/category/%E4%BB%95%E7%B4%B3%E5%8C%96/) (2)
--   [🏷️ **建築法**](../blog/category/%E5%BB%BA%E7%AF%89%E6%B3%95/) (2)
--   [🏷️ **界址爭議**](../blog/category/%E7%95%8C%E5%9D%80%E7%88%AD%E8%AD%B0/) (2)
--   [🏷️ **袋地**](../blog/category/%E8%A2%8B%E5%9C%B0/) (2)
--   [🏷️ **裡地**](../blog/category/%E8%A3%A1%E5%9C%B0/) (2)
--   [🏷️ **土地法與土地相關稅法概要**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E8%88%87%E5%9C%9F%E5%9C%B0%E7%9B%B8%E9%97%9C%E7%A8%85%E6%B3%95%E6%A6%82%E8%A6%81/) (2)
--   [🏷️ **鄉村地區整體規劃**](../blog/category/%E9%84%89%E6%9D%91%E5%9C%B0%E5%8D%80%E6%95%B4%E9%AB%94%E8%A6%8F%E5%8A%83/) (2)
--   [🏷️ **行政處分**](../blog/category/%E8%A1%8C%E6%94%BF%E8%99%95%E5%88%86/) (2)
--   [🏷️ **行政訴訟**](../blog/category/%E8%A1%8C%E6%94%BF%E8%A8%B4%E8%A8%9F/) (2)
--   [🏷️ **登記絕對效力**](../blog/category/%E7%99%BB%E8%A8%98%E7%B5%95%E5%B0%8D%E6%95%88%E5%8A%9B/) (2)
--   [🏷️ **登記損害賠償**](../blog/category/%E7%99%BB%E8%A8%98%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/) (2)
--   [🏷️ **線上聲明**](../blog/category/%E7%B7%9A%E4%B8%8A%E8%81%B2%E6%98%8E/) (2)
--   [🏷️ **不動產經濟學**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E6%BF%9F%E5%AD%B8/) (2)
--   [🏷️ **土地法第43條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC43%E6%A2%9D/) (2)
--   [🏷️ **信賴保護原則**](../blog/category/%E4%BF%A1%E8%B3%B4%E4%BF%9D%E8%AD%B7%E5%8E%9F%E5%89%87/) (2)
--   [🏷️ **自耕農**](../blog/category/%E8%87%AA%E8%80%95%E8%BE%B2/) (2)
--   [🏷️ **房屋租賃**](../blog/category/%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B3%83/) (2)
--   [🏷️ **委任**](../blog/category/%E5%A7%94%E4%BB%BB/) (2)
--   [🏷️ **以房養老**](../blog/category/%E4%BB%A5%E6%88%BF%E9%A4%8A%E8%80%81/) (2)
--   [🏷️ **企業經營者**](../blog/category/%E4%BC%81%E6%A5%AD%E7%B6%93%E7%87%9F%E8%80%85/) (2)
--   [🏷️ **農育權**](../blog/category/%E8%BE%B2%E8%82%B2%E6%AC%8A/) (2)
--   [🏷️ **共有物所有權**](../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9%E6%89%80%E6%9C%89%E6%AC%8A/) (2)
--   [🏷️ **修法**](../blog/category/%E4%BF%AE%E6%B3%95/) (2)
--   [🏷️ **釋字156**](../blog/category/%E9%87%8B%E5%AD%97156/) (2)
--   [🏷️ **受益權**](../blog/category/%E5%8F%97%E7%9B%8A%E6%AC%8A/) (2)
--   [🏷️ **時效取得**](../blog/category/%E6%99%82%E6%95%88%E5%8F%96%E5%BE%97/) (2)
--   [🏷️ **土地經濟學**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%B6%93%E6%BF%9F%E5%AD%B8/) (2)
--   [🏷️ **物權**](../blog/category/%E7%89%A9%E6%AC%8A/) (2)
--   [🏷️ **重建**](../blog/category/%E9%87%8D%E5%BB%BA/) (2)
--   [🏷️ **公路法**](../blog/category/%E5%85%AC%E8%B7%AF%E6%B3%95/) (1)
--   [🏷️ **私有公路**](../blog/category/%E7%A7%81%E6%9C%89%E5%85%AC%E8%B7%AF/) (1)
--   [🏷️ **自然人**](../blog/category/%E8%87%AA%E7%84%B6%E4%BA%BA/) (1)
--   [🏷️ **假贈與**](../blog/category/%E5%81%87%E8%B4%88%E8%88%87/) (1)
--   [🏷️ **撥用**](../blog/category/%E6%92%A5%E7%94%A8/) (1)
--   [🏷️ **公有不動產**](../blog/category/%E5%85%AC%E6%9C%89%E4%B8%8D%E5%8B%95%E7%94%A2/) (1)
--   [🏷️ **不動產計畫書**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%A8%88%E7%95%AB%E6%9B%B8/) (1)
--   [🏷️ **新青安**](../blog/category/%E6%96%B0%E9%9D%92%E5%AE%89/) (1)
--   [🏷️ **購屋**](../blog/category/%E8%B3%BC%E5%B1%8B/) (1)
--   [🏷️ **貸款**](../blog/category/%E8%B2%B8%E6%AC%BE/) (1)
--   [🏷️ **第一次登記**](../blog/category/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **土地國有**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%9C%8B%E6%9C%89/) (1)
--   [🏷️ **土地私有**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A7%81%E6%9C%89/) (1)
--   [🏷️ **絕對地租**](../blog/category/%E7%B5%95%E5%B0%8D%E5%9C%B0%E7%A7%9F/) (1)
--   [🏷️ **價格機能**](../blog/category/%E5%83%B9%E6%A0%BC%E6%A9%9F%E8%83%BD/) (1)
--   [🏷️ **地籍**](../blog/category/%E5%9C%B0%E7%B1%8D/) (1)
--   [🏷️ **使用基地之證明文件**](../blog/category/%E4%BD%BF%E7%94%A8%E5%9F%BA%E5%9C%B0%E4%B9%8B%E8%AD%89%E6%98%8E%E6%96%87%E4%BB%B6/) (1)
--   [🏷️ **順位繼承人**](../blog/category/%E9%A0%86%E4%BD%8D%E7%B9%BC%E6%89%BF%E4%BA%BA/) (1)
--   [🏷️ **林業用地**](../blog/category/%E6%9E%97%E6%A5%AD%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **土地正義**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%AD%A3%E7%BE%A9/) (1)
--   [🏷️ **土地買賣**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%B7%E8%B3%A3/) (1)
--   [🏷️ **土地買賣未辦竣權利移轉登記**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%B7%E8%B3%A3%E6%9C%AA%E8%BE%A6%E7%AB%A3%E6%AC%8A%E5%88%A9%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **默示分管**](../blog/category/%E9%BB%98%E7%A4%BA%E5%88%86%E7%AE%A1/) (1)
--   [🏷️ **登記面積**](../blog/category/%E7%99%BB%E8%A8%98%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **公寓大廈約定專用**](../blog/category/%E5%85%AC%E5%AF%93%E5%A4%A7%E5%BB%88%E7%B4%84%E5%AE%9A%E5%B0%88%E7%94%A8/) (1)
--   [🏷️ **系爭房地**](../blog/category/%E7%B3%BB%E7%88%AD%E6%88%BF%E5%9C%B0/) (1)
--   [🏷️ **系爭買賣契約**](../blog/category/%E7%B3%BB%E7%88%AD%E8%B2%B7%E8%B3%A3%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **有償撥用**](../blog/category/%E6%9C%89%E5%84%9F%E6%92%A5%E7%94%A8/) (1)
--   [🏷️ **無償撥用**](../blog/category/%E7%84%A1%E5%84%9F%E6%92%A5%E7%94%A8/) (1)
--   [🏷️ **土地稅重購退稅**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E9%87%8D%E8%B3%BC%E9%80%80%E7%A8%85/) (1)
--   [🏷️ **機會成本**](../blog/category/%E6%A9%9F%E6%9C%83%E6%88%90%E6%9C%AC/) (1)
--   [🏷️ **犠牲**](../blog/category/%E7%8A%A0%E7%89%B2/) (1)
--   [🏷️ **自有資金**](../blog/category/%E8%87%AA%E6%9C%89%E8%B3%87%E9%87%91/) (1)
--   [🏷️ **出賣人**](../blog/category/%E5%87%BA%E8%B3%A3%E4%BA%BA/) (1)
--   [🏷️ **農業用地變更使用**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0%E8%AE%8A%E6%9B%B4%E4%BD%BF%E7%94%A8/) (1)
--   [🏷️ **不動產移轉稅**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%A7%BB%E8%BD%89%E7%A8%85/) (1)
--   [🏷️ **時效取得地上權登記**](../blog/category/%E6%99%82%E6%95%88%E5%8F%96%E5%BE%97%E5%9C%B0%E4%B8%8A%E6%AC%8A%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **主觀意思之證明文件**](../blog/category/%E4%B8%BB%E8%A7%80%E6%84%8F%E6%80%9D%E4%B9%8B%E8%AD%89%E6%98%8E%E6%96%87%E4%BB%B6/) (1)
--   [🏷️ **兩價**](../blog/category/%E5%85%A9%E5%83%B9/) (1)
--   [🏷️ **毗鄰**](../blog/category/%E6%AF%97%E9%84%B0/) (1)
--   [🏷️ **環境永續**](../blog/category/%E7%92%B0%E5%A2%83%E6%B0%B8%E7%BA%8C/) (1)
--   [🏷️ **碳中和**](../blog/category/%E7%A2%B3%E4%B8%AD%E5%92%8C/) (1)
--   [🏷️ **循環利用**](../blog/category/%E5%BE%AA%E7%92%B0%E5%88%A9%E7%94%A8/) (1)
--   [🏷️ **發給補償完竣**](../blog/category/%E7%99%BC%E7%B5%A6%E8%A3%9C%E5%84%9F%E5%AE%8C%E7%AB%A3/) (1)
--   [🏷️ **補償人**](../blog/category/%E8%A3%9C%E5%84%9F%E4%BA%BA/) (1)
--   [🏷️ **二氧化碳**](../blog/category/%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3/) (1)
--   [🏷️ **地盡其利**](../blog/category/%E5%9C%B0%E7%9B%A1%E5%85%B6%E5%88%A9/) (1)
--   [🏷️ **有效使用**](../blog/category/%E6%9C%89%E6%95%88%E4%BD%BF%E7%94%A8/) (1)
--   [🏷️ **具體市場**](../blog/category/%E5%85%B7%E9%AB%94%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **集中市場**](../blog/category/%E9%9B%86%E4%B8%AD%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **效率市場**](../blog/category/%E6%95%88%E7%8E%87%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **不動產經紀業者**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD%E8%80%85/) (1)
--   [🏷️ **基地優先購買權**](../blog/category/%E5%9F%BA%E5%9C%B0%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **社會住宅**](../blog/category/%E7%A4%BE%E6%9C%83%E4%BD%8F%E5%AE%85/) (1)
--   [🏷️ **臨時工廠**](../blog/category/%E8%87%A8%E6%99%82%E5%B7%A5%E5%BB%A0/) (1)
--   [🏷️ **特定工廠**](../blog/category/%E7%89%B9%E5%AE%9A%E5%B7%A5%E5%BB%A0/) (1)
--   [🏷️ **成長極**](../blog/category/%E6%88%90%E9%95%B7%E6%A5%B5/) (1)
--   [🏷️ **平衡發展理論**](../blog/category/%E5%B9%B3%E8%A1%A1%E7%99%BC%E5%B1%95%E7%90%86%E8%AB%96/) (1)
--   [🏷️ **地租國有**](../blog/category/%E5%9C%B0%E7%A7%9F%E5%9C%8B%E6%9C%89/) (1)
--   [🏷️ **地利共享**](../blog/category/%E5%9C%B0%E5%88%A9%E5%85%B1%E4%BA%AB/) (1)
--   [🏷️ **稅去地主**](../blog/category/%E7%A8%85%E5%8E%BB%E5%9C%B0%E4%B8%BB/) (1)
--   [🏷️ **天然地租**](../blog/category/%E5%A4%A9%E7%84%B6%E5%9C%B0%E7%A7%9F/) (1)
--   [🏷️ **社會地租**](../blog/category/%E7%A4%BE%E6%9C%83%E5%9C%B0%E7%A7%9F/) (1)
--   [🏷️ **移轉**](../blog/category/%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **不動產所有權**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%89%80%E6%9C%89%E6%AC%8A/) (1)
--   [🏷️ **所有權移轉登記**](../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **他項權利登記**](../blog/category/%E4%BB%96%E9%A0%85%E6%AC%8A%E5%88%A9%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **綠能智慧建築**](../blog/category/%E7%B6%A0%E8%83%BD%E6%99%BA%E6%85%A7%E5%BB%BA%E7%AF%89/) (1)
--   [🏷️ **節能減碳**](../blog/category/%E7%AF%80%E8%83%BD%E6%B8%9B%E7%A2%B3/) (1)
--   [🏷️ **WTP**](../blog/category/wtp/) (1)
--   [🏷️ **WTA**](../blog/category/wta/) (1)
--   [🏷️ **依戀不捨情感**](../blog/category/%E4%BE%9D%E6%88%80%E4%B8%8D%E6%8D%A8%E6%83%85%E6%84%9F/) (1)
--   [🏷️ **課徵對象**](../blog/category/%E8%AA%B2%E5%BE%B5%E5%B0%8D%E8%B1%A1/) (1)
--   [🏷️ **課稅基礎**](../blog/category/%E8%AA%B2%E7%A8%85%E5%9F%BA%E7%A4%8E/) (1)
--   [🏷️ **原物分配**](../blog/category/%E5%8E%9F%E7%89%A9%E5%88%86%E9%85%8D/) (1)
--   [🏷️ **543條款**](../blog/category/543%E6%A2%9D%E6%AC%BE/) (1)
--   [🏷️ **大陸人民地權限制**](../blog/category/%E5%A4%A7%E9%99%B8%E4%BA%BA%E6%B0%91%E5%9C%B0%E6%AC%8A%E9%99%90%E5%88%B6/) (1)
--   [🏷️ **土地或建築改良物**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%88%96%E5%BB%BA%E7%AF%89%E6%94%B9%E8%89%AF%E7%89%A9/) (1)
--   [🏷️ **標售**](../blog/category/%E6%A8%99%E5%94%AE/) (1)
--   [🏷️ **永續發展目標**](../blog/category/%E6%B0%B8%E7%BA%8C%E7%99%BC%E5%B1%95%E7%9B%AE%E6%A8%99/) (1)
--   [🏷️ **SDGs**](../blog/category/sdgs/) (1)
--   [🏷️ **公地標售**](../blog/category/%E5%85%AC%E5%9C%B0%E6%A8%99%E5%94%AE/) (1)
--   [🏷️ **經濟不景氣**](../blog/category/%E7%B6%93%E6%BF%9F%E4%B8%8D%E6%99%AF%E6%B0%A3/) (1)
--   [🏷️ **利率上漲**](../blog/category/%E5%88%A9%E7%8E%87%E4%B8%8A%E6%BC%B2/) (1)
--   [🏷️ **所有權分離**](../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E5%88%86%E9%9B%A2/) (1)
--   [🏷️ **斡旋金**](../blog/category/%E6%96%A1%E6%97%8B%E9%87%91/) (1)
--   [🏷️ **要約書**](../blog/category/%E8%A6%81%E7%B4%84%E6%9B%B8/) (1)
--   [🏷️ **復權請求權**](../blog/category/%E5%BE%A9%E6%AC%8A%E8%AB%8B%E6%B1%82%E6%AC%8A/) (1)
--   [🏷️ **公法上請求權**](../blog/category/%E5%85%AC%E6%B3%95%E4%B8%8A%E8%AB%8B%E6%B1%82%E6%AC%8A/) (1)
--   [🏷️ **基地權利種類**](../blog/category/%E5%9F%BA%E5%9C%B0%E6%AC%8A%E5%88%A9%E7%A8%AE%E9%A1%9E/) (1)
--   [🏷️ **強制登記**](../blog/category/%E5%BC%B7%E5%88%B6%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **權利人**](../blog/category/%E6%AC%8A%E5%88%A9%E4%BA%BA/) (1)
--   [🏷️ **義務人**](../blog/category/%E7%BE%A9%E5%8B%99%E4%BA%BA/) (1)
--   [🏷️ **建物標示圖**](../blog/category/%E5%BB%BA%E7%89%A9%E6%A8%99%E7%A4%BA%E5%9C%96/) (1)
--   [🏷️ **土地移轉契約**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A7%BB%E8%BD%89%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **解除契約**](../blog/category/%E8%A7%A3%E9%99%A4%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **地籍圖重測**](../blog/category/%E5%9C%B0%E7%B1%8D%E5%9C%96%E9%87%8D%E6%B8%AC/) (1)
--   [🏷️ **都市土地**](../blog/category/%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **時效取得地上權**](../blog/category/%E6%99%82%E6%95%88%E5%8F%96%E5%BE%97%E5%9C%B0%E4%B8%8A%E6%AC%8A/) (1)
--   [🏷️ **工業區**](../blog/category/%E5%B7%A5%E6%A5%AD%E5%8D%80/) (1)
--   [🏷️ **上訴人**](../blog/category/%E4%B8%8A%E8%A8%B4%E4%BA%BA/) (1)
--   [🏷️ **勞資**](../blog/category/%E5%8B%9E%E8%B3%87/) (1)
--   [🏷️ **土地集約度**](../blog/category/%E5%9C%9F%E5%9C%B0%E9%9B%86%E7%B4%84%E5%BA%A6/) (1)
--   [🏷️ **部分共有人**](../blog/category/%E9%83%A8%E5%88%86%E5%85%B1%E6%9C%89%E4%BA%BA/) (1)
--   [🏷️ **公益信託**](../blog/category/%E5%85%AC%E7%9B%8A%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **空屋稅**](../blog/category/%E7%A9%BA%E5%B1%8B%E7%A8%85/) (1)
--   [🏷️ **空屋**](../blog/category/%E7%A9%BA%E5%B1%8B/) (1)
--   [🏷️ **補正**](../blog/category/%E8%A3%9C%E6%AD%A3/) (1)
--   [🏷️ **駁回**](../blog/category/%E9%A7%81%E5%9B%9E/) (1)
--   [🏷️ **精準地價**](../blog/category/%E7%B2%BE%E6%BA%96%E5%9C%B0%E5%83%B9/) (1)
--   [🏷️ **自動估價系統**](../blog/category/%E8%87%AA%E5%8B%95%E4%BC%B0%E5%83%B9%E7%B3%BB%E7%B5%B1/) (1)
--   [🏷️ **AVM**](../blog/category/avm/) (1)
--   [🏷️ **一般因素**](../blog/category/%E4%B8%80%E8%88%AC%E5%9B%A0%E7%B4%A0/) (1)
--   [🏷️ **區域因素**](../blog/category/%E5%8D%80%E5%9F%9F%E5%9B%A0%E7%B4%A0/) (1)
--   [🏷️ **個別因素**](../blog/category/%E5%80%8B%E5%88%A5%E5%9B%A0%E7%B4%A0/) (1)
--   [🏷️ **碳排放**](../blog/category/%E7%A2%B3%E6%8E%92%E6%94%BE/) (1)
--   [🏷️ **稅捐**](../blog/category/%E7%A8%85%E6%8D%90/) (1)
--   [🏷️ **核課期間**](../blog/category/%E6%A0%B8%E8%AA%B2%E6%9C%9F%E9%96%93/) (1)
--   [🏷️ **不構成契約**](../blog/category/%E4%B8%8D%E6%A7%8B%E6%88%90%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **受贈人**](../blog/category/%E5%8F%97%E8%B4%88%E4%BA%BA/) (1)
--   [🏷️ **贈與人**](../blog/category/%E8%B4%88%E8%88%87%E4%BA%BA/) (1)
--   [🏷️ **履約擔保**](../blog/category/%E5%B1%A5%E7%B4%84%E6%93%94%E4%BF%9D/) (1)
--   [🏷️ **專戶管理**](../blog/category/%E5%B0%88%E6%88%B6%E7%AE%A1%E7%90%86/) (1)
--   [🏷️ **價金返還**](../blog/category/%E5%83%B9%E9%87%91%E8%BF%94%E9%82%84/) (1)
--   [🏷️ **連帶擔保**](../blog/category/%E9%80%A3%E5%B8%B6%E6%93%94%E4%BF%9D/) (1)
--   [🏷️ **定型化契約不得記載事項**](../blog/category/%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84%E4%B8%8D%E5%BE%97%E8%A8%98%E8%BC%89%E4%BA%8B%E9%A0%85/) (1)
--   [🏷️ **不得記載事項**](../blog/category/%E4%B8%8D%E5%BE%97%E8%A8%98%E8%BC%89%E4%BA%8B%E9%A0%85/) (1)
--   [🏷️ **獨立權狀車位**](../blog/category/%E7%8D%A8%E7%AB%8B%E6%AC%8A%E7%8B%80%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **無獨立權狀車位**](../blog/category/%E7%84%A1%E7%8D%A8%E7%AB%8B%E6%AC%8A%E7%8B%80%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **田賦或地價稅**](../blog/category/%E7%94%B0%E8%B3%A6%E6%88%96%E5%9C%B0%E5%83%B9%E7%A8%85/) (1)
--   [🏷️ **繳代金**](../blog/category/%E7%B9%B3%E4%BB%A3%E9%87%91/) (1)
--   [🏷️ **新冠肺炎**](../blog/category/%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E/) (1)
--   [🏷️ **申請興建農舍**](../blog/category/%E7%94%B3%E8%AB%8B%E8%88%88%E5%BB%BA%E8%BE%B2%E8%88%8D/) (1)
--   [🏷️ **審議**](../blog/category/%E5%AF%A9%E8%AD%B0/) (1)
--   [🏷️ **審議機關**](../blog/category/%E5%AF%A9%E8%AD%B0%E6%A9%9F%E9%97%9C/) (1)
--   [🏷️ **人口數量**](../blog/category/%E4%BA%BA%E5%8F%A3%E6%95%B8%E9%87%8F/) (1)
--   [🏷️ **人口結構**](../blog/category/%E4%BA%BA%E5%8F%A3%E7%B5%90%E6%A7%8B/) (1)
--   [🏷️ **人口流動**](../blog/category/%E4%BA%BA%E5%8F%A3%E6%B5%81%E5%8B%95/) (1)
--   [🏷️ **土地法第14條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC14%E6%A2%9D/) (1)
--   [🏷️ **水道浮覆地**](../blog/category/%E6%B0%B4%E9%81%93%E6%B5%AE%E8%A6%86%E5%9C%B0/) (1)
--   [🏷️ **都更案**](../blog/category/%E9%83%BD%E6%9B%B4%E6%A1%88/) (1)
--   [🏷️ **積極型住戶**](../blog/category/%E7%A9%8D%E6%A5%B5%E5%9E%8B%E4%BD%8F%E6%88%B6/) (1)
--   [🏷️ **消極型住戶**](../blog/category/%E6%B6%88%E6%A5%B5%E5%9E%8B%E4%BD%8F%E6%88%B6/) (1)
--   [🏷️ **贈與不動產**](../blog/category/%E8%B4%88%E8%88%87%E4%B8%8D%E5%8B%95%E7%94%A2/) (1)
--   [🏷️ **地所有權**](../blog/category/%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A/) (1)
--   [🏷️ **回復原狀請求權**](../blog/category/%E5%9B%9E%E5%BE%A9%E5%8E%9F%E7%8B%80%E8%AB%8B%E6%B1%82%E6%AC%8A/) (1)
--   [🏷️ **民法第767條**](../blog/category/%E6%B0%91%E6%B3%95%E7%AC%AC767%E6%A2%9D/) (1)
--   [🏷️ **建設公司**](../blog/category/%E5%BB%BA%E8%A8%AD%E5%85%AC%E5%8F%B8/) (1)
--   [🏷️ **先售後建**](../blog/category/%E5%85%88%E5%94%AE%E5%BE%8C%E5%BB%BA/) (1)
--   [🏷️ **轉售**](../blog/category/%E8%BD%89%E5%94%AE/) (1)
--   [🏷️ **買受人**](../blog/category/%E8%B2%B7%E5%8F%97%E4%BA%BA/) (1)
--   [🏷️ **耕地375**](../blog/category/%E8%80%95%E5%9C%B0375/) (1)
--   [🏷️ **使用管理登記**](../blog/category/%E4%BD%BF%E7%94%A8%E7%AE%A1%E7%90%86%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **土地使用**](../blog/category/%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8/) (1)
--   [🏷️ **管制**](../blog/category/%E7%AE%A1%E5%88%B6/) (1)
--   [🏷️ **土登規則**](../blog/category/%E5%9C%9F%E7%99%BB%E8%A6%8F%E5%89%87/) (1)
--   [🏷️ **氣候變遷**](../blog/category/%E6%B0%A3%E5%80%99%E8%AE%8A%E9%81%B7/) (1)
--   [🏷️ **調適能力**](../blog/category/%E8%AA%BF%E9%81%A9%E8%83%BD%E5%8A%9B/) (1)
--   [🏷️ **重大災害**](../blog/category/%E9%87%8D%E5%A4%A7%E7%81%BD%E5%AE%B3/) (1)
--   [🏷️ **配餘地**](../blog/category/%E9%85%8D%E9%A4%98%E5%9C%B0/) (1)
--   [🏷️ **基地權利價值**](../blog/category/%E5%9F%BA%E5%9C%B0%E6%AC%8A%E5%88%A9%E5%83%B9%E5%80%BC/) (1)
--   [🏷️ **農舍移轉**](../blog/category/%E8%BE%B2%E8%88%8D%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **違規農舍**](../blog/category/%E9%81%95%E8%A6%8F%E8%BE%B2%E8%88%8D/) (1)
--   [🏷️ **信託目的**](../blog/category/%E4%BF%A1%E8%A8%97%E7%9B%AE%E7%9A%84/) (1)
--   [🏷️ **申請**](../blog/category/%E7%94%B3%E8%AB%8B/) (1)
--   [🏷️ **建物拆除補償**](../blog/category/%E5%BB%BA%E7%89%A9%E6%8B%86%E9%99%A4%E8%A3%9C%E5%84%9F/) (1)
--   [🏷️ **土地稅課徵**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E8%AA%B2%E5%BE%B5/) (1)
--   [🏷️ **原地價偏高**](../blog/category/%E5%8E%9F%E5%9C%B0%E5%83%B9%E5%81%8F%E9%AB%98/) (1)
--   [🏷️ **原地價偏低**](../blog/category/%E5%8E%9F%E5%9C%B0%E5%83%B9%E5%81%8F%E4%BD%8E/) (1)
--   [🏷️ **共有物權利分割**](../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9%E6%AC%8A%E5%88%A9%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **公共建設**](../blog/category/%E5%85%AC%E5%85%B1%E5%BB%BA%E8%A8%AD/) (1)
--   [🏷️ **違章工廠**](../blog/category/%E9%81%95%E7%AB%A0%E5%B7%A5%E5%BB%A0/) (1)
--   [🏷️ **新古典經濟學**](../blog/category/%E6%96%B0%E5%8F%A4%E5%85%B8%E7%B6%93%E6%BF%9F%E5%AD%B8/) (1)
--   [🏷️ **新制度經濟學**](../blog/category/%E6%96%B0%E5%88%B6%E5%BA%A6%E7%B6%93%E6%BF%9F%E5%AD%B8/) (1)
--   [🏷️ **國土保育地區**](../blog/category/%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E5%9C%B0%E5%8D%80/) (1)
--   [🏷️ **海洋資源地區**](../blog/category/%E6%B5%B7%E6%B4%8B%E8%B3%87%E6%BA%90%E5%9C%B0%E5%8D%80/) (1)
--   [🏷️ **農業發展地區**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95%E5%9C%B0%E5%8D%80/) (1)
--   [🏷️ **城鄉發展地區**](../blog/category/%E5%9F%8E%E9%84%89%E7%99%BC%E5%B1%95%E5%9C%B0%E5%8D%80/) (1)
--   [🏷️ **住宅存量流量模型**](../blog/category/%E4%BD%8F%E5%AE%85%E5%AD%98%E9%87%8F%E6%B5%81%E9%87%8F%E6%A8%A1%E5%9E%8B/) (1)
--   [🏷️ **裁判費**](../blog/category/%E8%A3%81%E5%88%A4%E8%B2%BB/) (1)
--   [🏷️ **通盤檢討**](../blog/category/%E9%80%9A%E7%9B%A4%E6%AA%A2%E8%A8%8E/) (1)
--   [🏷️ **都市更新權利變換代拆機制**](../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E6%AC%8A%E5%88%A9%E8%AE%8A%E6%8F%9B%E4%BB%A3%E6%8B%86%E6%A9%9F%E5%88%B6/) (1)
--   [🏷️ **權利變換計畫**](../blog/category/%E6%AC%8A%EF%A7%9D%E8%AE%8A%E6%8F%9B%E8%A8%88%E7%95%AB/) (1)
--   [🏷️ **免稅**](../blog/category/%E5%85%8D%E7%A8%85/) (1)
--   [🏷️ **承攬人**](../blog/category/%E6%89%BF%E6%94%AC%E4%BA%BA/) (1)
--   [🏷️ **營利事業**](../blog/category/%E7%87%9F%E5%88%A9%E4%BA%8B%E6%A5%AD/) (1)
--   [🏷️ **打炒房**](../blog/category/%E6%89%93%E7%82%92%E6%88%BF/) (1)
--   [🏷️ **不動產炒作**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%82%92%E4%BD%9C/) (1)
--   [🏷️ **制度**](../blog/category/%E5%88%B6%E5%BA%A6/) (1)
--   [🏷️ **資源配置**](../blog/category/%E8%B3%87%E6%BA%90%E9%85%8D%E7%BD%AE/) (1)
--   [🏷️ **農業產量**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A2%E9%87%8F/) (1)
--   [🏷️ **工業產量**](../blog/category/%E5%B7%A5%E6%A5%AD%E7%94%A2%E9%87%8F/) (1)
--   [🏷️ **自用住宅用地**](../blog/category/%E8%87%AA%E7%94%A8%E4%BD%8F%E5%AE%85%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **土地稅法施行細則**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87/) (1)
--   [🏷️ **遺贈登記**](../blog/category/%E9%81%BA%E8%B4%88%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **免納(徵)**](../blog/category/%E5%85%8D%E7%B4%8D%28%E5%BE%B5%29/) (1)
--   [🏷️ **非課稅範圍**](../blog/category/%E9%9D%9E%E8%AA%B2%E7%A8%85%E7%AF%84%E5%9C%8D/) (1)
--   [🏷️ **無所得**](../blog/category/%E7%84%A1%E6%89%80%E5%BE%97/) (1)
--   [🏷️ **建物測量**](../blog/category/%E5%BB%BA%E7%89%A9%E6%B8%AC%E9%87%8F/) (1)
--   [🏷️ **土地法第34之1**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC34%E4%B9%8B1/) (1)
--   [🏷️ **扣除額**](../blog/category/%E6%89%A3%E9%99%A4%E9%A1%8D/) (1)
--   [🏷️ **更生登記**](../blog/category/%E6%9B%B4%E7%94%9F%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **分割合併**](../blog/category/%E5%88%86%E5%89%B2%E5%90%88%E4%BD%B5/) (1)
--   [🏷️ **合併登記**](../blog/category/%E5%90%88%E4%BD%B5%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **分割登記**](../blog/category/%E5%88%86%E5%89%B2%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **籌備會**](../blog/category/%E7%B1%8C%E5%82%99%E6%9C%83/) (1)
--   [🏷️ **釋字第739號**](../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC739%E8%99%9F/) (1)
--   [🏷️ **稅基扣除稅基**](../blog/category/%E7%A8%85%E5%9F%BA%E6%89%A3%E9%99%A4%E7%A8%85%E5%9F%BA/) (1)
--   [🏷️ **稅額扣抵稅額**](../blog/category/%E7%A8%85%E9%A1%8D%E6%89%A3%E6%8A%B5%E7%A8%85%E9%A1%8D/) (1)
--   [🏷️ **無償**](../blog/category/%E7%84%A1%E5%84%9F/) (1)
--   [🏷️ **事實上處分**](../blog/category/%E4%BA%8B%E5%AF%A6%E4%B8%8A%E8%99%95%E5%88%86/) (1)
--   [🏷️ **使用權**](../blog/category/%E4%BD%BF%E7%94%A8%E6%AC%8A/) (1)
--   [🏷️ **分割移轉**](../blog/category/%E5%88%86%E5%89%B2%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **釋字第758號**](../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC758%E8%99%9F/) (1)
--   [🏷️ **釋字第400號**](../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC400%E8%99%9F/) (1)
--   [🏷️ **與登記有關第三人**](../blog/category/%E8%88%87%E7%99%BB%E8%A8%98%E6%9C%89%E9%97%9C%E7%AC%AC%E4%B8%89%E4%BA%BA/) (1)
--   [🏷️ **債權**](../blog/category/%E5%82%B5%E6%AC%8A/) (1)
--   [🏷️ **土地徵收補償**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F/) (1)
--   [🏷️ **占有契稅**](../blog/category/%E5%8D%A0%E6%9C%89%E5%A5%91%E7%A8%85/) (1)
--   [🏷️ **處分行為**](../blog/category/%E8%99%95%E5%88%86%E8%A1%8C%E7%82%BA/) (1)
--   [🏷️ **不動產契約書**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%A5%91%E7%B4%84%E6%9B%B8/) (1)
--   [🏷️ **限制建築**](../blog/category/%E9%99%90%E5%88%B6%E5%BB%BA%E7%AF%89/) (1)
--   [🏷️ **建物平面圖測繪**](../blog/category/%E5%BB%BA%E7%89%A9%E5%B9%B3%E9%9D%A2%E5%9C%96%E6%B8%AC%E7%B9%AA/) (1)
--   [🏷️ **雨遮不登記**](../blog/category/%E9%9B%A8%E9%81%AE%E4%B8%8D%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **離差計算**](../blog/category/%E9%9B%A2%E5%B7%AE%E8%A8%88%E7%AE%97/) (1)
--   [🏷️ **調整率**](../blog/category/%E8%AA%BF%E6%95%B4%E7%8E%87/) (1)
--   [🏷️ **房屋租賃定型化契約應記載及不得記載事項**](../blog/category/%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B3%83%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84%E6%87%89%E8%A8%98%E8%BC%89%E5%8F%8A%E4%B8%8D%E5%BE%97%E8%A8%98%E8%BC%89%E4%BA%8B%E9%A0%85/) (1)
--   [🏷️ **贈與現金**](../blog/category/%E8%B4%88%E8%88%87%E7%8F%BE%E9%87%91/) (1)
--   [🏷️ **稅負**](../blog/category/%E7%A8%85%E8%B2%A0/) (1)
--   [🏷️ **課徵**](../blog/category/%E8%AA%B2%E5%BE%B5/) (1)
--   [🏷️ **課稅**](../blog/category/%E8%AA%B2%E7%A8%85/) (1)
--   [🏷️ **共有關係**](../blog/category/%E5%85%B1%E6%9C%89%E9%97%9C%E4%BF%82/) (1)
--   [🏷️ **變動關係**](../blog/category/%E8%AE%8A%E5%8B%95%E9%97%9C%E4%BF%82/) (1)
--   [🏷️ **平等原則**](../blog/category/%E5%B9%B3%E7%AD%89%E5%8E%9F%E5%89%87/) (1)
--   [🏷️ **侵權行為**](../blog/category/%E4%BE%B5%E6%AC%8A%E8%A1%8C%E7%82%BA/) (1)
--   [🏷️ **山坡地保育區**](../blog/category/%E5%B1%B1%E5%9D%A1%E5%9C%B0%E4%BF%9D%E8%82%B2%E5%8D%80/) (1)
--   [🏷️ **山坡地**](../blog/category/%E5%B1%B1%E5%9D%A1%E5%9C%B0/) (1)
--   [🏷️ **原住民保留地**](../blog/category/%E5%8E%9F%E4%BD%8F%E6%B0%91%E4%BF%9D%E7%95%99%E5%9C%B0/) (1)
--   [🏷️ **住宅市場**](../blog/category/%E4%BD%8F%E5%AE%85%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **遺贈稅**](../blog/category/%E9%81%BA%E8%B4%88%E7%A8%85/) (1)
--   [🏷️ **土地貢獻價值**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%A2%E7%8D%BB%E5%83%B9%E5%80%BC/) (1)
--   [🏷️ **建物貢獻價值**](../blog/category/%E5%BB%BA%E7%89%A9%E8%B2%A2%E7%8D%BB%E5%83%B9%E5%80%BC/) (1)
--   [🏷️ **預售屋轉售**](../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%BD%89%E5%94%AE/) (1)
--   [🏷️ **夫妻間贈與**](../blog/category/%E5%A4%AB%E5%A6%BB%E9%96%93%E8%B4%88%E8%88%87/) (1)
--   [🏷️ **起造人**](../blog/category/%E8%B5%B7%E9%80%A0%E4%BA%BA/) (1)
--   [🏷️ **遺產分割**](../blog/category/%E9%81%BA%E7%94%A2%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **名勝古蹟**](../blog/category/%E5%90%8D%E5%8B%9D%E5%8F%A4%E8%B9%9F/) (1)
--   [🏷️ **古蹟保存**](../blog/category/%E5%8F%A4%E8%B9%9F%E4%BF%9D%E5%AD%98/) (1)
--   [🏷️ **公共利益**](../blog/category/%E5%85%AC%E5%85%B1%E5%88%A9%E7%9B%8A/) (1)
--   [🏷️ **社會福利**](../blog/category/%E7%A4%BE%E6%9C%83%E7%A6%8F%E5%88%A9/) (1)
--   [🏷️ **農業使用**](../blog/category/%E8%BE%B2%E6%A5%AD%E4%BD%BF%E7%94%A8/) (1)
--   [🏷️ **平等互惠**](../blog/category/%E5%B9%B3%E7%AD%89%E4%BA%92%E6%83%A0/) (1)
--   [🏷️ **預售屋買賣定型化契約**](../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%B2%B7%E8%B3%A3%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **個人綜合所得稅**](../blog/category/%E5%80%8B%E4%BA%BA%E7%B6%9C%E5%90%88%E6%89%80%E5%BE%97%E7%A8%85/) (1)
--   [🏷️ **土地政策與利用**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%94%BF%E7%AD%96%E8%88%87%E5%88%A9%E7%94%A8/) (1)
--   [🏷️ **土地稅減免**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B8%9B%E5%85%8D/) (1)
--   [🏷️ **地價稅減徵**](../blog/category/%E5%9C%B0%E5%83%B9%E7%A8%85%E6%B8%9B%E5%BE%B5/) (1)
--   [🏷️ **公保地檢討變更**](../blog/category/%E5%85%AC%E4%BF%9D%E5%9C%B0%E6%AA%A2%E8%A8%8E%E8%AE%8A%E6%9B%B4/) (1)
--   [🏷️ **公共設施用地解編**](../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E7%94%A8%E5%9C%B0%E8%A7%A3%E7%B7%A8/) (1)
--   [🏷️ **不動產估價理論**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E7%90%86%E8%AB%96/) (1)
--   [🏷️ **廣告**](../blog/category/%E5%BB%A3%E5%91%8A/) (1)
--   [🏷️ **經紀業**](../blog/category/%E7%B6%93%E7%B4%80%E6%A5%AD/) (1)
--   [🏷️ **事實不符**](../blog/category/%E4%BA%8B%E5%AF%A6%E4%B8%8D%E7%AC%A6/) (1)
--   [🏷️ **地籍清理**](../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%85%E7%90%86/) (1)
--   [🏷️ **流抵約定**](../blog/category/%E6%B5%81%E6%8A%B5%E7%B4%84%E5%AE%9A/) (1)
--   [🏷️ **絕賣條款**](../blog/category/%E7%B5%95%E8%B3%A3%E6%A2%9D%E6%AC%BE/) (1)
--   [🏷️ **訴訟繫屬事實註記**](../blog/category/%E8%A8%B4%E8%A8%9F%E7%B9%AB%E5%B1%AC%E4%BA%8B%E5%AF%A6%E8%A8%BB%E8%A8%98/) (1)
--   [🏷️ **債權人**](../blog/category/%E5%82%B5%E6%AC%8A%E4%BA%BA/) (1)
--   [🏷️ **主登記**](../blog/category/%E4%B8%BB%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **附記登記**](../blog/category/%E9%99%84%E8%A8%98%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **釋字第779號**](../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC779%E8%99%9F/) (1)
--   [🏷️ **跨縣市土地登記**](../blog/category/%E8%B7%A8%E7%B8%A3%E5%B8%82%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **農牧用地**](../blog/category/%E8%BE%B2%E7%89%A7%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **農路**](../blog/category/%E8%BE%B2%E8%B7%AF/) (1)
--   [🏷️ **公路**](../blog/category/%E5%85%AC%E8%B7%AF/) (1)
--   [🏷️ **釋字732**](../blog/category/%E9%87%8B%E5%AD%97732/) (1)
--   [🏷️ **絕對估值**](../blog/category/%E7%B5%95%E5%B0%8D%E4%BC%B0%E5%80%BC/) (1)
--   [🏷️ **相對估值**](../blog/category/%E7%9B%B8%E5%B0%8D%E4%BC%B0%E5%80%BC/) (1)
--   [🏷️ **勘估標的**](../blog/category/%E5%8B%98%E4%BC%B0%E6%A8%99%E7%9A%84/) (1)
--   [🏷️ **預先拋棄**](../blog/category/%E9%A0%90%E5%85%88%E6%8B%8B%E6%A3%84/) (1)
--   [🏷️ **共有不動產多數決**](../blog/category/%E5%85%B1%E6%9C%89%E4%B8%8D%E5%8B%95%E7%94%A2%E5%A4%9A%E6%95%B8%E6%B1%BA/) (1)
--   [🏷️ **不動產估價報告書**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%A0%B1%E5%91%8A%E6%9B%B8/) (1)
--   [🏷️ **差別稅率**](../blog/category/%E5%B7%AE%E5%88%A5%E7%A8%85%E7%8E%87/) (1)
--   [🏷️ **土地買賣未辦竣移轉登記**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%B7%E8%B3%A3%E6%9C%AA%E8%BE%A6%E7%AB%A3%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **房屋自住**](../blog/category/%E6%88%BF%E5%B1%8B%E8%87%AA%E4%BD%8F/) (1)
--   [🏷️ **住家用房屋**](../blog/category/%E4%BD%8F%E5%AE%B6%E7%94%A8%E6%88%BF%E5%B1%8B/) (1)
--   [🏷️ **輔導合法化之原則**](../blog/category/%E8%BC%94%E5%B0%8E%E5%90%88%E6%B3%95%E5%8C%96%E4%B9%8B%E5%8E%9F%E5%89%87/) (1)
--   [🏷️ **納稅**](../blog/category/%E7%B4%8D%E7%A8%85/) (1)
--   [🏷️ **強制執行**](../blog/category/%E5%BC%B7%E5%88%B6%E5%9F%B7%E8%A1%8C/) (1)
--   [🏷️ **行政執行**](../blog/category/%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C/) (1)
--   [🏷️ **土地使用議題**](../blog/category/%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%AD%B0%E9%A1%8C/) (1)
--   [🏷️ **權利變更**](../blog/category/%E6%AC%8A%E5%88%A9%E8%AE%8A%E6%9B%B4/) (1)
--   [🏷️ **租稅遞延性質**](../blog/category/%E7%A7%9F%E7%A8%85%E9%81%9E%E5%BB%B6%E6%80%A7%E8%B3%AA/) (1)
--   [🏷️ **租稅免除性質**](../blog/category/%E7%A7%9F%E7%A8%85%E5%85%8D%E9%99%A4%E6%80%A7%E8%B3%AA/) (1)
--   [🏷️ **農一用地**](../blog/category/%E8%BE%B2%E4%B8%80%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **反共用地悲劇**](../blog/category/%E5%8F%8D%E5%85%B1%E7%94%A8%E5%9C%B0%E6%82%B2%E5%8A%87/) (1)
--   [🏷️ **借名契約**](../blog/category/%E5%80%9F%E5%90%8D%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **外部利益**](../blog/category/%E5%A4%96%E9%83%A8%E5%88%A9%E7%9B%8A/) (1)
--   [🏷️ **外部成本**](../blog/category/%E5%A4%96%E9%83%A8%E6%88%90%E6%9C%AC/) (1)
--   [🏷️ **社會成本**](../blog/category/%E7%A4%BE%E6%9C%83%E6%88%90%E6%9C%AC/) (1)
--   [🏷️ **社會利益**](../blog/category/%E7%A4%BE%E6%9C%83%E5%88%A9%E7%9B%8A/) (1)
--   [🏷️ **土地開發**](../blog/category/%E5%9C%9F%E5%9C%B0%E9%96%8B%E7%99%BC/) (1)
--   [🏷️ **租客**](../blog/category/%E7%A7%9F%E5%AE%A2/) (1)
--   [🏷️ **租金**](../blog/category/%E7%A7%9F%E9%87%91/) (1)
--   [🏷️ **欠租**](../blog/category/%E6%AC%A0%E7%A7%9F/) (1)
--   [🏷️ **租霸下車**](../blog/category/%E7%A7%9F%E9%9C%B8%E4%B8%8B%E8%BB%8A/) (1)
--   [🏷️ **登記對抗**](../blog/category/%E7%99%BB%E8%A8%98%E5%B0%8D%E6%8A%97/) (1)
--   [🏷️ **永佃權**](../blog/category/%E6%B0%B8%E4%BD%83%E6%AC%8A/) (1)
--   [🏷️ **都更條例**](../blog/category/%E9%83%BD%E6%9B%B4%E6%A2%9D%E4%BE%8B/) (1)
--   [🏷️ **老屋條例**](../blog/category/%E8%80%81%E5%B1%8B%E6%A2%9D%E4%BE%8B/) (1)
--   [🏷️ **閒置土地**](../blog/category/%E9%96%92%E7%BD%AE%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **強制拍賣**](../blog/category/%E5%BC%B7%E5%88%B6%E6%8B%8D%E8%B3%A3/) (1)
--   [🏷️ **共同負擔**](../blog/category/%E5%85%B1%E5%90%8C%E8%B2%A0%E6%93%94/) (1)
--   [🏷️ **地面師**](../blog/category/%E5%9C%B0%E9%9D%A2%E5%B8%AB/) (1)
--   [🏷️ **偽造遺囑**](../blog/category/%E5%81%BD%E9%80%A0%E9%81%BA%E5%9B%91/) (1)
--   [🏷️ **農業生產**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%9F%E7%94%A2/) (1)
--   [🏷️ **差額分配**](../blog/category/%E5%B7%AE%E9%A1%8D%E5%88%86%E9%85%8D/) (1)
--   [🏷️ **受贈配偶**](../blog/category/%E5%8F%97%E8%B4%88%E9%85%8D%E5%81%B6/) (1)
--   [🏷️ **政府徵收土地**](../blog/category/%E6%94%BF%E5%BA%9C%E5%BE%B5%E6%94%B6%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **釋字第743號**](../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC743%E8%99%9F/) (1)
--   [🏷️ **停車位**](../blog/category/%E5%81%9C%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **法定車位**](../blog/category/%E6%B3%95%E5%AE%9A%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **增設車位**](../blog/category/%E5%A2%9E%E8%A8%AD%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **獎勵車位**](../blog/category/%E7%8D%8E%E5%8B%B5%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **債券補償**](../blog/category/%E5%82%B5%E5%88%B8%E8%A3%9C%E5%84%9F/) (1)
--   [🏷️ **太陽光電**](../blog/category/%E5%A4%AA%E9%99%BD%E5%85%89%E9%9B%BB/) (1)
--   [🏷️ **太陽能光電**](../blog/category/%E5%A4%AA%E9%99%BD%E8%83%BD%E5%85%89%E9%9B%BB/) (1)
--   [🏷️ **騎樓**](../blog/category/%E9%A8%8E%E6%A8%93/) (1)
--   [🏷️ **買權選擇權**](../blog/category/%E8%B2%B7%E6%AC%8A%E9%81%B8%E6%93%87%E6%AC%8A/) (1)
--   [🏷️ **賣權選擇權**](../blog/category/%E8%B3%A3%E6%AC%8A%E9%81%B8%E6%93%87%E6%AC%8A/) (1)
--   [🏷️ **權利金**](../blog/category/%E6%AC%8A%E5%88%A9%E9%87%91/) (1)
--   [🏷️ **標的物**](../blog/category/%E6%A8%99%E7%9A%84%E7%89%A9/) (1)
--   [🏷️ **法定空地**](../blog/category/%E6%B3%95%E5%AE%9A%E7%A9%BA%E5%9C%B0/) (1)
--   [🏷️ **登記不實**](../blog/category/%E7%99%BB%E8%A8%98%E4%B8%8D%E5%AF%A6/) (1)
--   [🏷️ **抵押**](../blog/category/%E6%8A%B5%E6%8A%BC/) (1)
--   [🏷️ **投資**](../blog/category/%E6%8A%95%E8%B3%87/) (1)
--   [🏷️ **產權型態**](../blog/category/%E7%94%A2%E6%AC%8A%E5%9E%8B%E6%85%8B/) (1)
--   [🏷️ **分別共有**](../blog/category/%E5%88%86%E5%88%A5%E5%85%B1%E6%9C%89/) (1)
--   [🏷️ **私人土地或其改良物**](../blog/category/%E7%A7%81%E4%BA%BA%E5%9C%9F%E5%9C%B0%E6%88%96%E5%85%B6%E6%94%B9%E8%89%AF%E7%89%A9/) (1)
--   [🏷️ **代理權說**](../blog/category/%E4%BB%A3%E7%90%86%E6%AC%8A%E8%AA%AA/) (1)
--   [🏷️ **處分權說**](../blog/category/%E8%99%95%E5%88%86%E6%AC%8A%E8%AA%AA/) (1)
--   [🏷️ **釋字第763號**](../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC763%E8%99%9F/) (1)
--   [🏷️ **鐵鋁窗**](../blog/category/%E9%90%B5%E9%8B%81%E7%AA%97/) (1)
--   [🏷️ **防墜設施**](../blog/category/%E9%98%B2%E5%A2%9C%E8%A8%AD%E6%96%BD/) (1)
--   [🏷️ **國土計畫法修法**](../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E6%B3%95%E4%BF%AE%E6%B3%95/) (1)
--   [🏷️ **用腳投票**](../blog/category/%E7%94%A8%E8%85%B3%E6%8A%95%E7%A5%A8/) (1)
--   [🏷️ **財產稅**](../blog/category/%E8%B2%A1%E7%94%A2%E7%A8%85/) (1)
--   [🏷️ **土地法34條之1**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%9534%E6%A2%9D%E4%B9%8B1/) (1)
--   [🏷️ **內部估價**](../blog/category/%E5%85%A7%E9%83%A8%E4%BC%B0%E5%83%B9/) (1)
--   [🏷️ **外部估價**](../blog/category/%E5%A4%96%E9%83%A8%E4%BC%B0%E5%83%B9/) (1)
--   [🏷️ **屠能**](../blog/category/%E5%B1%A0%E8%83%BD/) (1)
--   [🏷️ **辛克萊**](../blog/category/%E8%BE%9B%E5%85%8B%E8%90%8A/) (1)
--   [🏷️ **經濟作物**](../blog/category/%E7%B6%93%E6%BF%9F%E4%BD%9C%E7%89%A9/) (1)
--   [🏷️ **土地多數決**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%A4%9A%E6%95%B8%E6%B1%BA/) (1)
--   [🏷️ **視為消滅**](../blog/category/%E8%A6%96%E7%82%BA%E6%B6%88%E6%BB%85/) (1)
--   [🏷️ **農業權**](../blog/category/%E8%BE%B2%E6%A5%AD%E6%AC%8A/) (1)
--   [🏷️ **免徵性質**](../blog/category/%E5%85%8D%E5%BE%B5%E6%80%A7%E8%B3%AA/) (1)
--   [🏷️ **不課徵性質**](../blog/category/%E4%B8%8D%E8%AA%B2%E5%BE%B5%E6%80%A7%E8%B3%AA/) (1)
--   [🏷️ **地政事務所**](../blog/category/%E5%9C%B0%E6%94%BF%E4%BA%8B%E5%8B%99%E6%89%80/) (1)
--   [🏷️ **重複登錄**](../blog/category/%E9%87%8D%E8%A4%87%E7%99%BB%E9%8C%84/) (1)
--   [🏷️ **土地開發分析法**](../blog/category/%E5%9C%9F%E5%9C%B0%E9%96%8B%E7%99%BC%E5%88%86%E6%9E%90%E6%B3%95/) (1)
--   [🏷️ **宗教團體**](../blog/category/%E5%AE%97%E6%95%99%E5%9C%98%E9%AB%94/) (1)
--   [🏷️ **自然人名義**](../blog/category/%E8%87%AA%E7%84%B6%E4%BA%BA%E5%90%8D%E7%BE%A9/) (1)
--   [🏷️ **暫行條例**](../blog/category/%E6%9A%AB%E8%A1%8C%E6%A2%9D%E4%BE%8B/) (1)
--   [🏷️ **土地徵收要件**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6%E8%A6%81%E4%BB%B6/) (1)
--   [🏷️ **交易成本**](../blog/category/%E4%BA%A4%E6%98%93%E6%88%90%E6%9C%AC/) (1)
--   [🏷️ **Transaction Cos**](../blog/category/transaction-cos/) (1)
--   [🏷️ **不動產交易**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BA%A4%E6%98%93/) (1)
--   [🏷️ **財貨交易**](../blog/category/%E8%B2%A1%E8%B2%A8%E4%BA%A4%E6%98%93/) (1)
--   [🏷️ **防災型都市更新**](../blog/category/%E9%98%B2%E7%81%BD%E5%9E%8B%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0/) (1)
--   [🏷️ **防災都更**](../blog/category/%E9%98%B2%E7%81%BD%E9%83%BD%E6%9B%B4/) (1)
--   [🏷️ **都市計畫內防災建築再生自治條例**](../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB%E5%85%A7%E9%98%B2%E7%81%BD%E5%BB%BA%E7%AF%89%E5%86%8D%E7%94%9F%E8%87%AA%E6%B2%BB%E6%A2%9D%E4%BE%8B/) (1)
--   [🏷️ **登載不實**](../blog/category/%E7%99%BB%E8%BC%89%E4%B8%8D%E5%AF%A6/) (1)
--   [🏷️ **逃漏稅捐**](../blog/category/%E9%80%83%E6%BC%8F%E7%A8%85%E6%8D%90/) (1)
--   [🏷️ **釋字765**](../blog/category/%E9%87%8B%E5%AD%97765/) (1)
--   [🏷️ **再轉繼承**](../blog/category/%E5%86%8D%E8%BD%89%E7%B9%BC%E6%89%BF/) (1)
--   [🏷️ **代位繼承**](../blog/category/%E4%BB%A3%E4%BD%8D%E7%B9%BC%E6%89%BF/) (1)
--   [🏷️ **徵收補償發給**](../blog/category/%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F%E7%99%BC%E7%B5%A6/) (1)
--   [🏷️ **策略性更新地區**](../blog/category/%E7%AD%96%E7%95%A5%E6%80%A7%E6%9B%B4%E6%96%B0%E5%9C%B0%E5%8D%80/) (1)
--   [🏷️ **房價上漲**](../blog/category/%E6%88%BF%E5%83%B9%E4%B8%8A%E6%BC%B2/) (1)
--   [🏷️ **土地貢獻**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%A2%E7%8D%BB/) (1)
--   [🏷️ **聯合貢獻**](../blog/category/%E8%81%AF%E5%90%88%E8%B2%A2%E7%8D%BB/) (1)
--   [🏷️ **擴大解釋**](../blog/category/%E6%93%B4%E5%A4%A7%E8%A7%A3%E9%87%8B/) (1)
--   [🏷️ **類推適用**](../blog/category/%E9%A1%9E%E6%8E%A8%E9%81%A9%E7%94%A8/) (1)
--   [🏷️ **地價評議**](../blog/category/%E5%9C%B0%E5%83%B9%E8%A9%95%E8%AD%B0/) (1)
--   [🏷️ **增值稅**](../blog/category/%E5%A2%9E%E5%80%BC%E7%A8%85/) (1)
--   [🏷️ **無移轉**](../blog/category/%E7%84%A1%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **公示性**](../blog/category/%E5%85%AC%E7%A4%BA%E6%80%A7/) (1)
--   [🏷️ **農舍單獨移轉**](../blog/category/%E8%BE%B2%E8%88%8D%E5%96%AE%E7%8D%A8%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **需役不動產**](../blog/category/%E9%9C%80%E5%BD%B9%E4%B8%8D%E5%8B%95%E7%94%A2/) (1)
--   [🏷️ **供役不動產**](../blog/category/%E4%BE%9B%E5%BD%B9%E4%B8%8D%E5%8B%95%E7%94%A2/) (1)
--   [🏷️ **不動產登記簿**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%99%BB%E8%A8%98%E7%B0%BF/) (1)
--   [🏷️ **耕地租用**](../blog/category/%E8%80%95%E5%9C%B0%E7%A7%9F%E7%94%A8/) (1)
--   [🏷️ **耕作權**](../blog/category/%E8%80%95%E4%BD%9C%E6%AC%8A/) (1)
--   [🏷️ **韌性城市**](../blog/category/%E9%9F%8C%E6%80%A7%E5%9F%8E%E5%B8%82/) (1)
--   [🏷️ **災害**](../blog/category/%E7%81%BD%E5%AE%B3/) (1)
--   [🏷️ **計畫裁量**](../blog/category/%E8%A8%88%E7%95%AB%E8%A3%81%E9%87%8F/) (1)
--   [🏷️ **利益衡量**](../blog/category/%EF%A7%9D%EF%A8%97%E8%A1%A1%EF%A5%BE/) (1)
--   [🏷️ **專有部分**](../blog/category/%E5%B0%88%E6%9C%89%E9%83%A8%E5%88%86/) (1)
--   [🏷️ **共有部分**](../blog/category/%E5%85%B1%E6%9C%89%E9%83%A8%E5%88%86/) (1)
--   [🏷️ **主建物面積**](../blog/category/%E4%B8%BB%E5%BB%BA%E7%89%A9%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **附屬建物面積**](../blog/category/%E9%99%84%E5%B1%AC%E5%BB%BA%E7%89%A9%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **地價區段**](../blog/category/%E5%9C%B0%E5%83%B9%E5%8D%80%E6%AE%B5/) (1)
--   [🏷️ **建物分割**](../blog/category/%E5%BB%BA%E7%89%A9%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **建物合併**](../blog/category/%E5%BB%BA%E7%89%A9%E5%90%88%E4%BD%B5/) (1)
--   [🏷️ **換約**](../blog/category/%E6%8F%9B%E7%B4%84/) (1)
--   [🏷️ **紅單**](../blog/category/%E7%B4%85%E5%96%AE/) (1)
--   [🏷️ **不動產經紀業**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD/) (1)
--   [🏷️ **更新單元**](../blog/category/%E6%9B%B4%E6%96%B0%E5%96%AE%E5%85%83/) (1)
--   [🏷️ **排放源**](../blog/category/%E6%8E%92%E6%94%BE%E6%BA%90/) (1)
--   [🏷️ **碳費**](../blog/category/%E7%A2%B3%E8%B2%BB/) (1)
--   [🏷️ **公告現值**](../blog/category/%E5%85%AC%E5%91%8A%E7%8F%BE%E5%80%BC/) (1)
--   [🏷️ **徵收補償市價**](../blog/category/%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F%E5%B8%82%E5%83%B9/) (1)
--   [🏷️ **市場正常交易價格**](../blog/category/%E5%B8%82%E5%A0%B4%E6%AD%A3%E5%B8%B8%E4%BA%A4%E6%98%93%E5%83%B9%E6%A0%BC/) (1)
--   [🏷️ **公有土地**](../blog/category/%E5%85%AC%E6%9C%89%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **個人墓地**](../blog/category/%E5%80%8B%E4%BA%BA%E5%A2%93%E5%9C%B0/) (1)
--   [🏷️ **個人墓園**](../blog/category/%E5%80%8B%E4%BA%BA%E5%A2%93%E5%9C%92/) (1)
--   [🏷️ **優先承買**](../blog/category/%E5%84%AA%E5%85%88%E6%89%BF%E8%B2%B7/) (1)
--   [🏷️ **重劃會**](../blog/category/%E9%87%8D%E5%8A%83%E6%9C%83/) (1)
--   [🏷️ **釋字747**](../blog/category/%E9%87%8B%E5%AD%97747/) (1)
--   [🏷️ **都市更新事業**](../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E4%BA%8B%E6%A5%AD/) (1)
--   [🏷️ **信託歸戶**](../blog/category/%E4%BF%A1%E8%A8%97%E6%AD%B8%E6%88%B6/) (1)
--   [🏷️ **佃農**](../blog/category/%E4%BD%83%E8%BE%B2/) (1)
--   [🏷️ **開發影響費**](../blog/category/%E9%96%8B%E7%99%BC%E5%BD%B1%E9%9F%BF%E8%B2%BB/) (1)
--   [🏷️ **稟賦價值**](../blog/category/%E7%A8%9F%E8%B3%A6%E5%83%B9%E5%80%BC/) (1)
--   [🏷️ **土地法第73條之1**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC73%E6%A2%9D%E4%B9%8B1/) (1)
--   [🏷️ **市場價格**](../blog/category/%E5%B8%82%E5%A0%B4%E5%83%B9%E6%A0%BC/) (1)
--   [🏷️ **車位**](../blog/category/%E8%BB%8A%E4%BD%8D/) (1)
--   [🏷️ **車位總價**](../blog/category/%E8%BB%8A%E4%BD%8D%E7%B8%BD%E5%83%B9/) (1)
--   [🏷️ **車位總面積**](../blog/category/%E8%BB%8A%E4%BD%8D%E7%B8%BD%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **地籍測量錯誤**](../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%AC%E9%87%8F%E9%8C%AF%E8%AA%A4/) (1)
--   [🏷️ **否定說**](../blog/category/%E5%90%A6%E5%AE%9A%E8%AA%AA/) (1)
--   [🏷️ **多次繼承**](../blog/category/%E5%A4%9A%E6%AC%A1%E7%B9%BC%E6%89%BF/) (1)
--   [🏷️ **共有**](../blog/category/%E5%85%B1%E6%9C%89/) (1)
--   [🏷️ **父母移轉不動產土地增值稅**](../blog/category/%E7%88%B6%E6%AF%8D%E7%A7%BB%E8%BD%89%E4%B8%8D%E5%8B%95%E7%94%A2%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/) (1)
--   [🏷️ **租隙**](../blog/category/%E7%A7%9F%E9%9A%99/) (1)
--   [🏷️ **112年憲判字第20號**](../blog/category/112%E5%B9%B4%E6%86%B2%E5%88%A4%E5%AD%97%E7%AC%AC20%E8%99%9F/) (1)
--   [🏷️ **公信力**](../blog/category/%E5%85%AC%E4%BF%A1%E5%8A%9B/) (1)
--   [🏷️ **民事庭決議**](../blog/category/%E6%B0%91%E4%BA%8B%E5%BA%AD%E6%B1%BA%E8%AD%B0/) (1)
--   [🏷️ **建築物違規**](../blog/category/%E5%BB%BA%E7%AF%89%E7%89%A9%E9%81%95%E8%A6%8F/) (1)
--   [🏷️ **行為人**](../blog/category/%E8%A1%8C%E7%82%BA%E4%BA%BA/) (1)
--   [🏷️ **市地重劃實施辦法**](../blog/category/%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83%E5%AF%A6%E6%96%BD%E8%BE%A6%E6%B3%95/) (1)
--   [🏷️ **釋字763**](../blog/category/%E9%87%8B%E5%AD%97763/) (1)
--   [🏷️ **徵收收回權**](../blog/category/%E5%BE%B5%E6%94%B6%E6%94%B6%E5%9B%9E%E6%AC%8A/) (1)
--   [🏷️ **折現現金流量分析法**](../blog/category/%E6%8A%98%E7%8F%BE%E7%8F%BE%E9%87%91%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90%E6%B3%95/) (1)
--   [🏷️ **信託法第五條**](../blog/category/%E4%BF%A1%E8%A8%97%E6%B3%95%E7%AC%AC%E4%BA%94%E6%A2%9D/) (1)
--   [🏷️ **疫情**](../blog/category/%E7%96%AB%E6%83%85/) (1)
--   [🏷️ **連續繼承**](../blog/category/%E9%80%A3%E7%BA%8C%E7%B9%BC%E6%89%BF/) (1)
--   [🏷️ **土地法第46條之2**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC46%E6%A2%9D%E4%B9%8B2/) (1)
--   [🏷️ **訴訟外紛爭解決機制**](../blog/category/%E8%A8%B4%E8%A8%9F%E5%A4%96%E7%B4%9B%E7%88%AD%E8%A7%A3%E6%B1%BA%E6%A9%9F%E5%88%B6/) (1)
--   [🏷️ **調處**](../blog/category/%E8%AA%BF%E8%99%95/) (1)
--   [🏷️ **仲裁**](../blog/category/%E4%BB%B2%E8%A3%81/) (1)
--   [🏷️ **訴訟**](../blog/category/%E8%A8%B4%E8%A8%9F/) (1)
--   [🏷️ **ADR**](../blog/category/adr/) (1)
--   [🏷️ **素地**](../blog/category/%E7%B4%A0%E5%9C%B0/) (1)
--   [🏷️ **估價**](../blog/category/%E4%BC%B0%E5%83%B9/) (1)
--   [🏷️ **漲價完全歸公**](../blog/category/%E6%BC%B2%E5%83%B9%E5%AE%8C%E5%85%A8%E6%AD%B8%E5%85%AC/) (1)
--   [🏷️ **市場完全閉鎖**](../blog/category/%E5%B8%82%E5%A0%B4%E5%AE%8C%E5%85%A8%E9%96%89%E9%8E%96/) (1)
--   [🏷️ **市場地價**](../blog/category/%E5%B8%82%E5%A0%B4%E5%9C%B0%E5%83%B9/) (1)
--   [🏷️ **非都市土地編定**](../blog/category/%E9%9D%9E%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0%E7%B7%A8%E5%AE%9A/) (1)
--   [🏷️ **不動產估價概要**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E6%A6%82%E8%A6%81/) (1)
--   [🏷️ **ESG**](../blog/category/esg/) (1)
--   [🏷️ **社會責任**](../blog/category/%E7%A4%BE%E6%9C%83%E8%B2%AC%E4%BB%BB/) (1)
--   [🏷️ **公司治理**](../blog/category/%E5%85%AC%E5%8F%B8%E6%B2%BB%E7%90%86/) (1)
--   [🏷️ **加盟**](../blog/category/%E5%8A%A0%E7%9B%9F/) (1)
--   [🏷️ **土地使用規劃原則**](../blog/category/%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%A6%8F%E5%8A%83%E5%8E%9F%E5%89%87/) (1)
--   [🏷️ **分割限制**](../blog/category/%E5%88%86%E5%89%B2%E9%99%90%E5%88%B6/) (1)
--   [🏷️ **協議價購土地增值稅**](../blog/category/%E5%8D%94%E8%AD%B0%E5%83%B9%E8%B3%BC%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/) (1)
--   [🏷️ **適當利潤率**](../blog/category/%E9%81%A9%E7%95%B6%E5%88%A9%E6%BD%A4%E7%8E%87/) (1)
--   [🏷️ **質權**](../blog/category/%E8%B3%AA%E6%AC%8A/) (1)
--   [🏷️ **出質人**](../blog/category/%E5%87%BA%E8%B3%AA%E4%BA%BA/) (1)
--   [🏷️ **稅捐保全**](../blog/category/%E7%A8%85%E6%8D%90%E4%BF%9D%E5%85%A8/) (1)
--   [🏷️ **憲法法庭**](../blog/category/%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD/) (1)
--   [🏷️ **憲法訴訟法**](../blog/category/%E6%86%B2%E6%B3%95%E8%A8%B4%E8%A8%9F%E6%B3%95/) (1)
--   [🏷️ **憲法審查**](../blog/category/%E6%86%B2%E6%B3%95%E5%AF%A9%E6%9F%A5/) (1)
--   [🏷️ **違憲**](../blog/category/%E9%81%95%E6%86%B2/) (1)
--   [🏷️ **判決**](../blog/category/%E5%88%A4%E6%B1%BA/) (1)
--   [🏷️ **照舊使用**](../blog/category/%E7%85%A7%E8%88%8A%E4%BD%BF%E7%94%A8/) (1)
--   [🏷️ **農田水利**](../blog/category/%E8%BE%B2%E7%94%B0%E6%B0%B4%E5%88%A9/) (1)
--   [🏷️ **農田水利會**](../blog/category/%E8%BE%B2%E7%94%B0%E6%B0%B4%E5%88%A9%E6%9C%83/) (1)
--   [🏷️ **不動產保值性**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BF%9D%E5%80%BC%E6%80%A7/) (1)
--   [🏷️ **直系親屬**](../blog/category/%E7%9B%B4%E7%B3%BB%E8%A6%AA%E5%B1%AC/) (1)
--   [🏷️ **營業用**](../blog/category/%E7%87%9F%E6%A5%AD%E7%94%A8/) (1)
--   [🏷️ **倍數累進**](../blog/category/%E5%80%8D%E6%95%B8%E7%B4%AF%E9%80%B2/) (1)
--   [🏷️ **金額累進**](../blog/category/%E9%87%91%E9%A1%8D%E7%B4%AF%E9%80%B2/) (1)
--   [🏷️ **聽證**](../blog/category/%E8%81%BD%E8%AD%89/) (1)
--   [🏷️ **消保法**](../blog/category/%E6%B6%88%E4%BF%9D%E6%B3%95/) (1)
--   [🏷️ **保證書**](../blog/category/%E4%BF%9D%E8%AD%89%E6%9B%B8/) (1)
--   [🏷️ **購屋預約單**](../blog/category/%E8%B3%BC%E5%B1%8B%E9%A0%90%E7%B4%84%E5%96%AE/) (1)
--   [🏷️ **預售屋買賣契約**](../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%B2%B7%E8%B3%A3%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **面積短少**](../blog/category/%E9%9D%A2%E7%A9%8D%E7%9F%AD%E5%B0%91/) (1)
--   [🏷️ **法律上之處分**](../blog/category/%E6%B3%95%E5%BE%8B%E4%B8%8A%E4%B9%8B%E8%99%95%E5%88%86/) (1)
--   [🏷️ **事實上之處分**](../blog/category/%E4%BA%8B%E5%AF%A6%E4%B8%8A%E4%B9%8B%E8%99%95%E5%88%86/) (1)
--   [🏷️ **住宅租約**](../blog/category/%E4%BD%8F%E5%AE%85%E7%A7%9F%E7%B4%84/) (1)
--   [🏷️ **承租人**](../blog/category/%E6%89%BF%E7%A7%9F%E4%BA%BA/) (1)
--   [🏷️ **出租人**](../blog/category/%E5%87%BA%E7%A7%9F%E4%BA%BA/) (1)
--   [🏷️ **聲明**](../blog/category/%E8%81%B2%E6%98%8E/) (1)
--   [🏷️ **房地交換**](../blog/category/%E6%88%BF%E5%9C%B0%E4%BA%A4%E6%8F%9B/) (1)
--   [🏷️ **標示分割**](../blog/category/%E6%A8%99%E7%A4%BA%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **權利分割**](../blog/category/%E6%AC%8A%E5%88%A9%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **土地登記實務**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E5%AF%A6%E5%8B%99/) (1)
--   [🏷️ **信託土地**](../blog/category/%E4%BF%A1%E8%A8%97%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **自益信託**](../blog/category/%E8%87%AA%E7%9B%8A%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **他益信託**](../blog/category/%E4%BB%96%E7%9B%8A%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **競合**](../blog/category/%E7%AB%B6%E5%90%88/) (1)
--   [🏷️ **國土計畫公告**](../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E5%85%AC%E5%91%8A/) (1)
--   [🏷️ **國土計畫變更**](../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E8%AE%8A%E6%9B%B4/) (1)
--   [🏷️ **房屋租賃定型化契約**](../blog/category/%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B3%83%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **土地重測**](../blog/category/%E5%9C%9F%E5%9C%B0%E9%87%8D%E6%B8%AC/) (1)
--   [🏷️ **建築物**](../blog/category/%E5%BB%BA%E7%AF%89%E7%89%A9/) (1)
--   [🏷️ **折舊**](../blog/category/%E6%8A%98%E8%88%8A/) (1)
--   [🏷️ **增值**](../blog/category/%E5%A2%9E%E5%80%BC/) (1)
--   [🏷️ **個別磋商**](../blog/category/%E5%80%8B%E5%88%A5%E7%A3%8B%E5%95%86/) (1)
--   [🏷️ **審閱權利**](../blog/category/%E5%AF%A9%E9%96%B1%E6%AC%8A%E5%88%A9/) (1)
--   [🏷️ **民法第759條**](../blog/category/%E6%B0%91%E6%B3%95%E7%AC%AC759%E6%A2%9D/) (1)
--   [🏷️ **回頭殺**](../blog/category/%E5%9B%9E%E9%A0%AD%E6%AE%BA/) (1)
--   [🏷️ **差價**](../blog/category/%E5%B7%AE%E5%83%B9/) (1)
--   [🏷️ **鄉村地區**](../blog/category/%E9%84%89%E6%9D%91%E5%9C%B0%E5%8D%80/) (1)
--   [🏷️ **非都市土地**](../blog/category/%E9%9D%9E%EF%A8%A6%E5%B8%82%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **不實廣告**](../blog/category/%E4%B8%8D%E5%AF%A6%E5%BB%A3%E5%91%8A/) (1)
--   [🏷️ **土地利用與政策**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E8%88%87%E6%94%BF%E7%AD%96/) (1)
--   [🏷️ **減徵**](../blog/category/%E6%B8%9B%E5%BE%B5/) (1)
--   [🏷️ **登記權利人**](../blog/category/%E7%99%BB%E8%A8%98%E6%AC%8A%E5%88%A9%E4%BA%BA/) (1)
--   [🏷️ **登記義務人**](../blog/category/%E7%99%BB%E8%A8%98%E7%BE%A9%E5%8B%99%E4%BA%BA/) (1)
--   [🏷️ **三類謄本**](../blog/category/%E4%B8%89%E9%A1%9E%E8%AC%84%E6%9C%AC/) (1)
--   [🏷️ **比例稅**](../blog/category/%E6%AF%94%E4%BE%8B%E7%A8%85/) (1)
--   [🏷️ **淨零排放**](../blog/category/%E6%B7%A8%E9%9B%B6%E6%8E%92%E6%94%BE/) (1)
--   [🏷️ **碳匯**](../blog/category/%E7%A2%B3%E5%8C%AF/) (1)
--   [🏷️ **應繼遺產**](../blog/category/%E6%87%89%E7%B9%BC%E9%81%BA%E7%94%A2/) (1)
--   [🏷️ **土地權利契約**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%E5%88%A9%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **死因贈與**](../blog/category/%E6%AD%BB%E5%9B%A0%E8%B4%88%E8%88%87/) (1)
--   [🏷️ **遺囑**](../blog/category/%E9%81%BA%E5%9B%91/) (1)
--   [🏷️ **贈與說**](../blog/category/%E8%B4%88%E8%88%87%E8%AA%AA/) (1)
--   [🏷️ **登記虛偽**](../blog/category/%E7%99%BB%E8%A8%98%E8%99%9B%E5%81%BD/) (1)
--   [🏷️ **意定優先購買權**](../blog/category/%E6%84%8F%E5%AE%9A%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **法定優先購買權**](../blog/category/%E6%B3%95%E5%AE%9A%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **實價申報**](../blog/category/%E5%AF%A6%E5%83%B9%E7%94%B3%E5%A0%B1/) (1)
--   [🏷️ **權利**](../blog/category/%E6%AC%8A%E5%88%A9/) (1)
--   [🏷️ **自備款**](../blog/category/%E8%87%AA%E5%82%99%E6%AC%BE/) (1)
--   [🏷️ **定金**](../blog/category/%E5%AE%9A%E9%87%91/) (1)
--   [🏷️ **簽約金**](../blog/category/%E7%B0%BD%E7%B4%84%E9%87%91/) (1)
--   [🏷️ **財貨市場**](../blog/category/%E8%B2%A1%E8%B2%A8%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **供需機制**](../blog/category/%E4%BE%9B%E9%9C%80%E6%A9%9F%E5%88%B6/) (1)
--   [🏷️ **同一性**](../blog/category/%E5%90%8C%E4%B8%80%E6%80%A7/) (1)
--   [🏷️ **課予義務訴訟**](../blog/category/%E8%AA%B2%E4%BA%88%E7%BE%A9%E5%8B%99%E8%A8%B4%E8%A8%9F/) (1)
--   [🏷️ **補償處分**](../blog/category/%E8%A3%9C%E5%84%9F%E8%99%95%E5%88%86/) (1)
--   [🏷️ **補償請求權**](../blog/category/%E8%A3%9C%E5%84%9F%E8%AB%8B%E6%B1%82%E6%AC%8A/) (1)
--   [🏷️ **徵收土地**](../blog/category/%E5%BE%B5%E6%94%B6%E5%9C%9F%E5%9C%B0/) (1)
--   [🏷️ **住宅用地**](../blog/category/%E4%BD%8F%E5%AE%85%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **土地持分**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%8C%81%E5%88%86/) (1)
--   [🏷️ **房屋持分**](../blog/category/%E6%88%BF%E5%B1%8B%E6%8C%81%E5%88%86/) (1)
--   [🏷️ **放棄優先購買權**](../blog/category/%E6%94%BE%E6%A3%84%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **視為放棄優先購買權**](../blog/category/%E8%A6%96%E7%82%BA%E6%94%BE%E6%A3%84%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **買賣不破租賃**](../blog/category/%E8%B2%B7%E8%B3%A3%E4%B8%8D%E7%A0%B4%E7%A7%9F%E8%B3%83/) (1)
--   [🏷️ **出售農地**](../blog/category/%E5%87%BA%E5%94%AE%E8%BE%B2%E5%9C%B0/) (1)
--   [🏷️ **老農**](../blog/category/%E8%80%81%E8%BE%B2/) (1)
--   [🏷️ **新農**](../blog/category/%E6%96%B0%E8%BE%B2/) (1)
--   [🏷️ **土地權利**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%EF%A7%9D/) (1)
--   [🏷️ **登記名義人**](../blog/category/%E7%99%BB%E8%A8%98%E5%90%8D%E7%BE%A9%E4%BA%BA/) (1)
--   [🏷️ **複丈**](../blog/category/%E8%A4%87%E4%B8%88/) (1)
--   [🏷️ **成長管理**](../blog/category/%E6%88%90%E9%95%B7%E7%AE%A1%E7%90%86/) (1)
--   [🏷️ **老舊建物**](../blog/category/%E8%80%81%E8%88%8A%E5%BB%BA%E7%89%A9/) (1)
--   [🏷️ **老舊建物拆除重建**](../blog/category/%E8%80%81%E8%88%8A%E5%BB%BA%E7%89%A9%E6%8B%86%E9%99%A4%E9%87%8D%E5%BB%BA/) (1)
--   [🏷️ **歷史建築**](../blog/category/%E6%AD%B7%E5%8F%B2%E5%BB%BA%E7%AF%89/) (1)
--   [🏷️ **農場規模**](../blog/category/%E8%BE%B2%E5%A0%B4%E8%A6%8F%E6%A8%A1/) (1)
--   [🏷️ **消滅時效**](../blog/category/%E6%B6%88%E6%BB%85%E6%99%82%E6%95%88/) (1)
--   [🏷️ **已登記不動產**](../blog/category/%E5%B7%B2%E7%99%BB%E8%A8%98%E4%B8%8D%E5%8B%95%E7%94%A2/) (1)
--   [🏷️ **容積代金**](../blog/category/%E5%AE%B9%E7%A9%8D%E4%BB%A3%E9%87%91/) (1)
--   [🏷️ **發展權國有**](../blog/category/%E7%99%BC%E5%B1%95%E6%AC%8A%E5%9C%8B%E6%9C%89/) (1)
--   [🏷️ **住宅租賃契約**](../blog/category/%E4%BD%8F%E5%AE%85%E7%A7%9F%E8%B3%83%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **成屋買賣**](../blog/category/%E6%88%90%E5%B1%8B%E8%B2%B7%E8%B3%A3/) (1)
--   [🏷️ **預售屋買賣**](../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%B2%B7%E8%B3%A3/) (1)
--   [🏷️ **透天房屋**](../blog/category/%E9%80%8F%E5%A4%A9%E6%88%BF%E5%B1%8B/) (1)
--   [🏷️ **真透天**](../blog/category/%E7%9C%9F%E9%80%8F%E5%A4%A9/) (1)
--   [🏷️ **假透天**](../blog/category/%E5%81%87%E9%80%8F%E5%A4%A9/) (1)
--   [🏷️ **產權**](../blog/category/%E7%94%A2%E6%AC%8A/) (1)
--   [🏷️ **財產權保障**](../blog/category/%E8%B2%A1%E7%94%A2%E6%AC%8A%E4%BF%9D%E9%9A%9C/) (1)
--   [🏷️ **發展權移轉**](../blog/category/%E7%99%BC%E5%B1%95%E6%AC%8A%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **民法物權編**](../blog/category/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E7%B7%A8/) (1)
--   [🏷️ **租稅效果**](../blog/category/%E7%A7%9F%E7%A8%85%E6%95%88%E6%9E%9C/) (1)
--   [🏷️ **再生能源相關設施**](../blog/category/%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90%E7%9B%B8%E9%97%9C%E8%A8%AD%E6%96%BD/) (1)
--   [🏷️ **公地放領**](../blog/category/%E5%85%AC%E5%9C%B0%E6%94%BE%E9%A0%98/) (1)
--   [🏷️ **農地農用**](../blog/category/%E8%BE%B2%E5%9C%B0%E8%BE%B2%E7%94%A8/) (1)
--   [🏷️ **土地法第107條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC107%E6%A2%9D/) (1)
--   [🏷️ **資本化**](../blog/category/%E8%B3%87%E6%9C%AC%E5%8C%96/) (1)
--   [🏷️ **代繳義務人**](../blog/category/%E4%BB%A3%E7%B9%B3%E7%BE%A9%E5%8B%99%E4%BA%BA/) (1)
--   [🏷️ **代繳人**](../blog/category/%E4%BB%A3%E7%B9%B3%E4%BA%BA/) (1)
--   [🏷️ **重建區段**](../blog/category/%E9%87%8D%E5%BB%BA%E5%8D%80%E6%AE%B5/) (1)
--   [🏷️ **協議合建**](../blog/category/%E5%8D%94%E8%AD%B0%E5%90%88%E5%BB%BA/) (1)
--   [🏷️ **成屋申報**](../blog/category/%E6%88%90%E5%B1%8B%E7%94%B3%E5%A0%B1/) (1)
--   [🏷️ **預售屋申報**](../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E7%94%B3%E5%A0%B1/) (1)
--   [🏷️ **大陸地區繼承人**](../blog/category/%E5%A4%A7%E9%99%B8%E5%9C%B0%E5%8D%80%E7%B9%BC%E6%89%BF%E4%BA%BA/) (1)
--   [🏷️ **繼承權**](../blog/category/%E7%B9%BC%E6%89%BF%E6%AC%8A/) (1)
--   [🏷️ **不完全競爭市場**](../blog/category/%E4%B8%8D%E5%AE%8C%E5%85%A8%E7%AB%B6%E7%88%AD%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **非自由競爭市場**](../blog/category/%E9%9D%9E%E8%87%AA%E7%94%B1%E7%AB%B6%E7%88%AD%E5%B8%82%E5%A0%B4/) (1)
--   [🏷️ **公同共有人**](../blog/category/%E5%85%AC%E5%90%8C%E5%85%B1%E6%9C%89%E4%BA%BA/) (1)
--   [🏷️ **權利行使**](../blog/category/%E6%AC%8A%E5%88%A9%E8%A1%8C%E4%BD%BF/) (1)
--   [🏷️ **高普考**](../blog/category/%E9%AB%98%E6%99%AE%E8%80%83/) (1)
--   [🏷️ **租賃關係消滅**](../blog/category/%E7%A7%9F%E8%B3%83%E9%97%9C%E4%BF%82%E6%B6%88%E6%BB%85/) (1)
--   [🏷️ **道路**](../blog/category/%E9%81%93%E8%B7%AF/) (1)
--   [🏷️ **委託**](../blog/category/%E5%A7%94%E8%A8%97/) (1)
--   [🏷️ **委任人**](../blog/category/%E5%A7%94%E4%BB%BB%E4%BA%BA/) (1)
--   [🏷️ **受任人**](../blog/category/%E5%8F%97%E4%BB%BB%E4%BA%BA/) (1)
--   [🏷️ **不動產逆向抵押貸款**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E9%80%86%E5%90%91%E6%8A%B5%E6%8A%BC%E8%B2%B8%E6%AC%BE/) (1)
--   [🏷️ **共有房地**](../blog/category/%E5%85%B1%E6%9C%89%E6%88%BF%E5%9C%B0/) (1)
--   [🏷️ **都市計畫變更**](../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB%E8%AE%8A%E6%9B%B4/) (1)
--   [🏷️ **租利**](../blog/category/%E7%A7%9F%E5%88%A9/) (1)
--   [🏷️ **盜賣**](../blog/category/%E7%9B%9C%E8%B3%A3/) (1)
--   [🏷️ **東區名人巷**](../blog/category/%E6%9D%B1%E5%8D%80%E5%90%8D%E4%BA%BA%E5%B7%B7/) (1)
--   [🏷️ **融通物**](../blog/category/%E8%9E%8D%E9%80%9A%E7%89%A9/) (1)
--   [🏷️ **不融通物**](../blog/category/%E4%B8%8D%E8%9E%8D%E9%80%9A%E7%89%A9/) (1)
--   [🏷️ **與登記有關之第三人**](../blog/category/%E8%88%87%E7%99%BB%E8%A8%98%E6%9C%89%E9%97%9C%E4%B9%8B%E7%AC%AC%E4%B8%89%E4%BA%BA/) (1)
--   [🏷️ **典權期限**](../blog/category/%E5%85%B8%E6%AC%8A%E6%9C%9F%E9%99%90/) (1)
--   [🏷️ **典權人**](../blog/category/%E5%85%B8%E6%AC%8A%E4%BA%BA/) (1)
--   [🏷️ **地籍圖**](../blog/category/%E5%9C%B0%E7%B1%8D%E5%9C%96/) (1)
--   [🏷️ **地上權實例**](../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A%E5%AF%A6%E4%BE%8B/) (1)
--   [🏷️ **囤房**](../blog/category/%E5%9B%A4%E6%88%BF/) (1)
--   [🏷️ **保護農地**](../blog/category/%E4%BF%9D%E8%AD%B7%E8%BE%B2%E5%9C%B0/) (1)
--   [🏷️ **農地變更**](../blog/category/%E8%BE%B2%E5%9C%B0%E8%AE%8A%E6%9B%B4/) (1)
--   [🏷️ **全球性糧荒**](../blog/category/%E5%85%A8%E7%90%83%E6%80%A7%E7%B3%A7%E8%8D%92/) (1)
--   [🏷️ **遺囑信託**](../blog/category/%E9%81%BA%E5%9B%91%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **遺囑執行人**](../blog/category/%E9%81%BA%E5%9B%91%E5%9F%B7%E8%A1%8C%E4%BA%BA/) (1)
--   [🏷️ **遺產管理人**](../blog/category/%E9%81%BA%E7%94%A2%E7%AE%A1%E7%90%86%E4%BA%BA/) (1)
--   [🏷️ **房屋所有權人**](../blog/category/%E6%88%BF%E5%B1%8B%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/) (1)
--   [🏷️ **房地所有權人**](../blog/category/%E6%88%BF%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/) (1)
--   [🏷️ **重購房地**](../blog/category/%E9%87%8D%E8%B3%BC%E6%88%BF%E5%9C%B0/) (1)
--   [🏷️ **土地法第13條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC13%E6%A2%9D/) (1)
--   [🏷️ **岸地優先取得權**](../blog/category/%E5%B2%B8%E5%9C%B0%E5%84%AA%E5%85%88%E5%8F%96%E5%BE%97%E6%AC%8A/) (1)
--   [🏷️ **不計徵**](../blog/category/%E4%B8%8D%E8%A8%88%E5%BE%B5/) (1)
--   [🏷️ **低度利用**](../blog/category/%E4%BD%8E%E5%BA%A6%E5%88%A9%E7%94%A8/) (1)
--   [🏷️ **過度利用**](../blog/category/%E9%81%8E%E5%BA%A6%E5%88%A9%E7%94%A8/) (1)
--   [🏷️ **不當利用**](../blog/category/%E4%B8%8D%E7%95%B6%E5%88%A9%E7%94%A8/) (1)
--   [🏷️ **私法人**](../blog/category/%E7%A7%81%E6%B3%95%E4%BA%BA/) (1)
--   [🏷️ **住宅**](../blog/category/%E4%BD%8F%E5%AE%85/) (1)
--   [🏷️ **離差**](../blog/category/%E9%9B%A2%E5%B7%AE/) (1)
--   [🏷️ **勘估標**](../blog/category/%E5%8B%98%E4%BC%B0%E6%A8%99/) (1)
--   [🏷️ **先賣後買**](../blog/category/%E5%85%88%E8%B3%A3%E5%BE%8C%E8%B2%B7/) (1)
--   [🏷️ **先買後賣**](../blog/category/%E5%85%88%E8%B2%B7%E5%BE%8C%E8%B3%A3/) (1)
--   [🏷️ **房地交易所得**](../blog/category/%E6%88%BF%E5%9C%B0%E4%BA%A4%E6%98%93%E6%89%80%E5%BE%97/) (1)
--   [🏷️ **特定區域計畫**](../blog/category/%E7%89%B9%E5%AE%9A%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB/) (1)
--   [🏷️ **公司法人**](../blog/category/%E5%85%AC%E5%8F%B8%E6%B3%95%E4%BA%BA/) (1)
--   [🏷️ **公共設施保留地 地價**](../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E4%BF%9D%E7%95%99%E5%9C%B0-%E5%9C%B0%E5%83%B9/) (1)
--   [🏷️ **住宅租賃**](../blog/category/%E4%BD%8F%E5%AE%85%E7%A7%9F%E8%B3%83/) (1)
--   [🏷️ **土地登記損害賠償**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/) (1)
--   [🏷️ **房屋預售**](../blog/category/%E6%88%BF%E5%B1%8B%E9%A0%90%E5%94%AE/) (1)
--   [🏷️ **房價飆漲**](../blog/category/%E6%88%BF%E5%83%B9%E9%A3%86%E6%BC%B2/) (1)
--   [🏷️ **建築用地**](../blog/category/%E5%BB%BA%E7%AF%89%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **成屋**](../blog/category/%E6%88%90%E5%B1%8B/) (1)
--   [🏷️ **購屋貸款**](../blog/category/%E8%B3%BC%E5%B1%8B%E8%B2%B8%E6%AC%BE/) (1)
--   [🏷️ **紅單交易**](../blog/category/%E7%B4%85%E5%96%AE%E4%BA%A4%E6%98%93/) (1)
--   [🏷️ **海域**](../blog/category/%E6%B5%B7%E5%9F%9F/) (1)
--   [🏷️ **海域區**](../blog/category/%E6%B5%B7%E5%9F%9F%E5%8D%80/) (1)
--   [🏷️ **海域用地**](../blog/category/%E6%B5%B7%E5%9F%9F%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **土地權利移轉**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%E5%88%A9%E7%A7%BB%E8%BD%89/) (1)
--   [🏷️ **日治時期**](../blog/category/%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F/) (1)
--   [🏷️ **影子銀行**](../blog/category/%E5%BD%B1%E5%AD%90%E9%8A%80%E8%A1%8C/) (1)
--   [🏷️ **資產證券化**](../blog/category/%E8%B3%87%E7%94%A2%E8%AD%89%E5%88%B8%E5%8C%96/) (1)
--   [🏷️ **自由處分**](../blog/category/%E8%87%AA%E7%94%B1%E8%99%95%E5%88%86/) (1)
--   [🏷️ **都市更新事業計畫同意比率**](../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%95%AB%E5%90%8C%E6%84%8F%E6%AF%94%E7%8E%87/) (1)
--   [🏷️ **地價評議委員會**](../blog/category/%E5%9C%B0%E5%83%B9%E8%A9%95%E8%AD%B0%E5%A7%94%E5%93%A1%E6%9C%83/) (1)
--   [🏷️ **不動產評價委員會**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%A9%95%E5%83%B9%E5%A7%94%E5%93%A1%E6%9C%83/) (1)
--   [🏷️ **民法物權編施行法第8條之5**](../blog/category/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E7%B7%A8%E6%96%BD%E8%A1%8C%E6%B3%95%E7%AC%AC8%E6%A2%9D%E4%B9%8B5/) (1)
--   [🏷️ **公同共有物**](../blog/category/%E5%85%AC%E5%90%8C%E5%85%B1%E6%9C%89%E7%89%A9/) (1)
--   [🏷️ **農業發展區**](../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95%E5%8D%80/) (1)
--   [🏷️ **國土保育區**](../blog/category/%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E5%8D%80/) (1)
--   [🏷️ **破產登記**](../blog/category/%E7%A0%B4%E7%94%A2%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **實價登錄2.0**](../blog/category/%E5%AF%A6%E5%83%B9%E7%99%BB%E9%8C%842.0/) (1)
--   [🏷️ **結合**](../blog/category/%E7%B5%90%E5%90%88/) (1)
--   [🏷️ **全聯公司**](../blog/category/%E5%85%A8%E8%81%AF%E5%85%AC%E5%8F%B8/) (1)
--   [🏷️ **大潤發**](../blog/category/%E5%A4%A7%E6%BD%A4%E7%99%BC/) (1)
--   [🏷️ **土地登記漏誤**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E6%BC%8F%E8%AA%A4/) (1)
--   [🏷️ **不動產合併**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%90%88%E4%BD%B5/) (1)
--   [🏷️ **不動產分割**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **權利合併**](../blog/category/%E6%AC%8A%E5%88%A9%E5%90%88%E4%BD%B5/) (1)
--   [🏷️ **標示合併**](../blog/category/%E6%A8%99%E7%A4%BA%E5%90%88%E4%BD%B5/) (1)
--   [🏷️ **使用權分離**](../blog/category/%E4%BD%BF%E7%94%A8%E6%AC%8A%E5%88%86%E9%9B%A2/) (1)
--   [🏷️ **所得稅法**](../blog/category/%E6%89%80%E5%BE%97%E7%A8%85%E6%B3%95/) (1)
--   [🏷️ **耕地收回補償**](../blog/category/%E8%80%95%E5%9C%B0%E6%94%B6%E5%9B%9E%E8%A3%9C%E5%84%9F/) (1)
--   [🏷️ **耕地三七五減租**](../blog/category/%E8%80%95%E5%9C%B0%E4%B8%89%E4%B8%83%E4%BA%94%E6%B8%9B%E7%A7%9F/) (1)
--   [🏷️ **土地法第26條**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC26%E6%A2%9D/) (1)
--   [🏷️ **回復原狀**](../blog/category/%E5%9B%9E%E5%BE%A9%E5%8E%9F%E7%8B%80/) (1)
--   [🏷️ **核准回復說**](../blog/category/%E6%A0%B8%E5%87%86%E5%9B%9E%E5%BE%A9%E8%AA%AA/) (1)
--   [🏷️ **自動回復說**](../blog/category/%E8%87%AA%E5%8B%95%E5%9B%9E%E5%BE%A9%E8%AA%AA/) (1)
--   [🏷️ **非市場價值**](../blog/category/%E9%9D%9E%E5%B8%82%E5%A0%B4%E5%83%B9%E5%80%BC/) (1)
--   [🏷️ **旅遊成本法**](../blog/category/%E6%97%85%E9%81%8A%E6%88%90%E6%9C%AC%E6%B3%95/) (1)
--   [🏷️ **特徵價格法**](../blog/category/%E7%89%B9%E5%BE%B5%E5%83%B9%E6%A0%BC%E6%B3%95/) (1)
--   [🏷️ **條件評價法**](../blog/category/%E6%A2%9D%E4%BB%B6%E8%A9%95%E5%83%B9%E6%B3%95/) (1)
--   [🏷️ **洗錢防制**](../blog/category/%E6%B4%97%E9%8C%A2%E9%98%B2%E5%88%B6/) (1)
--   [🏷️ **不動產買賣**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%B2%B7%E8%B3%A3/) (1)
--   [🏷️ **租賃住宅服務業**](../blog/category/%E7%A7%9F%E8%B3%83%E4%BD%8F%E5%AE%85%E6%9C%8D%E5%8B%99%E6%A5%AD/) (1)
--   [🏷️ **設籍**](../blog/category/%E8%A8%AD%E7%B1%8D/) (1)
--   [🏷️ **地政士考試重點**](../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB%E8%80%83%E8%A9%A6%E9%87%8D%E9%BB%9E/) (1)
--   [🏷️ **規劃利得**](../blog/category/%E8%A6%8F%E5%8A%83%E5%88%A9%E5%BE%97/) (1)
--   [🏷️ **規劃損失**](../blog/category/%E8%A6%8F%E5%8A%83%E6%90%8D%E5%A4%B1/) (1)
--   [🏷️ **比例原則**](../blog/category/%E6%AF%94%E4%BE%8B%E5%8E%9F%E5%89%87/) (1)
--   [🏷️ **禁止過度原則**](../blog/category/%E7%A6%81%E6%AD%A2%E9%81%8E%E5%BA%A6%E5%8E%9F%E5%89%87/) (1)
--   [🏷️ **行政程序法**](../blog/category/%E8%A1%8C%E6%94%BF%E7%A8%8B%E5%BA%8F%E6%B3%95/) (1)
--   [🏷️ **重購退稅額度**](../blog/category/%E9%87%8D%E8%B3%BC%E9%80%80%E7%A8%85%E9%A1%8D%E5%BA%A6/) (1)
--   [🏷️ **占有人**](../blog/category/%E5%8D%A0%E6%9C%89%E4%BA%BA/) (1)
--   [🏷️ **合法建物**](../blog/category/%E5%90%88%E6%B3%95%E5%BB%BA%E7%89%A9/) (1)
--   [🏷️ **債權性質優先購買權**](../blog/category/%E5%82%B5%E6%AC%8A%E6%80%A7%E8%B3%AA%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **物權性質優先購買權**](../blog/category/%E7%89%A9%E6%AC%8A%E6%80%A7%E8%B3%AA%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/) (1)
--   [🏷️ **不動產相關定型化契約**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%9B%B8%E9%97%9C%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **痛苦指數**](../blog/category/%E7%97%9B%E8%8B%A6%E6%8C%87%E6%95%B8/) (1)
--   [🏷️ **菲力浦曲線**](../blog/category/%E8%8F%B2%E5%8A%9B%E6%B5%A6%E6%9B%B2%E7%B7%9A/) (1)
--   [🏷️ **物價上漲率**](../blog/category/%E7%89%A9%E5%83%B9%E4%B8%8A%E6%BC%B2%E7%8E%87/) (1)
--   [🏷️ **失業率**](../blog/category/%E5%A4%B1%E6%A5%AD%E7%8E%87/) (1)
--   [🏷️ **文化資產法**](../blog/category/%E6%96%87%E5%8C%96%E8%B3%87%E7%94%A2%E6%B3%95/) (1)
--   [🏷️ **都市計畫法**](../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB%E6%B3%95/) (1)
--   [🏷️ **水利法**](../blog/category/%E6%B0%B4%E5%88%A9%E6%B3%95/) (1)
--   [🏷️ **房屋產權登記面積**](../blog/category/%E6%88%BF%E5%B1%8B%E7%94%A2%E6%AC%8A%E7%99%BB%E8%A8%98%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **虛坪制**](../blog/category/%E8%99%9B%E5%9D%AA%E5%88%B6/) (1)
--   [🏷️ **實坪制**](../blog/category/%E5%AF%A6%E5%9D%AA%E5%88%B6/) (1)
--   [🏷️ **需求曲線後彎**](../blog/category/%E9%9C%80%E6%B1%82%E6%9B%B2%E7%B7%9A%E5%BE%8C%E5%BD%8E/) (1)
--   [🏷️ **房屋合一稅**](../blog/category/%E6%88%BF%E5%B1%8B%E5%90%88%E4%B8%80%E7%A8%85/) (1)
--   [🏷️ **不動產估價實務**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%AF%A6%E5%8B%99/) (1)
--   [🏷️ **重劃區**](../blog/category/%E9%87%8D%E5%8A%83%E5%8D%80/) (1)
--   [🏷️ **契約**](../blog/category/%E5%A5%91%E7%B4%84/) (1)
--   [🏷️ **不定期限**](../blog/category/%E4%B8%8D%E5%AE%9A%E6%9C%9F%E9%99%90/) (1)
--   [🏷️ **一般犧牲**](../blog/category/%E4%B8%80%E8%88%AC%E7%8A%A7%E7%89%B2/) (1)
--   [🏷️ **判決分割**](../blog/category/%E5%88%A4%E6%B1%BA%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **不動產信託**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **不動產管理信託**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%AE%A1%E7%90%86%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **不動產處分信託**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%99%95%E5%88%86%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **不動產開發信託**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E9%96%8B%E7%99%BC%E4%BF%A1%E8%A8%97/) (1)
--   [🏷️ **住宅階梯**](../blog/category/%E4%BD%8F%E5%AE%85%E9%9A%8E%E6%A2%AF/) (1)
--   [🏷️ **政府失靈**](../blog/category/%E6%94%BF%E5%BA%9C%E5%A4%B1%E9%9D%88/) (1)
--   [🏷️ **債權物權化**](../blog/category/%E5%82%B5%E6%AC%8A%E7%89%A9%E6%AC%8A%E5%8C%96/) (1)
--   [🏷️ **逆向抵押貸款**](../blog/category/%E9%80%86%E5%90%91%E6%8A%B5%E6%8A%BC%E8%B2%B8%E6%AC%BE/) (1)
--   [🏷️ **回復期限**](../blog/category/%E5%9B%9E%E5%BE%A9%E6%9C%9F%E9%99%90/) (1)
--   [🏷️ **無過失責任**](../blog/category/%E7%84%A1%E9%81%8E%E5%A4%B1%E8%B2%AC%E4%BB%BB/) (1)
--   [🏷️ **友善農地**](../blog/category/%E5%8F%8B%E5%96%84%E8%BE%B2%E5%9C%B0/) (1)
--   [🏷️ **慣行農業**](../blog/category/%E6%85%A3%E8%A1%8C%E8%BE%B2%E6%A5%AD/) (1)
--   [🏷️ **美濃大峽谷**](../blog/category/%E7%BE%8E%E6%BF%83%E5%A4%A7%E5%B3%BD%E8%B0%B7/) (1)
--   [🏷️ **土石採取法**](../blog/category/%E5%9C%9F%E7%9F%B3%E6%8E%A1%E5%8F%96%E6%B3%95/) (1)
--   [🏷️ **廢棄物清理法**](../blog/category/%E5%BB%A2%E6%A3%84%E7%89%A9%E6%B8%85%E7%90%86%E6%B3%95/) (1)
--   [🏷️ **鄉村地區計畫**](../blog/category/%E9%84%89%E6%9D%91%E5%9C%B0%E5%8D%80%E8%A8%88%E7%95%AB/) (1)
--   [🏷️ **不動產登記**](../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%99%BB%E8%A8%98/) (1)
--   [🏷️ **增額容積**](../blog/category/%E5%A2%9E%E9%A1%8D%E5%AE%B9%E7%A9%8D/) (1)
--   [🏷️ **容積折繳代金**](../blog/category/%E5%AE%B9%E7%A9%8D%E6%8A%98%E7%B9%B3%E4%BB%A3%E9%87%91/) (1)
--   [🏷️ **容積銀行制度**](../blog/category/%E5%AE%B9%E7%A9%8D%E9%8A%80%E8%A1%8C%E5%88%B6%E5%BA%A6/) (1)
--   [🏷️ **建物折舊**](../blog/category/%E5%BB%BA%E7%89%A9%E6%8A%98%E8%88%8A/) (1)
--   [🏷️ **物理性折舊**](../blog/category/%E7%89%A9%E7%90%86%E6%80%A7%E6%8A%98%E8%88%8A/) (1)
--   [🏷️ **功能性折舊**](../blog/category/%E5%8A%9F%E8%83%BD%E6%80%A7%E6%8A%98%E8%88%8A/) (1)
--   [🏷️ **經濟性折舊**](../blog/category/%E7%B6%93%E6%BF%9F%E6%80%A7%E6%8A%98%E8%88%8A/) (1)
--   [🏷️ **物理耐用年數**](../blog/category/%E7%89%A9%E7%90%86%E8%80%90%E7%94%A8%E5%B9%B4%E6%95%B8/) (1)
--   [🏷️ **經濟耐用年數**](../blog/category/%E7%B6%93%E6%BF%9F%E8%80%90%E7%94%A8%E5%B9%B4%E6%95%B8/) (1)
--   [🏷️ **土地資源**](../blog/category/%E5%9C%9F%E5%9C%B0%E8%B3%87%E6%BA%90/) (1)
--   [🏷️ **耕地分割**](../blog/category/%E8%80%95%E5%9C%B0%E5%88%86%E5%89%B2/) (1)
--   [🏷️ **建築執照面積**](../blog/category/%E5%BB%BA%E7%AF%89%E5%9F%B7%E7%85%A7%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **建物登記面積**](../blog/category/%E5%BB%BA%E7%89%A9%E7%99%BB%E8%A8%98%E9%9D%A2%E7%A9%8D/) (1)
--   [🏷️ **雨遮**](../blog/category/%E9%9B%A8%E9%81%AE/) (1)
--   [🏷️ **巴瑞圖經濟效率**](../blog/category/%E5%B7%B4%E7%91%9E%E5%9C%96%E7%B6%93%E6%BF%9F%E6%95%88%E7%8E%87/) (1)
--   [🏷️ **馬歇爾經濟效率**](../blog/category/%E9%A6%AC%E6%AD%87%E7%88%BE%E7%B6%93%E6%BF%9F%E6%95%88%E7%8E%87/) (1)
--   [🏷️ **土地法104**](../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95104/) (1)
--   [🏷️ **釋字742**](../blog/category/%E9%87%8B%E5%AD%97742/) (1)
--   [🏷️ **雙地政士**](../blog/category/%E9%9B%99%E5%9C%B0%E6%94%BF%E5%A3%AB/) (1)
--   [🏷️ **合建分配比**](../blog/category/%E5%90%88%E5%BB%BA%E5%88%86%E9%85%8D%E6%AF%94/) (1)
--   [🏷️ **合建權益分配**](../blog/category/%E5%90%88%E5%BB%BA%E6%AC%8A%E7%9B%8A%E5%88%86%E9%85%8D/) (1)
--   [🏷️ **公有土地撥用**](../blog/category/%E5%85%AC%E6%9C%89%E5%9C%9F%E5%9C%B0%E6%92%A5%E7%94%A8/) (1)
--   [🏷️ **行政法**](../blog/category/%E8%A1%8C%E6%94%BF%E6%B3%95/) (1)
--   [🏷️ **地價動態**](../blog/category/%E5%9C%B0%E5%83%B9%E5%8B%95%E6%85%8B/) (1)
--   [🏷️ **都市化**](../blog/category/%E9%83%BD%E5%B8%82%E5%8C%96/) (1)
--   [🏷️ **郊區化**](../blog/category/%E9%83%8A%E5%8D%80%E5%8C%96/) (1)
--   [🏷️ **持有稅**](../blog/category/%E6%8C%81%E6%9C%89%E7%A8%85/) (1)
--   [🏷️ **合法建築物**](../blog/category/%E5%90%88%E6%B3%95%E5%BB%BA%E7%AF%89%E7%89%A9/) (1)
--   [🏷️ **農地重劃條例**](../blog/category/%E8%BE%B2%E5%9C%B0%E9%87%8D%E5%8A%83%E6%A2%9D%E4%BE%8B/) (1)
--   [🏷️ **地籍清理條例**](../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%85%E7%90%86%E6%A2%9D%E4%BE%8B/) (1)
--   [🏷️ **受讓人**](../blog/category/%E5%8F%97%E8%AE%93%E4%BA%BA/) (1)
--   [🏷️ **用益物權**](../blog/category/%E7%94%A8%E7%9B%8A%E7%89%A9%E6%AC%8A/) (1)
--   [🏷️ **剩餘財產差額**](../blog/category/%E5%89%A9%E9%A4%98%E8%B2%A1%E7%94%A2%E5%B7%AE%E9%A1%8D/) (1)
--   [🏷️ **反共用地**](../blog/category/%E5%8F%8D%E5%85%B1%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **共用地**](../blog/category/%E5%85%B1%E7%94%A8%E5%9C%B0/) (1)
--   [🏷️ **土地產權**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%94%A2%E6%AC%8A/) (1)
--   [🏷️ **土地私有制**](../blog/category/%E5%9C%9F%E5%9C%B0%E7%A7%81%E6%9C%89%E5%88%B6/) (1)
--   [🏷️ **土地國有制**](../blog/category/%E5%9C%9F%E5%9C%B0%E5%9C%8B%E6%9C%89%E5%88%B6/) (1)
--   [🏷️ **併同出賣**](../blog/category/%E4%BD%B5%E5%90%8C%E5%87%BA%E8%B3%A3/) (1)
--   [🏷️ **老舊建築物**](../blog/category/%E8%80%81%E8%88%8A%E5%BB%BA%E7%AF%89%E7%89%A9/) (1)
--   [🏷️ **危險建築物**](../blog/category/%E5%8D%B1%E9%9A%AA%E5%BB%BA%E7%AF%89%E7%89%A9/) (1)
--   [🏷️ **居住**](../blog/category/%E5%B1%85%E4%BD%8F/) (1)
--   [🏷️ **居住正義**](../blog/category/%E5%B1%85%E4%BD%8F%E6%AD%A3%E7%BE%A9/) (1)
--   [🏷️ **移轉現值**](../blog/category/%E7%A7%BB%E8%BD%89%E7%8F%BE%E5%80%BC/) (1)
--   [🏷️ **農電共生**](../blog/category/%E8%BE%B2%E9%9B%BB%E5%85%B1%E7%94%9F/) (1)
--   [🏷️ **重劃後移轉減徵**](../blog/category/%E9%87%8D%E5%8A%83%E5%BE%8C%E7%A7%BB%E8%BD%89%E6%B8%9B%E5%BE%B5/) (1)
--   [🏷️ **土地交換**](../blog/category/%E5%9C%9F%E5%9C%B0%E4%BA%A4%E6%8F%9B/) (1)
--   [🏷️ **事實行為**](../blog/category/%E4%BA%8B%E5%AF%A6%E8%A1%8C%E7%82%BA/) (1)
--   [🏷️ **平價配售**](../blog/category/%E5%B9%B3%E5%83%B9%E9%85%8D%E5%94%AE/) (1)
--   [🏷️ **分割**](../blog/category/%E5%88%86%E5%89%B2/) (1)
+<div class="tag-cloud">
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/" class="tag-item">土地增值稅 <span class="tag-count">67</span></a>
+  <a href="../blog/category/%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">優先購買權 <span class="tag-count">48</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98/" class="tag-item">土地登記 <span class="tag-count">40</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E4%BA%BA/" class="tag-item">共有人 <span class="tag-count">25</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9%E7%A8%85/" class="tag-item">地價稅 <span class="tag-count">23</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6/" class="tag-item">土地徵收 <span class="tag-count">21</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E9%8C%AF%E8%AA%A4/" class="tag-item">登記錯誤 <span class="tag-count">20</span></a>
+  <a href="../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="tag-item">地上權 <span class="tag-count">19</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E5%90%88%E4%B8%80%E6%89%80%E5%BE%97%E7%A8%85/" class="tag-item">房地合一所得稅 <span class="tag-count">18</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95/" class="tag-item">土地法 <span class="tag-count">18</span></a>
+  <a href="../blog/category/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/" class="tag-item">區段徵收 <span class="tag-count">18</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB/" class="tag-item">都市計畫 <span class="tag-count">18</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E7%A8%85/" class="tag-item">房屋稅 <span class="tag-count">17</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83/" class="tag-item">市地重劃 <span class="tag-count">16</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0/" class="tag-item">農業用地 <span class="tag-count">16</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC34%E6%A2%9D%E4%B9%8B1/" class="tag-item">土地法第34條之1 <span class="tag-count">14</span></a>
+  <a href="../blog/category/%E6%9B%B4%E6%AD%A3%E7%99%BB%E8%A8%98/" class="tag-item">更正登記 <span class="tag-count">13</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B/" class="tag-item">預售屋 <span class="tag-count">13</span></a>
+  <a href="../blog/category/%E7%B9%BC%E6%89%BF%E4%BA%BA/" class="tag-item">繼承人 <span class="tag-count">12</span></a>
+  <a href="../blog/category/%E7%B9%BC%E6%89%BF%E7%99%BB%E8%A8%98/" class="tag-item">繼承登記 <span class="tag-count">12</span></a>
+  <a href="../blog/category/%E5%AF%A6%E5%83%B9%E7%99%BB%E9%8C%84/" class="tag-item">實價登錄 <span class="tag-count">12</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E4%BF%9D%E7%95%99%E5%9C%B0/" class="tag-item">公共設施保留地 <span class="tag-count">12</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E5%90%88%E4%B8%80%E7%A8%85/" class="tag-item">房地合一稅 <span class="tag-count">11</span></a>
+  <a href="../blog/category/%E9%81%BA%E7%94%A2%E7%A8%85/" class="tag-item">遺產稅 <span class="tag-count">11</span></a>
+  <a href="../blog/category/%E5%85%A8%E5%9C%8B%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB/" class="tag-item">全國國土計畫 <span class="tag-count">11</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A/" class="tag-item">土地所有權 <span class="tag-count">10</span></a>
+  <a href="../blog/category/%E5%85%B8%E6%AC%8A/" class="tag-item">典權 <span class="tag-count">10</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97/" class="tag-item">信託 <span class="tag-count">10</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9/" class="tag-item">地價 <span class="tag-count">9</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC104%E6%A2%9D/" class="tag-item">土地法第104條 <span class="tag-count">9</span></a>
+  <a href="../blog/category/%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/" class="tag-item">損害賠償 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A%E6%A2%9D%E4%BE%8B/" class="tag-item">平均地權條例 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB/" class="tag-item">地政士 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">不動產 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E6%B3%95/" class="tag-item">國土計畫法 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E8%BE%B2%E5%9C%B0/" class="tag-item">農地 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/" class="tag-item">所有權人 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E5%A4%9A%E6%95%B8%E6%B1%BA/" class="tag-item">多數決 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E8%B4%88%E8%88%87%E7%A8%85/" class="tag-item">贈與稅 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E8%88%87%E5%9C%9F%E5%9C%B0%E6%94%BF%E7%AD%96/" class="tag-item">土地利用與土地政策 <span class="tag-count">8</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E8%A6%8F/" class="tag-item">土地法規 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6%E6%A2%9D%E4%BE%8B/" class="tag-item">土地徵收條例 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E4%BA%BA/" class="tag-item">不動產經紀人 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9/" class="tag-item">不動產估價 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB/" class="tag-item">國土計畫 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E5%AE%B9%E7%A9%8D%E7%A7%BB%E8%BD%89/" class="tag-item">容積移轉 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0/" class="tag-item">土地 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E5%90%88%E4%B8%80/" class="tag-item">房地合一 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/" class="tag-item">土地所有權人 <span class="tag-count">7</span></a>
+  <a href="../blog/category/%E7%85%A7%E5%83%B9%E6%94%B6%E8%B2%B7/" class="tag-item">照價收買 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F/" class="tag-item">徵收補償 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%A5%91%E7%A8%85/" class="tag-item">契稅 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB%E6%B3%95/" class="tag-item">區域計畫法 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E8%B2%A1%E7%94%A2/" class="tag-item">信託財產 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A/" class="tag-item">所有權 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98/" class="tag-item">登記 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7/" class="tag-item">優先購買 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E8%A6%8F%E5%89%87/" class="tag-item">土地登記規則 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/" class="tag-item">定型化契約 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0/" class="tag-item">耕地 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0/" class="tag-item">都市更新 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E6%89%80%E5%BE%97%E7%A8%85/" class="tag-item">所得稅 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%AF%93%E5%A4%A7%E5%BB%88/" class="tag-item">公寓大廈 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD/" class="tag-item">公共設施 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E9%9D%9E%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0/" class="tag-item">非都市土地 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E8%B2%A1%E7%94%A2%E6%AC%8A/" class="tag-item">財產權 <span class="tag-count">6</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E6%89%80%E6%9C%89%E6%AC%8A/" class="tag-item">建物所有權 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E9%87%8D%E8%B3%BC/" class="tag-item">重購 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E9%80%80%E7%A8%85/" class="tag-item">退稅 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%91%8A%E5%9C%B0%E5%83%B9/" class="tag-item">公告地價 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%B8%82%E5%A0%B4/" class="tag-item">不動產市場 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E8%A1%8C%E7%82%BA/" class="tag-item">信託行為 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%B8%AB/" class="tag-item">不動產估價師 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E5%9B%A4%E6%88%BF%E7%A8%85/" class="tag-item">囤房稅 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E5%8E%9F%E5%A7%8B%E5%8F%96%E5%BE%97/" class="tag-item">原始取得 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E7%B9%BC%E5%8F%97%E5%8F%96%E5%BE%97/" class="tag-item">繼受取得 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%8F%BE%E5%80%BC/" class="tag-item">土地現值 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%90%8C%E5%85%B1%E6%9C%89/" class="tag-item">公同共有 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E6%A2%9D%E4%BE%8B/" class="tag-item">都市更新條例 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E9%81%BA%E7%94%A2/" class="tag-item">遺產 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E7%A8%85%E6%8D%90%E7%A8%BD%E5%BE%B5%E6%B3%95/" class="tag-item">稅捐稽徵法 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E7%89%B9%E5%88%A5%E7%8A%A7%E7%89%B2/" class="tag-item">特別犧牲 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E8%AB%8B%E6%B1%82%E6%AC%8A/" class="tag-item">請求權 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E6%B3%95/" class="tag-item">信託法 <span class="tag-count">5</span></a>
+  <a href="../blog/category/%E5%84%AA%E5%85%88%E6%89%BF%E8%B2%B7%E6%AC%8A/" class="tag-item">優先承買權 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">共有優先購買權 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%A8%85%E7%8E%87/" class="tag-item">稅率 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%83%B9%E9%AB%98%E6%BC%B2/" class="tag-item">房價高漲 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%94%BF%E7%AD%96/" class="tag-item">土地政策 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%A1%97%E9%8A%B7%E7%99%BB%E8%A8%98/" class="tag-item">塗銷登記 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%80%9F%E5%90%8D%E7%99%BB%E8%A8%98/" class="tag-item">借名登記 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC12%E6%A2%9D/" class="tag-item">土地法第12條 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E9%80%9A%E8%B2%A8%E8%86%A8%E8%84%B9/" class="tag-item">通貨膨脹 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E6%8A%B5%E6%8A%BC%E6%AC%8A/" class="tag-item">抵押權 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83%E4%BD%8F%E5%AE%85/" class="tag-item">租賃住宅 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%8F%97%E7%9B%8A%E4%BA%BA/" class="tag-item">受益人 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%8F%97%E8%A8%97%E4%BA%BA/" class="tag-item">受託人 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%A7%94%E8%A8%97%E4%BA%BA/" class="tag-item">委託人 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%B4%AF%E9%80%B2%E7%A8%85/" class="tag-item">累進稅 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%B4%8D%E7%A8%85%E7%BE%A9%E5%8B%99%E4%BA%BA/" class="tag-item">納稅義務人 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85/" class="tag-item">土地稅 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83%E6%AC%8A/" class="tag-item">租賃權 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%91%8A%E7%99%BB%E8%A8%98/" class="tag-item">預告登記 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%A8%85%E5%9F%BA/" class="tag-item">稅基 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E8%88%88%E5%BB%BA%E8%BE%B2%E8%88%8D/" class="tag-item">興建農舍 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9/" class="tag-item">共有物 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%A7%9F%E7%A8%85/" class="tag-item">租稅 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95/" class="tag-item">土地稅法 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E6%B6%88%E8%B2%BB%E8%80%85/" class="tag-item">消費者 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E9%81%BA%E6%BC%8F/" class="tag-item">登記遺漏 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%8D%80%E6%AE%B5%E5%9C%B0%E5%83%B9/" class="tag-item">區段地價 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E9%85%8D%E5%81%B6/" class="tag-item">配偶 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%A0%B4%E5%A4%B1%E9%9D%88/" class="tag-item">市場失靈 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E5%AE%B9%E7%A9%8D%E7%8D%8E%E5%8B%B5/" class="tag-item">容積獎勵 <span class="tag-count">4</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%83%B9/" class="tag-item">房價 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B8%82%E6%B3%A1%E6%B2%AB/" class="tag-item">房市泡沫 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E9%8C%AF%E8%AA%A4%E7%99%BB%E8%A8%98/" class="tag-item">錯誤登記 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%91%8A%E5%9C%9F%E5%9C%B0%E7%8F%BE%E5%80%BC/" class="tag-item">公告土地現值 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E6%BA%AB%E5%AE%A4%E6%B0%A3%E9%AB%94/" class="tag-item">溫室氣體 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8/" class="tag-item">土地利用 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%81%AF%E5%90%88%E8%A1%8C%E7%82%BA/" class="tag-item">聯合行為 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E6%94%B6%E5%9B%9E%E6%AC%8A/" class="tag-item">收回權 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%99%95%E5%88%86/" class="tag-item">處分 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E7%89%A9%E6%AC%8A%E6%95%88%E5%8A%9B/" class="tag-item">物權效力 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E7%A2%B3%E8%B6%B3%E8%B7%A1/" class="tag-item">碳足跡 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%82%B5%E6%AC%8A%E6%95%88%E5%8A%9B/" class="tag-item">債權效力 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E5%9C%9F%E5%9C%B0%E5%88%86%E5%89%B2/" class="tag-item">共有土地分割 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E5%9C%9F%E5%9C%B0%E5%90%88%E4%BD%B5/" class="tag-item">共有土地合併 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%BE%B2%E8%88%8D/" class="tag-item">農舍 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95%E6%A2%9D%E4%BE%8B/" class="tag-item">農業發展條例 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E7%B9%BC%E6%89%BF/" class="tag-item">繼承 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9%E5%88%86%E5%89%B2/" class="tag-item">共有物分割 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9F%BA%E5%9C%B0/" class="tag-item">基地 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%8D%B1%E8%80%81%E6%A2%9D%E4%BE%8B/" class="tag-item">危老條例 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E9%96%8B%E7%99%BC%E8%A8%B1%E5%8F%AF/" class="tag-item">開發許可 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E6%A2%9D%E4%B9%8B%E4%B8%80/" class="tag-item">土地法第三十四條之一 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E7%99%BC%E5%B1%95%E6%AC%8A/" class="tag-item">發展權 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%88%86%E7%AE%A1%E5%A5%91%E7%B4%84/" class="tag-item">分管契約 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%8F%83%E8%80%83%E8%B3%87%E8%A8%8A%E6%AA%94/" class="tag-item">土地參考資訊檔 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9/" class="tag-item">建物 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E9%81%BA%E8%B4%88/" class="tag-item">遺贈 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%B0%E4%B8%BB/" class="tag-item">地主 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%B8%89%E4%B8%83%E4%BA%94%E7%A7%9F%E7%B4%84/" class="tag-item">三七五租約 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB/" class="tag-item">區域計畫 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E9%87%8D%E5%8A%83/" class="tag-item">土地重劃 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E6%8A%B5%E8%B2%BB%E5%9C%B0/" class="tag-item">抵費地 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC34%E6%A2%9D/" class="tag-item">土地法第34條 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%8D%E5%BE%B5/" class="tag-item">免徵 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E9%81%BA%E7%94%A2%E5%8F%8A%E8%B4%88%E8%88%87%E7%A8%85%E6%B3%95/" class="tag-item">遺產及贈與稅法 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%9534-1/" class="tag-item">土地法34-1 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E7%99%BB%E8%A8%98/" class="tag-item">信託登記 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A/" class="tag-item">平均地權 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB%E6%B3%95/" class="tag-item">地政士法 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%87%AA%E7%94%A8%E4%BD%8F%E5%AE%85/" class="tag-item">自用住宅 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB%E8%80%83%E8%A9%A6/" class="tag-item">地政士考試 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%95%E8%B3%87%E5%88%86%E6%9E%90/" class="tag-item">不動產投資分析 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%A8%BB%E8%A8%98%E7%99%BB%E8%A8%98/" class="tag-item">註記登記 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E7%94%B3%E5%A0%B1%E5%9C%B0%E5%83%B9/" class="tag-item">申報地價 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E9%87%8D%E6%96%B0%E8%A6%8F%E5%AE%9A%E5%9C%B0%E5%83%B9/" class="tag-item">重新規定地價 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%90%88%E4%BD%B5/" class="tag-item">土地合併 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%89%A9%E9%A4%98%E8%B2%A1%E7%94%A2/" class="tag-item">剩餘財產 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E7%99%BC%E5%B1%95/" class="tag-item">都市發展 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%86%E5%89%B2/" class="tag-item">土地分割 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%9C%B0%E8%99%9F/" class="tag-item">地號 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%BB%BA%E8%99%9F/" class="tag-item">建號 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%B4%88%E8%88%87/" class="tag-item">贈與 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E7%94%A8%E5%9C%B0/" class="tag-item">公共設施用地 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E5%88%A9%E7%9B%8A/" class="tag-item">信託利益 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%B8%8D%E8%AA%B2%E5%BE%B5/" class="tag-item">不課徵 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%A8%98%E5%AD%98/" class="tag-item">記存 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%BD%B9%E6%AC%8A/" class="tag-item">不動產役權 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%B9%B3%E4%BA%A4%E6%98%93%E6%B3%95/" class="tag-item">公平交易法 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E8%87%AA%E4%BD%8F/" class="tag-item">自住 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E6%B6%88%E8%B2%BB%E8%80%85%E4%BF%9D%E8%AD%B7%E6%B3%95/" class="tag-item">消費者保護法 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD%E7%AE%A1%E7%90%86%E6%A2%9D%E4%BE%8B/" class="tag-item">不動產經紀業管理條例 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E6%8A%B5%E5%83%B9%E5%9C%B0/" class="tag-item">抵價地 <span class="tag-count">3</span></a>
+  <a href="../blog/category/%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/" class="tag-item">移轉登記 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%B8%BD%E7%99%BB%E8%A8%98/" class="tag-item">土地總登記 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%A0%B4%E6%A9%9F%E5%88%B6/" class="tag-item">市場機制 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%B8%AC%E9%87%8F%E9%8C%AF%E8%AA%A4/" class="tag-item">測量錯誤 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%8B%8B%E6%A3%84%E7%B9%BC%E6%89%BF/" class="tag-item">拋棄繼承 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E9%9D%A2%E7%A9%8D/" class="tag-item">土地面積 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%AF%93%E5%A4%A7%E5%BB%88%E7%AE%A1%E7%90%86%E6%A2%9D%E4%BE%8B/" class="tag-item">公寓大廈管理條例 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E7%94%A8/" class="tag-item">土地徵用 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%96%B9%E7%89%B9%E8%80%83/" class="tag-item">地方特考 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A9%BA%E5%9C%B0%E9%99%90%E5%BB%BA/" class="tag-item">空地限建 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A9%BA%E5%9C%B0%E7%A8%85/" class="tag-item">空地稅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E5%B8%82%E5%A0%B4%E5%83%B9%E6%A0%BC/" class="tag-item">房地市場價格 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A%E7%99%BB%E8%A8%98/" class="tag-item">地上權登記 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%87%AA%E4%BD%8F%E6%88%BF%E5%B1%8B/" class="tag-item">自住房屋 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%92%A4%E9%8A%B7%E5%BE%B5%E6%94%B6/" class="tag-item">撤銷徵收 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%BB%A2%E6%AD%A2%E5%BE%B5%E6%94%B6/" class="tag-item">廢止徵收 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A2%B3%E6%AC%8A/" class="tag-item">碳權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%8E%92%E6%94%BE%E9%87%8F/" class="tag-item">排放量 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%AD%98%E7%BA%8C%E4%BF%9D%E9%9A%9C/" class="tag-item">存續保障 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%83%B9%E5%80%BC%E4%BF%9D%E9%9A%9C/" class="tag-item">價值保障 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E9%97%9C%E4%BF%82%E6%B6%88%E6%BB%85/" class="tag-item">信託關係消滅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E9%97%9C%E4%BF%82/" class="tag-item">信託關係 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A8%8B%E5%BA%8F%E6%AD%A3%E7%BE%A9/" class="tag-item">程序正義 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%B1%E5%90%8C%E7%B4%84%E6%9D%9F/" class="tag-item">共同約束 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%82%B5%E6%AC%8A%E8%A1%8C%E7%82%BA/" class="tag-item">債權行為 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%B2%A0%E6%93%94%E8%A1%8C%E7%82%BA/" class="tag-item">負擔行為 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%89%A9%E6%AC%8A%E8%A1%8C%E7%82%BA/" class="tag-item">物權行為 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%B9%B3%E6%B0%91%E4%BD%8F%E5%AE%85/" class="tag-item">平民住宅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A3%9C%E5%84%9F%E5%9C%B0%E5%83%B9/" class="tag-item">補償地價 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%80%9F%E5%90%8D%E7%99%BB%E8%A8%98%E5%A5%91%E7%B4%84/" class="tag-item">借名登記契約 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%80%9F%E5%90%8D%E4%BA%BA/" class="tag-item">借名人 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%87%BA%E5%90%8D%E4%BA%BA/" class="tag-item">出名人 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%B0%91/" class="tag-item">農民 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0%E8%88%88%E5%BB%BA%E8%BE%B2%E8%88%8D%E8%BE%A6%E6%B3%95/" class="tag-item">農業用地興建農舍辦法 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%A4%A7%E9%99%B8%E5%9C%B0%E5%8D%80%E4%BA%BA%E6%B0%91%E5%9C%A8%E8%87%BA%E7%81%A3%E5%9C%B0%E5%8D%80%E5%8F%96%E5%BE%97%E8%A8%AD%E5%AE%9A%E6%88%96%E7%A7%BB%E8%BD%89%E4%B8%8D%E5%8B%95%E7%94%A2%E7%89%A9%E6%AC%8A%E8%A8%B1%E5%8F%AF%E8%BE%A6%E6%B3%95/" class="tag-item">大陸地區人民在臺灣地區取得設定或移轉不動產物權許可辦法 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%82%92%E6%88%BF/" class="tag-item">炒房 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%8F%97%E8%B4%88/" class="tag-item">受贈 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B5%AE%E8%A6%86/" class="tag-item">土地浮覆 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%83%B9%E6%A0%BC/" class="tag-item">不動產價格 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83%E5%A5%91%E7%B4%84/" class="tag-item">租賃契約 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%A4%87%E4%B8%88/" class="tag-item">土地複丈 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%90%88%E4%BD%B5%E5%88%86%E5%89%B2/" class="tag-item">合併分割 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%B7%A5%E6%A5%AD%E7%94%A8%E5%9C%B0/" class="tag-item">工業用地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%E5%88%A9/" class="tag-item">土地權利 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%AF%A6%E8%B3%AA%E5%AF%A9%E6%9F%A5/" class="tag-item">實質審查 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%BD%A2%E5%BC%8F%E5%AF%A9%E6%9F%A5/" class="tag-item">形式審查 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A9%BA%E5%9C%B0/" class="tag-item">空地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%94%9F%E6%85%8B%E8%B6%B3%E8%B7%A1/" class="tag-item">生態足跡 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%88%86%E5%8D%80%E7%AE%A1%E5%88%B6/" class="tag-item">分區管制 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%81%E6%9C%89%E5%9C%9F%E5%9C%B0/" class="tag-item">私有土地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%81%9C%E8%BB%8A%E4%BD%8D%E7%94%A2%E6%AC%8A/" class="tag-item">停車位產權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%A6%A8%E7%A4%99%E5%8E%9F%E7%99%BB%E8%A8%98%E4%B9%8B%E5%90%8C%E4%B8%80%E6%80%A7/" class="tag-item">不妨礙原登記之同一性 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%8D%E7%A8%85%E9%A1%8D/" class="tag-item">免稅額 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%81%E5%A5%91/" class="tag-item">私契 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%A5%91/" class="tag-item">公契 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%90%88%E6%B3%95%E4%BD%BF%E7%94%A8%E4%BA%BA/" class="tag-item">合法使用人 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%B6%E4%BB%96%E5%85%B1%E6%9C%89%E4%BA%BA/" class="tag-item">其他共有人 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9B%9E%E5%BE%A9%E8%AB%8B%E6%B1%82%E6%AC%8A/" class="tag-item">回復請求權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%94%B3%E5%A0%B1%E7%A7%BB%E8%BD%89%E7%8F%BE%E5%80%BC/" class="tag-item">申報移轉現值 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%B8%80%E8%88%AC%E5%BE%B5%E6%94%B6/" class="tag-item">一般徵收 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%96%B0%E5%BB%BA%E6%88%90%E5%B1%8B/" class="tag-item">新建成屋 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%B2%B7%E8%B3%A3%E5%A5%91%E7%B4%84/" class="tag-item">買賣契約 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%88%E8%A1%8C%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/" class="tag-item">先行區段徵收 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0%E4%B8%89%E4%B8%83%E4%BA%94%E6%B8%9B%E7%A7%9F%E6%A2%9D%E4%BE%8B/" class="tag-item">耕地三七五減租條例 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">共有不動產 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E6%B3%95%E6%A6%82%E8%A6%81/" class="tag-item">信託法概要 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%9C%89%E5%84%9F%E8%AE%93%E8%88%87/" class="tag-item">有償讓與 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0%E7%A7%9F%E4%BD%83/" class="tag-item">耕地租佃 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%9F%E7%B4%84/" class="tag-item">租約 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E8%AE%8A%E6%8F%9B/" class="tag-item">權利變換 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%92%B0%E5%A2%83%E4%BF%9D%E8%AD%B7/" class="tag-item">環境保護 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%81%9C%E6%BB%AF%E6%80%A7%E9%80%9A%E8%B2%A8%E8%86%A8%E8%84%B9/" class="tag-item">停滯性通貨膨脹 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%B0%91%E6%B3%95/" class="tag-item">民法 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A6%8F%E7%B4%84/" class="tag-item">規約 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%AC%E9%87%8F/" class="tag-item">地籍測量 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%87%8D%E8%A4%87%E8%AA%B2%E7%A8%85/" class="tag-item">重複課稅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A8%85%E9%A1%8D/" class="tag-item">稅額 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%AC%E7%9C%BE%E9%80%9A%E8%A1%8C/" class="tag-item">公眾通行 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%8C%87%E7%95%8C/" class="tag-item">指界 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%87%8D%E8%B3%BC%E9%80%80%E7%A8%85/" class="tag-item">重購退稅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%9B%B8%E7%95%B6%E8%A3%9C%E5%84%9F/" class="tag-item">相當補償 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%AE%8C%E5%85%A8%E8%A3%9C%E5%84%9F/" class="tag-item">完全補償 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%99%9B%E5%81%BD%E7%99%BB%E8%A8%98/" class="tag-item">虛偽登記 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E5%A5%91%E7%B4%84/" class="tag-item">信託契約 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%B1%8B%E7%B0%B7/" class="tag-item">屋簷 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%AF%94%E8%BC%83%E6%A8%99/" class="tag-item">比較標 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E7%9B%B8%E9%97%9C%E6%B3%95%E8%A6%8F%E6%A6%82%E8%A6%81/" class="tag-item">不動產經紀相關法規概要 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%97%A2%E6%88%90%E9%81%93%E8%B7%AF/" class="tag-item">既成道路 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E7%A7%BB%E8%BD%89/" class="tag-item">所有權移轉 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95%E8%A6%8F/" class="tag-item">土地稅法規 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%BB%BA%E9%80%A0%E5%9F%B7%E7%85%A7/" class="tag-item">建造執照 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%AA%A0%E4%BF%A1%E5%8E%9F%E5%89%87/" class="tag-item">誠信原則 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%96%B9%E5%89%B5%E7%94%9F/" class="tag-item">地方創生 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E6%B3%95%E8%A6%8F/" class="tag-item">土地利用法規 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%B8%8D%E8%AA%B2%E5%BE%B5%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/" class="tag-item">不課徵土地增值稅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%81%95%E7%AB%A0%E5%BB%BA%E7%AF%89/" class="tag-item">違章建築 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E4%BD%8F%E5%AE%85/" class="tag-item">所有權住宅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A%E4%BD%8F%E5%AE%85/" class="tag-item">地上權住宅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BD%BF%E7%94%A8%E6%AC%8A%E4%BD%8F%E5%AE%85/" class="tag-item">使用權住宅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A6%8F%E5%AE%9A%E5%9C%B0%E5%83%B9/" class="tag-item">規定地價 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%85%A7%E5%83%B9%E5%BE%B5%E7%A8%85/" class="tag-item">照價徵稅 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%BC%B2%E5%83%B9%E6%AD%B8%E5%85%AC/" class="tag-item">漲價歸公 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BA%A4%E9%80%9A%E7%94%A8%E5%9C%B0/" class="tag-item">交通用地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%BB%AF%E7%B4%8D%E9%87%91/" class="tag-item">滯納金 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%AA%BF%E8%A7%A3/" class="tag-item">調解 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD/" class="tag-item">農業 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%B1%E7%94%A8%E5%9C%B0%E6%82%B2%E5%8A%87/" class="tag-item">共用地悲劇 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83/" class="tag-item">租賃 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95/" class="tag-item">農業發展 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%8F%BE%E9%87%91%E8%A3%9C%E5%84%9F/" class="tag-item">現金補償 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%8A%B5%E5%83%B9%E5%9C%B0%E8%A3%9C%E5%84%9F/" class="tag-item">抵價地補償 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%81%E6%AC%8A%E7%88%AD%E5%9F%B7/" class="tag-item">私權爭執 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97774/" class="tag-item">釋字774 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%81%B8%E6%93%87%E6%AC%8A/" class="tag-item">選擇權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0%E7%A7%9F%E8%B3%83/" class="tag-item">農業用地租賃 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E5%9C%9F%E5%9C%B0/" class="tag-item">共有土地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%9B%B8%E9%9D%A2%E9%80%9A%E7%9F%A5/" class="tag-item">書面通知 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%B5%AE%E8%A6%86%E5%9C%B0/" class="tag-item">浮覆地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83%E4%BD%8F%E5%AE%85%E5%B8%82%E5%A0%B4%E7%99%BC%E5%B1%95%E5%8F%8A%E7%AE%A1%E7%90%86%E6%A2%9D%E4%BE%8B/" class="tag-item">租賃住宅市場發展及管理條例 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%AE%B9%E7%A9%8D/" class="tag-item">容積 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%8E%9F%E5%9C%B0%E5%83%B9/" class="tag-item">原地價 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%B7%A5%E7%A8%8B%E5%8F%97%E7%9B%8A%E8%B2%BB/" class="tag-item">工程受益費 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%90%8D%E5%A4%B1%E8%A3%9C%E5%84%9F/" class="tag-item">損失補償 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%AC%E9%87%8F%E5%AF%A6%E6%96%BD%E8%A6%8F%E5%89%87/" class="tag-item">地籍測量實施規則 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%81%8E%E5%A4%B1/" class="tag-item">過失 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC25%E6%A2%9D/" class="tag-item">土地法第25條 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%87%AA%E8%BE%A6%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83/" class="tag-item">自辦市地重劃 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%BE%B5%E6%94%B6%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="tag-item">徵收地上權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E8%B2%BB/" class="tag-item">國土保育費 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%BD%B1%E9%9F%BF%E8%B2%BB/" class="tag-item">影響費 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%82%AF%E5%AE%9A%E8%AA%AA/" class="tag-item">肯定說 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E8%B2%A1%E7%94%A2%E7%8D%A8%E7%AB%8B%E6%80%A7/" class="tag-item">信託財產獨立性 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BB%95%E7%B4%B3%E5%8C%96/" class="tag-item">仕紳化 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%AF%89%E6%B3%95/" class="tag-item">建築法 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%95%8C%E5%9D%80%E7%88%AD%E8%AD%B0/" class="tag-item">界址爭議 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A2%8B%E5%9C%B0/" class="tag-item">袋地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A3%A1%E5%9C%B0/" class="tag-item">裡地 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E8%88%87%E5%9C%9F%E5%9C%B0%E7%9B%B8%E9%97%9C%E7%A8%85%E6%B3%95%E6%A6%82%E8%A6%81/" class="tag-item">土地法與土地相關稅法概要 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%84%89%E6%9D%91%E5%9C%B0%E5%8D%80%E6%95%B4%E9%AB%94%E8%A6%8F%E5%8A%83/" class="tag-item">鄉村地區整體規劃 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A1%8C%E6%94%BF%E8%99%95%E5%88%86/" class="tag-item">行政處分 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%A1%8C%E6%94%BF%E8%A8%B4%E8%A8%9F/" class="tag-item">行政訴訟 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E7%B5%95%E5%B0%8D%E6%95%88%E5%8A%9B/" class="tag-item">登記絕對效力 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/" class="tag-item">登記損害賠償 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%B7%9A%E4%B8%8A%E8%81%B2%E6%98%8E/" class="tag-item">線上聲明 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E6%BF%9F%E5%AD%B8/" class="tag-item">不動產經濟學 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC43%E6%A2%9D/" class="tag-item">土地法第43條 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%B3%B4%E4%BF%9D%E8%AD%B7%E5%8E%9F%E5%89%87/" class="tag-item">信賴保護原則 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%87%AA%E8%80%95%E8%BE%B2/" class="tag-item">自耕農 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B3%83/" class="tag-item">房屋租賃 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%A7%94%E4%BB%BB/" class="tag-item">委任 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BB%A5%E6%88%BF%E9%A4%8A%E8%80%81/" class="tag-item">以房養老 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BC%81%E6%A5%AD%E7%B6%93%E7%87%9F%E8%80%85/" class="tag-item">企業經營者 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E8%BE%B2%E8%82%B2%E6%AC%8A/" class="tag-item">農育權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9%E6%89%80%E6%9C%89%E6%AC%8A/" class="tag-item">共有物所有權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E4%BF%AE%E6%B3%95/" class="tag-item">修法 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97156/" class="tag-item">釋字156 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%8F%97%E7%9B%8A%E6%AC%8A/" class="tag-item">受益權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E6%99%82%E6%95%88%E5%8F%96%E5%BE%97/" class="tag-item">時效取得 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%B6%93%E6%BF%9F%E5%AD%B8/" class="tag-item">土地經濟學 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E7%89%A9%E6%AC%8A/" class="tag-item">物權 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E9%87%8D%E5%BB%BA/" class="tag-item">重建 <span class="tag-count">2</span></a>
+  <a href="../blog/category/%E5%85%AC%E8%B7%AF%E6%B3%95/" class="tag-item">公路法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%81%E6%9C%89%E5%85%AC%E8%B7%AF/" class="tag-item">私有公路 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E7%84%B6%E4%BA%BA/" class="tag-item">自然人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%81%87%E8%B4%88%E8%88%87/" class="tag-item">假贈與 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%92%A5%E7%94%A8/" class="tag-item">撥用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E6%9C%89%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">公有不動產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%A8%88%E7%95%AB%E6%9B%B8/" class="tag-item">不動產計畫書 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%B0%E9%9D%92%E5%AE%89/" class="tag-item">新青安 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%BC%E5%B1%8B/" class="tag-item">購屋 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%B8%E6%AC%BE/" class="tag-item">貸款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%99%BB%E8%A8%98/" class="tag-item">第一次登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%9C%8B%E6%9C%89/" class="tag-item">土地國有 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A7%81%E6%9C%89/" class="tag-item">土地私有 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B5%95%E5%B0%8D%E5%9C%B0%E7%A7%9F/" class="tag-item">絕對地租 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%83%B9%E6%A0%BC%E6%A9%9F%E8%83%BD/" class="tag-item">價格機能 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D/" class="tag-item">地籍 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%BF%E7%94%A8%E5%9F%BA%E5%9C%B0%E4%B9%8B%E8%AD%89%E6%98%8E%E6%96%87%E4%BB%B6/" class="tag-item">使用基地之證明文件 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%86%E4%BD%8D%E7%B9%BC%E6%89%BF%E4%BA%BA/" class="tag-item">順位繼承人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9E%97%E6%A5%AD%E7%94%A8%E5%9C%B0/" class="tag-item">林業用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%AD%A3%E7%BE%A9/" class="tag-item">土地正義 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%B7%E8%B3%A3/" class="tag-item">土地買賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%B7%E8%B3%A3%E6%9C%AA%E8%BE%A6%E7%AB%A3%E6%AC%8A%E5%88%A9%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/" class="tag-item">土地買賣未辦竣權利移轉登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%BB%98%E7%A4%BA%E5%88%86%E7%AE%A1/" class="tag-item">默示分管 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E9%9D%A2%E7%A9%8D/" class="tag-item">登記面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%AF%93%E5%A4%A7%E5%BB%88%E7%B4%84%E5%AE%9A%E5%B0%88%E7%94%A8/" class="tag-item">公寓大廈約定專用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B3%BB%E7%88%AD%E6%88%BF%E5%9C%B0/" class="tag-item">系爭房地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B3%BB%E7%88%AD%E8%B2%B7%E8%B3%A3%E5%A5%91%E7%B4%84/" class="tag-item">系爭買賣契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9C%89%E5%84%9F%E6%92%A5%E7%94%A8/" class="tag-item">有償撥用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%84%A1%E5%84%9F%E6%92%A5%E7%94%A8/" class="tag-item">無償撥用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E9%87%8D%E8%B3%BC%E9%80%80%E7%A8%85/" class="tag-item">土地稅重購退稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A9%9F%E6%9C%83%E6%88%90%E6%9C%AC/" class="tag-item">機會成本 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%8A%A0%E7%89%B2/" class="tag-item">犠牲 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E6%9C%89%E8%B3%87%E9%87%91/" class="tag-item">自有資金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%87%BA%E8%B3%A3%E4%BA%BA/" class="tag-item">出賣人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A8%E5%9C%B0%E8%AE%8A%E6%9B%B4%E4%BD%BF%E7%94%A8/" class="tag-item">農業用地變更使用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%A7%BB%E8%BD%89%E7%A8%85/" class="tag-item">不動產移轉稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%99%82%E6%95%88%E5%8F%96%E5%BE%97%E5%9C%B0%E4%B8%8A%E6%AC%8A%E7%99%BB%E8%A8%98/" class="tag-item">時效取得地上權登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%BB%E8%A7%80%E6%84%8F%E6%80%9D%E4%B9%8B%E8%AD%89%E6%98%8E%E6%96%87%E4%BB%B6/" class="tag-item">主觀意思之證明文件 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%A9%E5%83%B9/" class="tag-item">兩價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AF%97%E9%84%B0/" class="tag-item">毗鄰 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%92%B0%E5%A2%83%E6%B0%B8%E7%BA%8C/" class="tag-item">環境永續 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A2%B3%E4%B8%AD%E5%92%8C/" class="tag-item">碳中和 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BE%AA%E7%92%B0%E5%88%A9%E7%94%A8/" class="tag-item">循環利用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BC%E7%B5%A6%E8%A3%9C%E5%84%9F%E5%AE%8C%E7%AB%A3/" class="tag-item">發給補償完竣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A3%9C%E5%84%9F%E4%BA%BA/" class="tag-item">補償人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3/" class="tag-item">二氧化碳 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%9B%A1%E5%85%B6%E5%88%A9/" class="tag-item">地盡其利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9C%89%E6%95%88%E4%BD%BF%E7%94%A8/" class="tag-item">有效使用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B7%E9%AB%94%E5%B8%82%E5%A0%B4/" class="tag-item">具體市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9B%86%E4%B8%AD%E5%B8%82%E5%A0%B4/" class="tag-item">集中市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%95%88%E7%8E%87%E5%B8%82%E5%A0%B4/" class="tag-item">效率市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD%E8%80%85/" class="tag-item">不動產經紀業者 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9F%BA%E5%9C%B0%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">基地優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A4%BE%E6%9C%83%E4%BD%8F%E5%AE%85/" class="tag-item">社會住宅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%A8%E6%99%82%E5%B7%A5%E5%BB%A0/" class="tag-item">臨時工廠 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%B9%E5%AE%9A%E5%B7%A5%E5%BB%A0/" class="tag-item">特定工廠 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%90%E9%95%B7%E6%A5%B5/" class="tag-item">成長極 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B9%B3%E8%A1%A1%E7%99%BC%E5%B1%95%E7%90%86%E8%AB%96/" class="tag-item">平衡發展理論 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%A7%9F%E5%9C%8B%E6%9C%89/" class="tag-item">地租國有 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%88%A9%E5%85%B1%E4%BA%AB/" class="tag-item">地利共享 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%85%E5%8E%BB%E5%9C%B0%E4%B8%BB/" class="tag-item">稅去地主 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%A9%E7%84%B6%E5%9C%B0%E7%A7%9F/" class="tag-item">天然地租 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A4%BE%E6%9C%83%E5%9C%B0%E7%A7%9F/" class="tag-item">社會地租 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%BB%E8%BD%89/" class="tag-item">移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%89%80%E6%9C%89%E6%AC%8A/" class="tag-item">不動產所有權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/" class="tag-item">所有權移轉登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%96%E9%A0%85%E6%AC%8A%E5%88%A9%E7%99%BB%E8%A8%98/" class="tag-item">他項權利登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B6%A0%E8%83%BD%E6%99%BA%E6%85%A7%E5%BB%BA%E7%AF%89/" class="tag-item">綠能智慧建築 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%AF%80%E8%83%BD%E6%B8%9B%E7%A2%B3/" class="tag-item">節能減碳 <span class="tag-count">1</span></a>
+  <a href="../blog/category/wtp/" class="tag-item">WTP <span class="tag-count">1</span></a>
+  <a href="../blog/category/wta/" class="tag-item">WTA <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BE%9D%E6%88%80%E4%B8%8D%E6%8D%A8%E6%83%85%E6%84%9F/" class="tag-item">依戀不捨情感 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%B2%E5%BE%B5%E5%B0%8D%E8%B1%A1/" class="tag-item">課徵對象 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%B2%E7%A8%85%E5%9F%BA%E7%A4%8E/" class="tag-item">課稅基礎 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8E%9F%E7%89%A9%E5%88%86%E9%85%8D/" class="tag-item">原物分配 <span class="tag-count">1</span></a>
+  <a href="../blog/category/543%E6%A2%9D%E6%AC%BE/" class="tag-item">543條款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%A7%E9%99%B8%E4%BA%BA%E6%B0%91%E5%9C%B0%E6%AC%8A%E9%99%90%E5%88%B6/" class="tag-item">大陸人民地權限制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%88%96%E5%BB%BA%E7%AF%89%E6%94%B9%E8%89%AF%E7%89%A9/" class="tag-item">土地或建築改良物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A8%99%E5%94%AE/" class="tag-item">標售 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%B8%E7%BA%8C%E7%99%BC%E5%B1%95%E7%9B%AE%E6%A8%99/" class="tag-item">永續發展目標 <span class="tag-count">1</span></a>
+  <a href="../blog/category/sdgs/" class="tag-item">SDGs <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%9C%B0%E6%A8%99%E5%94%AE/" class="tag-item">公地標售 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B6%93%E6%BF%9F%E4%B8%8D%E6%99%AF%E6%B0%A3/" class="tag-item">經濟不景氣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%A9%E7%8E%87%E4%B8%8A%E6%BC%B2/" class="tag-item">利率上漲 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%80%E6%9C%89%E6%AC%8A%E5%88%86%E9%9B%A2/" class="tag-item">所有權分離 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%A1%E6%97%8B%E9%87%91/" class="tag-item">斡旋金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A6%81%E7%B4%84%E6%9B%B8/" class="tag-item">要約書 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BE%A9%E6%AC%8A%E8%AB%8B%E6%B1%82%E6%AC%8A/" class="tag-item">復權請求權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E6%B3%95%E4%B8%8A%E8%AB%8B%E6%B1%82%E6%AC%8A/" class="tag-item">公法上請求權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9F%BA%E5%9C%B0%E6%AC%8A%E5%88%A9%E7%A8%AE%E9%A1%9E/" class="tag-item">基地權利種類 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BC%B7%E5%88%B6%E7%99%BB%E8%A8%98/" class="tag-item">強制登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E4%BA%BA/" class="tag-item">權利人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%BE%A9%E5%8B%99%E4%BA%BA/" class="tag-item">義務人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E6%A8%99%E7%A4%BA%E5%9C%96/" class="tag-item">建物標示圖 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A7%BB%E8%BD%89%E5%A5%91%E7%B4%84/" class="tag-item">土地移轉契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A7%A3%E9%99%A4%E5%A5%91%E7%B4%84/" class="tag-item">解除契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E5%9C%96%E9%87%8D%E6%B8%AC/" class="tag-item">地籍圖重測 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0/" class="tag-item">都市土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%99%82%E6%95%88%E5%8F%96%E5%BE%97%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="tag-item">時效取得地上權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%A5%E6%A5%AD%E5%8D%80/" class="tag-item">工業區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8A%E8%A8%B4%E4%BA%BA/" class="tag-item">上訴人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8B%9E%E8%B3%87/" class="tag-item">勞資 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E9%9B%86%E7%B4%84%E5%BA%A6/" class="tag-item">土地集約度 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%A8%E5%88%86%E5%85%B1%E6%9C%89%E4%BA%BA/" class="tag-item">部分共有人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E7%9B%8A%E4%BF%A1%E8%A8%97/" class="tag-item">公益信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A9%BA%E5%B1%8B%E7%A8%85/" class="tag-item">空屋稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A9%BA%E5%B1%8B/" class="tag-item">空屋 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A3%9C%E6%AD%A3/" class="tag-item">補正 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A7%81%E5%9B%9E/" class="tag-item">駁回 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B2%BE%E6%BA%96%E5%9C%B0%E5%83%B9/" class="tag-item">精準地價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E5%8B%95%E4%BC%B0%E5%83%B9%E7%B3%BB%E7%B5%B1/" class="tag-item">自動估價系統 <span class="tag-count">1</span></a>
+  <a href="../blog/category/avm/" class="tag-item">AVM <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%80%E8%88%AC%E5%9B%A0%E7%B4%A0/" class="tag-item">一般因素 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8D%80%E5%9F%9F%E5%9B%A0%E7%B4%A0/" class="tag-item">區域因素 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%8B%E5%88%A5%E5%9B%A0%E7%B4%A0/" class="tag-item">個別因素 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A2%B3%E6%8E%92%E6%94%BE/" class="tag-item">碳排放 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%85%E6%8D%90/" class="tag-item">稅捐 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A0%B8%E8%AA%B2%E6%9C%9F%E9%96%93/" class="tag-item">核課期間 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E6%A7%8B%E6%88%90%E5%A5%91%E7%B4%84/" class="tag-item">不構成契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%97%E8%B4%88%E4%BA%BA/" class="tag-item">受贈人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B4%88%E8%88%87%E4%BA%BA/" class="tag-item">贈與人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B1%A5%E7%B4%84%E6%93%94%E4%BF%9D/" class="tag-item">履約擔保 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B0%88%E6%88%B6%E7%AE%A1%E7%90%86/" class="tag-item">專戶管理 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%83%B9%E9%87%91%E8%BF%94%E9%82%84/" class="tag-item">價金返還 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%80%A3%E5%B8%B6%E6%93%94%E4%BF%9D/" class="tag-item">連帶擔保 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84%E4%B8%8D%E5%BE%97%E8%A8%98%E8%BC%89%E4%BA%8B%E9%A0%85/" class="tag-item">定型化契約不得記載事項 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%BE%97%E8%A8%98%E8%BC%89%E4%BA%8B%E9%A0%85/" class="tag-item">不得記載事項 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%8D%A8%E7%AB%8B%E6%AC%8A%E7%8B%80%E8%BB%8A%E4%BD%8D/" class="tag-item">獨立權狀車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%84%A1%E7%8D%A8%E7%AB%8B%E6%AC%8A%E7%8B%80%E8%BB%8A%E4%BD%8D/" class="tag-item">無獨立權狀車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%B0%E8%B3%A6%E6%88%96%E5%9C%B0%E5%83%B9%E7%A8%85/" class="tag-item">田賦或地價稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B9%B3%E4%BB%A3%E9%87%91/" class="tag-item">繳代金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E/" class="tag-item">新冠肺炎 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%B3%E8%AB%8B%E8%88%88%E5%BB%BA%E8%BE%B2%E8%88%8D/" class="tag-item">申請興建農舍 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AF%A9%E8%AD%B0/" class="tag-item">審議 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AF%A9%E8%AD%B0%E6%A9%9F%E9%97%9C/" class="tag-item">審議機關 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%BA%E5%8F%A3%E6%95%B8%E9%87%8F/" class="tag-item">人口數量 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%BA%E5%8F%A3%E7%B5%90%E6%A7%8B/" class="tag-item">人口結構 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%BA%E5%8F%A3%E6%B5%81%E5%8B%95/" class="tag-item">人口流動 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC14%E6%A2%9D/" class="tag-item">土地法第14條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%B4%E9%81%93%E6%B5%AE%E8%A6%86%E5%9C%B0/" class="tag-item">水道浮覆地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E6%9B%B4%E6%A1%88/" class="tag-item">都更案 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A9%8D%E6%A5%B5%E5%9E%8B%E4%BD%8F%E6%88%B6/" class="tag-item">積極型住戶 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B6%88%E6%A5%B5%E5%9E%8B%E4%BD%8F%E6%88%B6/" class="tag-item">消極型住戶 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B4%88%E8%88%87%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">贈與不動產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A/" class="tag-item">地所有權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9B%9E%E5%BE%A9%E5%8E%9F%E7%8B%80%E8%AB%8B%E6%B1%82%E6%AC%8A/" class="tag-item">回復原狀請求權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%91%E6%B3%95%E7%AC%AC767%E6%A2%9D/" class="tag-item">民法第767條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E8%A8%AD%E5%85%AC%E5%8F%B8/" class="tag-item">建設公司 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%88%E5%94%AE%E5%BE%8C%E5%BB%BA/" class="tag-item">先售後建 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BD%89%E5%94%AE/" class="tag-item">轉售 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%B7%E5%8F%97%E4%BA%BA/" class="tag-item">買受人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0375/" class="tag-item">耕地375 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%BF%E7%94%A8%E7%AE%A1%E7%90%86%E7%99%BB%E8%A8%98/" class="tag-item">使用管理登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8/" class="tag-item">土地使用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%AE%A1%E5%88%B6/" class="tag-item">管制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E7%99%BB%E8%A6%8F%E5%89%87/" class="tag-item">土登規則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%A3%E5%80%99%E8%AE%8A%E9%81%B7/" class="tag-item">氣候變遷 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%BF%E9%81%A9%E8%83%BD%E5%8A%9B/" class="tag-item">調適能力 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E5%A4%A7%E7%81%BD%E5%AE%B3/" class="tag-item">重大災害 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%85%8D%E9%A4%98%E5%9C%B0/" class="tag-item">配餘地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9F%BA%E5%9C%B0%E6%AC%8A%E5%88%A9%E5%83%B9%E5%80%BC/" class="tag-item">基地權利價值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E8%88%8D%E7%A7%BB%E8%BD%89/" class="tag-item">農舍移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%95%E8%A6%8F%E8%BE%B2%E8%88%8D/" class="tag-item">違規農舍 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E7%9B%AE%E7%9A%84/" class="tag-item">信託目的 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%B3%E8%AB%8B/" class="tag-item">申請 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E6%8B%86%E9%99%A4%E8%A3%9C%E5%84%9F/" class="tag-item">建物拆除補償 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E8%AA%B2%E5%BE%B5/" class="tag-item">土地稅課徵 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8E%9F%E5%9C%B0%E5%83%B9%E5%81%8F%E9%AB%98/" class="tag-item">原地價偏高 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8E%9F%E5%9C%B0%E5%83%B9%E5%81%8F%E4%BD%8E/" class="tag-item">原地價偏低 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9%E6%AC%8A%E5%88%A9%E5%88%86%E5%89%B2/" class="tag-item">共有物權利分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E5%BB%BA%E8%A8%AD/" class="tag-item">公共建設 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%95%E7%AB%A0%E5%B7%A5%E5%BB%A0/" class="tag-item">違章工廠 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%B0%E5%8F%A4%E5%85%B8%E7%B6%93%E6%BF%9F%E5%AD%B8/" class="tag-item">新古典經濟學 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%B0%E5%88%B6%E5%BA%A6%E7%B6%93%E6%BF%9F%E5%AD%B8/" class="tag-item">新制度經濟學 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E5%9C%B0%E5%8D%80/" class="tag-item">國土保育地區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B5%B7%E6%B4%8B%E8%B3%87%E6%BA%90%E5%9C%B0%E5%8D%80/" class="tag-item">海洋資源地區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95%E5%9C%B0%E5%8D%80/" class="tag-item">農業發展地區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9F%8E%E9%84%89%E7%99%BC%E5%B1%95%E5%9C%B0%E5%8D%80/" class="tag-item">城鄉發展地區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E5%AD%98%E9%87%8F%E6%B5%81%E9%87%8F%E6%A8%A1%E5%9E%8B/" class="tag-item">住宅存量流量模型 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A3%81%E5%88%A4%E8%B2%BB/" class="tag-item">裁判費 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%80%9A%E7%9B%A4%E6%AA%A2%E8%A8%8E/" class="tag-item">通盤檢討 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E6%AC%8A%E5%88%A9%E8%AE%8A%E6%8F%9B%E4%BB%A3%E6%8B%86%E6%A9%9F%E5%88%B6/" class="tag-item">都市更新權利變換代拆機制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%EF%A7%9D%E8%AE%8A%E6%8F%9B%E8%A8%88%E7%95%AB/" class="tag-item">權利變換計畫 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%8D%E7%A8%85/" class="tag-item">免稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%BF%E6%94%AC%E4%BA%BA/" class="tag-item">承攬人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%87%9F%E5%88%A9%E4%BA%8B%E6%A5%AD/" class="tag-item">營利事業 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%93%E7%82%92%E6%88%BF/" class="tag-item">打炒房 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%82%92%E4%BD%9C/" class="tag-item">不動產炒作 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%B6%E5%BA%A6/" class="tag-item">制度 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%87%E6%BA%90%E9%85%8D%E7%BD%AE/" class="tag-item">資源配置 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%A2%E9%87%8F/" class="tag-item">農業產量 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%A5%E6%A5%AD%E7%94%A2%E9%87%8F/" class="tag-item">工業產量 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E7%94%A8%E4%BD%8F%E5%AE%85%E7%94%A8%E5%9C%B0/" class="tag-item">自用住宅用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87/" class="tag-item">土地稅法施行細則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E8%B4%88%E7%99%BB%E8%A8%98/" class="tag-item">遺贈登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%8D%E7%B4%8D%28%E5%BE%B5%29/" class="tag-item">免納(徵) <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9D%9E%E8%AA%B2%E7%A8%85%E7%AF%84%E5%9C%8D/" class="tag-item">非課稅範圍 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%84%A1%E6%89%80%E5%BE%97/" class="tag-item">無所得 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E6%B8%AC%E9%87%8F/" class="tag-item">建物測量 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC34%E4%B9%8B1/" class="tag-item">土地法第34之1 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%A3%E9%99%A4%E9%A1%8D/" class="tag-item">扣除額 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9B%B4%E7%94%9F%E7%99%BB%E8%A8%98/" class="tag-item">更生登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%86%E5%89%B2%E5%90%88%E4%BD%B5/" class="tag-item">分割合併 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%88%E4%BD%B5%E7%99%BB%E8%A8%98/" class="tag-item">合併登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%86%E5%89%B2%E7%99%BB%E8%A8%98/" class="tag-item">分割登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B1%8C%E5%82%99%E6%9C%83/" class="tag-item">籌備會 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC739%E8%99%9F/" class="tag-item">釋字第739號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%85%E5%9F%BA%E6%89%A3%E9%99%A4%E7%A8%85%E5%9F%BA/" class="tag-item">稅基扣除稅基 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%85%E9%A1%8D%E6%89%A3%E6%8A%B5%E7%A8%85%E9%A1%8D/" class="tag-item">稅額扣抵稅額 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%84%A1%E5%84%9F/" class="tag-item">無償 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%8B%E5%AF%A6%E4%B8%8A%E8%99%95%E5%88%86/" class="tag-item">事實上處分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%BF%E7%94%A8%E6%AC%8A/" class="tag-item">使用權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%86%E5%89%B2%E7%A7%BB%E8%BD%89/" class="tag-item">分割移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC758%E8%99%9F/" class="tag-item">釋字第758號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC400%E8%99%9F/" class="tag-item">釋字第400號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%88%87%E7%99%BB%E8%A8%98%E6%9C%89%E9%97%9C%E7%AC%AC%E4%B8%89%E4%BA%BA/" class="tag-item">與登記有關第三人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%82%B5%E6%AC%8A/" class="tag-item">債權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F/" class="tag-item">土地徵收補償 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8D%A0%E6%9C%89%E5%A5%91%E7%A8%85/" class="tag-item">占有契稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%99%95%E5%88%86%E8%A1%8C%E7%82%BA/" class="tag-item">處分行為 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%A5%91%E7%B4%84%E6%9B%B8/" class="tag-item">不動產契約書 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%99%90%E5%88%B6%E5%BB%BA%E7%AF%89/" class="tag-item">限制建築 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E5%B9%B3%E9%9D%A2%E5%9C%96%E6%B8%AC%E7%B9%AA/" class="tag-item">建物平面圖測繪 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9B%A8%E9%81%AE%E4%B8%8D%E7%99%BB%E8%A8%98/" class="tag-item">雨遮不登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9B%A2%E5%B7%AE%E8%A8%88%E7%AE%97/" class="tag-item">離差計算 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%BF%E6%95%B4%E7%8E%87/" class="tag-item">調整率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B3%83%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84%E6%87%89%E8%A8%98%E8%BC%89%E5%8F%8A%E4%B8%8D%E5%BE%97%E8%A8%98%E8%BC%89%E4%BA%8B%E9%A0%85/" class="tag-item">房屋租賃定型化契約應記載及不得記載事項 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B4%88%E8%88%87%E7%8F%BE%E9%87%91/" class="tag-item">贈與現金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%85%E8%B2%A0/" class="tag-item">稅負 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%B2%E5%BE%B5/" class="tag-item">課徵 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%B2%E7%A8%85/" class="tag-item">課稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E9%97%9C%E4%BF%82/" class="tag-item">共有關係 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AE%8A%E5%8B%95%E9%97%9C%E4%BF%82/" class="tag-item">變動關係 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B9%B3%E7%AD%89%E5%8E%9F%E5%89%87/" class="tag-item">平等原則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BE%B5%E6%AC%8A%E8%A1%8C%E7%82%BA/" class="tag-item">侵權行為 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B1%B1%E5%9D%A1%E5%9C%B0%E4%BF%9D%E8%82%B2%E5%8D%80/" class="tag-item">山坡地保育區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B1%B1%E5%9D%A1%E5%9C%B0/" class="tag-item">山坡地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8E%9F%E4%BD%8F%E6%B0%91%E4%BF%9D%E7%95%99%E5%9C%B0/" class="tag-item">原住民保留地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E5%B8%82%E5%A0%B4/" class="tag-item">住宅市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E8%B4%88%E7%A8%85/" class="tag-item">遺贈稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%A2%E7%8D%BB%E5%83%B9%E5%80%BC/" class="tag-item">土地貢獻價值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E8%B2%A2%E7%8D%BB%E5%83%B9%E5%80%BC/" class="tag-item">建物貢獻價值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%BD%89%E5%94%AE/" class="tag-item">預售屋轉售 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%AB%E5%A6%BB%E9%96%93%E8%B4%88%E8%88%87/" class="tag-item">夫妻間贈與 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B5%B7%E9%80%A0%E4%BA%BA/" class="tag-item">起造人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E7%94%A2%E5%88%86%E5%89%B2/" class="tag-item">遺產分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%8D%E5%8B%9D%E5%8F%A4%E8%B9%9F/" class="tag-item">名勝古蹟 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%A4%E8%B9%9F%E4%BF%9D%E5%AD%98/" class="tag-item">古蹟保存 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E5%88%A9%E7%9B%8A/" class="tag-item">公共利益 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A4%BE%E6%9C%83%E7%A6%8F%E5%88%A9/" class="tag-item">社會福利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E4%BD%BF%E7%94%A8/" class="tag-item">農業使用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B9%B3%E7%AD%89%E4%BA%92%E6%83%A0/" class="tag-item">平等互惠 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%B2%B7%E8%B3%A3%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/" class="tag-item">預售屋買賣定型化契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%8B%E4%BA%BA%E7%B6%9C%E5%90%88%E6%89%80%E5%BE%97%E7%A8%85/" class="tag-item">個人綜合所得稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%94%BF%E7%AD%96%E8%88%87%E5%88%A9%E7%94%A8/" class="tag-item">土地政策與利用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B8%9B%E5%85%8D/" class="tag-item">土地稅減免 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9%E7%A8%85%E6%B8%9B%E5%BE%B5/" class="tag-item">地價稅減徵 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E4%BF%9D%E5%9C%B0%E6%AA%A2%E8%A8%8E%E8%AE%8A%E6%9B%B4/" class="tag-item">公保地檢討變更 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E7%94%A8%E5%9C%B0%E8%A7%A3%E7%B7%A8/" class="tag-item">公共設施用地解編 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E7%90%86%E8%AB%96/" class="tag-item">不動產估價理論 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%A3%E5%91%8A/" class="tag-item">廣告 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B6%93%E7%B4%80%E6%A5%AD/" class="tag-item">經紀業 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%8B%E5%AF%A6%E4%B8%8D%E7%AC%A6/" class="tag-item">事實不符 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%85%E7%90%86/" class="tag-item">地籍清理 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B5%81%E6%8A%B5%E7%B4%84%E5%AE%9A/" class="tag-item">流抵約定 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B5%95%E8%B3%A3%E6%A2%9D%E6%AC%BE/" class="tag-item">絕賣條款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A8%B4%E8%A8%9F%E7%B9%AB%E5%B1%AC%E4%BA%8B%E5%AF%A6%E8%A8%BB%E8%A8%98/" class="tag-item">訴訟繫屬事實註記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%82%B5%E6%AC%8A%E4%BA%BA/" class="tag-item">債權人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%BB%E7%99%BB%E8%A8%98/" class="tag-item">主登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%99%84%E8%A8%98%E7%99%BB%E8%A8%98/" class="tag-item">附記登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC779%E8%99%9F/" class="tag-item">釋字第779號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B7%A8%E7%B8%A3%E5%B8%82%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98/" class="tag-item">跨縣市土地登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E7%89%A7%E7%94%A8%E5%9C%B0/" class="tag-item">農牧用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E8%B7%AF/" class="tag-item">農路 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E8%B7%AF/" class="tag-item">公路 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97732/" class="tag-item">釋字732 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B5%95%E5%B0%8D%E4%BC%B0%E5%80%BC/" class="tag-item">絕對估值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%9B%B8%E5%B0%8D%E4%BC%B0%E5%80%BC/" class="tag-item">相對估值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8B%98%E4%BC%B0%E6%A8%99%E7%9A%84/" class="tag-item">勘估標的 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%85%88%E6%8B%8B%E6%A3%84/" class="tag-item">預先拋棄 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E4%B8%8D%E5%8B%95%E7%94%A2%E5%A4%9A%E6%95%B8%E6%B1%BA/" class="tag-item">共有不動產多數決 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%A0%B1%E5%91%8A%E6%9B%B8/" class="tag-item">不動產估價報告書 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%AE%E5%88%A5%E7%A8%85%E7%8E%87/" class="tag-item">差別稅率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%B7%E8%B3%A3%E6%9C%AA%E8%BE%A6%E7%AB%A3%E7%A7%BB%E8%BD%89%E7%99%BB%E8%A8%98/" class="tag-item">土地買賣未辦竣移轉登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E8%87%AA%E4%BD%8F/" class="tag-item">房屋自住 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%B6%E7%94%A8%E6%88%BF%E5%B1%8B/" class="tag-item">住家用房屋 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BC%94%E5%B0%8E%E5%90%88%E6%B3%95%E5%8C%96%E4%B9%8B%E5%8E%9F%E5%89%87/" class="tag-item">輔導合法化之原則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B4%8D%E7%A8%85/" class="tag-item">納稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BC%B7%E5%88%B6%E5%9F%B7%E8%A1%8C/" class="tag-item">強制執行 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C/" class="tag-item">行政執行 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%AD%B0%E9%A1%8C/" class="tag-item">土地使用議題 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E8%AE%8A%E6%9B%B4/" class="tag-item">權利變更 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E7%A8%85%E9%81%9E%E5%BB%B6%E6%80%A7%E8%B3%AA/" class="tag-item">租稅遞延性質 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E7%A8%85%E5%85%8D%E9%99%A4%E6%80%A7%E8%B3%AA/" class="tag-item">租稅免除性質 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E4%B8%80%E7%94%A8%E5%9C%B0/" class="tag-item">農一用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%8D%E5%85%B1%E7%94%A8%E5%9C%B0%E6%82%B2%E5%8A%87/" class="tag-item">反共用地悲劇 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%9F%E5%90%8D%E5%A5%91%E7%B4%84/" class="tag-item">借名契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%96%E9%83%A8%E5%88%A9%E7%9B%8A/" class="tag-item">外部利益 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%96%E9%83%A8%E6%88%90%E6%9C%AC/" class="tag-item">外部成本 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A4%BE%E6%9C%83%E6%88%90%E6%9C%AC/" class="tag-item">社會成本 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A4%BE%E6%9C%83%E5%88%A9%E7%9B%8A/" class="tag-item">社會利益 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E9%96%8B%E7%99%BC/" class="tag-item">土地開發 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E5%AE%A2/" class="tag-item">租客 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E9%87%91/" class="tag-item">租金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%A0%E7%A7%9F/" class="tag-item">欠租 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E9%9C%B8%E4%B8%8B%E8%BB%8A/" class="tag-item">租霸下車 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E5%B0%8D%E6%8A%97/" class="tag-item">登記對抗 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%B8%E4%BD%83%E6%AC%8A/" class="tag-item">永佃權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E6%9B%B4%E6%A2%9D%E4%BE%8B/" class="tag-item">都更條例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%81%E5%B1%8B%E6%A2%9D%E4%BE%8B/" class="tag-item">老屋條例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%96%92%E7%BD%AE%E5%9C%9F%E5%9C%B0/" class="tag-item">閒置土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BC%B7%E5%88%B6%E6%8B%8D%E8%B3%A3/" class="tag-item">強制拍賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E5%90%8C%E8%B2%A0%E6%93%94/" class="tag-item">共同負擔 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E9%9D%A2%E5%B8%AB/" class="tag-item">地面師 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%81%BD%E9%80%A0%E9%81%BA%E5%9B%91/" class="tag-item">偽造遺囑 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%94%9F%E7%94%A2/" class="tag-item">農業生產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%AE%E9%A1%8D%E5%88%86%E9%85%8D/" class="tag-item">差額分配 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%97%E8%B4%88%E9%85%8D%E5%81%B6/" class="tag-item">受贈配偶 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%94%BF%E5%BA%9C%E5%BE%B5%E6%94%B6%E5%9C%9F%E5%9C%B0/" class="tag-item">政府徵收土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC743%E8%99%9F/" class="tag-item">釋字第743號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%81%9C%E8%BB%8A%E4%BD%8D/" class="tag-item">停車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B3%95%E5%AE%9A%E8%BB%8A%E4%BD%8D/" class="tag-item">法定車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A2%9E%E8%A8%AD%E8%BB%8A%E4%BD%8D/" class="tag-item">增設車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%8D%8E%E5%8B%B5%E8%BB%8A%E4%BD%8D/" class="tag-item">獎勵車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%82%B5%E5%88%B8%E8%A3%9C%E5%84%9F/" class="tag-item">債券補償 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%AA%E9%99%BD%E5%85%89%E9%9B%BB/" class="tag-item">太陽光電 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%AA%E9%99%BD%E8%83%BD%E5%85%89%E9%9B%BB/" class="tag-item">太陽能光電 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A8%8E%E6%A8%93/" class="tag-item">騎樓 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%B7%E6%AC%8A%E9%81%B8%E6%93%87%E6%AC%8A/" class="tag-item">買權選擇權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%A3%E6%AC%8A%E9%81%B8%E6%93%87%E6%AC%8A/" class="tag-item">賣權選擇權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E9%87%91/" class="tag-item">權利金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A8%99%E7%9A%84%E7%89%A9/" class="tag-item">標的物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B3%95%E5%AE%9A%E7%A9%BA%E5%9C%B0/" class="tag-item">法定空地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E4%B8%8D%E5%AF%A6/" class="tag-item">登記不實 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8A%B5%E6%8A%BC/" class="tag-item">抵押 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8A%95%E8%B3%87/" class="tag-item">投資 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%A2%E6%AC%8A%E5%9E%8B%E6%85%8B/" class="tag-item">產權型態 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%86%E5%88%A5%E5%85%B1%E6%9C%89/" class="tag-item">分別共有 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%81%E4%BA%BA%E5%9C%9F%E5%9C%B0%E6%88%96%E5%85%B6%E6%94%B9%E8%89%AF%E7%89%A9/" class="tag-item">私人土地或其改良物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%A3%E7%90%86%E6%AC%8A%E8%AA%AA/" class="tag-item">代理權說 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%99%95%E5%88%86%E6%AC%8A%E8%AA%AA/" class="tag-item">處分權說 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97%E7%AC%AC763%E8%99%9F/" class="tag-item">釋字第763號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%90%B5%E9%8B%81%E7%AA%97/" class="tag-item">鐵鋁窗 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%98%B2%E5%A2%9C%E8%A8%AD%E6%96%BD/" class="tag-item">防墜設施 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E6%B3%95%E4%BF%AE%E6%B3%95/" class="tag-item">國土計畫法修法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%A8%E8%85%B3%E6%8A%95%E7%A5%A8/" class="tag-item">用腳投票 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%A1%E7%94%A2%E7%A8%85/" class="tag-item">財產稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%9534%E6%A2%9D%E4%B9%8B1/" class="tag-item">土地法34條之1 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%A7%E9%83%A8%E4%BC%B0%E5%83%B9/" class="tag-item">內部估價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%96%E9%83%A8%E4%BC%B0%E5%83%B9/" class="tag-item">外部估價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B1%A0%E8%83%BD/" class="tag-item">屠能 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%9B%E5%85%8B%E8%90%8A/" class="tag-item">辛克萊 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B6%93%E6%BF%9F%E4%BD%9C%E7%89%A9/" class="tag-item">經濟作物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%A4%9A%E6%95%B8%E6%B1%BA/" class="tag-item">土地多數決 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A6%96%E7%82%BA%E6%B6%88%E6%BB%85/" class="tag-item">視為消滅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E6%AC%8A/" class="tag-item">農業權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%8D%E5%BE%B5%E6%80%A7%E8%B3%AA/" class="tag-item">免徵性質 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E8%AA%B2%E5%BE%B5%E6%80%A7%E8%B3%AA/" class="tag-item">不課徵性質 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%94%BF%E4%BA%8B%E5%8B%99%E6%89%80/" class="tag-item">地政事務所 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E8%A4%87%E7%99%BB%E9%8C%84/" class="tag-item">重複登錄 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E9%96%8B%E7%99%BC%E5%88%86%E6%9E%90%E6%B3%95/" class="tag-item">土地開發分析法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AE%97%E6%95%99%E5%9C%98%E9%AB%94/" class="tag-item">宗教團體 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E7%84%B6%E4%BA%BA%E5%90%8D%E7%BE%A9/" class="tag-item">自然人名義 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9A%AB%E8%A1%8C%E6%A2%9D%E4%BE%8B/" class="tag-item">暫行條例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%BE%B5%E6%94%B6%E8%A6%81%E4%BB%B6/" class="tag-item">土地徵收要件 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%A4%E6%98%93%E6%88%90%E6%9C%AC/" class="tag-item">交易成本 <span class="tag-count">1</span></a>
+  <a href="../blog/category/transaction-cos/" class="tag-item">Transaction Cos <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BA%A4%E6%98%93/" class="tag-item">不動產交易 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%A1%E8%B2%A8%E4%BA%A4%E6%98%93/" class="tag-item">財貨交易 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%98%B2%E7%81%BD%E5%9E%8B%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0/" class="tag-item">防災型都市更新 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%98%B2%E7%81%BD%E9%83%BD%E6%9B%B4/" class="tag-item">防災都更 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB%E5%85%A7%E9%98%B2%E7%81%BD%E5%BB%BA%E7%AF%89%E5%86%8D%E7%94%9F%E8%87%AA%E6%B2%BB%E6%A2%9D%E4%BE%8B/" class="tag-item">都市計畫內防災建築再生自治條例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%BC%89%E4%B8%8D%E5%AF%A6/" class="tag-item">登載不實 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%80%83%E6%BC%8F%E7%A8%85%E6%8D%90/" class="tag-item">逃漏稅捐 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97765/" class="tag-item">釋字765 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%86%8D%E8%BD%89%E7%B9%BC%E6%89%BF/" class="tag-item">再轉繼承 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%A3%E4%BD%8D%E7%B9%BC%E6%89%BF/" class="tag-item">代位繼承 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F%E7%99%BC%E7%B5%A6/" class="tag-item">徵收補償發給 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%AD%96%E7%95%A5%E6%80%A7%E6%9B%B4%E6%96%B0%E5%9C%B0%E5%8D%80/" class="tag-item">策略性更新地區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%83%B9%E4%B8%8A%E6%BC%B2/" class="tag-item">房價上漲 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%B2%A2%E7%8D%BB/" class="tag-item">土地貢獻 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%81%AF%E5%90%88%E8%B2%A2%E7%8D%BB/" class="tag-item">聯合貢獻 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%93%B4%E5%A4%A7%E8%A7%A3%E9%87%8B/" class="tag-item">擴大解釋 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A1%9E%E6%8E%A8%E9%81%A9%E7%94%A8/" class="tag-item">類推適用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9%E8%A9%95%E8%AD%B0/" class="tag-item">地價評議 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A2%9E%E5%80%BC%E7%A8%85/" class="tag-item">增值稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%84%A1%E7%A7%BB%E8%BD%89/" class="tag-item">無移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E7%A4%BA%E6%80%A7/" class="tag-item">公示性 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E8%88%8D%E5%96%AE%E7%8D%A8%E7%A7%BB%E8%BD%89/" class="tag-item">農舍單獨移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9C%80%E5%BD%B9%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">需役不動產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BE%9B%E5%BD%B9%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">供役不動產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%99%BB%E8%A8%98%E7%B0%BF/" class="tag-item">不動產登記簿 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0%E7%A7%9F%E7%94%A8/" class="tag-item">耕地租用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%95%E4%BD%9C%E6%AC%8A/" class="tag-item">耕作權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9F%8C%E6%80%A7%E5%9F%8E%E5%B8%82/" class="tag-item">韌性城市 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%81%BD%E5%AE%B3/" class="tag-item">災害 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A8%88%E7%95%AB%E8%A3%81%E9%87%8F/" class="tag-item">計畫裁量 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%EF%A7%9D%EF%A8%97%E8%A1%A1%EF%A5%BE/" class="tag-item">利益衡量 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B0%88%E6%9C%89%E9%83%A8%E5%88%86/" class="tag-item">專有部分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E9%83%A8%E5%88%86/" class="tag-item">共有部分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%BB%E5%BB%BA%E7%89%A9%E9%9D%A2%E7%A9%8D/" class="tag-item">主建物面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%99%84%E5%B1%AC%E5%BB%BA%E7%89%A9%E9%9D%A2%E7%A9%8D/" class="tag-item">附屬建物面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9%E5%8D%80%E6%AE%B5/" class="tag-item">地價區段 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E5%88%86%E5%89%B2/" class="tag-item">建物分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E5%90%88%E4%BD%B5/" class="tag-item">建物合併 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8F%9B%E7%B4%84/" class="tag-item">換約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B4%85%E5%96%AE/" class="tag-item">紅單 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E7%B4%80%E6%A5%AD/" class="tag-item">不動產經紀業 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9B%B4%E6%96%B0%E5%96%AE%E5%85%83/" class="tag-item">更新單元 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8E%92%E6%94%BE%E6%BA%90/" class="tag-item">排放源 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A2%B3%E8%B2%BB/" class="tag-item">碳費 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%91%8A%E7%8F%BE%E5%80%BC/" class="tag-item">公告現值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BE%B5%E6%94%B6%E8%A3%9C%E5%84%9F%E5%B8%82%E5%83%B9/" class="tag-item">徵收補償市價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%A0%B4%E6%AD%A3%E5%B8%B8%E4%BA%A4%E6%98%93%E5%83%B9%E6%A0%BC/" class="tag-item">市場正常交易價格 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E6%9C%89%E5%9C%9F%E5%9C%B0/" class="tag-item">公有土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%8B%E4%BA%BA%E5%A2%93%E5%9C%B0/" class="tag-item">個人墓地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%8B%E4%BA%BA%E5%A2%93%E5%9C%92/" class="tag-item">個人墓園 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%84%AA%E5%85%88%E6%89%BF%E8%B2%B7/" class="tag-item">優先承買 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E5%8A%83%E6%9C%83/" class="tag-item">重劃會 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97747/" class="tag-item">釋字747 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E4%BA%8B%E6%A5%AD/" class="tag-item">都市更新事業 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E6%AD%B8%E6%88%B6/" class="tag-item">信託歸戶 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%83%E8%BE%B2/" class="tag-item">佃農 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%96%8B%E7%99%BC%E5%BD%B1%E9%9F%BF%E8%B2%BB/" class="tag-item">開發影響費 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%9F%E8%B3%A6%E5%83%B9%E5%80%BC/" class="tag-item">稟賦價值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC73%E6%A2%9D%E4%B9%8B1/" class="tag-item">土地法第73條之1 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%A0%B4%E5%83%B9%E6%A0%BC/" class="tag-item">市場價格 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BB%8A%E4%BD%8D/" class="tag-item">車位 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BB%8A%E4%BD%8D%E7%B8%BD%E5%83%B9/" class="tag-item">車位總價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BB%8A%E4%BD%8D%E7%B8%BD%E9%9D%A2%E7%A9%8D/" class="tag-item">車位總面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%AC%E9%87%8F%E9%8C%AF%E8%AA%A4/" class="tag-item">地籍測量錯誤 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%A6%E5%AE%9A%E8%AA%AA/" class="tag-item">否定說 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%9A%E6%AC%A1%E7%B9%BC%E6%89%BF/" class="tag-item">多次繼承 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89/" class="tag-item">共有 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%88%B6%E6%AF%8D%E7%A7%BB%E8%BD%89%E4%B8%8D%E5%8B%95%E7%94%A2%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/" class="tag-item">父母移轉不動產土地增值稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E9%9A%99/" class="tag-item">租隙 <span class="tag-count">1</span></a>
+  <a href="../blog/category/112%E5%B9%B4%E6%86%B2%E5%88%A4%E5%AD%97%E7%AC%AC20%E8%99%9F/" class="tag-item">112年憲判字第20號 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E4%BF%A1%E5%8A%9B/" class="tag-item">公信力 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%91%E4%BA%8B%E5%BA%AD%E6%B1%BA%E8%AD%B0/" class="tag-item">民事庭決議 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%AF%89%E7%89%A9%E9%81%95%E8%A6%8F/" class="tag-item">建築物違規 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A1%8C%E7%82%BA%E4%BA%BA/" class="tag-item">行為人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83%E5%AF%A6%E6%96%BD%E8%BE%A6%E6%B3%95/" class="tag-item">市地重劃實施辦法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97763/" class="tag-item">釋字763 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BE%B5%E6%94%B6%E6%94%B6%E5%9B%9E%E6%AC%8A/" class="tag-item">徵收收回權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8A%98%E7%8F%BE%E7%8F%BE%E9%87%91%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90%E6%B3%95/" class="tag-item">折現現金流量分析法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E6%B3%95%E7%AC%AC%E4%BA%94%E6%A2%9D/" class="tag-item">信託法第五條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%96%AB%E6%83%85/" class="tag-item">疫情 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%80%A3%E7%BA%8C%E7%B9%BC%E6%89%BF/" class="tag-item">連續繼承 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC46%E6%A2%9D%E4%B9%8B2/" class="tag-item">土地法第46條之2 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A8%B4%E8%A8%9F%E5%A4%96%E7%B4%9B%E7%88%AD%E8%A7%A3%E6%B1%BA%E6%A9%9F%E5%88%B6/" class="tag-item">訴訟外紛爭解決機制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%BF%E8%99%95/" class="tag-item">調處 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%B2%E8%A3%81/" class="tag-item">仲裁 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A8%B4%E8%A8%9F/" class="tag-item">訴訟 <span class="tag-count">1</span></a>
+  <a href="../blog/category/adr/" class="tag-item">ADR <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B4%A0%E5%9C%B0/" class="tag-item">素地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BC%B0%E5%83%B9/" class="tag-item">估價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%BC%B2%E5%83%B9%E5%AE%8C%E5%85%A8%E6%AD%B8%E5%85%AC/" class="tag-item">漲價完全歸公 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%A0%B4%E5%AE%8C%E5%85%A8%E9%96%89%E9%8E%96/" class="tag-item">市場完全閉鎖 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B8%82%E5%A0%B4%E5%9C%B0%E5%83%B9/" class="tag-item">市場地價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9D%9E%E9%83%BD%E5%B8%82%E5%9C%9F%E5%9C%B0%E7%B7%A8%E5%AE%9A/" class="tag-item">非都市土地編定 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E6%A6%82%E8%A6%81/" class="tag-item">不動產估價概要 <span class="tag-count">1</span></a>
+  <a href="../blog/category/esg/" class="tag-item">ESG <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A4%BE%E6%9C%83%E8%B2%AC%E4%BB%BB/" class="tag-item">社會責任 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%8F%B8%E6%B2%BB%E7%90%86/" class="tag-item">公司治理 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8A%A0%E7%9B%9F/" class="tag-item">加盟 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%A6%8F%E5%8A%83%E5%8E%9F%E5%89%87/" class="tag-item">土地使用規劃原則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%86%E5%89%B2%E9%99%90%E5%88%B6/" class="tag-item">分割限制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8D%94%E8%AD%B0%E5%83%B9%E8%B3%BC%E5%9C%9F%E5%9C%B0%E5%A2%9E%E5%80%BC%E7%A8%85/" class="tag-item">協議價購土地增值稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%A9%E7%95%B6%E5%88%A9%E6%BD%A4%E7%8E%87/" class="tag-item">適當利潤率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%AA%E6%AC%8A/" class="tag-item">質權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%87%BA%E8%B3%AA%E4%BA%BA/" class="tag-item">出質人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A8%85%E6%8D%90%E4%BF%9D%E5%85%A8/" class="tag-item">稅捐保全 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%86%B2%E6%B3%95%E6%B3%95%E5%BA%AD/" class="tag-item">憲法法庭 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%86%B2%E6%B3%95%E8%A8%B4%E8%A8%9F%E6%B3%95/" class="tag-item">憲法訴訟法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%86%B2%E6%B3%95%E5%AF%A9%E6%9F%A5/" class="tag-item">憲法審查 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%95%E6%86%B2/" class="tag-item">違憲 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%A4%E6%B1%BA/" class="tag-item">判決 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%85%A7%E8%88%8A%E4%BD%BF%E7%94%A8/" class="tag-item">照舊使用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E7%94%B0%E6%B0%B4%E5%88%A9/" class="tag-item">農田水利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E7%94%B0%E6%B0%B4%E5%88%A9%E6%9C%83/" class="tag-item">農田水利會 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BF%9D%E5%80%BC%E6%80%A7/" class="tag-item">不動產保值性 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%9B%B4%E7%B3%BB%E8%A6%AA%E5%B1%AC/" class="tag-item">直系親屬 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%87%9F%E6%A5%AD%E7%94%A8/" class="tag-item">營業用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%8D%E6%95%B8%E7%B4%AF%E9%80%B2/" class="tag-item">倍數累進 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%91%E9%A1%8D%E7%B4%AF%E9%80%B2/" class="tag-item">金額累進 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%81%BD%E8%AD%89/" class="tag-item">聽證 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B6%88%E4%BF%9D%E6%B3%95/" class="tag-item">消保法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BF%9D%E8%AD%89%E6%9B%B8/" class="tag-item">保證書 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%BC%E5%B1%8B%E9%A0%90%E7%B4%84%E5%96%AE/" class="tag-item">購屋預約單 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%B2%B7%E8%B3%A3%E5%A5%91%E7%B4%84/" class="tag-item">預售屋買賣契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9D%A2%E7%A9%8D%E7%9F%AD%E5%B0%91/" class="tag-item">面積短少 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B3%95%E5%BE%8B%E4%B8%8A%E4%B9%8B%E8%99%95%E5%88%86/" class="tag-item">法律上之處分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%8B%E5%AF%A6%E4%B8%8A%E4%B9%8B%E8%99%95%E5%88%86/" class="tag-item">事實上之處分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E7%A7%9F%E7%B4%84/" class="tag-item">住宅租約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%BF%E7%A7%9F%E4%BA%BA/" class="tag-item">承租人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%87%BA%E7%A7%9F%E4%BA%BA/" class="tag-item">出租人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%81%B2%E6%98%8E/" class="tag-item">聲明 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E4%BA%A4%E6%8F%9B/" class="tag-item">房地交換 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A8%99%E7%A4%BA%E5%88%86%E5%89%B2/" class="tag-item">標示分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E5%88%86%E5%89%B2/" class="tag-item">權利分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E5%AF%A6%E5%8B%99/" class="tag-item">土地登記實務 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E7%A8%85%E7%B1%8D/" class="tag-item">房屋稅籍 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BF%A1%E8%A8%97%E5%9C%9F%E5%9C%B0/" class="tag-item">信託土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E7%9B%8A%E4%BF%A1%E8%A8%97/" class="tag-item">自益信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%96%E7%9B%8A%E4%BF%A1%E8%A8%97/" class="tag-item">他益信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%AB%B6%E5%90%88/" class="tag-item">競合 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E5%85%AC%E5%91%8A/" class="tag-item">國土計畫公告 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E8%A8%88%E7%95%AB%E8%AE%8A%E6%9B%B4/" class="tag-item">國土計畫變更 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B3%83%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/" class="tag-item">房屋租賃定型化契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E9%87%8D%E6%B8%AC/" class="tag-item">土地重測 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%AF%89%E7%89%A9/" class="tag-item">建築物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8A%98%E8%88%8A/" class="tag-item">折舊 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A2%9E%E5%80%BC/" class="tag-item">增值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%80%8B%E5%88%A5%E7%A3%8B%E5%95%86/" class="tag-item">個別磋商 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AF%A9%E9%96%B1%E6%AC%8A%E5%88%A9/" class="tag-item">審閱權利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%91%E6%B3%95%E7%AC%AC759%E6%A2%9D/" class="tag-item">民法第759條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9B%9E%E9%A0%AD%E6%AE%BA/" class="tag-item">回頭殺 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%AE%E5%83%B9/" class="tag-item">差價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%84%89%E6%9D%91%E5%9C%B0%E5%8D%80/" class="tag-item">鄉村地區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9D%9E%EF%A8%A6%E5%B8%82%E5%9C%9F%E5%9C%B0/" class="tag-item">非都市土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%AF%A6%E5%BB%A3%E5%91%8A/" class="tag-item">不實廣告 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E8%88%87%E6%94%BF%E7%AD%96/" class="tag-item">土地利用與政策 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B8%9B%E5%BE%B5/" class="tag-item">減徵 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E6%AC%8A%E5%88%A9%E4%BA%BA/" class="tag-item">登記權利人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E7%BE%A9%E5%8B%99%E4%BA%BA/" class="tag-item">登記義務人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%89%E9%A1%9E%E8%AC%84%E6%9C%AC/" class="tag-item">三類謄本 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AF%94%E4%BE%8B%E7%A8%85/" class="tag-item">比例稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B7%A8%E9%9B%B6%E6%8E%92%E6%94%BE/" class="tag-item">淨零排放 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A2%B3%E5%8C%AF/" class="tag-item">碳匯 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%87%89%E7%B9%BC%E9%81%BA%E7%94%A2/" class="tag-item">應繼遺產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%E5%88%A9%E5%A5%91%E7%B4%84/" class="tag-item">土地權利契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AD%BB%E5%9B%A0%E8%B4%88%E8%88%87/" class="tag-item">死因贈與 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E5%9B%91/" class="tag-item">遺囑 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B4%88%E8%88%87%E8%AA%AA/" class="tag-item">贈與說 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E8%99%9B%E5%81%BD/" class="tag-item">登記虛偽 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%84%8F%E5%AE%9A%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">意定優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B3%95%E5%AE%9A%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">法定優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AF%A6%E5%83%B9%E7%94%B3%E5%A0%B1/" class="tag-item">實價申報 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9/" class="tag-item">權利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E5%82%99%E6%AC%BE/" class="tag-item">自備款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AE%9A%E9%87%91/" class="tag-item">定金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B0%BD%E7%B4%84%E9%87%91/" class="tag-item">簽約金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%A1%E8%B2%A8%E5%B8%82%E5%A0%B4/" class="tag-item">財貨市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BE%9B%E9%9C%80%E6%A9%9F%E5%88%B6/" class="tag-item">供需機制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%8C%E4%B8%80%E6%80%A7/" class="tag-item">同一性 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%AA%B2%E4%BA%88%E7%BE%A9%E5%8B%99%E8%A8%B4%E8%A8%9F/" class="tag-item">課予義務訴訟 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A3%9C%E5%84%9F%E8%99%95%E5%88%86/" class="tag-item">補償處分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A3%9C%E5%84%9F%E8%AB%8B%E6%B1%82%E6%AC%8A/" class="tag-item">補償請求權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BE%B5%E6%94%B6%E5%9C%9F%E5%9C%B0/" class="tag-item">徵收土地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E7%94%A8%E5%9C%B0/" class="tag-item">住宅用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%8C%81%E5%88%86/" class="tag-item">土地持分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E6%8C%81%E5%88%86/" class="tag-item">房屋持分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%94%BE%E6%A3%84%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">放棄優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A6%96%E7%82%BA%E6%94%BE%E6%A3%84%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">視為放棄優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%B7%E8%B3%A3%E4%B8%8D%E7%A0%B4%E7%A7%9F%E8%B3%83/" class="tag-item">買賣不破租賃 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%87%BA%E5%94%AE%E8%BE%B2%E5%9C%B0/" class="tag-item">出售農地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%81%E8%BE%B2/" class="tag-item">老農 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%B0%E8%BE%B2/" class="tag-item">新農 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%EF%A7%9D/" class="tag-item">土地權利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BB%E8%A8%98%E5%90%8D%E7%BE%A9%E4%BA%BA/" class="tag-item">登記名義人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A4%87%E4%B8%88/" class="tag-item">複丈 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%90%E9%95%B7%E7%AE%A1%E7%90%86/" class="tag-item">成長管理 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%81%E8%88%8A%E5%BB%BA%E7%89%A9/" class="tag-item">老舊建物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%81%E8%88%8A%E5%BB%BA%E7%89%A9%E6%8B%86%E9%99%A4%E9%87%8D%E5%BB%BA/" class="tag-item">老舊建物拆除重建 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AD%B7%E5%8F%B2%E5%BB%BA%E7%AF%89/" class="tag-item">歷史建築 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E5%A0%B4%E8%A6%8F%E6%A8%A1/" class="tag-item">農場規模 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B6%88%E6%BB%85%E6%99%82%E6%95%88/" class="tag-item">消滅時效 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%B2%E7%99%BB%E8%A8%98%E4%B8%8D%E5%8B%95%E7%94%A2/" class="tag-item">已登記不動產 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AE%B9%E7%A9%8D%E4%BB%A3%E9%87%91/" class="tag-item">容積代金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BC%E5%B1%95%E6%AC%8A%E5%9C%8B%E6%9C%89/" class="tag-item">發展權國有 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E7%A7%9F%E8%B3%83%E5%A5%91%E7%B4%84/" class="tag-item">住宅租賃契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%90%E5%B1%8B%E8%B2%B7%E8%B3%A3/" class="tag-item">成屋買賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E8%B2%B7%E8%B3%A3/" class="tag-item">預售屋買賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%80%8F%E5%A4%A9%E6%88%BF%E5%B1%8B/" class="tag-item">透天房屋 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%9C%9F%E9%80%8F%E5%A4%A9/" class="tag-item">真透天 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%81%87%E9%80%8F%E5%A4%A9/" class="tag-item">假透天 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%A2%E6%AC%8A/" class="tag-item">產權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B2%A1%E7%94%A2%E6%AC%8A%E4%BF%9D%E9%9A%9C/" class="tag-item">財產權保障 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%99%BC%E5%B1%95%E6%AC%8A%E7%A7%BB%E8%BD%89/" class="tag-item">發展權移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E7%B7%A8/" class="tag-item">民法物權編 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E7%A8%85%E6%95%88%E6%9E%9C/" class="tag-item">租稅效果 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90%E7%9B%B8%E9%97%9C%E8%A8%AD%E6%96%BD/" class="tag-item">再生能源相關設施 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%9C%B0%E6%94%BE%E9%A0%98/" class="tag-item">公地放領 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E5%9C%B0%E8%BE%B2%E7%94%A8/" class="tag-item">農地農用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC107%E6%A2%9D/" class="tag-item">土地法第107條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%87%E6%9C%AC%E5%8C%96/" class="tag-item">資本化 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%A3%E7%B9%B3%E7%BE%A9%E5%8B%99%E4%BA%BA/" class="tag-item">代繳義務人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BB%A3%E7%B9%B3%E4%BA%BA/" class="tag-item">代繳人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E5%BB%BA%E5%8D%80%E6%AE%B5/" class="tag-item">重建區段 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8D%94%E8%AD%B0%E5%90%88%E5%BB%BA/" class="tag-item">協議合建 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%90%E5%B1%8B%E7%94%B3%E5%A0%B1/" class="tag-item">成屋申報 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A0%90%E5%94%AE%E5%B1%8B%E7%94%B3%E5%A0%B1/" class="tag-item">預售屋申報 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%A7%E9%99%B8%E5%9C%B0%E5%8D%80%E7%B9%BC%E6%89%BF%E4%BA%BA/" class="tag-item">大陸地區繼承人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B9%BC%E6%89%BF%E6%AC%8A/" class="tag-item">繼承權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%AE%8C%E5%85%A8%E7%AB%B6%E7%88%AD%E5%B8%82%E5%A0%B4/" class="tag-item">不完全競爭市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9D%9E%E8%87%AA%E7%94%B1%E7%AB%B6%E7%88%AD%E5%B8%82%E5%A0%B4/" class="tag-item">非自由競爭市場 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%90%8C%E5%85%B1%E6%9C%89%E4%BA%BA/" class="tag-item">公同共有人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E8%A1%8C%E4%BD%BF/" class="tag-item">權利行使 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%AB%98%E6%99%AE%E8%80%83/" class="tag-item">高普考 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83%E9%97%9C%E4%BF%82%E6%B6%88%E6%BB%85/" class="tag-item">租賃關係消滅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%93%E8%B7%AF/" class="tag-item">道路 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A7%94%E8%A8%97/" class="tag-item">委託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A7%94%E4%BB%BB%E4%BA%BA/" class="tag-item">委任人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%97%E4%BB%BB%E4%BA%BA/" class="tag-item">受任人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E9%80%86%E5%90%91%E6%8A%B5%E6%8A%BC%E8%B2%B8%E6%AC%BE/" class="tag-item">不動產逆向抵押貸款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E6%9C%89%E6%88%BF%E5%9C%B0/" class="tag-item">共有房地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB%E8%AE%8A%E6%9B%B4/" class="tag-item">都市計畫變更 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E5%88%A9/" class="tag-item">租利 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%9B%9C%E8%B3%A3/" class="tag-item">盜賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%9D%B1%E5%8D%80%E5%90%8D%E4%BA%BA%E5%B7%B7/" class="tag-item">東區名人巷 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%9E%8D%E9%80%9A%E7%89%A9/" class="tag-item">融通物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E8%9E%8D%E9%80%9A%E7%89%A9/" class="tag-item">不融通物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%88%87%E7%99%BB%E8%A8%98%E6%9C%89%E9%97%9C%E4%B9%8B%E7%AC%AC%E4%B8%89%E4%BA%BA/" class="tag-item">與登記有關之第三人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B8%E6%AC%8A%E6%9C%9F%E9%99%90/" class="tag-item">典權期限 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B8%E6%AC%8A%E4%BA%BA/" class="tag-item">典權人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E5%9C%96/" class="tag-item">地籍圖 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A%E5%AF%A6%E4%BE%8B/" class="tag-item">地上權實例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9B%A4%E6%88%BF/" class="tag-item">囤房 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BF%9D%E8%AD%B7%E8%BE%B2%E5%9C%B0/" class="tag-item">保護農地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E5%9C%B0%E8%AE%8A%E6%9B%B4/" class="tag-item">農地變更 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%A8%E7%90%83%E6%80%A7%E7%B3%A7%E8%8D%92/" class="tag-item">全球性糧荒 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E5%9B%91%E4%BF%A1%E8%A8%97/" class="tag-item">遺囑信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E5%9B%91%E5%9F%B7%E8%A1%8C%E4%BA%BA/" class="tag-item">遺囑執行人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%BA%E7%94%A2%E7%AE%A1%E7%90%86%E4%BA%BA/" class="tag-item">遺產管理人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/" class="tag-item">房屋所有權人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E6%89%80%E6%9C%89%E6%AC%8A%E4%BA%BA/" class="tag-item">房地所有權人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E8%B3%BC%E6%88%BF%E5%9C%B0/" class="tag-item">重購房地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC13%E6%A2%9D/" class="tag-item">土地法第13條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B2%B8%E5%9C%B0%E5%84%AA%E5%85%88%E5%8F%96%E5%BE%97%E6%AC%8A/" class="tag-item">岸地優先取得權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E8%A8%88%E5%BE%B5/" class="tag-item">不計徵 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8E%E5%BA%A6%E5%88%A9%E7%94%A8/" class="tag-item">低度利用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%81%8E%E5%BA%A6%E5%88%A9%E7%94%A8/" class="tag-item">過度利用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E7%95%B6%E5%88%A9%E7%94%A8/" class="tag-item">不當利用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%81%E6%B3%95%E4%BA%BA/" class="tag-item">私法人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85/" class="tag-item">住宅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9B%A2%E5%B7%AE/" class="tag-item">離差 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8B%98%E4%BC%B0%E6%A8%99/" class="tag-item">勘估標 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%88%E8%B3%A3%E5%BE%8C%E8%B2%B7/" class="tag-item">先賣後買 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%88%E8%B2%B7%E5%BE%8C%E8%B3%A3/" class="tag-item">先買後賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%9C%B0%E4%BA%A4%E6%98%93%E6%89%80%E5%BE%97/" class="tag-item">房地交易所得 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%B9%E5%AE%9A%E5%8D%80%E5%9F%9F%E8%A8%88%E7%95%AB/" class="tag-item">特定區域計畫 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%8F%B8%E6%B3%95%E4%BA%BA/" class="tag-item">公司法人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%85%B1%E8%A8%AD%E6%96%BD%E4%BF%9D%E7%95%99%E5%9C%B0-%E5%9C%B0%E5%83%B9/" class="tag-item">公共設施保留地 地價 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E7%A7%9F%E8%B3%83/" class="tag-item">住宅租賃 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E6%90%8D%E5%AE%B3%E8%B3%A0%E5%84%9F/" class="tag-item">土地登記損害賠償 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E9%A0%90%E5%94%AE/" class="tag-item">房屋預售 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%83%B9%E9%A3%86%E6%BC%B2/" class="tag-item">房價飆漲 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%AF%89%E7%94%A8%E5%9C%B0/" class="tag-item">建築用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%90%E5%B1%8B/" class="tag-item">成屋 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%BC%E5%B1%8B%E8%B2%B8%E6%AC%BE/" class="tag-item">購屋貸款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B4%85%E5%96%AE%E4%BA%A4%E6%98%93/" class="tag-item">紅單交易 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B5%B7%E5%9F%9F/" class="tag-item">海域 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B5%B7%E5%9F%9F%E5%8D%80/" class="tag-item">海域區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B5%B7%E5%9F%9F%E7%94%A8%E5%9C%B0/" class="tag-item">海域用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%AC%8A%E5%88%A9%E7%A7%BB%E8%BD%89/" class="tag-item">土地權利移轉 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F/" class="tag-item">日治時期 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BD%B1%E5%AD%90%E9%8A%80%E8%A1%8C/" class="tag-item">影子銀行 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%B3%87%E7%94%A2%E8%AD%89%E5%88%B8%E5%8C%96/" class="tag-item">資產證券化 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E7%94%B1%E8%99%95%E5%88%86/" class="tag-item">自由處分 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E6%9B%B4%E6%96%B0%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%95%AB%E5%90%8C%E6%84%8F%E6%AF%94%E7%8E%87/" class="tag-item">都市更新事業計畫同意比率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9%E8%A9%95%E8%AD%B0%E5%A7%94%E5%93%A1%E6%9C%83/" class="tag-item">地價評議委員會 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%A9%95%E5%83%B9%E5%A7%94%E5%93%A1%E6%9C%83/" class="tag-item">不動產評價委員會 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E7%B7%A8%E6%96%BD%E8%A1%8C%E6%B3%95%E7%AC%AC8%E6%A2%9D%E4%B9%8B5/" class="tag-item">民法物權編施行法第8條之5 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E5%90%8C%E5%85%B1%E6%9C%89%E7%89%A9/" class="tag-item">公同共有物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E6%A5%AD%E7%99%BC%E5%B1%95%E5%8D%80/" class="tag-item">農業發展區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%8B%E5%9C%9F%E4%BF%9D%E8%82%B2%E5%8D%80/" class="tag-item">國土保育區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A0%B4%E7%94%A2%E7%99%BB%E8%A8%98/" class="tag-item">破產登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AF%A6%E5%83%B9%E7%99%BB%E9%8C%842.0/" class="tag-item">實價登錄2.0 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B5%90%E5%90%88/" class="tag-item">結合 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%A8%E8%81%AF%E5%85%AC%E5%8F%B8/" class="tag-item">全聯公司 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%A7%E6%BD%A4%E7%99%BC/" class="tag-item">大潤發 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%99%BB%E8%A8%98%E6%BC%8F%E8%AA%A4/" class="tag-item">土地登記漏誤 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%90%88%E4%BD%B5/" class="tag-item">不動產合併 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E5%88%86%E5%89%B2/" class="tag-item">不動產分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AC%8A%E5%88%A9%E5%90%88%E4%BD%B5/" class="tag-item">權利合併 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A8%99%E7%A4%BA%E5%90%88%E4%BD%B5/" class="tag-item">標示合併 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%BF%E7%94%A8%E6%AC%8A%E5%88%86%E9%9B%A2/" class="tag-item">使用權分離 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%89%80%E5%BE%97%E7%A8%85%E6%B3%95/" class="tag-item">所得稅法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0%E6%94%B6%E5%9B%9E%E8%A3%9C%E5%84%9F/" class="tag-item">耕地收回補償 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0%E4%B8%89%E4%B8%83%E4%BA%94%E6%B8%9B%E7%A7%9F/" class="tag-item">耕地三七五減租 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%AC%AC26%E6%A2%9D/" class="tag-item">土地法第26條 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9B%9E%E5%BE%A9%E5%8E%9F%E7%8B%80/" class="tag-item">回復原狀 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A0%B8%E5%87%86%E5%9B%9E%E5%BE%A9%E8%AA%AA/" class="tag-item">核准回復說 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%87%AA%E5%8B%95%E5%9B%9E%E5%BE%A9%E8%AA%AA/" class="tag-item">自動回復說 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9D%9E%E5%B8%82%E5%A0%B4%E5%83%B9%E5%80%BC/" class="tag-item">非市場價值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%97%85%E9%81%8A%E6%88%90%E6%9C%AC%E6%B3%95/" class="tag-item">旅遊成本法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%B9%E5%BE%B5%E5%83%B9%E6%A0%BC%E6%B3%95/" class="tag-item">特徵價格法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%A2%9D%E4%BB%B6%E8%A9%95%E5%83%B9%E6%B3%95/" class="tag-item">條件評價法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B4%97%E9%8C%A2%E9%98%B2%E5%88%B6/" class="tag-item">洗錢防制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%B2%B7%E8%B3%A3/" class="tag-item">不動產買賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%9F%E8%B3%83%E4%BD%8F%E5%AE%85%E6%9C%8D%E5%8B%99%E6%A5%AD/" class="tag-item">租賃住宅服務業 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A8%AD%E7%B1%8D/" class="tag-item">設籍 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E6%94%BF%E5%A3%AB%E8%80%83%E8%A9%A6%E9%87%8D%E9%BB%9E/" class="tag-item">地政士考試重點 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A6%8F%E5%8A%83%E5%88%A9%E5%BE%97/" class="tag-item">規劃利得 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A6%8F%E5%8A%83%E6%90%8D%E5%A4%B1/" class="tag-item">規劃損失 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%AF%94%E4%BE%8B%E5%8E%9F%E5%89%87/" class="tag-item">比例原則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A6%81%E6%AD%A2%E9%81%8E%E5%BA%A6%E5%8E%9F%E5%89%87/" class="tag-item">禁止過度原則 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A1%8C%E6%94%BF%E7%A8%8B%E5%BA%8F%E6%B3%95/" class="tag-item">行政程序法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E8%B3%BC%E9%80%80%E7%A8%85%E9%A1%8D%E5%BA%A6/" class="tag-item">重購退稅額度 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8D%A0%E6%9C%89%E4%BA%BA/" class="tag-item">占有人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%88%E6%B3%95%E5%BB%BA%E7%89%A9/" class="tag-item">合法建物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%82%B5%E6%AC%8A%E6%80%A7%E8%B3%AA%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">債權性質優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%A9%E6%AC%8A%E6%80%A7%E8%B3%AA%E5%84%AA%E5%85%88%E8%B3%BC%E8%B2%B7%E6%AC%8A/" class="tag-item">物權性質優先購買權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%9B%B8%E9%97%9C%E5%AE%9A%E5%9E%8B%E5%8C%96%E5%A5%91%E7%B4%84/" class="tag-item">不動產相關定型化契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%97%9B%E8%8B%A6%E6%8C%87%E6%95%B8/" class="tag-item">痛苦指數 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%8F%B2%E5%8A%9B%E6%B5%A6%E6%9B%B2%E7%B7%9A/" class="tag-item">菲力浦曲線 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%A9%E5%83%B9%E4%B8%8A%E6%BC%B2%E7%8E%87/" class="tag-item">物價上漲率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A4%B1%E6%A5%AD%E7%8E%87/" class="tag-item">失業率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%96%87%E5%8C%96%E8%B3%87%E7%94%A2%E6%B3%95/" class="tag-item">文化資產法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E8%A8%88%E7%95%AB%E6%B3%95/" class="tag-item">都市計畫法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%B0%B4%E5%88%A9%E6%B3%95/" class="tag-item">水利法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E7%94%A2%E6%AC%8A%E7%99%BB%E8%A8%98%E9%9D%A2%E7%A9%8D/" class="tag-item">房屋產權登記面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%99%9B%E5%9D%AA%E5%88%B6/" class="tag-item">虛坪制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AF%A6%E5%9D%AA%E5%88%B6/" class="tag-item">實坪制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9C%80%E6%B1%82%E6%9B%B2%E7%B7%9A%E5%BE%8C%E5%BD%8E/" class="tag-item">需求曲線後彎 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%88%BF%E5%B1%8B%E5%90%88%E4%B8%80%E7%A8%85/" class="tag-item">房屋合一稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%AF%A6%E5%8B%99/" class="tag-item">不動產估價實務 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E5%8A%83%E5%8D%80/" class="tag-item">重劃區 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A5%91%E7%B4%84/" class="tag-item">契約 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%AE%9A%E6%9C%9F%E9%99%90/" class="tag-item">不定期限 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%80%E8%88%AC%E7%8A%A7%E7%89%B2/" class="tag-item">一般犧牲 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%A4%E6%B1%BA%E5%88%86%E5%89%B2/" class="tag-item">判決分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BF%A1%E8%A8%97/" class="tag-item">不動產信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%AE%A1%E7%90%86%E4%BF%A1%E8%A8%97/" class="tag-item">不動產管理信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E8%99%95%E5%88%86%E4%BF%A1%E8%A8%97/" class="tag-item">不動產處分信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E9%96%8B%E7%99%BC%E4%BF%A1%E8%A8%97/" class="tag-item">不動產開發信託 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%8F%E5%AE%85%E9%9A%8E%E6%A2%AF/" class="tag-item">住宅階梯 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%94%BF%E5%BA%9C%E5%A4%B1%E9%9D%88/" class="tag-item">政府失靈 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%82%B5%E6%AC%8A%E7%89%A9%E6%AC%8A%E5%8C%96/" class="tag-item">債權物權化 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%80%86%E5%90%91%E6%8A%B5%E6%8A%BC%E8%B2%B8%E6%AC%BE/" class="tag-item">逆向抵押貸款 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9B%9E%E5%BE%A9%E6%9C%9F%E9%99%90/" class="tag-item">回復期限 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%84%A1%E9%81%8E%E5%A4%B1%E8%B2%AC%E4%BB%BB/" class="tag-item">無過失責任 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%8B%E5%96%84%E8%BE%B2%E5%9C%B0/" class="tag-item">友善農地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%85%A3%E8%A1%8C%E8%BE%B2%E6%A5%AD/" class="tag-item">慣行農業 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%BE%8E%E6%BF%83%E5%A4%A7%E5%B3%BD%E8%B0%B7/" class="tag-item">美濃大峽谷 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E7%9F%B3%E6%8E%A1%E5%8F%96%E6%B3%95/" class="tag-item">土石採取法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%A2%E6%A3%84%E7%89%A9%E6%B8%85%E7%90%86%E6%B3%95/" class="tag-item">廢棄物清理法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%84%89%E6%9D%91%E5%9C%B0%E5%8D%80%E8%A8%88%E7%95%AB/" class="tag-item">鄉村地區計畫 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%99%BB%E8%A8%98/" class="tag-item">不動產登記 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%A2%9E%E9%A1%8D%E5%AE%B9%E7%A9%8D/" class="tag-item">增額容積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AE%B9%E7%A9%8D%E6%8A%98%E7%B9%B3%E4%BB%A3%E9%87%91/" class="tag-item">容積折繳代金 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%AE%B9%E7%A9%8D%E9%8A%80%E8%A1%8C%E5%88%B6%E5%BA%A6/" class="tag-item">容積銀行制度 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E6%8A%98%E8%88%8A/" class="tag-item">建物折舊 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%A9%E7%90%86%E6%80%A7%E6%8A%98%E8%88%8A/" class="tag-item">物理性折舊 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8A%9F%E8%83%BD%E6%80%A7%E6%8A%98%E8%88%8A/" class="tag-item">功能性折舊 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B6%93%E6%BF%9F%E6%80%A7%E6%8A%98%E8%88%8A/" class="tag-item">經濟性折舊 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%89%A9%E7%90%86%E8%80%90%E7%94%A8%E5%B9%B4%E6%95%B8/" class="tag-item">物理耐用年數 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%B6%93%E6%BF%9F%E8%80%90%E7%94%A8%E5%B9%B4%E6%95%B8/" class="tag-item">經濟耐用年數 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%B3%87%E6%BA%90/" class="tag-item">土地資源 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%95%E5%9C%B0%E5%88%86%E5%89%B2/" class="tag-item">耕地分割 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%AF%89%E5%9F%B7%E7%85%A7%E9%9D%A2%E7%A9%8D/" class="tag-item">建築執照面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%BB%BA%E7%89%A9%E7%99%BB%E8%A8%98%E9%9D%A2%E7%A9%8D/" class="tag-item">建物登記面積 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9B%A8%E9%81%AE/" class="tag-item">雨遮 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B7%B4%E7%91%9E%E5%9C%96%E7%B6%93%E6%BF%9F%E6%95%88%E7%8E%87/" class="tag-item">巴瑞圖經濟效率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%A6%AC%E6%AD%87%E7%88%BE%E7%B6%93%E6%BF%9F%E6%95%88%E7%8E%87/" class="tag-item">馬歇爾經濟效率 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95104/" class="tag-item">土地法104 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8B%E5%AD%97742/" class="tag-item">釋字742 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%9B%99%E5%9C%B0%E6%94%BF%E5%A3%AB/" class="tag-item">雙地政士 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%88%E5%BB%BA%E5%88%86%E9%85%8D%E6%AF%94/" class="tag-item">合建分配比 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%88%E5%BB%BA%E6%AC%8A%E7%9B%8A%E5%88%86%E9%85%8D/" class="tag-item">合建權益分配 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%AC%E6%9C%89%E5%9C%9F%E5%9C%B0%E6%92%A5%E7%94%A8/" class="tag-item">公有土地撥用 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%A1%8C%E6%94%BF%E6%B3%95/" class="tag-item">行政法 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E5%83%B9%E5%8B%95%E6%85%8B/" class="tag-item">地價動態 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%BD%E5%B8%82%E5%8C%96/" class="tag-item">都市化 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%83%8A%E5%8D%80%E5%8C%96/" class="tag-item">郊區化 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E6%8C%81%E6%9C%89%E7%A8%85/" class="tag-item">持有稅 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%90%88%E6%B3%95%E5%BB%BA%E7%AF%89%E7%89%A9/" class="tag-item">合法建築物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E5%9C%B0%E9%87%8D%E5%8A%83%E6%A2%9D%E4%BE%8B/" class="tag-item">農地重劃條例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%B0%E7%B1%8D%E6%B8%85%E7%90%86%E6%A2%9D%E4%BE%8B/" class="tag-item">地籍清理條例 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%97%E8%AE%93%E4%BA%BA/" class="tag-item">受讓人 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%94%A8%E7%9B%8A%E7%89%A9%E6%AC%8A/" class="tag-item">用益物權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%89%A9%E9%A4%98%E8%B2%A1%E7%94%A2%E5%B7%AE%E9%A1%8D/" class="tag-item">剩餘財產差額 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8F%8D%E5%85%B1%E7%94%A8%E5%9C%B0/" class="tag-item">反共用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%85%B1%E7%94%A8%E5%9C%B0/" class="tag-item">共用地 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%94%A2%E6%AC%8A/" class="tag-item">土地產權 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E7%A7%81%E6%9C%89%E5%88%B6/" class="tag-item">土地私有制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E5%9C%8B%E6%9C%89%E5%88%B6/" class="tag-item">土地國有制 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BD%B5%E5%90%8C%E5%87%BA%E8%B3%A3/" class="tag-item">併同出賣 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%80%81%E8%88%8A%E5%BB%BA%E7%AF%89%E7%89%A9/" class="tag-item">老舊建築物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%8D%B1%E9%9A%AA%E5%BB%BA%E7%AF%89%E7%89%A9/" class="tag-item">危險建築物 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B1%85%E4%BD%8F/" class="tag-item">居住 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B1%85%E4%BD%8F%E6%AD%A3%E7%BE%A9/" class="tag-item">居住正義 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E7%A7%BB%E8%BD%89%E7%8F%BE%E5%80%BC/" class="tag-item">移轉現值 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E8%BE%B2%E9%9B%BB%E5%85%B1%E7%94%9F/" class="tag-item">農電共生 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E9%87%8D%E5%8A%83%E5%BE%8C%E7%A7%BB%E8%BD%89%E6%B8%9B%E5%BE%B5/" class="tag-item">重劃後移轉減徵 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E4%BA%A4%E6%8F%9B/" class="tag-item">土地交換 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E4%BA%8B%E5%AF%A6%E8%A1%8C%E7%82%BA/" class="tag-item">事實行為 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%B9%B3%E5%83%B9%E9%85%8D%E5%94%AE/" class="tag-item">平價配售 <span class="tag-count">1</span></a>
+  <a href="../blog/category/%E5%88%86%E5%89%B2/" class="tag-item">分割 <span class="tag-count">1</span></a>
+</div>
