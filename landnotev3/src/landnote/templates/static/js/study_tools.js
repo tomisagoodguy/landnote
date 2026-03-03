@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initStudyTools() {
     const content = document.querySelector(".md-content__inner");
     if (!content) return;
 
     const h1 = content.querySelector("h1");
+    // 如果已經初始化過，就不要重複加入元件
     if (!h1 || document.getElementById("study-tools-container")) return;
 
     // 1. Setup Study Tools Container
@@ -20,42 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     pdfBtn.innerHTML = '📥 儲存為 PDF';
     pdfBtn.onclick = function () { window.print(); };
 
-    // 3. Memorize Mode Button
-    const memBtn = document.createElement("button");
-    memBtn.className = "md-button";
-    memBtn.innerHTML = '🧠 背誦模式 (遮蔽重點)';
-    let memMode = false;
-    memBtn.onclick = function () {
-        memMode = !memMode;
-        if (memMode) {
-            memBtn.classList.add("md-button--primary");
-        } else {
-            memBtn.classList.remove("md-button--primary");
-        }
-        const bolds = content.querySelectorAll("strong");
-        bolds.forEach(b => {
-            if (memMode) {
-                b.dataset.origBg = b.style.backgroundColor || "";
-                b.dataset.origColor = b.style.color || "";
-                b.style.backgroundColor = "#111827";
-                b.style.color = "#111827";
-                b.style.cursor = "pointer";
-                b.style.borderRadius = "4px";
-                b.style.padding = "0 4px";
-                b.onclick = function () {
-                    this.style.backgroundColor = this.dataset.origBg;
-                    this.style.color = this.dataset.origColor;
-                };
-            } else {
-                b.style.backgroundColor = b.dataset.origBg;
-                b.style.color = b.dataset.origColor;
-                b.onclick = null;
-                b.style.cursor = "auto";
-            }
-        });
-    };
-
-    // 4. Study Progress Tracker
+    // 3. Study Progress Tracker
     const statusBtn = document.createElement("button");
     statusBtn.className = "study-status-btn";
     const pageUrl = window.location.pathname;
@@ -89,10 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Append Tools
     container.appendChild(pdfBtn);
-    container.appendChild(memBtn);
     h1.parentNode.insertBefore(container, h1.nextSibling);
 
-    // 5. Law Referencer (Auto Hyperlink for Laws)
+    // 4. Law Referencer (Auto Hyperlink for Laws)
     // 掃描段落文字中的法規條文，並轉換為全國法規資料庫查詢連結
     const lawRegex = /((?:土地法|平均地權條例|土地稅法|民法|契稅條例|房屋稅條例|都市計畫法|區域計畫法|國土計畫法)[^\d第]*第[\s\d\-之]+條)/g;
 
@@ -119,5 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
             node.parentNode.replaceChild(span, node);
         }
     });
+}
 
-});
+// 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
+if (typeof document$ !== "undefined") {
+    document$.subscribe(function () {
+        initStudyTools();
+    });
+} else {
+    document.addEventListener("DOMContentLoaded", initStudyTools);
+}
