@@ -161,13 +161,31 @@ class SiteGenerator:
             "本區為您將零散的文章彙整為長篇章節。進入各講義後，可點擊文章頂部的「📥 儲存為 PDF」即刻匯出全本講義至您的裝置列印或閱讀。",
             "", 
             "## 🎯 綜合大字典", 
-            "- [不動產全科大補帖 (全收錄)](all.md)", 
+            '<div class="feature-grid" style="margin-top: 1rem; margin-bottom: 3rem;">',
+            '    <a href="all.md" class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4);">',
+            '        <span class="feature-icon">👑</span>',
+            '        <h3>不動產全科大補帖</h3>',
+            '        <p>包含全站所有文章，無死角一鍵下載終極精華版。</p>',
+            '    </a>',
+            '</div>',
             "", 
-            "## 📚 分類主題講義"
+            "## 📚 分類主題講義",
+            '<div class="feature-grid" style="margin-top: 1rem;">'
         ]
-        for tag in sorted(tag_articles.keys()):
+        
+        icons = ["📘", "📙", "📗", "📕", "📔", "📒", "📓", "📚", "📖", "📜"]
+        
+        for idx, tag in enumerate(sorted(tag_articles.keys())):
             safe_tag = tag.replace(' ', '_').replace('/', '_')
-            index_lines.append(f"- [{tag} ({len(tag_articles[tag])} 篇)]({safe_tag}.md)")
+            icon = icons[idx % len(icons)]
+            count = len(tag_articles[tag])
+            index_lines.append(f'    <a href="{safe_tag}.md" class="feature-card">')
+            index_lines.append(f'        <span class="feature-icon">{icon}</span>')
+            index_lines.append(f'        <h3>{tag}</h3>')
+            index_lines.append(f'        <p>收錄 <strong>{count}</strong> 篇核心文章</p>')
+            index_lines.append(f'    </a>')
+            
+        index_lines.append('</div>')
             
         (review_dir / "index.md").write_text('\n'.join(index_lines), encoding='utf-8')
 
