@@ -6,6 +6,19 @@ function initStudyTools() {
     // 如果已經初始化過，就不要重複加入元件
     if (!h1 || document.getElementById("study-tools-container")) return;
 
+    const pageUrl = window.location.pathname;
+
+    // Do not show study tools on index pages, categories, tags, or 404 Error page
+    const isListOrHome = pageUrl === '/' ||
+        pageUrl.endsWith('/landnote/') ||
+        pageUrl.endsWith('/tags/') ||
+        pageUrl.endsWith('/exams/') ||
+        pageUrl.endsWith('/blog/') ||
+        pageUrl.includes('/category/');
+    const is404 = document.title.includes('404');
+
+    if (isListOrHome || is404) return;
+
     // 1. Setup Study Tools Container
     const container = document.createElement("div");
     container.id = "study-tools-container";
@@ -24,7 +37,6 @@ function initStudyTools() {
     // 3. Study Progress Tracker
     const statusBtn = document.createElement("button");
     statusBtn.className = "study-status-btn";
-    const pageUrl = window.location.pathname;
 
     // Load existing status from LocalStorage
     let currentStatus = localStorage.getItem("status_" + pageUrl) || "unread";

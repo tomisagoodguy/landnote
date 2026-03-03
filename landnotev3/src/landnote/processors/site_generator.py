@@ -356,7 +356,7 @@ class SiteGenerator:
             "",
             "## 🎯 綜合大字典",
             '<div class="feature-grid" style="margin-top: 1rem; margin-bottom: 3rem;">',
-            '    <a href="review/all.md" class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4);">',
+            '    <a href="../review/all/" class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4);">',
             '        <span class="feature-icon">👑</span>',
             '        <h3 style="margin-bottom: 0.5rem;">不動產全科大補帖</h3>',
             '        <p>包含全站所有文章，無死角一鍵下載終極精華版。</p>',
@@ -375,9 +375,10 @@ class SiteGenerator:
             for idx, (tag, count) in enumerate(sorted_tags):
                 safe_tag_slug = tag.lower().replace(' ', '-')
                 encoded_tag = urllib.parse.quote(safe_tag_slug)
-                blog_url = f"blog/category/{encoded_tag}/"
+                blog_url = f"../blog/category/{encoded_tag}/"
                 safe_tag_review = tag.replace(' ', '_').replace('/', '_')
-                review_url = f"review/{safe_tag_review}.md"
+                encoded_review = urllib.parse.quote(safe_tag_review)
+                review_url = f"../review/{encoded_review}/"
                 icon = icons[idx % len(icons)]
                 
                 content.append(f'    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">')
