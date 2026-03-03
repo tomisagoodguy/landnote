@@ -100,8 +100,8 @@ body {
 /* Feature Cards */
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
     margin-top: 3rem;
 }
 
