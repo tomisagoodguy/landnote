@@ -6,7 +6,7 @@
 | [優先購買權](keyword_優先購買權.md) | 48 |
 | [土地登記](keyword_土地登記.md) | 40 |
 | [共有人](keyword_共有人.md) | 25 |
-| [地價稅](keyword_地價稅.md) | 23 |
+| [地價稅](keyword_地價稅.md) | 24 |
 | [土地徵收](keyword_土地徵收.md) | 21 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
 | [地上權](keyword_地上權.md) | 19 |
@@ -742,6 +742,7 @@
 | [一般因素](keyword_一般因素.md) | 1 |
 | [區域因素](keyword_區域因素.md) | 1 |
 | [個別因素](keyword_個別因素.md) | 1 |
+| [騎樓走廊地](keyword_騎樓走廊地.md) | 1 |
 | [買權選擇權](keyword_買權選擇權.md) | 1 |
 | [賣權選擇權](keyword_賣權選擇權.md) | 1 |
 | [權利金](keyword_權利金.md) | 1 |
