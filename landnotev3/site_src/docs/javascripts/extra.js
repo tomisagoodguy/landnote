@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             span.innerHTML = text.replace(lawRegex, function (match) {
                 // Encode the law string to search in moj.gov.tw
                 const query = encodeURIComponent(match);
-                return `<a href="https://law.moj.gov.tw/LawClass/LawSearchResult.aspx?p=A&amp;t=A1A2E1F1&amp;k1=${query}" target="_blank" title="查看全國法規資料庫: ${match}" style="border-bottom: 1px dashed var(--md-accent-fg-color);">${match}</a>`;
+                return `<a href="https://law.moj.gov.tw/LawClass/LawSearchResult.aspx?p=A&t=A1A2E1F1&k1=${query}" target="_blank" title="查看全國法規資料庫: ${match}" style="border-bottom: 1px dashed var(--md-accent-fg-color);">${match}</a>`;
             });
             node.parentNode.replaceChild(span, node);
         }
