@@ -14,5 +14,9 @@
         <span class="feature-icon">📚</span>
         <h3>考古題下載</h3>
         <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
+    <a href="review/" class="feature-card">
+        <span class="feature-icon">🚀</span>
+        <h3>考前衝刺講義</h3>
+        <p>一鍵合併生成彙整大PDF，支援背誦暗記模式，專為考生打造。</p>
     </a>
 </div>

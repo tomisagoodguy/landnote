@@ -36,6 +36,8 @@ theme:
       name: 切換至深色模式
 extra_css:
 - stylesheets/extra.css
+extra_javascript:
+- javascripts/extra.js
 plugins:
 - search
 - blog:
@@ -63,3 +65,4 @@ nav:
 - 最新文章: blog/
 - 主題索引: tags.md
 - 考古題下載: exams.md
+- 考前衝刺講義: review/index.md

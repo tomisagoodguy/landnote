@@ -1,5 +1,6 @@
 import re
 import shutil
+import os
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple
@@ -40,6 +41,9 @@ class SiteGenerator:
         # 6. Generate authors file
         self._generate_authors_file()
 
+        # Generate Review Materials (Bulk PDFs per tag and full)
+        self._generate_review_materials()
+
         # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()
         
@@ -71,7 +75,18 @@ class SiteGenerator:
         # Create stylesheets directory
         styles_dir = self.docs_dir / "stylesheets"
         styles_dir.mkdir(exist_ok=True)
-        self._write_extra_css(styles_dir / "extra.css")
+        # Copy external CSS
+        source_css = Path(__file__).parent.parent / "templates" / "static" / "css" / "extra.css"
+        if source_css.exists():
+            shutil.copy2(source_css, styles_dir / "extra.css")
+
+        # Create javascripts directory
+        scripts_dir = self.docs_dir / "javascripts"
+        scripts_dir.mkdir(exist_ok=True)
+        # Copy external JS
+        source_js = Path(__file__).parent.parent / "templates" / "static" / "js" / "study_tools.js"
+        if source_js.exists():
+            shutil.copy2(source_js, scripts_dir / "extra.js")
 
         # Copy images if they exist
         src_images = self.source_dir / "images"
@@ -82,292 +97,79 @@ class SiteGenerator:
             except:
                 pass
 
-    def _write_extra_css(self, path: Path):
-        """Write professional CSS for that 'WOW' factor."""
-        css = """
-:root {
-  --md-primary-fg-color: #0c111d;
-  --md-primary-bg-color: #ffffff;
-  --md-accent-fg-color: #7c3aed;
-}
+             # JS function _write_extra_js has been moved to external static files.
 
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #0c111d;
-  --md-accent-fg-color: #a78bfa;
-  --md-default-fg-color: #ffffff;
-  --md-default-bg-color: #0c111d;
-  --md-typeset-color: #ffffff;
-  --md-typeset-a-color: #ffffff;
-}
+    def _generate_review_materials(self):
+        """Generate combined markdown files for each tag and for all articles for easy downloading/printing."""
+        self.logger.info("Generating Review Materials (Combined PDFs)...")
+        review_dir = self.docs_dir / "review"
+        review_dir.mkdir(exist_ok=True)
+        
+        tag_articles = defaultdict(list)
+        all_articles = []
+        
+        for file in self.posts_dir.glob("*.md"):
+            try:
+                content = file.read_text(encoding='utf-8')
+                parts = content.split('---', 2)
+                if len(parts) >= 3:
+                    meta = yaml.safe_load(parts[1])
+                    body = parts[2]
+                    
+                    # Fix image paths for the review dir context
+                    body = body.replace('(images/', '(../blog/posts/images/')
+                    
+                    item = {
+                        'title': meta.get('title', ''),
+                        'date': meta.get('date', ''),
+                        'body': body,
+                        'categories': meta.get('categories', [])
+                    }
+                    all_articles.append(item)
+                    for c in item['categories']:
+                        if c != 'Real Estate':
+                            tag_articles[c].append(item)
+            except Exception as e:
+                pass
+                
+        # Sort articles by date descending
+        all_articles.sort(key=lambda x: str(x['date']), reverse=True)
+        for tag in tag_articles:
+            tag_articles[tag].sort(key=lambda x: str(x['date']), reverse=True)
+            
+        def create_merged_doc(title, articles, path_obj):
+            doc_lines = [f"# {title}", "", f"共收錄 {len(articles)} 篇文章。", ""]
+            for idx, a in enumerate(articles, 1):
+                doc_lines.append(f"## {idx}. {a['title']}")
+                doc_lines.append(f"*發布日期: {a['date']}* \n")
+                doc_lines.append(a['body'].strip())
+                doc_lines.append("\n<div style=\"page-break-before: always;\"></div>\n")
+            path_obj.write_text('\n'.join(doc_lines), encoding='utf-8')
 
-/* Force everything in typeset and nav to be white in dark mode */
-[data-md-color-scheme="slate"] .md-typeset,
-[data-md-color-scheme="slate"] .md-nav,
-[data-md-color-scheme="slate"] .md-nav__link,
-[data-md-color-scheme="slate"] .md-typeset a,
-[data-md-color-scheme="slate"] .md-typeset h1,
-[data-md-color-scheme="slate"] .md-typeset h2,
-[data-md-color-scheme="slate"] .md-typeset h3,
-[data-md-color-scheme="slate"] .md-typeset li,
-[data-md-color-scheme="slate"] .md-typeset strong,
-[data-md-color-scheme="slate"] .toclink,
-[data-md-color-scheme="slate"] .headerlink,
-[data-md-color-scheme="slate"] .md-meta__link,
-[data-md-color-scheme="slate"] .md-post__title a {
-  color: #ffffff !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset a:hover {
-  color: #a78bfa !important;
-}
-
-/* Hide tag icons in blog and meta */
-.md-post__tags::before,
-.md-post__tag-icon,
-.md-tag-icon,
-[href*="category"]::before {
-  display: none !important;
-}
-
-/* Typography upgrade */
-body {
-  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* Glassmorphism Hero Section */
-.hero-section {
-  padding: 4rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 1.5rem;
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 80%);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: -0.025em;
-  position: relative;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Feature Cards */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.feature-card {
-  padding: 2rem;
-  border-radius: 1rem;
-  background: var(--md-card-bg-color);
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none !important;
-  color: inherit !important;
-  display: block;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  border-color: var(--md-accent-fg-color);
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.feature-card h3 {
-  margin: 0 0 0.5rem 0 !important;
-  font-weight: 700 !important;
-  color: var(--md-typeset-color);
-}
-
-.feature-card p {
-  margin: 0 !important;
-  font-size: 0.95rem;
-  color: var(--md-typeset-color);
-  opacity: 0.8;
-}
-
-/* Custom Tag Cloud */
-.tag-cloud {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
-
-@media (max-width: 960px) {
-  .tag-cloud { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 600px) {
-  .tag-cloud { grid-template-columns: repeat(2, 1fr); }
-}
-
-.tag-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.6rem 1rem;
-  background: rgba(124, 58, 237, 0.06);
-  border: 1px solid rgba(124, 58, 237, 0.15);
-  border-radius: 0.6rem;
-  font-weight: 600;
-  font-size: 0.88rem;
-  color: #4c1d95 !important;
-  text-decoration: none !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tag-item:hover {
-  background: linear-gradient(135deg, #6366f1, #7c3aed);
-  color: #ffffff !important;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
-}
-
-.tag-item:hover .tag-count {
-  background: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-}
-
-.tag-count {
-  flex-shrink: 0;
-  margin-left: 0.5rem;
-  padding: 0.1rem 0.45rem;
-  background: rgba(124, 58, 237, 0.12);
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #7c3aed;
-  transition: all 0.25s;
-}
-
-/* 深色模式標籤雲 */
-[data-md-color-scheme="slate"] .tag-item {
-  background: rgba(167, 139, 250, 0.1);
-  border-color: rgba(167, 139, 250, 0.2);
-  color: #c4b5fd !important;
-}
-
-[data-md-color-scheme="slate"] .tag-item:hover {
-  background: linear-gradient(135deg, #6366f1, #a78bfa);
-  color: #ffffff !important;
-}
-
-[data-md-color-scheme="slate"] .tag-count {
-  background: rgba(167, 139, 250, 0.15);
-  color: #a78bfa;
-}
-
-/* ===== Pagination 換頁元件 ===== */
-.md-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 2rem 0;
-  padding: 1rem 0;
-}
-
-.md-pagination__link,
-.md-pagination__current {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 2.25rem;
-  height: 2.25rem;
-  padding: 0 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.9rem !important;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-/* 淺色模式 */
-.md-pagination__link {
-  color: #374151 !important;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.md-pagination__link:hover {
-  color: #7c3aed !important;
-  background: rgba(124, 58, 237, 0.1);
-  border-color: #7c3aed;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.15);
-}
-
-.md-pagination__current {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #6366f1, #7c3aed);
-  border: 1px solid transparent;
-  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
-}
-
-/* 深色模式 */
-[data-md-color-scheme="slate"] .md-pagination__link {
-  color: #d1d5db !important;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-[data-md-color-scheme="slate"] .md-pagination__link:hover {
-  color: #a78bfa !important;
-  background: rgba(167, 139, 250, 0.15);
-  border-color: #a78bfa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(167, 139, 250, 0.2);
-}
-
-[data-md-color-scheme="slate"] .md-pagination__current {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #6366f1, #a78bfa);
-  border: 1px solid transparent;
-  box-shadow: 0 2px 4px rgba(167, 139, 250, 0.3);
-}
-"""
-        path.write_text(css, encoding='utf-8')
+        # Generate ALL
+        create_merged_doc("不動產全科大補帖", all_articles, review_dir / "all.md")
+        
+        # Generate per tag
+        for tag, articles in tag_articles.items():
+            safe_tag = tag.replace(' ', '_').replace('/', '_')
+            create_merged_doc(f"主題精選：{tag}", articles, review_dir / f"{safe_tag}.md")
+            
+        # Review index page
+        index_lines = [
+            "# 考前衝刺講義下載", 
+            "", 
+            "本區為您將零散的文章彙整為長篇章節。進入各講義後，可點擊文章頂部的「📥 儲存為 PDF」即刻匯出全本講義至您的裝置列印或閱讀。",
+            "", 
+            "## 🎯 綜合大字典", 
+            "- [不動產全科大補帖 (全收錄)](all.md)", 
+            "", 
+            "## 📚 分類主題講義"
+        ]
+        for tag in sorted(tag_articles.keys()):
+            safe_tag = tag.replace(' ', '_').replace('/', '_')
+            index_lines.append(f"- [{tag} ({len(tag_articles[tag])} 篇)]({safe_tag}.md)")
+            
+        (review_dir / "index.md").write_text('\n'.join(index_lines), encoding='utf-8')
 
     def _process_articles(self):
         """Transform raw markdown files into Hugo/MkDocs compatible files."""
@@ -637,6 +439,9 @@ body {
             'extra_css': [
                 'stylesheets/extra.css'
             ],
+            'extra_javascript': [
+                'javascripts/extra.js'
+            ],
             'plugins': [
                 'search',
                 {
@@ -672,6 +477,7 @@ body {
                 {'最新文章': 'blog/'},
                 {'主題索引': 'tags.md'},
                 {'考古題下載': 'exams.md'},
+                {'考前衝刺講義': 'review/index.md'},
             ]
         }
         
@@ -697,6 +503,10 @@ body {
         <span class="feature-icon">📚</span>
         <h3>考古題下載</h3>
         <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
+    <a href="review/" class="feature-card">
+        <span class="feature-icon">🚀</span>
+        <h3>考前衝刺講義</h3>
+        <p>一鍵合併生成彙整大PDF，支援背誦暗記模式，專為考生打造。</p>
     </a>
 </div>
 """
