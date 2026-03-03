@@ -154,40 +154,7 @@ class SiteGenerator:
             safe_tag = tag.replace(' ', '_').replace('/', '_')
             create_merged_doc(f"主題精選：{tag}", articles, review_dir / f"{safe_tag}.md")
             
-        # Review index page
-        index_lines = [
-            "# 考前衝刺講義下載", 
-            "", 
-            "本區為您將零散的文章彙整為長篇章節。進入各講義後，可點擊文章頂部的「📥 儲存為 PDF」即刻匯出全本講義至您的裝置列印或閱讀。",
-            "", 
-            "## 🎯 綜合大字典", 
-            '<div class="feature-grid" style="margin-top: 1rem; margin-bottom: 3rem;">',
-            '    <a href="all.md" class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4);">',
-            '        <span class="feature-icon">👑</span>',
-            '        <h3>不動產全科大補帖</h3>',
-            '        <p>包含全站所有文章，無死角一鍵下載終極精華版。</p>',
-            '    </a>',
-            '</div>',
-            "", 
-            "## 📚 分類主題講義",
-            '<div class="feature-grid" style="margin-top: 1rem;">'
-        ]
-        
-        icons = ["📘", "📙", "📗", "📕", "📔", "📒", "📓", "📚", "📖", "📜"]
-        
-        for idx, tag in enumerate(sorted(tag_articles.keys())):
-            safe_tag = tag.replace(' ', '_').replace('/', '_')
-            icon = icons[idx % len(icons)]
-            count = len(tag_articles[tag])
-            index_lines.append(f'    <a href="{safe_tag}.md" class="feature-card">')
-            index_lines.append(f'        <span class="feature-icon">{icon}</span>')
-            index_lines.append(f'        <h3>{tag}</h3>')
-            index_lines.append(f'        <p>收錄 <strong>{count}</strong> 篇核心文章</p>')
-            index_lines.append(f'    </a>')
-            
-        index_lines.append('</div>')
-            
-        (review_dir / "index.md").write_text('\n'.join(index_lines), encoding='utf-8')
+        # No index page needed here anymore, it is integrated into tags.md (主題探索與講義下載)
 
     def _process_articles(self):
         """Transform raw markdown files into Hugo/MkDocs compatible files."""
@@ -379,30 +346,55 @@ class SiteGenerator:
             yaml.dump(authors_map, f, allow_unicode=True, sort_keys=False)
 
     def _generate_tags_page(self, tag_counts: Dict[str, int]):
-        """Generate tags.md with an HTML tag cloud layout (4-5 per row)."""
+        """Generate tags.md combining both thematic exploration and PDF downloading."""
         sorted_tags = sorted(tag_counts.items(), key=lambda x: x[1], reverse=True)
         
         content = [
-            "# 文章主題索引",
+            "# 主題探索與講義下載",
             "",
-            "這裡彙整了所有的關鍵字，您可以點擊進入特定主題查看相關文章：",
+            "本區彙整了所有的核心考點主題。您可以瀏覽各類別的文章，或者直接匯出該科目的考前複習講義。",
             "",
-            "---",
-            ""
+            "## 🎯 綜合大字典",
+            '<div class="feature-grid" style="margin-top: 1rem; margin-bottom: 3rem;">',
+            '    <a href="review/all.md" class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4);">',
+            '        <span class="feature-icon">👑</span>',
+            '        <h3 style="margin-bottom: 0.5rem;">不動產全科大補帖</h3>',
+            '        <p>包含全站所有文章，無死角一鍵下載終極精華版。</p>',
+            '    </a>',
+            '</div>',
+            "",
+            "## 📚 分類主題 (依收錄文章數排序)",
+            '<div class="feature-grid" style="margin-top: 1rem;">'
         ]
         
         if not sorted_tags:
             content.append("*(目前尚無標籤資料)*")
         else:
             import urllib.parse
-            content.append('<div class="tag-cloud">')
-            for tag, count in sorted_tags:
+            icons = ["📘", "📙", "📗", "📕", "📔", "📒", "📓", "📚", "📖", "📜"]
+            for idx, (tag, count) in enumerate(sorted_tags):
                 safe_tag_slug = tag.lower().replace(' ', '-')
                 encoded_tag = urllib.parse.quote(safe_tag_slug)
-                url = f"../blog/category/{encoded_tag}/"
-                content.append(f'  <a href="{url}" class="tag-item">{tag} <span class="tag-count">{count}</span></a>')
-            content.append('</div>')
-        
+                blog_url = f"blog/category/{encoded_tag}/"
+                safe_tag_review = tag.replace(' ', '_').replace('/', '_')
+                review_url = f"review/{safe_tag_review}.md"
+                icon = icons[idx % len(icons)]
+                
+                content.append(f'    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">')
+                content.append(f'        <div>')
+                content.append(f'            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">')
+                content.append(f'                <span class="feature-icon" style="font-size: 2rem; margin: 0;">{icon}</span>')
+                content.append(f'                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 {count} 篇</span>')
+                content.append(f'            </div>')
+                content.append(f'            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">{tag}</h3>')
+                content.append(f'        </div>')
+                content.append(f'        <div style="display: flex; gap: 0.5rem; margin-top: auto;">')
+                content.append(f'            <a href="{blog_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>')
+                content.append(f'            <a href="{review_url}" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📥 PDF</a>')
+                content.append(f'        </div>')
+                content.append(f'    </div>')
+                
+        content.append('</div>')
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
 
     def _generate_mkdocs_config(self):
@@ -493,9 +485,8 @@ class SiteGenerator:
             ],
             'nav': [
                 {'最新文章': 'blog/'},
-                {'主題索引': 'tags.md'},
+                {'主題探索與講義下載': 'tags.md'},
                 {'考古題下載': 'exams.md'},
-                {'考前衝刺講義': 'review/index.md'},
             ]
         }
         
@@ -514,17 +505,13 @@ class SiteGenerator:
     </a>
     <a href="tags/" class="feature-card">
         <span class="feature-icon">🏷️</span>
-        <h3>主題索引</h3>
-        <p>利用專業標籤雲快速導航，深挖每一個專業不動產領域。</p>
+        <h3>主題探索與講義下載</h3>
+        <p>將所有領域整理成分類卡片，支援一鍵打包成 <strong>考前衝刺 PDF 講義</strong>，專為備考而生。</p>
     </a>
     <a href="exams/" class="feature-card">
         <span class="feature-icon">📚</span>
         <h3>考古題下載</h3>
         <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
-    <a href="review/" class="feature-card">
-        <span class="feature-icon">🚀</span>
-        <h3>考前衝刺講義</h3>
-        <p>一鍵合併生成彙整大PDF，支援背誦暗記模式，專為考生打造。</p>
     </a>
 </div>
 """
