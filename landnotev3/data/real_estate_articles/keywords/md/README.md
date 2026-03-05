@@ -51,6 +51,7 @@
 | [不動產估價](keyword_不動產估價.md) | 7 |
 | [國土計畫](keyword_國土計畫.md) | 7 |
 | [土地法規](keyword_土地法規.md) | 7 |
+| [都市更新](keyword_都市更新.md) | 7 |
 | [所得稅](keyword_所得稅.md) | 6 |
 | [契稅](keyword_契稅.md) | 6 |
 | [優先購買](keyword_優先購買.md) | 6 |
@@ -67,7 +68,6 @@
 | [非都市土地](keyword_非都市土地.md) | 6 |
 | [區域計畫法](keyword_區域計畫法.md) | 6 |
 | [信託財產](keyword_信託財產.md) | 6 |
-| [都市更新](keyword_都市更新.md) | 6 |
 | [特別犧牲](keyword_特別犧牲.md) | 5 |
 | [遺產](keyword_遺產.md) | 5 |
 | [土地現值](keyword_土地現值.md) | 5 |
@@ -808,6 +808,7 @@
 | [調適能力](keyword_調適能力.md) | 1 |
 | [規劃利得](keyword_規劃利得.md) | 1 |
 | [規劃損失](keyword_規劃損失.md) | 1 |
+| [釘子戶](keyword_釘子戶.md) | 1 |
 | [低度利用](keyword_低度利用.md) | 1 |
 | [過度利用](keyword_過度利用.md) | 1 |
 | [不當利用](keyword_不當利用.md) | 1 |
