@@ -77,6 +77,7 @@
 | [退稅](keyword_退稅.md) | 5 |
 | [原始取得](keyword_原始取得.md) | 5 |
 | [繼受取得](keyword_繼受取得.md) | 5 |
+| [共有物](keyword_共有物.md) | 5 |
 | [稅捐稽徵法](keyword_稅捐稽徵法.md) | 5 |
 | [建物所有權](keyword_建物所有權.md) | 5 |
 | [信託法](keyword_信託法.md) | 5 |
@@ -97,7 +98,6 @@
 | [市場失靈](keyword_市場失靈.md) | 4 |
 | [土地政策](keyword_土地政策.md) | 4 |
 | [配偶](keyword_配偶.md) | 4 |
-| [共有物](keyword_共有物.md) | 4 |
 | [租賃住宅](keyword_租賃住宅.md) | 4 |
 | [稅率](keyword_稅率.md) | 4 |
 | [稅基](keyword_稅基.md) | 4 |
@@ -433,6 +433,7 @@
 | [租賃住宅服務業](keyword_租賃住宅服務業.md) | 1 |
 | [營業用](keyword_營業用.md) | 1 |
 | [民法物權編施行法第8條之5](keyword_民法物權編施行法第8條之5.md) | 1 |
+| [裁判分割](keyword_裁判分割.md) | 1 |
 | [廣告](keyword_廣告.md) | 1 |
 | [經紀業](keyword_經紀業.md) | 1 |
 | [事實不符](keyword_事實不符.md) | 1 |

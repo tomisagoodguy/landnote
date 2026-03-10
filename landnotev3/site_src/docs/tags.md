@@ -942,6 +942,19 @@
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">共有物</h3>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E5%85%B1%E6%9C%89%E7%89%A9/" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📥 PDF</a>
+        </div>
+    </div>
+    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
+        <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
+            </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公同共有</h3>
         </div>
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
@@ -952,7 +965,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產市場</h3>
@@ -965,7 +978,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產估價師</h3>
@@ -978,7 +991,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市更新條例</h3>
@@ -991,7 +1004,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺產</h3>
@@ -1004,7 +1017,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">信託法</h3>
@@ -1017,7 +1030,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">稅捐稽徵法</h3>
@@ -1030,7 +1043,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">信託行為</h3>
@@ -1043,7 +1056,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公告地價</h3>
@@ -1056,7 +1069,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">繼受取得</h3>
@@ -1069,7 +1082,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">原始取得</h3>
@@ -1082,7 +1095,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地現值</h3>
@@ -1095,7 +1108,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 5 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">特別犧牲</h3>
@@ -1108,7 +1121,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">納稅義務人</h3>
@@ -1121,7 +1134,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">借名登記</h3>
@@ -1134,7 +1147,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">共有優先購買權</h3>
@@ -1147,7 +1160,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">塗銷登記</h3>
@@ -1160,7 +1173,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">預告登記</h3>
@@ -1173,7 +1186,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">抵押權</h3>
@@ -1186,7 +1199,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">消費者</h3>
@@ -1199,7 +1212,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租稅</h3>
@@ -1212,7 +1225,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">稅基</h3>
@@ -1225,7 +1238,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">稅率</h3>
@@ -1238,7 +1251,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">區段地價</h3>
@@ -1246,19 +1259,6 @@
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
             <a href="../blog/category/%E5%8D%80%E6%AE%B5%E5%9C%B0%E5%83%B9/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
             <a href="../review/%E5%8D%80%E6%AE%B5%E5%9C%B0%E5%83%B9/" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📥 PDF</a>
-        </div>
-    </div>
-    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
-        <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
-                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 4 篇</span>
-            </div>
-            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">共有物</h3>
-        </div>
-        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
-            <a href="../blog/category/%E5%85%B1%E6%9C%89%E7%89%A9/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
-            <a href="../review/%E5%85%B1%E6%9C%89%E7%89%A9/" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📥 PDF</a>
         </div>
     </div>
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
@@ -8274,6 +8274,19 @@
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">裁判分割</h3>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="../blog/category/%E8%A3%81%E5%88%A4%E5%88%86%E5%89%B2/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E8%A3%81%E5%88%A4%E5%88%86%E5%89%B2/" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📥 PDF</a>
+        </div>
+    </div>
+    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
+        <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
+            </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法第73條之1</h3>
         </div>
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
@@ -8284,7 +8297,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">保護農地</h3>
@@ -8297,7 +8310,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農地變更</h3>
@@ -8310,7 +8323,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">全球性糧荒</h3>
@@ -8323,7 +8336,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">精準地價</h3>
@@ -8336,7 +8349,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">自動估價系統</h3>
@@ -8349,7 +8362,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">AVM</h3>
@@ -8362,7 +8375,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">反共用地悲劇</h3>
@@ -8375,7 +8388,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">債權</h3>
@@ -8388,7 +8401,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">所有權分離</h3>
@@ -8401,7 +8414,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地所有權</h3>
@@ -8414,7 +8427,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農業生產</h3>
@@ -8427,7 +8440,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">無過失責任</h3>
@@ -8440,7 +8453,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農業用地變更使用</h3>
@@ -8453,7 +8466,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">處分行為</h3>
@@ -8466,7 +8479,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">騎樓</h3>
@@ -8479,7 +8492,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土登規則</h3>
@@ -8492,7 +8505,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">二氧化碳</h3>
@@ -8505,7 +8518,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">放棄優先購買權</h3>
@@ -8518,7 +8531,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">視為放棄優先購買權</h3>
@@ -8531,7 +8544,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地稅重購退稅</h3>
@@ -8544,7 +8557,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">履約擔保</h3>
@@ -8557,7 +8570,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">專戶管理</h3>
@@ -8570,7 +8583,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">價金返還</h3>
@@ -8583,7 +8596,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">連帶擔保</h3>
@@ -8596,7 +8609,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">事實行為</h3>
@@ -8609,7 +8622,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">部分共有人</h3>
@@ -8622,7 +8635,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">流抵約定</h3>
@@ -8635,7 +8648,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">絕賣條款</h3>
@@ -8648,7 +8661,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">事實上處分</h3>
@@ -8661,7 +8674,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">裁判費</h3>
@@ -8674,7 +8687,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">ESG</h3>
@@ -8687,7 +8700,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">社會責任</h3>
@@ -8700,7 +8713,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公司治理</h3>
@@ -8713,7 +8726,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">房屋自住</h3>
@@ -8726,7 +8739,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">住家用房屋</h3>
@@ -8739,7 +8752,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">標示分割</h3>
@@ -8752,7 +8765,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">權利分割</h3>
@@ -8765,7 +8778,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地資源</h3>
@@ -8778,7 +8791,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">房屋合一稅</h3>
@@ -8791,7 +8804,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地多數決</h3>
@@ -8804,7 +8817,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產逆向抵押貸款</h3>
@@ -8817,7 +8830,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">產權型態</h3>
@@ -8830,7 +8843,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">分別共有</h3>
@@ -8843,7 +8856,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">登記面積</h3>
@@ -8856,7 +8869,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">成長極</h3>
@@ -8869,7 +8882,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">平衡發展理論</h3>
@@ -8882,7 +8895,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">永佃權</h3>
@@ -8895,7 +8908,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">私法人</h3>
@@ -8908,7 +8921,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">住宅</h3>
@@ -8921,7 +8934,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產合併</h3>
@@ -8934,7 +8947,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產分割</h3>
@@ -8947,7 +8960,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">權利合併</h3>
@@ -8960,7 +8973,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">標示合併</h3>
@@ -8973,7 +8986,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">開發影響費</h3>
@@ -8986,7 +8999,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地價區段</h3>
@@ -8999,7 +9012,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">籌備會</h3>
@@ -9012,7 +9025,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字第739號</h3>
@@ -9025,7 +9038,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">分割合併</h3>
@@ -9038,7 +9051,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">合併登記</h3>
@@ -9051,7 +9064,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">分割登記</h3>
@@ -9064,7 +9077,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字第763號</h3>
@@ -9077,7 +9090,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">質權</h3>
@@ -9090,7 +9103,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">出質人</h3>
@@ -9103,7 +9116,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">住宅租賃</h3>
@@ -9116,7 +9129,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">法定空地</h3>
@@ -9129,7 +9142,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公有土地撥用</h3>
@@ -9142,7 +9155,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">稟賦價值</h3>
@@ -9155,7 +9168,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">與登記有關之第三人</h3>
@@ -9168,7 +9181,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">法律上之處分</h3>
@@ -9181,7 +9194,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">事實上之處分</h3>
@@ -9194,7 +9207,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">離差</h3>
@@ -9207,7 +9220,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">勘估標</h3>
@@ -9220,7 +9233,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">課徵對象</h3>
@@ -9233,7 +9246,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">課稅基礎</h3>
@@ -9246,7 +9259,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">再生能源相關設施</h3>
@@ -9259,7 +9272,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">代理權說</h3>
@@ -9272,7 +9285,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">處分權說</h3>
@@ -9285,7 +9298,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">撥用</h3>
@@ -9298,7 +9311,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公有不動產</h3>
@@ -9311,7 +9324,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產計畫書</h3>
@@ -9324,7 +9337,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">債券補償</h3>
@@ -9337,7 +9350,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">基地權利種類</h3>
@@ -9350,7 +9363,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">登記不實</h3>
@@ -9363,7 +9376,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">納稅</h3>
@@ -9376,7 +9389,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">強制執行</h3>
@@ -9389,7 +9402,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">行政執行</h3>
@@ -9402,7 +9415,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">紅單交易</h3>
@@ -9415,7 +9428,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不完全競爭市場</h3>
@@ -9428,7 +9441,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">非自由競爭市場</h3>
@@ -9441,7 +9454,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地價評議委員會</h3>
@@ -9454,7 +9467,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產評價委員會</h3>
@@ -9467,7 +9480,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">多次繼承</h3>
@@ -9480,7 +9493,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">出售農地</h3>
@@ -9493,7 +9506,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地買賣未辦竣移轉登記</h3>
@@ -9506,7 +9519,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">信託法第五條</h3>
@@ -9519,7 +9532,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">一般犧牲</h3>
@@ -9532,7 +9545,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">營業用</h3>
@@ -9545,7 +9558,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">民法物權編施行法第8條之5</h3>
@@ -9558,7 +9571,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">聲明</h3>
@@ -9571,7 +9584,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">限制建築</h3>
@@ -9584,7 +9597,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租賃住宅服務業</h3>
@@ -9597,7 +9610,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">強制登記</h3>
@@ -9610,7 +9623,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公同共有物</h3>
@@ -9623,7 +9636,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">低度利用</h3>
@@ -9636,7 +9649,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">過度利用</h3>
@@ -9649,7 +9662,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不當利用</h3>
@@ -9662,7 +9675,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地稅課徵</h3>
@@ -9675,7 +9688,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">原物分配</h3>
@@ -9688,7 +9701,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法104</h3>
@@ -9701,7 +9714,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">排放源</h3>
@@ -9714,7 +9727,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">碳費</h3>
@@ -9727,7 +9740,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">影子銀行</h3>
@@ -9740,7 +9753,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">資產證券化</h3>
@@ -9753,7 +9766,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">起造人</h3>
@@ -9766,7 +9779,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">使用權分離</h3>
@@ -9779,7 +9792,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公地放領</h3>
@@ -9792,7 +9805,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農地農用</h3>
@@ -9805,7 +9818,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">聽證</h3>
@@ -9818,7 +9831,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">資本化</h3>
@@ -9831,7 +9844,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">房地交易所得</h3>
@@ -9844,7 +9857,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">父母移轉不動產土地增值稅</h3>
@@ -9857,7 +9870,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">離差計算</h3>
@@ -9870,7 +9883,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">調整率</h3>
@@ -9883,7 +9896,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">抵押</h3>
@@ -9896,7 +9909,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">投資</h3>
@@ -9909,7 +9922,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">無償</h3>
@@ -9922,7 +9935,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">高普考</h3>
@@ -9935,7 +9948,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">建築執照面積</h3>
@@ -9948,7 +9961,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">建物登記面積</h3>
@@ -9961,7 +9974,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">雨遮</h3>
@@ -9974,7 +9987,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">宗教團體</h3>
@@ -9987,7 +10000,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">自然人名義</h3>
@@ -10000,7 +10013,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">暫行條例</h3>
@@ -10013,7 +10026,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺贈登記</h3>
@@ -10026,7 +10039,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">假贈與</h3>
@@ -10039,7 +10052,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">自由處分</h3>
@@ -10052,7 +10065,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">稅捐</h3>
@@ -10065,7 +10078,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">核課期間</h3>
@@ -10078,7 +10091,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公司法人</h3>
@@ -10091,7 +10104,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">債權人</h3>
@@ -10104,7 +10117,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">債權物權化</h3>
@@ -10117,7 +10130,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字732</h3>
@@ -10130,7 +10143,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">移轉</h3>
@@ -10143,7 +10156,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產所有權</h3>
@@ -10156,7 +10169,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公寓大廈約定專用</h3>
@@ -10169,7 +10182,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">系爭房地</h3>
@@ -10182,7 +10195,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">系爭買賣契約</h3>
@@ -10195,7 +10208,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地登記漏誤</h3>
@@ -10208,7 +10221,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">合建分配比</h3>
@@ -10221,7 +10234,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">合建權益分配</h3>
@@ -10234,7 +10247,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">房地交換</h3>
@@ -10247,7 +10260,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地使用規劃原則</h3>
@@ -10260,7 +10273,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">建築物</h3>
@@ -10273,7 +10286,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">平等原則</h3>
@@ -10286,7 +10299,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">成長管理</h3>
@@ -10299,7 +10312,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法第46條之2</h3>
@@ -10312,7 +10325,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">大陸地區繼承人</h3>
@@ -10325,7 +10338,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">繼承權</h3>
@@ -10338,7 +10351,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產估價理論</h3>
@@ -10351,7 +10364,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地政事務所</h3>
@@ -10364,7 +10377,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">重複登錄</h3>
@@ -10377,7 +10390,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">審議</h3>
@@ -10390,7 +10403,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">審議機關</h3>
@@ -10403,7 +10416,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">使用權</h3>
@@ -10416,7 +10429,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">分割移轉</h3>
@@ -10429,7 +10442,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">碳排放</h3>
@@ -10442,7 +10455,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">免納(徵)</h3>
@@ -10455,7 +10468,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">非課稅範圍</h3>
@@ -10468,7 +10481,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">無所得</h3>
@@ -10481,7 +10494,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">借名契約</h3>
@@ -10494,7 +10507,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公益信託</h3>
@@ -10507,7 +10520,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">消滅時效</h3>
@@ -10520,7 +10533,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">已登記不動產</h3>
@@ -10533,7 +10546,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">預售屋價</h3>
@@ -10546,7 +10559,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">新成屋價</h3>
@@ -10559,7 +10572,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">中古屋價</h3>
@@ -10572,7 +10585,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">更新單元</h3>
@@ -10585,7 +10598,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">破產登記</h3>
@@ -10598,7 +10611,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">平等互惠</h3>
@@ -10611,7 +10624,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字第779號</h3>
@@ -10624,7 +10637,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">田賦或地價稅</h3>
@@ -10637,7 +10650,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">策略性更新地區</h3>
@@ -10650,7 +10663,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">個人綜合所得稅</h3>
@@ -10663,7 +10676,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">登載不實</h3>
@@ -10676,7 +10689,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">逃漏稅捐</h3>
@@ -10689,7 +10702,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">巴瑞圖經濟效率</h3>
@@ -10702,7 +10715,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">馬歇爾經濟效率</h3>
@@ -10715,7 +10728,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺囑信託</h3>
@@ -10728,7 +10741,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺囑執行人</h3>
@@ -10741,7 +10754,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺產管理人</h3>
@@ -10754,7 +10767,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">默示分管</h3>
@@ -10767,7 +10780,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">差別稅率</h3>
@@ -10780,7 +10793,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">免稅</h3>
@@ -10793,7 +10806,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">有償撥用</h3>
@@ -10806,7 +10819,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">無償撥用</h3>
@@ -10819,7 +10832,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">用腳投票</h3>
@@ -10832,7 +10845,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">財產稅</h3>
@@ -10845,7 +10858,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公有土地</h3>
@@ -10858,7 +10871,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">時效取得地上權登記</h3>
@@ -10871,7 +10884,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">主觀意思之證明文件</h3>
@@ -10884,7 +10897,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地買賣</h3>
@@ -10897,7 +10910,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地買賣未辦竣權利移轉登記</h3>
@@ -10910,7 +10923,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">成屋申報</h3>
@@ -10923,7 +10936,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">預售屋申報</h3>
@@ -10936,7 +10949,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">絕對估值</h3>
@@ -10949,7 +10962,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">相對估值</h3>
@@ -10962,7 +10975,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">勘估標的</h3>
@@ -10975,7 +10988,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地正義</h3>
@@ -10988,7 +11001,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">信託目的</h3>
@@ -11001,7 +11014,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺產分割</h3>
@@ -11014,7 +11027,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">外部利益</h3>
@@ -11027,7 +11040,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">外部成本</h3>
@@ -11040,7 +11053,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">社會成本</h3>
@@ -11053,7 +11066,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">社會利益</h3>
@@ -11066,7 +11079,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地開發</h3>
@@ -11079,7 +11092,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">房屋稅籍</h3>
@@ -11092,7 +11105,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地貢獻價值</h3>
@@ -11105,7 +11118,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">建物貢獻價值</h3>
@@ -11118,7 +11131,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">轉售</h3>
@@ -11131,7 +11144,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">買受人</h3>
@@ -11144,7 +11157,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">盜賣</h3>
@@ -11157,7 +11170,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">東區名人巷</h3>
@@ -11170,7 +11183,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">配餘地</h3>
@@ -11183,7 +11196,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">共有房地</h3>
@@ -11196,7 +11209,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">持有稅</h3>
@@ -11209,7 +11222,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">內部估價</h3>
@@ -11222,7 +11235,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">外部估價</h3>
@@ -11235,7 +11248,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">比例原則</h3>
@@ -11248,7 +11261,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">禁止過度原則</h3>
@@ -11261,7 +11274,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">行政程序法</h3>
@@ -11274,7 +11287,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農電共生</h3>
@@ -11287,7 +11300,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">判決分割</h3>
@@ -11300,7 +11313,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">淨零排放</h3>
@@ -11313,7 +11326,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">碳匯</h3>
@@ -11326,7 +11339,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">獨立權狀車位</h3>
@@ -11339,7 +11352,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">無獨立權狀車位</h3>
@@ -11352,7 +11365,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">耕地租用</h3>
@@ -11365,7 +11378,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">所得稅法</h3>
@@ -11378,7 +11391,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">重劃後移轉減徵</h3>
@@ -11391,7 +11404,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地權利移轉</h3>
@@ -11404,7 +11417,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">侵權行為</h3>
@@ -11417,7 +11430,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">競合</h3>
@@ -11430,7 +11443,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市更新事業</h3>
@@ -11443,7 +11456,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市更新權利變換代拆機制</h3>
@@ -11456,7 +11469,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">權利變換計畫</h3>
@@ -11469,7 +11482,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農業權</h3>
@@ -11482,7 +11495,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公地標售</h3>
@@ -11495,7 +11508,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">鐵鋁窗</h3>
@@ -11508,7 +11521,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">防墜設施</h3>
@@ -11521,7 +11534,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產經紀業</h3>
@@ -11534,7 +11547,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">定型化契約不得記載事項</h3>
@@ -11547,7 +11560,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不得記載事項</h3>
@@ -11560,7 +11573,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地使用</h3>
@@ -11573,7 +11586,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">管制</h3>
@@ -11586,7 +11599,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地價動態</h3>
@@ -11599,7 +11612,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">疫情</h3>
@@ -11612,7 +11625,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">出賣人</h3>
@@ -11625,7 +11638,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地交換</h3>
@@ -11638,7 +11651,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">閒置土地</h3>
@@ -11651,7 +11664,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">強制拍賣</h3>
@@ -11664,7 +11677,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">預售屋轉售</h3>
@@ -11677,7 +11690,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法34條之1</h3>
@@ -11690,7 +11703,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">輔導合法化之原則</h3>
@@ -11703,7 +11716,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">個別磋商</h3>
@@ -11716,7 +11729,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">審閱權利</h3>
@@ -11729,7 +11742,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">鄉村地區計畫</h3>
@@ -11742,7 +11755,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">需役不動產</h3>
@@ -11755,7 +11768,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">供役不動產</h3>
@@ -11768,7 +11781,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產登記簿</h3>
@@ -11781,7 +11794,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">機會成本</h3>
@@ -11794,7 +11807,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">犠牲</h3>
@@ -11807,7 +11820,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">自有資金</h3>
@@ -11820,7 +11833,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">訴訟外紛爭解決機制</h3>
@@ -11833,7 +11846,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">調處</h3>
@@ -11846,7 +11859,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">仲裁</h3>
@@ -11859,7 +11872,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">訴訟</h3>
@@ -11872,7 +11885,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">ADR</h3>
@@ -11885,7 +11898,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">國土計畫法修法</h3>
@@ -11898,7 +11911,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">權利變更</h3>
@@ -11911,7 +11924,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">歷史建築</h3>
@@ -11924,7 +11937,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">經濟不景氣</h3>
@@ -11937,7 +11950,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">利率上漲</h3>
@@ -11950,7 +11963,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法第14條</h3>
@@ -11963,7 +11976,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">水道浮覆地</h3>
@@ -11976,7 +11989,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">同一性</h3>
@@ -11989,7 +12002,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">結合</h3>
@@ -12002,7 +12015,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">全聯公司</h3>
@@ -12015,7 +12028,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">大潤發</h3>
@@ -12028,7 +12041,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">名勝古蹟</h3>
@@ -12041,7 +12054,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">古蹟保存</h3>
@@ -12054,7 +12067,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地移轉契約</h3>
@@ -12067,7 +12080,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">解除契約</h3>
@@ -12080,7 +12093,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">主登記</h3>
@@ -12093,7 +12106,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">附記登記</h3>
@@ -12106,7 +12119,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農業發展區</h3>
@@ -12119,7 +12132,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">國土保育區</h3>
@@ -12132,7 +12145,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產估價概要</h3>
@@ -12145,7 +12158,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不實廣告</h3>
@@ -12158,7 +12171,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">倍數累進</h3>
@@ -12171,7 +12184,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">金額累進</h3>
@@ -12184,7 +12197,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產移轉稅</h3>
@@ -12197,7 +12210,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">非市場價值</h3>
@@ -12210,7 +12223,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">旅遊成本法</h3>
@@ -12223,7 +12236,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">特徵價格法</h3>
@@ -12236,7 +12249,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">條件評價法</h3>
@@ -12249,7 +12262,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地使用議題</h3>
@@ -12262,7 +12275,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">財產權保障</h3>
@@ -12275,7 +12288,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">減徵</h3>
@@ -12288,7 +12301,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釘子戶</h3>
@@ -12301,7 +12314,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">日治時期</h3>
@@ -12314,7 +12327,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產信託</h3>
@@ -12327,7 +12340,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產管理信託</h3>
@@ -12340,7 +12353,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產處分信託</h3>
@@ -12353,7 +12366,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產開發信託</h3>
@@ -12366,7 +12379,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">建物平面圖測繪</h3>
@@ -12379,7 +12392,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">雨遮不登記</h3>
@@ -12392,7 +12405,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">打炒房</h3>
@@ -12405,7 +12418,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產炒作</h3>
@@ -12418,7 +12431,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法第107條</h3>
@@ -12431,7 +12444,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">移轉現值</h3>
@@ -12444,7 +12457,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">勞資</h3>
@@ -12457,7 +12470,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地集約度</h3>
@@ -12470,7 +12483,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">自用住宅用地</h3>
@@ -12483,7 +12496,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地稅法施行細則</h3>
@@ -12496,7 +12509,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">耕地375</h3>
@@ -12509,7 +12522,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">繳代金</h3>
@@ -12522,7 +12535,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產估價實務</h3>
@@ -12535,7 +12548,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">加盟</h3>
@@ -12548,7 +12561,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">WTP</h3>
@@ -12561,7 +12574,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">WTA</h3>
@@ -12574,7 +12587,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">依戀不捨情感</h3>
@@ -12587,7 +12600,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租客</h3>
@@ -12600,7 +12613,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租金</h3>
@@ -12613,7 +12626,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">欠租</h3>
@@ -12626,7 +12639,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租霸下車</h3>
@@ -12639,7 +12652,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字765</h3>
@@ -12652,7 +12665,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農場規模</h3>
@@ -12665,7 +12678,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">空屋稅</h3>
@@ -12678,7 +12691,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">空屋</h3>
@@ -12691,7 +12704,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">發展權移轉</h3>
@@ -12704,7 +12717,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">民法物權編</h3>
@@ -12717,7 +12730,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">防災型都市更新</h3>
@@ -12730,7 +12743,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">防災都更</h3>
@@ -12743,7 +12756,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市計畫內防災建築再生自治條例</h3>
@@ -12756,7 +12769,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公信力</h3>
@@ -12769,7 +12782,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">民事庭決議</h3>
@@ -12782,7 +12795,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">文化資產法</h3>
@@ -12795,7 +12808,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市計畫法</h3>
@@ -12808,7 +12821,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">水利法</h3>
@@ -12821,7 +12834,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地面師</h3>
@@ -12834,7 +12847,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">偽造遺囑</h3>
@@ -12847,7 +12860,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地盡其利</h3>
@@ -12860,7 +12873,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">有效使用</h3>
@@ -12873,7 +12886,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">專有部分</h3>
@@ -12886,7 +12899,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">共有部分</h3>
@@ -12899,7 +12912,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">主建物面積</h3>
@@ -12912,7 +12925,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">附屬建物面積</h3>
@@ -12925,7 +12938,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">債權性質優先購買權</h3>
@@ -12938,7 +12951,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">物權性質優先購買權</h3>
@@ -12951,7 +12964,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">綠能智慧建築</h3>
@@ -12964,7 +12977,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">節能減碳</h3>
@@ -12977,7 +12990,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">平價配售</h3>
@@ -12990,7 +13003,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租稅效果</h3>
@@ -13003,7 +13016,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">房屋租賃定型化契約</h3>
@@ -13016,7 +13029,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法第34之1</h3>
@@ -13029,7 +13042,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">住宅階梯</h3>
@@ -13042,7 +13055,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地價評議</h3>
@@ -13055,7 +13068,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">違章工廠</h3>
@@ -13068,7 +13081,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">痛苦指數</h3>
@@ -13081,7 +13094,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">菲力浦曲線</h3>
@@ -13094,7 +13107,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">物價上漲率</h3>
@@ -13107,7 +13120,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">失業率</h3>
@@ -13120,7 +13133,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">成屋</h3>
@@ -13133,7 +13146,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">購屋貸款</h3>
@@ -13146,7 +13159,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">老舊建物</h3>
@@ -13159,7 +13172,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">老舊建物拆除重建</h3>
@@ -13172,7 +13185,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公共設施保留地 地價</h3>
@@ -13185,7 +13198,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">市地重劃實施辦法</h3>
@@ -13198,7 +13211,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">信託歸戶</h3>
@@ -13211,7 +13224,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">海域</h3>
@@ -13224,7 +13237,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">海域區</h3>
@@ -13237,7 +13250,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">海域用地</h3>
@@ -13250,7 +13263,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">協議價購土地增值稅</h3>
@@ -13263,7 +13276,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">容積代金</h3>
@@ -13276,7 +13289,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">發展權國有</h3>
@@ -13289,7 +13302,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">重建區段</h3>
@@ -13302,7 +13315,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">協議合建</h3>
@@ -13315,7 +13328,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地或建築改良物</h3>
@@ -13328,7 +13341,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">標售</h3>
@@ -13341,7 +13354,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">剩餘財產差額</h3>
@@ -13354,7 +13367,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">申請興建農舍</h3>
@@ -13367,7 +13380,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不構成契約</h3>
@@ -13380,7 +13393,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">更生登記</h3>
@@ -13393,7 +13406,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">申請</h3>
@@ -13406,7 +13419,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">死因贈與</h3>
@@ -13419,7 +13432,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">遺囑</h3>
@@ -13432,7 +13445,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">贈與說</h3>
@@ -13445,7 +13458,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">發給補償完竣</h3>
@@ -13458,7 +13471,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">補償人</h3>
@@ -13471,7 +13484,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">課予義務訴訟</h3>
@@ -13484,7 +13497,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">補償處分</h3>
@@ -13497,7 +13510,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">補償請求權</h3>
@@ -13510,7 +13523,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">徵收土地</h3>
@@ -13523,7 +13536,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">耕地分割</h3>
@@ -13536,7 +13549,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">預先拋棄</h3>
@@ -13549,7 +13562,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租稅遞延性質</h3>
@@ -13562,7 +13575,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租稅免除性質</h3>
@@ -13575,7 +13588,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">建物測量</h3>
@@ -13588,7 +13601,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">特定區域計畫</h3>
@@ -13601,7 +13614,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">基地優先購買權</h3>
@@ -13614,7 +13627,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">登記對抗</h3>
@@ -13627,7 +13640,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">耕作權</h3>
@@ -13640,7 +13653,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">佃農</h3>
@@ -13653,7 +13666,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公共利益</h3>
@@ -13666,7 +13679,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">社會福利</h3>
@@ -13679,7 +13692,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地國有</h3>
@@ -13692,7 +13705,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地私有</h3>
@@ -13705,7 +13718,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">絕對地租</h3>
@@ -13718,7 +13731,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">價格機能</h3>
@@ -13731,7 +13744,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">洗錢防制</h3>
@@ -13744,7 +13757,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不動產買賣</h3>
@@ -13757,7 +13770,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">耕地收回補償</h3>
@@ -13770,7 +13783,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">耕地三七五減租</h3>
@@ -13783,7 +13796,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">占有人</h3>
@@ -13796,7 +13809,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">權利人</h3>
@@ -13809,7 +13822,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">義務人</h3>
@@ -13822,7 +13835,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">占有契稅</h3>
@@ -13835,7 +13848,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地登記實務</h3>
@@ -13848,7 +13861,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">與登記有關第三人</h3>
@@ -13861,7 +13874,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">國土保育地區</h3>
@@ -13874,7 +13887,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">海洋資源地區</h3>
@@ -13887,7 +13900,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農業發展地區</h3>
@@ -13900,7 +13913,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">城鄉發展地區</h3>
@@ -13913,7 +13926,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">住宅存量流量模型</h3>
@@ -13926,7 +13939,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公告現值</h3>
@@ -13939,7 +13952,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">徵收補償市價</h3>
@@ -13952,7 +13965,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">市場正常交易價格</h3>
@@ -13965,7 +13978,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字第758號</h3>
@@ -13978,7 +13991,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">釋字第400號</h3>
@@ -13991,7 +14004,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">市場價格</h3>
@@ -14004,7 +14017,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">分割限制</h3>
@@ -14017,7 +14030,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公保地檢討變更</h3>
@@ -14030,7 +14043,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">公共設施用地解編</h3>
@@ -14043,7 +14056,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">憲法法庭</h3>
@@ -14056,7 +14069,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">憲法訴訟法</h3>
@@ -14069,7 +14082,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">憲法審查</h3>
@@ -14082,7 +14095,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">違憲</h3>
@@ -14095,7 +14108,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">判決</h3>
@@ -14108,7 +14121,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">融通物</h3>
@@ -14121,7 +14134,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不融通物</h3>
@@ -14134,7 +14147,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">營利事業</h3>
@@ -14147,7 +14160,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">所有權移轉登記</h3>
@@ -14160,7 +14173,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">他項權利登記</h3>
@@ -14173,7 +14186,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市計畫變更</h3>
@@ -14186,7 +14199,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">租利</h3>
@@ -14199,7 +14212,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">財貨市場</h3>
@@ -14212,7 +14225,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">供需機制</h3>
@@ -14225,7 +14238,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地登記損害賠償</h3>
@@ -14238,7 +14251,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">環境永續</h3>
@@ -14251,7 +14264,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">碳中和</h3>
@@ -14264,7 +14277,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">循環利用</h3>
@@ -14277,7 +14290,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">共有不動產多數決</h3>
@@ -14290,7 +14303,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">受贈人</h3>
@@ -14303,7 +14316,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">贈與人</h3>
@@ -14316,7 +14329,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">預售屋買賣定型化契約</h3>
@@ -14329,7 +14342,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">免徵性質</h3>
@@ -14342,7 +14355,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">不課徵性質</h3>
@@ -14355,7 +14368,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市土地</h3>
@@ -14368,7 +14381,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">併同出賣</h3>
@@ -14381,7 +14394,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">一般因素</h3>
@@ -14394,7 +14407,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">區域因素</h3>
@@ -14407,7 +14420,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">個別因素</h3>
@@ -14420,7 +14433,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">老農</h3>
@@ -14433,7 +14446,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">新農</h3>
@@ -14446,7 +14459,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">連續繼承</h3>
@@ -14459,7 +14472,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">信託土地</h3>
@@ -14472,7 +14485,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">自益信託</h3>
@@ -14485,7 +14498,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">他益信託</h3>
@@ -14498,7 +14511,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">先賣後買</h3>
@@ -14511,7 +14524,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">先買後賣</h3>
@@ -14524,7 +14537,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">扣除額</h3>
@@ -14537,7 +14550,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">都市更新事業計畫同意比率</h3>
@@ -14550,7 +14563,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">計畫裁量</h3>
@@ -14563,7 +14576,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">利益衡量</h3>
@@ -14576,7 +14589,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">112年憲判字第20號</h3>
@@ -14589,7 +14602,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">順位繼承人</h3>
@@ -14602,7 +14615,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📗</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">非都市土地編定</h3>
@@ -14615,7 +14628,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📕</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">雙地政士</h3>
@@ -14628,7 +14641,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📔</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">政府失靈</h3>
@@ -14641,7 +14654,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📒</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">農一用地</h3>
@@ -14654,7 +14667,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">屠能</h3>
@@ -14667,7 +14680,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">辛克萊</h3>
@@ -14680,7 +14693,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">經濟作物</h3>
@@ -14693,7 +14706,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">重劃區</h3>
@@ -14706,7 +14719,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">夫妻間贈與</h3>
