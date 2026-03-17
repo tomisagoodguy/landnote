@@ -7,7 +7,7 @@
 | [土地登記](keyword_土地登記.md) | 40 |
 | [共有人](keyword_共有人.md) | 25 |
 | [地價稅](keyword_地價稅.md) | 24 |
-| [土地徵收](keyword_土地徵收.md) | 21 |
+| [土地徵收](keyword_土地徵收.md) | 22 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
 | [地上權](keyword_地上權.md) | 19 |
 | [區段徵收](keyword_區段徵收.md) | 19 |
@@ -347,6 +347,7 @@
 | [遺囑](keyword_遺囑.md) | 1 |
 | [贈與說](keyword_贈與說.md) | 1 |
 | [土地法104](keyword_土地法104.md) | 1 |
+| [需用土地人](keyword_需用土地人.md) | 1 |
 | [比例稅](keyword_比例稅.md) | 1 |
 | [一般犧牲](keyword_一般犧牲.md) | 1 |
 | [排放源](keyword_排放源.md) | 1 |
