@@ -352,21 +352,27 @@ class SiteGenerator:
         content = [
             "# 主題探索與講義下載",
             "",
-            "本區彙整了所有的核心考點主題。您可以瀏覽各類別的文章，或者直接匯出該科目的考前複習講義。",
+            "本區彙整了所有的核心考點主題。您可以瀏覽各類別的文章、線上閱讀講義，或直接下載 PDF 離線複習。",
             "",
             "## 🎯 綜合大字典",
             '<div class="feature-grid" style="margin-top: 1rem; margin-bottom: 3rem;">',
-            '    <a href="../review/all/" class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4);">',
-            '        <span class="feature-icon">👑</span>',
-            '        <h3 style="margin-bottom: 0.5rem;">不動產全科大補帖</h3>',
-            '        <p>包含全站所有文章，無死角一鍵下載終極精華版。</p>',
-            '    </a>',
+            '    <div class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4); display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">',
+            '        <div>',
+            '            <span class="feature-icon">👑</span>',
+            '            <h3 style="margin-bottom: 0.5rem;">不動產全科大補帖</h3>',
+            '            <p style="margin-bottom: 1.5rem;">包含全站所有文章，無死角終極精華版。</p>',
+            '        </div>',
+            '        <div style="display: flex; gap: 0.5rem;">',
+            '            <a href="../review/all/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>',
+            '            <a href="../assets/pdfs/all.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="不動產全科大補帖.pdf">📥 下載 PDF</a>',
+            '        </div>',
+            '    </div>',
             '</div>',
             "",
             "## 📚 分類主題 (依收錄文章數排序)",
             '<div class="feature-grid" style="margin-top: 1rem;">'
         ]
-        
+
         if not sorted_tags:
             content.append("*(目前尚無標籤資料)*")
         else:
@@ -379,8 +385,9 @@ class SiteGenerator:
                 safe_tag_review = tag.replace(' ', '_').replace('/', '_')
                 encoded_review = urllib.parse.quote(safe_tag_review)
                 review_url = f"../review/{encoded_review}/"
+                pdf_url = f"../assets/pdfs/{encoded_review}.pdf"
                 icon = icons[idx % len(icons)]
-                
+
                 content.append(f'    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">')
                 content.append(f'        <div>')
                 content.append(f'            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">')
@@ -391,7 +398,8 @@ class SiteGenerator:
                 content.append(f'        </div>')
                 content.append(f'        <div style="display: flex; gap: 0.5rem; margin-top: auto;">')
                 content.append(f'            <a href="{blog_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>')
-                content.append(f'            <a href="{review_url}" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📥 PDF</a>')
+                content.append(f'            <a href="{review_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>')
+                content.append(f'            <a href="{pdf_url}" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="{tag}.pdf">📥 PDF</a>')
                 content.append(f'        </div>')
                 content.append(f'    </div>')
                 

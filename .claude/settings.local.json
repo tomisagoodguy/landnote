@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash \"C:/Users/user/.claude/skills/git-pushing/scripts/smart_commit.sh\" \"feat\\(pdf\\): 新增 Playwright PDF 生成與 GitHub Actions 自動部署流程\")"
+    ]
+  }
+}

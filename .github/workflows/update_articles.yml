@@ -30,7 +30,10 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab "mkdocs<2.0" mkdocs-material
+        pip install requests pandas beautifulsoup4 pikepdf tqdm openpyxl Pillow fake-useragent urllib3 python-dotenv fuzzywuzzy python-Levenshtein reportlab "mkdocs<2.0" mkdocs-material playwright ghp-import
+
+    - name: Install Playwright Chromium
+      run: playwright install chromium --with-deps
 
     - name: Run Crawler and Grouper
       env:
@@ -40,15 +43,35 @@ jobs:
         python landnotev3/src/landnote/main.py articles --update --auto-group
         echo "Update completed."
 
-    - name: Build and Deploy Site
+    - name: Generate MkDocs site structure
       env:
         PYTHONPATH: ${{ github.workspace }}/landnotev3/src
       run: |
         echo "Generating site structure..."
         python landnotev3/src/landnote/main.py site
-        echo "Building MkDocs site..."
+
+    - name: Build MkDocs site (static HTML)
+      run: |
+        echo "Building MkDocs..."
         cd landnotev3/site_src
-        mkdocs gh-deploy --force --clean --verbose
+        mkdocs build --clean --verbose
+
+    - name: Generate PDFs from built site
+      run: |
+        echo "Generating PDFs with Playwright..."
+        python landnotev3/scripts/generate_pdfs.py
+        echo "PDF list:"
+        ls landnotev3/site_src/site/assets/pdfs/ 2>/dev/null || echo "(no PDFs generated)"
+
+    - name: Deploy to GitHub Pages
+      run: |
+        echo "Deploying to gh-pages..."
+        ghp-import \
+          --no-jekyll \
+          --push \
+          --force \
+          --branch gh-pages \
+          landnotev3/site_src/site
         
     - name: Commit and Push Data Changes
       if: always() # Run even if site deploy fails (though site deploy pushes to gh-pages branch, we need to push data changes to main)
