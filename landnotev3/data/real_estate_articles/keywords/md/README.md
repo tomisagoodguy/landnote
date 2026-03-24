@@ -40,13 +40,13 @@
 | [損害賠償](keyword_損害賠償.md) | 8 |
 | [地政士](keyword_地政士.md) | 8 |
 | [平均地權條例](keyword_平均地權條例.md) | 8 |
+| [土地徵收條例](keyword_土地徵收條例.md) | 8 |
 | [所有權人](keyword_所有權人.md) | 8 |
 | [不動產](keyword_不動產.md) | 8 |
 | [不動產經紀人](keyword_不動產經紀人.md) | 7 |
 | [土地所有權人](keyword_土地所有權人.md) | 7 |
 | [土地](keyword_土地.md) | 7 |
 | [容積移轉](keyword_容積移轉.md) | 7 |
-| [土地徵收條例](keyword_土地徵收條例.md) | 7 |
 | [房地合一](keyword_房地合一.md) | 7 |
 | [不動產估價](keyword_不動產估價.md) | 7 |
 | [國土計畫](keyword_國土計畫.md) | 7 |
@@ -166,6 +166,7 @@
 | [註記登記](keyword_註記登記.md) | 3 |
 | [發展權](keyword_發展權.md) | 3 |
 | [申報地價](keyword_申報地價.md) | 3 |
+| [廢止徵收](keyword_廢止徵收.md) | 3 |
 | [建物](keyword_建物.md) | 3 |
 | [抵價地](keyword_抵價地.md) | 3 |
 | [區域計畫](keyword_區域計畫.md) | 3 |
@@ -272,7 +273,6 @@
 | [裡地](keyword_裡地.md) | 2 |
 | [建築法](keyword_建築法.md) | 2 |
 | [撤銷徵收](keyword_撤銷徵收.md) | 2 |
-| [廢止徵收](keyword_廢止徵收.md) | 2 |
 | [行政訴訟](keyword_行政訴訟.md) | 2 |
 | [委任](keyword_委任.md) | 2 |
 | [共用地悲劇](keyword_共用地悲劇.md) | 2 |
