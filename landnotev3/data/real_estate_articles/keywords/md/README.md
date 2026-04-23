@@ -3,16 +3,16 @@
 | Keyword | Count |
 |---|---|
 | [土地增值稅](keyword_土地增值稅.md) | 67 |
-| [優先購買權](keyword_優先購買權.md) | 48 |
+| [優先購買權](keyword_優先購買權.md) | 49 |
 | [土地登記](keyword_土地登記.md) | 40 |
 | [共有人](keyword_共有人.md) | 25 |
 | [地價稅](keyword_地價稅.md) | 24 |
 | [土地徵收](keyword_土地徵收.md) | 23 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
 | [地上權](keyword_地上權.md) | 19 |
+| [土地法](keyword_土地法.md) | 19 |
 | [區段徵收](keyword_區段徵收.md) | 19 |
 | [房地合一所得稅](keyword_房地合一所得稅.md) | 18 |
-| [土地法](keyword_土地法.md) | 18 |
 | [都市計畫](keyword_都市計畫.md) | 18 |
 | [房屋稅](keyword_房屋稅.md) | 17 |
 | [市地重劃](keyword_市地重劃.md) | 17 |
@@ -83,6 +83,7 @@
 | [信託行為](keyword_信託行為.md) | 5 |
 | [信託法](keyword_信託法.md) | 5 |
 | [稅捐稽徵法](keyword_稅捐稽徵法.md) | 5 |
+| [預告登記](keyword_預告登記.md) | 5 |
 | [不動產估價師](keyword_不動產估價師.md) | 5 |
 | [重購](keyword_重購.md) | 5 |
 | [退稅](keyword_退稅.md) | 5 |
@@ -102,7 +103,6 @@
 | [三七五租約](keyword_三七五租約.md) | 4 |
 | [受益人](keyword_受益人.md) | 4 |
 | [受託人](keyword_受託人.md) | 4 |
-| [預告登記](keyword_預告登記.md) | 4 |
 | [累進稅](keyword_累進稅.md) | 4 |
 | [房價](keyword_房價.md) | 4 |
 | [租稅](keyword_租稅.md) | 4 |
