@@ -3,7 +3,7 @@
 | Keyword | Count |
 |---|---|
 | [土地增值稅](keyword_土地增值稅.md) | 67 |
-| [優先購買權](keyword_優先購買權.md) | 49 |
+| [優先購買權](keyword_優先購買權.md) | 50 |
 | [土地登記](keyword_土地登記.md) | 40 |
 | [共有人](keyword_共有人.md) | 25 |
 | [地價稅](keyword_地價稅.md) | 24 |
@@ -365,6 +365,7 @@
 | [供需機制](keyword_供需機制.md) | 1 |
 | [老舊建物](keyword_老舊建物.md) | 1 |
 | [老舊建物拆除重建](keyword_老舊建物拆除重建.md) | 1 |
+| [禁止處分登記](keyword_禁止處分登記.md) | 1 |
 | [分割](keyword_分割.md) | 1 |
 | [減徵](keyword_減徵.md) | 1 |
 | [地籍](keyword_地籍.md) | 1 |
