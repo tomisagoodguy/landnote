@@ -13,8 +13,8 @@
 | [地上權](keyword_地上權.md) | 19 |
 | [區段徵收](keyword_區段徵收.md) | 19 |
 | [房地合一所得稅](keyword_房地合一所得稅.md) | 18 |
+| [房屋稅](keyword_房屋稅.md) | 18 |
 | [都市計畫](keyword_都市計畫.md) | 18 |
-| [房屋稅](keyword_房屋稅.md) | 17 |
 | [市地重劃](keyword_市地重劃.md) | 17 |
 | [農業用地](keyword_農業用地.md) | 16 |
 | [土地法第34條之1](keyword_土地法第34條之1.md) | 14 |
@@ -993,6 +993,7 @@
 | [WTP](keyword_WTP.md) | 1 |
 | [WTA](keyword_WTA.md) | 1 |
 | [依戀不捨情感](keyword_依戀不捨情感.md) | 1 |
+| [房屋稅課稅](keyword_房屋稅課稅.md) | 1 |
 | [權利變更](keyword_權利變更.md) | 1 |
 | [大陸地區繼承人](keyword_大陸地區繼承人.md) | 1 |
 | [繼承權](keyword_繼承權.md) | 1 |
