@@ -155,6 +155,7 @@
 | [共有土地分割](keyword_共有土地分割.md) | 3 |
 | [共有土地合併](keyword_共有土地合併.md) | 3 |
 | [農舍](keyword_農舍.md) | 3 |
+| [耕地三七五減租條例](keyword_耕地三七五減租條例.md) | 3 |
 | [土地合併](keyword_土地合併.md) | 3 |
 | [抵價地](keyword_抵價地.md) | 3 |
 | [區域計畫](keyword_區域計畫.md) | 3 |
@@ -248,7 +249,6 @@
 | [仕紳化](keyword_仕紳化.md) | 2 |
 | [過失](keyword_過失.md) | 2 |
 | [物權](keyword_物權.md) | 2 |
-| [耕地三七五減租條例](keyword_耕地三七五減租條例.md) | 2 |
 | [自住房屋](keyword_自住房屋.md) | 2 |
 | [農民](keyword_農民.md) | 2 |
 | [損失補償](keyword_損失補償.md) | 2 |
@@ -341,6 +341,7 @@
 | [調解](keyword_調解.md) | 2 |
 | [自耕農](keyword_自耕農.md) | 2 |
 | [肯定說](keyword_肯定說.md) | 2 |
+| [耕地租用](keyword_耕地租用.md) | 2 |
 | [合法使用人](keyword_合法使用人.md) | 2 |
 | [其他共有人](keyword_其他共有人.md) | 2 |
 | [登記絕對效力](keyword_登記絕對效力.md) | 2 |
@@ -1057,7 +1058,6 @@
 | [地籍測量錯誤](keyword_地籍測量錯誤.md) | 1 |
 | [否定說](keyword_否定說.md) | 1 |
 | [通盤檢討](keyword_通盤檢討.md) | 1 |
-| [耕地租用](keyword_耕地租用.md) | 1 |
 | [死因贈與](keyword_死因贈與.md) | 1 |
 | [遺囑](keyword_遺囑.md) | 1 |
 | [贈與說](keyword_贈與說.md) | 1 |
@@ -1067,6 +1067,7 @@
 | [產權](keyword_產權.md) | 1 |
 | [國土計畫公告](keyword_國土計畫公告.md) | 1 |
 | [國土計畫變更](keyword_國土計畫變更.md) | 1 |
+| [收回自耕](keyword_收回自耕.md) | 1 |
 | [土地法第73條之1](keyword_土地法第73條之1.md) | 1 |
 | [複丈](keyword_複丈.md) | 1 |
 | [停車位](keyword_停車位.md) | 1 |
