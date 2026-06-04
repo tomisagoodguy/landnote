@@ -6,7 +6,7 @@
 | [優先購買權](keyword_優先購買權.md) | 50 |
 | [土地登記](keyword_土地登記.md) | 41 |
 | [共有人](keyword_共有人.md) | 25 |
-| [地價稅](keyword_地價稅.md) | 24 |
+| [地價稅](keyword_地價稅.md) | 25 |
 | [土地徵收](keyword_土地徵收.md) | 23 |
 | [土地法](keyword_土地法.md) | 20 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
@@ -172,6 +172,7 @@
 | [不動產役權](keyword_不動產役權.md) | 3 |
 | [信託登記](keyword_信託登記.md) | 3 |
 | [土地合併](keyword_土地合併.md) | 3 |
+| [空地稅](keyword_空地稅.md) | 3 |
 | [自住](keyword_自住.md) | 3 |
 | [處分](keyword_處分.md) | 3 |
 | [土地分割](keyword_土地分割.md) | 3 |
@@ -296,7 +297,6 @@
 | [土地開發分析法](keyword_土地開發分析法.md) | 2 |
 | [免稅額](keyword_免稅額.md) | 2 |
 | [土地總登記](keyword_土地總登記.md) | 2 |
-| [空地稅](keyword_空地稅.md) | 2 |
 | [空地](keyword_空地.md) | 2 |
 | [測量錯誤](keyword_測量錯誤.md) | 2 |
 | [所有權移轉](keyword_所有權移轉.md) | 2 |
