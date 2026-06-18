@@ -3,7 +3,7 @@
 | Keyword | Count |
 |---|---|
 | [土地增值稅](keyword_土地增值稅.md) | 68 |
-| [優先購買權](keyword_優先購買權.md) | 50 |
+| [優先購買權](keyword_優先購買權.md) | 51 |
 | [土地登記](keyword_土地登記.md) | 41 |
 | [地價稅](keyword_地價稅.md) | 26 |
 | [共有人](keyword_共有人.md) | 25 |

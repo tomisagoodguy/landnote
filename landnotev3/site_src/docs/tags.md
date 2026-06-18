@@ -37,7 +37,7 @@
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
-                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 50 篇</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 51 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">優先購買權</h3>
         </div>
