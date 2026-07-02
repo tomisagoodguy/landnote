@@ -55,6 +55,7 @@
 | [土地](keyword_土地.md) | 7 |
 | [優先購買](keyword_優先購買.md) | 6 |
 | [契稅](keyword_契稅.md) | 6 |
+| [不動產市場](keyword_不動產市場.md) | 6 |
 | [所得稅](keyword_所得稅.md) | 6 |
 | [財產權](keyword_財產權.md) | 6 |
 | [登記](keyword_登記.md) | 6 |
@@ -73,7 +74,6 @@
 | [原始取得](keyword_原始取得.md) | 5 |
 | [繼受取得](keyword_繼受取得.md) | 5 |
 | [建物所有權](keyword_建物所有權.md) | 5 |
-| [不動產市場](keyword_不動產市場.md) | 5 |
 | [特別犧牲](keyword_特別犧牲.md) | 5 |
 | [公告地價](keyword_公告地價.md) | 5 |
 | [通貨膨脹](keyword_通貨膨脹.md) | 5 |
@@ -854,6 +854,7 @@
 | [義務人](keyword_義務人.md) | 1 |
 | [盜賣](keyword_盜賣.md) | 1 |
 | [東區名人巷](keyword_東區名人巷.md) | 1 |
+| [股票市場](keyword_股票市場.md) | 1 |
 | [信託法第五條](keyword_信託法第五條.md) | 1 |
 | [不動產租賃](keyword_不動產租賃.md) | 1 |
 | [三七五租佃](keyword_三七五租佃.md) | 1 |
