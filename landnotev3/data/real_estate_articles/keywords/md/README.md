@@ -7,7 +7,7 @@
 | [土地登記](keyword_土地登記.md) | 41 |
 | [地價稅](keyword_地價稅.md) | 26 |
 | [共有人](keyword_共有人.md) | 25 |
-| [土地徵收](keyword_土地徵收.md) | 23 |
+| [土地徵收](keyword_土地徵收.md) | 24 |
 | [土地法](keyword_土地法.md) | 20 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
 | [區段徵收](keyword_區段徵收.md) | 20 |
@@ -835,6 +835,7 @@
 | [地上權實例](keyword_地上權實例.md) | 1 |
 | [借名契約](keyword_借名契約.md) | 1 |
 | [共有房地](keyword_共有房地.md) | 1 |
+| [土地撥用](keyword_土地撥用.md) | 1 |
 | [審議](keyword_審議.md) | 1 |
 | [審議機關](keyword_審議機關.md) | 1 |
 | [公有土地](keyword_公有土地.md) | 1 |
