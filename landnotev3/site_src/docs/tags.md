@@ -37,7 +37,7 @@
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
-                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 51 篇</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 52 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">優先購買權</h3>
         </div>
@@ -109,6 +109,20 @@
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 20 篇</span>
             </div>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地上權</h3>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
+            <a href="../assets/pdfs/%E5%9C%B0%E4%B8%8A%E6%AC%8A.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="地上權.pdf">📥 PDF</a>
+        </div>
+    </div>
+    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
+        <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 20 篇</span>
+            </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">區段徵收</h3>
         </div>
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
@@ -120,7 +134,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 20 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法</h3>
@@ -134,7 +148,7 @@
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 20 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">登記錯誤</h3>
@@ -143,20 +157,6 @@
             <a href="../blog/category/%E7%99%BB%E8%A8%98%E9%8C%AF%E8%AA%A4/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
             <a href="../review/%E7%99%BB%E8%A8%98%E9%8C%AF%E8%AA%A4/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
             <a href="../assets/pdfs/%E7%99%BB%E8%A8%98%E9%8C%AF%E8%AA%A4.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="登記錯誤.pdf">📥 PDF</a>
-        </div>
-    </div>
-    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
-        <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
-                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 19 篇</span>
-            </div>
-            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">地上權</h3>
-        </div>
-        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
-            <a href="../blog/category/%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
-            <a href="../review/%E5%9C%B0%E4%B8%8A%E6%AC%8A/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
-            <a href="../assets/pdfs/%E5%9C%B0%E4%B8%8A%E6%AC%8A.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="地上權.pdf">📥 PDF</a>
         </div>
     </div>
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
