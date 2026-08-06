@@ -369,6 +369,8 @@
 | [新農](keyword_新農.md) | 1 |
 | [收回自耕](keyword_收回自耕.md) | 1 |
 | [土地交換](keyword_土地交換.md) | 1 |
+| [不動產自益信託](keyword_不動產自益信託.md) | 1 |
+| [不動產他益信託](keyword_不動產他益信託.md) | 1 |
 | [起造人](keyword_起造人.md) | 1 |
 | [需用土地人](keyword_需用土地人.md) | 1 |
 | [離差](keyword_離差.md) | 1 |
