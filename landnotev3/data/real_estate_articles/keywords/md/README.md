@@ -72,6 +72,7 @@
 | [土地現值](keyword_土地現值.md) | 5 |
 | [建物所有權](keyword_建物所有權.md) | 5 |
 | [共有物](keyword_共有物.md) | 5 |
+| [土地法第12條](keyword_土地法第12條.md) | 5 |
 | [特別犧牲](keyword_特別犧牲.md) | 5 |
 | [公同共有](keyword_公同共有.md) | 5 |
 | [重購](keyword_重購.md) | 5 |
@@ -96,7 +97,6 @@
 | [登記遺漏](keyword_登記遺漏.md) | 4 |
 | [塗銷登記](keyword_塗銷登記.md) | 4 |
 | [房價](keyword_房價.md) | 4 |
-| [土地法第12條](keyword_土地法第12條.md) | 4 |
 | [受託人](keyword_受託人.md) | 4 |
 | [受益人](keyword_受益人.md) | 4 |
 | [土地政策](keyword_土地政策.md) | 4 |
@@ -127,6 +127,7 @@
 | [區域計畫](keyword_區域計畫.md) | 3 |
 | [耕地三七五減租條例](keyword_耕地三七五減租條例.md) | 3 |
 | [土地參考資訊檔](keyword_土地參考資訊檔.md) | 3 |
+| [土地浮覆](keyword_土地浮覆.md) | 3 |
 | [免徵](keyword_免徵.md) | 3 |
 | [不課徵](keyword_不課徵.md) | 3 |
 | [記存](keyword_記存.md) | 3 |
@@ -304,7 +305,6 @@
 | [共用地悲劇](keyword_共用地悲劇.md) | 2 |
 | [自住房屋](keyword_自住房屋.md) | 2 |
 | [徵收地上權](keyword_徵收地上權.md) | 2 |
-| [土地浮覆](keyword_土地浮覆.md) | 2 |
 | [回復請求權](keyword_回復請求權.md) | 2 |
 | [共有土地](keyword_共有土地.md) | 2 |
 | [書面通知](keyword_書面通知.md) | 2 |
@@ -375,6 +375,8 @@
 | [需用土地人](keyword_需用土地人.md) | 1 |
 | [離差](keyword_離差.md) | 1 |
 | [勘估標](keyword_勘估標.md) | 1 |
+| [請求國家塗銷登記](keyword_請求國家塗銷登記.md) | 1 |
+| [憲判20號](keyword_憲判20號.md) | 1 |
 | [歷史建築](keyword_歷史建築.md) | 1 |
 | [土地徵收補償](keyword_土地徵收補償.md) | 1 |
 | [土地國有](keyword_土地國有.md) | 1 |
