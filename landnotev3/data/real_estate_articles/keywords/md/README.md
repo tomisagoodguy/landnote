@@ -3,7 +3,7 @@
 | Keyword | Count |
 |---|---|
 | [土地增值稅](keyword_土地增值稅.md) | 68 |
-| [優先購買權](keyword_優先購買權.md) | 52 |
+| [優先購買權](keyword_優先購買權.md) | 53 |
 | [土地登記](keyword_土地登記.md) | 41 |
 | [地價稅](keyword_地價稅.md) | 26 |
 | [共有人](keyword_共有人.md) | 25 |
@@ -119,6 +119,7 @@
 | [容積獎勵](keyword_容積獎勵.md) | 4 |
 | [區段地價](keyword_區段地價.md) | 4 |
 | [房價](keyword_房價.md) | 4 |
+| [收回權](keyword_收回權.md) | 4 |
 | [土地稅](keyword_土地稅.md) | 4 |
 | [納稅義務人](keyword_納稅義務人.md) | 4 |
 | [申報地價](keyword_申報地價.md) | 3 |
@@ -179,7 +180,6 @@
 | [消費者保護法](keyword_消費者保護法.md) | 3 |
 | [遺產及贈與稅法](keyword_遺產及贈與稅法.md) | 3 |
 | [不動產投資分析](keyword_不動產投資分析.md) | 3 |
-| [收回權](keyword_收回權.md) | 3 |
 | [開發許可](keyword_開發許可.md) | 3 |
 | [發展權](keyword_發展權.md) | 3 |
 | [土地法第34條](keyword_土地法第34條.md) | 3 |
@@ -291,6 +291,7 @@
 | [受贈](keyword_受贈.md) | 2 |
 | [負擔行為](keyword_負擔行為.md) | 2 |
 | [虛偽登記](keyword_虛偽登記.md) | 2 |
+| [徵收土地](keyword_徵收土地.md) | 2 |
 | [工程受益費](keyword_工程受益費.md) | 2 |
 | [現金補償](keyword_現金補償.md) | 2 |
 | [抵價地補償](keyword_抵價地補償.md) | 2 |
@@ -705,7 +706,6 @@
 | [課予義務訴訟](keyword_課予義務訴訟.md) | 1 |
 | [補償處分](keyword_補償處分.md) | 1 |
 | [補償請求權](keyword_補償請求權.md) | 1 |
-| [徵收土地](keyword_徵收土地.md) | 1 |
 | [課徵](keyword_課徵.md) | 1 |
 | [課稅](keyword_課稅.md) | 1 |
 | [聲明](keyword_聲明.md) | 1 |
