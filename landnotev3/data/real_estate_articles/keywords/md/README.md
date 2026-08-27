@@ -6,8 +6,8 @@
 | [優先購買權](keyword_優先購買權.md) | 53 |
 | [土地登記](keyword_土地登記.md) | 41 |
 | [地價稅](keyword_地價稅.md) | 26 |
+| [土地徵收](keyword_土地徵收.md) | 25 |
 | [共有人](keyword_共有人.md) | 25 |
-| [土地徵收](keyword_土地徵收.md) | 24 |
 | [地上權](keyword_地上權.md) | 20 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
 | [土地法](keyword_土地法.md) | 20 |
