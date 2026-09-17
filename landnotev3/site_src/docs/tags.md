@@ -37,7 +37,7 @@
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📙</span>
-                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 55 篇</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 56 篇</span>
             </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">優先購買權</h3>
         </div>
@@ -107,14 +107,14 @@
         <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📓</span>
-                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 20 篇</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 21 篇</span>
             </div>
-            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">區段徵收</h3>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法</h3>
         </div>
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
-            <a href="../blog/category/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
-            <a href="../review/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
-            <a href="../assets/pdfs/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="區段徵收.pdf">📥 PDF</a>
+            <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E5%9C%9F%E5%9C%B0%E6%B3%95/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
+            <a href="../assets/pdfs/%E5%9C%9F%E5%9C%B0%E6%B3%95.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="土地法.pdf">📥 PDF</a>
         </div>
     </div>
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
@@ -123,12 +123,12 @@
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📚</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 20 篇</span>
             </div>
-            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地法</h3>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">區段徵收</h3>
         </div>
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
-            <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E6%B3%95/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
-            <a href="../review/%E5%9C%9F%E5%9C%B0%E6%B3%95/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
-            <a href="../assets/pdfs/%E5%9C%9F%E5%9C%B0%E6%B3%95.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="土地法.pdf">📥 PDF</a>
+            <a href="../blog/category/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
+            <a href="../assets/pdfs/%E5%8D%80%E6%AE%B5%E5%BE%B5%E6%94%B6.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="區段徵收.pdf">📥 PDF</a>
         </div>
     </div>
     <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
