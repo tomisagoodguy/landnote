@@ -8,7 +8,7 @@
 | [地價稅](keyword_地價稅.md) | 27 |
 | [土地徵收](keyword_土地徵收.md) | 26 |
 | [共有人](keyword_共有人.md) | 25 |
-| [土地法](keyword_土地法.md) | 21 |
+| [土地法](keyword_土地法.md) | 22 |
 | [地上權](keyword_地上權.md) | 20 |
 | [區段徵收](keyword_區段徵收.md) | 20 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
@@ -24,8 +24,8 @@
 | [繼承登記](keyword_繼承登記.md) | 12 |
 | [繼承人](keyword_繼承人.md) | 12 |
 | [實價登錄](keyword_實價登錄.md) | 12 |
+| [房地合一稅](keyword_房地合一稅.md) | 12 |
 | [全國國土計畫](keyword_全國國土計畫.md) | 11 |
-| [房地合一稅](keyword_房地合一稅.md) | 11 |
 | [遺產稅](keyword_遺產稅.md) | 11 |
 | [地價](keyword_地價.md) | 10 |
 | [平均地權條例](keyword_平均地權條例.md) | 10 |
@@ -103,6 +103,7 @@
 | [消費者](keyword_消費者.md) | 4 |
 | [稅基](keyword_稅基.md) | 4 |
 | [配偶](keyword_配偶.md) | 4 |
+| [剩餘財產](keyword_剩餘財產.md) | 4 |
 | [委託人](keyword_委託人.md) | 4 |
 | [抵押權](keyword_抵押權.md) | 4 |
 | [容積獎勵](keyword_容積獎勵.md) | 4 |
@@ -137,7 +138,6 @@
 | [遺贈](keyword_遺贈.md) | 3 |
 | [土地法34-1](keyword_土地法34-1.md) | 3 |
 | [土地利用](keyword_土地利用.md) | 3 |
-| [剩餘財產](keyword_剩餘財產.md) | 3 |
 | [贈與](keyword_贈與.md) | 3 |
 | [地政士法](keyword_地政士法.md) | 3 |
 | [土地法第34條](keyword_土地法第34條.md) | 3 |
@@ -449,6 +449,7 @@
 | [資產證券化](keyword_資產證券化.md) | 1 |
 | [面積短少](keyword_面積短少.md) | 1 |
 | [禁止處分登記](keyword_禁止處分登記.md) | 1 |
+| [夫妻贈與](keyword_夫妻贈與.md) | 1 |
 | [預先拋棄](keyword_預先拋棄.md) | 1 |
 | [債權](keyword_債權.md) | 1 |
 | [土地法34條之1](keyword_土地法34條之1.md) | 1 |
@@ -503,6 +504,8 @@
 | [公益信託](keyword_公益信託.md) | 1 |
 | [農一用地](keyword_農一用地.md) | 1 |
 | [土地稅課徵](keyword_土地稅課徵.md) | 1 |
+| [收回房屋](keyword_收回房屋.md) | 1 |
+| [租賃專法](keyword_租賃專法.md) | 1 |
 | [太陽光電](keyword_太陽光電.md) | 1 |
 | [太陽能光電](keyword_太陽能光電.md) | 1 |
 | [房屋租賃定型化契約](keyword_房屋租賃定型化契約.md) | 1 |
