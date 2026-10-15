@@ -16797,6 +16797,34 @@
                 <span class="feature-icon" style="font-size: 2rem; margin: 0;">📖</span>
                 <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
             </div>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地與建物分開課稅</h3>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%88%87%E5%BB%BA%E7%89%A9%E5%88%86%E9%96%8B%E8%AA%B2%E7%A8%85/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E5%9C%9F%E5%9C%B0%E8%88%87%E5%BB%BA%E7%89%A9%E5%88%86%E9%96%8B%E8%AA%B2%E7%A8%85/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
+            <a href="../assets/pdfs/%E5%9C%9F%E5%9C%B0%E8%88%87%E5%BB%BA%E7%89%A9%E5%88%86%E9%96%8B%E8%AA%B2%E7%A8%85.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="土地與建物分開課稅.pdf">📥 PDF</a>
+        </div>
+    </div>
+    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
+        <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📜</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
+            </div>
+            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">土地與建物合併課稅</h3>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="../blog/category/%E5%9C%9F%E5%9C%B0%E8%88%87%E5%BB%BA%E7%89%A9%E5%90%88%E4%BD%B5%E8%AA%B2%E7%A8%85/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>
+            <a href="../review/%E5%9C%9F%E5%9C%B0%E8%88%87%E5%BB%BA%E7%89%A9%E5%90%88%E4%BD%B5%E8%AA%B2%E7%A8%85/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>
+            <a href="../assets/pdfs/%E5%9C%9F%E5%9C%B0%E8%88%87%E5%BB%BA%E7%89%A9%E5%90%88%E4%BD%B5%E8%AA%B2%E7%A8%85.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="土地與建物合併課稅.pdf">📥 PDF</a>
+        </div>
+    </div>
+    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">
+        <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span class="feature-icon" style="font-size: 2rem; margin: 0;">📘</span>
+                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 1 篇</span>
+            </div>
             <h3 style="margin-top: 0; margin-bottom: 1.5rem;">申請興建農舍</h3>
         </div>
         <div style="display: flex; gap: 0.5rem; margin-top: auto;">
