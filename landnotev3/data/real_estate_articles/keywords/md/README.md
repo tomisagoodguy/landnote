@@ -78,6 +78,7 @@
 | [請求權](keyword_請求權.md) | 5 |
 | [建物所有權](keyword_建物所有權.md) | 5 |
 | [都市更新條例](keyword_都市更新條例.md) | 5 |
+| [公寓大廈管理條例](keyword_公寓大廈管理條例.md) | 5 |
 | [不動產估價師](keyword_不動產估價師.md) | 5 |
 | [特別犧牲](keyword_特別犧牲.md) | 5 |
 | [遺產](keyword_遺產.md) | 5 |
@@ -97,7 +98,6 @@
 | [租賃住宅](keyword_租賃住宅.md) | 4 |
 | [土地政策](keyword_土地政策.md) | 4 |
 | [興建農舍](keyword_興建農舍.md) | 4 |
-| [公寓大廈管理條例](keyword_公寓大廈管理條例.md) | 4 |
 | [稅率](keyword_稅率.md) | 4 |
 | [土地稅](keyword_土地稅.md) | 4 |
 | [消費者](keyword_消費者.md) | 4 |
@@ -591,6 +591,8 @@
 | [輔導合法化之原則](keyword_輔導合法化之原則.md) | 1 |
 | [折舊](keyword_折舊.md) | 1 |
 | [增值](keyword_增值.md) | 1 |
+| [公寓大廈規約](keyword_公寓大廈規約.md) | 1 |
+| [私法自治](keyword_私法自治.md) | 1 |
 | [聽證](keyword_聽證.md) | 1 |
 | [勞資](keyword_勞資.md) | 1 |
 | [土地集約度](keyword_土地集約度.md) | 1 |
