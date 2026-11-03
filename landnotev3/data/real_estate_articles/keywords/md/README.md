@@ -12,10 +12,10 @@
 | [區段徵收](keyword_區段徵收.md) | 20 |
 | [地上權](keyword_地上權.md) | 20 |
 | [登記錯誤](keyword_登記錯誤.md) | 20 |
+| [市地重劃](keyword_市地重劃.md) | 18 |
 | [房屋稅](keyword_房屋稅.md) | 18 |
 | [都市計畫](keyword_都市計畫.md) | 18 |
 | [房地合一所得稅](keyword_房地合一所得稅.md) | 18 |
-| [市地重劃](keyword_市地重劃.md) | 17 |
 | [農業用地](keyword_農業用地.md) | 16 |
 | [公共設施保留地](keyword_公共設施保留地.md) | 14 |
 | [土地法第34條之1](keyword_土地法第34條之1.md) | 14 |
@@ -97,6 +97,7 @@
 | [配偶](keyword_配偶.md) | 4 |
 | [空地稅](keyword_空地稅.md) | 4 |
 | [優先承買權](keyword_優先承買權.md) | 4 |
+| [抵費地](keyword_抵費地.md) | 4 |
 | [剩餘財產](keyword_剩餘財產.md) | 4 |
 | [收回權](keyword_收回權.md) | 4 |
 | [容積獎勵](keyword_容積獎勵.md) | 4 |
@@ -141,7 +142,6 @@
 | [廢止徵收](keyword_廢止徵收.md) | 3 |
 | [基地](keyword_基地.md) | 3 |
 | [抵價地](keyword_抵價地.md) | 3 |
-| [抵費地](keyword_抵費地.md) | 3 |
 | [私契](keyword_私契.md) | 3 |
 | [公契](keyword_公契.md) | 3 |
 | [土地重劃](keyword_土地重劃.md) | 3 |
