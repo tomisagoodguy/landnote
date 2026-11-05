@@ -96,6 +96,7 @@
 | [納稅義務人](keyword_納稅義務人.md) | 4 |
 | [配偶](keyword_配偶.md) | 4 |
 | [空地稅](keyword_空地稅.md) | 4 |
+| [廢止徵收](keyword_廢止徵收.md) | 4 |
 | [優先承買權](keyword_優先承買權.md) | 4 |
 | [抵費地](keyword_抵費地.md) | 4 |
 | [剩餘財產](keyword_剩餘財產.md) | 4 |
@@ -139,7 +140,7 @@
 | [贈與](keyword_贈與.md) | 3 |
 | [地號](keyword_地號.md) | 3 |
 | [建號](keyword_建號.md) | 3 |
-| [廢止徵收](keyword_廢止徵收.md) | 3 |
+| [撤銷徵收](keyword_撤銷徵收.md) | 3 |
 | [基地](keyword_基地.md) | 3 |
 | [抵價地](keyword_抵價地.md) | 3 |
 | [私契](keyword_私契.md) | 3 |
@@ -205,7 +206,6 @@
 | [房地市場價格](keyword_房地市場價格.md) | 2 |
 | [土地法第43條](keyword_土地法第43條.md) | 2 |
 | [空地](keyword_空地.md) | 2 |
-| [撤銷徵收](keyword_撤銷徵收.md) | 2 |
 | [權利變換](keyword_權利變換.md) | 2 |
 | [租約](keyword_租約.md) | 2 |
 | [租賃](keyword_租賃.md) | 2 |
