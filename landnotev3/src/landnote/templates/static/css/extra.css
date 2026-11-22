@@ -571,6 +571,18 @@ a.feature-card:active {
     grid-template-columns: 1fr;
     gap: 1.1rem;
   }
+
+  /* 卡片內距縮小，讓窄螢幕每行多放幾個字 */
+  .md-post--excerpt {
+    margin-bottom: 1.2rem;
+    padding: 0.8rem 0.75rem 0.4rem;
+  }
+
+  /* 日期、分類連結字小，加大觸控範圍 */
+  .md-post__meta a {
+    display: inline-block;
+    padding: 0.3rem 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

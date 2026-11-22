@@ -282,6 +282,8 @@ class SiteGenerator:
     EXCERPT_SEPARATOR = "<!-- more -->"
     EXCERPT_MIN_CHARS = 150
     EXCERPT_MAX_BLOCKS = 6
+    # 清單／表格中途不切的例外上限：長條列項目會讓摘要在手機上拉到好幾個螢幕
+    EXCERPT_MAX_CHARS = 320
 
     @classmethod
     def _insert_excerpt_separator(cls, body: str) -> str:
@@ -323,7 +325,7 @@ class SiteGenerator:
                 continue
             nxt = blocks[i + 1].lstrip()
             if list_re.match(nxt) or nxt.startswith("|") or stripped.startswith("|"):
-                if text_blocks < cls.EXCERPT_MAX_BLOCKS:
+                if text_blocks < cls.EXCERPT_MAX_BLOCKS and text_len < cls.EXCERPT_MAX_CHARS:
                     continue
             if text_len >= cls.EXCERPT_MIN_CHARS or text_blocks >= cls.EXCERPT_MAX_BLOCKS:
                 return "\n\n".join(blocks[: i + 1] + [cls.EXCERPT_SEPARATOR] + blocks[i + 1 :])
