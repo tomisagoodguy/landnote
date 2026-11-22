@@ -476,8 +476,9 @@ def _brief_md(p: dict, q: dict, up: str) -> List[str]:
 def _similar_md(similar: List[Tuple[dict, dict]]) -> List[str]:
     if not similar:
         return []
-    labels = "、".join(dict.fromkeys(f"{p['year']} {_exam_short(p['exam'])}" for p, _ in similar))
-    out = [f'??? abstract "歷屆相似題（{len(similar)}）：{labels}"', ""]
+    labels = list(dict.fromkeys(f"{p['year']} {_exam_short(p['exam'])}" for p, _ in similar))
+    shown = "、".join(labels[:3]) + (f" 等 {len(labels)} 份" if len(labels) > 3 else "")  # 手機上標題不超過兩行
+    out = [f'??? abstract "歷屆相似題（{len(similar)}）：{shown}"', ""]
     for p, q in similar:
         out += _indent(_brief_md(p, q, ""))
     return out
