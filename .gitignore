@@ -24,3 +24,6 @@ landnotev3/test.ipynb
 # Node/MkDocs
 site/
 .ipynb_checkpoints/
+
+# Local tool settings（個人本機設定，不進版控）
+.claude/settings.local.json
