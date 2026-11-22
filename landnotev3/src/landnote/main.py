@@ -85,10 +85,10 @@ def main():
             sys.exit("找不到估價師考古題 PDF，題庫未產生")
         print(f"Exam bank written to {out}")
         from landnote.processors import exam_reader
-        reader = exam_reader.build()
-        if reader is None:
-            sys.exit("找不到土地法規考古題 PDF，閱讀版未產生")
-        print(f"Exam reader written to {reader}")
+        readers = exam_reader.build()
+        if not readers:
+            sys.exit("找不到可逐題閱讀的考古題 PDF，閱讀版未產生")
+        print("Exam reader written to " + ", ".join(str(r) for r in readers))
 
     elif args.command == "laws":
         from landnote.processors import law_timeline

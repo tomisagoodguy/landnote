@@ -2,7 +2,7 @@ import re
 import shutil
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, Tuple
+from typing import Dict, List, Tuple
 from collections import defaultdict
 import yaml
 
@@ -22,6 +22,8 @@ class SiteGenerator:
         self.site_src_dir = self.base_dir / "site_src" 
         self.docs_dir = self.site_src_dir / "docs"
         self.posts_dir = self.docs_dir / "blog" / "posts"
+        # Jasper 文章另成一個 blog 實例，「最新文章」不與高點專欄混在一起
+        self.jasper_posts_dir = self.docs_dir / "jasper" / "posts"
         self.logger = Logger.setup_logger("SiteGenerator", LOGS_DIR)
         self.authors = set()
         self.exam_bank_nav = []
@@ -56,9 +58,11 @@ class SiteGenerator:
         self._generate_review_materials()
 
         # 估價師主題題庫（讀 data/exam_bank，nav 要在產生 mkdocs.yml 前得知）
-        self.exam_bank_nav = exam_bank.write_pages(self.docs_dir)
+        self.exam_bank_nav = exam_bank.write_pages(
+            self.docs_dir, posts_dir=[self.posts_dir, self.jasper_posts_dir], practice=self._practice_readers())
         # 考古題逐題閱讀（需在文章處理後執行，才能比對相關文章）
-        self.exam_reader_nav = exam_reader.write_pages(self.docs_dir, self.posts_dir)
+        self.exam_reader_nav = exam_reader.write_pages(
+            self.docs_dir, [self.posts_dir, self.jasper_posts_dir])
 
         # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()
@@ -88,7 +92,9 @@ class SiteGenerator:
         self.docs_dir.mkdir(parents=True, exist_ok=True)
         self.posts_dir.mkdir(parents=True, exist_ok=True)
         # 不先建立的話 Material blog 外掛會自動產生英文標題「# Blog」
-        (self.docs_dir / "blog" / "index.md").write_text("# 最新文章\n", encoding="utf-8")
+        (self.docs_dir / "blog" / "index.md").write_text("# 高點不動產專欄\n", encoding="utf-8")
+        self.jasper_posts_dir.mkdir(parents=True, exist_ok=True)
+        (self.docs_dir / "jasper" / "index.md").write_text("# Jasper 不動產文章\n", encoding="utf-8")
 
         # Create stylesheets directory
         styles_dir = self.docs_dir / "stylesheets"
@@ -126,17 +132,18 @@ class SiteGenerator:
         tag_articles = defaultdict(list)
         all_articles = []
         
-        for file in self.posts_dir.glob("*.md"):
+        for file in self._all_post_files():
             try:
                 content = file.read_text(encoding='utf-8')
                 parts = content.split('---', 2)
                 if len(parts) >= 3:
                     meta = yaml.safe_load(parts[1])
                     body = parts[2]
-                    
+
                     # Fix image paths for the review dir context
-                    body = body.replace('(images/', '(../blog/posts/images/')
-                    
+                    blog_dir = file.parent.parent.name
+                    body = body.replace('(images/', f'(../{blog_dir}/posts/images/')
+
                     item = {
                         'title': meta.get('title', ''),
                         'date': meta.get('date', ''),
@@ -144,9 +151,11 @@ class SiteGenerator:
                         'categories': meta.get('categories', [])
                     }
                     all_articles.append(item)
-                    for c in item['categories']:
-                        if c != 'Real Estate':
-                            tag_articles[c].append(item)
+                    # 主題講義對應 blog/category 分類頁，只收高點專欄
+                    if file.parent == self.posts_dir:
+                        for c in item['categories']:
+                            if c != 'Real Estate':
+                                tag_articles[c].append(item)
             except Exception:
                 pass
                 
@@ -238,7 +247,6 @@ class SiteGenerator:
             except Exception as e:
                 self.logger.error(f"Failed to process {file_path.name}: {e}")
 
-    JASPER_CATEGORY = "Jasper 不動產"
     # WordPress 頁面殘留，整個移除
     JASPER_DROP_TAGS = ("script", "style", "meta", "link", "svg", "form", "button", "iframe")
     # 只保留語意屬性，class／style／data-* 會與網站樣式衝突
@@ -249,7 +257,7 @@ class SiteGenerator:
         """把 jasper_crawler 存的文章（JSON frontmatter + WordPress HTML）轉成部落格文章。
 
         slug 以來源網址雜湊產生（jasper-xxxxxxxx），網址穩定不受標題變動影響；
-        分類固定加上 JASPER_CATEGORY，標籤取「法條依據：民法§179」冒號後的部分。
+        寫入獨立的 jasper/ blog；標籤取「法條依據：民法§179」冒號後的部分；上榜心得不收。
         """
         import hashlib
         import json
@@ -261,7 +269,7 @@ class SiteGenerator:
 
         images = JASPER_DIR / "images"
         if images.exists():
-            shutil.copytree(images, self.posts_dir / "images", dirs_exist_ok=True)
+            shutil.copytree(images, self.jasper_posts_dir / "images", dirs_exist_ok=True)
 
         for file_path in files:
             try:
@@ -270,6 +278,8 @@ class SiteGenerator:
                     continue
                 meta = json.loads(parts[1])
                 title = meta.get("title", "").strip() or file_path.stem
+                if "上榜心得" in title:
+                    continue
                 date = datetime.strptime(meta["date"], "%Y-%m-%d").date()
                 source = meta.get("source_url", file_path.name)
                 slug = "jasper-" + hashlib.md5(source.encode("utf-8")).hexdigest()[:8]
@@ -288,11 +298,11 @@ class SiteGenerator:
                     "title": title,
                     "date": date,
                     "slug": slug,
-                    "categories": ["Real Estate", self.JASPER_CATEGORY, *tags],
+                    "categories": tags,
                     "tags": tags,
                 }
                 safe_title = re.sub(r'[\\/*?:"<>|]', "", title).strip()[:50]
-                out = self.posts_dir / f"{date}-{slug}-{safe_title}.md"
+                out = self.jasper_posts_dir / f"{date}-{slug}-{safe_title}.md"
                 out.write_text(
                     "---\n" + yaml.dump(frontmatter, allow_unicode=True, default_flow_style=False)
                     + "---\n\n" + body, encoding="utf-8")
@@ -313,6 +323,11 @@ class SiteGenerator:
         # WordPress 延遲載入：本機圖（src="images/..."）放在 <noscript> 裡，保留內容只拆外殼
         for tag in soup.find_all(["div", "span", "section", "article", "figure", "font", "noscript"]):
             tag.unwrap()
+        # 文末「免費諮詢｜Line 官方帳號｜Facebook 粉絲專頁」推廣區塊
+        for tag in soup.find_all(["p", "h2", "h3", "h4", "h5", "h6"]):
+            text = tag.get_text(strip=True)
+            if "免費諮詢" in text or "Line 官方帳號" in text or "粉絲專頁" in text:
+                tag.decompose()
         for tag in soup.find_all("h1"):
             tag.name = "h2"  # 頁面標題已是 h1
         for tag in soup.find_all(True):
@@ -493,10 +508,14 @@ class SiteGenerator:
         with open(self.base_dir / 'site_src' / '.authors.yml', 'w', encoding='utf-8') as f:
             yaml.dump(authors_map, f, allow_unicode=True, sort_keys=False)
 
+    def _all_post_files(self) -> List[Path]:
+        """兩個 blog（高點專欄、Jasper）的全部文章檔。"""
+        return [f for d in (self.posts_dir, self.jasper_posts_dir) for f in sorted(d.glob("*.md"))]
+
     def _year_counts(self) -> Dict[str, int]:
         """各年度文章數（讀 posts 的 front matter date）。"""
         counts: Dict[str, int] = defaultdict(int)
-        for file in self.posts_dir.glob("*.md"):
+        for file in self._all_post_files():
             m = re.search(r"^date:\s*'?(\d{4})", file.read_text(encoding='utf-8')[:500], re.M)
             if m:
                 counts[m.group(1)] += 1
@@ -540,7 +559,7 @@ class SiteGenerator:
             '<div class="feature-grid">',
             '    <div class="feature-card c3 is-wide">',
             '        <div class="feature-card__head"><span class="feature-icon">👑</span>'
-            f'<span class="pb-count">共 {len(list(self.posts_dir.glob("*.md")))} 篇</span></div>',
+            f'<span class="pb-count">共 {len(self._all_post_files())} 篇</span></div>',
             '        <h3>不動產全科大補帖</h3>',
             '        <p>包含全站所有文章，無死角終極精華版。</p>',
             '        <div class="feature-actions">',
@@ -586,6 +605,25 @@ class SiteGenerator:
                 
         content.append('</div>')
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
+        self._generate_category_index(sorted_tags)
+
+    def _generate_category_index(self, sorted_tags: List[Tuple[str, int]]):
+        """產生 blog/category/ 分類總覽頁；Material blog 只產生各分類頁，總覽路徑原本是 404。"""
+        from urllib.parse import quote
+        chips = [f'<a class="ap-chip" href="{quote(tag.lower().replace(" ", "-"))}/">{tag}<i>{count}</i></a>'
+                 for tag, count in sorted_tags]
+        lines = [
+            HIDE_SIDEBARS,
+            "# 文章分類總覽",
+            "",
+            f"高點不動產專欄共 {len(sorted_tags)} 個分類，依文章數排序；"
+            "要線上閱讀整理好的講義或下載 PDF，請到[主題探索與講義下載](../../tags.md)。",
+            "",
+            f'<div class="ap-chips">{"".join(chips) or "（目前尚無分類）"}</div>',
+        ]
+        category_dir = self.docs_dir / "blog" / "category"
+        category_dir.mkdir(parents=True, exist_ok=True)
+        (category_dir / "index.md").write_text('\n'.join(lines), encoding='utf-8')
 
     def _generate_mkdocs_config(self):
         """Create mkdocs.yml"""
@@ -645,9 +683,10 @@ class SiteGenerator:
             ],
             'plugins': [
                 'search',
-                {
+                *({
                     'blog': {
-                        'post_dir': 'blog/posts',
+                        'blog_dir': blog_dir,
+                        'post_dir': f'{blog_dir}/posts',
                         'blog_toc': True,
                         'post_url_format': '{date}/{slug}',
                         'archive': True,
@@ -656,7 +695,7 @@ class SiteGenerator:
                         'recent_posts': 5,
                         'pagination_per_page': 10
                     }
-                }
+                } for blog_dir in ('blog', 'jasper'))
             ],
             'markdown_extensions': [
                 'admonition',
@@ -675,13 +714,13 @@ class SiteGenerator:
                 }
             ],
             'nav': [
-                {'最新文章': 'blog/'},
+                {'最新文章': [{'高點不動產專欄': 'blog/'}, {'Jasper 不動產': 'jasper/'}]},
                 {'主題探索與講義下載': 'tags.md'},
                 {'考古題下載': [{'地政與估價師': 'exams.md'}, {'法律考古題': 'law-exams.md'}]},
             ]
         }
-        for title, path in self.exam_reader_nav:
-            config['nav'].append({title: path})
+        if self.exam_reader_nav:
+            config['nav'].append({'逐題讀（附詳解）': [{t: p} for t, p in self.exam_reader_nav]})
         if self.exam_bank_nav:
             config['nav'].append({'估價師專區': [{'專區首頁': 'appraiser.md'},
                                               *({t: p} for t, p in self.exam_bank_nav)]})
@@ -759,6 +798,12 @@ class SiteGenerator:
         "民法物權與不動產法規": ["地上權", "共有物", "典權", "抵押權", "土地法", "平均地權條例",
                          "公寓大廈管理條例", "不動產經紀業管理條例"],
     }
+    def _practice_readers(self) -> Dict[str, List[Tuple[str, str]]]:
+        """估價師各科 → 延伸練習家族中已有逐題閱讀版的 [(頁面名稱, slug)]。"""
+        readers = exam_reader.available()
+        return {subject: [(name, slug) for fam in fams for f, slug, name in readers if f == fam]
+                for subject, fams in self.APPRAISER_PRACTICE.items()}
+
     APPRAISER_PRACTICE_SHOWN = 4  # 每科延伸練習最多列幾科，其餘到考古題頁看
 
     @classmethod
@@ -795,7 +840,7 @@ class SiteGenerator:
 
     def _generate_homepage(self):
         """首頁：繪本風 hero + 收錄統計 + 三張入口卡；並產生考古題頁。"""
-        article_count = len(list(self.posts_dir.glob("*.md"))) if self.posts_dir.exists() else 0
+        article_count = len(self._all_post_files())
         tag_counts = self._collect_all_tags()
         topic_count = len(tag_counts)
         exam_subjects = self._exam_subjects()

@@ -14,6 +14,7 @@ function initStudyTools() {
         pageUrl.endsWith('/tags/') ||
         pageUrl.endsWith('/exams/') ||
         pageUrl.endsWith('/blog/') ||
+        pageUrl.endsWith('/jasper/') ||
         pageUrl.includes('/category/');
     const is404 = document.title.includes('404');
 
@@ -171,6 +172,43 @@ function initInfiniteBlog() {
     }, { rootMargin: "0px 0px 800px 0px" });
     observer.observe(status);
 }
+
+// 題庫／逐題讀的「延伸閱讀」：展開 <details class="qb-read"> 時就地載入文章全文
+// toggle 事件不冒泡，用捕獲階段監聽一次即可涵蓋 instant navigation 換頁後的新內容
+document.addEventListener("toggle", async function (e) {
+    const box = e.target;
+    if (!(box instanceof HTMLDetailsElement) || !box.classList.contains("qb-read")) return;
+    if (!box.open || box.dataset.loaded) return;
+    const link = box.querySelector("a.qb-read-link");
+    if (!link) return;
+    box.dataset.loaded = "1";
+    box.querySelector(".qb-read-body")?.remove();  // 上次載入失敗留下的訊息
+    const body = document.createElement("div");
+    body.className = "qb-read-body";
+    body.textContent = "載入文章中…";
+    link.parentElement.before(body);
+    try {
+        const res = await fetch(link.href);
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+        const article = doc.querySelector(".md-content__inner");
+        if (!article) throw new Error("找不到文章內容");
+        article.querySelectorAll("h1, .md-source-file, .md-content__button, #study-tools-container")
+            .forEach(el => el.remove());
+        article.querySelectorAll("[href]").forEach(el => {
+            const v = el.getAttribute("href");
+            if (v && !v.startsWith("#")) el.setAttribute("href", new URL(v, link.href).href);
+        });
+        article.querySelectorAll("[src]").forEach(el => {
+            el.setAttribute("src", new URL(el.getAttribute("src"), link.href).href);
+        });
+        body.replaceChildren(...Array.from(article.childNodes).map(n => document.importNode(n, true)));
+    } catch (err) {
+        console.error("延伸閱讀載入失敗:", link.href, err);
+        delete box.dataset.loaded;  // 收合再展開即重試
+        body.textContent = "文章載入失敗，請收合後重試，或改按下方「在新頁面開啟」。";
+    }
+}, true);
 
 // 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
 if (typeof document$ !== "undefined") {

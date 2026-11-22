@@ -25,8 +25,8 @@ OUTPUT_DIR = DATA_DIR / "real_estate_articles"
 JASPER_DIR = OUTPUT_DIR / "jasper"
 # 估價師考古題主題題庫：exam_bank 寫入、site_generator 讀取
 EXAM_BANK_FILE = DATA_DIR / "exam_bank" / "appraiser.json"
-# 土地法規考古題閱讀版（逐題＋詳解）：exam_reader 寫入、site_generator 讀取
-LAND_LAW_READER_FILE = DATA_DIR / "exam_bank" / "land_law.json"
+# 考古題逐題閱讀版（逐題＋詳解）：exam_reader 每個科目家族寫一個 JSON（如 land_law.json），site_generator 讀取
+EXAM_READER_DATA_DIR = DATA_DIR / "exam_bank"
 # 法規修法時間軸（全國法規資料庫沿革）：law_timeline 寫入、site_generator 與 exam_bank 讀取
 LAW_TIMELINE_FILE = DATA_DIR / "law_timeline.json"
 

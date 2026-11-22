@@ -764,3 +764,47 @@ a.feature-card:active {
     justify-content: center;
   }
 }
+
+/* 題庫／逐題讀的延伸閱讀：展開即就地載入文章（study_tools.js） */
+.md-typeset details.qb-read {
+  margin: 0;
+  padding: 0;
+  font-size: 0.78rem;
+  background: none;
+  border: 0;
+  border-top: 1.5px dashed var(--pb-line);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.md-typeset details.qb-read > summary {
+  display: flex;
+  align-items: center;
+  min-height: 2.4rem;
+  margin: 0;
+  padding: 0.3rem 1.6rem 0.3rem 0;
+  font-weight: 600;
+  color: var(--pb-ink);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.md-typeset details.qb-read > summary::before {
+  display: none;
+}
+.md-typeset details.qb-read > summary::after {
+  top: 0.75rem;
+  right: 0;
+  background-color: var(--pb-ink);
+}
+.md-typeset .qb-read-body {
+  margin: 0 0 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--pb-line);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.md-typeset .qb-read-body img {
+  max-width: 100%;
+  height: auto;
+}
