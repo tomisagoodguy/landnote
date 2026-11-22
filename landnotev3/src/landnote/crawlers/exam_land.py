@@ -152,23 +152,14 @@ class LandExamCrawler(BaseScraper):
         if skip_existing and final_path.exists():
             return True
 
-        # 1. Get real PDF URL (Redirect)
-        pdf_url = None
+        # 1. Download（Download.ashx 會轉址到實際 PDF，requests 自動跟隨）
         try:
             response = self.make_request("GET", doc.link)
-            if response:
-                pdf_url = response.url
-        except Exception as e:
-            self.logger.error(f"Failed to resolve URL for {doc.file_name}: {e}")
-            return False
-            
-        if not pdf_url: return False
+            if response is None or response.status_code != 200 or not response.content.startswith(b"%PDF"):
+                status = response.status_code if response is not None else "no response"
+                self.log(f"下載失敗（來源檔案無效，HTTP {status}）: {doc.file_name}")
+                return False
 
-        # 2. Download Content
-        try:
-            response = self.make_request("GET", pdf_url)
-            if not response: return False
-            
             temp_path = subject_folder / f"temp_{doc.file_name}"
             with open(temp_path, "wb") as f:
                 f.write(response.content)
