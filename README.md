@@ -11,9 +11,20 @@
 | 內容 | 數量 | 位置 |
 | :--- | :--- | :--- |
 | 不動產專欄文章 | <!-- stats:articles -->994 篇<!-- /stats --> | [線上閱讀](https://tomisagoodguy.github.io/landnote/blog/)・[主題分組列表](landnotev3/data/real_estate_articles/README_grouped.md)・[原始 Markdown](landnotev3/data/real_estate_articles/articles/) |
+| Jasper 不動產文章 | <!-- stats:jasper -->351 篇<!-- /stats --> | [線上閱讀](https://tomisagoodguy.github.io/landnote/jasper/)（法條逐條解說） |
+| 文章分類總覽 | — | [依分類瀏覽](https://tomisagoodguy.github.io/landnote/blog/category/) |
 | 文章年度合輯 PDF | 2014–2026 | [線上閱讀與下載](https://tomisagoodguy.github.io/landnote/tags/)（講義頁「年度合輯」） |
 | 地政與估價師考古題 | <!-- stats:land_exams -->832 份<!-- /stats -->・<!-- stats:land_subjects -->74 科<!-- /stats --> | [科目目錄](landnotev3/地政考古題/README.md)・[整科合併 PDF](landnotev3/地政考古題/合併後PDF檔案/) |
-| 法律考古題 | <!-- stats:law_exams -->2,626 份<!-- /stats --> | [線上目錄](https://tomisagoodguy.github.io/landnote/law-exams/)・[科目目錄](landnotev3/高點法律考古題/README.md)（每月自動更新） |
+| 法律考古題 | <!-- stats:law_exams -->2,626 份<!-- /stats --> | [線上目錄](https://tomisagoodguy.github.io/landnote/law-exams/)・[科目目錄](landnotev3/高點法律考古題/README.md)・[整科合併 PDF](landnotev3/高點法律考古題/合併後PDF檔案/)（每月自動更新） |
+
+文章內文若引用的法條在發布後有修正，開頭會自動加上法規時效提醒（依全國法規資料庫的修正沿革）。
+
+### 線上刷題
+
+| 功能 | 內容 | 入口 |
+| :--- | :--- | :--- |
+| 逐題讀（附詳解） | 土地法規、不動產估價、不動產投資、土地經濟與土地政策、土地利用與都市計畫、民法六科，逐題附老師擬答、可展開的相關專欄文章，並有跨年度同主題比較 | [土地法規](https://tomisagoodguy.github.io/landnote/exam-reader/land-law/)・[估價](https://tomisagoodguy.github.io/landnote/exam-reader/appraisal/)・[投資](https://tomisagoodguy.github.io/landnote/exam-reader/investment/)・[土地經濟](https://tomisagoodguy.github.io/landnote/exam-reader/economics/)・[土地利用](https://tomisagoodguy.github.io/landnote/exam-reader/land-use/)・[民法](https://tomisagoodguy.github.io/landnote/exam-reader/civil-law/) |
+| 估價師專區 | 估價師專業科目依主題分類的題庫（附各主題出題年度統計）、合併 PDF 與延伸練習，手機優先版面 | [專區首頁](https://tomisagoodguy.github.io/landnote/appraiser/) |
 
 ### 考古題範圍
 
@@ -49,8 +60,10 @@
 
 | 排程 | 內容 | Workflow |
 | :--- | :--- | :--- |
-| 每週二、四 20:00（台北） | 抓新文章 → 主題分組 → 年度 PDF → 重建並部署網站 | [update_articles.yml](.github/workflows/update_articles.yml) |
-| 每月 1 日 21:00（台北） | 下載新考古題 → 重產有新題目科目的合併 PDF | [update_exams.yml](.github/workflows/update_exams.yml) |
+| 每週二、四 20:00（台北） | 抓高點與 Jasper 新文章 → 主題分組 → 更新法規修正沿革 → 重建網站與年度 PDF → 部署 | [update_articles.yml](.github/workflows/update_articles.yml) |
+| 每月 1 日 21:00（台北） | 下載新地政與法律考古題 → 重產有新題目科目的合併 PDF → 重建估價師題庫 | [update_exams.yml](.github/workflows/update_exams.yml) |
+
+兩個排程跑完都會依實際資料重算本頁的收錄數字（[update_readme_stats.py](landnotev3/scripts/update_readme_stats.py)）。
 
 兩者都可在 GitHub 的 **Actions** 頁面按 **Run workflow** 手動執行。考古題 workflow 只會補上來源網站有的新題目；來源網站若改版或漏題，需手動與考選部題庫核對。
 
@@ -79,8 +92,14 @@ uv run python -m landnote.main --help
 # 抓取新文章並重新分組
 uv run python -m landnote.main articles --update --auto-group
 
+# 抓取新的 Jasper 文章
+uv run python -m landnote.main jasper --update
+
 # 只重新分組（產生 README_grouped.md、關鍵字頁、年度 PDF）
 uv run python -m landnote.main group
+
+# 下載法規修正沿革（文章的法規時效提醒用）
+uv run python -m landnote.main laws
 
 # 下載考古題（--years 為往回抓的年數，預設 10）
 uv run python -m landnote.main exams --type land --update
@@ -88,6 +107,9 @@ uv run python -m landnote.main exams --type law --max-pages 5
 
 # 重產有新考古題科目的合併 PDF（在 地政考古題/ 下執行）
 cd 地政考古題 && uv run --with PyPDF2 --with pymupdf python pdf_merger.py --changed
+
+# 從考古題 PDF 重建估價師主題題庫（data/exam_bank/*.json）
+uv run --with pymupdf python -m landnote.main exambank
 
 # 產生網站原始檔並在本機預覽（http://127.0.0.1:8000）
 uv run --with "mkdocs<2.0" --with mkdocs-material python -m landnote.main serve
@@ -103,13 +125,18 @@ landnote/
     │   ├── main.py             # CLI 進入點
     │   ├── config.py           # 路徑與網址設定
     │   ├── crawlers/           # 文章、地政／估價師考古題、法律考古題爬蟲
-    │   ├── processors/         # grouper（分組與 PDF）、site_generator（MkDocs 網站）
+    │   ├── processors/         # grouper（分組與 PDF）、site_generator（MkDocs 網站）、
+    │   │                       # exam_bank（估價師題庫）、exam_reader（逐題讀）、law_timeline（法規時效提醒）
     │   └── templates/          # 網站 CSS／JS
-    ├── data/real_estate_articles/
-    │   ├── articles/           # 文章原始 Markdown 與圖片
-    │   ├── keywords/md/        # 各關鍵字的文章索引
-    │   ├── merged/md/          # 相似標題自動分組的合併文章
-    │   └── README_grouped.md   # 主題分組總目錄
+    ├── scripts/                # generate_pdfs（網頁轉 PDF）、update_readme_stats（README 數字）
+    ├── data/
+    │   ├── exam_bank/          # 估價師主題題庫 JSON
+    │   └── real_estate_articles/
+    │       ├── articles/       # 高點文章原始 Markdown 與圖片
+    │       ├── jasper/         # Jasper 文章 Markdown
+    │       ├── keywords/md/    # 各關鍵字的文章索引
+    │       ├── merged/md/      # 相似標題自動分組的合併文章
+    │       └── README_grouped.md  # 主題分組總目錄
     ├── 地政考古題/              # 依科目分資料夾，含 合併後PDF檔案/
     ├── 高點法律考古題/
     └── site_src/               # 由 site_generator 產生，不進版控，每次部署都會重建
