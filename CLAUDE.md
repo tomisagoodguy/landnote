@@ -36,20 +36,28 @@ landnote/
 └── landnotev3/
     ├── pyproject.toml                # uv 專案設定、ruff 規則
     ├── src/landnote/
-    │   ├── main.py                   # CLI 入口（articles / exams / group / site / serve）
+    │   ├── main.py                   # CLI 入口（articles / jasper / exams / group / exambank / laws / site / serve）
     │   ├── config.py                 # 路徑常數（DATA_DIR、ARTICLES_DIR…）
     │   ├── core/scraper.py           # 爬蟲基底類別
     │   ├── crawlers/                 # article.py（專欄文章）、exam_land.py、exam_law.py、jasper_crawler.py
     │   ├── processors/
     │   │   ├── grouper.py            # 相似文章分組、關鍵字頁
-    │   │   └── site_generator.py     # ★ 產生 site_src/docs 全部內容與 mkdocs.yml
+    │   │   ├── site_generator.py     # ★ 產生 site_src/docs 全部內容與 mkdocs.yml
+    │   │   ├── exam_bank.py          # 估價師主題題庫（exambank 指令建 JSON；產生器寫 exam-bank/ 頁）
+    │   │   ├── exam_reader.py        # 逐題讀六科頁面（exam-reader/<科目>/），附擬答與相關文章
+    │   │   └── law_timeline.py       # 法規修正沿革 → 文章開頭的法規時效提醒
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
     │   └── utils/                    # logger、PDF、文字處理
-    ├── scripts/generate_pdfs.py      # mkdocs build 後把網頁轉 PDF
-    ├── data/real_estate_articles/
-    │   ├── articles/                 # 爬下來的原始文章 Markdown（產生器的輸入）
-    │   ├── merged/ keywords/        # grouper 產出
-    │   └── README_grouped.md
+    ├── scripts/
+    │   ├── generate_pdfs.py          # mkdocs build 後把網頁轉 PDF
+    │   └── update_readme_stats.py    # 重算 README 的 <!-- stats:key --> 數字（兩個 workflow 都跑）
+    ├── data/
+    │   ├── exam_bank/                # 估價師題庫 JSON（update_exams.yml 每月重建）
+    │   └── real_estate_articles/
+    │       ├── articles/             # 爬下來的高點文章 Markdown（產生器的輸入）
+    │       ├── jasper/               # Jasper 不動產文章 Markdown
+    │       ├── merged/ keywords/     # grouper 產出
+    │       └── README_grouped.md
     ├── site_src/                     # ⚠ 全是產生器輸出，不進版控（.gitignore），CI 每次部署重建
     │   ├── mkdocs.yml                # 由 site_generator 產生
     │   ├── docs/                     # blog/posts、tags.md、review/、index.md、javascripts/、stylesheets/
@@ -69,6 +77,10 @@ landnote/
 uv run --project landnotev3 python landnotev3/src/landnote/main.py articles --update --auto-group   # 抓新文章並分組
 uv run --project landnotev3 python landnotev3/src/landnote/main.py group                           # 只重跑分組（--threshold 預設 80）
 uv run --project landnotev3 python landnotev3/src/landnote/main.py exams --type land --update      # 下載新地政考古題
+uv run --project landnotev3 python landnotev3/src/landnote/main.py jasper --update                 # 抓新 Jasper 文章
+uv run --project landnotev3 python landnotev3/src/landnote/main.py laws                            # 下載法規修正沿革（時效提醒用）
+uv run --project landnotev3 --with pymupdf python landnotev3/src/landnote/main.py exambank         # 重建估價師題庫 JSON
+uv run --no-project python landnotev3/scripts/update_readme_stats.py --check                       # 檢查 README 數字是否過期
 ```
 
 **網站產生與預覽**
@@ -101,7 +113,7 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 5. **只 commit 原始碼**（用 pathspec：`git commit -- <檔案>`）。`site_src/` 已不進版控；`data/` 的產出變動交給 CI 重產並自動 commit。
 6. 推送前 `git pull --rebase`：CI 會自動 commit `docs: auto-update articles and reports [skip ci]`，常常比本機新。
 
-各層邊界：crawlers 只寫 `data/`；grouper 只讀 `data/articles` 寫 `data/` 其他子目錄；site_generator 只讀 `data/articles` 寫 `site_src/`；前端 JS 只在瀏覽器端加功能，不改 Markdown。
+各層邊界：crawlers 只寫 `data/`；grouper 只讀 `data/articles` 寫 `data/` 其他子目錄；site_generator 只讀 `data/`（articles、jasper、exam_bank、法規沿革）與考古題資料夾，寫 `site_src/`；前端 JS 只在瀏覽器端加功能，不改 Markdown。
 
 ## 重要文件索引
 
@@ -120,6 +132,7 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 | 改 `site_src/docs/javascripts/extra.js` | 改 `templates/static/js/study_tools.js`（兩者內容相同，後者才是原始檔） |
 | 本機跑完 `main.py articles`／`group` 後 `git add .` | 只 commit 原始碼；`data/` 一次產生會動到上千個檔案 |
 | 想把 `site_src/` 加回版控 | 它由 `site_generator` 每次整個刪除重建，CI 部署不讀 repo 裡的版本 |
+| README 加新的 `<!-- stats:xxx -->` 標記卻沒改腳本 | `update_readme_stats.py` 遇到未知標記直接報錯，CI 會失敗；要在 `collect_stats()` 一起加 |
 | 新增 Python 依賴只改 `pyproject.toml` | `update_articles.yml` 用 **pip 寫死套件清單**，要一起加 |
 | 用 `tomllib`、`except*`、`typing.Self` 等 3.11+ 功能 | CI 是 Python 3.10（`match`、`X \| Y` 型別可用） |
 | 在 `landnotev3/` 根目錄留除錯腳本 | 一次性腳本放暫存目錄，正式工具放 `scripts/` |
@@ -133,5 +146,8 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 ## 網站行為備忘
 
 - blog 每頁 10 篇（`pagination_per_page`），前端用無限捲動接下一頁；分頁列保留給無 JS 與搜尋引擎。
-- 文章開頭的 `## 內文` 由產生器移除；**不插入 `<!-- more -->`**，blog 列表直接顯示全文、沒有「繼續閱讀」（使用者要求）。法規時效提醒放在內文開頭。
+- 文章開頭的 `## 內文` 由產生器移除；**不插入 `<!-- more -->`**，所有列表（blog 首頁、分類頁、最新文章、Jasper）都直接顯示全文、沒有「繼續閱讀」（使用者要求過三次）。法規時效提醒放在內文開頭。
+- 高點專欄與 Jasper 是**兩個獨立 blog**（`blog/`、`jasper/`），任何列表都不要混排。
+- Jasper 文章：標題含「上榜心得」不收；文末「免費諮詢｜Line 官方帳號｜Facebook 粉絲專頁」推廣區塊要移除（`site_generator.py` 的 Jasper 處理段）。
+- 考古題以**網頁逐題閱讀、可跨年度比較**為主（逐題讀、主題題庫），合併 PDF 是輔助；題目與擬答抽取用規則式解析，不用 LLM。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。
