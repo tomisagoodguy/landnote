@@ -143,13 +143,20 @@ def _join_lines(lines: List[str]) -> str:
     return re.sub(r"\n{2,}", "\n", out).strip()
 
 
+# 舊版 PDF 常用 CJK 相容字與康熙部首（如「不動產」的不、「都更」的更），外觀相同但搜尋與比對都會失敗
+CJK_COMPAT = re.compile("[⼀-⿟豈-﫿\U0002f800-\U0002fa1f]")
+
+
+def normalize_cjk(text: str) -> str:
+    """把 CJK 相容字與康熙部首換成一般漢字。"""
+    return CJK_COMPAT.sub(lambda m: unicodedata.normalize("NFKC", m.group()), text)
+
+
 def split_questions(text: str) -> List[str]:
     """把一份試卷切成逐題文字。優先以「一、二、」切；沒有題號（PDF 用圖形編號）時以配分結尾切。"""
     # 「（每小題5 分，共25 分）」統一成「（25 分）」，配分加總才不會漏
     text = re.sub(r"[（(]\s*每小題[^）)]*?共\s*(\d+)\s*分\s*[）)]", r"（\1 分）", text)
-    text = text.translate(str.maketrans(SUB_MARKS))
-    # 舊版 PDF 常用 CJK 相容字（U+F900–FAFF，如「都更」的都、更），外觀相同但搜尋與比對都會失敗
-    text = re.sub(r"[豈-﫿]", lambda m: unicodedata.normalize("NFKC", m.group()), text)
+    text = normalize_cjk(text.translate(str.maketrans(SUB_MARKS)))
     lines = [ln.strip() for ln in text.splitlines()]
     lines = [ln for ln in lines if ln]
     head = [i for i, ln in enumerate(lines[:HEADER_SCAN_LINES]) if HEADER_END.search(ln)]
@@ -190,8 +197,13 @@ def classify(subject: str, text: str, score: int = 0) -> str:
         lead = re.match(r"(比較法|收益法|成本法|土地開發分析法|價格決定)\s*[（(]", text)
         if lead:
             return APPRAISAL_LEAD[lead.group(1)]
+    return best_topic(TOPICS.get(subject, []), text)
+
+
+def best_topic(topics: List[tuple], text: str) -> str:
+    """在 (主題, 核心詞, 一般詞) 清單中取分數最高者；都沒命中回「其他」。"""
     best, best_score = "其他", 0
-    for topic, strong, weak in TOPICS.get(subject, []):
+    for topic, strong, weak in topics:
         points = 3 * len(re.findall(strong, text)) + len(re.findall(weak, text))
         if points > best_score:
             best, best_score = topic, points

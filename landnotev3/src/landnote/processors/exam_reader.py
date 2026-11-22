@@ -19,7 +19,17 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
 
 from landnote.config import ARTICLES_DIR, EXAM_READER_DATA_DIR
-from landnote.processors.exam_bank import EXAM_DIR, REPO_BLOB, SUB_MARKS, _md_escape, _pdf_text
+from landnote.processors.exam_bank import (
+    APPRAISAL_TOPICS,
+    EXAM_DIR,
+    REPO_BLOB,
+    SUB_MARKS,
+    TOPICS,
+    _md_escape,
+    _pdf_text,
+    best_topic,
+    normalize_cjk,
+)
 from landnote.processors.law_timeline import law_refs
 
 # (SUBJECT_FAMILIES 的家族名, 網址 slug, 頁面名稱)；slug 的底線版即 JSON 檔名（land-law → land_law.json）
@@ -32,6 +42,58 @@ READERS = [
     ("民法", "civil-law", "民法"),
 ]
 READER_ROOT = "exam-reader"
+TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
+
+# 跨年度比較的主題：(主題, 核心詞 regex, 一般詞 regex)，計分規則同 exam_bank.best_topic。
+# 估價、投資、經濟沿用估價師題庫；其餘三科範圍比估價師的對應科目廣，另訂清單。
+LAND_LAW_TOPICS = [
+    ("地籍測量與土地登記", r"地籍測量|界址|界標|登記|權利書狀|所有權狀|地籍|測量|複丈|囑託登記|預告登記|塗銷",
+     r"地政機關"),
+    ("地權與土地使用限制", r"外國人|私有土地|面積最高額|優先購買|優先承買|基地出賣|共有土地|第\s*34\s*條之\s*1|"
+     r"空地|荒地|公有土地|撥用|地權", r"所有權|共有"),
+    ("房屋與基地、耕地租用", r"基地租用|租用基地|耕地|承租人|出租人|三七五|地租|租約|租賃", r"租"),
+    ("地價與土地稅", r"地價稅|增值稅|田賦|房屋稅|契稅|規定地價|申報地價|公告地價|公告土地現值|漲價|原地價|累進|"
+     r"稅基|稅率|稅", r"地價|課徵"),
+    ("土地徵收與收回", r"(?<!區段)徵收|收回|徵收補償|接連地|需用土地人|徵收計畫", r"補償"),
+    ("區段徵收與土地重劃", r"區段徵收|抵價地|市地重劃|農地重劃|農村社區土地重劃|重劃", r"整體開發|共同負擔"),
+    ("都市更新、都市計畫與土地使用管制", r"都市更新|權利變換|都市計畫|非都市土地|國土計畫|容積|使用分區|使用地|"
+     r"危險及老舊", r"開發|使用"),
+    ("行政法與行政救濟", r"訴願|行政訴訟|國家賠償|行政處分|行政程序|行政罰|行政執行|行政契約|聽證|公務員|"
+     r"信賴保護|比例原則|法律保留", r"行政|機關"),
+    ("不動產交易與經紀", r"地政士|經紀|實價登錄|不動產說明書|預售屋|成交案件|公平交易|消費者保護", r"買賣|交易"),
+]
+LAND_USE_TOPICS = [
+    ("土地利用理論與規劃概念", r"區位|地租|集約|最有效使用|成長管理|智慧成長|緊湊|TOD|大眾運輸導向|土地使用規劃|"
+     r"規劃理論|混合使用|土地使用模式|新都市主義|田園城市|總量管制", r"理論|規劃"),
+    ("國土計畫與區域計畫", r"國土計畫|國土功能分區|區域計畫|非都市土地|開發許可|使用許可|使用地變更|環境敏感|"
+     r"丁種建築用地", r"國土|非都市"),
+    ("都市計畫與公共設施", r"都市計畫|細部計畫|主要計畫|公共設施|通盤檢討|使用分區|分區管制|土地使用管制|新市鎮|"
+     r"新市區", r"都市"),
+    ("容積管理", r"容積", r"送出基地|接受基地"),
+    ("土地開發：徵收、重劃與整體開發", r"區段徵收|市地重劃|農地重劃|徵收|跨區|整體開發|抵價地|開發權|土地開發",
+     r"開發"),
+    ("都市更新與都市再生", r"都市更新|危險及老舊|都市再生|老舊|閒置|再發展|更新", r"更新"),
+    ("農地與鄉村地區", r"農地|農業|鄉村|農村|農舍|休耕", r"農"),
+    ("環境、防災與永續發展", r"環境|防災|氣候|永續|生態|綠|韌性|碳|淹水|濕地|海岸|水資源|災害|地層下陷",
+     r"保育|保護"),
+    ("住宅與產業用地", r"住宅|產業園區|工業區|科學園區|產業用地|商業區|物流", r"產業"),
+]
+CIVIL_LAW_TOPICS = TOPICS["民法物權與不動產法規"][:4] + [
+    ("占有", r"占有", r"占有人"),
+    ("民法總則：行為能力、意思表示與時效", r"行為能力|意思表示|代理|消滅時效|法律行為|無效|撤銷|錯誤|詐欺|脅迫|"
+     r"權利能力|法人|條件|期限", r"總則"),
+    ("債編：契約與各種之債", r"契約|買賣|瑕疵|給付|債務不履行|侵權|不當得利|無因管理|租賃|保證|承攬|委任|贈與|"
+     r"使用借貸|損害賠償|解除|危險負擔|定金|違約金", r"債|價金"),
+    ("親屬與繼承", r"繼承|遺產|夫妻|婚姻|遺囑|剩餘財產|配偶|子女|特留分|拋棄繼承|監護", r"親屬"),
+]
+READER_TOPICS = {
+    "land-law": LAND_LAW_TOPICS,
+    "appraisal": APPRAISAL_TOPICS,
+    "investment": TOPICS["不動產投資分析"],
+    "economics": TOPICS["不動產經濟學"],
+    "land-use": LAND_USE_TOPICS,
+    "civil-law": CIVIL_LAW_TOPICS,
+}
 FILE_NAME = re.compile(r"^\[(\d+)\]\[([^\]]+)\]\[(.+)\]\.pdf$")
 MIN_TEXT = 50  # 少於此字數視為掃描檔，只提供原卷連結
 
@@ -61,6 +123,8 @@ CHOICE = re.compile(r"^(?:（\s*([A-DＡ-Ｄ#＃][A-D、,或]*|一律給分|送�
                     r"(\d{1,3})\s*[.．、]?\s*")
 OPTION = re.compile(r"[（(]([A-D])[）)]")
 SCORE = re.compile(r"[（(【]\s*(\d+)\s*分\s*[）)】]")
+# 考選部原卷申論題的最後一行常黏上測驗題的表頭（「代號：4601①本測驗試題為…」）
+HEADER_TAIL = re.compile(r"代號\s*[：:]\s*\d{3,}")
 CN_DIGITS = "一二三四五六七八九十"
 # 答案內的條列起點：(一) 1. (1) ① 等，遇到就換行，其餘 PDF 斷行直接接回
 LIST_START = re.compile(r"^([（(]?([一二三四五六七八九十]+|\d{1,2}|[a-zA-Z])[）).．、]|[①-⑳⑴-⒇])")
@@ -68,7 +132,7 @@ LIST_START = re.compile(r"^([（(]?([一二三四五六七八九十]+|\d{1,2}|[a
 
 def _clean_lines(text: str) -> Tuple[str, List[str]]:
     """去掉頁首頁尾與重複行（舊版 PDF 以重複輸出模擬粗體），回傳 (考卷科目標題, 內文行)。"""
-    text = text.translate(str.maketrans(SUB_MARKS))
+    text = normalize_cjk(text.translate(str.maketrans(SUB_MARKS)))
     # 「（每小題5分，共25分）」統一成「（25分）」，配分才不會漏算
     text = re.sub(r"[（(]\s*每小題[^）)]*?共\s*(\d+)\s*分\s*[）)]", r"（\1分）", text)
     text = re.sub(r"[\x00-\x08\x0b-\x1f\x81]", "", text)
@@ -171,8 +235,17 @@ def parse_paper(text: str) -> dict:
             (cur["answer"] if mode == "answer" else cur["stem"]).append(ln)
 
     out = []
+    essay_total = 0
     for q in questions:
-        stem = "".join(q["stem"]).strip()
+        stem = HEADER_TAIL.split("".join(q["stem"]))[0].strip()
+        if q["kind"] == "essay":
+            score = sum(int(s) for s in SCORE.findall(stem))
+            prev = next((o for o in reversed(out) if o["kind"] == "essay"), None)
+            # 配分已滿 100 後又出現沒配分的「五、六、」，是前一題詳解裡的條列，併回去
+            if not score and essay_total >= 100 and prev:
+                prev["answer"] += _join(q["stem"] + q["answer"], structured=True)
+                continue
+            essay_total += score
         item = {"no": q["no"], "kind": q["kind"], "answer": _join(q["answer"], structured=True)}
         if q["kind"] == "choice":
             parts = OPTION.split(stem)
@@ -381,12 +454,42 @@ def related_md(docs: List[dict], depth: int, heading: str = "延伸閱讀：老�
     return out
 
 
-def _question_md(q: dict, refs: List[str], related: List[dict], answer_doc: Optional[dict] = None) -> List[str]:
+def qid(q: dict) -> str:
+    """題目在考卷頁上的錨點：申論 e1、測驗 c12（同一卷兩種題號會重複）。"""
+    return f"{q['kind'][0]}{q['no']}"
+
+
+def _q_label(p: dict, q: dict) -> str:
+    return f"{p['year']} {_exam_short(p['exam'])}《{p['subject']}》第 {q['no']} 題"
+
+
+def _brief_md(p: dict, q: dict, up: str) -> List[str]:
+    """題目精簡版（標題連結＋題目＋選項＋測驗答案），用於相似題與跨年度比較；up 為到家族目錄的相對路徑。"""
+    out = [f"**[{_q_label(p, q)}](<{up}{p['id']}.md#{qid(q)}>)**", "", _md_escape(q["text"]), ""]
+    if q.get("options"):
+        out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
+    if q["kind"] == "choice":
+        out += [f"答案：**{q['key']}**", ""]
+    return out
+
+
+def _similar_md(similar: List[Tuple[dict, dict]]) -> List[str]:
+    if not similar:
+        return []
+    labels = "、".join(dict.fromkeys(f"{p['year']} {_exam_short(p['exam'])}" for p, _ in similar))
+    out = [f'??? abstract "歷屆相似題（{len(similar)}）：{labels}"', ""]
+    for p, q in similar:
+        out += _indent(_brief_md(p, q, ""))
+    return out
+
+
+def _question_md(q: dict, refs: List[str], related: List[dict], answer_doc: Optional[dict] = None,
+                 similar: Optional[List[Tuple[dict, dict]]] = None) -> List[str]:
     meta = [f'<span class="pb-count">第 {q["no"]} 題</span>']
     if q["score"]:
         meta.append(f'<span class="pb-count">{q["score"]} 分</span>')
     meta += [f'<span class="pb-count er-law">{r}</span>' for r in refs[:6]]
-    out = ['<div class="qb-item" markdown>', f'<p class="qb-meta">{"".join(meta)}</p>', "",
+    out = [f'<div class="qb-item" id="{qid(q)}" markdown>', f'<p class="qb-meta">{"".join(meta)}</p>', "",
            _md_escape(q["text"]), ""]
     if q.get("options"):
         out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
@@ -397,12 +500,14 @@ def _question_md(q: dict, refs: List[str], related: List[dict], answer_doc: Opti
         out += _indent([_md_escape(a) + "\n" for a in q["answer"]])
     if answer_doc:
         out += teacher_answer_md(answer_doc, 2)
+    out += _similar_md(similar or [])
     out += related_md([r for r in related if not answer_doc or r["file"] != answer_doc["file"]], 2)
     out += ["</div>", ""]
     return out
 
 
-def _paper_page(p: dict, index: ArticleIndex, name: str) -> Tuple[str, Dict[str, List[dict]]]:
+def _paper_page(p: dict, index: ArticleIndex, name: str,
+                similar: "SimilarIndex") -> Tuple[str, Dict[str, List[dict]]]:
     """產生單份考卷頁，並回傳本卷每題的法條（供總覽頁統計）。"""
     from urllib.parse import quote
 
@@ -413,7 +518,7 @@ def _paper_page(p: dict, index: ArticleIndex, name: str) -> Tuple[str, Dict[str,
         f"# {_paper_title(p)}",
         "",
         f'<p class="qb-meta"><a href="{REPO_BLOB + quote(p["pdf"])}" target="_blank" rel="noopener">原卷 PDF</a>'
-        f'<a href="../">回{name}題目總覽</a></p>',
+        f'<a href="../{TOPIC_DIR}/">跨年度比較</a><a href="../">回{name}題目總覽</a></p>',
         "",
         '!!! note "題目文字由 PDF 自動擷取"',
         "    表格與特殊符號可能跑版，請對照原卷 PDF。考點標籤由題目與詳解中引用的法條自動抽出；"
@@ -433,7 +538,7 @@ def _paper_page(p: dict, index: ArticleIndex, name: str) -> Tuple[str, Dict[str,
             k = 3 if q["kind"] == "essay" else 2
             related = index.related(q["text"] * 2 + "".join(q["answer"]) + "".join(q.get("options", [])), refs, k)
             answer_doc = index.teacher_answer(q["text"]) if q["kind"] == "essay" else None
-            lines += _question_md(q, refs, related, answer_doc)
+            lines += _question_md(q, refs, related, answer_doc, similar.of(p, q))
             for r in refs:
                 if "第" in r:
                     refs_by_q.setdefault(r, []).append({"paper": p, "no": q["no"], "kind": q["kind"]})
@@ -451,19 +556,21 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
     for _, slug, name in readers:
         papers = json.loads(data_file(slug, data_dir).read_text(encoding="utf-8"))
         if papers:
-            _write_family(docs_dir / READER_ROOT / slug, papers, index, name)
+            _write_family(docs_dir / READER_ROOT / slug, papers, index, name, slug)
             nav.append((name, f"{READER_ROOT}/{slug}/index.md"))
     return nav
 
 
-def _write_family(out: Path, papers: List[dict], index: ArticleIndex, name: str) -> None:
+def _write_family(out: Path, papers: List[dict], index: ArticleIndex, name: str, slug: str) -> None:
     from urllib.parse import quote
 
     out.mkdir(parents=True, exist_ok=True)
     hot: Dict[str, List[dict]] = defaultdict(list)
     readable = [p for p in papers if p["questions"]]
+    similar = SimilarIndex(readable)
+    _write_topic_pages(out / TOPIC_DIR, readable, similar, name, READER_TOPICS.get(slug, []))
     for p in readable:
-        page, refs = _paper_page(p, index, name)
+        page, refs = _paper_page(p, index, name, similar)
         (out / f"{p['id']}.md").write_text(page, encoding="utf-8")
         for r, qs in refs.items():
             hot[r] += qs
@@ -478,7 +585,9 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, name: str)
         "",
         f"把{name}家族（{'、'.join(s for s, _ in subjects.most_common(4))}{'…' if len(subjects) > 4 else ''}）"
         f"民國 {years[0]}–{years[-1]} 年 **{len(papers)}** 份考古題拆成網頁，共 **{n_q}** 題，"
-        f"其中 **{n_ans}** 份附補習班詳解（可收合，先寫再看）。每題另附考點法條與自動推薦的老師相關文章。",
+        f"其中 **{n_ans}** 份附補習班詳解（可收合，先寫再看）。每題另附考點法條、歷屆相似題與自動推薦的老師相關文章。",
+        "",
+        f"**[跨年度比較]({TOPIC_DIR}/index.md)**：依主題看各年度出了哪些題目，以及換句話說又考一次的重複考點。",
         "",
     ]
     if hot:
@@ -509,3 +618,166 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, name: str)
             title = f'[{p["subject"]}]({REPO_BLOB + quote(p["pdf"])}){{target="_blank"}}'
         lines.append(f"| {p['year']} | {p['exam']} | {title} | {desc} | {'✓' if p['has_answer'] else ''} |")
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+# ---- 跨年度比較 ----
+
+class SimilarIndex:
+    """同家族題目兩兩比對（字二元組 TF-IDF 餘弦），找出不同考卷中問同一件事的題目。"""
+
+    MIN_SIM = 0.4  # 實測 0.4 以上幾乎都是同一考點換句話說；0.35 以下開始混入只是同章節的題目
+    MAX_SHOWN = 8
+
+    def __init__(self, papers: List[dict]):
+        self.items = [(p, q) for p in papers for q in p["questions"]]
+        self.pos = {(p["id"], qid(q)): i for i, (p, q) in enumerate(self.items)}
+        tfs = [Counter(_sim_tokens(q)) for _, q in self.items]
+        df: Counter = Counter()
+        for tf in tfs:
+            df.update(tf.keys())
+        n = len(tfs)
+        vecs: List[Dict[str, float]] = []
+        postings: Dict[str, List[Tuple[int, float]]] = defaultdict(list)
+        for i, tf in enumerate(tfs):
+            vec = {t: (1 + math.log(c)) * (math.log((n + 1) / (df[t] + 1)) + 1) for t, c in tf.items()}
+            norm = math.sqrt(sum(v * v for v in vec.values())) or 1.0
+            vecs.append({t: v / norm for t, v in vec.items()})
+            for t, v in vecs[i].items():
+                postings[t].append((i, v))
+        self.neighbors: Dict[int, List[Tuple[float, int]]] = defaultdict(list)
+        for i, vec in enumerate(vecs):
+            scores: Dict[int, float] = defaultdict(float)
+            for t, v in vec.items():
+                for j, w in postings[t]:
+                    if j > i:
+                        scores[j] += v * w
+            for j, sc in scores.items():
+                (pi, qi), (pj, qj) = self.items[i], self.items[j]
+                if sc >= self.MIN_SIM and pi["id"] != pj["id"] and qi["kind"] == qj["kind"]:
+                    self.neighbors[i].append((sc, j))
+                    self.neighbors[j].append((sc, i))
+
+    def of(self, p: dict, q: dict) -> List[Tuple[dict, dict]]:
+        """某題的相似題，新年度在前。"""
+        i = self.pos[(p["id"], qid(q))]
+        best = sorted(self.neighbors.get(i, []), reverse=True)[:self.MAX_SHOWN]
+        return sorted((self.items[j] for _, j in best), key=lambda pq: (-pq[0]["year"], pq[0]["exam"]))
+
+    def clusters(self) -> List[List[Tuple[dict, dict]]]:
+        """重複出題題組：從最新的題目開始，把它與尚未分組的相似題收成一組；只留橫跨兩個以上年度的組。"""
+        order = sorted(range(len(self.items)), key=lambda i: -self.items[i][0]["year"])
+        used, groups = set(), []
+        for i in order:
+            if i in used or not self.neighbors.get(i):
+                continue
+            members = [i] + [j for _, j in sorted(self.neighbors[i], reverse=True) if j not in used]
+            used.update(members)
+            group = sorted((self.items[j] for j in members), key=lambda pq: (-pq[0]["year"], pq[0]["exam"]))
+            if len({p["year"] for p, _ in group}) >= 2:
+                groups.append(group)
+        return sorted(groups, key=lambda g: (-len({p["year"] for p, _ in g}), -g[0][0]["year"]))
+
+
+def _sim_tokens(q: dict) -> List[str]:
+    text = SCORE.sub("", q["text"] + "".join(q.get("options", [])))
+    s = re.sub(r"[^一-鿿A-Za-z0-9]", "", text)
+    return [s[i:i + 2] for i in range(len(s) - 1)]
+
+
+def _topic_of(q: dict, topics: List[tuple]) -> str:
+    return best_topic(topics, q["text"] + " " + " ".join(q.get("options", [])))
+
+
+def _kind_counts(qs: List[Tuple[dict, dict]]) -> str:
+    e = sum(q["kind"] == "essay" for _, q in qs)
+    c = len(qs) - e
+    return "、".join(s for s in (f"申論 {e}" if e else "", f"測驗 {c}" if c else "") if s)
+
+
+def _write_topic_pages(out: Path, papers: List[dict], similar: SimilarIndex, name: str,
+                       topics: List[tuple]) -> None:
+    """exam-reader/<slug>/topics/：總覽（主題出題趨勢＋重複出題題組）與每個主題一頁（依年度排列）。"""
+    out.mkdir(parents=True, exist_ok=True)
+    by_topic: Dict[str, List[Tuple[dict, dict]]] = defaultdict(list)
+    for p, q in similar.items:
+        by_topic[_topic_of(q, topics) if topics else "全部題目"].append((p, q))
+    names = [t[0] for t in topics if t[0] in by_topic] + [t for t in ("其他", "全部題目") if t in by_topic]
+    latest = max(p["year"] for p in papers)
+    recent = latest - 4
+
+    lines = [
+        HIDE_NAV,
+        f"# {name}：跨年度比較",
+        "",
+        f'<p class="qb-meta"><a href="../">回{name}題目總覽</a></p>',
+        "",
+        "同一個考點常隔幾年換個問法再考一次。這裡把歷屆題目依**主題**歸類、依**年度**排好，"
+        "方便看出題趨勢與題目演變；**重複出題**則列出不同年度文字高度相似的題組，可直接展開對照。",
+        "",
+        '!!! note "主題與相似題由程式自動判斷"',
+        "    主題依題目關鍵詞歸類、相似題依文字相似度比對，偶有歸錯；每題都連回原考卷，可看完整詳解。",
+        "",
+        "## 主題出題趨勢",
+        "",
+        f"| 主題 | 題數 | 近 5 年（{recent}–{latest}） | 最近出題 |",
+        "|---|---:|---:|---:|",
+    ]
+    for i, topic in enumerate(names, 1):
+        qs = by_topic[topic]
+        n_recent = sum(p["year"] >= recent for p, _ in qs)
+        lines.append(f"| [{topic}](t{i}.md) | {len(qs)}（{_kind_counts(qs)}） | {n_recent} | "
+                     f"{max(p['year'] for p, _ in qs)} |")
+        _write_topic_page(out / f"t{i}.md", topic, qs, name)
+
+    groups = similar.clusters()
+    lines += ["", f"## 重複出題（{len(groups)} 組）", ""]
+    if groups:
+        lines += ["不同年度文字高度相似的題目，出現年度越多排越前面。", ""]
+    else:
+        lines += ["本科多為申論題，各年題目文字差異大，沒有找到明顯重複的題組；請改用上方主題頁比較。", ""]
+    for g in groups:
+        years = "、".join(dict.fromkeys(str(p["year"]) for p, _ in g))
+        head = g[0][1]["text"][:36].replace('"', "'")
+        lines += [f'??? note "{len(g)} 題・{years} 年：{_md_escape(head)}…"', ""]
+        for p, q in g:
+            lines += _indent(_brief_md(p, q, "../"))
+    (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def _write_topic_page(path: Path, topic: str, qs: List[Tuple[dict, dict]], name: str) -> None:
+    by_year: Dict[int, List[Tuple[dict, dict]]] = defaultdict(list)
+    for p, q in qs:
+        by_year[p["year"]].append((p, q))
+    years = sorted(by_year, reverse=True)
+    lines = [
+        "---\nhide:\n  - navigation\n---\n",
+        f"# {topic}",
+        "",
+        f'<p class="qb-meta"><span class="pb-count">{name}</span><span class="pb-count">{len(qs)} 題</span>'
+        f'<span class="pb-count">{years[-1]}–{years[0]} 年</span><a href="../">回跨年度比較</a></p>',
+        "",
+        "出題年度：" + "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years),
+        "",
+    ]
+    for y in years:
+        lines += [f"## {y} 年 {{#y{y}}}", ""]
+        for p, q in sorted(by_year[y], key=lambda pq: (pq[1]["kind"] != "essay", pq[0]["exam"], pq[1]["no"])):
+            if q["kind"] == "essay":
+                kind = f"申論 {q['score']} 分" if q["score"] else "申論"
+            else:
+                kind = "測驗"
+            lines += [
+                '<div class="qb-item" markdown>',
+                f'<p class="qb-meta"><span class="pb-count">{_exam_short(p["exam"])}</span>'
+                f'<span class="pb-count">{kind}</span>'
+                f'<a href="../../{p["id"]}/#{qid(q)}">{"看詳解" if q["answer"] else "看原題"} →</a></p>',
+                "",
+                f"《{_md_escape(p['subject'])}》第 {q['no']} 題：{_md_escape(q['text'])}",
+                "",
+            ]
+            if q.get("options"):
+                lines += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
+            if q["kind"] == "choice":
+                lines += ['??? success "答案"', f"    **{q['key']}**", ""]
+            lines += ["</div>", ""]
+    path.write_text("\n".join(lines), encoding="utf-8")

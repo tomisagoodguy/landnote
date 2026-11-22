@@ -581,9 +581,7 @@ class SiteGenerator:
             import urllib.parse
             icons = ["📘", "📙", "📗", "📕", "📔", "📒", "📓", "📚", "📖", "📜"]
             for idx, (tag, count) in enumerate(sorted_tags):
-                safe_tag_slug = tag.lower().replace(' ', '-')
-                encoded_tag = urllib.parse.quote(safe_tag_slug)
-                blog_url = f"../blog/category/{encoded_tag}/"
+                blog_url = f"../blog/category/{self._category_slug(tag)}/"
                 safe_tag_review = tag.replace(' ', '_').replace('/', '_')
                 encoded_review = urllib.parse.quote(safe_tag_review)
                 review_url = f"../review/{encoded_review}/"
@@ -609,9 +607,14 @@ class SiteGenerator:
 
     def _generate_category_index(self, sorted_tags: List[Tuple[str, int]]):
         """產生 blog/category/ 分類總覽頁；Material blog 只產生各分類頁，總覽路徑原本是 404。"""
-        from urllib.parse import quote
-        chips = [f'<a class="ap-chip" href="{quote(tag.lower().replace(" ", "-"))}/">{tag}<i>{count}</i></a>'
-                 for tag, count in sorted_tags]
+        def chips(tags: List[Tuple[str, int]]) -> str:
+            return '<div class="ap-chips">' + "".join(
+                f'<a class="ap-chip" href="{self._category_slug(tag)}/">{tag}<i>{count}</i></a>'
+                for tag, count in tags) + '</div>'
+
+        # 一篇文章的分類多半是條號或長句，全部攤開會淹沒主要主題，收進折疊區
+        main = [t for t in sorted_tags if t[1] >= self.CATEGORY_MAIN_MIN]
+        minor = [t for t in sorted_tags if t[1] < self.CATEGORY_MAIN_MIN]
         lines = [
             HIDE_SIDEBARS,
             "# 文章分類總覽",
@@ -619,11 +622,28 @@ class SiteGenerator:
             f"高點不動產專欄共 {len(sorted_tags)} 個分類，依文章數排序；"
             "要線上閱讀整理好的講義或下載 PDF，請到[主題探索與講義下載](../../tags.md)。",
             "",
-            f'<div class="ap-chips">{"".join(chips) or "（目前尚無分類）"}</div>',
+            f"## 主要分類（{self.CATEGORY_MAIN_MIN} 篇以上，共 {len(main)} 個）",
+            "",
+            chips(main) if main else "（目前尚無分類）",
         ]
+        if minor:
+            lines.extend([
+                "",
+                f'<details class="ap-more"><summary>其他 {len(minor)} 個分類（少於 '
+                f'{self.CATEGORY_MAIN_MIN} 篇）</summary>{chips(minor)}</details>',
+            ])
         category_dir = self.docs_dir / "blog" / "category"
         category_dir.mkdir(parents=True, exist_ok=True)
         (category_dir / "index.md").write_text('\n'.join(lines), encoding='utf-8')
+
+    CATEGORY_MAIN_MIN = 3
+
+    @staticmethod
+    def _category_slug(tag: str) -> str:
+        """分類頁網址片段；必須與 Material blog 的 categories_slugify 預設值相同，否則連結 404。"""
+        from urllib.parse import quote
+        from pymdownx.slugs import slugify
+        return quote(slugify(case="lower")(tag, "-"))
 
     def _generate_mkdocs_config(self):
         """Create mkdocs.yml"""
@@ -928,6 +948,17 @@ class SiteGenerator:
                 f"[{fam}](#{anchor})" for fam, anchor, _ in families),
             "",
         ])
+        # 家族名 → 逐題讀網址；只收這次真的有寫出頁面的家族
+        written = {path for _, path in self.exam_reader_nav}
+        readers = {fam: f"{exam_reader.READER_ROOT}/{slug}/" for fam, slug, _ in exam_reader.available()
+                   if f"{exam_reader.READER_ROOT}/{slug}/index.md" in written}
+        if readers:
+            lines[lines.index("## 收錄考試"):lines.index("## 收錄考試")] = [
+                "**不想下載 PDF？** " + "・".join(
+                    f"[{fam}]({url}index.md)" for fam, url in readers.items())
+                + " 已拆成**逐題網頁**：題目、高點詳解、考點法條與相關文章同頁閱讀，可依年度比較歷屆題目。",
+                "",
+            ]
         order = list(self.EXAM_GROUPS)
         for fam, anchor, members in families:
             total_fam = sum(s[1] for s in members)
@@ -936,6 +967,8 @@ class SiteGenerator:
                 "",
                 f"{len(members)} 個科目名稱、共 {total_fam} 份。",
                 "",
+                *([f'<a href="../{readers[fam]}" class="md-button md-button--primary">'
+                   f'線上逐題讀（題目＋詳解）</a>', ""] if fam in readers else []),
                 '<div class="feature-grid">',
             ])
             for idx, (name, count, newest, groups) in enumerate(members):
@@ -1059,7 +1092,6 @@ class SiteGenerator:
 
     def _generate_appraiser_page(self, subjects: list, tag_counts: Dict[str, int]):
         """估價師專區：每科一張卡，集中估價師歷屆、主題題庫、同家族延伸練習與相關文章。"""
-        from urllib.parse import quote
 
         bank_slugs = {subject: slug for subject, slug, _ in exam_bank.SUBJECT_PAGES}
         bank_ready = {p for _, p in self.exam_bank_nav}
@@ -1138,7 +1170,7 @@ class SiteGenerator:
                     chips.append(f'<a class="ap-chip ap-chip--more" href="../exams/#{fam_link}">'
                                  f'另 {len(more)} 科 {sum(s[1] for s in more)} 份 →</a>')
             tags = [t for t in self.APPRAISER_TAGS.get(key, []) if tag_counts.get(t)]
-            tag_chips = [f'<a class="ap-chip" href="../blog/category/{quote(t.lower().replace(" ", "-"))}/">'
+            tag_chips = [f'<a class="ap-chip" href="../blog/category/{self._category_slug(t)}/">'
                          f'{t}<i>{tag_counts[t]}</i></a>' for t in tags]
 
             meta = [f"估價師 {n_own} 份", f"最新 {latest} 年"]
