@@ -48,6 +48,13 @@ jobs:
         python landnotev3/src/landnote/main.py articles --update --auto-group
         echo "Update completed."
 
+    - name: Crawl Jasper articles
+      # Jasper 網站異常時不影響高點文章更新與網站部署
+      continue-on-error: true
+      env:
+        PYTHONPATH: ${{ github.workspace }}/landnotev3/src
+      run: python landnotev3/src/landnote/main.py jasper --update
+
     - name: Generate MkDocs site structure
       env:
         PYTHONPATH: ${{ github.workspace }}/landnotev3/src
