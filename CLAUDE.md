@@ -128,15 +128,12 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 
 | ❌ 錯誤 | ✅ 正確 |
 |--------|--------|
-| 直接改 `site_src/mkdocs.yml`、`site_src/docs/**` | 改 `site_generator.py` 或 `templates/static/`；docs 下次產生就被覆蓋 |
-| 改 `site_src/docs/javascripts/extra.js` | 改 `templates/static/js/study_tools.js`（兩者內容相同，後者才是原始檔） |
-| 本機跑完 `main.py articles`／`group` 後 `git add .` | 只 commit 原始碼；`data/` 一次產生會動到上千個檔案 |
+| 直接改 `site_src/**`（`mkdocs.yml`、`docs/javascripts/extra.js`…） | 改 `site_generator.py` 或 `templates/static/`（如 `js/study_tools.js`）；輸出下次產生就被覆蓋 |
 | 想把 `site_src/` 加回版控 | 它由 `site_generator` 每次整個刪除重建，CI 部署不讀 repo 裡的版本 |
 | README 加新的 `<!-- stats:xxx -->` 標記卻沒改腳本 | `update_readme_stats.py` 遇到未知標記直接報錯，CI 會失敗；要在 `collect_stats()` 一起加 |
 | 新增 Python 依賴只改 `pyproject.toml` | `update_articles.yml` 用 **pip 寫死套件清單**，要一起加 |
 | 用 `tomllib`、`except*`、`typing.Self` 等 3.11+ 功能 | CI 是 Python 3.10（`match`、`X \| Y` 型別可用） |
 | 在 `landnotev3/` 根目錄留除錯腳本 | 一次性腳本放暫存目錄，正式工具放 `scripts/` |
-| 腳本 `print` 中文或 emoji 直接跑 | Windows 主控台是 cp950，開頭加 `sys.stdout.reconfigure(encoding="utf-8")` |
 
 核心原則：
 1. **產生器是唯一事實來源**：任何會出現在網站上的東西，都從 `src/landnote` 改，不從輸出改。
