@@ -133,5 +133,5 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 ## 網站行為備忘
 
 - blog 每頁 10 篇（`pagination_per_page`），前端用無限捲動接下一頁；分頁列保留給無 JS 與搜尋引擎。
-- 文章開頭的 `## 內文` 由產生器移除；約 150 字後在段落邊界自動插入 `<!-- more -->` 作為列表摘要。
+- 文章開頭的 `## 內文` 由產生器移除；**不插入 `<!-- more -->`**，blog 列表直接顯示全文、沒有「繼續閱讀」（使用者要求）。法規時效提醒放在內文開頭。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。
