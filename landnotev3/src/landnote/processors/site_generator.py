@@ -9,6 +9,9 @@ import yaml
 from landnote.config import ARTICLES_DIR, DATA_DIR, LOGS_DIR
 from landnote.utils.logger import Logger
 
+# 卡片頁不需要左側導覽與右側目錄，隱藏後內容區才夠寬排三欄
+HIDE_SIDEBARS = "---\nhide:\n  - navigation\n  - toc\n---\n"
+
 class SiteGenerator:
     def __init__(self, source_dir: Path = None):
         self.source_dir = source_dir if source_dir else ARTICLES_DIR
@@ -69,7 +72,9 @@ class SiteGenerator:
         self.site_src_dir.mkdir(parents=True, exist_ok=True)
         self.docs_dir.mkdir(parents=True, exist_ok=True)
         self.posts_dir.mkdir(parents=True, exist_ok=True)
-        
+        # 不先建立的話 Material blog 外掛會自動產生英文標題「# Blog」
+        (self.docs_dir / "blog" / "index.md").write_text("# 最新文章\n", encoding="utf-8")
+
         # Create stylesheets directory
         styles_dir = self.docs_dir / "stylesheets"
         styles_dir.mkdir(exist_ok=True)
@@ -348,27 +353,28 @@ class SiteGenerator:
         sorted_tags = sorted(tag_counts.items(), key=lambda x: x[1], reverse=True)
         
         content = [
+            HIDE_SIDEBARS,
             "# 主題探索與講義下載",
             "",
             "本區彙整了所有的核心考點主題。您可以瀏覽各類別的文章、線上閱讀講義，或直接下載 PDF 離線複習。",
             "",
-            "## 🎯 綜合大字典",
-            '<div class="feature-grid" style="margin-top: 1rem; margin-bottom: 3rem;">',
-            '    <div class="feature-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(168, 85, 247, 0.4); display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">',
-            '        <div>',
-            '            <span class="feature-icon">👑</span>',
-            '            <h3 style="margin-bottom: 0.5rem;">不動產全科大補帖</h3>',
-            '            <p style="margin-bottom: 1.5rem;">包含全站所有文章，無死角終極精華版。</p>',
-            '        </div>',
-            '        <div style="display: flex; gap: 0.5rem;">',
-            '            <a href="../review/all/" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>',
-            '            <a href="../assets/pdfs/all.pdf" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="不動產全科大補帖.pdf">📥 下載 PDF</a>',
+            "## 綜合大字典",
+            '<div class="feature-grid">',
+            '    <div class="feature-card c3 is-wide">',
+            '        <div class="feature-card__head"><span class="feature-icon">👑</span>'
+            f'<span class="pb-count">共 {len(list(self.posts_dir.glob("*.md")))} 篇</span></div>',
+            '        <h3>不動產全科大補帖</h3>',
+            '        <p>包含全站所有文章，無死角終極精華版。</p>',
+            '        <div class="feature-actions">',
+            '            <a href="../review/all/" class="md-button">📖 線上閱讀</a>',
+            '            <a href="../assets/pdfs/all.pdf" class="md-button md-button--primary" '
+            'download="不動產全科大補帖.pdf">📥 下載 PDF</a>',
             '        </div>',
             '    </div>',
             '</div>',
             "",
-            "## 📚 分類主題 (依收錄文章數排序)",
-            '<div class="feature-grid" style="margin-top: 1rem;">'
+            "## 分類主題（依收錄文章數排序）",
+            '<div class="feature-grid">'
         ]
 
         if not sorted_tags:
@@ -386,20 +392,18 @@ class SiteGenerator:
                 pdf_url = f"../assets/pdfs/{encoded_review}.pdf"
                 icon = icons[idx % len(icons)]
 
-                content.append('    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">')
-                content.append('        <div>')
-                content.append('            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">')
-                content.append(f'                <span class="feature-icon" style="font-size: 2rem; margin: 0;">{icon}</span>')
-                content.append(f'                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 {count} 篇</span>')
-                content.append('            </div>')
-                content.append(f'            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">{tag}</h3>')
-                content.append('        </div>')
-                content.append('        <div style="display: flex; gap: 0.5rem; margin-top: auto;">')
-                content.append(f'            <a href="{blog_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>')
-                content.append(f'            <a href="{review_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>')
-                content.append(f'            <a href="{pdf_url}" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="{tag}.pdf">📥 PDF</a>')
-                content.append('        </div>')
-                content.append('    </div>')
+                content.extend([
+                    f'    <div class="feature-card c{idx % 4}">',
+                    f'        <div class="feature-card__head"><span class="feature-icon">{icon}</span>'
+                    f'<span class="pb-count">共 {count} 篇</span></div>',
+                    f'        <h3>{tag}</h3>',
+                    '        <div class="feature-actions">',
+                    f'            <a href="{blog_url}" class="md-button">列表</a>',
+                    f'            <a href="{review_url}" class="md-button">閱讀</a>',
+                    f'            <a href="{pdf_url}" class="md-button md-button--primary" download="{tag}.pdf">PDF</a>',
+                    '        </div>',
+                    '    </div>',
+                ])
                 
         content.append('</div>')
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')
@@ -414,10 +418,8 @@ class SiteGenerator:
             'theme': {
                 'name': 'material',
                 'language': 'zh-TW',
-                'font': {
-                    'text': 'Outfit',
-                    'code': 'Fira Code'
-                },
+                # 字型由 extra.css 載入 Huninn（Material 內建 Google Fonts 不含）
+                'font': False,
                 'features': [
                     'navigation.tabs',
                     'navigation.sections',
@@ -432,23 +434,26 @@ class SiteGenerator:
                     'content.code.copy',
                     'header.autohide'
                 ],
+                # 預設跟隨系統；繪本日間在前，夜晚模式為深靛底
                 'palette': [
                     {
-                        'scheme': 'slate', 
-                        'primary': 'custom', 
-                        'accent': 'indigo',
+                        'media': '(prefers-color-scheme: light)',
+                        'scheme': 'default',
+                        'primary': 'custom',
+                        'accent': 'custom',
                         'toggle': {
-                            'icon': 'material/brightness-4', 
-                            'name': '切換至淺色模式'
+                            'icon': 'material/weather-night',
+                            'name': '切換至夜晚模式'
                         }
                     },
                     {
-                        'scheme': 'default', 
-                        'primary': 'custom', 
-                        'accent': 'indigo', 
+                        'media': '(prefers-color-scheme: dark)',
+                        'scheme': 'slate',
+                        'primary': 'custom',
+                        'accent': 'custom',
                         'toggle': {
-                            'icon': 'material/brightness-7', 
-                            'name': '切換至深色模式'
+                            'icon': 'material/weather-sunny',
+                            'name': '切換至日間模式'
                         }
                     }
                 ]
@@ -500,30 +505,92 @@ class SiteGenerator:
         with open(self.site_src_dir / 'mkdocs.yml', 'w', encoding='utf-8') as f:
             yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
+    def _exam_subjects(self) -> list:
+        """掃描地政考古題資料夾，回傳 [(科目, 份數, 最新民國年)]，依份數排序。"""
+        exam_dir = self.base_dir / "地政考古題"
+        if not exam_dir.exists():
+            return []
+        subjects = []
+        for folder in exam_dir.iterdir():
+            if not folder.is_dir() or folder.name == "合併後PDF檔案":
+                continue
+            years = [int(m.group(1)) for p in folder.glob("*.pdf") if (m := re.match(r"\[(\d+)\]", p.name))]
+            if years:
+                subjects.append((folder.name, len(years), max(years)))
+        return sorted(subjects, key=lambda s: (-s[1], -s[2], s[0]))
+
     def _generate_homepage(self):
-        """Create a minimalist landing page that redirects to blog if needed, 
-        or shows a clean 3-button launcher."""
-        content = """
+        """首頁：繪本風 hero + 收錄統計 + 三張入口卡；並產生考古題頁。"""
+        article_count = len(list(self.posts_dir.glob("*.md"))) if self.posts_dir.exists() else 0
+        topic_count = len(self._collect_all_tags())
+        exam_subjects = self._exam_subjects()
+        exam_count = sum(s[1] for s in exam_subjects)
+        latest_year = max((s[2] for s in exam_subjects), default=0)
+
+        content = f"""{HIDE_SIDEBARS}
+# Landnote 數位圖書館
+
+<div class="pb-hero">
+<h1>Landnote 數位圖書館</h1>
+<p>地政、不動產與土地法規的備考筆記，整理成能讀、能印、能帶著走的講義。</p>
+<p class="pb-stats">
+<span class="pb-stat"><b>{article_count}</b> 篇文章</span>
+<span class="pb-stat"><b>{topic_count}</b> 個主題</span>
+<span class="pb-stat"><b>{exam_count}</b> 份考古題・更新至 {latest_year} 年</span>
+</p>
+</div>
+
 <div class="feature-grid">
-    <a href="blog/" class="feature-card">
+    <a href="blog/" class="feature-card c0">
         <span class="feature-icon">📰</span>
         <h3>最新文章</h3>
         <p>掌握不動產界最新動態、精闢法條解讀與市場脈動分析。</p>
     </a>
-    <a href="tags/" class="feature-card">
+    <a href="tags/" class="feature-card c1">
         <span class="feature-icon">🏷️</span>
         <h3>主題探索與講義下載</h3>
-        <p>將所有領域整理成分類卡片，支援一鍵打包成 <strong>考前衝刺 PDF 講義</strong>，專為備考而生。</p>
+        <p>依主題整理成分類卡片，可一鍵下載<strong>考前衝刺 PDF 講義</strong>。</p>
     </a>
-    <a href="exams/" class="feature-card">
+    <a href="exams/" class="feature-card c2">
         <span class="feature-icon">📚</span>
-        <h3>考古題下載</h3>
-        <p>完整收錄歷屆精華，助您在專業考試中無往不利。</p>
+        <h3>地政考古題</h3>
+        <p>高普考、地方特考歷屆試題，依科目合併成一本，方便整科刷題。</p>
     </a>
 </div>
 """
         (self.docs_dir / 'index.md').write_text(content, encoding='utf-8')
-        
-        # Create a placeholder exams page
-        repo_data_url = "https://github.com/tomisagoodguy/landnote/tree/main/landnotev3/data"
-        (self.docs_dir / 'exams.md').write_text(f"# 考古題下載專區\n\n請至 GitHub Repository 的 [data 資料夾]({repo_data_url}) 下載 PDF 檔案。", encoding='utf-8')
+        self._generate_exams_page(exam_subjects, exam_count, latest_year)
+
+    def _generate_exams_page(self, subjects: list, total: int, latest_year: int):
+        """考古題頁：每科一張卡，可下載整科合併 PDF 或到 GitHub 看單份。"""
+        from urllib.parse import quote
+        repo = "https://github.com/tomisagoodguy/landnote"
+        root = "landnotev3/地政考古題"
+        lines = [
+            HIDE_SIDEBARS,
+            "# 地政考古題",
+            "",
+            f"收錄 **{total}** 份地政相關考古題（更新至民國 {latest_year} 年），按科目分類。"
+            "「整科合併」把該科歷屆試題合成一本 PDF，最適合考前整科刷題；"
+            "「單份瀏覽」可在 GitHub 逐年下載。每月自動更新。",
+            "",
+            '<div class="feature-grid">',
+        ]
+        for idx, (name, count, newest) in enumerate(subjects):
+            merged = f"{repo}/raw/main/" + quote(f"{root}/合併後PDF檔案/{name}_合併.pdf")
+            folder = f"{repo}/tree/main/" + quote(f"{root}/{name}")
+            lines.extend([
+                f'    <div class="feature-card c{idx % 4}">',
+                f'        <div class="feature-card__head"><span class="pb-count">{count} 份</span>'
+                f'<span class="pb-count">最新 {newest} 年</span></div>',
+                f'        <h3>{name}</h3>',
+                '        <div class="feature-actions">',
+                f'            <a href="{merged}" class="md-button md-button--primary">整科合併 PDF</a>',
+                f'            <a href="{folder}" class="md-button" target="_blank" rel="noopener">單份瀏覽</a>',
+                '        </div>',
+                '    </div>',
+            ])
+        if not subjects:
+            lines.append("*(目前尚無考古題資料)*")
+        lines.append('</div>')
+        (self.docs_dir / 'exams.md').write_text('\n'.join(lines), encoding='utf-8')
