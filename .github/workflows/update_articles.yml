@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# 同時只跑一個：避免兩次執行同時自動 commit 與推 gh-pages 而推送衝突；新的排隊，不中斷進行中的
+concurrency:
+  group: landnote-articles-update
+  cancel-in-progress: false
+
 jobs:
   update-articles:
     runs-on: ubuntu-latest
