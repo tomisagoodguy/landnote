@@ -161,11 +161,31 @@ class PdfMergerProcessor:
                     self.logger.error(f"處理 {folder_name} 時發生錯誤: {str(e)}")
 
 
+def changed_folders(base_folder="."):
+    """回傳含有 git 尚未追蹤（新下載）PDF 的科目資料夾"""
+    import subprocess
+    out = subprocess.run(
+        ["git", "ls-files", "-z", "--others", "--exclude-standard", "."],
+        cwd=base_folder, capture_output=True, check=True,
+    ).stdout.decode("utf-8")
+    return sorted({
+        p.split("/")[0] for p in out.split("\0")
+        if p.endswith(".pdf") and "/" in p and not p.startswith("合併後PDF檔案/")
+    })
+
+
 def main():
-    """主函數，執行PDF合併"""
+    """主函數，執行PDF合併；加 --changed 只重產有新檔案的科目"""
     processor = PdfMergerProcessor()
     processor.logger.info("=== 開始執行PDF合併程式 ===")
-    processor.process_directory()
+    if "--changed" in sys.argv:
+        folders = changed_folders(processor.base_folder)
+        processor.logger.info(f"有新檔案的科目: {folders or '無'}")
+        for name in folders:
+            processor.merge_pdfs(
+                os.path.join(processor.base_folder, name), f"{name}_合併.pdf", processor.output_folder)
+    else:
+        processor.process_directory()
     processor.logger.info("=== PDF合併程式執行完成 ===")
 
 

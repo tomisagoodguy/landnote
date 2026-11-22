@@ -1,0 +1,54 @@
+name: Land Exam Auto Update
+
+on:
+  schedule:
+    # 每月 1 日 UTC 13:00（台北時間 21:00）執行
+    - cron: '0 13 1 * *'
+  workflow_dispatch: # 允許手動觸發
+
+permissions:
+  contents: write
+
+concurrency:
+  group: land-exam-update
+  cancel-in-progress: false
+
+jobs:
+  update-exams:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up uv
+      uses: astral-sh/setup-uv@v5
+      with:
+        python-version: '3.10'
+
+    - name: Download new land exams
+      working-directory: landnotev3
+      env:
+        PYTHONIOENCODING: utf-8
+      run: uv run python -m landnote.main exams --type land --update
+
+    - name: Re-merge PDFs for updated subjects
+      working-directory: landnotev3/地政考古題
+      env:
+        PYTHONIOENCODING: utf-8
+      run: uv run --with PyPDF2 --with pymupdf python pdf_merger.py --changed
+
+    - name: Commit and push new exams
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add landnotev3/地政考古題
+        # 只有 README 時間戳 / log 變動、沒有新 PDF 時不 commit
+        if [ -z "$(git diff --staged --name-only -- '*.pdf')" ]; then
+          echo "No new exams"
+        else
+          NEW=$(git -c core.quotepath=off diff --staged --name-only --diff-filter=A -- '*.pdf' | grep -vc '合併後PDF檔案' || true)
+          git commit -m "docs: auto-update land exams (+${NEW}) [skip ci]"
+          git pull --rebase origin main
+          git push
+        fi
