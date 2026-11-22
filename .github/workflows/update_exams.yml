@@ -1,4 +1,4 @@
-name: Land Exam Auto Update
+name: Exam Auto Update
 
 on:
   schedule:
@@ -38,6 +38,18 @@ jobs:
         PYTHONIOENCODING: utf-8
       run: uv run --with PyPDF2 --with pymupdf python pdf_merger.py --changed
 
+    - name: Download new law exams
+      working-directory: landnotev3
+      env:
+        PYTHONIOENCODING: utf-8
+      run: uv run python -m landnote.main exams --type law --update
+
+    - name: Re-merge law PDFs for updated subjects
+      working-directory: landnotev3/高點法律考古題
+      env:
+        PYTHONIOENCODING: utf-8
+      run: uv run --with PyPDF2 --with pymupdf python pdf_merger.py --changed
+
     - name: Rebuild appraiser exam question bank
       working-directory: landnotev3
       env:
@@ -51,13 +63,15 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add README.md landnotev3/地政考古題 landnotev3/data/exam_bank
+        git add README.md landnotev3/地政考古題 landnotev3/高點法律考古題 landnotev3/data/exam_bank
         # 只有 README 時間戳 / log 變動、沒有新 PDF 時不 commit
         if [ -z "$(git diff --staged --name-only -- '*.pdf')" ]; then
           echo "No new exams"
         else
-          NEW=$(git -c core.quotepath=off diff --staged --name-only --diff-filter=A -- '*.pdf' | grep -vc '合併後PDF檔案' || true)
-          git commit -m "docs: auto-update land exams (+${NEW}) [skip ci]"
+          ADDED=$(git -c core.quotepath=off diff --staged --name-only --diff-filter=A -- '*.pdf' | grep -v '合併後PDF檔案' || true)
+          LAND=$(printf '%s\n' "$ADDED" | grep -c '^landnotev3/地政考古題/' || true)
+          LAW=$(printf '%s\n' "$ADDED" | grep -c '^landnotev3/高點法律考古題/' || true)
+          git commit -m "docs: auto-update exams (land +${LAND}, law +${LAW}) [skip ci]"
           git pull --rebase origin main
           git push
         fi

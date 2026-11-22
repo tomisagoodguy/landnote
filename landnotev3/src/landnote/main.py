@@ -72,7 +72,7 @@ def main():
             
         elif args.type == "law":
             crawler = LawExamCrawler(debug=True)
-            crawler.run(max_pages=args.max_pages)
+            crawler.run(max_pages=args.max_pages, only_update=args.update)
 
     elif args.command == "group":
         grouper = ArticleGrouper(similarity_threshold=args.threshold)

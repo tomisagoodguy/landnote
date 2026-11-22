@@ -5,6 +5,7 @@ README 中以標記包住要自動更新的數字，標記外的文字不動：
     <!-- stats:articles -->994 篇<!-- /stats -->
     <!-- stats:land_exams -->832 份<!-- /stats -->
     <!-- stats:land_subjects -->74 科<!-- /stats -->
+    <!-- stats:law_exams -->3,006 份<!-- /stats -->
     <!-- stats:subject=不動產估價理論 -->16 份<!-- /stats -->
 
 只用標準函式庫，CI 兩個 workflow 都能直接執行。
@@ -23,6 +24,7 @@ LANDNOTE_DIR = Path(__file__).resolve().parent.parent
 README_PATH = LANDNOTE_DIR.parent / "README.md"
 ARTICLES_DIR = LANDNOTE_DIR / "data" / "real_estate_articles" / "articles"
 LAND_EXAM_DIR = LANDNOTE_DIR / "地政考古題"
+LAW_EXAM_DIR = LANDNOTE_DIR / "高點法律考古題"
 # 地政考古題底下不是科目的資料夾
 NON_SUBJECT_DIRS = {"合併後PDF檔案", "__pycache__"}
 
@@ -48,6 +50,7 @@ def collect_stats() -> dict[str, str]:
         "articles": f"{sum(1 for _ in ARTICLES_DIR.glob('*.md')):,} 篇",
         "land_exams": f"{sum(subjects.values()):,} 份",
         "land_subjects": f"{len(subjects)} 科",
+        "law_exams": f"{sum(1 for p in LAW_EXAM_DIR.rglob('*.pdf') if '合併後PDF檔案' not in p.parts):,} 份",
     }
     for name, n in subjects.items():
         stats[f"subject={name}"] = f"{n} 份"

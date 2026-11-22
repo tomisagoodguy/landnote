@@ -32,7 +32,7 @@ landnote/
 ├── README.md                         # 對外說明（收錄數量、下載連結）
 ├── .github/workflows/
 │   ├── update_articles.yml           # 週二、四：爬文章 → 分組 → 產網站 → 部署
-│   └── update_exams.yml              # 每月 1 日：下載考古題 → 合併 PDF
+│   └── update_exams.yml              # 每月 1 日：下載地政＋法律考古題 → 合併 PDF
 └── landnotev3/
     ├── pyproject.toml                # uv 專案設定、ruff 規則
     ├── src/landnote/
@@ -55,7 +55,7 @@ landnote/
     │   ├── docs/                     # blog/posts、tags.md、review/、index.md、javascripts/、stylesheets/
     │   └── site/                     # mkdocs build 輸出（.gitignore）
     ├── 地政考古題/                    # 依科目分資料夾的 PDF、pdf_merger.py、合併後PDF檔案/
-    └── 高點法律考古題/                # 2025-04 後停止更新
+    └── 高點法律考古題/                # 依考試類組/科目分資料夾，每月隨 update_exams.yml 更新
 ```
 
 架構模式：**單向資料管線**（crawlers → data/ → processors → site_src/ → gh-pages），每一段只讀上一段的輸出。

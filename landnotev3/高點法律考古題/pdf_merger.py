@@ -309,6 +309,19 @@ class PdfProcessor:
                     self.logger.error(f"處理 {item}/{subject} 時發生錯誤: {str(e)}")
 
 
+def changed_subjects(root_path, output_folder):
+    """回傳含有 git 尚未追蹤（新下載）PDF 的 (考試類組, 科目)"""
+    import subprocess
+    out = subprocess.run(
+        ["git", "ls-files", "-z", "--others", "--exclude-standard", "."],
+        cwd=root_path, capture_output=True, check=True,
+    ).stdout.decode("utf-8")
+    return sorted({
+        tuple(p.split("/")[:2]) for p in out.split("\0")
+        if p.endswith(".pdf") and p.count("/") == 2 and not p.startswith(f"{output_folder}/")
+    })
+
+
 def main():
     # 解析命令列參數
     parser = argparse.ArgumentParser(description='PDF合併工具 - 專為高點法律考古題設計')
@@ -322,12 +335,29 @@ def main():
     parser.add_argument('--output-folder', type=str, default='合併後PDF檔案',
                         help='指定輸出資料夾名稱')
 
+    parser.add_argument('--changed', action='store_true',
+                        help='只重產含 git 尚未追蹤（新下載）PDF 的科目')
+
     args = parser.parse_args()
 
     # 建立處理器實例並執行
     processor = PdfProcessor(output_folder=args.output_folder)
     processor.logger.info("=== 開始執行PDF合併程式 ===")
-    processor.process_directory(args.path, args.subjects, args.exam_types)
+    if args.changed:
+        pairs = changed_subjects(args.path, args.output_folder)
+        processor.logger.info(f"有新檔案的科目: {pairs or '無'}")
+        for exam_type, subject in pairs:
+            output_dir = os.path.join(args.path, args.output_folder, exam_type)
+            # 年度範圍寫在檔名裡，先移除舊合併檔，避免新舊兩份並存
+            old = re.compile(rf"^{re.escape(exam_type)}_{re.escape(subject)}_\d+至\d+年_合併\.pdf$")
+            if os.path.isdir(output_dir):
+                for name in os.listdir(output_dir):
+                    if old.match(name):
+                        os.remove(os.path.join(output_dir, name))
+            processor.merge_pdfs(os.path.join(args.path, exam_type, subject),
+                                 f"{exam_type}_{subject}_合併.pdf", output_dir)
+    else:
+        processor.process_directory(args.path, args.subjects, args.exam_types)
     processor.logger.info("=== PDF合併程式執行完成 ===")
 
 
