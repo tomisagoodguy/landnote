@@ -7,39 +7,10 @@ from collections import defaultdict
 from urllib.parse import quote
 
 from fuzzywuzzy import fuzz
-from reportlab.lib.pagesizes import A4
-from reportlab.platypus import Paragraph
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.lib.units import cm
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
-from reportlab.platypus.frames import Frame
-from reportlab.pdfgen import canvas
-from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 
 from landnote.config import ARTICLES_DIR, OUTPUT_DIR, LOGS_DIR
 from landnote.utils.logger import Logger
 
-# Custom Canvas for Page Numbers
-class NumberedCanvas(canvas.Canvas):
-    def __init__(self, *args, **kwargs):
-        canvas.Canvas.__init__(self, *args, **kwargs)
-        self._saved_page_states = []
-
-    def showPage(self):
-        self._saved_page_states.append(dict(self.__dict__))
-        self._startPage()
-
-    def save(self):
-        """Add page numbers to each page"""
-        for state in self._saved_page_states:
-            self.__dict__.update(state)
-            self.setFont("Helvetica", 9)
-            page_width = self._pagesize[0]
-            self.drawCentredString(page_width / 2, 2*cm, f"{self._pageNumber}")
-            canvas.Canvas.showPage(self)
-        canvas.Canvas.save(self)
 
 class ArticleGrouper:
     def __init__(self, articles_dir: Path = None, output_dir: Path = None, similarity_threshold: int = 80):
@@ -53,51 +24,18 @@ class ArticleGrouper:
         # Output Directories
         self.merged_md_dir = self.output_dir / "merged/md"
         self.keyword_md_dir = self.output_dir / "keywords/md"
-        self.pdf_dir = self.output_dir / "pdf"
         self.image_dir = self.articles_dir / "images"
 
         self.articles = []
-        self.chinese_font_name = 'Helvetica'
         self.keyword_groups = defaultdict(list)
         self.keyword_counts = defaultdict(int)
 
-        self._setup_chinese_font()
-
-    def _setup_chinese_font(self):
-        possible_font_paths = [
-            "C:/Windows/Fonts/msjh.ttf",
-            "C:/Windows/Fonts/msyh.ttf",
-            "C:/Windows/Fonts/SimSun.ttc",
-            "C:/Windows/Fonts/SimHei.ttf",
-            "/System/Library/Fonts/PingFang.ttc",
-            "/usr/share/fonts/truetype/arphic/uming.ttc",
-            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-            "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-        ]
-        
-        for font_path in possible_font_paths:
-            if os.path.exists(font_path):
-                try:
-                    font_name = os.path.basename(font_path).split('.')[0]
-                    pdfmetrics.registerFont(TTFont(font_name, font_path))
-                    self.chinese_font_name = font_name
-                    self.logger.info(f"Loaded Chinese font: {font_path}")
-                    return
-                except Exception as e:
-                    self.logger.warning(f"Failed to load font {font_path}: {e}")
-
-        try:
-            pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
-            self.chinese_font_name = 'STSong-Light'
-            self.logger.info("Using STSong-Light font")
-        except Exception as e:
-            self.logger.warning(f"Failed to load CID font: {e}. Using Helvetica.")
 
     def run(self):
         self.logger.info("Starting Article Grouper...")
         
         # Create directories
-        for d in [self.merged_md_dir, self.keyword_md_dir, self.pdf_dir]:
+        for d in [self.merged_md_dir, self.keyword_md_dir]:
             d.mkdir(parents=True, exist_ok=True)
         # 合併檔名含每次重算的組號（group_{i}_...），不清掉舊檔會累積大量孤兒檔與失效連結
         for d in [self.merged_md_dir, self.keyword_md_dir]:
@@ -113,11 +51,6 @@ class ArticleGrouper:
         groups = self.group_articles()
         self.merge_group_articles(groups)
         self.generate_index(groups)
-        
-        try:
-            self.generate_pdf(groups)
-        except Exception as e:
-            self.logger.error(f"PDF generation failed: {e}")
 
         self.logger.info("Grouping completed.")
 
@@ -390,46 +323,6 @@ class ArticleGrouper:
         
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(content))
-
-    def generate_pdf(self, groups):
-        # Implementation of PDF generation (simplified or full)
-        # For brevity, I'll include the skeleton logic, as it requires ReportLab detailed setup
-        # Refer to original script for full implementation details if needed.
-        # Here we just re-implement the structure.
-        self._generate_pdf_by_year(groups)
-
-    def _generate_pdf_by_year(self, groups):
-        # Group by year
-        year_groups = defaultdict(list)
-        for g in groups:
-            if not g: continue
-            y = str(g[0]['date_obj'].year)
-            year_groups[y].append(g)
-            
-        for year, y_groups in year_groups.items():
-            pdf_path = self.pdf_dir / f"articles_{year}.pdf"
-            self._create_pdf(pdf_path, year, y_groups)
-
-    def _create_pdf(self, path, title, groups):
-        try:
-            doc = BaseDocTemplate(str(path), pagesize=A4)
-            frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height-2*cm, id='normal')
-            template = PageTemplate(id='normal', frames=[frame])
-            doc.addPageTemplates([template])
-            
-            styles = getSampleStyleSheet()
-            # Add custom styles...
-            
-            story = []
-            story.append(Paragraph(f"{title} Articles", styles['Heading1']))
-            # Add content...
-            
-            # Simplified for now to avoid huge file size issues in chat
-            # Proper implementation should follow previous file structure
-            
-            doc.build(story)
-        except Exception as e:
-            self.logger.error(f"Failed to generate PDF {path}: {e}")
 
     def _get_safe_filename(self, s):
         return re.sub(r'[^\w\s-]', '', s).strip().replace(' ', '_')

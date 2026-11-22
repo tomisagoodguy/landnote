@@ -267,7 +267,6 @@ dependencies = [
     { name = "python-levenshtein", version = "0.27.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "python-levenshtein", version = "0.27.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "pyyaml" },
-    { name = "reportlab" },
     { name = "requests" },
     { name = "tqdm" },
     { name = "urllib3" },
@@ -285,7 +284,6 @@ requires-dist = [
     { name = "python-dotenv", specifier = ">=1.0.0" },
     { name = "python-levenshtein", specifier = ">=0.23.0" },
     { name = "pyyaml", specifier = ">=6.0" },
-    { name = "reportlab", specifier = ">=4.0.0" },
     { name = "requests", specifier = ">=2.31.0" },
     { name = "tqdm", specifier = ">=4.66.0" },
     { name = "urllib3", specifier = ">=2.0.0" },
@@ -1766,20 +1764,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/48/69/a573c2e5e1b1a4f19e98a8fb3f6a792a44f5b8a067895a2654890ffd35a4/rapidfuzz-3.14.6-pp311-pypy311_pp73-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e2fc748d1fde4109e5d0dab27f1e61f53b3136a235dfee5a4fb579da44808b6a", size = 1361237, upload-time = "2026-08-30T21:45:38.582Z" },
     { url = "https://files.pythonhosted.org/packages/ea/0b/375ebdfc4ca149e23793bb6b72461954ec64d0acbb826030787e88b90ff3/rapidfuzz-3.14.6-pp311-pypy311_pp73-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b42536675c930cb76b7998bfc4d8e59cb35d8df47f2103020265743b6b2ccd2a", size = 3136631, upload-time = "2026-08-30T21:45:41.426Z" },
     { url = "https://files.pythonhosted.org/packages/55/56/799accc99532ecaaa2c1d04c7e594d6bb8f1afdddc327389c61196741cb8/rapidfuzz-3.14.6-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:1e6911e3a14971719ddc35af98f181d2e5369ab273a5a3488ab7685d23c31ad5", size = 1722739, upload-time = "2026-08-30T21:45:44.301Z" },
-]
-
-[[package]]
-name = "reportlab"
-version = "5.1.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "charset-normalizer" },
-    { name = "pillow", version = "12.3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "pillow", version = "13.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/89/22/c18474be40b9bbb52fdb7051177d4d25f1ea59fada17eb181026411e93b1/reportlab-5.1.0.tar.gz", hash = "sha256:6878200464527e87672d19e9f7cfc6bb890e3a6931e74ac6a1a8d1754aa55671", size = 4109612, upload-time = "2026-10-22T07:26:43.307Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/4a/3c/bf68d44f160b44685fc714f746a954c71d0091b3dc4fd3c8670154b44841/reportlab-5.1.0-py3-none-any.whl", hash = "sha256:59fdbaec5efe437095ad1d7292ec9a271c8ca2d3ec75e889c6e61400929b90df", size = 2018647, upload-time = "2026-10-22T07:26:40.754Z" },
 ]
 
 [[package]]

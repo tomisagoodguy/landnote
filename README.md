@@ -108,7 +108,6 @@ landnote/
     │   ├── articles/           # 文章原始 Markdown 與圖片
     │   ├── keywords/md/        # 各關鍵字的文章索引
     │   ├── merged/md/          # 相似標題自動分組的合併文章
-    │   ├── pdf/                # 年度合輯 PDF
     │   └── README_grouped.md   # 主題分組總目錄
     ├── 地政考古題/              # 依科目分資料夾，含 合併後PDF檔案/
     ├── 高點法律考古題/

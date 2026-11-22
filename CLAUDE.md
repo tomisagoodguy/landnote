@@ -20,7 +20,7 @@
 | mkdocs-material | 9.x | 主題與 blog 外掛（分頁、分類、摘要） |
 | requests / BeautifulSoup4 | — | 爬取文章與考古題 |
 | fuzzywuzzy | — | 文章相似度分組（`grouper.py`） |
-| reportlab / pikepdf / PyPDF2 | — | 年度合輯 PDF、考古題合併 PDF |
+| pikepdf / PyPDF2 | — | 考古題合併 PDF |
 | Playwright（Chromium） | — | CI 中把建好的網頁轉成 PDF |
 | ghp-import | — | 把 `site/` 推到 `gh-pages` 分支 |
 
@@ -41,14 +41,14 @@ landnote/
     │   ├── core/scraper.py           # 爬蟲基底類別
     │   ├── crawlers/                 # article.py（專欄文章）、exam_land.py、exam_law.py、jasper_crawler.py
     │   ├── processors/
-    │   │   ├── grouper.py            # 相似文章分組、關鍵字頁、年度 PDF
+    │   │   ├── grouper.py            # 相似文章分組、關鍵字頁
     │   │   └── site_generator.py     # ★ 產生 site_src/docs 全部內容與 mkdocs.yml
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
     │   └── utils/                    # logger、PDF、文字處理
     ├── scripts/generate_pdfs.py      # mkdocs build 後把網頁轉 PDF
     ├── data/real_estate_articles/
     │   ├── articles/                 # 爬下來的原始文章 Markdown（產生器的輸入）
-    │   ├── merged/ keywords/ pdf/    # grouper 產出
+    │   ├── merged/ keywords/        # grouper 產出
     │   └── README_grouped.md
     ├── site_src/                     # ⚠ 全是產生器輸出，不進版控（.gitignore），CI 每次部署重建
     │   ├── mkdocs.yml                # 由 site_generator 產生
@@ -96,7 +96,7 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 
 1. **改網站內容或版型** → 改 `landnotev3/src/landnote/processors/site_generator.py`（文章處理、摘要分隔、mkdocs.yml、首頁、標籤頁、考古題頁）。
 2. **改前端行為或樣式** → 改 `landnotev3/src/landnote/templates/static/js/study_tools.js` 或 `templates/static/css/extra.css`，產生器會複製成 `site_src/docs/javascripts/extra.js`、`stylesheets/extra.css`。
-3. **改爬蟲** → `landnotev3/src/landnote/crawlers/`；改分組或年度 PDF → `processors/grouper.py`。
+3. **改爬蟲** → `landnotev3/src/landnote/crawlers/`；改分組 → `processors/grouper.py`。
 4. 跑 `main.py site` 再 `mkdocs build` 到暫存目錄，用瀏覽器實測。
 5. **只 commit 原始碼**（用 pathspec：`git commit -- <檔案>`）。`site_src/` 已不進版控；`data/` 的產出變動交給 CI 重產並自動 commit。
 6. 推送前 `git pull --rebase`：CI 會自動 commit `docs: auto-update articles and reports [skip ci]`，常常比本機新。
