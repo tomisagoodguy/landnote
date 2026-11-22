@@ -36,6 +36,9 @@ def main():
     group_parser = subparsers.add_parser("group", help="Group processed articles")
     group_parser.add_argument("--threshold", type=int, default=80, help="Similarity threshold (0-100)")
 
+    # Command: exambank (估價師考古題主題題庫，需 pymupdf)
+    subparsers.add_parser("exambank", help="Build appraiser exam question bank JSON (requires pymupdf)")
+
     # Command: site (Generate Website)
     subparsers.add_parser("site", help="Generate static site structure")
 
@@ -71,6 +74,13 @@ def main():
     elif args.command == "group":
         grouper = ArticleGrouper(similarity_threshold=args.threshold)
         grouper.run()
+
+    elif args.command == "exambank":
+        from landnote.processors import exam_bank
+        out = exam_bank.build()
+        if out is None:
+            sys.exit("找不到估價師考古題 PDF，題庫未產生")
+        print(f"Exam bank written to {out}")
 
     elif args.command == "site":
         from landnote.processors.site_generator import SiteGenerator

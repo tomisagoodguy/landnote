@@ -163,7 +163,7 @@ def split_questions(text: str) -> List[str]:
         chunks = [lines]
     elif len(marks) >= 2:
         bounds = marks + [len(lines)]
-        chunks = [lines[a:b] for a, b in zip(bounds, bounds[1:])]
+        chunks = [lines[a:b] for a, b in zip(bounds, bounds[1:], strict=False)]
     else:
         chunks, cur = [], []
         for ln in lines:
@@ -260,7 +260,7 @@ def _subject_page(subject: str, title: str, items: List[dict]) -> str:
         for q in sorted(by_topic[t], key=lambda q: (-q["year"], q["no"])):
             pdf = REPO_BLOB + quote(q["pdf"])
             lines += [
-                f'<div class="qb-item" markdown>',
+                '<div class="qb-item" markdown>',
                 f'<p class="qb-meta"><span class="pb-count">{q["year"]} 年</span>'
                 f'<span class="pb-count">第 {q["no"]} 題</span><span class="pb-count">{q["score"]} 分</span>'
                 f'<a href="{pdf}" target="_blank" rel="noopener">原卷 PDF</a></p>',
