@@ -98,11 +98,89 @@ function initStudyTools() {
     });
 }
 
+// 部落格列表無限捲動：捲到底自動載入下一頁文章，分頁列保留給無 JS 環境
+function initInfiniteBlog() {
+    const pagination = document.querySelector(".md-content .md-pagination");
+    if (!pagination || pagination.dataset.infinite) return;
+    if (!document.querySelector(".md-post--excerpt")) return;
+    if (!("IntersectionObserver" in window)) return;
+    pagination.dataset.infinite = "1";
+
+    const nextUrlFrom = (nav, baseUrl) => {
+        const current = nav.querySelector(".md-pagination__current");
+        let el = current ? current.nextElementSibling : null;
+        while (el && !el.matches("a.md-pagination__link")) el = el.nextElementSibling;
+        return el ? new URL(el.getAttribute("href"), baseUrl).href : null;
+    };
+
+    let nextUrl = nextUrlFrom(pagination, window.location.href);
+    if (!nextUrl) return;
+
+    const status = document.createElement("div");
+    status.className = "infinite-blog-status";
+    status.style.cssText = "text-align:center;padding:1.5rem 0;color:var(--md-default-fg-color--light);";
+    pagination.parentNode.insertBefore(status, pagination);
+    pagination.style.display = "none";
+
+    let loading = false;
+
+    const absolutize = (root, baseUrl) => {
+        root.querySelectorAll("[href]").forEach(el => {
+            const v = el.getAttribute("href");
+            if (v && !v.startsWith("#")) el.setAttribute("href", new URL(v, baseUrl).href);
+        });
+        root.querySelectorAll("[src]").forEach(el => {
+            el.setAttribute("src", new URL(el.getAttribute("src"), baseUrl).href);
+        });
+    };
+
+    const loadNext = async () => {
+        if (loading || !nextUrl || !status.isConnected) return;
+        loading = true;
+        status.textContent = "載入更多文章中…";
+        const url = nextUrl;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+            doc.querySelectorAll(".md-post--excerpt").forEach(post => {
+                absolutize(post, url);
+                status.parentNode.insertBefore(document.importNode(post, true), status);
+            });
+            const nav = doc.querySelector(".md-content .md-pagination");
+            nextUrl = nav ? nextUrlFrom(nav, url) : null;
+            status.textContent = nextUrl ? "" : "已載入全部文章";
+            if (!nextUrl) observer.disconnect();
+            loading = false;
+            // 內容不足以撐滿畫面時繼續載入（只在成功時，避免失敗無限重試）
+            if (nextUrl && status.getBoundingClientRect().top < window.innerHeight + 800) loadNext();
+        } catch (err) {
+            console.error("無限捲動載入失敗:", url, err);
+            status.innerHTML = "";
+            const retry = document.createElement("button");
+            retry.className = "md-button";
+            retry.textContent = "載入失敗，點此重試";
+            retry.onclick = loadNext;
+            status.appendChild(retry);
+            loading = false;
+        }
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        if (entries.some(e => e.isIntersecting)) loadNext();
+    }, { rootMargin: "0px 0px 800px 0px" });
+    observer.observe(status);
+}
+
 // 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
 if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
         initStudyTools();
+        initInfiniteBlog();
     });
 } else {
-    document.addEventListener("DOMContentLoaded", initStudyTools);
+    document.addEventListener("DOMContentLoaded", function () {
+        initStudyTools();
+        initInfiniteBlog();
+    });
 }
