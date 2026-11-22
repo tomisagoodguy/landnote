@@ -5,9 +5,7 @@ repo_url: https://github.com/tomisagoodguy/landnote
 theme:
   name: material
   language: zh-TW
-  font:
-    text: Outfit
-    code: Fira Code
+  font: false
   features:
   - navigation.tabs
   - navigation.sections
@@ -22,18 +20,20 @@ theme:
   - content.code.copy
   - header.autohide
   palette:
-  - scheme: slate
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
     primary: custom
-    accent: indigo
+    accent: custom
     toggle:
-      icon: material/brightness-4
-      name: 切換至淺色模式
-  - scheme: default
+      icon: material/weather-night
+      name: 切換至夜晚模式
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
     primary: custom
-    accent: indigo
+    accent: custom
     toggle:
-      icon: material/brightness-7
-      name: 切換至深色模式
+      icon: material/weather-sunny
+      name: 切換至日間模式
 extra_css:
 - stylesheets/extra.css
 extra_javascript:
