@@ -11,9 +11,9 @@
 | 內容 | 數量 | 位置 |
 | :--- | :--- | :--- |
 | 不動產專欄文章 | 994 篇 | [線上閱讀](https://tomisagoodguy.github.io/landnote/blog/)・[主題分組列表](landnotev3/data/real_estate_articles/README_grouped.md)・[原始 Markdown](landnotev3/data/real_estate_articles/articles/) |
-| 文章年度合輯 PDF | 2014–2026 | [PDF 資料夾](landnotev3/data/real_estate_articles/pdf/) |
+| 文章年度合輯 PDF | 2014–2026 | [線上閱讀與下載](https://tomisagoodguy.github.io/landnote/tags/)（講義頁「年度合輯」） |
 | 地政與估價師考古題 | 732 份・67 科 | [科目目錄](landnotev3/地政考古題/README.md)・[整科合併 PDF](landnotev3/地政考古題/合併後PDF檔案/) |
-| 法律考古題 | 2,635 份 | [科目目錄](landnotev3/高點法律考古題/README.md)（2025-04 後未再更新） |
+| 法律考古題 | 2,635 份 | [線上目錄](https://tomisagoodguy.github.io/landnote/law-exams/)・[科目目錄](landnotev3/高點法律考古題/README.md)（2025-04 後未再更新） |
 
 ### 考古題範圍
 

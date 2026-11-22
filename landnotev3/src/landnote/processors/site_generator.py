@@ -158,6 +158,15 @@ class SiteGenerator:
         # Generate ALL
         create_merged_doc("不動產全科大補帖", all_articles, review_dir / "all.md")
         
+        # 年度合輯：同一年依發布日期由舊到新，適合按時間順讀
+        year_articles = defaultdict(list)
+        for a in all_articles:
+            year_articles[str(a['date'])[:4]].append(a)
+        for year, articles in year_articles.items():
+            if year.isdigit():
+                articles.sort(key=lambda x: str(x['date']))
+                create_merged_doc(f"年度合輯：{year} 年", articles, review_dir / f"year-{year}.md")
+
         # Generate per tag
         for tag, articles in tag_articles.items():
             safe_tag = tag.replace(' ', '_').replace('/', '_')
@@ -510,6 +519,39 @@ class SiteGenerator:
         with open(self.base_dir / 'site_src' / '.authors.yml', 'w', encoding='utf-8') as f:
             yaml.dump(authors_map, f, allow_unicode=True, sort_keys=False)
 
+    def _year_counts(self) -> Dict[str, int]:
+        """各年度文章數（讀 posts 的 front matter date）。"""
+        counts: Dict[str, int] = defaultdict(int)
+        for file in self.posts_dir.glob("*.md"):
+            m = re.search(r"^date:\s*'?(\d{4})", file.read_text(encoding='utf-8')[:500], re.M)
+            if m:
+                counts[m.group(1)] += 1
+        return dict(counts)
+
+    def _year_cards(self) -> list:
+        """講義頁的年度合輯卡片（對應 review/year-YYYY 與 assets/pdfs/year-YYYY.pdf）。"""
+        counts = self._year_counts()
+        if not counts:
+            return []
+        lines = ["## 年度合輯（依發布日期排序）", "",
+                 "每年的文章依發布順序合成一本，適合追蹤當年修法與時事考點。", "",
+                 '<div class="feature-grid">']
+        for idx, year in enumerate(sorted(counts, reverse=True)):
+            lines.extend([
+                f'    <div class="feature-card c{idx % 4}">',
+                f'        <div class="feature-card__head"><span class="feature-icon">🗓️</span>'
+                f'<span class="pb-count">共 {counts[year]} 篇</span></div>',
+                f'        <h3>{year} 年</h3>',
+                '        <div class="feature-actions">',
+                f'            <a href="../review/year-{year}/" class="md-button">閱讀</a>',
+                f'            <a href="../assets/pdfs/year-{year}.pdf" class="md-button md-button--primary" '
+                f'download="Landnote_{year}年合輯.pdf">PDF</a>',
+                '        </div>',
+                '    </div>',
+            ])
+        lines.extend(['</div>', ""])
+        return lines
+
     def _generate_tags_page(self, tag_counts: Dict[str, int]):
         """Generate tags.md combining both thematic exploration and PDF downloading."""
         sorted_tags = sorted(tag_counts.items(), key=lambda x: x[1], reverse=True)
@@ -535,6 +577,7 @@ class SiteGenerator:
             '    </div>',
             '</div>',
             "",
+            *self._year_cards(),
             "## 分類主題（依收錄文章數排序）",
             '<div class="feature-grid">'
         ]
@@ -660,7 +703,7 @@ class SiteGenerator:
             'nav': [
                 {'最新文章': 'blog/'},
                 {'主題探索與講義下載': 'tags.md'},
-                {'考古題下載': 'exams.md'},
+                {'考古題下載': [{'地政與估價師': 'exams.md'}, {'法律考古題': 'law-exams.md'}]},
             ]
         }
         if self.exam_bank_nav:
@@ -858,6 +901,8 @@ class SiteGenerator:
             "",
             "準備不動產估價師？到 **[估價師專區](appraiser.md)**，六科專業科目的題庫、合併 PDF 與延伸練習都整理在一頁。",
             "",
+            "需要民法、行政法等法律科目？到 **[法律考古題](law-exams.md)**，收錄高點法律網 40 多種考試的歷屆試題。",
+            "",
             "**科目家族**：" + "・".join(
                 f"[{fam}](#{anchor})" for fam, anchor, _ in families),
             "",
@@ -892,6 +937,81 @@ class SiteGenerator:
         if not subjects:
             lines.append("*(目前尚無考古題資料)*")
         (self.docs_dir / 'exams.md').write_text('\n'.join(lines), encoding='utf-8')
+        self._generate_law_exams_page()
+
+    LAW_ROOT = "landnotev3/高點法律考古題"
+
+    def _law_exams(self) -> list:
+        """掃描 高點法律考古題/<考試>/<科目>/*.pdf。
+
+        回傳 [(考試, [(科目, 份數, 最早年, 最新年, 合併 PDF 檔名或 None)])]，考試依名稱排序。
+        檔名格式為「[民國年]年_[考試]_[科目].pdf」；合併檔在 合併後PDF檔案/<考試>/<考試>_<科目>_*_合併.pdf。
+        """
+        root = self.base_dir / "高點法律考古題"
+        merged_root = root / "合併後PDF檔案"
+        if not root.exists():
+            return []
+        exams = []
+        for exam in sorted(p for p in root.iterdir() if p.is_dir() and p != merged_root
+                           and not p.name.startswith(('_', '.'))):
+            merged = {f.name: f for f in (merged_root / exam.name).glob("*_合併.pdf")}
+            rows = []
+            for subject in exam.iterdir():
+                if not subject.is_dir():
+                    continue
+                years = [int(m.group(1)) for f in subject.glob("*.pdf")
+                         if (m := re.match(r"(\d+)年_", f.name))]
+                if not years:
+                    continue
+                prefix = f"{exam.name}_{subject.name}_"
+                merged_name = next((n for n in merged if n.startswith(prefix)), None)
+                rows.append((subject.name, len(years), min(years), max(years), merged_name))
+            if rows:
+                exams.append((exam.name, sorted(rows, key=lambda r: (-r[1], r[0]))))
+        return exams
+
+    def _generate_law_exams_page(self):
+        """法律考古題頁：依考試分區，每科一列，可下載整科合併 PDF 或到 GitHub 看單份。"""
+        from urllib.parse import quote
+        exams = self._law_exams()
+        total = sum(r[1] for _, rows in exams for r in rows)
+        base = f"{self.EXAM_REPO}"
+        lines = [
+            "---\nhide:\n  - navigation\n---\n",
+            "# 法律考古題",
+            "",
+            f"收錄高點法律網 **{len(exams)}** 種考試、**{total}** 份法律科目考古題，"
+            "涵蓋地方特考法制／法律廉政、中華郵政、國營事業法務等。",
+            "",
+            '!!! note "資料更新狀態"',
+            "    來源網站改版後，本區自 **2025 年 4 月** 起未再更新；地政相關考古題請到 "
+            "**[地政與估價師考古題](exams.md)**，該區每月自動更新。",
+            "",
+            "「合併 PDF」把該科歷屆試題合成一本，「單份」可在 GitHub 逐年下載（檔名開頭為民國年）。",
+            "",
+            "**考試列表**：" + "・".join(f"[{name}](#law-{i})" for i, (name, _) in enumerate(exams)),
+            "",
+        ]
+        for i, (name, rows) in enumerate(exams):
+            lines.extend([
+                f"## {name} {{#law-{i}}}",
+                "",
+                "| 科目 | 份數 | 年度（民國） | 下載 |",
+                "|------|-----:|------|------|",
+            ])
+            for subject, count, first, last, merged_name in rows:
+                folder = f"{base}/tree/main/" + quote(f"{self.LAW_ROOT}/{name}/{subject}")
+                links = [f"[單份]({folder})"]
+                if merged_name:
+                    pdf = f"{base}/raw/main/" + quote(f"{self.LAW_ROOT}/合併後PDF檔案/{name}/{merged_name}")
+                    links.insert(0, f"[**合併 PDF**]({pdf})")
+                years = f"{first}" if first == last else f"{first}–{last}"
+                cell = subject.replace("|", "／")
+                lines.append(f"| {cell} | {count} | {years} | {'・'.join(links)} |")
+            lines.append("")
+        if not exams:
+            lines.append("*(目前尚無法律考古題資料)*")
+        (self.docs_dir / 'law-exams.md').write_text('\n'.join(lines), encoding='utf-8')
 
     EXAM_REPO = "https://github.com/tomisagoodguy/landnote"
     EXAM_ROOT = "landnotev3/地政考古題"
