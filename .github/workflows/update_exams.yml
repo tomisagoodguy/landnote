@@ -44,11 +44,14 @@ jobs:
         PYTHONIOENCODING: utf-8
       run: uv run --with pymupdf python -m landnote.main exambank
 
+    - name: Update README stats
+      run: uv run --no-project python landnotev3/scripts/update_readme_stats.py
+
     - name: Commit and push new exams
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add landnotev3/地政考古題 landnotev3/data/exam_bank
+        git add README.md landnotev3/地政考古題 landnotev3/data/exam_bank
         # 只有 README 時間戳 / log 變動、沒有新 PDF 時不 commit
         if [ -z "$(git diff --staged --name-only -- '*.pdf')" ]; then
           echo "No new exams"

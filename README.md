@@ -10,9 +10,9 @@
 
 | 內容 | 數量 | 位置 |
 | :--- | :--- | :--- |
-| 不動產專欄文章 | 994 篇 | [線上閱讀](https://tomisagoodguy.github.io/landnote/blog/)・[主題分組列表](landnotev3/data/real_estate_articles/README_grouped.md)・[原始 Markdown](landnotev3/data/real_estate_articles/articles/) |
+| 不動產專欄文章 | <!-- stats:articles -->994 篇<!-- /stats --> | [線上閱讀](https://tomisagoodguy.github.io/landnote/blog/)・[主題分組列表](landnotev3/data/real_estate_articles/README_grouped.md)・[原始 Markdown](landnotev3/data/real_estate_articles/articles/) |
 | 文章年度合輯 PDF | 2014–2026 | [線上閱讀與下載](https://tomisagoodguy.github.io/landnote/tags/)（講義頁「年度合輯」） |
-| 地政與估價師考古題 | 732 份・67 科 | [科目目錄](landnotev3/地政考古題/README.md)・[整科合併 PDF](landnotev3/地政考古題/合併後PDF檔案/) |
+| 地政與估價師考古題 | <!-- stats:land_exams -->832 份<!-- /stats -->・<!-- stats:land_subjects -->74 科<!-- /stats --> | [科目目錄](landnotev3/地政考古題/README.md)・[整科合併 PDF](landnotev3/地政考古題/合併後PDF檔案/) |
 | 法律考古題 | 2,635 份 | [線上目錄](https://tomisagoodguy.github.io/landnote/law-exams/)・[科目目錄](landnotev3/高點法律考古題/README.md)（2025-04 後未再更新） |
 
 ### 考古題範圍
@@ -23,6 +23,7 @@
 | 地方特考三、四、五等（地政） | 民國 106–114 年（五等至 112 年停辦） | 高點公職考古題 |
 | 其他類科中含「估價／不動產／土地」的科目 | 依來源網站收錄 | 高點公職考古題 |
 | **專技高考 不動產估價師**（7 科） | 民國 100–115 年 | 考選部題庫 |
+| 專技普考 地政士、不動產經紀人 | 民國 106–115 年 | 考選部題庫 |
 
 高點網站上失效或漏收的試題，已從[考選部題庫](https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx)補齊。
 
@@ -32,13 +33,13 @@
 
 | 科目 | 收錄 | 合併 PDF | 單份 |
 | :--- | :--- | :--- | :--- |
-| 不動產估價理論 | 16 份 | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E7%90%86%E8%AB%96_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E7%90%86%E8%AB%96/) |
-| 不動產估價實務 | 16 份 | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%AF%A6%E5%8B%99_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%AF%A6%E5%8B%99/) |
-| 不動產經濟學 | 16 份 | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E6%BF%9F%E5%AD%B8_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E6%BF%9F%E5%AD%B8/) |
-| 不動產投資分析 | 22 份（含高普考） | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%95%E8%B3%87%E5%88%86%E6%9E%90_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%95%E8%B3%87%E5%88%86%E6%9E%90/) |
-| 民法物權與不動產法規 | 16 份 | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E8%88%87%E4%B8%8D%E5%8B%95%E7%94%A2%E6%B3%95%E8%A6%8F_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E8%88%87%E4%B8%8D%E5%8B%95%E7%94%A2%E6%B3%95%E8%A6%8F/) |
-| 土地利用法規 | 16 份 | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E6%B3%95%E8%A6%8F_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E6%B3%95%E8%A6%8F/) |
-| 國文（作文） | 8 份（108 年起） | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E5%9C%8B%E6%96%87%EF%BC%88%E4%BD%9C%E6%96%87%EF%BC%89_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E5%9C%8B%E6%96%87%EF%BC%88%E4%BD%9C%E6%96%87%EF%BC%89/) |
+| 不動產估價理論 | <!-- stats:subject=不動產估價理論 -->16 份<!-- /stats --> | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E7%90%86%E8%AB%96_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E7%90%86%E8%AB%96/) |
+| 不動產估價實務 | <!-- stats:subject=不動產估價實務 -->16 份<!-- /stats --> | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%AF%A6%E5%8B%99_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9%E5%AF%A6%E5%8B%99/) |
+| 不動產經濟學 | <!-- stats:subject=不動產經濟學 -->16 份<!-- /stats --> | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E6%BF%9F%E5%AD%B8_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E7%B6%93%E6%BF%9F%E5%AD%B8/) |
+| 不動產投資分析 | <!-- stats:subject=不動產投資分析 -->22 份<!-- /stats -->（含高普考） | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%95%E8%B3%87%E5%88%86%E6%9E%90_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%95%E8%B3%87%E5%88%86%E6%9E%90/) |
+| 民法物權與不動產法規 | <!-- stats:subject=民法物權與不動產法規 -->16 份<!-- /stats --> | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E8%88%87%E4%B8%8D%E5%8B%95%E7%94%A2%E6%B3%95%E8%A6%8F_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E6%B0%91%E6%B3%95%E7%89%A9%E6%AC%8A%E8%88%87%E4%B8%8D%E5%8B%95%E7%94%A2%E6%B3%95%E8%A6%8F/) |
+| 土地利用法規 | <!-- stats:subject=土地利用法規 -->16 份<!-- /stats --> | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E6%B3%95%E8%A6%8F_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E6%B3%95%E8%A6%8F/) |
+| 國文（作文） | <!-- stats:subject=國文（作文） -->24 份<!-- /stats -->（108 年起，含地政士、經紀人） | [下載](landnotev3/地政考古題/%E5%90%88%E4%BD%B5%E5%BE%8CPDF%E6%AA%94%E6%A1%88/%E5%9C%8B%E6%96%87%EF%BC%88%E4%BD%9C%E6%96%87%EF%BC%89_%E5%90%88%E4%BD%B5.pdf) | [瀏覽](landnotev3/地政考古題/%E5%9C%8B%E6%96%87%EF%BC%88%E4%BD%9C%E6%96%87%EF%BC%89/) |
 
 > 100–107 年的估價師國文科目名稱為「國文（作文與測驗）」，與其他考試同名科目放在同一資料夾。
 
