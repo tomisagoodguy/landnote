@@ -248,7 +248,7 @@ class ArticleCrawler(BaseScraper):
                         image_references.append(f"\n![圖片{img_counter}](./images/{local_filename})\n")
                     img.replace_with(f"[圖片{img_counter}]")
                 else:
-                    img.replace_with("[圖片下載失敗]")
+                    img.replace_with("〔圖片下載失敗〕")
 
         # 2. 處理表格 (HTML -> Markdown)
         tables = soup.find_all('table')

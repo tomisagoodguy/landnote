@@ -33,7 +33,7 @@
 • (七) 拿翹行為：都市更新大戶若整合成功，獲利豐碩，因此大戶積極促成都市更新的成功，要價較低。反之，都市更新小戶若整合失敗，損失輕微，因此小戶採以小博大，拿翹行為，要價較高。
 
 ---
-*注：本文圖片存放於 ../articles/images/ 目錄下*
+*注：本文圖片存放於 ../../articles/images/ 目錄下*
 
 
 ## 都市更新整合不易成功之原因,許文昌老師
@@ -64,59 +64,59 @@
 
 ## 文章圖片
 
-![圖片1](../articles/images/409208_280884d7.png)
+![圖片1](../../articles/images/409208_280884d7.png)
 
-![圖片2](../articles/images/409208_6536fe09.png)
+![圖片2](../../articles/images/409208_6536fe09.png)
 
-![圖片3](../articles/images/409208_f444733b.png)
+![圖片3](../../articles/images/409208_f444733b.png)
 
-![圖片4](../articles/images/409208_280884d7.png)
+![圖片4](../../articles/images/409208_280884d7.png)
 
-![圖片5](../articles/images/409208_f444733b.png)
+![圖片5](../../articles/images/409208_f444733b.png)
 
-![圖片6](../articles/images/409208_6536fe09.png)
+![圖片6](../../articles/images/409208_6536fe09.png)
 
-![圖片7](../articles/images/409208_f444733b.png)
+![圖片7](../../articles/images/409208_f444733b.png)
 
-![圖片8](../articles/images/409208_134717ed.png)
-
-## 文章圖片
-
-![圖片1](../articles/images/409208_280884d7.png)
-
-![圖片2](../articles/images/409208_6536fe09.png)
-
-![圖片3](../articles/images/409208_f444733b.png)
-
-![圖片4](../articles/images/409208_280884d7.png)
-
-![圖片5](../articles/images/409208_f444733b.png)
-
-![圖片6](../articles/images/409208_6536fe09.png)
-
-![圖片7](../articles/images/409208_f444733b.png)
-
-![圖片8](../articles/images/409208_134717ed.png)
+![圖片8](../../articles/images/409208_134717ed.png)
 
 ## 文章圖片
 
-![圖片1](../articles/images/409208_280884d7.png)
+![圖片1](../../articles/images/409208_280884d7.png)
 
-![圖片2](../articles/images/409208_6536fe09.png)
+![圖片2](../../articles/images/409208_6536fe09.png)
 
-![圖片3](../articles/images/409208_f444733b.png)
+![圖片3](../../articles/images/409208_f444733b.png)
 
-![圖片4](../articles/images/409208_280884d7.png)
+![圖片4](../../articles/images/409208_280884d7.png)
 
-![圖片5](../articles/images/409208_f444733b.png)
+![圖片5](../../articles/images/409208_f444733b.png)
 
-![圖片6](../articles/images/409208_6536fe09.png)
+![圖片6](../../articles/images/409208_6536fe09.png)
 
-![圖片7](../articles/images/409208_f444733b.png)
+![圖片7](../../articles/images/409208_f444733b.png)
 
-![圖片8](../articles/images/409208_134717ed.png)
+![圖片8](../../articles/images/409208_134717ed.png)
+
+## 文章圖片
+
+![圖片1](../../articles/images/409208_280884d7.png)
+
+![圖片2](../../articles/images/409208_6536fe09.png)
+
+![圖片3](../../articles/images/409208_f444733b.png)
+
+![圖片4](../../articles/images/409208_280884d7.png)
+
+![圖片5](../../articles/images/409208_f444733b.png)
+
+![圖片6](../../articles/images/409208_6536fe09.png)
+
+![圖片7](../../articles/images/409208_f444733b.png)
+
+![圖片8](../../articles/images/409208_134717ed.png)
 
 
 ---
-*注：本文圖片存放於 ../articles/images/ 目錄下*
+*注：本文圖片存放於 ../../articles/images/ 目錄下*
 

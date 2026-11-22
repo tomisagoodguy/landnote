@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import List, Dict
 from datetime import datetime
 from collections import defaultdict
+from urllib.parse import quote
 
 from fuzzywuzzy import fuzz
 from reportlab.lib.pagesizes import A4
@@ -51,9 +52,7 @@ class ArticleGrouper:
 
         # Output Directories
         self.merged_md_dir = self.output_dir / "merged/md"
-        self.merged_pdf_dir = self.output_dir / "merged/pdf"
         self.keyword_md_dir = self.output_dir / "keywords/md"
-        self.keyword_pdf_dir = self.output_dir / "keywords/pdf"
         self.pdf_dir = self.output_dir / "pdf"
         self.image_dir = self.articles_dir / "images"
 
@@ -98,8 +97,12 @@ class ArticleGrouper:
         self.logger.info("Starting Article Grouper...")
         
         # Create directories
-        for d in [self.merged_md_dir, self.merged_pdf_dir, self.keyword_md_dir, self.keyword_pdf_dir, self.pdf_dir]:
+        for d in [self.merged_md_dir, self.keyword_md_dir, self.pdf_dir]:
             d.mkdir(parents=True, exist_ok=True)
+        # 合併檔名含每次重算的組號（group_{i}_...），不清掉舊檔會累積大量孤兒檔與失效連結
+        for d in [self.merged_md_dir, self.keyword_md_dir]:
+            for old in d.glob("*.md"):
+                old.unlink()
 
         self.read_markdown_files()
         if not self.articles:
@@ -263,7 +266,8 @@ class ArticleGrouper:
                         header_count += 1
                         continue
                     # Fix image paths
-                    line = re.sub(r'\./images/', '../articles/images/', line).replace('\\', '/')
+                    # 合併檔在 merged/md/，圖片在 articles/images/
+                    line = re.sub(r'\./images/', '../../articles/images/', line).replace('\\', '/')
                     content.append(line)
                 content.append("")
             
@@ -291,7 +295,7 @@ class ArticleGrouper:
             
             content = [f"# Keyword: {kw}", "", "## Articles", ""]
             for a in articles:
-                rel_path = self._get_rel_path(a['file_path'])
+                rel_path = self._get_rel_path(a['file_path'], self.keyword_md_dir)
                 content.append(f"- [{a['date']} {a['title']}]({rel_path})")
                 
             with open(kw_file, 'w', encoding='utf-8') as f:
@@ -350,16 +354,7 @@ class ArticleGrouper:
             for a in sorted_articles:
                 rel_path = self._get_rel_path(a['file_path'])
                 date_str = a['date']
-                
-                # Construct Web URL (based on mkdocs-material blog format blog/{date}/{slug})
-                web_date = a['date_obj'].strftime('%Y/%m/%d')
-                stem = a['file_path'].stem
-                # If filename starts with date (YYYY-MM-DD), the rest is the slug
-                date_match = re.match(r'^\d{4}-\d{2}-\d{2}-(.+)$', stem)
-                slug_raw = date_match.group(1) if date_match else stem
-                slug = slug_raw.lower().replace(' ', '-')
-                web_url = f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
-                
+                web_url = self._web_url(a)
                 line = f"- {date_str} [{a['title']}]({rel_path}) [[🌐 網頁版]({web_url})]"
                 content.append(line)
         
@@ -388,15 +383,8 @@ class ArticleGrouper:
                 rel_path = self._get_rel_path(a['file_path'])
                 date_str = a['date']
                 article_kws = ", ".join(a.get('keywords', []))
-                
-                # Construct Web URL
-                web_date = a['date_obj'].strftime('%Y/%m/%d')
-                stem = a['file_path'].stem
-                date_match = re.match(r'^\d{4}-\d{2}-\d{2}-(.+)$', stem)
-                slug_raw = date_match.group(1) if date_match else stem
-                slug = slug_raw.lower().replace(' ', '-')
-                web_url = f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
-                
+                web_url = self._web_url(a)
+
                 line = f"- {date_str} [{a['title']}]({rel_path}) [[🌐 網頁版]({web_url})] (編號：{a['article_no']}) 關鍵詞：{article_kws}"
                 content.append(line)
         
@@ -446,9 +434,20 @@ class ArticleGrouper:
     def _get_safe_filename(self, s):
         return re.sub(r'[^\w\s-]', '', s).strip().replace(' ', '_')
 
-    def _get_rel_path(self, path: Path):
-        try:
-            rel = path.relative_to(self.output_dir)
-            return str(rel).replace('\\', '/')
-        except ValueError:
-            return str(path)
+    def _web_url(self, article: Dict) -> str:
+        """文章在網站上的網址：blog/{日期}/{文章編號}/。
+
+        網站以文章編號為 slug（site_generator: 'slug': article_id），檔名格式為「{編號}_{標題}.md」。
+        """
+        web_date = article['date_obj'].strftime('%Y/%m/%d')
+        id_match = re.match(r'^(\d+)', article['file_path'].stem)
+        slug = id_match.group(1) if id_match else quote(article['file_path'].stem)
+        return f"https://tomisagoodguy.github.io/landnote/blog/{web_date}/{slug}/"
+
+    def _get_rel_path(self, path: Path, from_dir: Path = None):
+        """回傳從 from_dir（預設 output_dir）連到 path 的 Markdown 連結路徑（已 URL 編碼）。
+
+        編碼後檔名中的空白、括號、% 才不會截斷 Markdown 連結。
+        """
+        rel = os.path.relpath(path, from_dir or self.output_dir).replace('\\', '/')
+        return quote(rel)

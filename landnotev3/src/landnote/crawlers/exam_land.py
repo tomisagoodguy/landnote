@@ -237,8 +237,10 @@ class LandExamCrawler(BaseScraper):
             m = re.match(r"\[(\d+)\]", p.name)
             return int(m.group(1)) if m else 0
 
+        merged_dir = self.base_folder / "合併後PDF檔案"
+        merged_count = len(list(merged_dir.glob("*.pdf"))) if merged_dir.exists() else 0
         sections = []
-        for folder in sorted(f for f in self.base_folder.iterdir() if f.is_dir()):
+        for folder in sorted(f for f in self.base_folder.iterdir() if f.is_dir() and f != merged_dir):
             pdfs = sorted(folder.glob("*.pdf"), key=lambda p: (year_key(p), p.name), reverse=True)
             if pdfs:
                 sections.append((folder.name, pdfs))
@@ -253,7 +255,8 @@ class LandExamCrawler(BaseScraper):
                     "來源：高點公職考古題（類科或科目含「地政／估價／不動產／土地」）、"
                     "考選部題庫（專技高考不動產估價師）。\n\n")
             f.write(f"最後更新時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-            f.write(f"總檔案數：{total} 份考古題\n\n## 目錄\n\n")
+            f.write(f"總檔案數：{total} 份考古題，{len(sections)} 個科目"
+                    f"（另有 {merged_count} 本[整科合併 PDF](合併後PDF檔案/)）\n\n## 目錄\n\n")
             for name, pdfs in sections:
                 f.write(f"- [{name} ({len(pdfs)}份)](#{anchor(name)})\n")
             f.write("\n")

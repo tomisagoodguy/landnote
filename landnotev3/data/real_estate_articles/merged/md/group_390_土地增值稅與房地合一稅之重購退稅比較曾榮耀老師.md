@@ -24,7 +24,7 @@
 
 • T. ABLE_PLACEHOLDER_1
 ---
-*注：本文圖片存放於 ../articles/images/ 目錄下*
+*注：本文圖片存放於 ../../articles/images/ 目錄下*
 
 
 ## 土地增值稅與房地合一稅之重購退稅比較,曾榮耀老師
@@ -47,5 +47,5 @@
 
 • T. ABLE_PLACEHOLDER_1
 ---
-*注：本文圖片存放於 ../articles/images/ 目錄下*
+*注：本文圖片存放於 ../../articles/images/ 目錄下*
 

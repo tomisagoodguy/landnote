@@ -313,8 +313,8 @@ def main():
     # 解析命令列參數
     parser = argparse.ArgumentParser(description='PDF合併工具 - 專為高點法律考古題設計')
     parser.add_argument('--path', type=str,
-                        default=r"C:\Users\tom89\Documents\GitHub\landnote\landnotev3\高點法律考古題",
-                        help='指定要處理的根目錄路徑')
+                        default=os.path.dirname(os.path.abspath(__file__)),
+                        help='指定要處理的根目錄路徑（預設為本腳本所在資料夾）')
     parser.add_argument('--subjects', type=str, nargs='+',
                         help='指定要處理的科目列表，例如：民法 刑法')
     parser.add_argument('--exam-types', type=str, nargs='+',
