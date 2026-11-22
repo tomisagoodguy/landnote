@@ -81,6 +81,11 @@ def main():
         if out is None:
             sys.exit("找不到估價師考古題 PDF，題庫未產生")
         print(f"Exam bank written to {out}")
+        from landnote.processors import exam_reader
+        reader = exam_reader.build()
+        if reader is None:
+            sys.exit("找不到土地法規考古題 PDF，閱讀版未產生")
+        print(f"Exam reader written to {reader}")
 
     elif args.command == "site":
         from landnote.processors.site_generator import SiteGenerator

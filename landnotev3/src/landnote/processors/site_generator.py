@@ -7,7 +7,7 @@ from collections import defaultdict
 import yaml
 
 from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR
-from landnote.processors import exam_bank
+from landnote.processors import exam_bank, exam_reader
 from landnote.utils.logger import Logger
 
 # 卡片頁不需要左側導覽與右側目錄，隱藏後內容區才夠寬排三欄
@@ -24,6 +24,7 @@ class SiteGenerator:
         self.logger = Logger.setup_logger("SiteGenerator", LOGS_DIR)
         self.authors = set()
         self.exam_bank_nav = []
+        self.exam_reader_nav = []
 
     def run(self):
         """Main execution method to generate the MkDocs site structure."""
@@ -50,6 +51,8 @@ class SiteGenerator:
 
         # 估價師主題題庫（讀 data/exam_bank，nav 要在產生 mkdocs.yml 前得知）
         self.exam_bank_nav = exam_bank.write_pages(self.docs_dir)
+        # 考古題逐題閱讀（需在文章處理後執行，才能比對相關文章）
+        self.exam_reader_nav = exam_reader.write_pages(self.docs_dir, self.posts_dir)
 
         # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()
@@ -706,6 +709,8 @@ class SiteGenerator:
                 {'考古題下載': [{'地政與估價師': 'exams.md'}, {'法律考古題': 'law-exams.md'}]},
             ]
         }
+        for title, path in self.exam_reader_nav:
+            config['nav'].append({title: path})
         if self.exam_bank_nav:
             config['nav'].append({'估價師專區': [{'專區首頁': 'appraiser.md'},
                                               *({t: p} for t, p in self.exam_bank_nav)]})
