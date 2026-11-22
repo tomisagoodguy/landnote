@@ -1033,25 +1033,6 @@ class SiteGenerator:
         appraiser_total = sum(s[3][self.APPRAISER_GROUP] for s in own)
         newest = max(s[2] for s in own)
 
-        lines = [
-            HIDE_SIDEBARS,
-            "# 不動產估價師專區",
-            "",
-            f"專技高考不動產估價師歷屆試題 **{appraiser_total}** 份（更新至民國 {newest} 年），"
-            "依考試科目整理。每科都附上四個入口：",
-            "",
-            "- **主題題庫**：逐題依主題分類，看出哪些主題年年考、哪些很久沒出",
-            "- **整科合併 PDF**：該科估價師歷屆試題合成一本，考前限時模擬用",
-            "- **延伸練習**：高普考、地方特考同家族科目的考古題，觀念相通，可當額外題量",
-            "- **相關文章**：補習班老師的專欄解析，寫完題目回頭對照",
-            "",
-            '!!! warning "注意法規時效"',
-            "    舊題目與舊文章依據的是當年的法規。題目或文章引用的條文若在之後修正過，"
-            "頁面上會自動出現「法規可能已修正」提醒並連到現行條文（依全國法規資料庫修法沿革比對）；"
-            "沒有提醒不代表內容一定是現行規定，只寫法名未寫條號的引用無法逐條比對。",
-            "",
-            '<div class="feature-grid">',
-        ]
         # 卡片單位：有題庫的專業科目一科一張；其餘（國文歷年改名成兩個資料夾）依家族合成一張
         cards: list = []
         for s in own:
@@ -1065,6 +1046,21 @@ class SiteGenerator:
                 else:
                     cards.append((fam, fam, [s]))
 
+        n_core = sum(1 for c in cards if c[1] in rank)
+        lines = [
+            HIDE_SIDEBARS,
+            "# 不動產估價師專區",
+            "",
+            '<p class="ap-lead">專技高考不動產估價師歷屆試題，依科目整理成主題題庫與整科 PDF，'
+            '並連到同觀念的高普考題目與老師專欄。</p>',
+            '<div class="ap-stats">'
+            f'<span class="pb-stat"><b>{appraiser_total}</b> 份試題</span>'
+            f'<span class="pb-stat"><b>{n_core}</b> 專業科目</span>'
+            f'<span class="pb-stat">更新至 <b>{newest}</b> 年</span>'
+            '</div>',
+            "",
+            '<div class="ap-grid">',
+        ]
         for idx, (title, key, members) in enumerate(cards):
             n_own = sum(s[3][self.APPRAISER_GROUP] for s in members)
             latest = max(s[2] for s in members)
@@ -1073,8 +1069,15 @@ class SiteGenerator:
             if slug and f"{exam_bank.BANK_DIR}/{slug}.md" in bank_ready:
                 buttons.append(f'<a href="../{exam_bank.BANK_DIR}/{slug}/" class="md-button md-button--primary">'
                                '主題題庫</a>')
+            for name, r_slug in self._practice_readers().get(key, []):
+                buttons.append(f'<a href="../{exam_reader.READER_ROOT}/{r_slug}/" class="md-button">'
+                               f'{name}逐題讀</a>')
             for s in members:
-                label = "整科合併 PDF" if len(members) == 1 else f"{s[0]} PDF"
+                if len(members) == 1:
+                    label = "整科 PDF"
+                else:  # 國文（作文與測驗）→「作文與測驗 PDF」，避免按鈕在手機上折行
+                    m = re.search(r"[（(]\s*(.+?)\s*[）)]", s[0])
+                    label = f"{m.group(1) if m else s[0]} PDF"
                 buttons.append(f'<a href="{self._merged_pdf_url(s[0])}" class="md-button">{label}</a>')
             # 資料夾內也有其他考試的同名科目時，提醒合併 PDF 不只估價師題目
             mixed = any(s[1] > s[3][self.APPRAISER_GROUP] for s in members)
@@ -1082,43 +1085,56 @@ class SiteGenerator:
             fams = self.APPRAISER_PRACTICE.get(key) or [self._subject_family(key)[0]]
             practice = [s for fam in fams for s in family_members.get(fam, []) if s[0] not in own_names]
             practice.sort(key=lambda s: -s[1])
-            practice_html = "、".join(
-                f'<a href="{self._merged_pdf_url(s[0])}">{s[0]}</a>（{s[1]}）'
-                for s in practice[:self.APPRAISER_PRACTICE_SHOWN])
+            chips = [f'<a class="ap-chip" href="{self._merged_pdf_url(s[0])}">{s[0]}<i>{s[1]}</i></a>'
+                     for s in practice[:self.APPRAISER_PRACTICE_SHOWN]]
             if len(practice) > self.APPRAISER_PRACTICE_SHOWN:
                 more = practice[self.APPRAISER_PRACTICE_SHOWN:]
-                links = "・".join(f'<a href="../exams/#{anchors[f]}">{f}</a>' for f in fams if f in anchors)
-                practice_html += f"；另有 {len(more)} 科 {sum(s[1] for s in more)} 份，見考古題頁 {links}"
-
+                fam_link = next((anchors[f] for f in fams if f in anchors), None)
+                if fam_link:
+                    chips.append(f'<a class="ap-chip ap-chip--more" href="../exams/#{fam_link}">'
+                                 f'另 {len(more)} 科 {sum(s[1] for s in more)} 份 →</a>')
             tags = [t for t in self.APPRAISER_TAGS.get(key, []) if tag_counts.get(t)]
-            tags_html = "、".join(
-                f'<a href="../blog/category/{quote(t.lower().replace(" ", "-"))}/">{t}</a>（{tag_counts[t]}）'
-                for t in tags)
+            tag_chips = [f'<a class="ap-chip" href="../blog/category/{quote(t.lower().replace(" ", "-"))}/">'
+                         f'{t}<i>{tag_counts[t]}</i></a>' for t in tags]
+
+            meta = [f"估價師 {n_own} 份", f"最新 {latest} 年"]
+            if len(members) > 1:
+                meta.append(f"歷年名稱：{'、'.join(s[0] for s in members)}")
+            summary = [f"延伸練習 {len(practice)} 科"] if practice else []
+            if tags:
+                summary.append(f"相關文章 {len(tags)} 主題")
 
             lines.extend([
-                f'    <div class="feature-card c{idx % 4}">',
-                f'        <div class="feature-card__head"><span class="pb-count">估價師 {n_own} 份</span>'
-                f'<span class="pb-count">最新 {latest} 年</span></div>',
-                f'        <h3>{title}</h3>',
+                f'<div class="ap-card c{idx % 4}" id="ap-{slug or idx}">',
+                f'<h3>{title}</h3>',
+                f'<p class="ap-meta">{"・".join(meta)}</p>',
+                '<div class="ap-actions">', *buttons, '</div>',
             ])
-            if len(members) > 1:
-                lines.append(f'        <p>歷年科目名稱：{"、".join(s[0] for s in members)}</p>')
             if mixed:
-                lines.append('        <p>合併 PDF 也收錄其他考試的同名科目。</p>')
-            if practice_html:
-                lines.append(f'        <p><b>延伸練習</b>：{practice_html}</p>')
-            if tags_html:
-                lines.append(f'        <p><b>相關文章</b>：{tags_html}</p>')
-            lines.extend([
-                '        <div class="feature-actions">',
-                *(f'            {b}' for b in buttons),
-                '        </div>',
-                '    </div>',
-            ])
+                lines.append('<p class="ap-note">合併 PDF 也收錄其他考試的同名科目</p>')
+            if summary:
+                lines.append(f'<details class="ap-more"><summary>{"・".join(summary)}</summary>')
+                if chips:
+                    lines.append(f'<p class="ap-label">延伸練習：同觀念的高普考、特考考古題</p>'
+                                 f'<div class="ap-chips">{"".join(chips)}</div>')
+                if tag_chips:
+                    lines.append(f'<p class="ap-label">相關文章：老師專欄解析</p>'
+                                 f'<div class="ap-chips">{"".join(tag_chips)}</div>')
+                lines.append('</details>')
+            lines.append('</div>')
         lines.extend([
             '</div>',
             "",
-            "**建議讀法**：先在主題題庫挑一個主題、限時寫最近三年的題目 → 標出寫不出來的觀念 → "
-            "讀相關文章補觀念 → 用延伸練習的高普考題目驗收。",
+            "## 建議讀法",
+            "",
+            "1. **主題題庫**挑一個主題，限時寫最近三年的題目",
+            "2. 標出寫不出來的觀念",
+            "3. 展開**相關文章**，讀老師專欄補觀念",
+            "4. 用**延伸練習**的高普考題目驗收；考前拿**整科 PDF** 整份模擬",
+            "",
+            '??? warning "注意法規時效"',
+            "    舊題目與舊文章依據的是當年的法規。題目或文章引用的條文若在之後修正過，"
+            "頁面上會自動出現「法規可能已修正」提醒並連到現行條文（依全國法規資料庫修法沿革比對）；"
+            "沒有提醒不代表內容一定是現行規定，只寫法名未寫條號的引用無法逐條比對。",
         ])
         (self.docs_dir / 'appraiser.md').write_text('\n'.join(lines), encoding='utf-8')
