@@ -251,11 +251,13 @@ def _post_link(d: dict) -> str:
 def _subject_page(subject: str, title: str, items: List[dict], index=None,
                   commentary: Optional[Dict[int, List[dict]]] = None) -> str:
     """產生單科主題題庫頁；有文章索引時，每題附相關文章與該年度試題總評。"""
+    from datetime import date
     from urllib.parse import quote
 
-    from landnote.processors.exam_reader import law_refs
+    from landnote.processors.law_timeline import LawTimeline, law_refs
 
     commentary = commentary or {}
+    timeline = LawTimeline()
 
     years = sorted({i["year"] for i in items})
     by_topic: Dict[str, List[dict]] = {}
@@ -295,6 +297,10 @@ def _subject_page(subject: str, title: str, items: List[dict], index=None,
                 "",
             ]
             lines += [_md_escape(ln) + "\n" for ln in q["text"].splitlines() if ln.strip()]
+            if timeline:
+                # 以出題年度年底為基準：之後的修法才提醒（同年稍晚的修法會漏標，但不會誤標）
+                lines += timeline.notice(q["text"], date(q["year"] + 1911, 12, 31),
+                                         f"本題出題（民國 {q['year']} 年）後，題目引用的")
             reviews = commentary.get(q["year"], [])
             if reviews:
                 lines += [f"**{q['year']} 年試題總評**：" + "、".join(_post_link(d) for d in reviews), ""]

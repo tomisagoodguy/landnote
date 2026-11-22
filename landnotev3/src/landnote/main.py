@@ -39,6 +39,9 @@ def main():
     # Command: exambank (估價師考古題主題題庫，需 pymupdf)
     subparsers.add_parser("exambank", help="Build appraiser exam question bank JSON (requires pymupdf)")
 
+    # Command: laws (從全國法規資料庫更新修法時間軸，供法規時效提醒)
+    subparsers.add_parser("laws", help="Download law amendment histories from law.moj.gov.tw")
+
     # Command: site (Generate Website)
     subparsers.add_parser("site", help="Generate static site structure")
 
@@ -86,6 +89,10 @@ def main():
         if reader is None:
             sys.exit("找不到土地法規考古題 PDF，閱讀版未產生")
         print(f"Exam reader written to {reader}")
+
+    elif args.command == "laws":
+        from landnote.processors import law_timeline
+        print(f"Law timeline written to {law_timeline.build()}")
 
     elif args.command == "site":
         from landnote.processors.site_generator import SiteGenerator

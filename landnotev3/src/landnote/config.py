@@ -27,6 +27,8 @@ JASPER_DIR = OUTPUT_DIR / "jasper"
 EXAM_BANK_FILE = DATA_DIR / "exam_bank" / "appraiser.json"
 # 土地法規考古題閱讀版（逐題＋詳解）：exam_reader 寫入、site_generator 讀取
 LAND_LAW_READER_FILE = DATA_DIR / "exam_bank" / "land_law.json"
+# 法規修法時間軸（全國法規資料庫沿革）：law_timeline 寫入、site_generator 與 exam_bank 讀取
+LAW_TIMELINE_FILE = DATA_DIR / "law_timeline.json"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)

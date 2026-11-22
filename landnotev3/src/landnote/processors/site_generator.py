@@ -8,6 +8,7 @@ import yaml
 
 from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR
 from landnote.processors import exam_bank, exam_reader
+from landnote.processors.law_timeline import LawTimeline
 from landnote.utils.logger import Logger
 
 # 卡片頁不需要左側導覽與右側目錄，隱藏後內容區才夠寬排三欄
@@ -25,6 +26,8 @@ class SiteGenerator:
         self.authors = set()
         self.exam_bank_nav = []
         self.exam_reader_nav = []
+        self.law_timeline = LawTimeline()
+        self.law_notice_count = 0
 
     def run(self):
         """Main execution method to generate the MkDocs site structure."""
@@ -36,6 +39,9 @@ class SiteGenerator:
         # 2. Process articles and move to docs/posts with YAML frontmatter
         self._process_articles()
         self._process_jasper_articles()
+        if not self.law_timeline:
+            self.logger.warning("找不到 law_timeline.json，文章不加法規時效提醒（先跑 main.py laws）")
+        self.logger.info(f"Law-change notices added to {self.law_notice_count} articles")
 
         # 4. Generate tags and authors statistics
         all_tags = self._collect_all_tags()
@@ -220,6 +226,7 @@ class SiteGenerator:
                 # 爬蟲固定在開頭產生「## 內文」，對讀者無資訊量，列表卡片與目錄都多一行
                 body = re.sub(r"\A\s*##\s*內文\s*\n", "", body)
                 body = self._insert_excerpt_separator(body)
+                body = self._add_law_notice(body, date_str)
 
                 # Write new file
                 new_content = "---\n" + yaml.dump(frontmatter, allow_unicode=True, default_flow_style=False) + "---\n\n" + body
@@ -275,6 +282,7 @@ class SiteGenerator:
 
                 body = self._clean_jasper_html(parts[2])
                 body = self._insert_excerpt_separator(body)
+                body = self._add_law_notice(body, str(date))
                 if source.startswith("http"):
                     body += f"\n\n---\n\n*原文出處：[Jasper 不動產]({source})*\n"
 
@@ -396,6 +404,25 @@ class SiteGenerator:
         body = '\n'.join(body_lines).strip()
         body = self._deduplicate_image_sections(body)
         return metadata, body
+
+    def _add_law_notice(self, body: str, date_str: str) -> str:
+        """文中引用的條文在發布日後有修正時，於摘要分隔之後插入提醒（不出現在列表卡片上）。"""
+        from datetime import date as _date
+
+        if not self.law_timeline:
+            return body
+        try:
+            published = _date.fromisoformat(date_str[:10])
+        except ValueError:
+            return body
+        notice = self.law_timeline.notice(body, published, f"本文發布（{published}）後，文中引用的")
+        if not notice:
+            return body
+        self.law_notice_count += 1
+        block = "\n".join(notice).rstrip()
+        if self.EXCERPT_SEPARATOR in body:
+            return body.replace(self.EXCERPT_SEPARATOR, f"{self.EXCERPT_SEPARATOR}\n\n{block}", 1)
+        return f"{block}\n\n{body}"
 
     EXCERPT_SEPARATOR = "<!-- more -->"
     EXCERPT_MIN_CHARS = 150
@@ -1075,8 +1102,9 @@ class SiteGenerator:
             "- **相關文章**：補習班老師的專欄解析，寫完題目回頭對照",
             "",
             '!!! warning "注意法規時效"',
-            "    舊題目與舊文章依據的是當年的法規。平均地權條例、房地合一稅、國土計畫等近年都有修正，"
-            "引用條文前請以全國法規資料庫的現行條文為準。",
+            "    舊題目與舊文章依據的是當年的法規。題目或文章引用的條文若在之後修正過，"
+            "頁面上會自動出現「法規可能已修正」提醒並連到現行條文（依全國法規資料庫修法沿革比對）；"
+            "沒有提醒不代表內容一定是現行規定，只寫法名未寫條號的引用無法逐條比對。",
             "",
             '<div class="feature-grid">',
         ]

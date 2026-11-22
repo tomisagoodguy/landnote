@@ -55,6 +55,13 @@ jobs:
         PYTHONPATH: ${{ github.workspace }}/landnotev3/src
       run: python landnotev3/src/landnote/main.py jasper --update
 
+    - name: Update law amendment timeline
+      # 全國法規資料庫異常時沿用 repo 內上次的 law_timeline.json，不影響部署
+      continue-on-error: true
+      env:
+        PYTHONPATH: ${{ github.workspace }}/landnotev3/src
+      run: python landnotev3/src/landnote/main.py laws
+
     - name: Generate MkDocs site structure
       env:
         PYTHONPATH: ${{ github.workspace }}/landnotev3/src

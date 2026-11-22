@@ -19,6 +19,7 @@ from typing import Dict, List, Optional, Tuple
 
 from landnote.config import ARTICLES_DIR, LAND_LAW_READER_FILE
 from landnote.processors.exam_bank import EXAM_DIR, REPO_BLOB, SUB_MARKS, _md_escape, _pdf_text
+from landnote.processors.law_timeline import law_refs
 
 FAMILY_DIR = re.compile(r"土地法|土地行政")  # 民法與土地法規等歸民法家族，與考古題頁一致
 FAMILY_EXCLUDE = re.compile(r"民法")
@@ -205,49 +206,7 @@ def build(exam_dir: Path = EXAM_DIR, out_file: Path = LAND_LAW_READER_FILE) -> O
     return out_file
 
 
-# ---- 考點法條 ----
-
-LAWS = [
-    "土地法施行法", "土地法", "土地稅法施行細則", "土地稅法", "平均地權條例施行細則", "平均地權條例",
-    "土地登記規則", "地籍測量實施規則", "土地徵收條例施行細則", "土地徵收條例", "都市計畫法", "都市更新條例",
-    "區域計畫法", "國土計畫法", "非都市土地使用管制規則", "農業發展條例", "農村社區土地重劃條例",
-    "市地重劃實施辦法", "國有財產法", "房屋稅條例", "契稅條例", "遺產及贈與稅法", "地籍清理條例",
-    "不動產經紀業管理條例", "地政士法", "公寓大廈管理條例", "不動產估價師法", "行政程序法", "民法",
-    "所得稅法", "大眾捷運法", "獎勵土地所有權人辦理市地重劃辦法", "土地法第34條之1執行要點",
-]
-_LAW_ALT = "|".join(sorted(map(re.escape, LAWS), key=len, reverse=True))
-CN_NUM = "零〇一二三四五六七八九十百"
-LAW_REF = re.compile(rf"({_LAW_ALT})(?:第\s*([\d{CN_NUM}]+)\s*條(?:\s*之\s*([\d{CN_NUM}]+))?)?")
-
-
-def _to_int(s: str) -> int:
-    """阿拉伯或中文數字（至百位）轉整數。"""
-    if s.isdigit():
-        return int(s)
-    total, num = 0, 0
-    for ch in s:
-        if ch in "零〇":
-            continue
-        if ch == "百":
-            total += (num or 1) * 100
-            num = 0
-        elif ch == "十":
-            total += (num or 1) * 10
-            num = 0
-        else:
-            num = CN_DIGITS.index(ch) + 1
-    return total + num
-
-
-def law_refs(text: str) -> List[str]:
-    """抽出法條（如「土地法第34條之1」），只寫法名未寫條號者回傳法名。依出現順序去重。"""
-    seen: Dict[str, None] = {}
-    for law, art, sub in LAW_REF.findall(text):
-        ref = law
-        if art:
-            ref += f"第{_to_int(art)}條" + (f"之{_to_int(sub)}" if sub else "")
-        seen.setdefault(ref, None)
-    return list(seen)
+# 考點法條：抽取規則與法規清單統一在 law_timeline（法規時效標示也用同一份）
 
 
 # ---- 相關文章比對（中文字二元組 TF-IDF） ----
