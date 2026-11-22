@@ -199,6 +199,8 @@ class SiteGenerator:
                     'tags': tags
                 }
                 
+                body = self._insert_excerpt_separator(body)
+
                 # Write new file
                 new_content = "---\n" + yaml.dump(frontmatter, allow_unicode=True, default_flow_style=False) + "---\n\n" + body
                 
@@ -274,6 +276,56 @@ class SiteGenerator:
         body = '\n'.join(body_lines).strip()
         body = self._deduplicate_image_sections(body)
         return metadata, body
+
+    EXCERPT_SEPARATOR = "<!-- more -->"
+    EXCERPT_MIN_CHARS = 150
+    EXCERPT_MAX_BLOCKS = 6
+
+    @classmethod
+    def _insert_excerpt_separator(cls, body: str) -> str:
+        """在內文前段插入 MkDocs Material 部落格的摘要分隔標記。
+
+        以空行切段，累積可見文字達 EXCERPT_MIN_CHARS 字後於段落邊界插入；
+        不在清單項目、表格、程式碼區塊中間切斷，後面沒有內容時不插入。
+
+        Args:
+            body: 文章內文（不含 frontmatter）。
+
+        Returns:
+            插入分隔標記後的內文；已有標記或文章太短則原樣回傳。
+        """
+        if cls.EXCERPT_SEPARATOR in body:
+            return body
+
+        blocks = re.split(r"\n\s*\n", body.strip())
+        list_re = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s")
+        text_len = 0
+        text_blocks = 0
+        in_fence = False
+
+        for i, block in enumerate(blocks[:-1]):
+            if block.count("```") % 2 == 1:
+                in_fence = not in_fence
+            stripped = block.strip()
+            if stripped.startswith("## 文章圖片"):
+                # 圖片區佔版面，未湊滿字數也在它前面切
+                if text_blocks and not in_fence:
+                    return "\n\n".join(blocks[:i] + [cls.EXCERPT_SEPARATOR] + blocks[i:])
+                break
+            if not in_fence and not stripped.startswith("#") and not re.fullmatch(r"\[圖片\d+\]", stripped):
+                visible = re.sub(r"!\[[^\]]*\]\([^)]*\)|\[圖片\d+\]|[\s#>*_`|•-]", "", stripped)
+                if visible:
+                    text_len += len(visible)
+                    text_blocks += 1
+            if in_fence or text_blocks == 0:
+                continue
+            nxt = blocks[i + 1].lstrip()
+            if list_re.match(nxt) or nxt.startswith("|") or stripped.startswith("|"):
+                if text_blocks < cls.EXCERPT_MAX_BLOCKS:
+                    continue
+            if text_len >= cls.EXCERPT_MIN_CHARS or text_blocks >= cls.EXCERPT_MAX_BLOCKS:
+                return "\n\n".join(blocks[: i + 1] + [cls.EXCERPT_SEPARATOR] + blocks[i + 1 :])
+        return body
 
     def _deduplicate_image_sections(self, body: str) -> str:
         """清理重複的「## 文章圖片」區塊，合併為單一區塊並去重圖片引用。"""
