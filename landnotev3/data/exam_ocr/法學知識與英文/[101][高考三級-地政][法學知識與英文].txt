@@ -1,0 +1,307 @@
+國立政治大學111學年度 轉學生招生考試試題
+第1頁，共5頁
+考試科目
+計算機概論
+系所别
+資訊管理學系二年級
+考試時間
+7月6日(三)第2節
+一、選擇题(共20題，答對每题2分，請選擇最適答案，答錯不倒扣，共40分)
+1.
+請問以下何者正確？
+(A) 0 XORO=0
+(B) 1 AND 1= 0
+(C) 0 OR1=0
+(D) 0 XOR 1 = 0
+(E) 以上皆不正確
+2.
+請問關於以下邏輯閘敘述何者錯誤？
+Ro
+5o
+(A)S與R皆為O時，Q為0
+(B)S與R不可同時为1
+正
+(C)S為1且R為0時，Q為
+(D)S為0且R為1時，Q為0
+(E) 以上敘述皆錯誤
+3.
+請問以下關於二進位的運算何者正確？
+(A) 111.11+0.01= 1.12
+(B) 10.011+100.110=1.001
+(C) (two's complement) 0111-0101=0111+1011=10010
+(D)(two's complement) 0111 為十進位的-7
+(E) 以上皆正確
+4.
+根據以下糾錯碼表格，何者為非？
+A
+000000
+B
+001111
+C
+TTOOTO
+D
+011100
+E
+100110
+F
+101001
+G
+110101
+H
+111010
+(A) 收到0000表示A
+(B) 收到000001 表示A
+·(C)收到000010表示A
+(D) 收到000100 表示A
+(E) 以上皆正確
+國立政治大學
+111
+學年度轉學生招生考試試題
+第2頁，共5頁
+考試科目
+計算機概論
+系所别
+資訊管理學系二年級
+考試時間
+7月6日（三）第2節
+: 5.
+以下描述何者为非？
+(A)RISC晶片指令較為精簡
+(B) CISC 晶片指令較為複雜
+(C) 因功能較强，世界上使用CISC晶片的机器较多。
+(D)Apple Mac 使用過 CISC的 PowerPC 與M1 晶片，也曾使用過CISC的 Corei系列晶片
+(E) 以上皆正確
+6.
+程式於CPU上執行時，下列描述何者為非？
+(A) Instruction register 用來表示被執行的指令
+(B) Program counter 用來表示下一個即將被執行指令的位址
+(C) 一個 machine cycle包含 fetch,decode,execute 三個階段
+(D) 時脈的單位是Hz，現在主流桌機的時脈是數個GHz
+(E) 以上皆正確
+7.
+以下關於家用網路的描述，何者為非？
+(A)ADSL使用電話線與外連接，通常具有不對稱的上傳與下載速度
+(B)Cable modem 使用同軸纜線與外連接，通常具有不對稱的上傳與下載速度
+(C)中華電信光世代的服務中，從家戶的數據機到機房全為光纖連接
+(D)HFC技術可以同時混合光纖與同軸纜線進行傳輸
+(E) 以上皆正確
+8.
+以下關於記憶體管理的描述，何者為非？
+(A)Paging 允許 process 可以使用不連續的RAM空間
+(B)Page 是可以被不同的process 共用的
+(C) RAM上的一個 frame 可以對應不只一個 page
+(D)使用固定大小的frame可能會導致internal fragmentation
+(E) 以上皆正確
+9.
+(A) High priority queue 由於有優先權，不可能會 overflow
+(B) Low priority queue 必定會造成 starving 的現象
+(C) Low priority queue 會被 high priority queue preempt
+(D) Round Robin 無法緩解low priority queue 的低效能問題
+(E) 以上皆錯誤
+10.
+以下網路協定在邏輯上的使用順序為？
+(A) DHCP, ICMP, DNS, HTTP
+(B) ARP, DHCP, UDP, DNS,TCP, HTTP
+(C) DHCP, ARP, DNS, TCP, HTTP
+(D) ARP, DHCP, DNS, TCP, HTTP
+(E) 以上皆錯誤
+11.
+以下關於網路技術的描述，何者為非？
+(A)255.255.228.0 為合法的子網路遮罩
+(B)ICMP ECHO 封包可以測量雙方主機之間的router數量
+(C) 網路封包有提供錯誤檢查碼的功能，但仍可能傳送錯誤
+國立政治大學111學年度轉學生招生考試試題
+第3頁，共5页
+考試科目
+計算機概論
+系所别
+資訊管理學系二年級
+考試時間
+7月6日(三)第≥節
+(D)SMTP 簡單郵件傳輸協定可以讓使用者傳送信件
+(E) 以上皆正確
+12. 資料庫的表格可以定義三種觸發機制，下列何者為非？
+(A) INSERT
+(B) UPDATE
+(C) DROP
+(D) DELETE
+(E) 以上皆正確
+13.
+Product 资料表如下·若 SQL指令为 SELECTCOUNT(*)FROMProduct WHEREAmOUnt>50
+其回傳值為？
+ID
+Name
+Amount
+525
+Chair
+63
+373
+Table
+75
+923
+Cup
+24
+876
+Plate
+83
+政
+383
+Lamp
+32
+I(V)
+(B) 3
+(C) 56
+(D)221
+(E) 以上皆非
+14.
+關於primary key 與 foreign key 的敘述何者正確？
+(A) Primary key 不可為空值
+(B) 每一個非空值的 foreign key 應該有一個對應的 primary key
+(C) Foreign key 一定是primary key 的一部份
+(D) Primary key 必须是數值
+(E) Foreign key 不可以有空值
+15.
+． 以下資料結構何者敘述錯誤？
+(A) Stack 為 FILO
+(B) Queue 為 FIFO
+(C) Max heap 的 root 為最大
+(D)Linked list的 head 與 tail 不可能同时指到同一個node
+(E) Linked list的 head 與 tail 可以同時指到 null
+16.
+下列何者為分類演算法？
+(A) Decision Tree
+(B) Neural Network
+(C) K-Means
+(D) Support Vector Machine
+(E) 以上皆是
+國立政治大學
+111 學年度 轉學生 招生考試試題
+第4页，共5頁
+考試科目
+計算機概論
+系所别
+資訊管理學系二年級
+考試時間
+7月6日(三)第2節
+17. 下列公式的複雜度何者錯誤？
+(A) Bubble Sort 之平均時間複雜度為O(n^2)
+(B) Bubble Sort 之最佳時間複雜度為 O(n)
+(C) Bubble Sort 之空間複雜度為O(1)
+(D) Bubble Sort 之最糟時間複雜度為O(n^2)
+(E) 以上皆正確
+18. 下列敘述何者為64位元的作業系統最大的優勢？
+(A)64位元的作業系統可以有更高的時脈
+(B)64位元的作業系統可以有更多的定址空間
+(C)64位元的作業系统可以使用更多的CPU核心
+(D)64位元的作業系統可以使用更快的浮點運算單元
+(E) 以上皆是
+19. 網頁瀏覽器的「上一頁」與「下一頁」功能，最適合以下列資料結構實作？
+(A) Heap
+(B) Stack
+正
+(C) AVL Tree
+(D) List
+(E) Queue
+20.
+下列何者非HTTP Proxy Server 可以達到的功能？
+(A) 将domain name 與IP address置換
+(B) 過濾內容，限制對特定IP的存取
+(C) 儲存資料，提高存取速度
+(D) 隱藏真實IP
+(E) 以上皆是
+二、非選擇题(共8題，共60分)
+1. 線性迴歸（linear regression）與羅吉斯回歸（logistic regression）有何不同？（6分)
+2.
+欲將 IP 位址192.168.119.1 到192.168.119.254 的子網路區分成四個相同子網路，請列出此四
+個子網路的網路IP 範圍、CIDR 表示方式與遮罩 (network mask)°(8分)
+3.
+請解釋以下漫畫所要闡釋的資訊安全問題，並提出如何防範此攻擊。(8分)
+HI, THI5 15
+CH. DEAR - DID HE
+DID YOU REALLY
+WELL, WEVE LOST THIS
+YOUR SON'S SCHOOL.
+BREAK SOMETHING?
+NAME YOUR SON
+YEAR'S STUDENT RECOROS.
+VERE HAVING SOME
+Robert'; DROP
+I HOPE WURE HAPPY
+INAWAY-
+COMPUTER TROUBLE
+TABLE Students
+7-
+AND I HOPE
+CH.YES UTTE
+YOUVE LERRNED
+BOBBY TABLES.
+SNCA 3ZLUNS OL
+WE CALL HIM.
+DATRBASE INPUTS.
+國立政治大學111學年度 轉學生招生考試試題
+第5頁，共5頁
+考試科目
+計算機概論
+系所别
+資訊管理學系二年級
+考試時間
+7月6日(三)第二節
+4.
+請針對以下 flow chart 撰寫相對應的pseudo-code。(6分)
+total = 0
+i =1
+i<=n
+True
+False
+total = total+i
+print(total)
+i++
+5.
+請繪製出以下運算式的infix,prefix and postfix expressions°(8分)
+(A+B)*C-(D-E)*(F+G)
+又
+6.
+Store资料表如下。(每小题4分，共8分)
+1)寫出SQL語法找出某商店（Store_Name）销售(Sales）额大於1500的商店名及其销售额。
+2)寫出 SQL語法找出某州(State)的全州商店銷售(Sales)總額大於1500 的州名及其銷售總額。
+Store Name
+State
+Sales
+Employee
+Date
+LAX
+LA
+1500
+14
+1999-Jan-05
+SAN
+LA
+250
+5
+2004-Jun-20
+DFW
+TX
+300
+6
+2013-May-01
+IAH
+TX
+600
+8
+2019-Dec-18
+7.
+請說明training dataset,testing dataset, validation dataset於資料分析時的用途。(8分)
+8.
+給定一個linked list，每個node 上有一數值。此linked list 被數值為0的node 隔開，且其第一個
+(head)與最後一個(tail) node 值皆為0，如下圖範例。請寫 pseudo-code，將兩個0node 之間的節
+點合併為一個node，其值為原節點值的和(sum)，如。註：不會有連續兩個零的node。(8分)
+3
+1
+0
+4
+5
+2
+[0]<[]-[0]-[]-[0]图
+一、作答於試题上者，不予计分。
+備註
+二、試題請隨卷繳交。

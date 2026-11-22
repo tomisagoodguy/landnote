@@ -29,6 +29,7 @@ from landnote.processors.exam_bank import (
     _pdf_text,
     best_topic,
     normalize_cjk,
+    ocr_cache_path,
 )
 from landnote.processors.law_timeline import LawTimeline, law_refs
 
@@ -150,7 +151,9 @@ def available(data_dir: Path = EXAM_READER_DATA_DIR) -> List[tuple]:
 NOISE = re.compile(
     r"^([高點‧・上]|【版權所有.*|.*高分詳解.*|高上高普特考.*|.*www\.get\.com\.tw.*|【(中壢|台中|台南|高雄|另有).*|"
     r"[－\-—]+\s*[－\-—]*|\d{1,2}|第\s*\d+\s*頁.*|（請接背面）|【請接續背面】|背面尚有試題|"
-    r"[甲乙丙]、\s*(申論|測驗)題.*|[壹貳參肆]、.*)$"
+    r"[甲乙丙]、\s*(申論|測驗)題.*|[壹貳參肆]、.*|"
+    # 國營事業考卷：「題目二」單獨一行（下一行才是「題目二：」）、頁尾「土地法規 第1頁，共1頁」
+    r"題目[一二三四五六七八九十]+|.*第\s*\d+\s*頁\s*[，,]\s*共\s*\d+\s*頁)$"
 )
 TITLE = re.compile(r"^《(.+)》$")
 TOP_MARK = re.compile(r"^(?:題目)?([一二三四五六七八九十]+)\s*[、：:]")
@@ -162,7 +165,7 @@ CHOICE = re.compile(r"^(?:（\s*(?P<k1>[A-DＡ-Ｄ#＃][A-D、,或]*|一律給�
                     r"|\((?P<k2>[A-D#][A-D、,或]*)\)(?:\s+|(?=\d{1,3}\s))"
                     r"|【(?P<k3>[1-4])】|【(?P<k4>一律給分|送分)[^】]*】)"
                     r"(?P<no>\d{1,3})\s*[.．、]?\s*")
-OPTION = re.compile(r"[（(]([A-D])[）)]")
+OPTION = re.compile(r"[（(]([A-E])[）)]")  # 少數國營事業考卷有五個選項
 BAD_CHOICE_RATIO = 0.3
 # 國營事業考卷的選項以圈號字型畫 ①–④，抽出來是行首控制字元 \x01–\x04（部分年份 \x81–\x84）；
 # 清理前先換成 (A)–(D)。前面加不可見的 OPTION_MARK，免得「(C) 9 個月」被 CHOICE 當成第 9 題；切選項前移除
@@ -181,9 +184,11 @@ def _clean_lines(text: str) -> Tuple[str, List[str]]:
     text = normalize_cjk(text.translate(str.maketrans(SUB_MARKS)))
     # 「（每小題5分，共25分）」統一成「（25分）」，配分才不會漏算
     text = re.sub(r"[（(]\s*每小題[^）)]*?共\s*(\d+)\s*分\s*[）)]", r"（\1分）", text)
+    text = re.sub(r"[：:]\s*每小題[^（(\n]*?共\s*(\d+)\s*分", r"（\1分）", text)  # 「解釋名詞：每小題5分，共30分」
     text = GLYPH_OPTION.sub(lambda m: f"{OPTION_MARK}({'ABCD'[(ord(m.group(1)) & 0x0F) - 1]})", text)
     text = re.sub(r"[\x00-\x08\x0b-\x1f\x81]", "", text)
-    # 答案「【2】」換頁時常單獨成行，接回下一行的題號，否則整題會被併進前一題
+    # 答案「【2】」換頁時常單獨成行，接回下一行的題號，否則整題會被併進前一題；有些年份連括號都斷成「【」「3】」
+    text = re.sub(r"【\s*\n\s*([1-4])\s*】", r"【\1】", text)
     text = re.sub(r"^\s*(【[1-4]】)\s*\n\s*", r"\1", text, flags=re.M)
     title, lines, prev = "", [], None
     for raw in text.splitlines():
@@ -219,6 +224,8 @@ def _cn_number(s: str) -> int:
         return 10 + CN_DIGITS.index(s[1]) + 1
     if len(s) == 2 and s.endswith("十"):
         return (CN_DIGITS.index(s[0]) + 1) * 10
+    if len(s) == 3 and s[1] == "十":  # 二十五
+        return (CN_DIGITS.index(s[0]) + 1) * 10 + CN_DIGITS.index(s[2]) + 1
     return CN_DIGITS.index(s[0]) + 1 if len(s) == 1 else 0
 
 
@@ -287,10 +294,13 @@ def parse_paper(text: str) -> dict:
 
     out = []
     essay_total = 0
+    default_score = _header_score(lines)
     for q in questions:
         stem = HEADER_TAIL.split("".join(q["stem"]))[0].replace(OPTION_MARK, "").strip()
         if q["kind"] == "essay":
             score = sum(int(s) for s in SCORE.findall(stem))
+            if not score and default_score and essay_total + default_score <= 100:
+                score = default_score
             prev = next((o for o in reversed(out) if o["kind"] == "essay"), None)
             # 配分已滿 100 後又出現沒配分的「五、六、」，是前一題詳解裡的條列，併回去
             if not score and essay_total >= 100 and prev:
@@ -306,26 +316,91 @@ def parse_paper(text: str) -> dict:
             item["score"] = 0
         else:
             item["text"] = stem
-            item["score"] = sum(int(s) for s in SCORE.findall(stem))
+            item["score"] = score
         out.append(item)
-    # 申論題沒有任何配分代表切題失敗（例如抓到表頭），整份退回只給原卷
+    # 申論題沒有任何配分代表切題失敗（例如抓到表頭），整份退回只給原卷；
+    # 但部分年份的詳解省略配分，每題都接著「答：」時仍是正確切題
     essays = [q for q in out if q["kind"] == "essay"]
-    if essays and not any(q["score"] for q in essays):
+    if essays and not any(q["score"] for q in essays) and not all(q["answer"] for q in essays):
         out = [q for q in out if q["kind"] == "choice"]
+    if not out:
+        out = _parse_keyless(lines)
     # 測驗題多數不是四個選項，代表題號或選項沒切對（不支援的排版），寧可只給原卷也不放殘缺題目
     choices = [q for q in out if q["kind"] == "choice"]
-    if choices and sum(len(q["options"]) != 4 for q in choices) > len(choices) * BAD_CHOICE_RATIO:
+    if choices and sum(len(q["options"]) not in (4, 5) for q in choices) > len(choices) * BAD_CHOICE_RATIO:
         out = [q for q in out if q["kind"] == "essay"]
     return {"commentary": _join(commentary, structured=True), "questions": out}
+
+
+# 國營事業考卷常只在注意事項寫一次配分（「每大題各占二十五分」「每大題配分20 分」），題目後不再標
+HEADER_SCORE = re.compile(r"每大題\s*(?:各占|配分|均為|各)*\s*(\d+|[一二三四五六七八九十]+)\s*分")
+
+
+def _header_score(lines: List[str]) -> int:
+    """卷首注意事項寫的每大題配分；沒寫回傳 0。只認「每大題」，「每題 2 分」多半是測驗題配分。"""
+    for ln in lines[:40]:
+        m = HEADER_SCORE.search(ln)
+        if m:
+            n = m.group(1)
+            return int(n) if n.isdigit() else _cn_number(n)
+    return 0
+
+
+# 未附答案的試卷（多為國營事業）：題號只寫「1.」，不能與詳解條列區分，所以只在一般規則拆不出題時使用
+KEYLESS_Q = re.compile(r"^(\d{1,3})\s*[.．、]\s*(?![\d.])")
+# 選擇題後接「二、申論題：…每題10分」，申論題又從「1.」編號
+KEYLESS_ESSAY = re.compile(r"^[一二三四]\s*[、.．]\s*(?:非選擇題|申論題|問答題)")
+
+
+def _parse_keyless(lines: List[str]) -> List[dict]:
+    """以遞增題號切測驗題，答案留空。卷首注意事項也編「1. 2.」，再遇到「1.」而前面都沒有選項時整批捨棄重來。"""
+    qs: List[dict] = []
+    cur: Optional[dict] = None
+    expect, kind, essay_score = 1, "choice", 0
+    for ln in lines:
+        if qs and kind == "choice" and KEYLESS_ESSAY.match(ln):
+            kind, expect, cur = "essay", 1, None
+            m = re.search(r"每題\s*(\d+)\s*分", ln)
+            essay_score = int(m.group(1)) if m else 0
+            continue
+        m = KEYLESS_Q.match(ln)
+        if m and int(m.group(1)) == 1 and qs and not any(OPTION.search("".join(q["stem"])) for q in qs):
+            qs, expect = [], 1
+        if m and int(m.group(1)) == expect:
+            cur = {"no": expect, "kind": kind, "stem": [ln[m.end():]]}
+            qs.append(cur)
+            expect += 1
+        elif cur is not None:
+            cur["stem"].append(ln)
+    out = []
+    for q in qs:
+        if q["kind"] == "essay":
+            stem = "".join(q["stem"]).strip()
+            out.append({"no": q["no"], "kind": "essay", "answer": [], "text": stem,
+                        "score": sum(int(s) for s in SCORE.findall(stem)) or essay_score})
+            continue
+        parts = OPTION.split("".join(q["stem"]).replace(OPTION_MARK, "").strip())
+        out.append({"no": q["no"], "kind": "choice", "answer": [], "text": parts[0].strip(),
+                    "options": [f"({parts[i]}) {parts[i + 1].strip()}" for i in range(1, len(parts) - 1, 2)],
+                    "key": None, "score": 0})
+    return out
 
 
 def build(exam_dir: Path = EXAM_DIR, data_dir: Path = EXAM_READER_DATA_DIR) -> List[Path]:
     """掃描 READERS 各家族考卷，每個家族輸出一個閱讀版 JSON；回傳寫出的路徑（無資料的家族略過）。"""
     from landnote.processors.site_generator import SiteGenerator  # 延遲匯入：site_generator 也匯入本模組
 
+    reader_families = {family for family, _, _ in READERS}
     folders: Dict[str, List[Path]] = defaultdict(list)
     for folder in sorted(p for p in exam_dir.iterdir() if p.is_dir()):
-        folders[SiteGenerator._subject_family(folder.name)[0]].append(folder)
+        primary = SiteGenerator._subject_family(folder.name)[0]
+        folders[primary].append(folder)
+        # 跨科考卷（民法與土地法規、土地法與土地相關稅法概要…）也列進名稱符合的其他家族；
+        # 主家族沒有逐題讀時不延伸，免得「施工與估價」之類的營建科目被拉進不動產估價
+        if primary in reader_families:
+            for family, _, pattern in SiteGenerator.SUBJECT_FAMILIES:
+                if family in reader_families and family != primary and re.search(pattern, folder.name):
+                    folders[family].append(folder)
     written = []
     for family, slug, _ in READERS:
         papers = _build_family(folders.get(family, []))
@@ -357,6 +432,7 @@ def _build_family(folders: List[Path]) -> List[dict]:
                 "subject": m.group(3),
                 "pdf": rel,
                 "has_answer": any(q["answer"] or q.get("key") for q in parsed["questions"]),
+                "ocr": bool(parsed["questions"]) and ocr_cache_path(pdf).exists(),
                 **parsed,
             })
     return papers
@@ -523,7 +599,7 @@ def _brief_md(p: dict, q: dict, up: str) -> List[str]:
     out = [f"**[{_q_label(p, q)}](<{up}{p['id']}.md#{qid(q)}>)**", "", _md_escape(q["text"]), ""]
     if q.get("options"):
         out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
-    if q["kind"] == "choice":
+    if q["kind"] == "choice" and q["key"]:
         out += [f"答案：**{q['key']}**", ""]
     return out
 
@@ -563,7 +639,7 @@ def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str]
            _md_escape(q["text"]), ""]
     if q.get("options"):
         out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
-    if q["kind"] == "choice":
+    if q["kind"] == "choice" and q["key"]:
         out += ['??? success "答案"', f"    **{q['key']}**", ""]
     elif q["answer"]:
         out += ['??? success "參考解答（補習班詳解，先自己寫再打開）"', ""]
@@ -599,6 +675,12 @@ def _paper_page(p: dict, index: ArticleIndex, name: str, similar: "SimilarIndex"
         "延伸閱讀依文字相似度自動推薦，不一定與題目完全對應。",
         "",
     ]
+    if p.get("ocr"):
+        lines += ['!!! warning "本卷為掃描檔，題目由 OCR 辨識"',
+                  "    可能有錯字或漏字，作答前請對照原卷 PDF。", ""]
+    if choices and not any(q["key"] for q in choices):
+        lines += ['!!! info "本卷未附答案"',
+                  "    原卷只有題目，主辦單位另行公告的答案未收錄；可先作答再查官方公告。", ""]
     if p["commentary"]:
         lines += ['??? info "試題評析"', ""] + _indent([_md_escape(c) + "\n" for c in p["commentary"]]) + [""]
     for title, group in (("申論題", essays), ("測驗題", choices)):
@@ -899,7 +981,7 @@ def _card_md(p: dict, q: dict, badges: Optional[List[str]] = None) -> List[str]:
     ]
     if q.get("options"):
         out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
-    if q["kind"] == "choice":
+    if q["kind"] == "choice" and q["key"]:
         out += ['??? success "答案"', f"    **{q['key']}**", ""]
     return out + ["</div>", ""]
 

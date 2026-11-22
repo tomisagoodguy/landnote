@@ -56,6 +56,14 @@ jobs:
         PYTHONIOENCODING: utf-8
       run: uv run --with pymupdf python -m landnote.main exambank
 
+    - name: Check scanned PDFs pending OCR
+      # 只提醒（warning 註記＋執行摘要），不讓流程失敗；OCR 需在本機跑 scripts/ocr_scanned.py
+      continue-on-error: true
+      working-directory: landnotev3
+      env:
+        PYTHONIOENCODING: utf-8
+      run: uv run --with pymupdf python scripts/ocr_scanned.py --check
+
     - name: Update README stats
       run: uv run --no-project python landnotev3/scripts/update_readme_stats.py
 

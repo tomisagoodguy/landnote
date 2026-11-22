@@ -11,7 +11,7 @@ import unicodedata
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from landnote.config import DATA_DIR, EXAM_BANK_FILE
+from landnote.config import DATA_DIR, EXAM_BANK_FILE, EXAM_OCR_DIR
 
 EXAM_DIR = DATA_DIR.parent / "地政考古題"
 
@@ -115,11 +115,29 @@ CASE_TOPIC = "綜合估價案例（估價報告書）"
 CASE_MIN_SCORE = 70  # 實務科 70 分以上的大題是整份估價報告書的綜合案例
 
 
+MIN_PDF_TEXT = 50  # 抽出文字少於此數視為掃描檔
+
+
+def ocr_cache_path(pdf: Path) -> Path:
+    """掃描檔的 OCR 快取：data/exam_ocr/<科目資料夾>/<檔名>.txt。"""
+    return EXAM_OCR_DIR / pdf.parent.name / f"{pdf.stem}.txt"
+
+
 def _pdf_text(path: Path) -> str:
+    """PDF 文字；有文字快取就讀快取，否則直接抽 PDF 文字。
+
+    快取多為掃描檔的 OCR 結果，也收少數抽得到字卻不能用的檔案：字型亂碼、題目是圖片只有答案是文字，
+    或副檔名是 .pdf 的 Word 檔（pymupdf 打不開）。
+    """
+    cache = ocr_cache_path(path)
+    if cache.exists():
+        return cache.read_text(encoding="utf-8")
     try:
         import pymupdf
     except ImportError:  # 舊版只提供 fitz 名稱
         import fitz as pymupdf
+    # 少數 PDF 的字型名稱含無法編碼的字元，MuPDF 印錯誤訊息時會拋例外，連帶讓 get_text 失敗
+    pymupdf.TOOLS.mupdf_display_errors(False)
     with pymupdf.open(path) as doc:
         return "".join(page.get_text() for page in doc)
 

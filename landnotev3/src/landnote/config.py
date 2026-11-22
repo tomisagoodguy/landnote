@@ -28,6 +28,8 @@ JASPER_DIR = OUTPUT_DIR / "jasper"
 EXAM_BANK_FILE = DATA_DIR / "exam_bank" / "appraiser.json"
 # 考古題逐題閱讀版（逐題＋詳解）：exam_reader 每個科目家族寫一個 JSON（如 land_law.json），site_generator 讀取
 EXAM_READER_DATA_DIR = DATA_DIR / "exam_bank"
+# 掃描檔考卷的 OCR 文字快取（scripts/ocr_scanned.py 在本機產生並提交；CI 不跑 OCR）
+EXAM_OCR_DIR = DATA_DIR / "exam_ocr"
 # 法規修法時間軸（全國法規資料庫沿革）：law_timeline 寫入、site_generator 與 exam_bank 讀取
 LAW_TIMELINE_FILE = DATA_DIR / "law_timeline.json"
 # 追蹤法規的現行條文：law_timeline 與時間軸一起寫入，exam_reader 用來把考題對到條文
