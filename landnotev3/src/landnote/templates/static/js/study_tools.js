@@ -75,6 +75,20 @@ function initStudyTools() {
     // 「第34條之1」的「之1」要一起包進連結，否則會查到第 34 條；
     // 法名與「第」之間只容許少數非標點字（「民法物權編第」），否則會從前一個法名一路吃到後面的條號
     const lawRegex = /((?:土地法|平均地權條例|土地稅法|民法|契稅條例|房屋稅條例|都市計畫法|區域計畫法|國土計畫法)[^\d第，。、；：「」『』（）()\n]{0,6}第[\s\d\-之]+條(?:\s*之\s*\d+)?)/g;
+    // 全國法規資料庫的查詢頁（LawSearchResult）會被其 WAF 擋下（「含有不允許輸入之字元」），
+    // 改直接連到單一條文頁 LawSingle.aspx?pcode=…&flno=34-1；pcode 對照 data/law_timeline.json
+    const lawPcodes = {
+        "土地法": "D0060001", "平均地權條例": "D0060009", "土地稅法": "G0340096",
+        "民法": "B0000001", "契稅條例": "G0340105", "房屋稅條例": "G0340102",
+        "都市計畫法": "D0070001", "區域計畫法": "D0070030", "國土計畫法": "D0070230",
+    };
+    const lawUrl = (match) => {
+        const name = Object.keys(lawPcodes).find(n => match.startsWith(n));
+        const nums = match.slice(match.lastIndexOf("第")).match(/\d+/g) || [];
+        if (!name || !nums.length) return null;
+        const flno = nums.slice(0, 2).join("-");
+        return `https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=${lawPcodes[name]}&flno=${flno}`;
+    };
 
     const textNodes = [];
     const walk = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
@@ -94,9 +108,9 @@ function initStudyTools() {
         if (lawRegex.test(text)) {
             const span = document.createElement('span');
             span.innerHTML = text.replace(lawRegex, function (match) {
-                // Encode the law string to search in moj.gov.tw
-                const query = encodeURIComponent(match);
-                return `<a href="https://law.moj.gov.tw/LawClass/LawSearchResult.aspx?p=A&t=A1A2E1F1&k1=${query}" target="_blank" title="查看全國法規資料庫: ${match}" style="border-bottom: 1px dashed var(--md-accent-fg-color);">${match}</a>`;
+                const url = lawUrl(match);
+                if (!url) return match;
+                return `<a href="${url}" target="_blank" rel="noopener" title="查看全國法規資料庫: ${match}" style="border-bottom: 1px dashed var(--md-accent-fg-color);">${match}</a>`;
             });
             node.parentNode.replaceChild(span, node);
         }
