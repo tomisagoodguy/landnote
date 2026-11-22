@@ -553,8 +553,8 @@ class SiteGenerator:
     </a>
     <a href="exams/" class="feature-card c2">
         <span class="feature-icon">📚</span>
-        <h3>地政考古題</h3>
-        <p>高普考、地方特考歷屆試題，依科目合併成一本，方便整科刷題。</p>
+        <h3>地政與估價師考古題</h3>
+        <p>高普考、地方特考、不動產估價師歷屆試題，依科目合併成一本，方便整科刷題。</p>
     </a>
 </div>
 """
@@ -568,9 +568,10 @@ class SiteGenerator:
         root = "landnotev3/地政考古題"
         lines = [
             HIDE_SIDEBARS,
-            "# 地政考古題",
+            "# 地政與估價師考古題",
             "",
-            f"收錄 **{total}** 份地政相關考古題（更新至民國 {latest_year} 年），按科目分類。"
+            f"收錄 **{total}** 份地政、不動產估價相關考古題（更新至民國 {latest_year} 年），按科目分類，"
+            "來源為高點公職考古題與考選部題庫（專技高考不動產估價師）。"
             "「整科合併」把該科歷屆試題合成一本 PDF，最適合考前整科刷題；"
             "「單份瀏覽」可在 GitHub 逐年下載。每月自動更新。",
             "",

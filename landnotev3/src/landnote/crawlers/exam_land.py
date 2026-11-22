@@ -8,7 +8,7 @@ from urllib.parse import quote
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 
-from landnote.config import BASE_DIR, EXAM_BASE_URL, LOGS_DIR
+from landnote.config import BASE_DIR, EXAM_BASE_URL, LOGS_DIR, MOEX_EXAM_URL, MOEX_FILE_URL
 from landnote.core.scraper import BaseScraper, ScraperConfig
 from landnote.utils.logger import Logger
 from landnote.utils.pdf_processor import PDFProcessor
@@ -38,7 +38,10 @@ class LandExamCrawler(BaseScraper):
         # Setup Logger
         self.logger = Logger.setup_logger("LandExamCrawler", LOGS_DIR)
         
-        self.keywords = ["地政"]
+        # 高點：類科或科目名稱含任一關鍵字即收錄
+        self.keywords = ["地政", "估價", "不動產", "土地"]
+        # 考選部：高點沒有的專技考試，依類科名稱比對（每年考試代碼不同）
+        self.moex_categories = ["不動產估價師"]
 
     def log(self, message):
         self.logger.info(message)
@@ -55,6 +58,8 @@ class LandExamCrawler(BaseScraper):
         self.log(f"Processing ROC years >= {min_year}...")
         for keyword in self.keywords:
             total_downloads += self.download_by_keyword(keyword, 'A', '', only_update, min_year)
+        for category in self.moex_categories:
+            total_downloads += self.download_moex(category, min_year)
 
         self.generate_readme()
         self.log(f"Completed. Total downloaded: {total_downloads}")
@@ -105,7 +110,7 @@ class LandExamCrawler(BaseScraper):
                          group = cols[1].text.strip()
                          subject = cols[2].text.strip()
                          
-                         if "地政" in group or "地政" in subject:
+                         if keyword in group or keyword in subject:
                              link_elem = cols[4].find('a')
                              if link_elem and link_elem.get('href'):
                                  raw_link = link_elem.get('href').replace('./', '')
@@ -123,6 +128,51 @@ class LandExamCrawler(BaseScraper):
                  self.logger.error(f"Error parsing page {i}: {e}")
                  
         return exam_documents
+
+    def search_moex(self, category: str, min_year: int) -> List[ExamDocument]:
+        """搜尋考選部題庫中類科名稱含 category 的所有科目試題。"""
+        docs = []
+        current_roc = datetime.now().year - 1911
+        for roc in range(min_year, current_roc + 1):
+            year_page = self.make_request("GET", f"{MOEX_EXAM_URL}?y={roc + 1911}")
+            if year_page is None or year_page.status_code != 200:
+                self.log(f"考選部 {roc} 年清單讀取失敗")
+                continue
+            year_page.encoding = "utf-8"
+            codes = re.findall(r'<option[^>]*value="(%d\d{3})">[^<]*%s' % (roc, category), year_page.text)
+            for code in codes:
+                page = self.make_request("GET", f"{MOEX_EXAM_URL}?y={roc + 1911}&e={code}")
+                if page is None or page.status_code != 200:
+                    continue
+                page.encoding = "utf-8"
+                labels = dict(re.findall(
+                    r'<label for="ctl00_holderContent_chk_%s_(\d+(?:_\w+)?)"[^>]*>([^<]*)</label>' % code, page.text))
+                for cid, cname in labels.items():
+                    if "_" in cid or category not in cname:
+                        continue
+                    group = f"專技高考-{category}"
+                    for key, subject in labels.items():
+                        if key.startswith(cid + "_"):
+                            sid = key.split("_", 1)[1]
+                            link = f"{MOEX_FILE_URL}?t=Q&code={code}&c={cid}&s={sid}&q=1"
+                            docs.append(ExamDocument("", group, subject.strip(), str(roc), link))
+                time.sleep(random.uniform(0.5, 1.0))
+        return docs
+
+    def download_moex(self, category: str, min_year: int) -> int:
+        """下載考選部題庫中尚未存在的試題。"""
+        docs = [d for d in self.search_moex(category, min_year)
+                if not (self.base_folder / d.subject / d.file_name).exists()]
+        if not docs:
+            return 0
+        self.log(f"Found {len(docs)} new exams for 考選部 '{category}'")
+        count = 0
+        for doc in tqdm(docs, desc=f"Downloading {category}"):
+            if self.download_and_unlock(doc):
+                count += 1
+                self.log(f"成功下載: {doc.file_name}")
+            time.sleep(random.uniform(1.0, 2.0))
+        return count
 
     def get_total_pages(self, keyword, filter_type, year):
         encoded_keyword = quote(keyword)
@@ -199,7 +249,9 @@ class LandExamCrawler(BaseScraper):
 
         with open(self.readme_path, 'w', encoding='utf-8') as f:
             f.write("# 地政考古題資料庫\n\n")
-            f.write("本資料庫收集了包含'地政'關鍵字的考古題，按科目分類整理。\n\n")
+            f.write("本資料庫收集地政、不動產估價相關考古題，按科目分類整理。"
+                    "來源：高點公職考古題（類科或科目含「地政／估價／不動產／土地」）、"
+                    "考選部題庫（專技高考不動產估價師）。\n\n")
             f.write(f"最後更新時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
             f.write(f"總檔案數：{total} 份考古題\n\n## 目錄\n\n")
             for name, pdfs in sections:
