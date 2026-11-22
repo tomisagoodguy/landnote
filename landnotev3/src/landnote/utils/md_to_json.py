@@ -23,10 +23,38 @@ def parse_readme_grouped(file_path: Path) -> List[Dict[str, Any]]:
     group_header_pattern = re.compile(r'^## 組 (\d+)：(.+)$')
     group_keywords_pattern = re.compile(r'^- 相關關鍵詞：(.+)$')
     article_pattern = re.compile(r'^- (\d{4}/\d{2}/\d{2}) \[(.*?)\]\((.*?)\) \(文章編號：(\d+)\) 關鍵詞：(.+)$')
+    # 新版格式（grouper 依主題分組）：### <a name='topic-X'></a>📌 主題：X
+    topic_header_pattern = re.compile(r'^### .*📌 主題：(.+)$')
+    # 連結檔名可能含括號，如「(一).md」，故以 .md) 為結尾
+    topic_article_pattern = re.compile(r'^- (\d{4}/\d{2}/\d{2}) \[(.*?)\]\((articles/(\d+)_.*?\.md)\)')
 
     for line in lines:
         line = line.strip()
         if not line:
+            continue
+
+        topic_match = topic_header_pattern.match(line)
+        if topic_match:
+            if current_group:
+                groups.append(current_group)
+            topic = topic_match.group(1).strip()
+            current_group = {
+                "group_id": len(groups) + 1,
+                "title": topic,
+                "relevant_keywords": [topic],
+                "articles": []
+            }
+            continue
+
+        topic_article_match = topic_article_pattern.match(line)
+        if topic_article_match and current_group:
+            current_group["articles"].append({
+                "date": topic_article_match.group(1),
+                "title": topic_article_match.group(2),
+                "link": topic_article_match.group(3),
+                "article_id": topic_article_match.group(4),
+                "keywords": list(current_group["relevant_keywords"]),
+            })
             continue
 
         # Check for group header
@@ -81,14 +109,10 @@ def parse_readme_grouped(file_path: Path) -> List[Dict[str, Any]]:
     return groups
 
 def main():
-    # Setup paths
-    # Assuming this script is run from project root or src/landnote/utils/
-    # We will try to find the file based on the know path structure
-    
-    # Path based on user's known directory structure
-    base_path = Path(r"c:\Users\user\Documents\GitHub\landnote\landnotev3")
-    readme_path = base_path / "real_estate_articles/README_grouped.md"
-    output_path = base_path / "real_estate_articles/grouped_articles.json"
+    from landnote.config import OUTPUT_DIR
+
+    readme_path = OUTPUT_DIR / "README_grouped.md"
+    output_path = OUTPUT_DIR / "grouped_articles.json"
 
     print(f"Reading from: {readme_path}")
     

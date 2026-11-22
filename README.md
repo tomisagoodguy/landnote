@@ -19,7 +19,7 @@
 | 內容 | 說明 |
 | :--- | :--- |
 | **👉 [數位圖書館](https://tomisagoodguy.github.io/landnote/)** | **(首選)** 像電子書一樣的閱讀體驗，支援全文檢索、主題標籤與深色模式。 |
-| **👉 [分組文章列表](landnotev3/real_estate_articles/README_grouped.md)** | 根據相似度透過AI自動分組的文章列表。 |
+| **👉 [分組文章列表](landnotev3/data/real_estate_articles/README_grouped.md)** | 根據相似度透過AI自動分組的文章列表。 |
 
 ### 2. 檔案下載 (離線閱讀)
 
@@ -27,10 +27,10 @@
 
 | 內容 | 說明 |
 | :--- | :--- |
-| **👉 [PDF 彙整報告](landnotev3/real_estate_articles/pdf/)** | 已按年份自動整理好的文章 PDF 檔。 |
+| **👉 [PDF 彙整報告](landnotev3/data/real_estate_articles/pdf/)** | 已按年份自動整理好的文章 PDF 檔。 |
 | **👉 [地政考古題](landnotev3/地政考古題/)** | 歷年地政類科考試題目 (包含各科目與[合併後PDF](landnotev3/地政考古題/合併後PDF檔案/))。 |
 | **👉 [法律考古題](landnotev3/高點法律考古題/)** | 歷年法律類科考試題目 (包含各類別與[合併後PDF](landnotev3/高點法律考古題/合併後PDF檔案/))。 |
-| **👉 [原始文章檔](landnotev3/real_estate_articles/articles/)** | 每一篇單獨的 Markdown 原始檔。 |
+| **👉 [原始文章檔](landnotev3/data/real_estate_articles/articles/)** | 每一篇單獨的 Markdown 原始檔。 |
 
 ---
 
@@ -40,7 +40,7 @@
 
 - **更新頻率**：每週二、週四 早上 (配合老師發文時間)
 - **運作流程**：GitHub Actions 會自動抓取最新文章 -> 分類整理 -> 更新網站 -> 產生 PDF。
-- **如何確認**：只要看到上方的 [PDF 連結](landnotev3/real_estate_articles/pdf/) 或 [網站](https://tomisagoodguy.github.io/landnote/) 有新內容，即代表更新完成。
+- **如何確認**：只要看到上方的 [PDF 連結](landnotev3/data/real_estate_articles/pdf/) 或 [網站](https://tomisagoodguy.github.io/landnote/) 有新內容，即代表更新完成。
 
 ---
 

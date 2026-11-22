@@ -1,7 +1,10 @@
 import json
 from collections import defaultdict
 
-file_path = r'c:\Users\user\Documents\GitHub\landnote\landnotev3\real_estate_articles\grouped_articles.json'
+from pathlib import Path
+
+# 由 `python -m landnote.utils.md_to_json` 產生
+file_path = Path(__file__).parent / "data" / "real_estate_articles" / "grouped_articles.json"
 
 with open(file_path, 'r', encoding='utf-8') as f:
     data = json.load(f)
