@@ -9,7 +9,7 @@ from urllib.parse import quote
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 
-from landnote.config import EXAM_BASE_URL, DATA_DIR, LOGS_DIR
+from landnote.config import BASE_DIR, EXAM_BASE_URL, LOGS_DIR
 from landnote.core.scraper import BaseScraper, ScraperConfig
 from landnote.utils.logger import Logger
 from landnote.utils.pdf_processor import PDFProcessor
@@ -29,7 +29,7 @@ class LandExamCrawler(BaseScraper):
     def __init__(self, debug=False):
         super().__init__("LandExamCrawler", ScraperConfig())
         self.debug = debug
-        self.base_folder = DATA_DIR / "地政考古題"
+        self.base_folder = BASE_DIR / "地政考古題"
         self.readme_path = self.base_folder / "README.md"
         self.log_file = self.base_folder / "download_log.txt"
         
@@ -51,33 +51,34 @@ class LandExamCrawler(BaseScraper):
         self.log("=== 地政考古題自動下載與解鎖系統 ===")
         
         total_downloads = 0
-        current_year = datetime.now().year
-        
-        for year in range(current_year, current_year - years, -1):
-            self.log(f"Processing year {year}...")
-            for keyword in self.keywords:
-                downloads = self.download_by_keyword(keyword, 'A', str(year), only_update)
-                total_downloads += downloads
-        
+        # 網站使用民國年；其 sFilterDate 年份過濾已失效，改抓全部清單後本地過濾
+        min_year = datetime.now().year - 1911 - years + 1
+        self.log(f"Processing ROC years >= {min_year}...")
+        for keyword in self.keywords:
+            total_downloads += self.download_by_keyword(keyword, 'A', '', only_update, min_year)
+
         self.generate_readme()
         self.log(f"Completed. Total downloaded: {total_downloads}")
 
-    def download_by_keyword(self, keyword, filter_type='A', year='', skip_existing=True):
-        """下載特定關鍵字的考古題"""
-        exam_docs = self.search_exams(keyword, filter_type, year)
+    def download_by_keyword(self, keyword, filter_type='A', year='', skip_existing=True, min_year=0):
+        """下載特定關鍵字的考古題（僅下載尚未存在的檔案）"""
+        exam_docs = [
+            d for d in self.search_exams(keyword, filter_type, year)
+            if d.year.isdigit() and int(d.year) >= min_year
+        ]
+        if skip_existing:
+            exam_docs = [d for d in exam_docs if not (self.base_folder / d.subject / d.file_name).exists()]
         if not exam_docs:
             return 0
 
         download_count = 0
-        self.log(f"Found {len(exam_docs)} exams for keyword '{keyword}' in year {year}")
+        self.log(f"Found {len(exam_docs)} new exams for keyword '{keyword}'")
 
-        for doc in tqdm(exam_docs, desc=f"Downloading {year} {keyword}"):
+        for doc in tqdm(exam_docs, desc=f"Downloading {keyword}"):
             if self.download_and_unlock(doc, skip_existing):
                 download_count += 1
-                if self.debug: self.log(f"Downloaded: {doc.file_name}")
-            else:
-                pass # Already logged in download_and_unlock
-            
+                self.log(f"成功下載: {doc.file_name}")
+
             time.sleep(random.uniform(1.0, 2.0))
 
         return download_count
@@ -99,13 +100,9 @@ class LandExamCrawler(BaseScraper):
                  if not response: continue
                  
                  soup = BeautifulSoup(response.text, "html.parser")
-                 exam_list = soup.find_all('tr')
-                 if len(exam_list) >= 2:
-                     exam_list = exam_list[2:] # Skip header
-                
-                 for exam in exam_list:
+                 for exam in soup.find_all('tr'):
                      cols = exam.find_all('td')
-                     if len(cols) >= 5:
+                     if len(cols) >= 5 and cols[3].text.strip().isdigit():
                          group = cols[1].text.strip()
                          subject = cols[2].text.strip()
                          
@@ -139,17 +136,11 @@ class LandExamCrawler(BaseScraper):
             page_div = soup.find("div", class_="page")
             if not page_div: return 0
             
-            # Text example: "第 1 頁,共 5 頁"
-            text = page_div.text.strip()
-            # Extract number after "共 "
-            if "共" in text:
-                parts = text.split("共")
-                if len(parts) > 1:
-                     # " 5 頁"
-                     num_part = parts[1].strip().replace("頁", "").strip()
-                     return int(num_part)
-            return 0
-        except Exception:
+            # Text example: "第 1 頁,共 36 頁, 540筆資料"
+            m = re.search(r"共\s*(\d+)\s*頁", page_div.text)
+            return int(m.group(1)) if m else 0
+        except Exception as e:
+            self.logger.error(f"Failed to get total pages: {e}")
             return 0
 
     def download_and_unlock(self, doc: ExamDocument, skip_existing=True):
@@ -202,19 +193,30 @@ class LandExamCrawler(BaseScraper):
         """生成 README.md"""
         if not self.base_folder.exists(): return
 
-        subject_folders = [f for f in self.base_folder.iterdir() if f.is_dir()]
-        
+        def year_key(p: Path) -> int:
+            m = re.match(r"\[(\d+)\]", p.name)
+            return int(m.group(1)) if m else 0
+
+        sections = []
+        for folder in sorted(f for f in self.base_folder.iterdir() if f.is_dir()):
+            pdfs = sorted(folder.glob("*.pdf"), key=lambda p: (year_key(p), p.name), reverse=True)
+            if pdfs:
+                sections.append((folder.name, pdfs))
+        total = sum(len(pdfs) for _, pdfs in sections)
+
+        def anchor(name: str) -> str:
+            return re.sub(r"[（）]", "", name).replace(" ", "-")
+
         with open(self.readme_path, 'w', encoding='utf-8') as f:
             f.write("# 地政考古題資料庫\n\n")
+            f.write("本資料庫收集了包含'地政'關鍵字的考古題，按科目分類整理。\n\n")
             f.write(f"最後更新時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-            
-            # TBD: Add content listing logic here (simplified for brevity)
-            # You can copy the exact logic from the original script if strict parity is needed.
-            # I will perform a simple listing.
-            
-            for folder in sorted(subject_folders):
-                f.write(f"## {folder.name}\n\n")
-                files = sorted([p for p in folder.glob("*.pdf")], reverse=True)
-                for pdf in files:
-                    f.write(f"- [{pdf.stem}]({folder.name}/{pdf.name})\n")
+            f.write(f"總檔案數：{total} 份考古題\n\n## 目錄\n\n")
+            for name, pdfs in sections:
+                f.write(f"- [{name} ({len(pdfs)}份)](#{anchor(name)})\n")
+            f.write("\n")
+            for name, pdfs in sections:
+                f.write(f"## {name}\n\n")
+                for pdf in pdfs:
+                    f.write(f"- [{pdf.stem}]({quote(name)}/{quote(pdf.name)})\n")
                 f.write("\n")
