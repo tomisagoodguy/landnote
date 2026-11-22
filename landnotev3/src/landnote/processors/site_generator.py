@@ -664,7 +664,10 @@ class SiteGenerator:
             ]
         }
         if self.exam_bank_nav:
-            config['nav'].append({'估價師題庫': [{t: p} for t, p in self.exam_bank_nav]})
+            config['nav'].append({'估價師專區': [{'專區首頁': 'appraiser.md'},
+                                              *({t: p} for t, p in self.exam_bank_nav)]})
+        else:
+            config['nav'].append({'估價師專區': 'appraiser.md'})
         
         with open(self.site_src_dir / 'mkdocs.yml', 'w', encoding='utf-8') as f:
             yaml.dump(config, f, allow_unicode=True, sort_keys=False)
@@ -774,7 +777,8 @@ class SiteGenerator:
     def _generate_homepage(self):
         """首頁：繪本風 hero + 收錄統計 + 三張入口卡；並產生考古題頁。"""
         article_count = len(list(self.posts_dir.glob("*.md"))) if self.posts_dir.exists() else 0
-        topic_count = len(self._collect_all_tags())
+        tag_counts = self._collect_all_tags()
+        topic_count = len(tag_counts)
         exam_subjects = self._exam_subjects()
         exam_count = sum(s[1] for s in exam_subjects)
         latest_year = max((s[2] for s in exam_subjects), default=0)
@@ -808,16 +812,19 @@ class SiteGenerator:
         <h3>地政與估價師考古題</h3>
         <p>高普考、地方特考、不動產估價師歷屆試題，依科目合併成一本，方便整科刷題。</p>
     </a>
+    <a href="appraiser/" class="feature-card c3">
+        <span class="feature-icon">📐</span>
+        <h3>不動產估價師專區</h3>
+        <p>估價師各科主題題庫、歷屆合併 PDF、高普考延伸練習與相關文章，一頁備齊。</p>
+    </a>
 </div>
 """
         (self.docs_dir / 'index.md').write_text(content, encoding='utf-8')
         self._generate_exams_page(exam_subjects, exam_count, latest_year)
+        self._generate_appraiser_page(exam_subjects, tag_counts)
 
     def _generate_exams_page(self, subjects: list, total: int, latest_year: int):
-        """考古題頁：每科一張卡，可下載整科合併 PDF 或到 GitHub 看單份。"""
-        from urllib.parse import quote
-        repo = "https://github.com/tomisagoodguy/landnote"
-        root = "landnotev3/地政考古題"
+        """考古題頁：依科目家族分區，每科一張卡，可下載整科合併 PDF 或到 GitHub 看單份。"""
         lines = [
             HIDE_SIDEBARS,
             "# 地政與估價師考古題",
@@ -849,7 +856,7 @@ class SiteGenerator:
             "下方依**科目家族**分區，同家族的題目觀念相通，可以互相當練習題；"
             "每張卡片會標出試題出自哪些考試。",
             "",
-            "準備不動產估價師？到 **[估價師專區](appraiser/)**，六科專業科目的題庫、合併 PDF 與延伸練習都整理在一頁。",
+            "準備不動產估價師？到 **[估價師專區](appraiser.md)**，六科專業科目的題庫、合併 PDF 與延伸練習都整理在一頁。",
             "",
             "**科目家族**：" + "・".join(
                 f"[{fam}](#{anchor})" for fam, anchor, _ in families),
@@ -917,7 +924,9 @@ class SiteGenerator:
         bank_slugs = {subject: slug for subject, slug, _ in exam_bank.SUBJECT_PAGES}
         bank_ready = {p for _, p in self.exam_bank_nav}
         own = [s for s in subjects if s[3].get(self.APPRAISER_GROUP)]
-        if not own:
+        if not own:  # nav 固定有此頁，沒資料也要產生，避免連結失效
+            (self.docs_dir / 'appraiser.md').write_text(
+                f"{HIDE_SIDEBARS}\n# 不動產估價師專區\n\n*(目前尚無估價師考古題資料)*\n", encoding='utf-8')
             return
         # 專業科目照題庫順序，國文等其他科殿後
         rank = {subject: i for i, (subject, _, _) in enumerate(exam_bank.SUBJECT_PAGES)}
@@ -946,16 +955,34 @@ class SiteGenerator:
             "",
             '<div class="feature-grid">',
         ]
-        for idx, (name, count, latest, groups) in enumerate(own):
-            n_own = groups[self.APPRAISER_GROUP]
+        # 卡片單位：有題庫的專業科目一科一張；其餘（國文歷年改名成兩個資料夾）依家族合成一張
+        cards: list = []
+        for s in own:
+            if s[0] in rank:
+                cards.append((s[0], s[0], [s]))
+            else:
+                fam = self._subject_family(s[0])[0]
+                unit = next((c for c in cards if c[0] == fam), None)
+                if unit:
+                    unit[2].append(s)
+                else:
+                    cards.append((fam, fam, [s]))
+
+        for idx, (title, key, members) in enumerate(cards):
+            n_own = sum(s[3][self.APPRAISER_GROUP] for s in members)
+            latest = max(s[2] for s in members)
             buttons = []
-            slug = bank_slugs.get(name)
+            slug = bank_slugs.get(key)
             if slug and f"{exam_bank.BANK_DIR}/{slug}.md" in bank_ready:
                 buttons.append(f'<a href="../{exam_bank.BANK_DIR}/{slug}/" class="md-button md-button--primary">'
                                '主題題庫</a>')
-            buttons.append(f'<a href="{self._merged_pdf_url(name)}" class="md-button">整科合併 PDF</a>')
+            for s in members:
+                label = "整科合併 PDF" if len(members) == 1 else f"{s[0]} PDF"
+                buttons.append(f'<a href="{self._merged_pdf_url(s[0])}" class="md-button">{label}</a>')
+            # 資料夾內也有其他考試的同名科目時，提醒合併 PDF 不只估價師題目
+            mixed = any(s[1] > s[3][self.APPRAISER_GROUP] for s in members)
 
-            fams = self.APPRAISER_PRACTICE.get(name) or [self._subject_family(name)[0]]
+            fams = self.APPRAISER_PRACTICE.get(key) or [self._subject_family(key)[0]]
             practice = [s for fam in fams for s in family_members.get(fam, []) if s[0] not in own_names]
             practice.sort(key=lambda s: -s[1])
             practice_html = "、".join(
@@ -963,10 +990,10 @@ class SiteGenerator:
                 for s in practice[:self.APPRAISER_PRACTICE_SHOWN])
             if len(practice) > self.APPRAISER_PRACTICE_SHOWN:
                 more = practice[self.APPRAISER_PRACTICE_SHOWN:]
-                practice_html += (f'，<a href="../exams/#{anchors.get(fams[0], "")}">'
-                                  f'另有 {len(more)} 科 {sum(s[1] for s in more)} 份</a>')
+                links = "・".join(f'<a href="../exams/#{anchors[f]}">{f}</a>' for f in fams if f in anchors)
+                practice_html += f"；另有 {len(more)} 科 {sum(s[1] for s in more)} 份，見考古題頁 {links}"
 
-            tags = [t for t in self.APPRAISER_TAGS.get(name, []) if tag_counts.get(t)]
+            tags = [t for t in self.APPRAISER_TAGS.get(key, []) if tag_counts.get(t)]
             tags_html = "、".join(
                 f'<a href="../blog/category/{quote(t.lower().replace(" ", "-"))}/">{t}</a>（{tag_counts[t]}）'
                 for t in tags)
@@ -975,8 +1002,12 @@ class SiteGenerator:
                 f'    <div class="feature-card c{idx % 4}">',
                 f'        <div class="feature-card__head"><span class="pb-count">估價師 {n_own} 份</span>'
                 f'<span class="pb-count">最新 {latest} 年</span></div>',
-                f'        <h3>{name}</h3>',
+                f'        <h3>{title}</h3>',
             ])
+            if len(members) > 1:
+                lines.append(f'        <p>歷年科目名稱：{"、".join(s[0] for s in members)}</p>')
+            if mixed:
+                lines.append('        <p>合併 PDF 也收錄其他考試的同名科目。</p>')
             if practice_html:
                 lines.append(f'        <p><b>延伸練習</b>：{practice_html}</p>')
             if tags_html:
