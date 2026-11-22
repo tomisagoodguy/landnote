@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -29,6 +30,8 @@ EXAM_BANK_FILE = DATA_DIR / "exam_bank" / "appraiser.json"
 EXAM_READER_DATA_DIR = DATA_DIR / "exam_bank"
 # 法規修法時間軸（全國法規資料庫沿革）：law_timeline 寫入、site_generator 與 exam_bank 讀取
 LAW_TIMELINE_FILE = DATA_DIR / "law_timeline.json"
+# 追蹤法規的現行條文：law_timeline 與時間軸一起寫入，exam_reader 用來把考題對到條文
+LAW_ARTICLES_FILE = DATA_DIR / "law_articles.json"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)

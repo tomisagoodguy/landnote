@@ -18,7 +18,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
 
-from landnote.config import ARTICLES_DIR, EXAM_READER_DATA_DIR
+from landnote.config import ARTICLES_DIR, EXAM_READER_DATA_DIR, LAW_ARTICLES_FILE
 from landnote.processors.exam_bank import (
     APPRAISAL_TOPICS,
     EXAM_DIR,
@@ -30,7 +30,7 @@ from landnote.processors.exam_bank import (
     best_topic,
     normalize_cjk,
 )
-from landnote.processors.law_timeline import law_refs
+from landnote.processors.law_timeline import LawTimeline, law_refs
 
 # (SUBJECT_FAMILIES 的家族名, 網址 slug, 頁面名稱)；slug 的底線版即 JSON 檔名（land-law → land_law.json）
 READERS = [
@@ -43,6 +43,7 @@ READERS = [
 ]
 READER_ROOT = "exam-reader"
 TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
+LAW_DIR = "laws"  # 依法條比較頁：exam-reader/<slug>/laws/
 
 # 跨年度比較的主題：(主題, 核心詞 regex, 一般詞 regex)，計分規則同 exam_bank.best_topic。
 # 估價、投資、經濟沿用估價師題庫；其餘三科範圍比估價師的對應科目廣，另訂清單。
@@ -484,12 +485,26 @@ def _similar_md(similar: List[Tuple[dict, dict]]) -> List[str]:
     return out
 
 
-def _question_md(q: dict, refs: List[str], related: List[dict], answer_doc: Optional[dict] = None,
+def _law_tags(hits: List[Tuple[str, str]], pages: Dict[str, str], up: str, limit: int = 6) -> List[str]:
+    """法條標籤；有比較頁的連過去。up 為從目前頁面到家族目錄的網址前綴（如 "../"）。"""
+    tags = []
+    for ref, source in hits[:limit]:
+        cls = "pb-count er-law" + (" er-law--match" if source == LawIndex.MATCH else "")
+        tip = f'title="{LawIndex.SOURCE_TIP[source]}"'
+        if ref in pages:
+            tags.append(f'<a class="{cls}" {tip} href="{up}{LAW_DIR}/{pages[ref]}/">{ref}</a>')
+        else:
+            tags.append(f'<span class="{cls}" {tip}>{ref}</span>')
+    return tags
+
+
+def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str], related: List[dict],
+                 answer_doc: Optional[dict] = None,
                  similar: Optional[List[Tuple[dict, dict]]] = None) -> List[str]:
     meta = [f'<span class="pb-count">第 {q["no"]} 題</span>']
     if q["score"]:
         meta.append(f'<span class="pb-count">{q["score"]} 分</span>')
-    meta += [f'<span class="pb-count er-law">{r}</span>' for r in refs[:6]]
+    meta += _law_tags(hits, law_pages, "../")
     out = [f'<div class="qb-item" id="{qid(q)}" markdown>', f'<p class="qb-meta">{"".join(meta)}</p>', "",
            _md_escape(q["text"]), ""]
     if q.get("options"):
@@ -507,9 +522,9 @@ def _question_md(q: dict, refs: List[str], related: List[dict], answer_doc: Opti
     return out
 
 
-def _paper_page(p: dict, index: ArticleIndex, name: str,
-                similar: "SimilarIndex") -> Tuple[str, Dict[str, List[dict]]]:
-    """產生單份考卷頁，並回傳本卷每題的法條（供總覽頁統計）。"""
+def _paper_page(p: dict, index: ArticleIndex, name: str, similar: "SimilarIndex",
+                hits: Dict[Tuple[str, str], List[Tuple[str, str]]], law_pages: Dict[str, str]) -> str:
+    """產生單份考卷頁。hits 為每題的法條 [(法條, 來源)]，law_pages 為有比較頁的法條 → 檔名。"""
     from urllib.parse import quote
 
     essays = [q for q in p["questions"] if q["kind"] == "essay"]
@@ -519,16 +534,18 @@ def _paper_page(p: dict, index: ArticleIndex, name: str,
         f"# {_paper_title(p)}",
         "",
         f'<p class="qb-meta"><a href="{REPO_BLOB + quote(p["pdf"])}" target="_blank" rel="noopener">原卷 PDF</a>'
-        f'<a href="../{TOPIC_DIR}/">跨年度比較</a><a href="../">回{name}題目總覽</a></p>',
+        f'<a href="../{TOPIC_DIR}/">跨年度比較</a>'
+        + (f'<a href="../{LAW_DIR}/">依法條比較</a>' if law_pages else "")
+        + f'<a href="../">回{name}題目總覽</a></p>',
         "",
         '!!! note "題目文字由 PDF 自動擷取"',
-        "    表格與特殊符號可能跑版，請對照原卷 PDF。考點標籤由題目與詳解中引用的法條自動抽出；"
+        "    表格與特殊符號可能跑版，請對照原卷 PDF。法條標籤是題目或詳解引用的條文，"
+        "虛線框者是依條文內容自動比對（可能不準）；點標籤可看歷屆考這一條的題目。"
         "延伸閱讀依文字相似度自動推薦，不一定與題目完全對應。",
         "",
     ]
     if p["commentary"]:
         lines += ['??? info "試題評析"', ""] + _indent([_md_escape(c) + "\n" for c in p["commentary"]]) + [""]
-    refs_by_q: Dict[str, List[dict]] = {}
     for title, group in (("申論題", essays), ("測驗題", choices)):
         if not group:
             continue
@@ -539,11 +556,8 @@ def _paper_page(p: dict, index: ArticleIndex, name: str,
             k = 3 if q["kind"] == "essay" else 2
             related = index.related(q["text"] * 2 + "".join(q["answer"]) + "".join(q.get("options", [])), refs, k)
             answer_doc = index.teacher_answer(q["text"]) if q["kind"] == "essay" else None
-            lines += _question_md(q, refs, related, answer_doc, similar.of(p, q))
-            for r in refs:
-                if "第" in r:
-                    refs_by_q.setdefault(r, []).append({"paper": p, "no": q["no"], "kind": q["kind"]})
-    return "\n".join(lines), refs_by_q
+            lines += _question_md(q, hits[(p["id"], qid(q))], law_pages, related, answer_doc, similar.of(p, q))
+    return "\n".join(lines)
 
 
 def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
@@ -553,28 +567,33 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
     if not readers:
         return []
     index = ArticleIndex(posts_dir)
+    laws = LawIndex()
     nav = []
     for _, slug, name in readers:
         papers = json.loads(data_file(slug, data_dir).read_text(encoding="utf-8"))
         if papers:
-            _write_family(docs_dir / READER_ROOT / slug, papers, index, name, slug)
+            _write_family(docs_dir / READER_ROOT / slug, papers, index, laws, name, slug)
             nav.append((name, f"{READER_ROOT}/{slug}/index.md"))
     return nav
 
 
-def _write_family(out: Path, papers: List[dict], index: ArticleIndex, name: str, slug: str) -> None:
+def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "LawIndex", name: str,
+                  slug: str) -> None:
     from urllib.parse import quote
 
     out.mkdir(parents=True, exist_ok=True)
-    hot: Dict[str, List[dict]] = defaultdict(list)
     readable = [p for p in papers if p["questions"]]
     similar = SimilarIndex(readable)
     _write_topic_pages(out / TOPIC_DIR, readable, similar, name, READER_TOPICS.get(slug, []))
+    hits = {(p["id"], qid(q)): laws.refs(q) for p, q in similar.items}
+    by_ref: Dict[str, List[Tuple[dict, dict, str]]] = defaultdict(list)
+    for p, q in similar.items:
+        for ref, source in hits[(p["id"], qid(q))]:
+            by_ref[ref].append((p, q, source))
+    law_pages = _write_law_pages(out / LAW_DIR, by_ref, laws, name)
     for p in readable:
-        page, refs = _paper_page(p, index, name, similar)
+        page = _paper_page(p, index, name, similar, hits, law_pages)
         (out / f"{p['id']}.md").write_text(page, encoding="utf-8")
-        for r, qs in refs.items():
-            hot[r] += qs
 
     n_q = sum(len(p["questions"]) for p in readable)
     n_ans = sum(p["has_answer"] for p in papers)
@@ -591,22 +610,23 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, name: str,
         f"**[跨年度比較]({TOPIC_DIR}/index.md)**：依主題看各年度出了哪些題目，以及換句話說又考一次的重複考點。",
         "",
     ]
-    if hot:
+    if law_pages:
         lines += [
+            f"**[依法條比較]({LAW_DIR}/index.md)**：同一條文歷屆怎麼考，附現行條文與修正日期，"
+            "標出出題後條文已修正的舊題。",
+            "",
             "## 最常考的法條",
             "",
-            "題目或詳解引用該條文的題數；點年度直接跳到那份考卷。",
+            f"考過兩題以上的條文共 {len(law_pages)} 條，以下列出前 20 條；點條文看歷屆題目。",
             "",
             "| 法條 | 題數 | 出題年度 |",
             "|---|---:|---|",
         ]
-    for ref, qs in sorted(hot.items(), key=lambda kv: (-len(kv[1]), kv[0]))[:30]:
-        by_paper: Dict[str, dict] = {}
-        for q in qs:
-            by_paper.setdefault(q["paper"]["id"], q["paper"])
-        links = "、".join(f"[{p['year']}{_exam_short(p['exam'])}]({p['id']}.md)" for p in
-                         sorted(by_paper.values(), key=lambda p: -p["year"])[:10])
-        lines.append(f"| {ref} | {len(qs)} | {links} |")
+        top = sorted(law_pages, key=lambda r: (-len(by_ref[r]), r))[:20]
+        for ref in top:
+            years = sorted({p["year"] for p, _, _ in by_ref[ref]})
+            span = f"{years[0]}–{years[-1]}" if len(years) > 1 else str(years[0])
+            lines.append(f"| [{ref}]({LAW_DIR}/{law_pages[ref]}.md) | {len(by_ref[ref])} | {span} |")
     lines += ["", "## 歷屆考卷", "", "| 年度 | 考試 | 科目 | 題目 | 詳解 |", "|---:|---|---|---|---|"]
     for p in sorted(papers, key=lambda p: (-p["year"], p["exam"])):
         e = sum(q["kind"] == "essay" for q in p["questions"])
@@ -763,22 +783,227 @@ def _write_topic_page(path: Path, topic: str, qs: List[Tuple[dict, dict]], name:
     for y in years:
         lines += [f"## {y} 年 {{#y{y}}}", ""]
         for p, q in sorted(by_year[y], key=lambda pq: (pq[1]["kind"] != "essay", pq[0]["exam"], pq[1]["no"])):
-            if q["kind"] == "essay":
-                kind = f"申論 {q['score']} 分" if q["score"] else "申論"
-            else:
-                kind = "測驗"
-            lines += [
-                '<div class="qb-item" markdown>',
-                f'<p class="qb-meta"><span class="pb-count">{_exam_short(p["exam"])}</span>'
-                f'<span class="pb-count">{kind}</span>'
-                f'<a href="../../{p["id"]}/#{qid(q)}">{"看詳解" if q["answer"] else "看原題"} →</a></p>',
-                "",
-                f"《{_md_escape(p['subject'])}》第 {q['no']} 題：{_md_escape(q['text'])}",
-                "",
-            ]
-            if q.get("options"):
-                lines += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
-            if q["kind"] == "choice":
-                lines += ['??? success "答案"', f"    **{q['key']}**", ""]
-            lines += ["</div>", ""]
+            lines += _card_md(p, q)
     path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _card_md(p: dict, q: dict, badges: Optional[List[str]] = None) -> List[str]:
+    """比較頁（topics/、laws/ 下一層）的題目卡：考試別、題型、額外標籤、題目、選項、可收合答案。"""
+    if q["kind"] == "essay":
+        kind = f"申論 {q['score']} 分" if q["score"] else "申論"
+    else:
+        kind = "測驗"
+    out = [
+        '<div class="qb-item" markdown>',
+        f'<p class="qb-meta"><span class="pb-count">{_exam_short(p["exam"])}</span>'
+        f'<span class="pb-count">{kind}</span>{"".join(badges or [])}'
+        f'<a href="../../{p["id"]}/#{qid(q)}">{"看詳解" if q["answer"] else "看原題"} →</a></p>',
+        "",
+        f"《{_md_escape(p['subject'])}》第 {q['no']} 題：{_md_escape(q['text'])}",
+        "",
+    ]
+    if q.get("options"):
+        out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
+    if q["kind"] == "choice":
+        out += ['??? success "答案"', f"    **{q['key']}**", ""]
+    return out + ["</div>", ""]
+
+
+# ---- 依法條比較 ----
+
+class LawIndex:
+    """把考題對到條文：題目明寫的條號 > 詳解引用的條號 > 依條文內容比對（字二元組 TF-IDF）。
+
+    條文來自 data/law_articles.json（law_timeline.build 寫入）；檔案不存在時只用明寫的條號。
+    """
+
+    QUESTION, ANSWER, MATCH = "題目", "詳解", "比對"
+    SOURCE_TIP = {QUESTION: "題目引用的條文", ANSWER: "詳解引用的條文", MATCH: "依條文內容自動比對，可能不準"}
+    MIN_SCORE = 0.3  # 實測 0.3 以上多為正確條文；0.25 以下常對到用語相近的他法條文
+    SECOND_SCORE = 0.45  # 第二高分也很高時一併列出（例如測驗題選項分別考不同條）
+    # 比對時去掉題目套語，免得「下列何者正確」主導分數
+    BOILERPLATE = re.compile(r"下列|何者|敘述|正確|錯誤|請|說明|試|何謂|為何|規定|依|之")
+
+    def __init__(self, articles_file: Path = LAW_ARTICLES_FILE, timeline: Optional[LawTimeline] = None):
+        self.timeline = timeline or LawTimeline()
+        self.text: Dict[str, str] = {}
+        self.law_of: List[str] = []
+        self.refs_list: List[str] = []
+        self.postings: Dict[str, List[Tuple[int, float]]] = defaultdict(list)
+        self.idf: Dict[str, float] = {}
+        if not articles_file.exists():
+            return
+        laws = json.loads(articles_file.read_text(encoding="utf-8"))["laws"]
+        tfs = []
+        for law, articles in laws.items():
+            for no, content in articles.items():
+                ref = _ref_name(law, no)
+                self.text[ref] = content
+                self.refs_list.append(ref)
+                self.law_of.append(law)
+                tfs.append(Counter(_grams(content)))
+        df: Counter = Counter()
+        for tf in tfs:
+            df.update(tf.keys())
+        n = len(tfs)
+        self.idf = {t: math.log((n + 1) / (c + 1)) + 1 for t, c in df.items()}
+        for i, tf in enumerate(tfs):
+            vec = {t: (1 + math.log(c)) * self.idf[t] for t, c in tf.items()}
+            norm = math.sqrt(sum(v * v for v in vec.values())) or 1.0
+            for t, v in vec.items():
+                self.postings[t].append((i, v / norm))
+
+    def refs(self, q: dict) -> List[Tuple[str, str]]:
+        """題目的法條 [(法條, 來源)]，依可信度排序、去重。"""
+        stem = q["text"] + " " + " ".join(q.get("options", []))
+        out: Dict[str, str] = {}
+        for r in law_refs(stem):
+            if "第" in r:
+                out.setdefault(r, self.QUESTION)
+        for r in law_refs("".join(q["answer"])):
+            if "第" in r:
+                out.setdefault(r, self.ANSWER)
+        for r in self.match(stem):
+            out.setdefault(r, self.MATCH)
+        return list(out.items())
+
+    def match(self, text: str) -> List[str]:
+        if not self.postings:
+            return []
+        # 題目點名的法規（「依土地徵收條例規定」）只在該法規內找
+        names = {r for r in law_refs(text) if "第" not in r}
+        tf = Counter(_grams(self.BOILERPLATE.sub("", text)))
+        vec = {t: (1 + math.log(c)) * self.idf[t] for t, c in tf.items() if t in self.idf}
+        norm = math.sqrt(sum(v * v for v in vec.values())) or 1.0
+        scores: Dict[int, float] = defaultdict(float)
+        for t, v in vec.items():
+            for i, w in self.postings[t]:
+                if not names or self.law_of[i] in names:
+                    scores[i] += v / norm * w
+        best = sorted(scores.items(), key=lambda kv: -kv[1])[:2]
+        out = [self.refs_list[i] for i, sc in best[:1] if sc >= self.MIN_SCORE]
+        out += [self.refs_list[i] for i, sc in best[1:] if out and sc >= self.SECOND_SCORE]
+        return out
+
+
+def _grams(text: str) -> List[str]:
+    s = re.sub(r"[^一-鿿A-Za-z0-9]", "", text)
+    return [s[i:i + 2] for i in range(len(s) - 1)]
+
+
+def _ref_name(law: str, no: str) -> str:
+    """("土地法", "34-1") → 「土地法第34條之1」，與 law_refs 的寫法一致。"""
+    main, _, sub = no.partition("-")
+    return f"{law}第{main}條" + (f"之{sub}" if sub else "")
+
+
+def _law_slug(ref: str, timeline: LawTimeline) -> str:
+    """比較頁檔名：全國法規資料庫代碼＋條號（D0060001-34-1），網址穩定；查不到代碼時用雜湊。"""
+    m = re.match(r"^(.+?)第(\d+)條(?:之(\d+))?$", ref)
+    info = timeline.laws.get(m.group(1), {}) if m else {}
+    if m and info.get("pcode"):
+        return f"{info['pcode']}-{m.group(2)}" + (f"-{m.group(3)}" if m.group(3) else "")
+    return "law-" + hashlib.md5(ref.encode("utf-8")).hexdigest()[:8]
+
+
+LAW_PAGE_MIN = 2  # 至少兩題才有比較的意義
+
+
+def _write_law_pages(out: Path, by_ref: Dict[str, List[Tuple[dict, dict, str]]], laws: LawIndex,
+                     name: str) -> Dict[str, str]:
+    """exam-reader/<slug>/laws/：總覽（依法規分區）與每條一頁；回傳有頁面的法條 → 檔名。"""
+    pages = {ref: _law_slug(ref, laws.timeline) for ref, qs in by_ref.items() if len(qs) >= LAW_PAGE_MIN}
+    if not pages:
+        return {}
+    out.mkdir(parents=True, exist_ok=True)
+    grouped: Dict[str, List[str]] = defaultdict(list)
+    for ref in pages:
+        grouped[re.sub(r"第\d+條.*$", "", ref)].append(ref)
+    order = sorted(grouped, key=lambda law: -sum(len(by_ref[r]) for r in grouped[law]))
+    n_q = len({(p["id"], qid(q)) for ref in pages for p, q, _ in by_ref[ref]})
+    lines = [
+        HIDE_NAV,
+        f"# {name}：依法條比較",
+        "",
+        f'<p class="qb-meta"><a href="../{TOPIC_DIR}/">依主題比較</a><a href="../">回{name}題目總覽</a></p>',
+        "",
+        f"把 **{n_q}** 題對到 **{len(pages)}** 條考過兩題以上的條文。點條文可看**現行條文、修正日期**，"
+        "以及歷屆考這一條的題目（依年度排列，出題後條文已修正的會標出來）。",
+        "",
+        '!!! note "法條怎麼對上的"',
+        "    題目或補習班詳解明寫條號的直接採用；沒寫條號的，依題目文字與全國法規資料庫現行條文的相似度自動比對，"
+        "比對結果在題目頁以虛線框標示，偶有對錯。",
+        "",
+        "**法規**：" + "・".join(f"[{law}](#law-{i})（{len(grouped[law])}）" for i, law in enumerate(order, 1)),
+        "",
+    ]
+    for i, law in enumerate(order, 1):
+        lines += [f"## {law} {{#law-{i}}}", "", "| 條文 | 題數 | 出題年度 | 內容 |", "|---|---:|---|---|"]
+        for ref in sorted(grouped[law], key=lambda r: (-len(by_ref[r]), _article_key(r))):
+            years = sorted({p["year"] for p, _, _ in by_ref[ref]})
+            span = f"{years[0]}–{years[-1]}" if len(years) > 1 else str(years[0])
+            snippet = _md_escape(laws.text.get(ref, "").replace("\n", " ")[:24])
+            lines.append(f"| [{ref[len(law):]}]({pages[ref]}.md) | {len(by_ref[ref])} | {span} | "
+                         f"{snippet}{'…' if snippet else '（現行法規查無此條）'} |")
+        lines.append("")
+        for ref in grouped[law]:
+            _write_law_page(out / f"{pages[ref]}.md", ref, by_ref[ref], laws, name)
+    (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+    return pages
+
+
+def _article_key(ref: str) -> Tuple[int, int]:
+    m = re.search(r"第(\d+)條(?:之(\d+))?$", ref)
+    return (int(m.group(1)), int(m.group(2) or 0)) if m else (0, 0)
+
+
+def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws: LawIndex, name: str) -> None:
+    amended = laws.timeline.amended(ref)
+    url = laws.timeline.url(ref)
+    by_year: Dict[int, List[Tuple[dict, dict, str]]] = defaultdict(list)
+    for item in qs:
+        by_year[item[0]["year"]].append(item)
+    years = sorted(by_year, reverse=True)
+    n_stale = sum(1 for p, _, _ in qs if _amended_after(amended, p["year"]))
+    lines = [
+        "---\nhide:\n  - navigation\n---\n",
+        f"# {ref}",
+        "",
+        f'<p class="qb-meta"><span class="pb-count">{name}</span><span class="pb-count">{len(qs)} 題</span>'
+        f'<span class="pb-count">{years[-1]}–{years[0]} 年</span><a href="../">回依法條比較</a></p>',
+        "",
+    ]
+    text = laws.text.get(ref)
+    if text:
+        # 條文每項一段；整段放進 admonition 縮排，換行才不會跳出區塊
+        lines += ['!!! quote "現行條文"', ""] + _indent(
+            [ln for par in text.split("\n") if par.strip() for ln in (_md_escape(par.strip()), "")])
+        if url:
+            lines += [f"    [全國法規資料庫]({url}){{target=\"_blank\"}}", ""]
+    else:
+        lines += ['!!! warning "現行法規查無此條"',
+                  "    這一條可能已刪除或條號變動，題目內容請以出題當時的法規理解。", ""]
+    if amended:
+        shown = "、".join(amended[:8]) + (f" 等 {len(amended)} 次" if len(amended) > 8 else "")
+        lines += [f"**條文修正**（含法規修正全文）：{shown}。"]
+        if n_stale:
+            lines += ["", f"其中 **{n_stale}** 題出題後條文又修正過，標有「出題後修正」，舊詳解可能已不適用。"]
+        lines += [""]
+    lines += ["出題年度：" + "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years), ""]
+    for y in years:
+        lines += [f"## {y} 年 {{#y{y}}}", ""]
+        for p, q, source in sorted(by_year[y], key=lambda t: (t[1]["kind"] != "essay", t[0]["exam"], t[1]["no"])):
+            badges = [f'<span class="pb-count er-law{" er-law--match" if source == LawIndex.MATCH else ""}" '
+                      f'title="{LawIndex.SOURCE_TIP[source]}">{source}</span>']
+            after = _amended_after(amended, p["year"])
+            if after:
+                badges.append(f'<span class="pb-count er-warn" title="出題後條文修正日期">出題後修正 {after}</span>')
+            lines += _card_md(p, q, badges)
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _amended_after(amended: List[str], roc_year: int) -> Optional[str]:
+    """出題年度之後最近一次修正的日期；同年度的修正無法判斷先後，不算。"""
+    cutoff = f"{roc_year + 1911}-12-31"
+    later = [d for d in amended if d > cutoff]
+    return later[0] if later else None

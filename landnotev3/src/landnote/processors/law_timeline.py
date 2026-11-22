@@ -17,7 +17,7 @@ from datetime import date
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-from landnote.config import LAW_TIMELINE_FILE
+from landnote.config import LAW_ARTICLES_FILE, LAW_TIMELINE_FILE
 
 MOJ_SOURCES = ["https://law.moj.gov.tw/api/Ch/Law/JSON", "https://law.moj.gov.tw/api/Ch/Order/JSON"]
 LAW_SINGLE_URL = "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode={pcode}&flno={flno}"
@@ -140,11 +140,17 @@ def parse_histories(text: str) -> List[dict]:
     return out
 
 
-def build(out_file: Path = LAW_TIMELINE_FILE) -> Path:
-    """下載全國法規資料庫開放資料，寫出追蹤法規的修法時間軸。"""
+def _article_no(raw: str) -> str:
+    """「第 34-1 條」→「34-1」。"""
+    return re.sub(r"[第條\s]", "", raw)
+
+
+def build(out_file: Path = LAW_TIMELINE_FILE, articles_file: Path = LAW_ARTICLES_FILE) -> Path:
+    """下載全國法規資料庫開放資料，寫出追蹤法規的修法時間軸與現行條文。"""
     import requests
 
     laws: Dict[str, dict] = {}
+    articles: Dict[str, Dict[str, str]] = {}
     updated = ""
     for url in MOJ_SOURCES:
         resp = requests.get(url, timeout=180)
@@ -162,11 +168,18 @@ def build(out_file: Path = LAW_TIMELINE_FILE) -> Path:
                 "pcode": pcode.group(1) if pcode else "",
                 "amendments": parse_histories(law["LawHistories"]),
             }
+            # 已刪除的條文留著也比對不到有意義的考題
+            articles[law["LawName"]] = {
+                _article_no(a["ArticleNo"]): a["ArticleContent"].replace("\r", "").strip()
+                for a in law["LawArticles"]
+                if a.get("ArticleType") == "A" and not a["ArticleContent"].lstrip().startswith("（刪除）")}
     if not laws:
         raise RuntimeError("全國法規資料庫回傳的資料中找不到任何追蹤法規")
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(json.dumps({"source_updated": updated, "laws": laws}, ensure_ascii=False, indent=1),
                         encoding="utf-8")
+    articles_file.write_text(json.dumps({"source_updated": updated, "laws": articles}, ensure_ascii=False,
+                                        indent=0), encoding="utf-8")
     return out_file
 
 
@@ -182,6 +195,23 @@ class LawTimeline:
 
     def __bool__(self) -> bool:
         return bool(self.laws)
+
+    def url(self, ref: str) -> Optional[str]:
+        """條文在全國法規資料庫的網址；未追蹤的法規回 None。"""
+        law, article = _split_ref(ref)
+        info = self.laws.get(law)
+        if not info:
+            return None
+        if article and info.get("pcode"):
+            return LAW_SINGLE_URL.format(pcode=info["pcode"], flno=article)
+        return info["url"]
+
+    def amended(self, ref: str) -> List[str]:
+        """該條（或整部法規修正全文）的修正日期，新到舊。"""
+        law, article = _split_ref(ref)
+        info = self.laws.get(law, {})
+        return sorted({a["date"] for a in info.get("amendments", [])
+                       if a["all"] or (article is not None and article in a["articles"])}, reverse=True)
 
     def stale(self, refs: List[str], as_of: date) -> List[dict]:
         """回傳 as_of 之後被修正的引用：[{"ref", "date"（最近一次相關修正）, "url"}]，依引用順序。"""

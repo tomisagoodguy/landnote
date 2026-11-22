@@ -72,14 +72,18 @@ function initStudyTools() {
 
     // 4. Law Referencer (Auto Hyperlink for Laws)
     // 掃描段落文字中的法規條文，並轉換為全國法規資料庫查詢連結
-    const lawRegex = /((?:土地法|平均地權條例|土地稅法|民法|契稅條例|房屋稅條例|都市計畫法|區域計畫法|國土計畫法)[^\d第]*第[\s\d\-之]+條)/g;
+    // 「第34條之1」的「之1」要一起包進連結，否則會查到第 34 條；
+    // 法名與「第」之間只容許少數非標點字（「民法物權編第」），否則會從前一個法名一路吃到後面的條號
+    const lawRegex = /((?:土地法|平均地權條例|土地稅法|民法|契稅條例|房屋稅條例|都市計畫法|區域計畫法|國土計畫法)[^\d第，。、；：「」『』（）()\n]{0,6}第[\s\d\-之]+條(?:\s*之\s*\d+)?)/g;
 
     const textNodes = [];
     const walk = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
     let node;
     while (node = walk.nextNode()) {
         // Skip text inside existing links or code blocks
-        if (node.parentNode.nodeName === 'A' || node.parentNode.nodeName === 'CODE' || node.parentNode.nodeName === 'PRE') {
+        // 標題（如依法條比較頁的「土地法第34條之1」）不加連結
+        if (node.parentNode.nodeName === 'A' || node.parentNode.nodeName === 'CODE' || node.parentNode.nodeName === 'PRE'
+            || node.parentNode.closest('h1, h2, h3')) {
             continue;
         }
         textNodes.push(node);

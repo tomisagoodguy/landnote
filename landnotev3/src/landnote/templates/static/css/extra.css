@@ -614,7 +614,25 @@ a.feature-card:active {
   margin-left: auto;
   font-size: 0.85em;
 }
-
+/* 法條標籤（連到依法條比較頁）：外觀同 pb-count，不套用「回總覽」的靠右 */
+.md-typeset .qb-meta a.er-law {
+  margin-left: 0;
+  font-size: 0.68rem;
+  color: var(--pb-ink);
+  background: var(--pb-water-l);
+}
+.md-typeset .qb-meta a.er-law:hover {
+  background: var(--pb-water);
+}
+/* 依條文內容自動比對（非題目、詳解明寫）的法條，用虛線框區別 */
+.md-typeset .qb-meta .er-law--match {
+  border-style: dashed;
+}
+.md-typeset .qb-meta .er-warn {
+  color: var(--pb-coral-deep);
+  border-color: var(--pb-coral-deep);
+  background: var(--pb-coral-l);
+}
 /* ── 估價師專區（appraiser.md）：手機優先，按鈕在上、延伸連結收合 ── */
 .md-typeset .ap-lead {
   margin: 0 0 0.8rem;
