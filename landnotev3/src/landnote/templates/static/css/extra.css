@@ -624,6 +624,11 @@ a.feature-card:active {
 .md-typeset .qb-meta a.er-law:hover {
   background: var(--pb-water);
 }
+/* 申論題連續刷題頁：每題上方的出處（年度、考試、科目），連回原考卷 */
+.md-typeset .er-drill-src {
+  margin: 1.6em 0 0.3em;
+  font-weight: 700;
+}
 /* 依條文內容自動比對（非題目、詳解明寫）的法條，用虛線框區別 */
 .md-typeset .qb-meta .er-law--match {
   border-style: dashed;
