@@ -40,6 +40,8 @@ READERS = [
     ("土地經濟與土地政策", "economics", "土地經濟與土地政策"),
     ("土地利用與都市計畫", "land-use", "土地利用與都市計畫"),
     ("民法", "civil-law", "民法"),
+    ("土地登記", "registration", "土地登記"),
+    ("稅法與政府採購", "tax", "稅法與政府採購"),
 ]
 READER_ROOT = "exam-reader"
 TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
@@ -87,6 +89,38 @@ CIVIL_LAW_TOPICS = TOPICS["民法物權與不動產法規"][:4] + [
      r"使用借貸|損害賠償|解除|危險負擔|定金|違約金", r"債|價金"),
     ("親屬與繼承", r"繼承|遺產|夫妻|婚姻|遺囑|剩餘財產|配偶|子女|特留分|拋棄繼承|監護", r"親屬"),
 ]
+REGISTRATION_TOPICS = [
+    ("登記制度與基本原則", r"登記制度|強制登記|托崙斯|權利登記制|契據登記|靜態登記|動態登記|合意主義|公示主義|"
+     r"日據|形式審查|實質審查|對抗第三人", r"制度|原則"),
+    # 「申請」幾乎每題都有，只當一般詞，否則程序類會吸走其他主題的題目
+    ("登記申請程序與審查", r"代理|登記原因證明|身分證明|收件|審查|駁回|補正|登記規費|登記費|罰鍰|印鑑|簽證|"
+     r"地政士|網路申請|跨所|親自到場", r"申請|程序|機關"),
+    ("總登記與第一次登記", r"總登記|第一次登記|無主土地|時效取得|公告期間|異議|測量成果|使用執照", r"第一次"),
+    ("所有權移轉與繼承登記", r"移轉登記|買賣|贈與|繼承|遺產|拋棄繼承|遺贈|遺囑|共有物分割|第\s*34\s*條之\s*1|"
+     r"逾期未辦|未辦繼承|代位", r"移轉|所有權"),
+    ("他項權利登記", r"抵押權|地上權|不動產役權|典權|農育權|耕作權|他項權利|最高限額|權利價值", r"設定"),
+    ("標示變更、更正與塗銷登記", r"標示變更|分割|合併|更正登記|更正|塗銷|消滅登記|滅失|住址變更|姓名變更|"
+     r"地目|複丈", r"變更"),
+    ("限制登記與預告登記", r"限制登記|查封|假扣押|假處分|預告登記|破產登記|囑託登記|囑託|禁止處分", r"限制"),
+    ("登記效力與損害賠償", r"公信力|絕對效力|登記錯誤|損害賠償|登記儲金|推定力|登記生效|登記對抗|善意第三人",
+     r"效力|賠償"),
+    ("信託、區分所有與特殊登記", r"信託|區分所有|公寓大廈|共有部分|共用部分|地籍清理|祭祀公業|寺廟|外國人|"
+     r"大陸地區|原住民|夫妻|法人|未登記", r"建物|特殊"),
+    ("書狀、謄本與地籍資料", r"權利書狀|所有權狀|書狀|謄本|閱覽|個人資料|地籍資料|電子處理|登記簿|地籍圖",
+     r"資料"),
+]
+TAX_TOPICS = [
+    ("地價稅", r"地價稅|申報地價|累進起點|自用住宅用地|公共設施保留地|空地稅|田賦", r"地價"),
+    ("土地增值稅", r"增值稅|漲價總數額|原地價|移轉現值|重購退稅|不課徵|農業用地|一生一次|一生一屋", r"漲價"),
+    ("房地合一與所得稅", r"所得稅|房地合一|財產交易所得|營利事業|綜合所得|扣除額|免稅額|推計課稅|所得",
+     r"申報|課稅所得"),
+    ("房屋稅與契稅", r"房屋稅|契稅|房屋現值|房屋標準價格|囤房|非自住", r"房屋"),
+    ("遺產及贈與稅", r"遺產稅|贈與稅|遺產總額|贈與總額|不計入遺產|視為遺產|視同贈與", r"遺產|贈與"),
+    ("營業稅", r"營業稅|進項稅|銷項稅|加值型|非加值型|統一發票", r"營業人"),
+    ("稅捐稽徵與救濟", r"稽徵|核課期間|復查|訴願|行政救濟|滯納金|實質課稅|納稅者權利|欠稅|限制出境|"
+     r"租稅法律主義|量能課稅|代繳|稅捐保全", r"稅捐|納稅義務人"),
+    ("政府採購", r"採購|招標|決標|履約|驗收|廠商|申訴|底價|押標金|保證金|最有利標|統包", r"機關"),
+]
 READER_TOPICS = {
     "land-law": LAND_LAW_TOPICS,
     "appraisal": APPRAISAL_TOPICS,
@@ -94,6 +128,8 @@ READER_TOPICS = {
     "economics": TOPICS["不動產經濟學"],
     "land-use": LAND_USE_TOPICS,
     "civil-law": CIVIL_LAW_TOPICS,
+    "registration": REGISTRATION_TOPICS,
+    "tax": TAX_TOPICS,
 }
 FILE_NAME = re.compile(r"^\[(\d+)\]\[([^\]]+)\]\[(.+)\]\.pdf$")
 MIN_TEXT = 50  # 少於此字數視為掃描檔，只提供原卷連結
@@ -113,16 +149,24 @@ def available(data_dir: Path = EXAM_READER_DATA_DIR) -> List[tuple]:
 NOISE = re.compile(
     r"^([高點‧・上]|【版權所有.*|.*高分詳解.*|高上高普特考.*|.*www\.get\.com\.tw.*|【(中壢|台中|台南|高雄|另有).*|"
     r"[－\-—]+\s*[－\-—]*|\d{1,2}|第\s*\d+\s*頁.*|（請接背面）|【請接續背面】|背面尚有試題|"
-    r"[甲乙丙]、\s*(申論|測驗)題.*)$"
+    r"[甲乙丙]、\s*(申論|測驗)題.*|[壹貳參肆]、.*)$"
 )
 TITLE = re.compile(r"^《(.+)》$")
 TOP_MARK = re.compile(r"^(?:題目)?([一二三四五六七八九十]+)\s*[、：:]")
 ANSWER = re.compile(r"^答\s*(?:[：:]\s*|$)")
 # 答案用全形括號「（B）1.」，選項用半形「(A)」；題號點號有時省略，所以另以題號遞增防誤判
-# 少數年份改用半形「(A) 2 」，此時括號與題號間必有空白，與「(A)3公畝」區隔
-CHOICE = re.compile(r"^(?:（\s*([A-DＡ-Ｄ#＃][A-D、,或]*|一律給分|送分)\s*）\s*|\(([A-D#][A-D、,或]*)\)\s+)"
-                    r"(\d{1,3})\s*[.．、]?\s*")
+# 少數年份改用半形「(A) 2 」或「(B)1 下列」：括號後有空白，或題號後有空白，與選項「(A)3公畝」區隔。
+# 國營事業考卷用「【4】1.」：答案寫成 1–4（選項標記見 GLYPH_OPTION）
+CHOICE = re.compile(r"^(?:（\s*(?P<k1>[A-DＡ-Ｄ#＃][A-D、,或]*|一律給分|送分)\s*）\s*"
+                    r"|\((?P<k2>[A-D#][A-D、,或]*)\)(?:\s+|(?=\d{1,3}\s))"
+                    r"|【(?P<k3>[1-4])】|【(?P<k4>一律給分|送分)[^】]*】)"
+                    r"(?P<no>\d{1,3})\s*[.．、]?\s*")
 OPTION = re.compile(r"[（(]([A-D])[）)]")
+BAD_CHOICE_RATIO = 0.3
+# 國營事業考卷的選項以圈號字型畫 ①–④，抽出來是行首控制字元 \x01–\x04（部分年份 \x81–\x84）；
+# 清理前先換成 (A)–(D)。前面加不可見的 OPTION_MARK，免得「(C) 9 個月」被 CHOICE 當成第 9 題；切選項前移除
+GLYPH_OPTION = re.compile(r"^\s*([\x01-\x04\x81-\x84])", re.M)
+OPTION_MARK = "⁠"
 SCORE = re.compile(r"[（(【]\s*(\d+)\s*分\s*[）)】]")
 # 考選部原卷申論題的最後一行常黏上測驗題的表頭（「代號：4601①本測驗試題為…」）
 HEADER_TAIL = re.compile(r"代號\s*[：:]\s*\d{3,}")
@@ -136,7 +180,10 @@ def _clean_lines(text: str) -> Tuple[str, List[str]]:
     text = normalize_cjk(text.translate(str.maketrans(SUB_MARKS)))
     # 「（每小題5分，共25分）」統一成「（25分）」，配分才不會漏算
     text = re.sub(r"[（(]\s*每小題[^）)]*?共\s*(\d+)\s*分\s*[）)]", r"（\1分）", text)
+    text = GLYPH_OPTION.sub(lambda m: f"{OPTION_MARK}({'ABCD'[(ord(m.group(1)) & 0x0F) - 1]})", text)
     text = re.sub(r"[\x00-\x08\x0b-\x1f\x81]", "", text)
+    # 答案「【2】」換頁時常單獨成行，接回下一行的題號，否則整題會被併進前一題
+    text = re.sub(r"^\s*(【[1-4]】)\s*\n\s*", r"\1", text, flags=re.M)
     title, lines, prev = "", [], None
     for raw in text.splitlines():
         ln = raw.strip()
@@ -199,10 +246,12 @@ def parse_paper(text: str) -> dict:
     for i, ln in enumerate(lines):
         m_choice = CHOICE.match(ln)
         m_top = TOP_MARK.match(ln)
-        if m_choice and int(m_choice.group(3)) == expect_choice:
+        if m_choice and int(m_choice.group("no")) == expect_choice:
             expect_choice += 1
-            key = m_choice.group(1) or m_choice.group(2)
-            cur = {"no": int(m_choice.group(3)), "kind": "choice",
+            digit = m_choice.group("k3")
+            key = "ABCD"[int(digit) - 1] if digit else (
+                m_choice.group("k1") or m_choice.group("k2") or m_choice.group("k4"))
+            cur = {"no": int(m_choice.group("no")), "kind": "choice",
                    "key": key.translate(str.maketrans("ＡＢＣＤ＃", "ABCD#")),
                    "stem": [ln[m_choice.end():]], "answer": []}
             questions.append(cur)
@@ -238,7 +287,7 @@ def parse_paper(text: str) -> dict:
     out = []
     essay_total = 0
     for q in questions:
-        stem = HEADER_TAIL.split("".join(q["stem"]))[0].strip()
+        stem = HEADER_TAIL.split("".join(q["stem"]))[0].replace(OPTION_MARK, "").strip()
         if q["kind"] == "essay":
             score = sum(int(s) for s in SCORE.findall(stem))
             prev = next((o for o in reversed(out) if o["kind"] == "essay"), None)
@@ -262,6 +311,10 @@ def parse_paper(text: str) -> dict:
     essays = [q for q in out if q["kind"] == "essay"]
     if essays and not any(q["score"] for q in essays):
         out = [q for q in out if q["kind"] == "choice"]
+    # 測驗題多數不是四個選項，代表題號或選項沒切對（不支援的排版），寧可只給原卷也不放殘缺題目
+    choices = [q for q in out if q["kind"] == "choice"]
+    if choices and sum(len(q["options"]) != 4 for q in choices) > len(choices) * BAD_CHOICE_RATIO:
+        out = [q for q in out if q["kind"] == "essay"]
     return {"commentary": _join(commentary, structured=True), "questions": out}
 
 

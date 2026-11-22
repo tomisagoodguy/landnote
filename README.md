@@ -23,7 +23,7 @@
 
 | 功能 | 內容 | 入口 |
 | :--- | :--- | :--- |
-| 逐題讀（附詳解） | 土地法規、不動產估價、不動產投資、土地經濟與土地政策、土地利用與都市計畫、民法六科，逐題附老師擬答、可展開的相關專欄文章，並有跨年度同主題比較 | [土地法規](https://tomisagoodguy.github.io/landnote/exam-reader/land-law/)・[估價](https://tomisagoodguy.github.io/landnote/exam-reader/appraisal/)・[投資](https://tomisagoodguy.github.io/landnote/exam-reader/investment/)・[土地經濟](https://tomisagoodguy.github.io/landnote/exam-reader/economics/)・[土地利用](https://tomisagoodguy.github.io/landnote/exam-reader/land-use/)・[民法](https://tomisagoodguy.github.io/landnote/exam-reader/civil-law/) |
+| 逐題讀（附詳解） | 土地法規、土地登記、不動產估價、不動產投資、土地經濟與土地政策、土地利用與都市計畫、民法、稅法八科，逐題附老師擬答、可展開的相關專欄文章，並可依主題或依法條做跨年度比較 | [土地法規](https://tomisagoodguy.github.io/landnote/exam-reader/land-law/)・[土地登記](https://tomisagoodguy.github.io/landnote/exam-reader/registration/)・[估價](https://tomisagoodguy.github.io/landnote/exam-reader/appraisal/)・[投資](https://tomisagoodguy.github.io/landnote/exam-reader/investment/)・[土地經濟](https://tomisagoodguy.github.io/landnote/exam-reader/economics/)・[土地利用](https://tomisagoodguy.github.io/landnote/exam-reader/land-use/)・[民法](https://tomisagoodguy.github.io/landnote/exam-reader/civil-law/)・[稅法](https://tomisagoodguy.github.io/landnote/exam-reader/tax/) |
 | 估價師專區 | 估價師專業科目依主題分類的題庫（附各主題出題年度統計）、合併 PDF 與延伸練習，手機優先版面 | [專區首頁](https://tomisagoodguy.github.io/landnote/appraiser/) |
 
 ### 考古題範圍
