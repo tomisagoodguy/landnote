@@ -1,12 +1,10 @@
 import time
-import random
 import re
 import hashlib
 import urllib.parse
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Dict, List, Set, Any
-import requests
+from typing import Optional, Dict, List, Set
 import pandas as pd
 from bs4 import BeautifulSoup
 from tqdm import tqdm

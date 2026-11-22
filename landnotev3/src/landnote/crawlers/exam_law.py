@@ -3,10 +3,8 @@ import time
 import random
 import re
 from datetime import datetime
-from pathlib import Path
-from typing import List, Optional, Dict
+from typing import List
 from bs4 import BeautifulSoup
-import pandas as pd
 from tqdm import tqdm
 
 from landnote.config import LAW_EXAM_BASE_URL, DATA_DIR, LOGS_DIR

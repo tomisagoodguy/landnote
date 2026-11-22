@@ -1,15 +1,15 @@
 import os
 import re
 from pathlib import Path
-from typing import List, Dict, Set
+from typing import List, Dict
 from datetime import datetime
 from collections import defaultdict
 
 from fuzzywuzzy import fuzz
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import inch, cm
+from reportlab.platypus import Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate

@@ -1,12 +1,10 @@
 import re
 import shutil
-import os
 from pathlib import Path
 from datetime import datetime
-from typing import List, Dict, Optional, Tuple
+from typing import Dict, Tuple
 from collections import defaultdict
 import yaml
-import json
 
 from landnote.config import ARTICLES_DIR, DATA_DIR, LOGS_DIR
 from landnote.utils.logger import Logger
@@ -129,7 +127,7 @@ class SiteGenerator:
                     for c in item['categories']:
                         if c != 'Real Estate':
                             tag_articles[c].append(item)
-            except Exception as e:
+            except Exception:
                 pass
                 
         # Sort articles by date descending
@@ -388,20 +386,20 @@ class SiteGenerator:
                 pdf_url = f"../assets/pdfs/{encoded_review}.pdf"
                 icon = icons[idx % len(icons)]
 
-                content.append(f'    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">')
-                content.append(f'        <div>')
-                content.append(f'            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">')
+                content.append('    <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; cursor: default;">')
+                content.append('        <div>')
+                content.append('            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">')
                 content.append(f'                <span class="feature-icon" style="font-size: 2rem; margin: 0;">{icon}</span>')
                 content.append(f'                <span style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">共 {count} 篇</span>')
-                content.append(f'            </div>')
+                content.append('            </div>')
                 content.append(f'            <h3 style="margin-top: 0; margin-bottom: 1.5rem;">{tag}</h3>')
-                content.append(f'        </div>')
-                content.append(f'        <div style="display: flex; gap: 0.5rem; margin-top: auto;">')
+                content.append('        </div>')
+                content.append('        <div style="display: flex; gap: 0.5rem; margin-top: auto;">')
                 content.append(f'            <a href="{blog_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">👀 列表</a>')
                 content.append(f'            <a href="{review_url}" class="md-button" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;">📖 閱讀</a>')
                 content.append(f'            <a href="{pdf_url}" class="md-button md-button--primary" style="flex: 1; text-align: center; padding: 0.4rem 0; font-size: 0.9rem; margin: 0;" download="{tag}.pdf">📥 PDF</a>')
-                content.append(f'        </div>')
-                content.append(f'    </div>')
+                content.append('        </div>')
+                content.append('    </div>')
                 
         content.append('</div>')
         (self.docs_dir / "tags.md").write_text('\n'.join(content), encoding='utf-8')

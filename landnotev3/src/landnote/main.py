@@ -37,10 +37,10 @@ def main():
     group_parser.add_argument("--threshold", type=int, default=80, help="Similarity threshold (0-100)")
 
     # Command: site (Generate Website)
-    site_parser = subparsers.add_parser("site", help="Generate static site structure")
+    subparsers.add_parser("site", help="Generate static site structure")
 
     # Command: serve (Preview Website)
-    serve_parser = subparsers.add_parser("serve", help="Preview website locally")
+    subparsers.add_parser("serve", help="Preview website locally")
 
     args = parser.parse_args()
 

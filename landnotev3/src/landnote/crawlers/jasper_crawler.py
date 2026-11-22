@@ -4,11 +4,8 @@ import random
 import re
 import os
 import hashlib
-import urllib.parse
 from datetime import datetime
-from collections import defaultdict
 from typing import List, Dict, Optional, Set
-from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
