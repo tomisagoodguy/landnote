@@ -199,6 +199,8 @@ class SiteGenerator:
                     'tags': tags
                 }
                 
+                # 爬蟲固定在開頭產生「## 內文」，對讀者無資訊量，列表卡片與目錄都多一行
+                body = re.sub(r"\A\s*##\s*內文\s*\n", "", body)
                 body = self._insert_excerpt_separator(body)
 
                 # Write new file
