@@ -25,6 +25,8 @@ OUTPUT_DIR = DATA_DIR / "real_estate_articles"
 JASPER_DIR = OUTPUT_DIR / "jasper"
 # 估價師考古題主題題庫：exam_bank 寫入、site_generator 讀取
 EXAM_BANK_FILE = DATA_DIR / "exam_bank" / "appraiser.json"
+# 土地法規考古題閱讀版（逐題＋詳解）：exam_reader 寫入、site_generator 讀取
+LAND_LAW_READER_FILE = DATA_DIR / "exam_bank" / "land_law.json"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)

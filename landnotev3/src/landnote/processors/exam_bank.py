@@ -227,8 +227,35 @@ def _md_escape(line: str) -> str:
     return re.sub(r"^(\d+)([.)])", r"\1\\\2", line)  # 避免「1.」變成清單
 
 
-def _subject_page(subject: str, title: str, items: List[dict]) -> str:
+# 估價師試題總評、考題命中等文章（標題如「105年不動產估價師試題總評(一)」），依年度掛到該年題目
+COMMENTARY_TITLE = re.compile(r"(\d{2,3})\s*年.*估價師.*(總評|命中|解析|詳解)")
+RELATED_K = 3  # 每題推薦文章數
+
+
+def _commentary_by_year(docs: List[dict]) -> Dict[int, List[dict]]:
+    """從文章索引找出估價師試題總評，回傳 {民國年: [文章…]}，同年依標題排序。"""
+    out: Dict[int, List[dict]] = {}
+    for d in docs:
+        m = COMMENTARY_TITLE.search(d["title"])
+        if m:
+            out.setdefault(int(m.group(1)), []).append(d)
+    return {y: sorted(ds, key=lambda d: d["title"]) for y, ds in out.items()}
+
+
+def _post_link(d: dict) -> str:
+    """題庫頁（exam-bank/<科目>.md）連到 blog 文章原始檔，由 MkDocs 換成實際網址。"""
+    who = f"｜{d['author']}" if d.get("author") else ""
+    return f"[{_md_escape(d['title'])}](<../blog/posts/{d['file']}>){who}"
+
+
+def _subject_page(subject: str, title: str, items: List[dict], index=None,
+                  commentary: Optional[Dict[int, List[dict]]] = None) -> str:
+    """產生單科主題題庫頁；有文章索引時，每題附相關文章與該年度試題總評。"""
     from urllib.parse import quote
+
+    from landnote.processors.exam_reader import law_refs
+
+    commentary = commentary or {}
 
     years = sorted({i["year"] for i in items})
     by_topic: Dict[str, List[dict]] = {}
@@ -244,7 +271,8 @@ def _subject_page(subject: str, title: str, items: List[dict]) -> str:
         "同主題由新到舊排列。建議先挑一個主題限時寫，寫不出來的觀念就是今天的任務。",
         "",
         '!!! note "題目文字由 PDF 自動擷取"',
-        "    表格、圖形在擷取時會變成一行數字，計算題請點「原卷 PDF」對照原始版面。",
+        "    表格、圖形在擷取時會變成一行數字，計算題請點「原卷 PDF」對照原始版面。"
+        + ("「延伸閱讀」依文字相似度自動推薦，不一定與題目完全對應。" if index else ""),
         "",
         "| 主題 | 題數 | 配分合計 | 最近出題 | 出題年度 |",
         "|---|---:|---:|---:|---|",
@@ -267,17 +295,37 @@ def _subject_page(subject: str, title: str, items: List[dict]) -> str:
                 "",
             ]
             lines += [_md_escape(ln) + "\n" for ln in q["text"].splitlines() if ln.strip()]
+            reviews = commentary.get(q["year"], [])
+            if reviews:
+                lines += [f"**{q['year']} 年試題總評**：" + "、".join(_post_link(d) for d in reviews), ""]
+            if index:
+                shown = {d["file"] for d in reviews}
+                related = [d for d in index.related(q["text"], law_refs(q["text"]), RELATED_K)
+                           if d["file"] not in shown]
+                if related:
+                    lines += ["**延伸閱讀**", ""] + [f"- {_post_link(d)}" for d in related] + [""]
             lines += ["</div>", ""]
     return "\n".join(lines)
 
 
-def write_pages(docs_dir: Path, bank_file: Path = EXAM_BANK_FILE) -> List[tuple]:
-    """產生題庫網頁到 docs/exam-bank/，回傳 mkdocs nav 用的 [(標題, 路徑)]；無題庫時回空。"""
+def write_pages(docs_dir: Path, bank_file: Path = EXAM_BANK_FILE,
+                posts_dir: Optional[Path] = None) -> List[tuple]:
+    """產生題庫網頁到 docs/exam-bank/，回傳 mkdocs nav 用的 [(標題, 路徑)]；無題庫時回空。
+
+    posts_dir 預設為 docs/blog/posts（site_generator 已先寫好文章），用來比對每題的相關文章；
+    資料夾不存在或沒有文章時，題庫照常產生、只是不附延伸閱讀。
+    """
+    from landnote.processors.exam_reader import ArticleIndex
+
     if not bank_file.exists():
         return []
     items = json.loads(bank_file.read_text(encoding="utf-8"))
     out = docs_dir / BANK_DIR
     out.mkdir(parents=True, exist_ok=True)
+
+    posts_dir = posts_dir or docs_dir / "blog" / "posts"
+    index = ArticleIndex(posts_dir) if any(posts_dir.glob("*.md")) else None
+    commentary = _commentary_by_year(index.docs) if index else {}
 
     nav = [("題庫總覽", f"{BANK_DIR}/index.md")]
     cards = []
@@ -285,7 +333,7 @@ def write_pages(docs_dir: Path, bank_file: Path = EXAM_BANK_FILE) -> List[tuple]
         qs = [i for i in items if i["subject"] == subject]
         if not qs:
             continue
-        (out / f"{slug}.md").write_text(_subject_page(subject, title, qs), encoding="utf-8")
+        (out / f"{slug}.md").write_text(_subject_page(subject, title, qs, index, commentary), encoding="utf-8")
         nav.append((title, f"{BANK_DIR}/{slug}.md"))
         counts: Dict[str, int] = {}
         for q in qs:
