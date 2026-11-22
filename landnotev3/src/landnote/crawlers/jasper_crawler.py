@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 import urllib3
 
-from landnote.config import DATA_DIR, LOGS_DIR
+from landnote.config import JASPER_DIR, LOGS_DIR
 from landnote.core.scraper import BaseScraper, ScraperConfig
 from landnote.utils.logger import Logger
 
@@ -28,9 +28,10 @@ class JasperCrawler(BaseScraper):
         
         # Configuration
         self.base_url = "https://www.jasper-realestate.com/posts/"
-        self.output_dir = DATA_DIR / "real_estate_articles" / "jasper"
+        self.output_dir = JASPER_DIR
         self.images_dir = self.output_dir / "images"
         self.checkpoint_file = self.output_dir / "scraper_checkpoint.json"
+        self.results_file = self.output_dir / "jasper_articles.json"
         self.ua = UserAgent()
         
         self.results: List[Dict] = []
@@ -54,8 +55,9 @@ class JasperCrawler(BaseScraper):
     def load_previous_results(self):
         """Load previously scraped results to avoid duplicates."""
         try:
-            # Find the latest results file
-            files = sorted(self.output_dir.glob("jasper_articles_*.json"))
+            # 固定檔名優先；舊版以日期命名（jasper_articles_YYYYMMDD.json），找不到時讀最新一份
+            files = [self.results_file] if self.results_file.exists() else sorted(
+                self.output_dir.glob("jasper_articles_*.json"))
             if files:
                 latest_file = files[-1]
                 with open(latest_file, 'r', encoding='utf-8') as f:
@@ -356,12 +358,11 @@ class JasperCrawler(BaseScraper):
             f.write(content)
 
     def save_results(self):
-        """Save results to JSON."""
-        timestamp = datetime.now().strftime("%Y%m%d")
-        filename = f"jasper_articles_{timestamp}.json"
-        filepath = self.output_dir / filename
-        with open(filepath, 'w', encoding='utf-8') as f:
+        """Save results to JSON（固定檔名覆寫，避免每次更新都在 repo 累積一份完整副本）。"""
+        with open(self.results_file, 'w', encoding='utf-8') as f:
             json.dump(self.results, f, ensure_ascii=False, indent=4)
+        for old in self.output_dir.glob("jasper_articles_*.json"):
+            old.unlink()
     
     def check_for_updates(self):
         """Check for updates (simplified)."""

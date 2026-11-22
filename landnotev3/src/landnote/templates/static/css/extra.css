@@ -591,3 +591,26 @@ a.feature-card:active {
     transition: none;
   }
 }
+
+/* ── 估價師主題題庫（exam-bank/）：每題一張紙卡 ── */
+.md-typeset .qb-item {
+  margin: 0 0 1.1rem;
+  padding: 0.9rem 1.1rem 0.4rem;
+  background: var(--pb-card);
+  border: 2px solid var(--pb-line);
+  border-radius: var(--pb-r-sm);
+}
+.md-typeset .qb-item p {
+  margin: 0 0 0.6em;
+  line-height: 1.85;
+}
+.md-typeset .qb-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.md-typeset .qb-meta a {
+  margin-left: auto;
+  font-size: 0.85em;
+}

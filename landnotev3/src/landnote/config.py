@@ -21,6 +21,10 @@ ARTICLE_AUTHORS = ["曾榮耀", "許文昌", "蘇偉強"]
 # Directories
 ARTICLES_DIR = DATA_DIR / "real_estate_articles" / "articles"
 OUTPUT_DIR = DATA_DIR / "real_estate_articles"
+# Jasper 不動產（jasper-realestate.com）文章：jasper_crawler 寫入、site_generator 讀取
+JASPER_DIR = OUTPUT_DIR / "jasper"
+# 估價師考古題主題題庫：exam_bank 寫入、site_generator 讀取
+EXAM_BANK_FILE = DATA_DIR / "exam_bank" / "appraiser.json"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)

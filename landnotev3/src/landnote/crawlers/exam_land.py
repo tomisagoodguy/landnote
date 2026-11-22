@@ -41,7 +41,7 @@ class LandExamCrawler(BaseScraper):
         # 高點：類科或科目名稱含任一關鍵字即收錄
         self.keywords = ["地政", "估價", "不動產", "土地"]
         # 考選部：高點沒有的專技考試，依類科名稱比對（每年考試代碼不同）
-        self.moex_categories = ["不動產估價師"]
+        self.moex_categories = {"不動產估價師": "專技高考", "地政士": "專技普考", "不動產經紀人": "專技普考"}
 
     def log(self, message):
         self.logger.info(message)
@@ -139,7 +139,8 @@ class LandExamCrawler(BaseScraper):
                 self.log(f"考選部 {roc} 年清單讀取失敗")
                 continue
             year_page.encoding = "utf-8"
-            codes = re.findall(r'<option[^>]*value="(%d\d{3})">[^<]*%s' % (roc, category), year_page.text)
+            # 選單上的考試名稱過長會被截斷（如「普通考試地政...」），只能先取所有專技考試再比對類科
+            codes = re.findall(r'<option[^>]*value="(%d\d{3})">[^<]*(?:專技|專門職業)' % roc, year_page.text)
             for code in codes:
                 page = self.make_request("GET", f"{MOEX_EXAM_URL}?y={roc + 1911}&e={code}")
                 if page is None or page.status_code != 200:
@@ -150,7 +151,7 @@ class LandExamCrawler(BaseScraper):
                 for cid, cname in labels.items():
                     if "_" in cid or category not in cname:
                         continue
-                    group = f"專技高考-{category}"
+                    group = f"{self.moex_categories[category]}-{category}"
                     for key, subject in labels.items():
                         if key.startswith(cid + "_"):
                             sid = key.split("_", 1)[1]

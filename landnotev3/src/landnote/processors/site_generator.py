@@ -6,7 +6,8 @@ from typing import Dict, Tuple
 from collections import defaultdict
 import yaml
 
-from landnote.config import ARTICLES_DIR, DATA_DIR, LOGS_DIR
+from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR
+from landnote.processors import exam_bank
 from landnote.utils.logger import Logger
 
 # 卡片頁不需要左側導覽與右側目錄，隱藏後內容區才夠寬排三欄
@@ -22,6 +23,7 @@ class SiteGenerator:
         self.posts_dir = self.docs_dir / "blog" / "posts"
         self.logger = Logger.setup_logger("SiteGenerator", LOGS_DIR)
         self.authors = set()
+        self.exam_bank_nav = []
 
     def run(self):
         """Main execution method to generate the MkDocs site structure."""
@@ -32,7 +34,8 @@ class SiteGenerator:
         
         # 2. Process articles and move to docs/posts with YAML frontmatter
         self._process_articles()
-        
+        self._process_jasper_articles()
+
         # 4. Generate tags and authors statistics
         all_tags = self._collect_all_tags()
         
@@ -44,6 +47,9 @@ class SiteGenerator:
 
         # Generate Review Materials (Bulk PDFs per tag and full)
         self._generate_review_materials()
+
+        # 估價師主題題庫（讀 data/exam_bank，nav 要在產生 mkdocs.yml 前得知）
+        self.exam_bank_nav = exam_bank.write_pages(self.docs_dir)
 
         # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()
@@ -213,6 +219,106 @@ class SiteGenerator:
                 
             except Exception as e:
                 self.logger.error(f"Failed to process {file_path.name}: {e}")
+
+    JASPER_CATEGORY = "Jasper 不動產"
+    # WordPress 頁面殘留，整個移除
+    JASPER_DROP_TAGS = ("script", "style", "meta", "link", "svg", "form", "button", "iframe")
+    # 只保留語意屬性，class／style／data-* 會與網站樣式衝突
+    JASPER_KEEP_ATTRS = {"a": {"href"}, "img": {"src", "alt"}, "td": {"colspan", "rowspan"},
+                         "th": {"colspan", "rowspan"}}
+
+    def _process_jasper_articles(self):
+        """把 jasper_crawler 存的文章（JSON frontmatter + WordPress HTML）轉成部落格文章。
+
+        slug 以來源網址雜湊產生（jasper-xxxxxxxx），網址穩定不受標題變動影響；
+        分類固定加上 JASPER_CATEGORY，標籤取「法條依據：民法§179」冒號後的部分。
+        """
+        import hashlib
+        import json
+
+        if not JASPER_DIR.exists():
+            return
+        files = sorted(JASPER_DIR.glob("*.md"))
+        self.logger.info(f"Processing {len(files)} Jasper articles...")
+
+        images = JASPER_DIR / "images"
+        if images.exists():
+            shutil.copytree(images, self.posts_dir / "images", dirs_exist_ok=True)
+
+        for file_path in files:
+            try:
+                parts = file_path.read_text(encoding="utf-8").split("---", 2)
+                if len(parts) < 3:
+                    continue
+                meta = json.loads(parts[1])
+                title = meta.get("title", "").strip() or file_path.stem
+                date = datetime.strptime(meta["date"], "%Y-%m-%d").date()
+                source = meta.get("source_url", file_path.name)
+                slug = "jasper-" + hashlib.md5(source.encode("utf-8")).hexdigest()[:8]
+                # 原站標籤偶有換行夾帶多個條文，先拆行；標籤會成為講義檔名，不可含換行
+                pieces = [p for t in meta.get("tags", []) for p in str(t).splitlines()]
+                tags = [re.sub(r"\s+", " ", re.split(r"[:：]", p, maxsplit=1)[-1]).strip() for p in pieces]
+                tags = [t for t in dict.fromkeys(tags) if t]
+                self.authors.add("Jasper")
+
+                body = self._clean_jasper_html(parts[2])
+                body = self._insert_excerpt_separator(body)
+                if source.startswith("http"):
+                    body += f"\n\n---\n\n*原文出處：[Jasper 不動產]({source})*\n"
+
+                frontmatter = {
+                    "title": title,
+                    "date": date,
+                    "slug": slug,
+                    "categories": ["Real Estate", self.JASPER_CATEGORY, *tags],
+                    "tags": tags,
+                }
+                safe_title = re.sub(r'[\\/*?:"<>|]', "", title).strip()[:50]
+                out = self.posts_dir / f"{date}-{slug}-{safe_title}.md"
+                out.write_text(
+                    "---\n" + yaml.dump(frontmatter, allow_unicode=True, default_flow_style=False)
+                    + "---\n\n" + body, encoding="utf-8")
+            except Exception as e:
+                self.logger.error(f"Failed to process Jasper article {file_path.name}: {e}")
+
+    def _clean_jasper_html(self, html: str) -> str:
+        """清掉 WordPress 版面雜訊，只留內容結構，讓文章套用網站樣式。"""
+        from bs4 import BeautifulSoup
+
+        soup = BeautifulSoup(html, "html.parser")
+        for tag in soup.find_all(self.JASPER_DROP_TAGS):
+            tag.decompose()
+        for img in soup.find_all("img"):
+            # 延遲載入的重複圖（外連網址）移除，保留爬蟲已下載到 images/ 的本機圖
+            if not (img.get("src") or "").startswith("images/"):
+                img.decompose()
+        # WordPress 延遲載入：本機圖（src="images/..."）放在 <noscript> 裡，保留內容只拆外殼
+        for tag in soup.find_all(["div", "span", "section", "article", "figure", "font", "noscript"]):
+            tag.unwrap()
+        for tag in soup.find_all("h1"):
+            tag.name = "h2"  # 頁面標題已是 h1
+        for tag in soup.find_all(True):
+            keep = self.JASPER_KEEP_ATTRS.get(tag.name, set())
+            tag.attrs = {k: v for k, v in tag.attrs.items() if k in keep}
+        for tag in soup.find_all(["p", "h2", "h3", "h4", "h5", "h6", "li", "strong"]):
+            if not tag.get_text(strip=True) and not tag.find("img"):
+                tag.decompose()
+
+        # 頂層元素各自成段（空行分隔），Markdown 才會把每段 HTML 原樣輸出、摘要分隔也能落在段落邊界。
+        # 圖片抽出改成 Markdown 語法另成一段：MkDocs 只會依頁面深度改寫 ![]() 的路徑，
+        # 不會改 HTML <img src>，否則文章頁（blog/日期/slug/）與列表頁的相對路徑都會錯。
+        blocks = []
+        for node in list(soup.contents):
+            imgs = [node] if getattr(node, "name", None) == "img" else (
+                node.find_all("img") if hasattr(node, "find_all") else [])
+            md_imgs = [f"![{img.get('alt', '')}]({img['src']})" for img in imgs]
+            for img in imgs:
+                img.extract()
+            text = str(node).strip()
+            if text and (getattr(node, "name", None) is None or node.get_text(strip=True)):
+                blocks.append(text)
+            blocks.extend(md_imgs)
+        return re.sub(r"\n{3,}", "\n\n", "\n\n".join(blocks))
 
     def _parse_article(self, content: str) -> Tuple[Dict, str]:
         """Extract metadata from the custom format."""
@@ -557,12 +663,95 @@ class SiteGenerator:
                 {'考古題下載': 'exams.md'},
             ]
         }
+        if self.exam_bank_nav:
+            config['nav'].append({'估價師題庫': [{t: p} for t, p in self.exam_bank_nav]})
         
         with open(self.site_src_dir / 'mkdocs.yml', 'w', encoding='utf-8') as f:
             yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
+    # 考試別：(顯示名稱, 報考資格與等級說明)；順序即頁面與卡片上的排列順序
+    EXAM_GROUPS = {
+        "高考三級": "公務人員高等考試三級，大學以上畢業可報考，錄取後以薦任第六職等任用。",
+        "普考": "公務人員普通考試，高中職以上畢業可報考，錄取後以委任第三職等任用。",
+        "地方特考三等": "地方政府公務人員特考，等級比照高考三級，分發至各縣市政府與地政事務所。",
+        "地方特考四等": "地方政府公務人員特考，等級比照普考。",
+        "地方特考五等": "地方政府公務人員特考，等級比照初考，不限學歷。",
+        "初考": "公務人員初等考試，年滿 18 歲即可報考，不限學歷。",
+        "專技高考（不動產估價師）": "專門職業及技術人員高等考試，及格取得不動產估價師證書。",
+        "國營事業": "台電、台水、台糖、中華郵政、臺灣菸酒、農田水利等事業機構的新進人員甄試。",
+    }
+
+    @staticmethod
+    def _exam_group(exam: str) -> str:
+        """把檔名中的考試別（如「地方政府特考三等-地政」）歸到 EXAM_GROUPS 的分類。"""
+        head = exam.split("-", 1)[0]
+        if head.startswith("高考三級"):
+            return "高考三級"
+        if head.startswith("普考"):
+            return "普考"
+        if head.startswith("地方政府特考"):
+            return head.replace("地方政府特考", "地方特考")
+        if head.startswith("初考"):
+            return "初考"
+        if head.startswith("專技高考"):
+            return "專技高考（不動產估價師）"
+        return "國營事業"
+
+    APPRAISER_GROUP = "專技高考（不動產估價師）"
+
+    # 科目家族：各考試對同一科的名稱不同（土地法規／土地法規概要／土地法大意…），依家族分區呈現。
+    # (家族名, 網頁錨點, 比對資料夾名的 regex)；由上而下取第一個命中，順序也是頁面排列順序。
+    # 新出現的科目名稱若都沒命中會落到「其他科目」，不會漏列。
+    SUBJECT_FAMILIES = [
+        ("營建與工程估價", "construction", r"施工|營建|建築營造|建築結構|建管|測量"),  # 須在估價之前
+        ("不動產估價", "appraisal", r"估價(理論|實務)?$|^土地估價"),
+        ("不動產投資", "investment", r"不動產投資"),
+        ("土地經濟與土地政策", "economics", r"經濟學|土地政策"),
+        ("土地登記", "registration", r"^土地登記"),
+        ("民法", "civil-law", r"民法"),
+        ("土地法規與土地行政", "land-law", r"土地法|土地行政"),
+        ("土地利用與都市計畫", "land-use", r"利用|使用|開發|都市|環境規劃|產業園區"),
+        ("稅法與政府採購", "tax", r"稅|採購"),
+        ("國文", "chinese", r"國文"),
+        ("共同科目", "common", r"法學|英文|公民|數學|共同科目"),
+    ]
+    OTHER_FAMILY = ("其他科目", "others")
+
+    # 估價師各科可延伸練習的科目家族（高普考同家族題目可當估價師的額外題量）
+    APPRAISER_PRACTICE = {
+        "不動產估價理論": ["不動產估價"],
+        "不動產估價實務": ["不動產估價"],
+        "不動產投資分析": ["不動產投資"],
+        "不動產經濟學": ["土地經濟與土地政策"],
+        "土地利用法規": ["土地利用與都市計畫"],
+        "民法物權與不動產法規": ["民法", "土地法規與土地行政"],
+    }
+    # 估價師各科的相關文章分類；只列出網站上實際存在的分類
+    APPRAISER_TAGS = {
+        "不動產估價理論": ["不動產估價", "不動產估價師", "地價", "公告地價", "公告土地現值", "區段地價", "實價登錄"],
+        "不動產估價實務": ["不動產估價", "容積移轉", "都市更新", "徵收補償", "公共設施保留地"],
+        "不動產投資分析": ["不動產投資分析", "不動產市場", "房價", "信託"],
+        "不動產經濟學": ["土地利用與土地政策", "土地政策", "市場失靈", "房價高漲", "通貨膨脹", "囤房稅"],
+        "土地利用法規": ["都市計畫", "國土計畫法", "區域計畫法", "非都市土地", "都市更新", "容積移轉",
+                     "市地重劃", "區段徵收"],
+        "民法物權與不動產法規": ["地上權", "共有物", "典權", "抵押權", "土地法", "平均地權條例",
+                         "公寓大廈管理條例", "不動產經紀業管理條例"],
+    }
+    APPRAISER_PRACTICE_SHOWN = 4  # 每科延伸練習最多列幾科，其餘到考古題頁看
+
+    @classmethod
+    def _subject_family(cls, subject: str) -> Tuple[str, str]:
+        """回傳科目所屬的 (家族名, 錨點)。"""
+        for name, anchor, pattern in cls.SUBJECT_FAMILIES:
+            if re.search(pattern, subject):
+                return name, anchor
+        return cls.OTHER_FAMILY
+
     def _exam_subjects(self) -> list:
-        """掃描地政考古題資料夾，回傳 [(科目, 份數, 最新民國年)]，依份數排序。"""
+        """掃描地政考古題資料夾，回傳 [(科目, 份數, 最新民國年, {考試分類: 份數})]，依份數排序。
+
+        檔名格式為「[民國年][考試-類科][科目].pdf」。
+        """
         exam_dir = self.base_dir / "地政考古題"
         if not exam_dir.exists():
             return []
@@ -570,9 +759,16 @@ class SiteGenerator:
         for folder in exam_dir.iterdir():
             if not folder.is_dir() or folder.name == "合併後PDF檔案":
                 continue
-            years = [int(m.group(1)) for p in folder.glob("*.pdf") if (m := re.match(r"\[(\d+)\]", p.name))]
+            years, groups = [], defaultdict(int)
+            for p in folder.glob("*.pdf"):
+                m = re.match(r"\[(\d+)\](?:\[([^\]]+)\])?", p.name)
+                if not m:
+                    continue
+                years.append(int(m.group(1)))
+                if m.group(2):
+                    groups[self._exam_group(m.group(2))] += 1
             if years:
-                subjects.append((folder.name, len(years), max(years)))
+                subjects.append((folder.name, len(years), max(years), dict(groups)))
         return sorted(subjects, key=lambda s: (-s[1], -s[2], s[0]))
 
     def _generate_homepage(self):
@@ -629,25 +825,172 @@ class SiteGenerator:
             f"收錄 **{total}** 份地政、不動產估價相關考古題（更新至民國 {latest_year} 年），按科目分類，"
             "來源為高點公職考古題與考選部題庫（專技高考不動產估價師）。"
             "「整科合併」把該科歷屆試題合成一本 PDF，最適合考前整科刷題；"
-            "「單份瀏覽」可在 GitHub 逐年下載。每月自動更新。",
+            "「單份瀏覽」可在 GitHub 逐年下載，檔名開頭標有年度與考試別"
+            "（如 `[113][高考三級-地政][土地法規]`）。每月自動更新。",
+            "",
+            *(["想依主題刷題？到 **[估價師主題題庫](exam-bank/index.md)** ——六科專業科目逐題分類，"
+               "附各主題出題年度統計。", ""] if self.exam_bank_nav else []),
+            "## 收錄考試",
+            "",
+            "| 考試 | 份數 | 說明 |",
+            "|------|-----:|------|",
+        ]
+        group_totals = defaultdict(int)
+        for *_, groups in subjects:
+            for group, n in groups.items():
+                group_totals[group] += n
+        for group, desc in self.EXAM_GROUPS.items():
+            if group_totals.get(group):
+                lines.append(f"| **{group}** | {group_totals[group]} | {desc} |")
+        families = self._group_by_family(subjects)
+        lines.extend([
+            "",
+            "同一科目在不同考試的名稱常有差異（例如高考考「土地法規」、普考考「土地法規概要」），"
+            "下方依**科目家族**分區，同家族的題目觀念相通，可以互相當練習題；"
+            "每張卡片會標出試題出自哪些考試。",
+            "",
+            "準備不動產估價師？到 **[估價師專區](appraiser/)**，六科專業科目的題庫、合併 PDF 與延伸練習都整理在一頁。",
+            "",
+            "**科目家族**：" + "・".join(
+                f"[{fam}](#{anchor})" for fam, anchor, _ in families),
+            "",
+        ])
+        order = list(self.EXAM_GROUPS)
+        for fam, anchor, members in families:
+            total_fam = sum(s[1] for s in members)
+            lines.extend([
+                f"## {fam} {{#{anchor}}}",
+                "",
+                f"{len(members)} 個科目名稱、共 {total_fam} 份。",
+                "",
+                '<div class="feature-grid">',
+            ])
+            for idx, (name, count, newest, groups) in enumerate(members):
+                scope = "、".join(f"{g} {groups[g]}" for g in sorted(groups, key=order.index))
+                lines.extend([
+                    f'    <div class="feature-card c{idx % 4}">',
+                    f'        <div class="feature-card__head"><span class="pb-count">{count} 份</span>'
+                    f'<span class="pb-count">最新 {newest} 年</span></div>',
+                    f'        <h3>{name}</h3>',
+                    f'        <p>出自：{scope or "未標示考試別"}</p>',
+                    '        <div class="feature-actions">',
+                    f'            <a href="{self._merged_pdf_url(name)}" class="md-button md-button--primary">'
+                    '整科合併 PDF</a>',
+                    f'            <a href="{self._exam_folder_url(name)}" class="md-button" target="_blank" '
+                    'rel="noopener">單份瀏覽</a>',
+                    '        </div>',
+                    '    </div>',
+                ])
+            lines.extend(['</div>', ""])
+        if not subjects:
+            lines.append("*(目前尚無考古題資料)*")
+        (self.docs_dir / 'exams.md').write_text('\n'.join(lines), encoding='utf-8')
+
+    EXAM_REPO = "https://github.com/tomisagoodguy/landnote"
+    EXAM_ROOT = "landnotev3/地政考古題"
+
+    @classmethod
+    def _merged_pdf_url(cls, subject: str) -> str:
+        from urllib.parse import quote
+        return f"{cls.EXAM_REPO}/raw/main/" + quote(f"{cls.EXAM_ROOT}/合併後PDF檔案/{subject}_合併.pdf")
+
+    @classmethod
+    def _exam_folder_url(cls, subject: str) -> str:
+        from urllib.parse import quote
+        return f"{cls.EXAM_REPO}/tree/main/" + quote(f"{cls.EXAM_ROOT}/{subject}")
+
+    def _group_by_family(self, subjects: list) -> list:
+        """把 _exam_subjects 的結果依科目家族分組，回傳 [(家族名, 錨點, [科目…])]。
+
+        家族依總份數排序、「其他科目」殿後；家族內維持原本的份數排序。
+        """
+        grouped: Dict[Tuple[str, str], list] = defaultdict(list)
+        for s in subjects:
+            grouped[self._subject_family(s[0])].append(s)
+        keys = sorted(grouped, key=lambda k: (k == self.OTHER_FAMILY, -sum(s[1] for s in grouped[k])))
+        return [(name, anchor, grouped[(name, anchor)]) for name, anchor in keys]
+
+    def _generate_appraiser_page(self, subjects: list, tag_counts: Dict[str, int]):
+        """估價師專區：每科一張卡，集中估價師歷屆、主題題庫、同家族延伸練習與相關文章。"""
+        from urllib.parse import quote
+
+        bank_slugs = {subject: slug for subject, slug, _ in exam_bank.SUBJECT_PAGES}
+        bank_ready = {p for _, p in self.exam_bank_nav}
+        own = [s for s in subjects if s[3].get(self.APPRAISER_GROUP)]
+        if not own:
+            return
+        # 專業科目照題庫順序，國文等其他科殿後
+        rank = {subject: i for i, (subject, _, _) in enumerate(exam_bank.SUBJECT_PAGES)}
+        own.sort(key=lambda s: (rank.get(s[0], len(rank)), s[0]))
+        family_members = {fam: members for fam, _, members in self._group_by_family(subjects)}
+        anchors = {fam: anchor for fam, anchor, _ in self.SUBJECT_FAMILIES}
+        own_names = {s[0] for s in own}
+        appraiser_total = sum(s[3][self.APPRAISER_GROUP] for s in own)
+        newest = max(s[2] for s in own)
+
+        lines = [
+            HIDE_SIDEBARS,
+            "# 不動產估價師專區",
+            "",
+            f"專技高考不動產估價師歷屆試題 **{appraiser_total}** 份（更新至民國 {newest} 年），"
+            "依考試科目整理。每科都附上四個入口：",
+            "",
+            "- **主題題庫**：逐題依主題分類，看出哪些主題年年考、哪些很久沒出",
+            "- **整科合併 PDF**：該科估價師歷屆試題合成一本，考前限時模擬用",
+            "- **延伸練習**：高普考、地方特考同家族科目的考古題，觀念相通，可當額外題量",
+            "- **相關文章**：補習班老師的專欄解析，寫完題目回頭對照",
+            "",
+            '!!! warning "注意法規時效"',
+            "    舊題目與舊文章依據的是當年的法規。平均地權條例、房地合一稅、國土計畫等近年都有修正，"
+            "引用條文前請以全國法規資料庫的現行條文為準。",
             "",
             '<div class="feature-grid">',
         ]
-        for idx, (name, count, newest) in enumerate(subjects):
-            merged = f"{repo}/raw/main/" + quote(f"{root}/合併後PDF檔案/{name}_合併.pdf")
-            folder = f"{repo}/tree/main/" + quote(f"{root}/{name}")
+        for idx, (name, count, latest, groups) in enumerate(own):
+            n_own = groups[self.APPRAISER_GROUP]
+            buttons = []
+            slug = bank_slugs.get(name)
+            if slug and f"{exam_bank.BANK_DIR}/{slug}.md" in bank_ready:
+                buttons.append(f'<a href="../{exam_bank.BANK_DIR}/{slug}/" class="md-button md-button--primary">'
+                               '主題題庫</a>')
+            buttons.append(f'<a href="{self._merged_pdf_url(name)}" class="md-button">整科合併 PDF</a>')
+
+            fams = self.APPRAISER_PRACTICE.get(name) or [self._subject_family(name)[0]]
+            practice = [s for fam in fams for s in family_members.get(fam, []) if s[0] not in own_names]
+            practice.sort(key=lambda s: -s[1])
+            practice_html = "、".join(
+                f'<a href="{self._merged_pdf_url(s[0])}">{s[0]}</a>（{s[1]}）'
+                for s in practice[:self.APPRAISER_PRACTICE_SHOWN])
+            if len(practice) > self.APPRAISER_PRACTICE_SHOWN:
+                more = practice[self.APPRAISER_PRACTICE_SHOWN:]
+                practice_html += (f'，<a href="../exams/#{anchors.get(fams[0], "")}">'
+                                  f'另有 {len(more)} 科 {sum(s[1] for s in more)} 份</a>')
+
+            tags = [t for t in self.APPRAISER_TAGS.get(name, []) if tag_counts.get(t)]
+            tags_html = "、".join(
+                f'<a href="../blog/category/{quote(t.lower().replace(" ", "-"))}/">{t}</a>（{tag_counts[t]}）'
+                for t in tags)
+
             lines.extend([
                 f'    <div class="feature-card c{idx % 4}">',
-                f'        <div class="feature-card__head"><span class="pb-count">{count} 份</span>'
-                f'<span class="pb-count">最新 {newest} 年</span></div>',
+                f'        <div class="feature-card__head"><span class="pb-count">估價師 {n_own} 份</span>'
+                f'<span class="pb-count">最新 {latest} 年</span></div>',
                 f'        <h3>{name}</h3>',
+            ])
+            if practice_html:
+                lines.append(f'        <p><b>延伸練習</b>：{practice_html}</p>')
+            if tags_html:
+                lines.append(f'        <p><b>相關文章</b>：{tags_html}</p>')
+            lines.extend([
                 '        <div class="feature-actions">',
-                f'            <a href="{merged}" class="md-button md-button--primary">整科合併 PDF</a>',
-                f'            <a href="{folder}" class="md-button" target="_blank" rel="noopener">單份瀏覽</a>',
+                *(f'            {b}' for b in buttons),
                 '        </div>',
                 '    </div>',
             ])
-        if not subjects:
-            lines.append("*(目前尚無考古題資料)*")
-        lines.append('</div>')
-        (self.docs_dir / 'exams.md').write_text('\n'.join(lines), encoding='utf-8')
+        lines.extend([
+            '</div>',
+            "",
+            "**建議讀法**：先在主題題庫挑一個主題、限時寫最近三年的題目 → 標出寫不出來的觀念 → "
+            "讀相關文章補觀念 → 用延伸練習的高普考題目驗收。",
+        ])
+        (self.docs_dir / 'appraiser.md').write_text('\n'.join(lines), encoding='utf-8')
