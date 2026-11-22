@@ -675,10 +675,12 @@ a.feature-card:active {
 }
 .ap-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
 }
 .md-typeset .ap-actions .md-button {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   margin: 0;
   padding: 0.55rem 0.4rem;
   font-size: 0.75rem;
