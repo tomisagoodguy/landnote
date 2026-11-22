@@ -112,7 +112,7 @@ landnote/
     │   └── README_grouped.md   # 主題分組總目錄
     ├── 地政考古題/              # 依科目分資料夾，含 合併後PDF檔案/
     ├── 高點法律考古題/
-    └── site_src/               # 由 site_generator 產生，每次部署都會重建，請勿手動修改
+    └── site_src/               # 由 site_generator 產生，不進版控，每次部署都會重建
 ```
 
-網站樣式改在 `src/landnote/templates/static/css/extra.css`，頁面內容改在 `src/landnote/processors/site_generator.py`；直接修改 `site_src/` 會在下次產生時被覆蓋。
+網站樣式改在 `src/landnote/templates/static/css/extra.css`，頁面內容改在 `src/landnote/processors/site_generator.py`；`site_src/` 每次產生都會整個重建，不要直接修改。

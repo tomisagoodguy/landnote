@@ -23,6 +23,8 @@ landnotev3/test.ipynb
 
 # Node/MkDocs
 site/
+# 網站原始檔由 site_generator 每次整個重建，CI 部署時現場產生
+landnotev3/site_src/
 .ipynb_checkpoints/
 
 # Local tool settings（個人本機設定，不進版控）

@@ -50,7 +50,7 @@ landnote/
     │   ├── articles/                 # 爬下來的原始文章 Markdown（產生器的輸入）
     │   ├── merged/ keywords/ pdf/    # grouper 產出
     │   └── README_grouped.md
-    ├── site_src/                     # ⚠ 幾乎全是產生器輸出
+    ├── site_src/                     # ⚠ 全是產生器輸出，不進版控（.gitignore），CI 每次部署重建
     │   ├── mkdocs.yml                # 由 site_generator 產生
     │   ├── docs/                     # blog/posts、tags.md、review/、index.md、javascripts/、stylesheets/
     │   └── site/                     # mkdocs build 輸出（.gitignore）
@@ -98,7 +98,7 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 2. **改前端行為或樣式** → 改 `landnotev3/src/landnote/templates/static/js/study_tools.js` 或 `templates/static/css/extra.css`，產生器會複製成 `site_src/docs/javascripts/extra.js`、`stylesheets/extra.css`。
 3. **改爬蟲** → `landnotev3/src/landnote/crawlers/`；改分組或年度 PDF → `processors/grouper.py`。
 4. 跑 `main.py site` 再 `mkdocs build` 到暫存目錄，用瀏覽器實測。
-5. **只 commit 原始碼**（用 pathspec：`git commit -- <檔案>`），產生出來的 `site_src/docs` 與 `data/` 變動交給 CI 重產並自動 commit。
+5. **只 commit 原始碼**（用 pathspec：`git commit -- <檔案>`）。`site_src/` 已不進版控；`data/` 的產出變動交給 CI 重產並自動 commit。
 6. 推送前 `git pull --rebase`：CI 會自動 commit `docs: auto-update articles and reports [skip ci]`，常常比本機新。
 
 各層邊界：crawlers 只寫 `data/`；grouper 只讀 `data/articles` 寫 `data/` 其他子目錄；site_generator 只讀 `data/articles` 寫 `site_src/`；前端 JS 只在瀏覽器端加功能，不改 Markdown。
@@ -118,7 +118,8 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 |--------|--------|
 | 直接改 `site_src/mkdocs.yml`、`site_src/docs/**` | 改 `site_generator.py` 或 `templates/static/`；docs 下次產生就被覆蓋 |
 | 改 `site_src/docs/javascripts/extra.js` | 改 `templates/static/js/study_tools.js`（兩者內容相同，後者才是原始檔） |
-| 本機跑完 `main.py site` 後 `git add .` | 只 commit 原始碼；一次產生會動到上千個檔案 |
+| 本機跑完 `main.py articles`／`group` 後 `git add .` | 只 commit 原始碼；`data/` 一次產生會動到上千個檔案 |
+| 想把 `site_src/` 加回版控 | 它由 `site_generator` 每次整個刪除重建，CI 部署不讀 repo 裡的版本 |
 | 新增 Python 依賴只改 `pyproject.toml` | `update_articles.yml` 用 **pip 寫死套件清單**，要一起加 |
 | 用 `tomllib`、`except*`、`typing.Self` 等 3.11+ 功能 | CI 是 Python 3.10（`match`、`X \| Y` 型別可用） |
 | 在 `landnotev3/` 根目錄留除錯腳本 | 一次性腳本放暫存目錄，正式工具放 `scripts/` |
