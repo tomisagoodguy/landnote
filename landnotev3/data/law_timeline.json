@@ -1,5 +1,5 @@
 {
- "source_updated": "2026/11/13 上午 12:00:00",
+ "source_updated": "2026/11/20 上午 12:00:00",
  "laws": {
   "行政程序法": {
    "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030055",
@@ -3603,6 +3603,17 @@
      "all": false,
      "articles": [
       "47-1"
+     ]
+    },
+    {
+     "date": "2026-11-20",
+     "all": false,
+     "articles": [
+      "10-1",
+      "2",
+      "60",
+      "65-1",
+      "69"
      ]
     }
    ]
