@@ -311,11 +311,103 @@ function initQuestionMarks() {
     });
 }
 
-// 我的複習清單頁（#qm-review）：依狀態列出標記過的題目
+// 我的複習清單頁（#qm-review）：匯出／匯入工具列＋依狀態列出標記過的題目
 function initReviewList() {
     const box = document.getElementById("qm-review");
     if (!box || box.dataset.ready) return;
     box.dataset.ready = "1";
+    const list = document.createElement("div");
+    box.replaceChildren(qmToolbar(() => qmRenderList(list)), list);
+    qmRenderList(list);
+}
+
+// 匯出成 JSON 檔備份、從檔案匯入（換裝置、換瀏覽器時搬移標記）
+const QM_FILE_TYPE = "landnote-qmark";
+
+function qmToolbar(onChange) {
+    const bar = document.createElement("div");
+    bar.className = "qm-toolbar";
+    bar.style.cssText = "display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin:0 0 1rem;";
+    const msg = document.createElement("p");
+    msg.setAttribute("role", "status");
+    msg.style.cssText = "flex-basis:100%;margin:0;font-size:0.8em;";
+
+    const exportBtn = document.createElement("button");
+    exportBtn.type = "button";
+    exportBtn.className = "md-button";
+    exportBtn.textContent = "匯出標記";
+    exportBtn.onclick = () => {
+        const marks = qmLoad();
+        const n = Object.keys(marks).length;
+        if (!n) { msg.textContent = "還沒有標記可以匯出。"; return; }
+        const today = new Date().toISOString().slice(0, 10);
+        const data = { type: QM_FILE_TYPE, version: 1, exported: today, marks };
+        const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], { type: "application/json" }));
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "landnote-標記-" + today + ".json";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        msg.textContent = "已匯出 " + n + " 題標記。到另一台裝置的這一頁按「匯入標記」選這個檔案即可。";
+    };
+
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "application/json,.json";
+    input.hidden = true;
+    input.onchange = async () => {
+        const file = input.files && input.files[0];
+        input.value = "";  // 同一個檔案可再選一次
+        if (!file) return;
+        try {
+            const result = qmMerge(JSON.parse(await file.text()));
+            msg.textContent = "匯入完成：新增 " + result.added + " 題、更新 " + result.updated + " 題" +
+                (result.kept ? "、保留本機較新的 " + result.kept + " 題" : "") +
+                (result.skipped ? "，略過 " + result.skipped + " 筆格式不符的資料" : "") + "。";
+            onChange();
+        } catch (err) {
+            console.error("匯入標記失敗:", err);
+            msg.textContent = "匯入失敗：" + err.message;
+        }
+    };
+    const importBtn = document.createElement("button");
+    importBtn.type = "button";
+    importBtn.className = "md-button";
+    importBtn.textContent = "匯入標記";
+    importBtn.onclick = () => input.click();
+
+    bar.append(exportBtn, importBtn, input, msg);
+    return bar;
+}
+
+// 合併匯入的標記：本機沒有的直接加入；兩邊都有時保留標記日期較新的（同一天以匯入檔為準）
+function qmMerge(data) {
+    if (!data || data.type !== QM_FILE_TYPE || typeof data.marks !== "object" || data.marks === null) {
+        throw new Error("不是 Landnote 匯出的標記檔");
+    }
+    const states = new Set(QM_STATES.map(([s]) => s));
+    const all = qmLoad();
+    const result = { added: 0, updated: 0, kept: 0, skipped: 0 };
+    Object.entries(data.marks).forEach(([key, m]) => {
+        // data-href 是站內相對路徑；擋掉 javascript: 等任何帶協定的網址
+        const valid = /^[\w-]+$/.test(key) && m && states.has(m.s) &&
+            (m.h === undefined || (typeof m.h === "string" && /^[\w\-./#]*$/.test(m.h))) &&
+            (m.t === undefined || typeof m.t === "string") &&
+            (m.d === undefined || (typeof m.d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(m.d)));
+        if (!valid) { result.skipped++; return; }
+        const mark = { s: m.s, t: m.t, h: m.h, d: m.d };
+        const local = all[key];
+        if (!local) { all[key] = mark; result.added++; }
+        else if ((mark.d || "") >= (local.d || "")) { all[key] = mark; result.updated++; }
+        else result.kept++;
+    });
+    if (!qmSave(all)) throw new Error("瀏覽器無法儲存（可能停用了本機儲存空間）");
+    return result;
+}
+
+function qmRenderList(box) {
     const marks = qmLoad();
     const keys = Object.keys(marks);
     box.replaceChildren();
@@ -352,7 +444,7 @@ function initReviewList() {
             rm.onclick = () => {
                 const all = qmLoad();
                 delete all[k];
-                if (qmSave(all)) li.remove();
+                if (qmSave(all)) qmRenderList(box);  // 重繪，統計數字一起更新
             };
             li.append(a, " ", date, " ", rm);
             ul.appendChild(li);
