@@ -843,3 +843,79 @@ a.feature-card:active {
   max-width: 100%;
   height: auto;
 }
+/* ── 逐題讀熟練度標記（study_tools.js initQuestionMarks）：顏色對應 不熟=珊瑚、待複習=黃、熟練=竹綠 ── */
+.md-typeset .qm-group {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+.md-typeset .qb-meta a + .qm-group {
+  margin-left: 0;
+}
+.md-typeset .qm-btn {
+  min-height: 1.9rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--pb-muted);
+  background: var(--pb-card);
+  border: 2px solid var(--pb-line);
+  border-radius: var(--pb-r-sm);
+  cursor: pointer;
+}
+.md-typeset .qm-btn:hover {
+  color: var(--pb-ink);
+  border-color: var(--pb-ink);
+}
+.md-typeset .qm-btn--weak[aria-pressed="true"] {
+  color: var(--pb-coral-deep);
+  background: var(--pb-coral-l);
+  border-color: var(--pb-coral-deep);
+}
+.md-typeset .qm-btn--review[aria-pressed="true"] {
+  color: var(--pb-ink);
+  background: var(--pb-yellow-l);
+  border-color: var(--pb-yellow);
+}
+.md-typeset .qm-btn--done[aria-pressed="true"] {
+  color: var(--pb-green);
+  background: var(--pb-bamboo-l);
+  border-color: var(--pb-green);
+}
+/* 已標記的題目卡左側加色條，捲動時一眼看出狀態 */
+.md-typeset .qb-item[data-qm="weak"] {
+  border-left: 5px solid var(--pb-coral-deep);
+}
+.md-typeset .qb-item[data-qm="review"] {
+  border-left: 5px solid var(--pb-yellow);
+}
+.md-typeset .qb-item[data-qm="done"] {
+  border-left: 5px solid var(--pb-green);
+}
+.md-typeset .qm-list li {
+  margin-bottom: 0.4em;
+}
+.md-typeset .qm-date {
+  font-size: 0.75em;
+  color: var(--pb-muted);
+}
+
+/* ── 文章頁「這篇文章考過哪些題目」（exam_reader._backlinks_md）──────── */
+.md-typeset .er-backlinks {
+  margin-top: 2rem;
+  padding: 0.4rem 1.2rem 0.8rem;
+  background: var(--pb-card);
+  border: var(--pb-border);
+  border-radius: var(--pb-r);
+}
+.md-typeset .er-backlinks h2 {
+  margin-top: 0.6rem;
+}
+.md-typeset .er-backlinks li {
+  margin-bottom: 0.6em;
+  color: var(--pb-muted);
+}
+/* 列表頁直接顯示全文，反向連結只留在單篇頁，免得每張卡片都拖一大串 */
+.md-post--excerpt .er-backlinks {
+  display: none;
+}

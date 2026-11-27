@@ -33,7 +33,7 @@ from landnote.processors.exam_bank import (
     ocr_cache_path,
     split_questions,
 )
-from landnote.processors.law_timeline import LawTimeline, law_refs
+from landnote.processors.law_timeline import LAW_REF, LawTimeline, law_refs
 
 # (SUBJECT_FAMILIES 的家族名, 網址 slug, 頁面名稱)；slug 的底線版即 JSON 檔名（land-law → land_law.json）
 READERS = [
@@ -47,7 +47,9 @@ READERS = [
     ("稅法與政府採購", "tax", "稅法與政府採購"),
 ]
 READER_ROOT = "exam-reader"
-OBSIDIAN_ZIP = "downloads/landnote-obsidian.zip"  # Obsidian vault 下載檔（相對 docs/）；CI 在 mkdocs build 前用 main.py obsidian --zip 產生
+# Obsidian vault 下載檔（相對 docs/）；CI 在 mkdocs build 前用 main.py obsidian --zip 產生
+OBSIDIAN_ZIP = "downloads/landnote-obsidian.zip"
+REVIEW_PAGE = "review"  # 我的複習清單：exam-reader/review/，內容由 study_tools.js 從 localStorage 產生
 DRILL_PAGE = "drill"  # 申論題連續刷題頁：exam-reader/<slug>/drill/
 DRILL_CHOICE_PAGE = "drill-choice"  # 測驗題連續刷題頁：exam-reader/<slug>/drill-choice/
 TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
@@ -595,7 +597,7 @@ class ArticleIndex:
             fm = re.match(r"---\n(.*?)\n---\n", text, re.S)
             head = fm.group(1) if fm else ""
             body = text[fm.end():] if fm else text
-            body = body.split("## 文章圖片")[0]
+            body = BACKLINKS_BLOCK.sub("", body.split("## 文章圖片")[0])  # 反向連結是題目文字，不算文章內容
             m_title = re.search(r"^title:\s*(.+)$", head, re.M)
             m_slug = re.search(r"^slug:\s*['\"]?([^'\"\n]+)", head, re.M)
             title = m_title.group(1).strip().strip("'\"") if m_title else f.stem
@@ -742,14 +744,23 @@ def _law_tags(hits: List[Tuple[str, str]], pages: Dict[str, str], up: str, limit
     return tags
 
 
+def _mark_attrs(p: dict, q: dict) -> str:
+    """題目卡的熟練度標記屬性（study_tools.js 讀取）：data-q 跨頁面相同，同一題在考卷頁、刷題頁、比較頁共用狀態；
+    data-href 相對 exam-reader/，供「我的複習清單」連回原題。p["slug"] 由 _write_family 填入。"""
+    import html
+
+    return (f' data-q="{p["id"]}-{qid(q)}" data-label="{html.escape(_q_label(p, q))}"'
+            f' data-href="{p["slug"]}/{p["id"]}/#{qid(q)}"')
+
+
 def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str], related: List[dict],
                  answer_doc: Optional[dict] = None,
-                 similar: Optional[List[Tuple[dict, dict]]] = None) -> List[str]:
+                 similar: Optional[List[Tuple[dict, dict]]] = None, mark: str = "") -> List[str]:
     meta = [f'<span class="pb-count">第 {q["no"]} 題</span>']
     if q["score"]:
         meta.append(f'<span class="pb-count">{q["score"]} 分</span>')
     meta += _law_tags(hits, law_pages, "../")
-    out = [f'<div class="qb-item" id="{qid(q)}" markdown>', f'<p class="qb-meta">{"".join(meta)}</p>', "",
+    out = [f'<div class="qb-item" id="{qid(q)}"{mark} markdown>', f'<p class="qb-meta">{"".join(meta)}</p>', "",
            _md_escape(q["text"]), ""]
     if q.get("options"):
         out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
@@ -768,9 +779,10 @@ def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str]
 
 def _paper_page(p: dict, index: ArticleIndex, name: str, similar: "SimilarIndex",
                 hits: Dict[Tuple[str, str], List[Tuple[str, str]]], law_pages: Dict[str, str],
-                drills: Optional[Dict[str, int]] = None) -> str:
+                drills: Optional[Dict[str, int]] = None, backlinks: Optional[Dict[str, list]] = None) -> str:
     """產生單份考卷頁。hits 為每題的法條 [(法條, 來源)]，law_pages 為有比較頁的法條 → 檔名，
-    drills 為本家族有產生的連續刷題頁（題型 → 題數），本卷有該題型才放連結。"""
+    drills 為本家族有產生的連續刷題頁（題型 → 題數），本卷有該題型才放連結。
+    backlinks 有給時，順手記下「文章 path → [(是否為擬答, 分數, 考卷, 題目)]」，供文章頁反向列出歷屆考題。"""
     from urllib.parse import quote
 
     essays = [q for q in p["questions"] if q["kind"] == "essay"]
@@ -811,7 +823,14 @@ def _paper_page(p: dict, index: ArticleIndex, name: str, similar: "SimilarIndex"
             k = 3 if q["kind"] == "essay" else 2
             related = index.related(q["text"] * 2 + "".join(q["answer"]) + "".join(q.get("options", [])), refs, k)
             answer_doc = index.teacher_answer(q["text"]) if q["kind"] == "essay" else None
-            lines += _question_md(q, hits[(p["id"], qid(q))], law_pages, related, answer_doc, similar.of(p, q))
+            if backlinks is not None:
+                if answer_doc:
+                    backlinks[answer_doc["path"]].append((True, 1.0, p, q))
+                for r in related:
+                    if not answer_doc or r["path"] != answer_doc["path"]:
+                        backlinks[r["path"]].append((False, r["score"], p, q))
+            lines += _question_md(q, hits[(p["id"], qid(q))], law_pages, related, answer_doc, similar.of(p, q),
+                                  _mark_attrs(p, q))
     return "\n".join(lines)
 
 
@@ -837,7 +856,7 @@ def _write_drill_page(out: Path, kind: str, papers: List[dict], index: ArticleIn
             if not (q["key"] if kind == "choice" else q["answer"] or answer_doc):
                 continue
             head = [f'<p class="er-drill-src"><a href="../{p["id"]}/#{qid(q)}">{_q_label(p, q)}</a></p>', ""]
-            body = _question_md(q, hits[(p["id"], qid(q))], law_pages, [], answer_doc)
+            body = _question_md(q, hits[(p["id"], qid(q))], law_pages, [], answer_doc, mark=_mark_attrs(p, q))
             body[0] = body[0].replace(f'id="{qid(q)}"', f'id="{p["id"]}-{qid(q)}"')  # 同頁多份考卷，錨點加卷別
             by_year[p["year"]].append(head + body)
     n = sum(len(v) for v in by_year.values())
@@ -871,15 +890,23 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
     laws = LawIndex()
     nav = []
     written = []
+    backlinks: Dict[str, list] = defaultdict(list)
+    law_links: Dict[str, Tuple[int, str, str]] = {}  # 法條 → (題數, 科目名, 相對 docs/ 的比較頁)；多科都有時取題數多的
     for _, slug, name in readers:
         papers = json.loads(data_file(slug, data_dir).read_text(encoding="utf-8"))
         if papers:
-            _write_family(docs_dir / READER_ROOT / slug, papers, index, laws, name, slug)
+            counts = _write_family(docs_dir / READER_ROOT / slug, papers, index, laws, name, slug, backlinks)
+            for ref, (n, page) in counts.items():
+                if n > law_links.get(ref, (0,))[0]:
+                    law_links[ref] = (n, name, f"{READER_ROOT}/{slug}/{LAW_DIR}/{page}.md")
             nav.append((name, f"{READER_ROOT}/{slug}/index.md"))
             written.append((slug, name, papers))
     if written:
+        _link_articles(docs_dir, backlinks, law_links)
         _write_overview(docs_dir / READER_ROOT, written)
+        _write_review_page(docs_dir / READER_ROOT)
         nav.insert(0, ("各科總覽", f"{READER_ROOT}/index.md"))
+        nav.insert(1, ("我的複習清單", f"{READER_ROOT}/{REVIEW_PAGE}.md"))
     return nav
 
 
@@ -925,12 +952,33 @@ def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]]) -> N
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def _write_review_page(out: Path) -> None:
+    """exam-reader/review.md：熟練度標記的彙整頁；標記只存在瀏覽器，頁面本身只放容器與說明。"""
+    lines = [
+        "---\nhide:\n  - navigation\n  - toc\n---\n",
+        "# 我的複習清單",
+        "",
+        "在逐題讀各頁的題目上按 **不熟／待複習／熟練** 標記後，會依狀態整理在這裡，點題目可回到原題。"
+        "同一題在考卷頁、連續刷題頁、比較頁的標記是共用的；再按一次同一個按鈕可取消。",
+        "",
+        '!!! warning "標記只存在這台裝置的瀏覽器"',
+        "    換手機、換瀏覽器或清除瀏覽資料後就看不到；不需要登入，也不會上傳。",
+        "",
+        '<div id="qm-review"><p>需要啟用 JavaScript 才能顯示複習清單。</p></div>',
+        "",
+    ]
+    (out / f"{REVIEW_PAGE}.md").write_text("\n".join(lines), encoding="utf-8")
+
+
 def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "LawIndex", name: str,
-                  slug: str) -> None:
+                  slug: str, backlinks: Optional[Dict[str, list]] = None) -> Dict[str, Tuple[int, str]]:
+    """產生一個科目家族的所有頁面；回傳有比較頁的法條 → (題數, 比較頁檔名)，供文章內法條連到站內。"""
     from urllib.parse import quote
 
     out.mkdir(parents=True, exist_ok=True)
     readable = [p for p in papers if p["questions"]]
+    for p in readable:
+        p["slug"] = slug  # 熟練度標記的 data-href 用
     similar = SimilarIndex(readable)
     _write_topic_pages(out / TOPIC_DIR, readable, similar, name, READER_TOPICS.get(slug, []))
     hits = {(p["id"], qid(q)): laws.refs(q) for p, q in similar.items}
@@ -942,7 +990,7 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
     drills = {kind: n for kind in DRILL_KINDS
               if (n := _write_drill_page(out, kind, readable, index, name, hits, law_pages))}
     for p in readable:
-        page = _paper_page(p, index, name, similar, hits, law_pages, drills)
+        page = _paper_page(p, index, name, similar, hits, law_pages, drills, backlinks)
         (out / f"{p['id']}.md").write_text(page, encoding="utf-8")
 
     n_q = sum(len(p["questions"]) for p in readable)
@@ -993,6 +1041,90 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
             title = f'[{p["subject"]}]({REPO_BLOB + quote(p["pdf"])}){{target="_blank"}}'
         lines.append(f"| {p['year']} | {p['exam']} | {title} | {desc} | {'✓' if p['has_answer'] else ''} |")
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+    return {ref: (len(by_ref[ref]), page) for ref, page in law_pages.items()}
+
+
+# ---- 文章 → 考題、文章內法條 → 站內比較頁 ----
+
+BACKLINKS_START, BACKLINKS_END = "<!-- exam-backlinks -->", "<!-- /exam-backlinks -->"
+BACKLINKS_BLOCK = re.compile(re.escape(BACKLINKS_START) + r".*?" + re.escape(BACKLINKS_END), re.S)
+BACKLINKS_MAX = 8
+_MD_LINK = re.compile(r"!?\[[^\]]*\]\([^)]*\)|<[^>]+>|https?://\S+")
+
+
+def _link_articles(docs_dir: Path, backlinks: Dict[str, list],
+                   law_links: Dict[str, Tuple[int, str, str]]) -> None:
+    """改寫已產生的文章頁：文末（「文章圖片」之前）列出對應的歷屆考題，內文法條有比較頁的改連站內。
+
+    文章由 site_generator 每次重建，這裡直接覆寫不會累加；ArticleIndex 讀文章時會剔除反向連結區塊。
+    """
+    n_back = n_law = 0
+    for f in [f for d in ("blog", "jasper") for f in (docs_dir / d / "posts").glob("*.md")]:
+        text = f.read_text(encoding="utf-8")
+        fm = re.match(r"---\n.*?\n---\n", text, re.S)
+        head, body = (text[:fm.end()], text[fm.end():]) if fm else ("", text)
+        main, sep, images = body.partition("## 文章圖片")
+        up = os.path.relpath(docs_dir, f.parent).replace(os.sep, "/")
+        main, n = _link_laws(main, law_links, up)
+        n_law += n
+        items = backlinks.get(f"{f.parent.parent.name}/posts/{f.name}")
+        if items:
+            main = main.rstrip("\n") + "\n\n" + "\n".join(_backlinks_md(items, up)) + "\n\n"
+            n_back += 1
+        if n or items:
+            f.write_text(head + main + sep + images, encoding="utf-8")
+    print(f"  文章反向連結：{n_back} 篇列出歷屆考題，{n_law} 處法條改連站內比較頁")
+
+
+def _link_laws(md: str, law_links: Dict[str, Tuple[int, str, str]], up: str) -> Tuple[str, int]:
+    """把有站內比較頁的法條改成連結；略過標題、程式碼區塊與既有連結／HTML 標籤內的文字。"""
+    out, n, fenced = [], 0, False
+    for line in md.split("\n"):
+        if line.lstrip().startswith("```"):
+            fenced = not fenced
+        if fenced or line.lstrip().startswith("#") or BACKLINKS_START in line:
+            out.append(line)
+            continue
+        protected = [m.span() for m in _MD_LINK.finditer(line)]
+        pieces, last = [], 0
+        for m in LAW_REF.finditer(line):
+            if "第" not in m.group(0) and "§" not in m.group(0):
+                continue
+            if any(a < m.end() and m.start() < b for a, b in protected):
+                continue
+            refs = law_refs(m.group(0))
+            target = law_links.get(refs[0]) if refs else None
+            if not target:
+                continue
+            count, name, path = target
+            label = m.group(0).rstrip()
+            pieces += [line[last:m.start()], f'[{label}]({up}/{path} "{name}歷屆考過 {count} 題：看條文與考題")']
+            last = m.start() + len(label)
+            n += 1
+        out.append("".join(pieces) + line[last:])
+    return "\n".join(out), n
+
+
+def _backlinks_md(items: list, up: str) -> List[str]:
+    """文章的「歷屆考題」區塊：老師擬答對應的題目優先，其次依相似度、年度新到舊；同題只列一次。"""
+    seen, rows = set(), []
+    for is_answer, score, p, q in sorted(items, key=lambda t: (not t[0], -t[1], -t[2]["year"])):
+        key = (p["id"], qid(q))
+        if key in seen:
+            continue
+        seen.add(key)
+        snippet = re.sub(r"\s+", " ", q["text"]).strip()
+        snippet = _md_escape(snippet[:60]) + ("…" if len(snippet) > 60 else "")
+        badge = '<span class="pb-count">本文即擬答</span> ' if is_answer else ""
+        rows.append(f"- {badge}**[{_q_label(p, q)}](<{up}/{READER_ROOT}/{p['slug']}/{p['id']}.md#{qid(q)}>)**"
+                    f"<br>{snippet}")
+    more = len(rows) - BACKLINKS_MAX
+    lines = [BACKLINKS_START, '<div class="er-backlinks" markdown>', "", "## 這篇文章考過哪些題目", "",
+             "讀完試著自己作答，再點進去對答案。依文字相似度自動比對，不一定完全對應。", ""]
+    lines += rows[:BACKLINKS_MAX]
+    if more > 0:
+        lines += ["", f"另有 {more} 題相近，可從題目頁的「延伸閱讀」找到本文。"]
+    return lines + ["", "</div>", BACKLINKS_END]
 
 
 # ---- 跨年度比較 ----
@@ -1148,7 +1280,7 @@ def _card_md(p: dict, q: dict, badges: Optional[List[str]] = None) -> List[str]:
     else:
         kind = "測驗"
     out = [
-        '<div class="qb-item" markdown>',
+        f'<div class="qb-item"{_mark_attrs(p, q)} markdown>',
         f'<p class="qb-meta"><span class="pb-count">{_exam_short(p["exam"])}</span>'
         f'<span class="pb-count">{kind}</span>{"".join(badges or [])}'
         f'<a href="../../{p["id"]}/#{qid(q)}">{"看詳解" if q["answer"] else "看原題"} →</a></p>',

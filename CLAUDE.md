@@ -153,5 +153,6 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 - 文章開頭的 `## 內文` 由產生器移除；**不插入 `<!-- more -->`**，所有列表（blog 首頁、分類頁、最新文章、Jasper）都直接顯示全文、沒有「繼續閱讀」（使用者要求過三次）。法規時效提醒放在內文開頭。
 - 高點專欄與 Jasper 是**兩個獨立 blog**（`blog/`、`jasper/`），任何列表都不要混排。
 - Jasper 文章：標題含「上榜心得」不收；文末「免費諮詢｜Line 官方帳號｜Facebook 粉絲專頁」推廣區塊要移除（`site_generator.py` 的 Jasper 處理段）。
+- 逐題讀的熟練度標記（不熟／待複習／熟練）存在瀏覽器 localStorage `qmark_v1`，以題目卡的 `data-q`（考卷 id-題號）為鍵，各頁共用；彙整在 `exam-reader/review/`。改題目卡 HTML 時要保留 `_mark_attrs()` 產生的屬性。
 - 考古題以**網頁逐題閱讀、可跨年度比較**為主（逐題讀、主題題庫），合併 PDF 是輔助；題目與擬答抽取用規則式解析，不用 LLM。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。

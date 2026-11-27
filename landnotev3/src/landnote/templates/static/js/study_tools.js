@@ -15,6 +15,7 @@ function initStudyTools() {
         pageUrl.endsWith('/exams/') ||
         pageUrl.endsWith('/blog/') ||
         pageUrl.endsWith('/jasper/') ||
+        pageUrl.endsWith('/exam-reader/review/') ||  // 複習清單頁：整頁狀態鈕會與題目標記混淆
         pageUrl.includes('/category/');
     const is404 = document.title.includes('404');
 
@@ -254,17 +255,127 @@ function initDrillToggle() {
     apply();
 }
 
+// 逐題讀的熟練度標記：題目卡 .qb-item[data-q] 加「不熟／待複習／熟練」按鈕，存在 localStorage。
+// data-q 跨頁面相同（考卷 id-題號），同一題在考卷頁、刷題頁、比較頁共用；狀態名稱對應 Obsidian vault 的「狀態」欄位。
+const QM_KEY = "qmark_v1";
+const QM_STATES = [["weak", "不熟"], ["review", "待複習"], ["done", "熟練"]];
+
+function qmLoad() {
+    try { return JSON.parse(localStorage.getItem(QM_KEY) || "{}"); }
+    catch (err) { console.warn("讀取熟練度標記失敗:", err); return {}; }
+}
+
+function qmSave(marks) {
+    try { localStorage.setItem(QM_KEY, JSON.stringify(marks)); return true; }
+    catch (err) { console.warn("儲存熟練度標記失敗:", err); return false; }
+}
+
+function initQuestionMarks() {
+    const items = document.querySelectorAll(".qb-item[data-q]");
+    if (!items.length) return;
+    const marks = qmLoad();
+    items.forEach(item => {
+        const meta = item.querySelector(".qb-meta");
+        if (!meta || meta.querySelector(".qm-group")) return;
+        const key = item.dataset.q;
+        const group = document.createElement("span");
+        group.className = "qm-group";
+        group.setAttribute("role", "group");
+        group.setAttribute("aria-label", "熟練度");
+        const render = () => {
+            const s = (qmLoad()[key] || {}).s || "";
+            item.dataset.qm = s;
+            group.querySelectorAll("button").forEach(b => {
+                b.setAttribute("aria-pressed", String(b.dataset.s === s));
+            });
+        };
+        QM_STATES.forEach(([s, label]) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "qm-btn qm-btn--" + s;
+            b.dataset.s = s;
+            b.textContent = label;
+            b.onclick = () => {
+                const all = qmLoad();
+                if ((all[key] || {}).s === s) delete all[key];  // 再按一次取消
+                else all[key] = { s, t: item.dataset.label, h: item.dataset.href, d: new Date().toISOString().slice(0, 10) };
+                if (!qmSave(all)) { alert("無法儲存標記（瀏覽器可能停用了本機儲存空間）"); return; }
+                // 同一頁可能出現同一題兩次（跨科考卷），一起更新
+                document.querySelectorAll(`.qb-item[data-q="${key}"]`).forEach(el => el.dispatchEvent(new Event("qm-sync")));
+            };
+            group.appendChild(b);
+        });
+        item.addEventListener("qm-sync", render);
+        meta.appendChild(group);
+        if (marks[key]) render();
+    });
+}
+
+// 我的複習清單頁（#qm-review）：依狀態列出標記過的題目
+function initReviewList() {
+    const box = document.getElementById("qm-review");
+    if (!box || box.dataset.ready) return;
+    box.dataset.ready = "1";
+    const marks = qmLoad();
+    const keys = Object.keys(marks);
+    box.replaceChildren();
+    if (!keys.length) {
+        box.innerHTML = "<p>還沒有標記任何題目。到各科題目頁或連續刷題頁，按題目上方的按鈕開始標記。</p>";
+        return;
+    }
+    const summary = document.createElement("p");
+    summary.textContent = "共標記 " + keys.length + " 題：" +
+        QM_STATES.map(([s, label]) => label + " " + keys.filter(k => marks[k].s === s).length).join("・");
+    box.appendChild(summary);
+    // 頁面在 exam-reader/review/，data-href 相對 exam-reader/
+    const base = new URL("../", window.location.href);
+    QM_STATES.forEach(([s, label]) => {
+        const rows = keys.filter(k => marks[k].s === s)
+            .sort((a, b) => (marks[b].d || "").localeCompare(marks[a].d || "") || (marks[a].t || "").localeCompare(marks[b].t || ""));
+        if (!rows.length) return;
+        const h = document.createElement("h2");
+        h.textContent = label + "（" + rows.length + "）";
+        const ul = document.createElement("ul");
+        ul.className = "qm-list";
+        rows.forEach(k => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = new URL(marks[k].h || "", base).href;
+            a.textContent = marks[k].t || k;
+            const date = document.createElement("span");
+            date.className = "qm-date";
+            date.textContent = marks[k].d ? "標記於 " + marks[k].d : "";
+            const rm = document.createElement("button");
+            rm.type = "button";
+            rm.className = "qm-btn";
+            rm.textContent = "移除";
+            rm.onclick = () => {
+                const all = qmLoad();
+                delete all[k];
+                if (qmSave(all)) li.remove();
+            };
+            li.append(a, " ", date, " ", rm);
+            ul.appendChild(li);
+        });
+        box.append(h, ul);
+    });
+}
+
 // 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
 if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
         initStudyTools();
         initInfiniteBlog();
         initDrillToggle();
+        initQuestionMarks();
+        initReviewList();
     });
 } else {
     document.addEventListener("DOMContentLoaded", function () {
         initStudyTools();
         initInfiniteBlog();
         initDrillToggle();
+        initQuestionMarks();
+        initReviewList();
     });
 }
