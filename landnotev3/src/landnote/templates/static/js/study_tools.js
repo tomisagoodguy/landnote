@@ -228,15 +228,43 @@ document.addEventListener("toggle", async function (e) {
     }
 }, true);
 
+// 連續刷題頁（有 .er-drill-src）：一鍵展開／收合全部解答（details.success），偏好記在 localStorage
+function initDrillToggle() {
+    const article = document.querySelector("article.md-content__inner");
+    if (!article || !article.querySelector(".er-drill-src") || article.querySelector(".er-drill-toggle")) return;
+    const answers = () => article.querySelectorAll("details.success");
+    const KEY = "drill_expand_all";
+    let expanded = false;
+    try { expanded = localStorage.getItem(KEY) === "1"; } catch (err) { console.warn("讀取展開偏好失敗:", err); }
+
+    const btn = document.createElement("button");
+    btn.className = "md-button er-drill-toggle";
+    const apply = () => {
+        answers().forEach(d => { d.open = expanded; });
+        btn.textContent = expanded ? "解答全部收合" : "解答全部展開";
+        btn.setAttribute("aria-pressed", String(expanded));
+    };
+    btn.onclick = function () {
+        expanded = !expanded;
+        try { localStorage.setItem(KEY, expanded ? "1" : "0"); } catch (err) { console.warn("儲存展開偏好失敗:", err); }
+        apply();
+    };
+    const h1 = article.querySelector("h1");
+    (h1 || article.firstChild).after(btn);
+    apply();
+}
+
 // 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
 if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
         initStudyTools();
         initInfiniteBlog();
+        initDrillToggle();
     });
 } else {
     document.addEventListener("DOMContentLoaded", function () {
         initStudyTools();
         initInfiniteBlog();
+        initDrillToggle();
     });
 }
