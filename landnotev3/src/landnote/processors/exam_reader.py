@@ -31,6 +31,7 @@ from landnote.processors.exam_bank import (
     best_topic,
     normalize_cjk,
     ocr_cache_path,
+    split_questions,
 )
 from landnote.processors.law_timeline import LawTimeline, law_refs
 
@@ -248,7 +249,11 @@ def parse_paper(text: str) -> dict:
 
     申論題以依序出現的「一、二、」（或「題目一：」）切題，答案從「答：」開始，
     要求題號遞增，避免詳解內的條列「一、」被誤判成新題。選擇題以「（B）1.」開頭。
+    考選部原卷（申論＋測驗、測驗無答案）另由 _parse_moex 處理。
     """
+    m_moex = MOEX_CHOICE_HEADER.search(text)
+    if m_moex and MOEX_OPTIONS[0] in text[m_moex.end():]:
+        return _parse_moex(text[:m_moex.start()], text[m_moex.end():])
     _, lines = _clean_lines(text)
     commentary: List[str] = []
     questions: List[dict] = []
@@ -345,6 +350,48 @@ def _drop_broken_choices(out: List[dict]) -> List[dict]:
     if choices and sum(len(q["options"]) not in (4, 5) for q in choices) > len(choices) * BAD_CHOICE_RATIO:
         return [q for q in out if q["kind"] == "essay"]
     return out
+
+
+# 考選部原卷（如不動產經紀人）：「甲、申論題」在前、「乙、測驗題部分」在後；
+# 測驗題號單獨一行、選項以私用區字元 – 畫 (A)–(D)，試題本身不附答案
+MOEX_CHOICE_HEADER = re.compile(r"^\s*[乙丙]、\s*測驗題", re.M)
+MOEX_OPTIONS = ""
+MOEX_NOISE = re.compile(r"^(代號\s*[：:]|頁次\s*[：:]|※|座號|全一頁|（請接背面）|（背面）)")
+
+
+def _parse_moex(essay_text: str, choice_text: str) -> dict:
+    """考選部原卷：申論段用一般規則（題號是圖片時改以配分切題），測驗段以單獨成行的遞增題號切題。"""
+    head = parse_paper(essay_text)
+    essays = [q for q in head["questions"] if q["kind"] == "essay"]
+    if not essays:
+        # 題號是圖片時以配分切題，會把小題「②…（13 分）」切成獨立一題，開頭是第二個以後小題的併回前一題
+        texts: List[str] = []
+        for t in split_questions(essay_text):
+            if texts and re.match(r"^[②-⑩⑵-⑽]", t):
+                texts[-1] += "\n" + t
+            else:
+                texts.append(t)
+        essays = [{"no": i, "kind": "essay", "answer": [], "text": t,
+                   "score": sum(int(s) for s in SCORE.findall(t))}
+                  for i, t in enumerate(texts, 1)]
+    text = choice_text.translate(str.maketrans({c: f"({'ABCD'[i]})" for i, c in enumerate(MOEX_OPTIONS)}))
+    text = normalize_cjk(text.translate(str.maketrans(SUB_MARKS)))
+    qs: List[dict] = []
+    expect = 1
+    for ln in (ln.strip() for ln in text.splitlines()):
+        if not ln or MOEX_NOISE.match(ln):
+            continue
+        if re.fullmatch(r"\d{1,3}", ln) and int(ln) == expect:
+            qs.append({"no": expect, "stem": []})
+            expect += 1
+        elif qs:
+            qs[-1]["stem"].append(ln)
+    choices = []
+    for q in qs:
+        stem, options = _split_options("".join(q["stem"]))
+        choices.append({"no": q["no"], "kind": "choice", "answer": [], "text": stem, "options": options,
+                        "key": None, "score": 0})
+    return {"commentary": head["commentary"], "questions": essays + _drop_broken_choices(choices)}
 
 
 # 國營事業考卷常只在注意事項寫一次配分（「每大題各占二十五分」「每大題配分20 分」），題目後不再標
