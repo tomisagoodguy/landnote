@@ -897,21 +897,26 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
     written = []
     backlinks: Dict[str, list] = defaultdict(list)
     law_links: Dict[str, Tuple[int, str, str]] = {}  # 法條 → (題數, 科目名, 相對 docs/ 的比較頁)；多科都有時取題數多的
+    examined: Dict[str, list] = defaultdict(list)  # 法條 → [(科目名, slug, 比較頁或 None, [(考卷, 題目)])]
     for _, slug, name in readers:
         papers = json.loads(data_file(slug, data_dir).read_text(encoding="utf-8"))
         if papers:
-            counts = _write_family(docs_dir / READER_ROOT / slug, papers, index, laws, name, slug, backlinks)
-            for ref, (n, page) in counts.items():
-                if n > law_links.get(ref, (0,))[0]:
-                    law_links[ref] = (n, name, f"{READER_ROOT}/{slug}/{LAW_DIR}/{page}.md")
+            refs = _write_family(docs_dir / READER_ROOT / slug, papers, index, laws, name, slug, backlinks)
+            for ref, (page, qs) in refs.items():
+                examined[ref].append((name, slug, page, qs))
+                if page and len(qs) > law_links.get(ref, (0,))[0]:
+                    law_links[ref] = (len(qs), name, f"{READER_ROOT}/{slug}/{LAW_DIR}/{page}.md")
             nav.append((name, f"{READER_ROOT}/{slug}/index.md"))
             written.append((slug, name, papers))
     if written:
         _link_articles(docs_dir, backlinks, law_links)
-        _write_overview(docs_dir / READER_ROOT, written)
+        changes = _write_law_changes(docs_dir / READER_ROOT, examined, laws.timeline)
+        _write_overview(docs_dir / READER_ROOT, written, changes)
         _write_review_page(docs_dir / READER_ROOT)
         nav.insert(0, ("各科總覽", f"{READER_ROOT}/index.md"))
         nav.insert(1, ("我的複習清單", f"{READER_ROOT}/{REVIEW_PAGE}.md"))
+        if changes:
+            nav.insert(2, ("近期修法考點", f"{READER_ROOT}/{LAW_CHANGES_PAGE}.md"))
     return nav
 
 
@@ -920,8 +925,11 @@ def _has_key(q: dict) -> bool:
     return bool(q.get("key") if q["kind"] == "choice" else q.get("answer"))
 
 
-def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]]) -> None:
-    """exam-reader/index.md：各科考卷數、題數與詳解涵蓋率一覽。"""
+def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], changes: int = 0) -> None:
+    """exam-reader/index.md：各科考卷數、題數與詳解涵蓋率一覽。
+
+    changes 為近期修法考點頁的考過條文數，0 表示沒有該頁。
+    """
     out.mkdir(parents=True, exist_ok=True)
     rows = []
     t_p = t_a = t_q = t_k = 0
@@ -950,11 +958,93 @@ def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]]) -> N
         "歷屆相似題互相連結，可標記熟練狀態追蹤複習。"
         f"[下載 vault（zip）](../{OBSIDIAN_ZIP})，解壓後在 Obsidian 選「開啟資料夾作為 vault」。",
         "",
+        *([f'!!! warning "近 {LAW_CHANGES_YEARS} 年修法：{changes} 條考過的條文改了"',
+           f"    [近期修法考點]({LAW_CHANGES_PAGE}.md) 列出最近修正、而且歷屆考過的條文，"
+           "這些是新法上路後的熱門出題點，舊題的詳解也可能已不適用。", ""] if changes else []),
         "| 科目 | 年度 | 考卷 | 附詳解考卷 | 題數 | 有解答的題目 |",
         "|---|---|---:|---:|---:|---:|",
         *rows,
     ]
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+LAW_CHANGES_PAGE = "law-changes"  # 近期修法考點：exam-reader/law-changes/
+LAW_CHANGES_YEARS = 3
+
+
+def _write_law_changes(out: Path, examined: Dict[str, list], timeline: LawTimeline) -> int:
+    """exam-reader/law-changes.md：近 LAW_CHANGES_YEARS 年的每次修法，列出其中歷屆考過與還沒考過的條文。
+
+    回傳考過的被修正條文數；沒有修法資料或期間內沒有修法時不產生頁面、回 0。
+    """
+    from datetime import date
+
+    today = date.today()
+    cutoff = f"{today.year - LAW_CHANGES_YEARS}-{today.month:02d}-{today.day:02d}"
+    events = []  # (日期, 法規, 是否全文修正, [法條])
+    for law, info in timeline.laws.items():
+        if not any(r.startswith(law + "第") for r in examined):
+            continue  # 從沒出過題的法規（如大眾捷運法），修法再多也不是考點
+        for a in info.get("amendments", []):
+            if a["date"] < cutoff:
+                continue
+            if a["all"]:  # 全文修正：條號可能全變，只列考過的
+                refs = sorted((r for r in examined if r.startswith(law + "第")), key=_article_key)
+            else:
+                refs = sorted({_ref_name(law, no) for no in a["articles"]}, key=_article_key)
+            if refs:
+                events.append((a["date"], law, a["all"], refs))
+    if not events:
+        return 0
+    events.sort(key=lambda e: (e[0], e[1]), reverse=True)
+    hit_refs = {r for _, _, _, refs in events for r in refs if r in examined}
+    n_q = len({(p["id"], qid(q)) for r in hit_refs for _, _, _, qs in examined[r] for p, q in qs})
+    lines = [
+        "---\nhide:\n  - navigation\n---\n",
+        "# 近期修法考點",
+        "",
+        f"民國 {today.year - LAW_CHANGES_YEARS - 1911} 年以來（{cutoff} 起）追蹤法規的每一次修正，"
+        f"對照歷屆考古題：共 **{len(hit_refs)}** 條**考過的條文**被修正，涉及 **{n_q}** 題。",
+        "",
+        '!!! tip "怎麼用這一頁"',
+        "    - **考過又修法**：命題委員最愛考新舊法差異，先讀修正後的現行條文，再回頭看舊題。"
+        "舊題是依修正前的法條出題，**詳解可能已不適用**。",
+        "    - **修了還沒考過**：新制度、新條文常在上路後一兩年內入題，至少把條文讀過一遍。",
+        "    - 題目對到哪一條，部分是依條文文字自動比對，偶有對錯；只列從出過題的法規，修法資料來自全國法規資料庫。",
+        "",
+        "**修法時間**：" + "・".join(
+            f"[{d[:7]} {law}](#c{i})" for i, (d, law, _, refs) in enumerate(events, 1)
+            if any(r in examined for r in refs)),
+        "",
+    ]
+    for i, (d, law, whole, refs) in enumerate(events, 1):
+        hits = [r for r in refs if r in examined]
+        rest = [r for r in refs if r not in examined]
+        what = "全文修正" if whole else f"修正 {len(refs)} 條"
+        lines += [f"## {d} {law}（{what}） {{#c{i}}}", ""]
+        if hits:
+            lines += [f"**考過的條文（{len(hits)}）**", "", "| 條文 | 歷屆考題 | 出題年度 |", "|---|---|---|"]
+            for r in hits:
+                cells, years = [], set()
+                for name, slug, page, qs in sorted(examined[r], key=lambda e: -len(e[3])):
+                    years |= {p["year"] for p, _ in qs}
+                    if page:
+                        target = f"{slug}/{LAW_DIR}/{page}.md"
+                    else:  # 只考過一題、沒有比較頁：直接連到題目
+                        p, q = qs[0]
+                        target = f"{slug}/{p['id']}.md#{qid(q)}"
+                    cells.append(f"[{name} {len(qs)} 題]({target})")
+                ys = sorted(years)
+                span = f"{ys[0]}–{ys[-1]}" if len(ys) > 1 else str(ys[0])
+                lines.append(f"| {r[len(law):]} | {'、'.join(cells)} | {span} |")
+            lines.append("")
+        if rest:
+            shown = "、".join(f"[{r[len(law):]}]({timeline.url(r)}){{target=\"_blank\"}}" if timeline.url(r)
+                             else r[len(law):] for r in rest)
+            lines += [f"**修了還沒考過**：{shown}", ""]
+    out.mkdir(parents=True, exist_ok=True)
+    (out / f"{LAW_CHANGES_PAGE}.md").write_text("\n".join(lines), encoding="utf-8")
+    return len(hit_refs)
 
 
 def _write_review_page(out: Path) -> None:
@@ -982,8 +1072,10 @@ def _write_review_page(out: Path) -> None:
 
 
 def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "LawIndex", name: str,
-                  slug: str, backlinks: Optional[Dict[str, list]] = None) -> Dict[str, Tuple[int, str]]:
-    """產生一個科目家族的所有頁面；回傳有比較頁的法條 → (題數, 比較頁檔名)，供文章內法條連到站內。"""
+                  slug: str, backlinks: Optional[Dict[str, list]] = None
+                  ) -> Dict[str, Tuple[Optional[str], List[Tuple[dict, dict]]]]:
+    """產生一個科目家族的所有頁面；回傳考過的每條法條 → (比較頁檔名或 None, [(考卷, 題目)])，
+    供文章內法條連到站內與近期修法考點頁使用。"""
     from urllib.parse import quote
 
     out.mkdir(parents=True, exist_ok=True)
@@ -1069,7 +1161,7 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
             title = f'[{p["subject"]}]({REPO_BLOB + quote(p["pdf"])}){{target="_blank"}}'
         lines.append(f"| {p['year']} | {p['exam']} | {title} | {desc} | {'✓' if p['has_answer'] else ''} |")
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
-    return {ref: (len(by_ref[ref]), page) for ref, page in law_pages.items()}
+    return {ref: (law_pages.get(ref), [(p, q) for p, q, _ in qs]) for ref, qs in by_ref.items()}
 
 
 # ---- 文章 → 考題、文章內法條 → 站內比較頁 ----
