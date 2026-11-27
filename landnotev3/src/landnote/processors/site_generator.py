@@ -867,6 +867,24 @@ class SiteGenerator:
         exam_subjects = self._exam_subjects()
         exam_count = sum(s[1] for s in exam_subjects)
         latest_year = max((s[2] for s in exam_subjects), default=0)
+        # 逐題讀有產生才放入口卡（沒有考古題資料時 exam_reader_nav 為空）
+        reader_pages = {path for _, path in self.exam_reader_nav}
+        root = exam_reader.READER_ROOT
+        study_cards = ""
+        if f"{root}/{exam_reader.PRACTICE_PAGE}.md" in reader_pages:
+            study_cards += f"""
+    <a href="{root}/{exam_reader.PRACTICE_PAGE}/" class="feature-card c4">
+        <span class="feature-icon">📝</span>
+        <h3>逐題刷題與考前計畫</h3>
+        <p>設定考試日期，每天排好新題與到期複習；也能跨科隨機抽題、只刷標成不熟的題目。</p>
+    </a>"""
+        if f"{root}/{exam_reader.LAW_CHANGES_PAGE}.md" in reader_pages:
+            study_cards += f"""
+    <a href="{root}/{exam_reader.LAW_CHANGES_PAGE}/" class="feature-card c5">
+        <span class="feature-icon">⚖️</span>
+        <h3>近期修法考點</h3>
+        <p>近三年修正、而且歷屆考過的條文一次看；新舊法差異是熱門考點，舊題詳解也可能已不適用。</p>
+    </a>"""
 
         content = f"""{HIDE_SIDEBARS}
 # Landnote 數位圖書館
@@ -901,7 +919,7 @@ class SiteGenerator:
         <span class="feature-icon">📐</span>
         <h3>不動產估價師專區</h3>
         <p>估價師各科主題題庫、歷屆合併 PDF、高普考延伸練習與相關文章，一頁備齊。</p>
-    </a>
+    </a>{study_cards}
 </div>
 """
         (self.docs_dir / 'index.md').write_text(content, encoding='utf-8')

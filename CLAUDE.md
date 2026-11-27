@@ -77,6 +77,7 @@ landnote/
 ```bash
 uv run --project landnotev3 python landnotev3/src/landnote/main.py articles --update --auto-group   # 抓新文章並分組
 uv run --project landnotev3 python landnotev3/src/landnote/main.py group                           # 只重跑分組（--threshold 預設 80）
+uv run --project landnotev3 python landnotev3/src/landnote/main.py articles --refetch 902606 916696 # 修正解析錯誤後強制重抓指定文章（覆寫原檔，CI 不會自己重抓）
 uv run --project landnotev3 python landnotev3/src/landnote/main.py exams --type land --update      # 下載新地政考古題
 uv run --project landnotev3 python landnotev3/src/landnote/main.py jasper --update                 # 抓新 Jasper 文章
 uv run --project landnotev3 python landnotev3/src/landnote/main.py laws                            # 下載法規修正沿革（時效提醒用）
@@ -141,6 +142,8 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 | 新增 Python 依賴只改 `pyproject.toml` | `update_articles.yml` 用 **pip 寫死套件清單**，要一起加 |
 | 用 `tomllib`、`except*`、`typing.Self` 等 3.11+ 功能 | CI 是 Python 3.10（`match`、`X \| Y` 型別可用） |
 | 在 `landnotev3/` 根目錄留除錯腳本 | 一次性腳本放暫存目錄，正式工具放 `scripts/` |
+| 爬蟲佔位字用英文開頭（如 `TABLE_PLACEHOLDER_1`） | `TextUtils.format_content` 會把英文字母開頭的行當成「A. 」列表改寫；佔位字用全形括號包住（`〔表格1〕`） |
+| Playwright 用 `a[href='#x']` 找站內連結 | Material instant navigation 會把 href 改成絕對網址，改用 `a[href$='#x']` |
 
 核心原則：
 1. **產生器是唯一事實來源**：任何會出現在網站上的東西，都從 `src/landnote` 改，不從輸出改。
@@ -154,5 +157,8 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 - 高點專欄與 Jasper 是**兩個獨立 blog**（`blog/`、`jasper/`），任何列表都不要混排。
 - Jasper 文章：標題含「上榜心得」不收；文末「免費諮詢｜Line 官方帳號｜Facebook 粉絲專頁」推廣區塊要移除（`site_generator.py` 的 Jasper 處理段）。
 - 逐題讀的熟練度標記（不熟／待複習／熟練）存在瀏覽器 localStorage `qmark_v1`，以題目卡的 `data-q`（考卷 id-題號）為鍵，各頁共用；彙整在 `exam-reader/review/`。改題目卡 HTML 時要保留 `_mark_attrs()` 產生的屬性。
+  - 每筆 `{s, t, h, d, n}`：`d` 標記日（本地日期）、`n` 連續熟練次數；下次複習日由 `study_tools.js` 的 `QM_INTERVALS` 推算（不熟 1、待複習 3、熟練 7→14→30→60→120 天）。到期再按同鈕＝記錄複習，未到期再按＝取消。
+  - 題目 5 題以上的頁面有篩選列（`initMarkFilter`）；`exam-reader/practice/`（`initPractice`）讀 `exam-reader/questions.json` 抽題，再到考卷頁抓題目卡就地顯示，計畫設定存 `qm_plan_v1`、當天題目存 `qm_today_v1`。
+- 知識串連都在 `exam_reader.write_pages` 寫完各科之後做：`_link_articles` 改寫文章（文末 `<!-- exam-backlinks -->` 區塊列歷屆考題、內文法條改連站內法條頁；`ArticleIndex` 讀文章時會剔除該區塊）、`_link_law_families` 把法條頁的 `<!-- other-families -->` 換成「其他科目也考過」、`_write_law_changes` 產生近期修法考點頁。法條頁要等考卷頁寫完才寫（相關文章用到題目→文章的推薦結果）。
 - 考古題以**網頁逐題閱讀、可跨年度比較**為主（逐題讀、主題題庫），合併 PDF 是輔助；題目與擬答抽取用規則式解析，不用 LLM。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。

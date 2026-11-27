@@ -17,13 +17,17 @@
 | 地政與估價師考古題 | <!-- stats:land_exams -->832 份<!-- /stats -->・<!-- stats:land_subjects -->74 科<!-- /stats --> | [科目目錄](landnotev3/地政考古題/README.md)・[整科合併 PDF](landnotev3/地政考古題/合併後PDF檔案/) |
 | 法律考古題 | <!-- stats:law_exams -->2,626 份<!-- /stats --> | [線上目錄](https://tomisagoodguy.github.io/landnote/law-exams/)・[科目目錄](landnotev3/高點法律考古題/README.md)・[整科合併 PDF](landnotev3/高點法律考古題/合併後PDF檔案/)（每月自動更新） |
 
-文章內文若引用的法條在發布後有修正，開頭會自動加上法規時效提醒（依全國法規資料庫的修正沿革）。
+文章內文若引用的法條在發布後有修正，開頭會自動加上法規時效提醒（依全國法規資料庫的修正沿革）。文章與考古題雙向串連：文章底部列出「這篇文章考過哪些題目」，內文的法條連到站內的法條頁（現行條文、修正紀錄、歷屆考題、相關文章一次看）。
 
 ### 線上刷題
 
 | 功能 | 內容 | 入口 |
 | :--- | :--- | :--- |
 | 逐題讀（附詳解） | 土地法規、土地登記、不動產估價、不動產投資、土地經濟與土地政策、土地利用與都市計畫、民法、稅法八科，逐題附老師擬答、可展開的相關專欄文章，並可依主題或依法條做跨年度比較 | [土地法規](https://tomisagoodguy.github.io/landnote/exam-reader/land-law/)・[土地登記](https://tomisagoodguy.github.io/landnote/exam-reader/registration/)・[估價](https://tomisagoodguy.github.io/landnote/exam-reader/appraisal/)・[投資](https://tomisagoodguy.github.io/landnote/exam-reader/investment/)・[土地經濟](https://tomisagoodguy.github.io/landnote/exam-reader/economics/)・[土地利用](https://tomisagoodguy.github.io/landnote/exam-reader/land-use/)・[民法](https://tomisagoodguy.github.io/landnote/exam-reader/civil-law/)・[稅法](https://tomisagoodguy.github.io/landnote/exam-reader/tax/) |
+| 刷題計畫與隨機抽題 | 設定考試日期與科目，每天排好「到期複習＋新題」（最後一週只複習）；或跨科跨年隨機抽題，可只抽不熟／該複習的題目 | [開始刷題](https://tomisagoodguy.github.io/landnote/exam-reader/practice/) |
+| 我的複習清單 | 題目可標記不熟／待複習／熟練，依間隔複習排下次複習日（1 天、3 天、7→14→30→60→120 天）；各題目頁可篩選只看不熟或該複習的題目；標記存在瀏覽器，可匯出／匯入搬到別台裝置 | [複習清單](https://tomisagoodguy.github.io/landnote/exam-reader/review/) |
+| 法條頁 | 每條常考條文一頁：現行條文、修正日期、近 5 年出題熱度、老師相關文章、其他科目也考過、常一起考的條文 | 各科「依法條比較」，如[土地法第34條之1](https://tomisagoodguy.github.io/landnote/exam-reader/land-law/laws/D0060001-34-1/) |
+| 近期修法考點 | 近三年每次修法中，歷屆考過與還沒考過的條文；舊題詳解可能已不適用 | [近期修法考點](https://tomisagoodguy.github.io/landnote/exam-reader/law-changes/) |
 | 估價師專區 | 估價師專業科目依主題分類的題庫（附各主題出題年度統計）、合併 PDF 與延伸練習，手機優先版面 | [專區首頁](https://tomisagoodguy.github.io/landnote/appraiser/) |
 
 ### 用 Obsidian 讀考古題

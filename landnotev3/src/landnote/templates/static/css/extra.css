@@ -360,6 +360,14 @@ a.feature-card:active {
 .feature-card.c1 { background: var(--pb-bamboo-l); }
 .feature-card.c2 { background: var(--pb-coral-l); }
 .feature-card.c3 { background: var(--pb-yellow-l); }
+.feature-card.c4 { background: var(--pb-bamboo-l); }
+.feature-card.c5 { background: var(--pb-water-l); }
+/* 首頁剛好 6 張卡時排成 3×2，免得 4 欄時第二排只剩兩張 */
+@media (min-width: 900px) {
+  .feature-grid:has(> .feature-card:nth-child(6):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 .feature-card.is-wide {
   grid-column: 1 / -1;
