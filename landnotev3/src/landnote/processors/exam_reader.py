@@ -584,10 +584,15 @@ class ArticleIndex:
 
     def __init__(self, posts_dir: Union[Path, List[Path]], articles_dir: Path = ARTICLES_DIR):
         teacher = {}
-        for f in articles_dir.glob("*.md"):  # 原始檔名「編號_標題,某某老師.md」
+        for f in articles_dir.glob("*.md"):  # 舊檔名「編號_標題,某某老師.md」；新爬的檔名沒有作者，改讀「- 作者：」行
             m = re.match(r"^(\d+)_.*,(.+?)\.md$", f.name)
             if m:
                 teacher[m.group(1)] = m.group(2)
+                continue
+            m_no = re.match(r"^(\d+)_", f.name)
+            m_au = re.search(r"^- 作者：\s*([^(（\n]+)", f.read_text(encoding="utf-8")[:600], re.M)
+            if m_no and m_au:  # 「曾榮耀(蘇偉強)」→「曾榮耀老師」
+                teacher[m_no.group(1)] = m_au.group(1).strip() + "老師"
         self.docs: List[dict] = []
         df: Counter = Counter()
         raw_tf = []

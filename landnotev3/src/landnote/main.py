@@ -20,6 +20,8 @@ def main():
     articles_parser = subparsers.add_parser("articles", help="Crawl real estate articles")
     articles_parser.add_argument("--update", action="store_true", help="Only update new articles")
     articles_parser.add_argument("--auto-group", action="store_true", help="Run grouping after crawling")
+    articles_parser.add_argument("--refetch", type=int, nargs="+", metavar="NO",
+                                 help="Force re-download these article numbers (overwrite existing)")
 
     # Command: jasper (Jasper Articles)
     jasper_parser = subparsers.add_parser("jasper", help="Crawl Jasper articles")
@@ -60,8 +62,11 @@ def main():
     if args.command == "articles":
         mode = "update" if args.update else "all"
         crawler = ArticleCrawler(mode=mode)
-        crawler.run()
-        
+        if args.refetch:
+            crawler.refetch(args.refetch)
+        else:
+            crawler.run()
+
         if args.auto_group:
             print("Running auto-grouping...")
             grouper = ArticleGrouper()

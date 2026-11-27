@@ -144,10 +144,24 @@ class ArticleCrawler(BaseScraper):
                 self.logger.error(f"Error getting articles from pno={pno} page={page_no}: {e}")
         return articles
 
-    def fetch_article(self, article_no: int) -> Optional[Dict]:
-        """抓取並解析單篇文章"""
+    def refetch(self, article_nos: List[int]) -> int:
+        """強制重抓指定文章並覆寫（修正解析錯誤後補資料用）；回傳成功篇數。"""
+        done = 0
+        for article_no in tqdm(article_nos, desc="Refetch"):
+            result = self.fetch_article(article_no, force=True)
+            if result:
+                self.save_article(result)
+                done += 1
+            else:
+                self.logger.error(f"Refetch failed for article {article_no}")
+            time.sleep(self.config.retry_delay / 10)
+        self.logger.info(f"Refetched {done}/{len(article_nos)} articles.")
+        return done
+
+    def fetch_article(self, article_no: int, force: bool = False) -> Optional[Dict]:
+        """抓取並解析單篇文章；force 時不管是否已抓過。"""
         # 再次檢查 (防止重複)
-        if str(article_no) in self.processed_articles:
+        if not force and str(article_no) in self.processed_articles:
             return None
             
         url = f"{self.detail_url}?no={article_no}"
@@ -255,7 +269,9 @@ class ArticleCrawler(BaseScraper):
         table_placeholders = {}
         for i, table in enumerate(tables, 1):
             md_table = TextUtils.html_table_to_markdown(table)
-            placeholder = f"TABLE_PLACEHOLDER_{i}"
+            # 佔位字不能以英文字母開頭（format_content 會當成「A. 」列表改寫成「• T. ABLE…」而換不回來），
+            # 也要有結尾符號，免得「表格1」被當成「表格10」的前綴先換掉
+            placeholder = f"〔表格{i}〕"
             table_placeholders[placeholder] = md_table
             table.replace_with(f"{placeholder}")
 
@@ -303,7 +319,7 @@ class ArticleCrawler(BaseScraper):
             new_df = pd.DataFrame([article_data])
             if self.data_file.exists():
                 df = pd.read_excel(self.data_file)
-                df = pd.concat([df, new_df]).drop_duplicates(subset=['文章編號'])
+                df = pd.concat([df, new_df]).drop_duplicates(subset=['文章編號'], keep='last')  # 重抓時以新資料為準
             else:
                 df = new_df
             df.to_excel(self.data_file, index=False)
@@ -331,7 +347,9 @@ class ArticleCrawler(BaseScraper):
 ---
 *注：本文圖片存放於 ./images/ 目錄下*
 """
-            file_path = self.articles_dir / f"{article_no}_{safe_title}.md"
+            # 已有同編號檔案（重抓）就覆寫原檔，舊檔名格式「編號_標題,某某老師.md」不同，不能另存一份
+            existing = sorted(self.articles_dir.glob(f"{article_no}_*.md"))
+            file_path = existing[0] if existing else self.articles_dir / f"{article_no}_{safe_title}.md"
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(markdown_content)
                 
