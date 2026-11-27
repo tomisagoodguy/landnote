@@ -740,7 +740,7 @@ class SiteGenerator:
             ]
         }
         if self.exam_reader_nav:
-            config['nav'].append({'逐題讀（附詳解）': [{t: p} for t, p in self.exam_reader_nav]})
+            config['nav'].append({'逐題讀': [{t: p} for t, p in self.exam_reader_nav]})
         if self.exam_bank_nav:
             config['nav'].append({'估價師專區': [{'專區首頁': 'appraiser.md'},
                                               *({t: p} for t, p in self.exam_bank_nav)]})
