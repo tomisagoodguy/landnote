@@ -95,7 +95,7 @@ cd landnotev3/site_src && uv run --with "mkdocs<2.0" --with mkdocs-material mkdo
 ```bash
 uv run --project landnotev3 python landnotev3/src/landnote/main.py obsidian                        # 匯出到 ~/Documents/Landnote考古題（約 50 秒；需先跑 site，可加 --out <目錄>）
 ```
-vault 在 repo 外、不進版控；重新匯出只覆寫自動產生的部分，保留每則筆記的 `狀態` 欄位與「我的筆記」標記線以下的內容。
+vault 在 repo 外、不進版控；重新匯出只覆寫自動產生的部分，保留每則筆記的 `狀態` 欄位與「我的筆記」標記線以下的內容。CI（`update_articles.yml`）在 `mkdocs build` 前以 `obsidian --zip site_src/docs/downloads/landnote-obsidian.zip` 產生下載檔，逐題讀總覽頁連到它（路徑常數 `exam_reader.OBSIDIAN_ZIP`）。
 
 **考古題合併 PDF**
 ```bash

@@ -46,6 +46,8 @@ def main():
     obsidian_parser = subparsers.add_parser("obsidian", help="Export exam questions as an Obsidian vault")
     obsidian_parser.add_argument("--out", type=Path, default=Path.home() / "Documents" / "Landnote考古題",
                                  help="Vault directory (default: ~/Documents/Landnote考古題)")
+    obsidian_parser.add_argument("--zip", type=Path, default=None,
+                                 help="Write a zip for download instead of a vault directory (CI uses this)")
 
     # Command: site (Generate Website)
     subparsers.add_parser("site", help="Generate static site structure")
@@ -105,10 +107,12 @@ def main():
         posts = [docs / "blog" / "posts", docs / "jasper" / "posts"]
         if not posts[0].exists():
             sys.exit("找不到 site_src/docs/blog/posts，請先執行 main.py site 產生文章")
-        counts = obsidian_vault.export(args.out, posts)
+        target = args.zip or args.out
+        counts = (obsidian_vault.export_zip(args.zip, posts) if args.zip
+                  else obsidian_vault.export(args.out, posts))
         if counts is None:
             sys.exit("找不到逐題讀資料（data/exam_bank/*.json），請先執行 main.py exambank")
-        print(f"Obsidian vault written to {args.out}: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
+        print(f"Obsidian vault written to {target}: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
 
     elif args.command == "site":
         from landnote.processors.site_generator import SiteGenerator

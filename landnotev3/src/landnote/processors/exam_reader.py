@@ -47,6 +47,7 @@ READERS = [
     ("稅法與政府採購", "tax", "稅法與政府採購"),
 ]
 READER_ROOT = "exam-reader"
+OBSIDIAN_ZIP = "downloads/landnote-obsidian.zip"  # Obsidian vault 下載檔（相對 docs/）；CI 在 mkdocs build 前用 main.py obsidian --zip 產生
 DRILL_PAGE = "drill"  # 申論題連續刷題頁：exam-reader/<slug>/drill/
 DRILL_CHOICE_PAGE = "drill-choice"  # 測驗題連續刷題頁：exam-reader/<slug>/drill-choice/
 TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
@@ -911,6 +912,11 @@ def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]]) -> N
         "!!! note \"不是每份考卷都有詳解\"",
         "    詳解來自補習班公開的解題 PDF，部分年度或考試沒有出詳解，這些考卷只有題目；"
         "測驗題若答案頁無法自動對應，也會只顯示題目。各科頁面的「歷屆考卷」表格有 ✓ 的才附詳解。",
+        "",
+        "!!! tip \"用 Obsidian 邊刷題邊寫筆記\"",
+        "    全部題目也打包成 [Obsidian](https://obsidian.md/) vault：每題一則筆記，與考點法條、主題、"
+        "歷屆相似題互相連結，可標記熟練狀態追蹤複習。"
+        f"[下載 vault（zip）](../{OBSIDIAN_ZIP})，解壓後在 Obsidian 選「開啟資料夾作為 vault」。",
         "",
         "| 科目 | 年度 | 考卷 | 附詳解考卷 | 題數 | 有解答的題目 |",
         "|---|---|---:|---:|---:|---:|",

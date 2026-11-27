@@ -10,6 +10,8 @@ vault 不在 repo 裡：裡面會有使用者自己的筆記，不進版控。
 
 import json
 import re
+import tempfile
+import zipfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -29,6 +31,8 @@ from landnote.processors.exam_reader import (
     data_file,
     qid,
 )
+
+VAULT_NAME = "Landnote考古題"  # zip 內的最上層資料夾，也是本機預設輸出目錄名
 
 USER_MARK = "%% ↓ 我的筆記：重新匯出時，這一行以下的內容會保留 %%"
 STATUS_KEY = "狀態"
@@ -373,7 +377,9 @@ class Vault:
             "## 怎麼用",
             "",
             f"1. 每題筆記的 `{STATUS_KEY}` 欄位改成 {STATUS_CHOICES}，下方查詢會自動整理出待複習清單。",
-            "2. 心得、易錯點寫在每則筆記最下面的「我的筆記」標記線以下，重新匯出時會保留。",
+            "2. 心得、易錯點寫在每則筆記最下面的「我的筆記」標記線以下，用 `obsidian` 指令重新匯出時會保留。"
+            "從網站下載的 zip 版沒有這個保護：解壓新版覆蓋會清掉題目筆記裡的狀態與筆記，"
+            "長篇心得建議另開資料夾寫，再用 [[連結]] 指向題目。",
             "3. 從題目點進 **法條** 筆記，可看同一條歷屆怎麼考；法條筆記的反向連結會列出所有引用它的題目與你的筆記。",
             "4. 解答都收合著，先自己寫再打開。",
             "",
@@ -409,3 +415,20 @@ def export(out: Path, posts_dirs: List[Path], data_dir: Path = EXAM_READER_DATA_
     if not vault.readers:
         return None
     return vault.write()
+
+
+def export_zip(
+    zip_path: Path, posts_dirs: List[Path], data_dir: Path = EXAM_READER_DATA_DIR
+) -> Optional[Dict[str, int]]:
+    """匯出到暫存目錄再壓成 zip（最上層資料夾為 VAULT_NAME），供網站下載；沒有資料時回 None。"""
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp) / VAULT_NAME
+        counts = export(root, posts_dirs, data_dir)
+        if counts is None:
+            return None
+        zip_path.parent.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:  # 非 ASCII 檔名自動標 UTF-8
+            for f in sorted(root.rglob("*")):
+                if f.is_file():
+                    zf.write(f, f.relative_to(tmp).as_posix())
+        return counts

@@ -69,6 +69,13 @@ jobs:
         echo "Generating site structure..."
         python landnotev3/src/landnote/main.py site
 
+    - name: Export Obsidian vault zip
+      # 放進 docs/downloads/ 讓 mkdocs 一起部署；失敗不影響部署（逐題讀總覽頁的下載連結會暫時失效）
+      continue-on-error: true
+      env:
+        PYTHONPATH: ${{ github.workspace }}/landnotev3/src
+      run: python landnotev3/src/landnote/main.py obsidian --zip landnotev3/site_src/docs/downloads/landnote-obsidian.zip
+
     - name: Build MkDocs site (static HTML)
       run: |
         echo "Building MkDocs..."
