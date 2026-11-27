@@ -925,3 +925,28 @@ a.feature-card:active {
 .md-post--excerpt .er-backlinks {
   display: none;
 }
+
+/* ── 間隔複習：到期徽章、提醒列、今天該複習清單 ─────────────────── */
+.md-typeset .qb-meta .qm-due {
+  color: var(--pb-coral-deep);
+  border-color: var(--pb-coral-deep);
+  background: var(--pb-coral-l);
+  font-weight: 700;
+}
+.md-typeset .qm-reminder {
+  margin: 0.4rem 0 1rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--pb-yellow-l);
+  border: 1px solid var(--pb-yellow);
+  border-radius: var(--pb-r);
+  font-weight: 700;
+}
+.md-typeset .qm-due-list li {
+  margin-bottom: 0.9em;
+}
+.md-typeset .qm-due-list .qm-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}

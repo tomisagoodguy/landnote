@@ -270,6 +270,34 @@ function qmSave(marks) {
     catch (err) { console.warn("儲存熟練度標記失敗:", err); return false; }
 }
 
+// 間隔複習：標記日期 d ＋ 間隔天數 = 下次複習日。熟練的間隔依 n（連續答熟練次數）逐級拉長。
+const QM_INTERVALS = { weak: [1], review: [3], done: [7, 14, 30, 60, 120] };
+
+function qmToday() {  // 本地日期（toISOString 是 UTC，台灣早上 8 點前會變成昨天）
+    const t = new Date();
+    return t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+}
+
+function qmDue(m) {
+    if (!m.d) return qmToday();  // 舊資料沒有日期：視為今天到期
+    const steps = QM_INTERVALS[m.s] || [1];
+    const days = steps[Math.min(m.n || 0, steps.length - 1)];
+    const [y, mo, d] = m.d.split("-").map(Number);
+    const due = new Date(y, mo - 1, d + days);
+    return due.getFullYear() + "-" + String(due.getMonth() + 1).padStart(2, "0") + "-" + String(due.getDate()).padStart(2, "0");
+}
+
+function qmIsDue(m) { return qmDue(m) <= qmToday(); }
+
+// 設定標記；同狀態且已到期 → 算一次複習（熟練升一級），同狀態未到期 → 取消（原本的行為）
+function qmSet(all, key, s, info) {
+    const old = all[key];
+    if (old && old.s === s && !qmIsDue(old)) { delete all[key]; return "cleared"; }
+    const n = old && old.s === "done" && s === "done" ? (old.n || 0) + 1 : 0;
+    all[key] = { s, t: info.t || (old && old.t), h: info.h || (old && old.h), d: qmToday(), n };
+    return "set";
+}
+
 function initQuestionMarks() {
     const items = document.querySelectorAll(".qb-item[data-q]");
     if (!items.length) return;
@@ -282,12 +310,19 @@ function initQuestionMarks() {
         group.className = "qm-group";
         group.setAttribute("role", "group");
         group.setAttribute("aria-label", "熟練度");
+        const dueBadge = document.createElement("span");
+        dueBadge.className = "pb-count qm-due";
+        dueBadge.textContent = "該複習";
+        dueBadge.title = "已到複習日：自己作答後，再按一次目前的狀態（或改成別的）記錄這次複習";
         const render = () => {
-            const s = (qmLoad()[key] || {}).s || "";
+            const m = qmLoad()[key];
+            const s = (m || {}).s || "";
             item.dataset.qm = s;
             group.querySelectorAll("button").forEach(b => {
                 b.setAttribute("aria-pressed", String(b.dataset.s === s));
+                b.title = b.dataset.s === s && m ? "下次複習 " + qmDue(m) + (qmIsDue(m) ? "（已到期，按一下記錄複習）" : "（再按一次取消）") : "";
             });
+            if (m && qmIsDue(m)) group.prepend(dueBadge); else dueBadge.remove();
         };
         QM_STATES.forEach(([s, label]) => {
             const b = document.createElement("button");
@@ -297,8 +332,7 @@ function initQuestionMarks() {
             b.textContent = label;
             b.onclick = () => {
                 const all = qmLoad();
-                if ((all[key] || {}).s === s) delete all[key];  // 再按一次取消
-                else all[key] = { s, t: item.dataset.label, h: item.dataset.href, d: new Date().toISOString().slice(0, 10) };
+                qmSet(all, key, s, { t: item.dataset.label, h: item.dataset.href });
                 if (!qmSave(all)) { alert("無法儲存標記（瀏覽器可能停用了本機儲存空間）"); return; }
                 // 同一頁可能出現同一題兩次（跨科考卷），一起更新
                 document.querySelectorAll(`.qb-item[data-q="${key}"]`).forEach(el => el.dispatchEvent(new Event("qm-sync")));
@@ -395,9 +429,10 @@ function qmMerge(data) {
         const valid = /^[\w-]+$/.test(key) && m && states.has(m.s) &&
             (m.h === undefined || (typeof m.h === "string" && /^[\w\-./#]*$/.test(m.h))) &&
             (m.t === undefined || typeof m.t === "string") &&
-            (m.d === undefined || (typeof m.d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(m.d)));
+            (m.d === undefined || (typeof m.d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(m.d))) &&
+            (m.n === undefined || (Number.isInteger(m.n) && m.n >= 0 && m.n < 100));
         if (!valid) { result.skipped++; return; }
-        const mark = { s: m.s, t: m.t, h: m.h, d: m.d };
+        const mark = { s: m.s, t: m.t, h: m.h, d: m.d, n: m.n || 0 };
         const local = all[key];
         if (!local) { all[key] = mark; result.added++; }
         else if ((mark.d || "") >= (local.d || "")) { all[key] = mark; result.updated++; }
@@ -421,6 +456,51 @@ function qmRenderList(box) {
     box.appendChild(summary);
     // 頁面在 exam-reader/review/，data-href 相對 exam-reader/
     const base = new URL("../", window.location.href);
+
+    // 今天該複習：到期的題目，舊的先；點題目去作答，回來直接在這裡按結果
+    const due = keys.filter(k => qmIsDue(marks[k])).sort((a, b) => qmDue(marks[a]).localeCompare(qmDue(marks[b])));
+    const dh = document.createElement("h2");
+    dh.textContent = "今天該複習（" + due.length + "）";
+    box.appendChild(dh);
+    if (!due.length) {
+        const next = keys.map(k => qmDue(marks[k])).sort()[0];
+        const p = document.createElement("p");
+        p.textContent = "今天沒有到期的題目。" + (next ? "下一批在 " + next + "。" : "");
+        box.appendChild(p);
+    } else {
+        const p = document.createElement("p");
+        p.textContent = "點題目回原題先自己作答，再回來按這次的結果：不熟明天再看、待複習 3 天後、熟練則間隔逐次拉長（7→14→30→60→120 天）。";
+        const ul = document.createElement("ul");
+        ul.className = "qm-list qm-due-list";
+        due.forEach(k => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = new URL(marks[k].h || "", base).href;
+            a.textContent = marks[k].t || k;
+            const meta = document.createElement("span");
+            meta.className = "qm-date";
+            meta.textContent = "上次：" + (QM_STATES.find(([s]) => s === marks[k].s) || ["", ""])[1] + (marks[k].d ? " " + marks[k].d : "");
+            const group = document.createElement("span");
+            group.className = "qm-group";
+            QM_STATES.forEach(([s, label]) => {
+                const b = document.createElement("button");
+                b.type = "button";
+                b.className = "qm-btn qm-btn--" + s;
+                b.textContent = label;
+                b.onclick = () => {
+                    const all = qmLoad();
+                    if (!all[k]) return;
+                    qmSet(all, k, s, {});
+                    if (qmSave(all)) qmRenderList(box);
+                };
+                group.appendChild(b);
+            });
+            li.append(a, " ", meta, " ", group);
+            ul.appendChild(li);
+        });
+        box.append(p, ul);
+    }
+
     QM_STATES.forEach(([s, label]) => {
         const rows = keys.filter(k => marks[k].s === s)
             .sort((a, b) => (marks[b].d || "").localeCompare(marks[a].d || "") || (marks[a].t || "").localeCompare(marks[b].t || ""));
@@ -436,7 +516,7 @@ function qmRenderList(box) {
             a.textContent = marks[k].t || k;
             const date = document.createElement("span");
             date.className = "qm-date";
-            date.textContent = marks[k].d ? "標記於 " + marks[k].d : "";
+            date.textContent = (marks[k].d ? "標記於 " + marks[k].d + "・" : "") + "下次複習 " + qmDue(marks[k]);
             const rm = document.createElement("button");
             rm.type = "button";
             rm.className = "qm-btn";
@@ -453,6 +533,24 @@ function qmRenderList(box) {
     });
 }
 
+// 逐題讀各頁（複習清單頁除外）標題下提醒今天有幾題到期
+function initDueReminder() {
+    const path = window.location.pathname;
+    const at = path.indexOf("/exam-reader/");
+    const h1 = document.querySelector(".md-content__inner h1");
+    if (at < 0 || !h1 || document.getElementById("qm-review") || document.querySelector(".qm-reminder")) return;
+    const marks = qmLoad();
+    const n = Object.values(marks).filter(m => m && qmIsDue(m)).length;
+    if (!n) return;
+    const p = document.createElement("p");
+    p.className = "qm-reminder";
+    const a = document.createElement("a");
+    a.href = path.slice(0, at) + "/exam-reader/review/";
+    a.textContent = "今天有 " + n + " 題該複習 →";
+    p.appendChild(a);
+    h1.insertAdjacentElement("afterend", p);
+}
+
 // 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
 if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
@@ -461,6 +559,7 @@ if (typeof document$ !== "undefined") {
         initDrillToggle();
         initQuestionMarks();
         initReviewList();
+        initDueReminder();
     });
 } else {
     document.addEventListener("DOMContentLoaded", function () {
@@ -469,5 +568,6 @@ if (typeof document$ !== "undefined") {
         initDrillToggle();
         initQuestionMarks();
         initReviewList();
+        initDueReminder();
     });
 }
