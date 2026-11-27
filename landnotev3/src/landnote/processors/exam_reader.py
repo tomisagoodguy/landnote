@@ -168,9 +168,10 @@ CHOICE = re.compile(r"^(?:（\s*(?P<k1>[A-DＡ-Ｄ#＃][A-D、,或]*|一律給�
                     r"(?P<no>\d{1,3})\s*[.．、]?\s*")
 OPTION = re.compile(r"[（(]([A-E])[）)]")  # 少數國營事業考卷有五個選項
 BAD_CHOICE_RATIO = 0.3
-# 國營事業考卷的選項以圈號字型畫 ①–④，抽出來是行首控制字元 \x01–\x04（部分年份 \x81–\x84）；
+# 國營事業考卷的選項以圈號字型畫 ①–④，抽出來是控制字元 \x01–\x04（部分年份 \x81–\x84），
+# 多在行首，短選項時一行並排兩個（「\x03由基地所有權人決定 \x04以登記之先後定之」）；
 # 清理前先換成 (A)–(D)。前面加不可見的 OPTION_MARK，免得「(C) 9 個月」被 CHOICE 當成第 9 題；切選項前移除
-GLYPH_OPTION = re.compile(r"^\s*([\x01-\x04\x81-\x84])", re.M)
+GLYPH_OPTION = re.compile(r"(?:^|(?<=\s))[ \t]*([\x01-\x04\x81-\x84])", re.M)
 OPTION_MARK = "⁠"
 SCORE = re.compile(r"[（(【]\s*(\d+)\s*分\s*[）)】]")
 # 考選部原卷申論題的最後一行常黏上測驗題的表頭（「代號：4601①本測驗試題為…」）
@@ -310,9 +311,7 @@ def parse_paper(text: str) -> dict:
             essay_total += score
         item = {"no": q["no"], "kind": q["kind"], "answer": _join(q["answer"], structured=True)}
         if q["kind"] == "choice":
-            parts = OPTION.split(stem)
-            item["text"] = parts[0].strip()
-            item["options"] = [f"({parts[i]}) {parts[i + 1].strip()}" for i in range(1, len(parts) - 1, 2)]
+            item["text"], item["options"] = _split_options(stem)
             item["key"] = q["key"]
             item["score"] = 0
         else:
@@ -362,6 +361,7 @@ def _header_score(lines: List[str]) -> int:
 
 # 未附答案的試卷（多為國營事業）：題號只寫「1.」，不能與詳解條列區分，所以只在一般規則拆不出題時使用
 KEYLESS_Q = re.compile(r"^(\d{1,3})\s*[.．、]\s*(?![\d.])")
+KEYLESS_Q_NODOT = re.compile(r"^(\d{1,3})\s*(?=[一-鿿])")
 # 選擇題後接「二、申論題：…每題10分」，申論題又從「1.」編號
 KEYLESS_ESSAY = re.compile(r"^[一二三四]\s*[、.．]\s*(?:非選擇題|申論題|問答題|簡答題)")
 
@@ -377,13 +377,14 @@ def _parse_keyless(lines: List[str]) -> List[dict]:
             m = re.search(r"每題\s*(\d+)\s*分", ln)
             essay_score = int(m.group(1)) if m else 0
             continue
-        m = KEYLESS_Q.match(ln)
+        prev_done = kind == "choice" and cur is not None and OPTION.search("".join(cur["stem"]))
+        # 少數原卷題號後漏了點（「41 下列…」）：前一題已有選項時才認，免得把折行開頭的數字當題號
+        m = KEYLESS_Q.match(ln) or (KEYLESS_Q_NODOT.match(ln) if prev_done else None)
         if m and int(m.group(1)) == 1 and qs and not any(OPTION.search("".join(q["stem"])) for q in qs):
             qs, expect = [], 1
         no = int(m.group(1)) if m else 0
         # OCR 偶爾整行漏掉某題的題號行：前一題已有選項時允許跳號，漏掉的那題併入前一題（選項數異常會被標出）
-        skipped = (kind == "choice" and no == expect + 1 and cur is not None
-                   and OPTION.search("".join(cur["stem"])))
+        skipped = prev_done and no == expect + 1
         if m and (no == expect or skipped):
             cur = {"no": no, "kind": kind, "stem": [ln[m.end():]]}
             qs.append(cur)
@@ -397,11 +398,21 @@ def _parse_keyless(lines: List[str]) -> List[dict]:
             out.append({"no": q["no"], "kind": "essay", "answer": [], "text": stem,
                         "score": sum(int(s) for s in SCORE.findall(stem)) or essay_score})
             continue
-        parts = OPTION.split("".join(q["stem"]).replace(OPTION_MARK, "").strip())
-        out.append({"no": q["no"], "kind": "choice", "answer": [], "text": parts[0].strip(),
-                    "options": [f"({parts[i]}) {parts[i + 1].strip()}" for i in range(1, len(parts) - 1, 2)],
+        text, options = _split_options("".join(q["stem"]).replace(OPTION_MARK, "").strip())
+        out.append({"no": q["no"], "kind": "choice", "answer": [], "text": text, "options": options,
                     "key": None, "score": 0})
     return out
+
+
+def _split_options(stem: str) -> Tuple[str, List[str]]:
+    """把測驗題拆成 (題目, 選項)。原卷偶有選項漏了左括號（「…收益課稅B)地價稅」），
+    只在前後字母的選項都在、唯獨缺這一個時補回，免得把內文的「B)」誤當選項。"""
+    labels = OPTION.findall(stem)
+    for prev_c, c, next_c in zip("ABCD", "BCDE", "CDE", strict=False):
+        if prev_c in labels and next_c in labels and c not in labels and f"{c})" in stem:
+            stem = re.sub(rf"(?<![（(]){c}\)", f"({c})", stem, count=1)
+    parts = OPTION.split(stem)
+    return parts[0].strip(), [f"({parts[i]}) {parts[i + 1].strip()}" for i in range(1, len(parts) - 1, 2)]
 
 
 def build(exam_dir: Path = EXAM_DIR, data_dir: Path = EXAM_READER_DATA_DIR) -> List[Path]:
