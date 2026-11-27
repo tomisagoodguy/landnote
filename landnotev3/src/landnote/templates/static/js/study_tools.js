@@ -98,7 +98,7 @@ function initStudyTools() {
         // Skip text inside existing links or code blocks
         // 標題（如依法條比較頁的「土地法第34條之1」）不加連結
         if (node.parentNode.nodeName === 'A' || node.parentNode.nodeName === 'CODE' || node.parentNode.nodeName === 'PRE'
-            || node.parentNode.closest('h1, h2, h3')) {
+            || node.parentNode.closest('h1, h2, h3, summary')) {  // summary 內有連結會讓點標題變成跳頁而不是展開
             continue;
         }
         textNodes.push(node);

@@ -648,6 +648,12 @@ a.feature-card:active {
   border-color: var(--pb-coral-deep);
   background: var(--pb-coral-l);
 }
+/* 法條頁「近 5 年 N 題」：近年仍常考的條文 */
+.md-typeset .qb-meta .er-hot {
+  color: var(--pb-ink);
+  border-color: var(--pb-yellow);
+  background: var(--pb-yellow-l);
+}
 /* ── 估價師專區（appraiser.md）：手機優先，按鈕在上、延伸連結收合 ── */
 .md-typeset .ap-lead {
   margin: 0 0 0.8rem;

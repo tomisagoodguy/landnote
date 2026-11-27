@@ -978,6 +978,8 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
     from urllib.parse import quote
 
     out.mkdir(parents=True, exist_ok=True)
+    if backlinks is None:
+        backlinks = defaultdict(list)
     readable = [p for p in papers if p["questions"]]
     for p in readable:
         p["slug"] = slug  # 熟練度標記的 data-href 用
@@ -988,12 +990,16 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
     for p, q in similar.items:
         for ref, source in hits[(p["id"], qid(q))]:
             by_ref[ref].append((p, q, source))
-    law_pages = _write_law_pages(out / LAW_DIR, by_ref, laws, name)
+    law_pages = _law_page_names(by_ref, laws)
     drills = {kind: n for kind in DRILL_KINDS
               if (n := _write_drill_page(out, kind, readable, index, name, hits, law_pages))}
     for p in readable:
         page = _paper_page(p, index, name, similar, hits, law_pages, drills, backlinks)
         (out / f"{p['id']}.md").write_text(page, encoding="utf-8")
+    # 法條頁放最後：相關文章要用到考卷頁算出的「題目 → 推薦文章」
+    latest = max(p["year"] for p in papers)
+    _write_law_pages(out / LAW_DIR, by_ref, laws, name, law_pages,
+                     _law_articles(by_ref, law_pages, index, backlinks), latest)
 
     n_q = sum(len(p["questions"]) for p in readable)
     n_ans = sum(p["has_answer"] for p in papers)
@@ -1023,14 +1029,25 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
             "",
             f"考過兩題以上的條文共 {len(law_pages)} 條，以下列出前 20 條；點條文看歷屆題目。",
             "",
-            "| 法條 | 題數 | 出題年度 |",
-            "|---|---:|---|",
+            f"| 法條 | 題數 | 近 {RECENT_YEARS} 年 | 出題年度 |",
+            "|---|---:|---:|---|",
         ]
         top = sorted(law_pages, key=lambda r: (-len(by_ref[r]), r))[:20]
         for ref in top:
             years = sorted({p["year"] for p, _, _ in by_ref[ref]})
             span = f"{years[0]}–{years[-1]}" if len(years) > 1 else str(years[0])
-            lines.append(f"| [{ref}]({LAW_DIR}/{law_pages[ref]}.md) | {len(by_ref[ref])} | {span} |")
+            recent = _heat(by_ref[ref], latest)[0]
+            lines.append(f"| [{ref}]({LAW_DIR}/{law_pages[ref]}.md) | {len(by_ref[ref])} | {recent or ''} | {span} |")
+        hot = sorted((r for r in law_pages if _heat(by_ref[r], latest)[0] >= 2),
+                     key=lambda r: (-_heat(by_ref[r], latest)[0], -len(by_ref[r]), r))[:10]
+        if hot:
+            lines += ["", f"## 近 {RECENT_YEARS} 年的熱門法條", "",
+                      f"{latest - RECENT_YEARS + 1}–{latest} 年考過兩題以上的條文，依近年題數排序；"
+                      "歷年總題數高但近年少考的，表示出題重心可能已經轉移。", "",
+                      f"| 法條 | 近 {RECENT_YEARS} 年 | 歷年題數 |", "|---|---:|---:|"]
+            for ref in hot:
+                lines.append(f"| [{ref}]({LAW_DIR}/{law_pages[ref]}.md) | {_heat(by_ref[ref], latest)[0]} "
+                             f"| {len(by_ref[ref])} |")
     lines += ["", "## 歷屆考卷", "", "| 年度 | 考試 | 科目 | 題目 | 詳解 |", "|---:|---|---|---|---|"]
     for p in sorted(papers, key=lambda p: (-p["year"], p["exam"])):
         e = sum(q["kind"] == "essay" for q in p["questions"])
@@ -1397,12 +1414,50 @@ def _law_slug(ref: str, timeline: LawTimeline) -> str:
 LAW_PAGE_MIN = 2  # 至少兩題才有比較的意義
 
 
+RECENT_YEARS = 5  # 出題熱度：最近幾個年度（以本科最新考卷年度往回算）
+LAW_ARTICLES_MAX = 6
+
+
+def _law_page_names(by_ref: Dict[str, List[Tuple[dict, dict, str]]], laws: LawIndex) -> Dict[str, str]:
+    """考過 LAW_PAGE_MIN 題以上、會有比較頁的法條 → 檔名（考卷頁的法條標籤要先知道，頁面最後才寫）。"""
+    return {ref: _law_slug(ref, laws.timeline) for ref, qs in by_ref.items() if len(qs) >= LAW_PAGE_MIN}
+
+
+def _law_articles(by_ref: Dict[str, List[Tuple[dict, dict, str]]], pages: Dict[str, str],
+                  index: ArticleIndex, backlinks: Dict[str, list]) -> Dict[str, List[dict]]:
+    """每條法條的相關文章：文中明寫這一條（+2），加上考這一條的題目有幾題推薦了它（每題 +1）。
+
+    只被一題推薦、又沒寫到條號的不收，相似度推薦單獨一次常是只沾到邊。
+    """
+    by_q: Dict[Tuple[str, str], set] = defaultdict(set)
+    for path, items in backlinks.items():
+        for _, _, p, q in items:
+            by_q[(p["id"], qid(q))].add(path)
+    docs = {d["path"]: d for d in index.docs}
+    out = {}
+    for ref in pages:
+        score: Counter = Counter()
+        for p, q, _ in by_ref[ref]:
+            score.update(by_q.get((p["id"], qid(q)), ()))
+        for path, d in docs.items():
+            if ref in d["laws"]:
+                score[path] += 2
+        best = sorted(((s, path) for path, s in score.items() if s >= 2), reverse=True)  # 同分時新文章在前
+        out[ref] = [docs[path] for _, path in best[:LAW_ARTICLES_MAX] if path in docs]
+    return out
+
+
+def _heat(qs: List[Tuple[dict, dict, str]], latest: int) -> Tuple[int, int]:
+    """(最近 RECENT_YEARS 個年度的題數, 最近一次出題年度)。"""
+    years = [p["year"] for p, _, _ in qs]
+    return sum(y > latest - RECENT_YEARS for y in years), max(years)
+
+
 def _write_law_pages(out: Path, by_ref: Dict[str, List[Tuple[dict, dict, str]]], laws: LawIndex,
-                     name: str) -> Dict[str, str]:
-    """exam-reader/<slug>/laws/：總覽（依法規分區）與每條一頁；回傳有頁面的法條 → 檔名。"""
-    pages = {ref: _law_slug(ref, laws.timeline) for ref, qs in by_ref.items() if len(qs) >= LAW_PAGE_MIN}
+                     name: str, pages: Dict[str, str], articles: Dict[str, List[dict]], latest: int) -> None:
+    """exam-reader/<slug>/laws/：總覽（依法規分區）與每條一頁。"""
     if not pages:
-        return {}
+        return
     out.mkdir(parents=True, exist_ok=True)
     grouped: Dict[str, List[str]] = defaultdict(list)
     for ref in pages:
@@ -1426,18 +1481,19 @@ def _write_law_pages(out: Path, by_ref: Dict[str, List[Tuple[dict, dict, str]]],
         "",
     ]
     for i, law in enumerate(order, 1):
-        lines += [f"## {law} {{#law-{i}}}", "", "| 條文 | 題數 | 出題年度 | 內容 |", "|---|---:|---|---|"]
+        lines += [f"## {law} {{#law-{i}}}", "",
+                  f"| 條文 | 題數 | 近 {RECENT_YEARS} 年 | 出題年度 | 內容 |", "|---|---:|---:|---|---|"]
         for ref in sorted(grouped[law], key=lambda r: (-len(by_ref[r]), _article_key(r))):
             years = sorted({p["year"] for p, _, _ in by_ref[ref]})
             span = f"{years[0]}–{years[-1]}" if len(years) > 1 else str(years[0])
+            recent, _ = _heat(by_ref[ref], latest)
             snippet = _md_escape(laws.text.get(ref, "").replace("\n", " ")[:24])
-            lines.append(f"| [{ref[len(law):]}]({pages[ref]}.md) | {len(by_ref[ref])} | {span} | "
+            lines.append(f"| [{ref[len(law):]}]({pages[ref]}.md) | {len(by_ref[ref])} | {recent or ''} | {span} | "
                          f"{snippet}{'…' if snippet else '（現行法規查無此條）'} |")
         lines.append("")
         for ref in grouped[law]:
-            _write_law_page(out / f"{pages[ref]}.md", ref, by_ref[ref], laws, name)
+            _write_law_page(out / f"{pages[ref]}.md", ref, by_ref[ref], laws, name, articles.get(ref, []), latest)
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
-    return pages
 
 
 def _article_key(ref: str) -> Tuple[int, int]:
@@ -1445,8 +1501,10 @@ def _article_key(ref: str) -> Tuple[int, int]:
     return (int(m.group(1)), int(m.group(2) or 0)) if m else (0, 0)
 
 
-def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws: LawIndex, name: str) -> None:
+def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws: LawIndex, name: str,
+                    articles: List[dict], latest: int) -> None:
     amended = laws.timeline.amended(ref)
+    recent, last = _heat(qs, latest)
     url = laws.timeline.url(ref)
     by_year: Dict[int, List[Tuple[dict, dict, str]]] = defaultdict(list)
     for item in qs:
@@ -1458,7 +1516,11 @@ def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws
         f"# {ref}",
         "",
         f'<p class="qb-meta"><span class="pb-count">{name}</span><span class="pb-count">{len(qs)} 題</span>'
-        f'<span class="pb-count">{years[-1]}–{years[0]} 年</span><a href="../">回依法條比較</a></p>',
+        f'<span class="pb-count">{years[-1]}–{years[0]} 年</span>'
+        + (f'<span class="pb-count er-hot" title="{latest - RECENT_YEARS + 1}–{latest} 年">'
+           f'近 {RECENT_YEARS} 年 {recent} 題</span>'
+           if recent else f'<span class="pb-count" title="最近一次出題年度">最近一次 {last} 年</span>')
+        + '<a href="../">回依法條比較</a></p>',
         "",
     ]
     text = laws.text.get(ref)
@@ -1477,6 +1539,7 @@ def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws
         if n_stale:
             lines += ["", f"其中 **{n_stale}** 題出題後條文又修正過，標有「出題後修正」，舊詳解可能已不適用。"]
         lines += [""]
+    lines += related_md(articles, 3, "老師文章：這一條怎麼讀（展開即可閱讀）")
     lines += ["出題年度：" + "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years), ""]
     for y in years:
         lines += [f"## {y} 年 {{#y{y}}}", ""]
