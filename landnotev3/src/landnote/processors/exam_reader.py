@@ -324,13 +324,26 @@ def parse_paper(text: str) -> dict:
     essays = [q for q in out if q["kind"] == "essay"]
     if essays and not any(q["score"] for q in essays) and not all(q["answer"] for q in essays):
         out = [q for q in out if q["kind"] == "choice"]
-    if not out:
-        out = _parse_keyless(lines)
-    # 測驗題多數不是四個選項，代表題號或選項沒切對（不支援的排版），寧可只給原卷也不放殘缺題目
+    # 先刪掉切壞的測驗題（例如選項「（A）1 年」被當成第 1 題），再判斷要不要改用無答案規則
+    out = _drop_broken_choices(out)
+    # 未附答案的卷子：一般規則拆不出題，或只把卷內「一、選擇題」「二、簡答題」大標題當成申論題時，
+    # 改用遞增題號切題；後者要選項大多完整才採用，免得把詳解裡的「1. 2.」條列當成測驗題
+    if not any(q["kind"] == "choice" for q in out):
+        keyless = _parse_keyless(lines)
+        kl_choices = [q for q in keyless if q["kind"] == "choice"]
+        complete = sum(len(q["options"]) in (4, 5) for q in kl_choices)
+        if not out or (kl_choices and len(keyless) > len(out)
+                       and complete >= len(kl_choices) * (1 - BAD_CHOICE_RATIO)):
+            out = _drop_broken_choices(keyless)
+    return {"commentary": _join(commentary, structured=True), "questions": out}
+
+
+def _drop_broken_choices(out: List[dict]) -> List[dict]:
+    """測驗題多數不是四或五個選項，代表題號或選項沒切對（不支援的排版），寧可只給原卷也不放殘缺題目。"""
     choices = [q for q in out if q["kind"] == "choice"]
     if choices and sum(len(q["options"]) not in (4, 5) for q in choices) > len(choices) * BAD_CHOICE_RATIO:
-        out = [q for q in out if q["kind"] == "essay"]
-    return {"commentary": _join(commentary, structured=True), "questions": out}
+        return [q for q in out if q["kind"] == "essay"]
+    return out
 
 
 # 國營事業考卷常只在注意事項寫一次配分（「每大題各占二十五分」「每大題配分20 分」），題目後不再標
@@ -350,7 +363,7 @@ def _header_score(lines: List[str]) -> int:
 # 未附答案的試卷（多為國營事業）：題號只寫「1.」，不能與詳解條列區分，所以只在一般規則拆不出題時使用
 KEYLESS_Q = re.compile(r"^(\d{1,3})\s*[.．、]\s*(?![\d.])")
 # 選擇題後接「二、申論題：…每題10分」，申論題又從「1.」編號
-KEYLESS_ESSAY = re.compile(r"^[一二三四]\s*[、.．]\s*(?:非選擇題|申論題|問答題)")
+KEYLESS_ESSAY = re.compile(r"^[一二三四]\s*[、.．]\s*(?:非選擇題|申論題|問答題|簡答題)")
 
 
 def _parse_keyless(lines: List[str]) -> List[dict]:
@@ -367,10 +380,14 @@ def _parse_keyless(lines: List[str]) -> List[dict]:
         m = KEYLESS_Q.match(ln)
         if m and int(m.group(1)) == 1 and qs and not any(OPTION.search("".join(q["stem"])) for q in qs):
             qs, expect = [], 1
-        if m and int(m.group(1)) == expect:
-            cur = {"no": expect, "kind": kind, "stem": [ln[m.end():]]}
+        no = int(m.group(1)) if m else 0
+        # OCR 偶爾整行漏掉某題的題號行：前一題已有選項時允許跳號，漏掉的那題併入前一題（選項數異常會被標出）
+        skipped = (kind == "choice" and no == expect + 1 and cur is not None
+                   and OPTION.search("".join(cur["stem"])))
+        if m and (no == expect or skipped):
+            cur = {"no": no, "kind": kind, "stem": [ln[m.end():]]}
             qs.append(cur)
-            expect += 1
+            expect = no + 1
         elif cur is not None:
             cur["stem"].append(ln)
     out = []
