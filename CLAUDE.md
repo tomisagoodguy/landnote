@@ -36,7 +36,7 @@ landnote/
 └── landnotev3/
     ├── pyproject.toml                # uv 專案設定、ruff 規則
     ├── src/landnote/
-    │   ├── main.py                   # CLI 入口（articles / jasper / exams / group / exambank / laws / site / serve）
+    │   ├── main.py                   # CLI 入口（articles / jasper / exams / group / exambank / laws / obsidian / site / serve）
     │   ├── config.py                 # 路徑常數（DATA_DIR、ARTICLES_DIR…）
     │   ├── core/scraper.py           # 爬蟲基底類別
     │   ├── crawlers/                 # article.py（專欄文章）、exam_land.py、exam_law.py、jasper_crawler.py
@@ -45,6 +45,7 @@ landnote/
     │   │   ├── site_generator.py     # ★ 產生 site_src/docs 全部內容與 mkdocs.yml
     │   │   ├── exam_bank.py          # 估價師主題題庫（exambank 指令建 JSON；產生器寫 exam-bank/ 頁）
     │   │   ├── exam_reader.py        # 逐題讀各科頁面（exam-reader/<科目>/，科目清單見 READERS）與總覽頁，附擬答與相關文章
+    │   │   ├── obsidian_vault.py     # obsidian 指令：逐題讀考古題 → Obsidian vault（題目／法條／主題互連）
     │   │   └── law_timeline.py       # 法規修正沿革 → 文章開頭的法規時效提醒
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
     │   └── utils/                    # logger、PDF、文字處理
@@ -89,6 +90,12 @@ uv run --project landnotev3 python landnotev3/src/landnote/main.py site         
 cd landnotev3/site_src && NO_MKDOCS_2_WARNING=1 uv run --with "mkdocs<2.0" --with mkdocs-material mkdocs serve   # 本機預覽 http://127.0.0.1:8000/landnote/
 cd landnotev3/site_src && uv run --with "mkdocs<2.0" --with mkdocs-material mkdocs build -d <暫存目錄>           # 建置到暫存目錄驗證
 ```
+
+**Obsidian 考古題 vault**
+```bash
+uv run --project landnotev3 python landnotev3/src/landnote/main.py obsidian                        # 匯出到 ~/Documents/Landnote考古題（約 50 秒；需先跑 site，可加 --out <目錄>）
+```
+vault 在 repo 外、不進版控；重新匯出只覆寫自動產生的部分，保留每則筆記的 `狀態` 欄位與「我的筆記」標記線以下的內容。
 
 **考古題合併 PDF**
 ```bash
