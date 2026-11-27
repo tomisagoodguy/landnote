@@ -336,6 +336,7 @@ function initQuestionMarks() {
                 if (!qmSave(all)) { alert("無法儲存標記（瀏覽器可能停用了本機儲存空間）"); return; }
                 // 同一頁可能出現同一題兩次（跨科考卷），一起更新
                 document.querySelectorAll(`.qb-item[data-q="${key}"]`).forEach(el => el.dispatchEvent(new Event("qm-sync")));
+                document.dispatchEvent(new Event("qm-change"));  // 篩選列更新計數
             };
             group.appendChild(b);
         });
@@ -533,6 +534,81 @@ function qmRenderList(box) {
     });
 }
 
+// 題目篩選列：只看不熟／該複習／待複習／未標記的題目（考卷頁、連續刷題頁、比較頁皆適用）。
+// 不記住選擇，避免下次進來只剩幾題卻不知道為什麼；改標記時只更新計數，題目要再按一次篩選才隱藏，免得一按就消失。
+const QM_FILTERS = [
+    ["all", "全部", () => true],
+    ["weak", "不熟", m => m && m.s === "weak"],
+    ["due", "該複習", m => m && qmIsDue(m)],
+    ["review", "待複習", m => m && m.s === "review"],
+    ["none", "未標記", m => !m],
+];
+
+function initMarkFilter() {
+    const article = document.querySelector("article.md-content__inner");
+    if (!article || article.querySelector(".qm-filter")) return;
+    const items = [...article.querySelectorAll(".qb-item[data-q]")];
+    if (items.length < 5) return;
+    const bar = document.createElement("div");
+    bar.className = "qm-filter";
+    bar.setAttribute("role", "group");
+    bar.setAttribute("aria-label", "依熟練度篩選題目");
+    const status = document.createElement("p");
+    status.className = "qm-filter-status";
+    status.setAttribute("role", "status");
+    let current = "all";
+
+    const count = () => {
+        const marks = qmLoad();
+        bar.querySelectorAll("button").forEach(b => {
+            const test = QM_FILTERS.find(f => f[0] === b.dataset.f)[2];
+            b.querySelector("span").textContent = items.filter(el => test(marks[el.dataset.q])).length;
+        });
+    };
+    const apply = () => {
+        const marks = qmLoad();
+        const test = QM_FILTERS.find(f => f[0] === current)[2];
+        let shown = 0;
+        items.forEach(el => {
+            const ok = test(marks[el.dataset.q]);
+            el.hidden = !ok;
+            const src = el.previousElementSibling;  // 連續刷題頁每題上方的出處列
+            if (src && src.classList.contains("er-drill-src")) src.hidden = !ok;
+            if (ok) shown++;
+        });
+        // 區段標題（年度、申論／測驗）底下沒有可見題目就一起藏
+        article.querySelectorAll("h2").forEach(h => {
+            let el = h.nextElementSibling, has = false, any = false;
+            while (el && el.tagName !== "H2") {
+                if (el.matches(".qb-item[data-q]")) { any = true; if (!el.hidden) has = true; }
+                el = el.nextElementSibling;
+            }
+            if (any) h.hidden = !has;
+        });
+        bar.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === current)));
+        status.textContent = current === "all" ? "" :
+            shown ? "顯示 " + shown + "／" + items.length + " 題" : "這一頁沒有符合的題目。";
+        count();
+    };
+    QM_FILTERS.forEach(([f, label]) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "qm-btn qm-filter-btn";
+        b.dataset.f = f;
+        b.append(label + " ", document.createElement("span"));
+        b.onclick = () => { current = f; apply(); };
+        bar.appendChild(b);
+    });
+    const anchor = article.querySelector(".er-drill-toggle") || article.querySelector(".qm-reminder") ||
+        article.querySelector("h1 ~ .qb-meta") || article.querySelector("h1");
+    (anchor || article.firstChild).after(bar, status);
+    // instant navigation 換頁不重載，先移除上一頁的監聽
+    if (window.qmFilterCount) document.removeEventListener("qm-change", window.qmFilterCount);
+    window.qmFilterCount = count;
+    document.addEventListener("qm-change", count);
+    apply();
+}
+
 // 逐題讀各頁（複習清單頁除外）標題下提醒今天有幾題到期
 function initDueReminder() {
     const path = window.location.pathname;
@@ -560,6 +636,7 @@ if (typeof document$ !== "undefined") {
         initQuestionMarks();
         initReviewList();
         initDueReminder();
+        initMarkFilter();
     });
 } else {
     document.addEventListener("DOMContentLoaded", function () {
@@ -569,5 +646,6 @@ if (typeof document$ !== "undefined") {
         initQuestionMarks();
         initReviewList();
         initDueReminder();
+        initMarkFilter();
     });
 }

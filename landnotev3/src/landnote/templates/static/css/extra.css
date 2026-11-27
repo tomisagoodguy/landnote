@@ -950,3 +950,32 @@ a.feature-card:active {
   gap: 0.3rem;
   margin-top: 0.3rem;
 }
+
+/* ── 題目篩選列（initMarkFilter）────────────────────────────── */
+.md-typeset .qm-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0.2rem;
+}
+.md-typeset .qm-filter-btn span {
+  margin-left: 0.15em;
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+}
+.md-typeset .qm-filter-btn[aria-pressed="true"] {
+  color: var(--pb-ink);
+  background: var(--pb-yellow-l);
+  border-color: var(--pb-yellow);
+  font-weight: 700;
+}
+.md-typeset .qm-filter-status {
+  margin: 0.2rem 0 1rem;
+  font-size: 0.8em;
+  color: var(--pb-muted);
+}
+.md-typeset .qb-item[hidden],
+.md-typeset .er-drill-src[hidden],
+.md-typeset h2[hidden] {
+  display: none;
+}
