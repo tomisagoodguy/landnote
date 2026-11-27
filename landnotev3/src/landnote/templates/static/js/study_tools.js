@@ -250,8 +250,12 @@ function initDrillToggle() {
         try { localStorage.setItem(KEY, expanded ? "1" : "0"); } catch (err) { console.warn("儲存展開偏好失敗:", err); }
         apply();
     };
+    // 包一層整寬工具列：黏在頂端時有不透明底色，內文從底下捲過，不會在按鈕兩側露出被切半的字
+    const bar = document.createElement("div");
+    bar.className = "er-drill-bar";
+    bar.append(btn);
     const h1 = article.querySelector("h1");
-    (h1 || article.firstChild).after(btn);
+    (h1 || article.firstChild).after(bar);
     apply();
 }
 
@@ -599,7 +603,7 @@ function initMarkFilter() {
         b.onclick = () => { current = f; apply(); };
         bar.appendChild(b);
     });
-    const anchor = article.querySelector(".er-drill-toggle") || article.querySelector(".qm-reminder") ||
+    const anchor = article.querySelector(".er-drill-bar") ||article.querySelector(".qm-reminder") ||
         article.querySelector("h1 ~ .qb-meta") || article.querySelector("h1");
     (anchor || article.firstChild).after(bar, status);
     // instant navigation 換頁不重載，先移除上一頁的監聽
