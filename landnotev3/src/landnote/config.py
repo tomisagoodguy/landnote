@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# 網站網址（mkdocs.yml 的 site_url）；Obsidian 匯出的文章連結也用它
+SITE_URL = "https://tomisagoodguy.github.io/landnote/"
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = BASE_DIR / "data"
 LOGS_DIR = BASE_DIR / "logs"

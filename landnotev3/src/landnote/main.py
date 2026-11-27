@@ -42,6 +42,11 @@ def main():
     # Command: laws (從全國法規資料庫更新修法時間軸，供法規時效提醒)
     subparsers.add_parser("laws", help="Download law amendment histories from law.moj.gov.tw")
 
+    # Command: obsidian (把逐題讀考古題匯出成 Obsidian vault；需先跑 site 產生文章)
+    obsidian_parser = subparsers.add_parser("obsidian", help="Export exam questions as an Obsidian vault")
+    obsidian_parser.add_argument("--out", type=Path, default=Path.home() / "Documents" / "Landnote考古題",
+                                 help="Vault directory (default: ~/Documents/Landnote考古題)")
+
     # Command: site (Generate Website)
     subparsers.add_parser("site", help="Generate static site structure")
 
@@ -93,6 +98,17 @@ def main():
     elif args.command == "laws":
         from landnote.processors import law_timeline
         print(f"Law timeline written to {law_timeline.build()}")
+
+    elif args.command == "obsidian":
+        from landnote.processors import obsidian_vault
+        docs = PROJECT_ROOT / "site_src" / "docs"
+        posts = [docs / "blog" / "posts", docs / "jasper" / "posts"]
+        if not posts[0].exists():
+            sys.exit("找不到 site_src/docs/blog/posts，請先執行 main.py site 產生文章")
+        counts = obsidian_vault.export(args.out, posts)
+        if counts is None:
+            sys.exit("找不到逐題讀資料（data/exam_bank/*.json），請先執行 main.py exambank")
+        print(f"Obsidian vault written to {args.out}: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
 
     elif args.command == "site":
         from landnote.processors.site_generator import SiteGenerator

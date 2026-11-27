@@ -6,7 +6,7 @@ from typing import Dict, List, Tuple
 from collections import defaultdict
 import yaml
 
-from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR
+from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR, SITE_URL
 from landnote.processors import exam_bank, exam_reader
 from landnote.processors.law_timeline import LawTimeline
 from landnote.utils.logger import Logger
@@ -649,7 +649,7 @@ class SiteGenerator:
         """Create mkdocs.yml"""
         config = {
             'site_name': 'Landnote 數位圖書館',
-            'site_url': 'https://tomisagoodguy.github.io/landnote/',
+            'site_url': SITE_URL,
             'site_author': 'Landnote AI',
             'repo_url': 'https://github.com/tomisagoodguy/landnote',
             'theme': {
