@@ -1108,7 +1108,7 @@ def _link_laws(md: str, law_links: Dict[str, Tuple[int, str, str]], up: str) -> 
 def _backlinks_md(items: list, up: str) -> List[str]:
     """文章的「歷屆考題」區塊：老師擬答對應的題目優先，其次依相似度、年度新到舊；同題只列一次。"""
     seen, rows = set(), []
-    for is_answer, score, p, q in sorted(items, key=lambda t: (not t[0], -t[1], -t[2]["year"])):
+    for is_answer, _score, p, q in sorted(items, key=lambda t: (not t[0], -t[1], -t[2]["year"])):
         key = (p["id"], qid(q))
         if key in seen:
             continue
