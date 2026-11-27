@@ -46,6 +46,7 @@ READERS = [
 ]
 READER_ROOT = "exam-reader"
 DRILL_PAGE = "drill"  # 申論題連續刷題頁：exam-reader/<slug>/drill/
+DRILL_CHOICE_PAGE = "drill-choice"  # 測驗題連續刷題頁：exam-reader/<slug>/drill-choice/
 TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
 LAW_DIR = "laws"  # 依法條比較頁：exam-reader/<slug>/laws/
 
@@ -653,19 +654,23 @@ def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str]
 
 
 def _paper_page(p: dict, index: ArticleIndex, name: str, similar: "SimilarIndex",
-                hits: Dict[Tuple[str, str], List[Tuple[str, str]]], law_pages: Dict[str, str]) -> str:
-    """產生單份考卷頁。hits 為每題的法條 [(法條, 來源)]，law_pages 為有比較頁的法條 → 檔名。"""
+                hits: Dict[Tuple[str, str], List[Tuple[str, str]]], law_pages: Dict[str, str],
+                drills: Optional[Dict[str, int]] = None) -> str:
+    """產生單份考卷頁。hits 為每題的法條 [(法條, 來源)]，law_pages 為有比較頁的法條 → 檔名，
+    drills 為本家族有產生的連續刷題頁（題型 → 題數），本卷有該題型才放連結。"""
     from urllib.parse import quote
 
     essays = [q for q in p["questions"] if q["kind"] == "essay"]
     choices = [q for q in p["questions"] if q["kind"] == "choice"]
+    drill_links = "".join(f'<a href="../{DRILL_KINDS[k][0]}/">{DRILL_KINDS[k][1]}連續刷題</a>'
+                          for k, group in (("essay", essays), ("choice", choices)) if group and k in (drills or {}))
     lines = [
         HIDE_NAV,
         f"# {_paper_title(p)}",
         "",
         f'<p class="qb-meta"><a href="{REPO_BLOB + quote(p["pdf"])}" target="_blank" rel="noopener">原卷 PDF</a>'
         f'<a href="../{TOPIC_DIR}/">跨年度比較</a>'
-        + (f'<a href="../{DRILL_PAGE}/">申論題連續刷題</a>' if essays else "")
+        + drill_links
         + (f'<a href="../{LAW_DIR}/">依法條比較</a>' if law_pages else "")
         + f'<a href="../">回{name}題目總覽</a></p>',
         "",
@@ -697,16 +702,26 @@ def _paper_page(p: dict, index: ArticleIndex, name: str, similar: "SimilarIndex"
     return "\n".join(lines)
 
 
-def _write_drill_page(path: Path, papers: List[dict], index: ArticleIndex, name: str,
+DRILL_KINDS = {  # 題型 → (頁面檔名, 標題, 說明)
+    "essay": (DRILL_PAGE, "申論題", "可一路往下寫；解答預設收合，先自己寫再打開。"),
+    "choice": (DRILL_CHOICE_PAGE, "測驗題", "可一路往下作答；答案預設收合，選好再打開對答案。"),
+}
+
+
+def _write_drill_page(out: Path, kind: str, papers: List[dict], index: ArticleIndex, name: str,
                       hits: Dict[Tuple[str, str], List[Tuple[str, str]]], law_pages: Dict[str, str]) -> int:
-    """所有附解答（補習班詳解或老師擬答）的申論題跨年度排成一頁，由新到舊連續刷；回傳題數，0 則不產生。"""
+    """某題型所有附解答的題目跨年度排成一頁，由新到舊連續刷；回傳題數，0 則不產生。
+
+    申論題的解答是補習班詳解或老師擬答，測驗題是答案選項；沒有解答的題目不收（刷題要能對答案）。
+    """
+    page, label, how = DRILL_KINDS[kind]
     by_year: Dict[int, List[List[str]]] = defaultdict(list)
     for p in sorted(papers, key=lambda p: (-p["year"], p["exam"], p["subject"])):
         for q in p["questions"]:
-            if q["kind"] != "essay":
+            if q["kind"] != kind:
                 continue
-            answer_doc = index.teacher_answer(q["text"])
-            if not q["answer"] and not answer_doc:
+            answer_doc = index.teacher_answer(q["text"]) if kind == "essay" else None
+            if not (q["key"] if kind == "choice" else q["answer"] or answer_doc):
                 continue
             head = [f'<p class="er-drill-src"><a href="../{p["id"]}/#{qid(q)}">{_q_label(p, q)}</a></p>', ""]
             body = _question_md(q, hits[(p["id"], qid(q))], law_pages, [], answer_doc)
@@ -717,11 +732,11 @@ def _write_drill_page(path: Path, papers: List[dict], index: ArticleIndex, name:
         return 0
     lines = [
         HIDE_NAV,
-        f"# {name}：申論題連續刷題",
+        f"# {name}：{label}連續刷題",
         "",
         f'<p class="qb-meta"><a href="../">回{name}題目總覽</a><a href="../{TOPIC_DIR}/">跨年度比較</a></p>',
         "",
-        f"共 **{n}** 題附解答的申論題，由新到舊排成一頁，可一路往下寫；解答預設收合，先自己寫再打開。"
+        f"共 **{n}** 題附解答的{label}，由新到舊排成一頁，{how}"
         "頁面目錄可跳到指定年度，題目標題連回原考卷。",
         "",
     ]
@@ -729,7 +744,7 @@ def _write_drill_page(path: Path, papers: List[dict], index: ArticleIndex, name:
         lines += [f"## {year} 年（{len(by_year[year])} 題）", ""]
         for block in by_year[year]:
             lines += block
-    path.write_text("\n".join(lines), encoding="utf-8")
+    (out / f"{page}.md").write_text("\n".join(lines), encoding="utf-8")
     return n
 
 
@@ -764,10 +779,11 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
         for ref, source in hits[(p["id"], qid(q))]:
             by_ref[ref].append((p, q, source))
     law_pages = _write_law_pages(out / LAW_DIR, by_ref, laws, name)
+    drills = {kind: n for kind in DRILL_KINDS
+              if (n := _write_drill_page(out, kind, readable, index, name, hits, law_pages))}
     for p in readable:
-        page = _paper_page(p, index, name, similar, hits, law_pages)
+        page = _paper_page(p, index, name, similar, hits, law_pages, drills)
         (out / f"{p['id']}.md").write_text(page, encoding="utf-8")
-    n_drill = _write_drill_page(out / f"{DRILL_PAGE}.md", readable, index, name, hits, law_pages)
 
     n_q = sum(len(p["questions"]) for p in readable)
     n_ans = sum(p["has_answer"] for p in papers)
@@ -784,8 +800,9 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
         f"**[跨年度比較]({TOPIC_DIR}/index.md)**：依主題看各年度出了哪些題目，以及換句話說又考一次的重複考點。",
         "",
     ]
-    if n_drill:
-        lines += [f"**[申論題連續刷題]({DRILL_PAGE}.md)**：{n_drill} 題附解答的申論題跨年度排成一頁，"
+    for kind, n in drills.items():
+        page, label, _ = DRILL_KINDS[kind]
+        lines += [f"**[{label}連續刷題]({page}.md)**：{n} 題附解答的{label}跨年度排成一頁，"
                   "不用一份考卷看完再回來選下一份。", ""]
     if law_pages:
         lines += [
