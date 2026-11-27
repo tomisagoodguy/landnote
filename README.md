@@ -26,6 +26,18 @@
 | 逐題讀（附詳解） | 土地法規、土地登記、不動產估價、不動產投資、土地經濟與土地政策、土地利用與都市計畫、民法、稅法八科，逐題附老師擬答、可展開的相關專欄文章，並可依主題或依法條做跨年度比較 | [土地法規](https://tomisagoodguy.github.io/landnote/exam-reader/land-law/)・[土地登記](https://tomisagoodguy.github.io/landnote/exam-reader/registration/)・[估價](https://tomisagoodguy.github.io/landnote/exam-reader/appraisal/)・[投資](https://tomisagoodguy.github.io/landnote/exam-reader/investment/)・[土地經濟](https://tomisagoodguy.github.io/landnote/exam-reader/economics/)・[土地利用](https://tomisagoodguy.github.io/landnote/exam-reader/land-use/)・[民法](https://tomisagoodguy.github.io/landnote/exam-reader/civil-law/)・[稅法](https://tomisagoodguy.github.io/landnote/exam-reader/tax/) |
 | 估價師專區 | 估價師專業科目依主題分類的題庫（附各主題出題年度統計）、合併 PDF 與延伸練習，手機優先版面 | [專區首頁](https://tomisagoodguy.github.io/landnote/appraiser/) |
 
+### 用 Obsidian 讀考古題
+
+逐題讀的八科考古題也能匯出成 [Obsidian](https://obsidian.md/) vault，適合想邊刷題邊寫自己筆記的人：
+
+- **每題一則筆記**：題目、收合的答案與詳解、考點法條、歷屆相似題、老師相關文章連結、原卷 PDF。
+- **法條筆記**：現行條文、修正日期，以及歷屆考過這一條的所有題目；出題後條文又修正過的會標出來。點開法條就能看到同一條歷年怎麼考。
+- **主題、考卷、科目筆記**：依主題或依考卷瀏覽。
+- **複習追蹤**：每題有「狀態」欄位（未讀／不熟／待複習／熟練），搭配 Dataview 外掛，首頁會自動列出待複習清單。
+- **筆記不會被覆蓋**：題庫更新後重新匯出，自己寫在「我的筆記」標記線以下的內容與「狀態」都會保留。
+
+vault 需要在本機產生（見下方[開發者指南](#開發者指南)的 `obsidian` 指令），預設輸出到 `文件\Landnote考古題`，用 Obsidian「開啟資料夾作為 vault」即可。
+
 ### 考古題範圍
 
 | 考試 | 年度 | 來源 |
@@ -111,6 +123,10 @@ cd 地政考古題 && uv run --with PyPDF2 --with pymupdf python pdf_merger.py -
 # 從考古題 PDF 重建估價師主題題庫（data/exam_bank/*.json）
 uv run --with pymupdf python -m landnote.main exambank
 
+# 把逐題讀考古題匯出成 Obsidian vault（需先執行 site；預設輸出到 ~/Documents/Landnote考古題，可用 --out 指定）
+uv run python -m landnote.main site
+uv run python -m landnote.main obsidian
+
 # 產生網站原始檔並在本機預覽（http://127.0.0.1:8000）
 uv run --with "mkdocs<2.0" --with mkdocs-material python -m landnote.main serve
 ```
@@ -126,7 +142,8 @@ landnote/
     │   ├── config.py           # 路徑與網址設定
     │   ├── crawlers/           # 文章、地政／估價師考古題、法律考古題爬蟲
     │   ├── processors/         # grouper（分組與 PDF）、site_generator（MkDocs 網站）、
-    │   │                       # exam_bank（估價師題庫）、exam_reader（逐題讀）、law_timeline（法規時效提醒）
+    │   │                       # exam_bank（估價師題庫）、exam_reader（逐題讀）、law_timeline（法規時效提醒）、
+    │   │                       # obsidian_vault（Obsidian vault 匯出）
     │   └── templates/          # 網站 CSS／JS
     ├── scripts/                # generate_pdfs（網頁轉 PDF）、update_readme_stats（README 數字）
     ├── data/
