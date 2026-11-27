@@ -910,13 +910,17 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
             written.append((slug, name, papers))
     if written:
         _link_articles(docs_dir, backlinks, law_links)
+        _link_law_families(docs_dir / READER_ROOT, examined)
         changes = _write_law_changes(docs_dir / READER_ROOT, examined, laws.timeline)
         _write_overview(docs_dir / READER_ROOT, written, changes)
         _write_review_page(docs_dir / READER_ROOT)
+        _write_question_index(docs_dir / READER_ROOT, written)
+        _write_practice_page(docs_dir / READER_ROOT)
         nav.insert(0, ("各科總覽", f"{READER_ROOT}/index.md"))
-        nav.insert(1, ("我的複習清單", f"{READER_ROOT}/{REVIEW_PAGE}.md"))
+        nav.insert(1, ("刷題計畫與隨機抽題", f"{READER_ROOT}/{PRACTICE_PAGE}.md"))
+        nav.insert(2, ("我的複習清單", f"{READER_ROOT}/{REVIEW_PAGE}.md"))
         if changes:
-            nav.insert(2, ("近期修法考點", f"{READER_ROOT}/{LAW_CHANGES_PAGE}.md"))
+            nav.insert(3, ("近期修法考點", f"{READER_ROOT}/{LAW_CHANGES_PAGE}.md"))
     return nav
 
 
@@ -966,6 +970,67 @@ def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], chan
         *rows,
     ]
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+PRACTICE_PAGE = "practice"  # 刷題計畫與隨機抽題：exam-reader/practice/，內容由 study_tools.js 依 questions.json 產生
+QUESTION_INDEX = "questions.json"  # exam-reader/questions.json：前端抽題用的題目索引
+
+
+def _link_law_families(root: Path, examined: Dict[str, list]) -> None:
+    """法條頁的 OTHER_FAMILIES_MARK 換成「其他科目也考過」（連到同一條在其他科目的比較頁或題目），沒有就移除。"""
+    for fams in examined.values():
+        for _, slug, page, _ in fams:
+            if not page:
+                continue
+            path = root / slug / LAW_DIR / f"{page}.md"
+            if not path.exists():
+                continue
+            others = []
+            for o_name, o_slug, o_page, o_qs in sorted(fams, key=lambda f: -len(f[3])):
+                if o_slug == slug:
+                    continue
+                if o_page:
+                    target = f"../../../{o_slug}/{LAW_DIR}/{o_page}/"
+                else:
+                    p, q = o_qs[0]
+                    target = f"../../../{o_slug}/{p['id']}/#{qid(q)}"
+                others.append(f'<a class="pb-count" href="{target}">{o_name} {len(o_qs)} 題</a>')
+            block = (f'<p class="qb-meta"><span class="er-related-title">其他科目也考過：</span>{"".join(others)}</p>'
+                     if others else "")
+            text = path.read_text(encoding="utf-8")
+            path.write_text(text.replace(OTHER_FAMILIES_MARK, block), encoding="utf-8")
+
+
+def _write_question_index(out: Path, families: List[Tuple[str, str, List[dict]]]) -> None:
+    """exam-reader/questions.json：{"families": [{"slug", "name", "papers": [[考卷 id, 年度, [題號…]]]}]}。
+
+    題號同錨點（e1、c12），有解答的後面加「*」；前端用它抽題，再到考卷頁抓題目卡，所以只放最少的欄位。
+    """
+    data = {"families": [
+        {"slug": slug, "name": name,
+         "papers": [[p["id"], p["year"], [qid(q) + ("*" if _has_key(q) else "") for q in p["questions"]]]
+                    for p in papers if p["questions"]]}
+        for slug, name, papers in families]}
+    (out / QUESTION_INDEX).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _write_practice_page(out: Path) -> None:
+    lines = [
+        "---\nhide:\n  - navigation\n  - toc\n---\n",
+        "# 刷題計畫與隨機抽題",
+        "",
+        "**考前計畫**：設定考試日期與科目，每天排好「到期該複習的題目＋一批新題」，考前最後一週只複習不加新題。"
+        "**隨機抽題**：跨年度、跨科目混著抽，比照考卷順序刷更接近真正的考試；可以只從「不熟」或「該複習」裡抽。",
+        "",
+        "題目直接顯示在這一頁，作答後在題目上按 **不熟／待複習／熟練**，會排進[我的複習清單](review.md)的間隔複習。",
+        "",
+        '!!! warning "設定與標記只存在這台裝置的瀏覽器"',
+        "    換裝置可到[我的複習清單](review.md)匯出、匯入標記；考試日期與科目要在新裝置重設一次。",
+        "",
+        '<div id="qm-practice"><p>需要啟用 JavaScript 才能使用刷題計畫與隨機抽題。</p></div>',
+        "",
+    ]
+    (out / f"{PRACTICE_PAGE}.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 LAW_CHANGES_PAGE = "law-changes"  # 近期修法考點：exam-reader/law-changes/
@@ -1100,7 +1165,7 @@ def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "Law
     # 法條頁放最後：相關文章要用到考卷頁算出的「題目 → 推薦文章」
     latest = max(p["year"] for p in papers)
     _write_law_pages(out / LAW_DIR, by_ref, laws, name, law_pages,
-                     _law_articles(by_ref, law_pages, index, backlinks), latest)
+                     _law_articles(by_ref, law_pages, index, backlinks), latest, hits)
 
     n_q = sum(len(p["questions"]) for p in readable)
     n_ans = sum(p["has_answer"] for p in papers)
@@ -1555,10 +1620,18 @@ def _heat(qs: List[Tuple[dict, dict, str]], latest: int) -> Tuple[int, int]:
 
 
 def _write_law_pages(out: Path, by_ref: Dict[str, List[Tuple[dict, dict, str]]], laws: LawIndex,
-                     name: str, pages: Dict[str, str], articles: Dict[str, List[dict]], latest: int) -> None:
-    """exam-reader/<slug>/laws/：總覽（依法規分區）與每條一頁。"""
+                     name: str, pages: Dict[str, str], articles: Dict[str, List[dict]], latest: int,
+                     hits: Optional[Dict[Tuple[str, str], List[Tuple[str, str]]]] = None) -> None:
+    """exam-reader/<slug>/laws/：總覽（依法規分區）與每條一頁。
+
+    hits（每題的法條）有給時，每條法條頁列出「常一起考的條文」：同一題也對到的其他有比較頁的條文。
+    """
     if not pages:
         return
+    co: Dict[str, Counter] = defaultdict(Counter)
+    for ref in pages:
+        for p, q, _ in by_ref[ref]:
+            co[ref].update({r for r, _ in (hits or {}).get((p["id"], qid(q)), []) if r != ref and r in pages})
     out.mkdir(parents=True, exist_ok=True)
     grouped: Dict[str, List[str]] = defaultdict(list)
     for ref in pages:
@@ -1593,7 +1666,9 @@ def _write_law_pages(out: Path, by_ref: Dict[str, List[Tuple[dict, dict, str]]],
                          f"{snippet}{'…' if snippet else '（現行法規查無此條）'} |")
         lines.append("")
         for ref in grouped[law]:
-            _write_law_page(out / f"{pages[ref]}.md", ref, by_ref[ref], laws, name, articles.get(ref, []), latest)
+            related = [(r, n, pages[r]) for r, n in co[ref].most_common(LAW_RELATED_MAX)]
+            _write_law_page(out / f"{pages[ref]}.md", ref, by_ref[ref], laws, name, articles.get(ref, []), latest,
+                            related)
     (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -1602,8 +1677,17 @@ def _article_key(ref: str) -> Tuple[int, int]:
     return (int(m.group(1)), int(m.group(2) or 0)) if m else (0, 0)
 
 
+def _law_of(ref: str) -> str:
+    """法條的法規名：只去掉結尾條號（「土地法第34條之1執行要點第3條」→「土地法第34條之1執行要點」）。"""
+    return re.sub(r"第\d+條(?:之\d+)?$", "", ref)
+
+
+LAW_RELATED_MAX = 6
+OTHER_FAMILIES_MARK = "<!-- other-families -->"  # write_pages 全部科目寫完後換成「其他科目也考過」
+
+
 def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws: LawIndex, name: str,
-                    articles: List[dict], latest: int) -> None:
+                    articles: List[dict], latest: int, related: Optional[List[Tuple[str, int, str]]] = None) -> None:
     amended = laws.timeline.amended(ref)
     recent, last = _heat(qs, latest)
     url = laws.timeline.url(ref)
@@ -1623,6 +1707,8 @@ def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws
            if recent else f'<span class="pb-count" title="最近一次出題年度">最近一次 {last} 年</span>')
         + '<a href="../">回依法條比較</a></p>',
         "",
+        OTHER_FAMILIES_MARK,
+        "",
     ]
     text = laws.text.get(ref)
     if text:
@@ -1641,7 +1727,14 @@ def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws
             lines += ["", f"其中 **{n_stale}** 題出題後條文又修正過，標有「出題後修正」，舊詳解可能已不適用。"]
         lines += [""]
     lines += related_md(articles, 3, "老師文章：這一條怎麼讀（展開即可閱讀）")
-    lines += ["出題年度：" + "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years), ""]
+    if related:
+        law = _law_of(ref)
+        tags = "".join(f'<a class="pb-count er-law" href="../{page}/" title="同一題一起考過 {n} 次">'
+                       f'{r[len(law):] if _law_of(r) == law else r}<small> ×{n}</small></a>'
+                       for r, n, page in related)
+        lines += ['<p class="er-related-title">常一起考的條文（同一題也對到的條文，可串起來讀）</p>',
+                  f'<p class="qb-meta">{tags}</p>', ""]
+    lines += ["出題年度："+ "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years), ""]
     for y in years:
         lines += [f"## {y} 年 {{#y{y}}}", ""]
         for p, q, source in sorted(by_year[y], key=lambda t: (t[1]["kind"] != "essay", t[0]["exam"], t[1]["no"])):

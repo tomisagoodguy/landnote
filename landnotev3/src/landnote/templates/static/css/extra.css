@@ -979,3 +979,29 @@ a.feature-card:active {
 .md-typeset h2[hidden] {
   display: none;
 }
+
+/* ── 刷題計畫與隨機抽題（initPractice）──────────────────────── */
+.md-typeset .qm-practice-fams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin: 0.4rem 0 0.6rem;
+}
+.md-typeset .qm-practice-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.md-typeset .qm-practice-row select,
+.md-typeset .qm-practice-row input[type="date"] {
+  padding: 0.3rem 0.5rem;
+  border: var(--pb-border);
+  border-radius: 0.5rem;
+  background: var(--pb-card);
+  color: var(--pb-ink);
+  font: inherit;
+}
+.md-typeset .qm-practice-out {
+  margin-top: 1.5rem;
+}

@@ -609,6 +609,222 @@ function initMarkFilter() {
     apply();
 }
 
+// ---- 刷題計畫與隨機抽題（exam-reader/practice/ 的 #qm-practice）----
+// 題目索引 exam-reader/questions.json 由 exam_reader._write_question_index 產生；題目卡從各考卷頁抓來就地顯示。
+const QM_PLAN_KEY = "qm_plan_v1";    // {exam, fams, kind, answered, src, n}
+const QM_TODAY_KEY = "qm_today_v1";  // {date, keys}：當天的題目固定，標記後重整也不會換題
+const QM_REVIEW_ONLY_DAYS = 7;       // 考前最後一週只複習不加新題
+const QM_NEW_MAX = 40;
+
+function qmStore(key, value) {
+    try {
+        if (value === undefined) return JSON.parse(localStorage.getItem(key) || "null");
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (err) { console.warn("本機儲存失敗:", key, err); }
+    return null;
+}
+
+function qmSeeded(seed) {  // 依日期字串產生固定亂數（同一天排出同樣的新題）
+    let h = 2166136261;
+    for (const ch of seed) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+    return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
+}
+
+function qmShuffle(arr, rand) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+}
+
+function qmDaysUntil(dateStr) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const t = new Date(); t.setHours(0, 0, 0, 0);
+    return Math.round((new Date(y, m - 1, d) - t) / 86400000);
+}
+
+async function initPractice() {
+    const box = document.getElementById("qm-practice");
+    if (!box || box.dataset.ready) return;
+    box.dataset.ready = "1";
+    const root = new URL("../", window.location.href);  // exam-reader/
+    let index;
+    try {
+        const res = await fetch(new URL("questions.json", root));
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        index = await res.json();
+    } catch (err) {
+        console.error("題目索引載入失敗:", err);
+        box.innerHTML = "<p>題目索引載入失敗，請重新整理頁面。</p>";
+        return;
+    }
+    const all = [];
+    index.families.forEach(f => f.papers.forEach(([pid, year, qids]) => qids.forEach(raw => {
+        const q = raw.replace("*", "");
+        all.push({ key: pid + "-" + q, slug: f.slug, pid, q, year, kind: q[0], ans: raw.endsWith("*") });
+    })));
+    const byKey = new Map(all.map(x => [x.key, x]));
+    const plan = Object.assign({ exam: "", fams: [], kind: "all", answered: true, src: "all", n: 10 }, qmStore(QM_PLAN_KEY) || {});
+    const save = () => qmStore(QM_PLAN_KEY, plan);
+    const inScope = x => (!plan.fams.length || plan.fams.includes(x.slug)) &&
+        (plan.kind === "all" || x.kind === plan.kind) && (!plan.answered || x.ans);
+
+    const el = (tag, attrs = {}, ...kids) => {
+        const e = document.createElement(tag);
+        Object.entries(attrs).forEach(([k, v]) => { if (k === "class") e.className = v; else if (k in e) e[k] = v; else e.setAttribute(k, v); });
+        e.append(...kids);
+        return e;
+    };
+
+    // 範圍設定
+    const famBox = el("div", { class: "qm-practice-fams" });
+    index.families.forEach(f => {
+        const n = all.filter(x => x.slug === f.slug).length;
+        const cb = el("input", { type: "checkbox", checked: plan.fams.includes(f.slug) });
+        cb.onchange = () => { plan.fams = cb.checked ? [...plan.fams, f.slug] : plan.fams.filter(s => s !== f.slug); save(); refresh(); };
+        famBox.append(el("label", {}, cb, " " + f.name + "（" + n + "）"));
+    });
+    const kindSel = el("select", {}, ...[["all", "申論＋測驗"], ["e", "只要申論"], ["c", "只要測驗"]].map(([v, t]) => el("option", { value: v }, t)));
+    kindSel.value = plan.kind;
+    kindSel.onchange = () => { plan.kind = kindSel.value; save(); refresh(); };
+    const ansCb = el("input", { type: "checkbox", checked: plan.answered });
+    ansCb.onchange = () => { plan.answered = ansCb.checked; save(); refresh(); };
+    const scopeInfo = el("p", { class: "qm-date" });
+
+    // 考前計畫
+    const dateIn = el("input", { type: "date", value: plan.exam });
+    dateIn.onchange = () => { plan.exam = dateIn.value; save(); refresh(); };
+    const planInfo = el("p");
+    const todayBtn = el("button", { type: "button", class: "md-button md-button--primary" }, "開始今天的題目");
+    const redoBtn = el("button", { type: "button", class: "md-button" }, "重新排今天");
+
+    // 隨機抽題
+    const srcSel = el("select", {}, ...QM_FILTERS.map(([v, t]) => el("option", { value: v }, v === "all" ? "全部題目" : "只抽" + t)));
+    srcSel.value = plan.src;
+    srcSel.onchange = () => { plan.src = srcSel.value; save(); refresh(); };
+    const nSel = el("select", {}, ...[5, 10, 20, 30].map(v => el("option", { value: v }, v + " 題")));
+    nSel.value = String(plan.n);
+    nSel.onchange = () => { plan.n = Number(nSel.value); save(); };
+    const drawBtn = el("button", { type: "button", class: "md-button md-button--primary" }, "抽題");
+    const drawInfo = el("p", { class: "qm-date" });
+
+    const out = el("div", { class: "qm-practice-out" });
+
+    const todayPlan = (force) => {
+        const today = qmToday();
+        const saved = qmStore(QM_TODAY_KEY);
+        if (!force && saved && saved.date === today) return saved.keys.filter(k => byKey.has(k));
+        const marks = qmLoad();
+        const scope = all.filter(inScope);
+        const due = scope.filter(x => marks[x.key] && qmIsDue(marks[x.key]))
+            .sort((a, b) => qmDue(marks[a.key]).localeCompare(qmDue(marks[b.key])));
+        const fresh = scope.filter(x => !marks[x.key]);
+        const days = plan.exam ? qmDaysUntil(plan.exam) : null;
+        const quota = days === null ? 10 : days > QM_REVIEW_ONLY_DAYS ? Math.min(QM_NEW_MAX, Math.ceil(fresh.length / (days - QM_REVIEW_ONLY_DAYS))) : 0;
+        // 新題：近 5 年的優先（最貼近現在的出題方向），同一天順序固定
+        const maxYear = Math.max(...scope.map(x => x.year));
+        const rand = qmSeeded(today);
+        const recent = qmShuffle(fresh.filter(x => x.year > maxYear - 5), rand);
+        const older = qmShuffle(fresh.filter(x => x.year <= maxYear - 5), rand);
+        const keys = [...due.map(x => x.key), ...recent.concat(older).slice(0, quota).map(x => x.key)];
+        qmStore(QM_TODAY_KEY, { date: today, keys });
+        return keys;
+    };
+
+    function refresh() {
+        const marks = qmLoad();
+        const scope = all.filter(inScope);
+        const fresh = scope.filter(x => !marks[x.key]).length;
+        const due = scope.filter(x => marks[x.key] && qmIsDue(marks[x.key])).length;
+        scopeInfo.textContent = "範圍內 " + scope.length + " 題：未作答 " + fresh + "、今天到期 " + due + "（沒勾科目＝全部科目）";
+        if (!plan.exam) {
+            planInfo.textContent = "設定考試日期後，會依剩餘天數平均分配新題；沒設定則每天 10 題新題＋到期複習。";
+        } else {
+            const days = qmDaysUntil(plan.exam);
+            if (days < 0) planInfo.textContent = "考試日期已過，請重新設定。";
+            else {
+                const quota = days > QM_REVIEW_ONLY_DAYS ? Math.min(QM_NEW_MAX, Math.ceil(fresh / (days - QM_REVIEW_ONLY_DAYS))) : 0;
+                planInfo.textContent = "距離考試 " + days + " 天。今天：到期複習 " + due + " 題＋新題 " + quota + " 題" +
+                    (days <= QM_REVIEW_ONLY_DAYS ? "（最後一週只複習）" : "") +
+                    (quota >= QM_NEW_MAX && fresh / QM_NEW_MAX > days - QM_REVIEW_ONLY_DAYS ? "。題目做不完，建議縮小範圍或只選測驗題。" : "。");
+            }
+        }
+        const test = QM_FILTERS.find(f => f[0] === plan.src)[2];
+        drawInfo.textContent = "可抽 " + scope.filter(x => test(marks[x.key])).length + " 題";
+    }
+
+    const pages = new Map();  // 考卷頁網址 → Promise<Document>
+    const fetchPage = url => {
+        if (!pages.has(url)) {
+            pages.set(url, fetch(url).then(r => {
+                if (!r.ok) throw new Error("HTTP " + r.status);
+                return r.text();
+            }).then(t => new DOMParser().parseFromString(t, "text/html")));
+        }
+        return pages.get(url);
+    };
+
+    async function show(keys, title) {
+        out.replaceChildren(el("h2", {}, title));
+        if (!keys.length) { out.append(el("p", {}, "沒有符合的題目，調整範圍或來源再試一次。")); return; }
+        const status = el("p", { class: "qm-date", role: "status" }, "載入題目中…");
+        const list = el("div");
+        out.append(status, list);
+        const slots = keys.map(() => list.appendChild(el("div")));
+        let done = 0;
+        await Promise.all(keys.map(async (key, i) => {
+            const x = byKey.get(key);
+            const url = new URL(x.slug + "/" + x.pid + "/", root).href;
+            try {
+                const doc = await fetchPage(url);
+                const card = doc.getElementById(x.q);
+                if (!card) throw new Error("找不到題目 " + x.q);
+                const node = document.importNode(card, true);
+                node.id = "p-" + key;
+                node.querySelectorAll(".qm-group").forEach(g => g.remove());
+                node.querySelectorAll("[href]").forEach(a => {
+                    const v = a.getAttribute("href");
+                    if (v && !v.startsWith("#")) a.setAttribute("href", new URL(v, url).href);
+                });
+                node.querySelectorAll("[src]").forEach(a => a.setAttribute("src", new URL(a.getAttribute("src"), url).href));
+                const head = el("p", { class: "er-drill-src" },
+                    el("a", { href: url + "#" + x.q }, (i + 1) + ". " + (node.dataset.label || key)));
+                slots[i].replaceChildren(head, node);
+            } catch (err) {
+                console.error("題目載入失敗:", key, err);
+                slots[i].replaceChildren(el("p", {}, "第 " + (i + 1) + " 題載入失敗，", el("a", { href: url + "#" + x.q }, "到原考卷看"), "。"));
+            }
+            status.textContent = "已載入 " + (++done) + "／" + keys.length + " 題";
+        }));
+        status.textContent = "共 " + keys.length + " 題。作答後按題目上的不熟／待複習／熟練，排進間隔複習。";
+        initQuestionMarks();
+    }
+
+    todayBtn.onclick = () => show(todayPlan(false), "今天的題目（" + qmToday() + "）");
+    redoBtn.onclick = () => { if (confirm("依目前範圍重新排今天的題目？")) show(todayPlan(true), "今天的題目（" + qmToday() + "）"); };
+    drawBtn.onclick = () => {
+        const marks = qmLoad();
+        const test = QM_FILTERS.find(f => f[0] === plan.src)[2];
+        const pool = all.filter(x => inScope(x) && test(marks[x.key]));
+        show(qmShuffle(pool, Math.random).slice(0, plan.n).map(x => x.key),
+            "隨機抽題（" + Math.min(plan.n, pool.length) + "／" + pool.length + " 題）");
+    };
+
+    box.replaceChildren(
+        el("h2", {}, "範圍"), famBox,
+        el("p", { class: "qm-practice-row" }, "題型 ", kindSel, " ", el("label", {}, ansCb, " 只要有解答的題目")),
+        scopeInfo,
+        el("h2", {}, "考前計畫"),
+        el("p", { class: "qm-practice-row" }, "考試日期 ", dateIn), planInfo,
+        el("p", { class: "qm-practice-row" }, todayBtn, " ", redoBtn),
+        el("h2", {}, "隨機抽題"),
+        el("p", { class: "qm-practice-row" }, srcSel, " ", nSel, " ", drawBtn), drawInfo,
+        out);
+    if (window.qmPracticeRefresh) document.removeEventListener("qm-change", window.qmPracticeRefresh);
+    window.qmPracticeRefresh = refresh;
+    document.addEventListener("qm-change", refresh);
+    refresh();
+}
+
 // 逐題讀各頁（複習清單頁除外）標題下提醒今天有幾題到期
 function initDueReminder() {
     const path = window.location.pathname;
@@ -637,6 +853,7 @@ if (typeof document$ !== "undefined") {
         initReviewList();
         initDueReminder();
         initMarkFilter();
+        initPractice();
     });
 } else {
     document.addEventListener("DOMContentLoaded", function () {
@@ -647,5 +864,6 @@ if (typeof document$ !== "undefined") {
         initReviewList();
         initDueReminder();
         initMarkFilter();
+        initPractice();
     });
 }
