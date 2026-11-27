@@ -44,7 +44,7 @@ landnote/
     │   │   ├── grouper.py            # 相似文章分組、關鍵字頁
     │   │   ├── site_generator.py     # ★ 產生 site_src/docs 全部內容與 mkdocs.yml
     │   │   ├── exam_bank.py          # 估價師主題題庫（exambank 指令建 JSON；產生器寫 exam-bank/ 頁）
-    │   │   ├── exam_reader.py        # 逐題讀六科頁面（exam-reader/<科目>/），附擬答與相關文章
+    │   │   ├── exam_reader.py        # 逐題讀各科頁面（exam-reader/<科目>/，科目清單見 READERS）與總覽頁，附擬答與相關文章
     │   │   └── law_timeline.py       # 法規修正沿革 → 文章開頭的法規時效提醒
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
     │   └── utils/                    # logger、PDF、文字處理

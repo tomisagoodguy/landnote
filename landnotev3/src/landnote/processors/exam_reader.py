@@ -13,6 +13,7 @@
 import hashlib
 import json
 import math
+import os
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -431,17 +432,49 @@ def build(exam_dir: Path = EXAM_DIR, data_dir: Path = EXAM_READER_DATA_DIR) -> L
                 if family in reader_families and family != primary and re.search(pattern, folder.name):
                     folders[family].append(folder)
     written = []
+    unparsed: List[str] = []
     for family, slug, _ in READERS:
-        papers = _build_family(folders.get(family, []))
+        out_file = data_file(slug, data_dir)
+        known = _known_pdfs(out_file)
+        failed: List[str] = []
+        papers = _build_family(folders.get(family, []), failed)
+        unparsed += [rel for rel in failed if rel not in known]
         if papers:
-            out_file = data_file(slug, data_dir)
             out_file.parent.mkdir(parents=True, exist_ok=True)
             out_file.write_text(json.dumps(papers, ensure_ascii=False, indent=1), encoding="utf-8")
             written.append(out_file)
+    _report_unparsed(list(dict.fromkeys(unparsed)))  # 跨科考卷會出現在多個家族，去重
     return written
 
 
-def _build_family(folders: List[Path]) -> List[dict]:
+def _known_pdfs(out_file: Path) -> set:
+    """上一版閱讀版 JSON 已收錄的考卷；只對不在其中的新考卷發拆題失敗警告，舊的已知失敗不重複吵。"""
+    if not out_file.exists():
+        return set()
+    return {p["pdf"] for p in json.loads(out_file.read_text(encoding="utf-8"))}
+
+
+def _report_unparsed(rels: List[str]) -> None:
+    """新考卷有文字卻拆出 0 題（多半是格式變了，規則沒對上）；在 GitHub Actions 中另寫 warning 與執行摘要。"""
+    if not rels:
+        return
+    print(f"有 {len(rels)} 份新考卷抽得到文字卻拆出 0 題（逐題讀只會提供原卷連結）：")
+    in_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+    for rel in rels:
+        print(f"  {rel}")
+        if in_actions:
+            print(f"::warning title=考卷拆出 0 題::{rel}")
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write(f"## 新考卷拆出 0 題（{len(rels)} 份）\n\n"
+                    "這些 PDF 抽得到文字，但 `exam_reader.parse_paper` 沒拆出任何題目，"
+                    "可能是題號、選項或配分格式和以往不同，需要調整拆題規則。\n\n"
+                    + "".join(f"- `{rel}`\n" for rel in rels))
+
+
+def _build_family(folders: List[Path], unparsed: List[str]) -> List[dict]:
+    """拆出家族內每份考卷；有文字卻拆出 0 題的考卷路徑附加到 unparsed。"""
     papers = []
     for folder in folders:
         for pdf in sorted(folder.glob("*.pdf")):
@@ -453,7 +486,10 @@ def _build_family(folders: List[Path]) -> List[dict]:
                 text = _pdf_text(pdf)
             except Exception:  # 少數 PDF 損毀打不開，仍保留原卷連結
                 text = ""
-            parsed = parse_paper(text) if len(text.strip()) >= MIN_TEXT else {"commentary": [], "questions": []}
+            has_text = len(text.strip()) >= MIN_TEXT  # 沒文字的掃描檔由 ocr_scanned.py --check 提醒
+            parsed = parse_paper(text) if has_text else {"commentary": [], "questions": []}
+            if has_text and not parsed["questions"]:
+                unparsed.append(rel)
             papers.append({
                 "id": f"{m.group(1)}-{hashlib.md5(rel.encode('utf-8')).hexdigest()[:6]}",
                 "year": int(m.group(1)),
@@ -785,12 +821,54 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
     index = ArticleIndex(posts_dir)
     laws = LawIndex()
     nav = []
+    written = []
     for _, slug, name in readers:
         papers = json.loads(data_file(slug, data_dir).read_text(encoding="utf-8"))
         if papers:
             _write_family(docs_dir / READER_ROOT / slug, papers, index, laws, name, slug)
             nav.append((name, f"{READER_ROOT}/{slug}/index.md"))
+            written.append((slug, name, papers))
+    if written:
+        _write_overview(docs_dir / READER_ROOT, written)
+        nav.insert(0, ("各科總覽", f"{READER_ROOT}/index.md"))
     return nav
+
+
+def _has_key(q: dict) -> bool:
+    """題目是否有解答：申論看詳解內容，測驗看答案字母。"""
+    return bool(q.get("key") if q["kind"] == "choice" else q.get("answer"))
+
+
+def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]]) -> None:
+    """exam-reader/index.md：各科考卷數、題數與詳解涵蓋率一覽。"""
+    out.mkdir(parents=True, exist_ok=True)
+    rows = []
+    t_p = t_a = t_q = t_k = 0
+    for slug, name, papers in families:
+        qs = [q for p in papers for q in p["questions"]]
+        n_a = sum(p["has_answer"] for p in papers)
+        n_k = sum(_has_key(q) for q in qs)
+        years = sorted({p["year"] for p in papers})
+        pct = f"{n_k * 100 // len(qs)}%" if qs else "—"
+        rows.append(f"| [{name}]({slug}/index.md) | {years[0]}–{years[-1]} | {len(papers)} | {n_a} | "
+                    f"{len(qs)} | {n_k}（{pct}） |")
+        t_p, t_a, t_q, t_k = t_p + len(papers), t_a + n_a, t_q + len(qs), t_k + n_k
+    lines = [
+        "---\nhide:\n  - navigation\n  - toc\n---\n",
+        "# 逐題讀：各科總覽",
+        "",
+        f"地政相關考古題共 **{len(families)}** 科、**{t_p}** 份考卷、**{t_q}** 題拆成網頁逐題閱讀，"
+        f"其中 **{t_a}** 份附補習班詳解，**{t_k}** 題（{t_k * 100 // max(t_q, 1)}%）有解答可看。",
+        "",
+        "!!! note \"不是每份考卷都有詳解\"",
+        "    詳解來自補習班公開的解題 PDF，部分年度或考試沒有出詳解，這些考卷只有題目；"
+        "測驗題若答案頁無法自動對應，也會只顯示題目。各科頁面的「歷屆考卷」表格有 ✓ 的才附詳解。",
+        "",
+        "| 科目 | 年度 | 考卷 | 附詳解考卷 | 題數 | 有解答的題目 |",
+        "|---|---|---:|---:|---:|---:|",
+        *rows,
+    ]
+    (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def _write_family(out: Path, papers: List[dict], index: ArticleIndex, laws: "LawIndex", name: str,
