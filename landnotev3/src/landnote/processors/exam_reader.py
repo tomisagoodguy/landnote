@@ -679,6 +679,46 @@ def teacher_answer_md(doc: dict, depth: int) -> List[str]:
         "", f"    出處：[{_md_escape(doc['title'])}](<{up}{doc['path']}>)", ""]
 
 
+OUTLINE_MARKS = [  # 擬答分段標號；取最早出現、至少兩段的那一種當第一層要點
+    re.compile(r"^[（(]\s*[一二三四五六七八九十]+\s*[）)]\s*(.*)"),
+    re.compile(r"^[一二三四五六七八九十]+\s*[、.．]\s*(.*)"),
+    re.compile(r"^\d{1,2}\s*[.．、](?!\d)\s*(.*)"),
+]
+OUTLINE_MAX = 8
+OUTLINE_LEN = 36
+_OUTLINE_MD = re.compile(r"^[#>\-\s]+")
+
+
+def outline_points(text: str) -> List[str]:
+    """從擬答抽出第一層段落標題當答題要點（「(一)土地法有關收回權規定：…」→「土地法有關收回權規定」）。
+
+    標題取到第一個冒號或句號；少於兩段（擬答沒分段）回空，前端就只給寫作框、不給要點對照。
+    """
+    lines = [_OUTLINE_MD.sub("", ln).replace("**", "").strip() for ln in text.splitlines()]
+    best: Optional[Tuple[int, List[str]]] = None
+    for pat in OUTLINE_MARKS:
+        hits = [(i, m.group(1)) for i, ln in enumerate(lines) if (m := pat.match(ln))]
+        if len(hits) >= 2 and (best is None or hits[0][0] < best[0]):
+            best = (hits[0][0], [h for _, h in hits])
+    points = []
+    for head in (best[1] if best else []):
+        head = re.split(r"[：:。]", head, maxsplit=1)[0].strip()
+        if head:
+            points.append(head if len(head) <= OUTLINE_LEN else head[:OUTLINE_LEN] + "…")
+    return points[:OUTLINE_MAX] if len(points) >= 2 else []
+
+
+def _outline_md(q: dict, answer_doc: Optional[dict]) -> List[str]:
+    """申論題的「先寫骨架」容器（study_tools.js 的 initOutlines 產生寫作框）；data-points 是擬答要點。"""
+    import html
+
+    text = "\n".join(q["answer"]) or (answer_doc["answer_md"] if answer_doc else "")
+    if not text:
+        return []
+    points = json.dumps(outline_points(text), ensure_ascii=False)
+    return [f'<div class="er-outline" data-points="{html.escape(points)}"></div>', ""]
+
+
 # ---- 網頁 ----
 
 HIDE_NAV = "---\nhide:\n  - navigation\n---\n"
@@ -793,6 +833,8 @@ def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str]
            _md_escape(q["text"]), ""]
     if q.get("options"):
         out += [_md_escape(o) + "<br>" for o in q["options"]] + [""]
+    if q["kind"] == "essay":
+        out += _outline_md(q, answer_doc)
     if q["kind"] == "choice" and q["key"]:
         out += ['??? success "答案"', f"    **{q['key']}**", ""]
     elif q["answer"]:
@@ -939,8 +981,9 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
         _link_law_families(docs_dir / READER_ROOT, examined)
         _link_law_interps(docs_dir / READER_ROOT, examined, law_interps)
         changes = _write_law_changes(docs_dir / READER_ROOT, examined, laws.timeline)
+        forecast = _write_forecast(docs_dir / READER_ROOT, written, examined, laws.timeline)
         _write_overview(docs_dir / READER_ROOT, written, changes,
-                        sum(1 for n, _ in interp_links.values() if n))
+                        sum(1 for n, _ in interp_links.values() if n), forecast)
         _write_review_page(docs_dir / READER_ROOT)
         _write_question_index(docs_dir / READER_ROOT, written)
         _write_practice_page(docs_dir / READER_ROOT)
@@ -951,6 +994,9 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
             nav.insert(3, ("近期修法考點", f"{READER_ROOT}/{LAW_CHANGES_PAGE}.md"))
         if interp_links:
             nav.insert(4 if changes else 3, ("大法官解釋與憲法判決", f"{READER_ROOT}/{INTERP_DIR}/index.md"))
+        if forecast:
+            at = 3 + bool(changes) + bool(interp_links)
+            nav.insert(at, ("冷熱考點押題清單", f"{READER_ROOT}/{FORECAST_PAGE}.md"))
     return nav
 
 
@@ -960,10 +1006,10 @@ def _has_key(q: dict) -> bool:
 
 
 def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], changes: int = 0,
-                    interps: int = 0) -> None:
+                    interps: int = 0, forecast: int = 0) -> None:
     """exam-reader/index.md：各科考卷數、題數與詳解涵蓋率一覽。
 
-    changes 為近期修法考點頁的考過條文數，interps 為考過的解釋號數；0 表示沒有該頁。
+    changes 為近期修法考點頁的考過條文數，interps 為考過的解釋號數，forecast 為押題清單列出的條文數；0 表示沒有該頁。
     """
     out.mkdir(parents=True, exist_ok=True)
     rows = []
@@ -999,6 +1045,9 @@ def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], chan
         *([f'!!! abstract "大法官解釋與憲法判決：{interps} 號考過"',
            f"    [大法官解釋與憲法判決]({INTERP_DIR}/index.md) 把題目或詳解引用的釋字、憲判字整理成一號一頁，"
            "附老師文章的說明與相關法條；文章提過但還沒考的新判決也列在裡面。", ""] if interps else []),
+        *(['!!! example "冷熱考點押題清單"',
+           f"    [冷熱考點押題清單]({FORECAST_PAGE}.md) 依出題年度把考過的條文分成常態必考、回鍋候選（久未考的老考點）"
+           "與考後修法，並對照你的熟練度標記，排出考前讀書順序。", ""] if forecast else []),
         "| 科目 | 年度 | 考卷 | 附詳解考卷 | 題數 | 有解答的題目 |",
         "|---|---|---:|---:|---:|---:|",
         *rows,
@@ -1144,6 +1193,102 @@ def _write_law_changes(out: Path, examined: Dict[str, list], timeline: LawTimeli
     out.mkdir(parents=True, exist_ok=True)
     (out / f"{LAW_CHANGES_PAGE}.md").write_text("\n".join(lines), encoding="utf-8")
     return len(hit_refs)
+
+
+FORECAST_PAGE = "forecast"  # 冷熱考點押題清單：exam-reader/forecast/
+FORECAST_MIN_YEARS = 3  # 至少考過幾個年度才算「老考點」，回鍋候選才有意義
+FORECAST_GAP = 3  # 回鍋候選：最少幾年沒考
+FORECAST_AMEND_YEARS = 5  # 考後修法：只看近幾年的修正
+FORECAST_MAX = 20  # 每張表最多幾條
+
+
+def _write_forecast(out: Path, families: List[Tuple[str, str, List[dict]]], examined: Dict[str, list],
+                    timeline: LawTimeline) -> int:
+    """exam-reader/forecast.md：各科考過兩題以上的條文，依出題年度分成「常態必考／回鍋候選／考後修法」三張表。
+
+    出題率 = 考過的年度數 ÷ 本科有考卷的年度數；平均間隔 = 本科年度跨度 ÷ 考過的年度數。
+    「熟練」欄由 study_tools.js 依 data-qs 的題目讀 qmark_v1 填入。回傳三張表合計列出的條文數，0 則不產生。
+    """
+    from datetime import date
+
+    amend_cutoff = f"{date.today().year - FORECAST_AMEND_YEARS}-01-01"
+    sections = []
+    total = 0
+    for slug, name, papers in families:
+        years = sorted({p["year"] for p in papers if p["questions"]})
+        if not years:
+            continue
+        latest, span = years[-1], years[-1] - years[0] + 1
+        rows = []
+        for ref, fams in examined.items():
+            for _, f_slug, page, qs in fams:
+                if f_slug != slug or not page:
+                    continue
+                ys = sorted({p["year"] for p, _ in qs})
+                amended = [d for d in timeline.amended(ref) if d >= amend_cutoff and d > f"{ys[-1] + 1911}-12-31"]
+                rows.append({
+                    "ref": ref, "page": page, "n": len(qs), "ys": ys, "last": ys[-1], "gap": latest - ys[-1],
+                    "recent_years": sum(y > latest - RECENT_YEARS for y in ys),
+                    "recent": sum(p["year"] > latest - RECENT_YEARS for p, _ in qs),
+                    "every": span / len(ys), "amended": max(amended) if amended else "",
+                    "qs": " ".join(f"{p['id']}-{qid(q)}" for p, q in qs),
+                })
+        hot = sorted((r for r in rows if r["recent_years"] >= 2), key=lambda r: (-r["recent"], -r["n"]))
+        hot_refs = {r["ref"] for r in hot}
+        back = sorted((r for r in rows if r["ref"] not in hot_refs and len(r["ys"]) >= FORECAST_MIN_YEARS
+                       and r["gap"] >= max(FORECAST_GAP, round(r["every"]))),
+                      key=lambda r: (-len(r["ys"]), -r["gap"]))
+        changed = sorted((r for r in rows if r["amended"]), key=lambda r: (-r["n"], r["amended"]))
+        if not (hot or back or changed):
+            continue
+        tables = [
+            ("常態必考", f"近 {RECENT_YEARS} 年有 2 個以上年度出題，基本分，一定要熟", hot),
+            ("回鍋候選", f"考過 {FORECAST_MIN_YEARS} 個年度以上，但已經 {FORECAST_GAP} 年以上（且超過平均間隔）沒考",
+             back),
+            ("考後修法", f"上次出題之後條文又修正（近 {FORECAST_AMEND_YEARS} 年內），新舊法差異是熱門考點", changed),
+        ]
+        lines = [f"## {name}", "",
+                 f"本科 {years[0]}–{latest} 年共 {len(years)} 個年度有考卷；只計考過兩題以上、有比較頁的條文。", ""]
+        for title, how, group in tables:
+            if not group:
+                continue
+            lines += [f"### {name}：{title}（{len(group)}）", "", how + "。", "",
+                      "| 條文 | 出題年度 | 平均間隔 | 最近一次 | 近 5 年 | 我的熟練 |", "|---|---:|---:|---:|---:|---|"]
+            for r in group[:FORECAST_MAX]:
+                note = f'<br><span class="pb-count er-warn">修正 {r["amended"]}</span>' if r["amended"] else ""
+                lines.append(
+                    f"| [{r['ref']}]({slug}/{LAW_DIR}/{r['page']}.md){note} | {len(r['ys'])}／{len(years)} 年 | "
+                    f"{r['every']:.1f} 年 | {r['last']}（{r['gap']} 年前） | {r['recent'] or ''} | "
+                    f'<span class="er-fc-mark" data-qs="{r["qs"]}"></span> |')
+            if len(group) > FORECAST_MAX:
+                lines.append(f"\n其餘 {len(group) - FORECAST_MAX} 條見[依法條比較]({slug}/{LAW_DIR}/index.md)。")
+            lines.append("")
+            total += min(len(group), FORECAST_MAX)
+        sections.append((name, lines))
+    if not sections:
+        return 0
+    lines = [
+        HIDE_NAV,
+        "# 冷熱考點押題清單",
+        "",
+        "依歷屆考古題的**出題年度**替考過的條文分類，決定考前的讀書順序。",
+        "",
+        '!!! tip "怎麼用這一頁"',
+        "    1. **常態必考**先顧好，這是大家都會的基本分。",
+        "    2. **回鍋候選**是命題委員以前很愛、最近幾年沒碰的條文，押題價值最高。",
+        "    3. **考後修法**要讀現行條文，舊題詳解可能已不適用。",
+        "    4. 「我的熟練」是你在這台裝置上對這條相關題目的標記（熟練／已標記／題數），"
+        "優先處理**高頻但還沒熟練**的條文。",
+        "",
+        '!!! note "這只是統計，不是預言"',
+        "    分類只看出題年度與修法日期；題目對到哪一條部分是自動比對，偶有對錯。右側目錄可跳到各科。",
+        "",
+    ]
+    for _, sec in sections:
+        lines += sec
+    out.mkdir(parents=True, exist_ok=True)
+    (out / f"{FORECAST_PAGE}.md").write_text("\n".join(lines), encoding="utf-8")
+    return total
 
 
 def _write_review_page(out: Path) -> None:

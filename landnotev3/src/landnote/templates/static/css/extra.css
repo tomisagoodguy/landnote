@@ -1104,3 +1104,54 @@ a.feature-card:active {
 .markmap-foreign .lm-q--weak { background: rgba(224, 49, 49, 0.18); }
 .markmap-foreign .lm-q--review { background: rgba(245, 159, 0, 0.22); }
 .markmap-foreign .lm-q--done { background: rgba(47, 158, 68, 0.2); }
+
+/* 申論題「先寫答題骨架」（study_tools.js initOutlines） */
+.md-typeset .er-outline-box {
+  margin: 0.8em 0;
+  padding: 0.4em 0.8em;
+  border: 1px dashed var(--md-default-fg-color--lighter);
+  border-radius: 6px;
+}
+.md-typeset .er-outline-box > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.md-typeset .er-outline-box textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.6em;
+  padding: 0.5em;
+  font: inherit;
+  color: var(--md-default-fg-color);
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  resize: vertical;
+}
+.md-typeset .er-outline-result ul {
+  list-style: none;
+  margin-left: 0;
+}
+.md-typeset .er-outline-result li {
+  margin-left: 0;
+}
+.md-typeset .er-outline-score {
+  font-weight: 600;
+}
+
+/* 冷熱考點押題清單 */
+.md-typeset td .er-warn {
+  color: var(--pb-coral-deep);
+  border-color: var(--pb-coral-deep);
+  background: var(--pb-coral-l);
+}
+.md-typeset .er-fc-mark {
+  white-space: nowrap;
+}
+.md-typeset .er-fc-mark--new {
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .er-fc-mark--done {
+  color: var(--pb-green);
+  font-weight: 600;
+}

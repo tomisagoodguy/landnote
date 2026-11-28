@@ -802,6 +802,7 @@ async function initPractice() {
         }));
         status.textContent = "共 " + keys.length + " 題。作答後按題目上的不熟／待複習／熟練，排進間隔複習。";
         initQuestionMarks();
+        initOutlines();
     }
 
     todayBtn.onclick = () => show(todayPlan(false), "今天的題目（" + qmToday() + "）");
@@ -828,6 +829,130 @@ async function initPractice() {
     window.qmPracticeRefresh = refresh;
     document.addEventListener("qm-change", refresh);
     refresh();
+}
+
+// 申論題「先寫骨架、再看擬答」：.er-outline（exam_reader._outline_md）變成寫作框，草稿依題目 data-q 存 localStorage。
+// 寫好後對照 data-points（擬答第一層段落標題），依字二元組重疊自動勾出寫到的要點，可手動修正，算出涵蓋率。
+const OL_KEY = "qm_outline_v1";  // {data-q: {t: 草稿, d: 日期, c: 涵蓋要點數, k: 要點總數}}
+const OL_HIT = 0.4;              // 要點的字二元組有幾成出現在草稿裡就自動勾選
+
+function olLoad() {
+    try { return JSON.parse(localStorage.getItem(OL_KEY) || "{}"); }
+    catch (err) { console.warn("讀取答題骨架失敗:", err); return {}; }
+}
+
+function olSave(key, patch) {
+    const all = olLoad();
+    const next = Object.assign({}, all[key], patch, { d: qmToday() });
+    if (!next.t && !next.k) delete all[key]; else all[key] = next;
+    try { localStorage.setItem(OL_KEY, JSON.stringify(all)); return true; }
+    catch (err) { console.warn("儲存答題骨架失敗:", err); return false; }
+}
+
+function olGrams(s) {
+    const t = (s || "").replace(/[^一-鿿A-Za-z0-9]/g, "");
+    const out = new Set();
+    for (let i = 0; i < t.length - 1; i++) out.add(t.slice(i, i + 2));
+    return out;
+}
+
+function olCovered(point, grams) {
+    const g = olGrams(point.replace(/…$/, ""));
+    if (!g.size) return false;
+    let hit = 0;
+    g.forEach(x => { if (grams.has(x)) hit++; });
+    return hit / g.size >= OL_HIT;
+}
+
+function initOutlines() {
+    document.querySelectorAll(".er-outline").forEach(box => {
+        if (box.dataset.ready) return;
+        const item = box.closest(".qb-item[data-q]");
+        if (!item) return;
+        box.dataset.ready = "1";
+        const key = item.dataset.q;
+        let points = [];
+        try { points = JSON.parse(box.dataset.points || "[]"); }
+        catch (err) { console.warn("擬答要點格式錯誤:", key, err); }
+        const saved = olLoad()[key] || {};
+
+        const el = (tag, attrs, ...kids) => {
+            const n = document.createElement(tag);
+            Object.entries(attrs || {}).forEach(([k, v]) => n.setAttribute(k, v));
+            n.append(...kids);
+            return n;
+        };
+        const details = el("details", { class: "er-outline-box" });
+        const summary = el("summary", {}, "✍ 先寫答題骨架" + (saved.t ? "（已存草稿 " + saved.d + "）" : ""));
+        const area = el("textarea", { rows: "6", placeholder: "不看解答，先列爭點、法條、結論（每行一點）…" });
+        area.value = saved.t || "";
+        const status = el("span", { class: "qm-date", role: "status" });
+        const checkBtn = el("button", { type: "button", class: "md-button md-button--primary" },
+            points.length ? "寫好了，對照要點" : "寫好了，打開解答");
+        const result = el("div", { class: "er-outline-result" });
+        details.append(summary, area, el("p", { class: "qm-practice-row" }, checkBtn, " ", status), result);
+        box.replaceChildren(details);
+
+        let timer = null;
+        area.addEventListener("input", () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                status.textContent = olSave(key, { t: area.value.trim() }) ? "已自動儲存" : "無法儲存（瀏覽器停用本機儲存空間）";
+            }, 600);
+        });
+
+        const openAnswers = () => item.querySelectorAll(":scope > details.success").forEach(d => { d.open = true; });
+        const showResult = (auto) => {
+            const grams = olGrams(area.value);
+            const prev = (olLoad()[key] || {}).hits || [];
+            const boxes = points.map((p, i) => {
+                const cb = el("input", { type: "checkbox" });
+                cb.checked = auto ? olCovered(p, grams) : prev.includes(i);
+                return [cb, el("li", {}, el("label", {}, cb, " " + p))];
+            });
+            const score = el("p", { class: "er-outline-score" });
+            const update = () => {
+                const hits = boxes.map(([cb], i) => cb.checked ? i : -1).filter(i => i >= 0);
+                const pct = Math.round(hits.length * 100 / points.length);
+                score.textContent = "涵蓋 " + hits.length + "／" + points.length + " 個要點（" + pct + "%）" +
+                    (pct < 50 ? "，建議標「不熟」" : pct < 80 ? "，建議標「待複習」" : "，可以標「熟練」");
+                olSave(key, { t: area.value.trim(), c: hits.length, k: points.length, hits });
+            };
+            boxes.forEach(([cb]) => cb.addEventListener("change", update));
+            result.replaceChildren(
+                el("p", { class: "er-related-title" }, "擬答要點（自動勾出你寫到的，沒對到可自己改）"),
+                el("ul", {}, ...boxes.map(([, li]) => li)), score);
+            update();
+        };
+        checkBtn.onclick = () => {
+            olSave(key, { t: area.value.trim() });
+            if (points.length) showResult(true);
+            openAnswers();
+        };
+        if (saved.k && points.length) showResult(false);
+    });
+}
+
+// 押題清單的「我的熟練」欄：.er-fc-mark[data-qs] 列出這條法條的題目，依 qmark_v1 顯示熟練／已標記／題數
+function initForecastMarks() {
+    const cells = document.querySelectorAll(".er-fc-mark[data-qs]");
+    if (!cells.length) return;
+    const render = () => {
+        const marks = qmLoad();
+        cells.forEach(c => {
+            const qs = c.dataset.qs.split(" ").filter(Boolean);
+            const done = qs.filter(k => (marks[k] || {}).s === "done").length;
+            const marked = qs.filter(k => marks[k]).length;
+            const weak = qs.filter(k => (marks[k] || {}).s === "weak").length;
+            c.textContent = done + "／" + marked + "／" + qs.length + (weak ? "（不熟 " + weak + "）" : "");
+            c.className = "er-fc-mark" + (marked === 0 ? " er-fc-mark--new" : done === qs.length ? " er-fc-mark--done" : "");
+            c.title = "熟練 " + done + " 題、已標記 " + marked + " 題、共 " + qs.length + " 題";
+        });
+    };
+    render();
+    if (window.olForecastRefresh) document.removeEventListener("qm-change", window.olForecastRefresh);
+    window.olForecastRefresh = render;
+    document.addEventListener("qm-change", render);
 }
 
 // 逐題讀各頁（複習清單頁除外）標題下提醒今天有幾題到期
@@ -979,6 +1104,8 @@ if (typeof document$ !== "undefined") {
         initDueReminder();
         initMarkFilter();
         initPractice();
+        initOutlines();
+        initForecastMarks();
         initMindmaps();
     });
 } else {
@@ -991,6 +1118,8 @@ if (typeof document$ !== "undefined") {
         initDueReminder();
         initMarkFilter();
         initPractice();
+        initOutlines();
+        initForecastMarks();
         initMindmaps();
     });
 }
