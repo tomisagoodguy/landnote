@@ -7,7 +7,7 @@ from collections import defaultdict
 import yaml
 
 from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR, SITE_URL
-from landnote.processors import exam_bank, exam_reader, mindmap
+from landnote.processors import exam_bank, exam_reader, mindmap, my_notes
 from landnote.processors.law_timeline import LawTimeline
 from landnote.utils.logger import Logger
 
@@ -28,6 +28,7 @@ class SiteGenerator:
         self.authors = set()
         self.exam_bank_nav = []
         self.exam_reader_nav = []
+        self.my_notes_nav = []
         self.law_timeline = LawTimeline()
         self.law_notice_count = 0
 
@@ -69,6 +70,8 @@ class SiteGenerator:
             at = next((i + 1 for i, (_, path) in enumerate(self.exam_reader_nav) if path == review),
                       len(self.exam_reader_nav))
             self.exam_reader_nav[at:at] = mindmap.write_pages(self.docs_dir)
+        # 我的法條筆記（要在逐題讀之後：把筆記掛到法條頁）
+        self.my_notes_nav = my_notes.write_pages(self.docs_dir)
 
         # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()
@@ -747,6 +750,8 @@ class SiteGenerator:
         }
         if self.exam_reader_nav:
             config['nav'].append({'逐題讀': [{t: p} for t, p in self.exam_reader_nav]})
+        if self.my_notes_nav:
+            config['nav'].append({'我的法條筆記': [{t: p} for t, p in self.my_notes_nav]})
         if self.exam_bank_nav:
             config['nav'].append({'估價師專區': [{'專區首頁': 'appraiser.md'},
                                               *({t: p} for t, p in self.exam_bank_nav)]})

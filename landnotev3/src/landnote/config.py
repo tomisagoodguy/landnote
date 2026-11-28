@@ -37,6 +37,8 @@ EXAM_OCR_DIR = DATA_DIR / "exam_ocr"
 LAW_TIMELINE_FILE = DATA_DIR / "law_timeline.json"
 # 追蹤法規的現行條文：law_timeline 與時間軸一起寫入，exam_reader 用來把考題對到條文
 LAW_ARTICLES_FILE = DATA_DIR / "law_articles.json"
+# 我的法條筆記（手工整理的地政士、經紀人重點，人工維護、非爬蟲產出）：notes.json＋images/，my_notes 讀取
+MY_NOTES_DIR = DATA_DIR / "my_notes"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)

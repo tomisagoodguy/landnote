@@ -48,7 +48,8 @@ landnote/
     │   │   ├── interpretation.py     # 釋字／憲判字字號擷取與正規化（解釋頁由 exam_reader 產生）
     │   │   ├── obsidian_vault.py     # obsidian 指令：逐題讀考古題 → Obsidian vault（題目／法條／主題互連）
     │   │   ├── mindmap.py            # 考點心智圖（各科：法規編章節／主題；跨科目概念），exam-reader/mindmap/
-    │   │   └── law_timeline.py       # 法規修正沿革、現行條文與編章節（chapters）→ 法規時效提醒、心智圖骨架
+    │   │   ├── law_timeline.py       # 法規修正沿革、現行條文與編章節（chapters）→ 法規時效提醒、心智圖骨架
+    │   │   └── my_notes.py           # 我的法條筆記（data/my_notes）→ notes/ 各法規頁，並掛到逐題讀法條頁
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
     │   └── utils/                    # logger、PDF、文字處理
     ├── scripts/
@@ -56,6 +57,7 @@ landnote/
     │   └── update_readme_stats.py    # 重算 README 的 <!-- stats:key --> 數字（兩個 workflow 都跑）
     ├── data/
     │   ├── exam_bank/                # 估價師題庫 JSON（update_exams.yml 每月重建）
+    │   ├── my_notes/                 # ★ 人工維護：使用者手整的地政士／經紀人重點（notes.json＋images/），CI 不改
     │   └── real_estate_articles/
     │       ├── articles/             # 爬下來的高點文章 Markdown（產生器的輸入）
     │       ├── jasper/               # Jasper 不動產文章 Markdown
@@ -169,4 +171,8 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
   - 法規骨架來自 `data/law_articles.json` 的 `chapters`（`laws` 指令寫入）；舊檔沒有時條文直接掛在法規下，不會壞。
   - 跨科目概念 = `CONCEPTS` 關鍵詞（只比對題目與選項）＋兩科以上考過且 ≥ 4 題的法條，只收兩科以上出現的；概念 id（`k<序號>`）依清單順序，**新概念加在清單最後**，網址才不會變。
   - 題目節點帶 `data-q`，依 `qmark_v1` 熟練度上色；各科題目總覽頁的心智圖入口由 `_link_family_indexes` 插在「跨年度比較」那行之前。
+- 我的法條筆記（`my_notes.py`，在逐題讀之後呼叫）：`data/my_notes/notes.json` 每則筆記是 `article`（條號、重要度、口訣 memo、整理當時抄的條文 text）或 `topic`（Markdown body、refs、exams）。
+  - 條文卡每次產生都跟 `law_articles.json` **逐段嚴格比對**（只忽略標點），不同就標「條文已修正」——一兩字的修正（如「百分之二之罰鍰」→「百分之二以下之罰鍰」）正是考點，不要改回模糊比對。
+  - 主題卡無法比對，引用條文在 `NOTES_AS_OF`（原檔考題最晚 109 年 → 2021-01-01）之後修正的標橘色。
+  - 法條頁的 `<!-- my-notes -->`（`exam_reader.MY_NOTES_MARK`）由這裡換成「我的筆記」區塊。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。

@@ -2065,6 +2065,7 @@ def _law_of(ref: str) -> str:
 LAW_RELATED_MAX = 6
 OTHER_FAMILIES_MARK = "<!-- other-families -->"  # write_pages 全部科目寫完後換成「其他科目也考過」
 INTERP_MARK = "<!-- interpretations -->"  # write_pages 寫完解釋頁後換成「相關大法官解釋」
+MY_NOTES_MARK = "<!-- my-notes -->"  # site_generator 之後呼叫 my_notes.write_pages 換成「我的筆記」
 
 
 def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws: LawIndex, name: str,
@@ -2107,6 +2108,7 @@ def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws
         if n_stale:
             lines += ["", f"其中 **{n_stale}** 題出題後條文又修正過，標有「出題後修正」，舊詳解可能已不適用。"]
         lines += [""]
+    lines += [MY_NOTES_MARK, ""]
     lines += related_md(articles, 3, "老師文章：這一條怎麼讀（展開即可閱讀）")
     if related:
         law = _law_of(ref)
