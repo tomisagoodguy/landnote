@@ -11,7 +11,7 @@
 | 內容 | 數量 | 位置 |
 | :--- | :--- | :--- |
 | 不動產專欄文章 | <!-- stats:articles -->996 篇<!-- /stats --> | [線上閱讀](https://tomisagoodguy.github.io/landnote/blog/)・[主題分組列表](landnotev3/data/real_estate_articles/README_grouped.md)・[原始 Markdown](landnotev3/data/real_estate_articles/articles/) |
-| Jasper 不動產文章 | <!-- stats:jasper -->354 篇<!-- /stats --> | [線上閱讀](https://tomisagoodguy.github.io/landnote/jasper/)（法條逐條解說） |
+| Jasper 不動產文章 | <!-- stats:jasper -->357 篇<!-- /stats --> | [線上閱讀](https://tomisagoodguy.github.io/landnote/jasper/)（法條逐條解說） |
 | 文章分類總覽 | — | [依分類瀏覽](https://tomisagoodguy.github.io/landnote/blog/category/) |
 | 文章年度合輯 PDF | 2014–2026 | [線上閱讀與下載](https://tomisagoodguy.github.io/landnote/tags/)（講義頁「年度合輯」） |
 | 地政與估價師考古題 | <!-- stats:land_exams -->832 份<!-- /stats -->・<!-- stats:land_subjects -->74 科<!-- /stats --> | [科目目錄](landnotev3/地政考古題/README.md)・[整科合併 PDF](landnotev3/地政考古題/合併後PDF檔案/) |
