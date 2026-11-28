@@ -118,7 +118,6 @@ jobs:
           echo "No changes to commit"
         else
           git commit -m "docs: auto-update articles and reports [skip ci]"
-          # Use rebase to integrate remote changes smoothly
-          git pull --rebase origin main
-          git push
+          # 衝突一律取本次產出（含修改／刪除衝突），push 被搶先就重試
+          bash landnotev3/scripts/push_data.sh
         fi

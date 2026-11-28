@@ -82,8 +82,8 @@ jobs:
           LAND=$(printf '%s\n' "$ADDED" | grep -c '^landnotev3/地政考古題/' || true)
           LAW=$(printf '%s\n' "$ADDED" | grep -c '^landnotev3/高點法律考古題/' || true)
           git commit -m "docs: auto-update exams (land +${LAND}, law +${LAW}) [skip ci]"
-          git pull --rebase origin main
-          git push
+          # 衝突一律取本次產出（含修改／刪除衝突），push 被搶先就重試
+          bash landnotev3/scripts/push_data.sh
           echo "pushed=true" >> "$GITHUB_OUTPUT"
         fi
 
