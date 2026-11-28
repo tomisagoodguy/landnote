@@ -1200,6 +1200,7 @@ FORECAST_MIN_YEARS = 3  # 至少考過幾個年度才算「老考點」，回鍋
 FORECAST_GAP = 3  # 回鍋候選：最少幾年沒考
 FORECAST_AMEND_YEARS = 5  # 考後修法：只看近幾年的修正
 FORECAST_MAX = 20  # 每張表最多幾條
+FORECAST_HOT_YEARS = 3  # 常態必考：近 RECENT_YEARS 年至少幾個年度出題
 
 
 def _write_forecast(out: Path, families: List[Tuple[str, str, List[dict]]], examined: Dict[str, list],
@@ -1233,7 +1234,8 @@ def _write_forecast(out: Path, families: List[Tuple[str, str, List[dict]]], exam
                     "every": span / len(ys), "amended": max(amended) if amended else "",
                     "qs": " ".join(f"{p['id']}-{qid(q)}" for p, q in qs),
                 })
-        hot = sorted((r for r in rows if r["recent_years"] >= 2), key=lambda r: (-r["recent"], -r["n"]))
+        hot = sorted((r for r in rows if r["recent_years"] >= FORECAST_HOT_YEARS),
+                     key=lambda r: (-r["recent"], -r["n"]))
         hot_refs = {r["ref"] for r in hot}
         back = sorted((r for r in rows if r["ref"] not in hot_refs and len(r["ys"]) >= FORECAST_MIN_YEARS
                        and r["gap"] >= max(FORECAST_GAP, round(r["every"]))),
@@ -1242,7 +1244,7 @@ def _write_forecast(out: Path, families: List[Tuple[str, str, List[dict]]], exam
         if not (hot or back or changed):
             continue
         tables = [
-            ("常態必考", f"近 {RECENT_YEARS} 年有 2 個以上年度出題，基本分，一定要熟", hot),
+            ("常態必考", f"近 {RECENT_YEARS} 年有 {FORECAST_HOT_YEARS} 個以上年度出題，基本分，一定要熟", hot),
             ("回鍋候選", f"考過 {FORECAST_MIN_YEARS} 個年度以上，但已經 {FORECAST_GAP} 年以上（且超過平均間隔）沒考",
              back),
             ("考後修法", f"上次出題之後條文又修正（近 {FORECAST_AMEND_YEARS} 年內），新舊法差異是熱門考點", changed),
