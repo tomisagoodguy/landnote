@@ -16,6 +16,7 @@ function initStudyTools() {
         pageUrl.endsWith('/blog/') ||
         pageUrl.endsWith('/jasper/') ||
         pageUrl.endsWith('/exam-reader/review/') ||  // 複習清單頁：整頁狀態鈕會與題目標記混淆
+        pageUrl.includes('/exam-reader/mindmap/') ||  // 心智圖頁：存成 PDF 印不出互動圖，也不是要「讀完」的文章
         pageUrl.includes('/category/');
     const is404 = document.title.includes('404');
 
@@ -847,6 +848,126 @@ function initDueReminder() {
     h1.insertAdjacentElement("afterend", p);
 }
 
+// ── 考點心智圖（mindmap.py 產生 .lm-mindmap 容器與 JSON）──────────
+// markmap 只在有心智圖的頁面才從 CDN 載入；版本寫死，升級時兩個一起測。
+const MM_SCRIPTS = [
+    ["d3", "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"],
+    ["markmap", "https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"],
+];
+let mmLoading = null;
+let mmLive = [];  // 已建立的 Markmap；換頁後要 destroy，否則全域 refreshHook 會一直留著舊圖
+
+function mmLoadScripts() {
+    if (!mmLoading) {
+        mmLoading = MM_SCRIPTS.reduce((chain, [global, src]) => chain.then(() => {
+            if (window[global] && (global !== "markmap" || window.markmap.Markmap)) return;
+            return new Promise((resolve, reject) => {
+                const s = document.createElement("script");
+                s.src = src;
+                s.onload = resolve;
+                s.onerror = () => reject(new Error("無法載入 " + src));
+                document.head.appendChild(s);
+            });
+        }), Promise.resolve());
+        mmLoading.catch(() => { mmLoading = null; });  // 失敗可在下次換頁重試
+    }
+    return mmLoading;
+}
+
+// 題目節點依熟練度上色：在 data-q 的連結加 class（標記存在 localStorage，產生器無從得知）
+function mmColorize(node, marks, expandAll) {
+    node.content = node.content.replace(/data-q="([^"]+)"/g, (m, key) => {
+        const s = (marks[key] || {}).s;
+        return s ? m + ' class="lm-q lm-q--' + s + '"' : m;
+    });
+    // JSON 為了省空間，葉節點不寫 children；markmap 展開時要求每個節點都有陣列
+    node.children = node.children || [];
+    if (expandAll && node.payload) delete node.payload.fold;  // 產生器預設收合的分支，「全部展開」也要打開
+    node.children.forEach(c => mmColorize(c, marks, expandAll));
+    return node;
+}
+
+// 初始視角：整張圖縮得下又看得清就全圖顯示；太大時 fit 會把字縮到看不清，改用原尺寸、根節點靠左置中
+function mmHome(mm, svg) {
+    const { width, height } = svg.getBoundingClientRect();
+    const { x1, y1, x2, y2 } = mm.state.rect;
+    const fitScale = Math.min(width / Math.max(x2 - x1, 1), height / Math.max(y2 - y1, 1)) * 0.92;
+    if (fitScale >= 0.75) return mm.fit(1.5);
+    const root = mm.state.data.state.rect;
+    const t = window.d3.zoomIdentity.translate(16 - root.x, height / 2 - (root.y + root.height / 2)).scale(1);
+    return mm.transition(mm.svg).call(mm.zoom.transform, t).end().catch(err => console.warn("心智圖定位失敗:", err));
+}
+
+async function initMindmaps() {
+    mmLive = mmLive.filter(m => {
+        if (m.svg.node().isConnected) return true;
+        m.destroy();
+        return false;
+    });
+    const boxes = document.querySelectorAll(".lm-mindmap[data-src]:not([data-ready])");
+    if (!boxes.length) return;
+    for (const box of boxes) {
+        box.dataset.ready = "1";
+        const status = box.querySelector(".lm-loading");
+        let raw;
+        try {
+            const [resp] = await Promise.all([fetch(new URL(box.dataset.src, location.href)), mmLoadScripts()]);
+            if (!resp.ok) throw new Error("心智圖資料 HTTP " + resp.status);
+            raw = await resp.text();
+        } catch (err) {
+            console.error("心智圖載入失敗:", err);
+            if (status) status.textContent = "心智圖載入失敗（" + err.message + "），請重新整理頁面。";
+            delete box.dataset.ready;
+            continue;
+        }
+        if (status) status.remove();
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "lm-svg");
+        const bar = document.createElement("div");
+        bar.className = "lm-toolbar";
+        box.append(bar, svg);
+        let mm = null;
+        const draw = level => {
+            if (mm) { mm.destroy(); mmLive = mmLive.filter(m => m !== mm); }
+            svg.innerHTML = "";
+            const data = mmColorize(JSON.parse(raw), qmLoad(), level < 0);
+            mm = new window.markmap.Markmap(svg, {
+                initialExpandLevel: level, duration: 300, maxWidth: 360, spacingVertical: 6,
+                paddingX: 10, fitRatio: 0.92,
+            });
+            mmLive.push(mm);
+            const shown = mm;
+            mm.setData(data).then(() => mmHome(shown, svg))
+                .catch(err => console.error("心智圖繪製失敗:", err));
+        };
+        const btn = (label, title, fn) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "md-button lm-btn";
+            b.textContent = label;
+            b.title = title;
+            b.addEventListener("click", fn);
+            bar.appendChild(b);
+        };
+        const level = Number(box.dataset.level || 2);
+        btn("收合", "回到預設展開層數", () => draw(level));
+        btn("展開一層", "多展開一層分支", () => draw(++box._lmLevel));
+        btn("全部展開", "展開所有分支（節點很多時會比較慢）", () => { box._lmLevel = 99; draw(-1); });
+        btn("回到起點", "回到根節點（原尺寸）", () => mm && mmHome(mm, svg));
+        btn("看全圖", "縮放到整張圖都看得到（節點多時字會很小）", () => mm && mm.fit());
+        if (box.requestFullscreen) {
+            btn("全螢幕", "全螢幕檢視（Esc 離開）", () => {
+                if (document.fullscreenElement) document.exitFullscreen();
+                else box.requestFullscreen().then(() => setTimeout(() => mm && mmHome(mm, svg), 200))
+                    .catch(err => console.warn("無法全螢幕:", err));
+            });
+        }
+        box._lmLevel = level;
+        bar.firstChild.addEventListener("click", () => { box._lmLevel = level; });
+        draw(level);
+    }
+}
+
 // 監聽 MkDocs Material 的單頁式導航事件 (instant navigation)
 if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
@@ -858,6 +979,7 @@ if (typeof document$ !== "undefined") {
         initDueReminder();
         initMarkFilter();
         initPractice();
+        initMindmaps();
     });
 } else {
     document.addEventListener("DOMContentLoaded", function () {
@@ -869,5 +991,6 @@ if (typeof document$ !== "undefined") {
         initDueReminder();
         initMarkFilter();
         initPractice();
+        initMindmaps();
     });
 }

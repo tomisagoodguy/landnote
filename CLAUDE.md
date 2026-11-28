@@ -47,7 +47,8 @@ landnote/
     │   │   ├── exam_reader.py        # 逐題讀各科頁面（exam-reader/<科目>/，科目清單見 READERS）與總覽頁，附擬答與相關文章
     │   │   ├── interpretation.py     # 釋字／憲判字字號擷取與正規化（解釋頁由 exam_reader 產生）
     │   │   ├── obsidian_vault.py     # obsidian 指令：逐題讀考古題 → Obsidian vault（題目／法條／主題互連）
-    │   │   └── law_timeline.py       # 法規修正沿革 → 文章開頭的法規時效提醒
+    │   │   ├── mindmap.py            # 考點心智圖（各科：法規編章節／主題；跨科目概念），exam-reader/mindmap/
+    │   │   └── law_timeline.py       # 法規修正沿革、現行條文與編章節（chapters）→ 法規時效提醒、心智圖骨架
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
     │   └── utils/                    # logger、PDF、文字處理
     ├── scripts/
@@ -144,6 +145,7 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 | 用 `tomllib`、`except*`、`typing.Self` 等 3.11+ 功能 | CI 是 Python 3.10（`match`、`X \| Y` 型別可用） |
 | 在 `landnotev3/` 根目錄留除錯腳本 | 一次性腳本放暫存目錄，正式工具放 `scripts/` |
 | 爬蟲佔位字用英文開頭（如 `TABLE_PLACEHOLDER_1`） | `TextUtils.format_content` 會把英文字母開頭的行當成「A. 」列表改寫；佔位字用全形括號包住（`〔表格1〕`） |
+| 心智圖 JSON 的節點少了 `children` 就直接交給 markmap | 葉節點為省空間不寫 `children`，前端 `mmColorize` 會補空陣列；沒補時「全部展開」會拋 `reading 'map'` |
 | Playwright 用 `a[href='#x']` 找站內連結 | Material instant navigation 會把 href 改成絕對網址，改用 `a[href$='#x']` |
 
 核心原則：
@@ -163,4 +165,8 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
 - 知識串連都在 `exam_reader.write_pages` 寫完各科之後做：`_link_articles` 改寫文章（文末 `<!-- exam-backlinks -->` 區塊列歷屆考題、內文法條改連站內法條頁；`ArticleIndex` 讀文章時會剔除該區塊）、`_link_law_families` 把法條頁的 `<!-- other-families -->` 換成「其他科目也考過」、`_write_law_changes` 產生近期修法考點頁。法條頁要等考卷頁寫完才寫（相關文章用到題目→文章的推薦結果）。
   - 大法官解釋：`_write_interpretations` 把題目／詳解／文章提到的釋字、憲判字寫成 `exam-reader/interpretations/<j400|c112-20>/`（文章摘句、同題引用的法條、歷屆考題）；題目卡加字號標籤、文章內字號改連解釋頁、法條頁的 `<!-- interpretations -->` 換成「相關大法官解釋」。憲判字網址無法由字號推得，只連判決列表。
 - 考古題以**網頁逐題閱讀、可跨年度比較**為主（逐題讀、主題題庫），合併 PDF 是輔助；題目與擬答抽取用規則式解析，不用 LLM。
+- 考點心智圖（`mindmap.py`，site_generator 在逐題讀之後呼叫）：頁面只放 `.lm-mindmap` 容器（`data-src` JSON、`data-level` 預設顯示層數**含根節點**），`study_tools.js` 的 `initMindmaps` 只在有容器的頁面從 jsDelivr 載入 d3 與 markmap-view（版本寫死在 `MM_SCRIPTS`）。
+  - 法規骨架來自 `data/law_articles.json` 的 `chapters`（`laws` 指令寫入）；舊檔沒有時條文直接掛在法規下，不會壞。
+  - 跨科目概念 = `CONCEPTS` 關鍵詞（只比對題目與選項）＋兩科以上考過且 ≥ 4 題的法條，只收兩科以上出現的；概念 id（`k<序號>`）依清單順序，**新概念加在清單最後**，網址才不會變。
+  - 題目節點帶 `data-q`，依 `qmark_v1` 熟練度上色；各科題目總覽頁的心智圖入口由 `_link_family_indexes` 插在「跨年度比較」那行之前。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。

@@ -7,7 +7,7 @@ from collections import defaultdict
 import yaml
 
 from landnote.config import ARTICLES_DIR, DATA_DIR, JASPER_DIR, LOGS_DIR, SITE_URL
-from landnote.processors import exam_bank, exam_reader
+from landnote.processors import exam_bank, exam_reader, mindmap
 from landnote.processors.law_timeline import LawTimeline
 from landnote.utils.logger import Logger
 
@@ -63,6 +63,12 @@ class SiteGenerator:
         # 考古題逐題閱讀（需在文章處理後執行，才能比對相關文章）
         self.exam_reader_nav = exam_reader.write_pages(
             self.docs_dir, [self.posts_dir, self.jasper_posts_dir])
+        # 考點心智圖（讀逐題讀資料，並在各科題目總覽頁加入口，所以要在逐題讀之後）
+        if self.exam_reader_nav:
+            review = f"{exam_reader.READER_ROOT}/{exam_reader.REVIEW_PAGE}.md"
+            at = next((i + 1 for i, (_, path) in enumerate(self.exam_reader_nav) if path == review),
+                      len(self.exam_reader_nav))
+            self.exam_reader_nav[at:at] = mindmap.write_pages(self.docs_dir)
 
         # 7. Generate mkdocs.yml
         self._generate_mkdocs_config()

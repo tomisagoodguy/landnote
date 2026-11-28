@@ -1026,3 +1026,81 @@ a.feature-card:active {
 .md-typeset .qm-practice-out {
   margin-top: 1.5rem;
 }
+
+/* ── 考點心智圖（initMindmaps）─────────────────────────────── */
+.md-typeset .lm-mindmap {
+  position: relative;
+  margin: 0.8rem 0 1.5rem;
+  border: var(--pb-border);
+  border-radius: 0.75rem;
+  background: var(--md-default-bg-color);
+  overflow: hidden;
+}
+/* markmap 在 .markmap（svg）上設定自己的變數，要在同一層覆寫才會跟著日夜主題 */
+.md-typeset .lm-mindmap .markmap {
+  --markmap-text-color: var(--md-default-fg-color);
+  --markmap-a-color: var(--md-typeset-a-color);
+  --markmap-a-hover-color: var(--md-accent-fg-color);
+  --markmap-circle-open-bg: var(--md-default-bg-color);
+  --markmap-font: 400 14px/1.45 var(--md-text-font-family, sans-serif);
+}
+.md-typeset .lm-mindmap:fullscreen {
+  border-radius: 0;
+}
+.md-typeset .lm-svg {
+  display: block;
+  width: 100%;
+  height: min(75vh, 46rem);
+}
+.md-typeset .lm-mindmap:fullscreen .lm-svg {
+  height: calc(100vh - 3rem);
+}
+.md-typeset .lm-loading {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .lm-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.45rem 0.6rem;
+  border-bottom: var(--pb-border);
+}
+.md-typeset .lm-btn {
+  margin: 0;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.68rem;
+}
+.markmap-foreign .lm-n {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+.markmap-foreign .lm-gist {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+.markmap-foreign .lm-hot {
+  margin-left: 0.3em;
+  padding: 0 0.35em;
+  border-radius: 0.3em;
+  background: #e8590c;
+  color: #fff;
+  font-size: 0.78em;
+}
+.markmap-foreign .lm-kind {
+  display: inline-block;
+  margin-right: 0.3em;
+  padding: 0 0.3em;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.3em;
+  font-size: 0.78em;
+}
+.markmap-foreign .lm-q {
+  padding: 0 0.25em;
+  border-radius: 0.3em;
+}
+.markmap-foreign .lm-q--weak { background: rgba(224, 49, 49, 0.18); }
+.markmap-foreign .lm-q--review { background: rgba(245, 159, 0, 0.22); }
+.markmap-foreign .lm-q--done { background: rgba(47, 158, 68, 0.2); }

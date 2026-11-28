@@ -145,12 +145,35 @@ def _article_no(raw: str) -> str:
     return re.sub(r"[第條\s]", "", raw)
 
 
+HEADING = re.compile(rf"^第\s*([\d{CN_NUM}\s]+?)\s*(編|章|節|款|目)\s*(.*)$")
+HEADING_LEVEL = {"編": 1, "章": 2, "節": 3, "款": 4, "目": 5}
+
+
+def _chapters(articles: List[dict]) -> List[list]:
+    """法規的編章節：[[層級, 標題, [直屬條號…]]]，依法規順序；層級 1 編、2 章、3 節、4 款、5 目。
+
+    全國法規資料庫的 LawArticles 依序混排章節標題（ArticleType C）與條文（A），條文屬於它前面最近的標題。
+    """
+    out: List[list] = []
+    for a in articles:
+        if a.get("ArticleType") == "C":
+            m = HEADING.match(a["ArticleContent"].strip())
+            if m:
+                number = re.sub(r"\s", "", m.group(1))  # 3.10 的 f-string 運算式內不能有反斜線
+                title = f"第{number}{m.group(2)} {m.group(3).strip()}".strip()
+                out.append([HEADING_LEVEL[m.group(2)], title, []])
+        elif a.get("ArticleType") == "A" and out:
+            out[-1][2].append(_article_no(a["ArticleNo"]))
+    return out
+
+
 def build(out_file: Path = LAW_TIMELINE_FILE, articles_file: Path = LAW_ARTICLES_FILE) -> Path:
     """下載全國法規資料庫開放資料，寫出追蹤法規的修法時間軸與現行條文。"""
     import requests
 
     laws: Dict[str, dict] = {}
     articles: Dict[str, Dict[str, str]] = {}
+    chapters: Dict[str, List[list]] = {}
     updated = ""
     for url in MOJ_SOURCES:
         resp = requests.get(url, timeout=180)
@@ -173,13 +196,17 @@ def build(out_file: Path = LAW_TIMELINE_FILE, articles_file: Path = LAW_ARTICLES
                 _article_no(a["ArticleNo"]): a["ArticleContent"].replace("\r", "").strip()
                 for a in law["LawArticles"]
                 if a.get("ArticleType") == "A" and not a["ArticleContent"].lstrip().startswith("（刪除）")}
+            outline = _chapters(law["LawArticles"])
+            if outline:
+                chapters[law["LawName"]] = outline
     if not laws:
         raise RuntimeError("全國法規資料庫回傳的資料中找不到任何追蹤法規")
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(json.dumps({"source_updated": updated, "laws": laws}, ensure_ascii=False, indent=1),
                         encoding="utf-8")
-    articles_file.write_text(json.dumps({"source_updated": updated, "laws": articles}, ensure_ascii=False,
-                                        indent=0), encoding="utf-8")
+    # chapters：心智圖的法規骨架（mindmap.py 讀），沒有編章節的法規不列
+    articles_file.write_text(json.dumps({"source_updated": updated, "laws": articles, "chapters": chapters},
+                                        ensure_ascii=False, indent=0), encoding="utf-8")
     return out_file
 
 
