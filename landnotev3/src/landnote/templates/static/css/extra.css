@@ -632,6 +632,13 @@ a.feature-card:active {
 .md-typeset .qb-meta a.er-law:hover {
   background: var(--pb-water);
 }
+/* 大法官解釋／憲法判決標籤（連到 exam-reader/interpretations/），與法條標籤以底色區分 */
+.md-typeset .qb-meta a.er-interp {
+  background: var(--pb-coral-l);
+}
+.md-typeset .qb-meta a.er-interp:hover {
+  background: var(--pb-coral);
+}
 /* 申論題連續刷題頁：每題上方的出處（年度、考試、科目），連回原考卷 */
 .md-typeset .er-drill-src {
   margin: 1.6em 0 0.3em;

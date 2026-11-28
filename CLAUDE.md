@@ -45,6 +45,7 @@ landnote/
     │   │   ├── site_generator.py     # ★ 產生 site_src/docs 全部內容與 mkdocs.yml
     │   │   ├── exam_bank.py          # 估價師主題題庫（exambank 指令建 JSON；產生器寫 exam-bank/ 頁）
     │   │   ├── exam_reader.py        # 逐題讀各科頁面（exam-reader/<科目>/，科目清單見 READERS）與總覽頁，附擬答與相關文章
+    │   │   ├── interpretation.py     # 釋字／憲判字字號擷取與正規化（解釋頁由 exam_reader 產生）
     │   │   ├── obsidian_vault.py     # obsidian 指令：逐題讀考古題 → Obsidian vault（題目／法條／主題互連）
     │   │   └── law_timeline.py       # 法規修正沿革 → 文章開頭的法規時效提醒
     │   ├── templates/static/         # ★ 前端原始檔：js/study_tools.js、css/extra.css
@@ -160,5 +161,6 @@ cd landnotev3 && uv run --with ruff ruff check --fix src && uv run --with ruff r
   - 每筆 `{s, t, h, d, n}`：`d` 標記日（本地日期）、`n` 連續熟練次數；下次複習日由 `study_tools.js` 的 `QM_INTERVALS` 推算（不熟 1、待複習 3、熟練 7→14→30→60→120 天）。到期再按同鈕＝記錄複習，未到期再按＝取消。
   - 題目 5 題以上的頁面有篩選列（`initMarkFilter`）；`exam-reader/practice/`（`initPractice`）讀 `exam-reader/questions.json` 抽題，再到考卷頁抓題目卡就地顯示，計畫設定存 `qm_plan_v1`、當天題目存 `qm_today_v1`。
 - 知識串連都在 `exam_reader.write_pages` 寫完各科之後做：`_link_articles` 改寫文章（文末 `<!-- exam-backlinks -->` 區塊列歷屆考題、內文法條改連站內法條頁；`ArticleIndex` 讀文章時會剔除該區塊）、`_link_law_families` 把法條頁的 `<!-- other-families -->` 換成「其他科目也考過」、`_write_law_changes` 產生近期修法考點頁。法條頁要等考卷頁寫完才寫（相關文章用到題目→文章的推薦結果）。
+  - 大法官解釋：`_write_interpretations` 把題目／詳解／文章提到的釋字、憲判字寫成 `exam-reader/interpretations/<j400|c112-20>/`（文章摘句、同題引用的法條、歷屆考題）；題目卡加字號標籤、文章內字號改連解釋頁、法條頁的 `<!-- interpretations -->` 換成「相關大法官解釋」。憲判字網址無法由字號推得，只連判決列表。
 - 考古題以**網頁逐題閱讀、可跨年度比較**為主（逐題讀、主題題庫），合併 PDF 是輔助；題目與擬答抽取用規則式解析，不用 LLM。
 - `site_url` 有 `/landnote/` 子路徑，本機直接以 `site/` 為根目錄提供時，部分絕對路徑資源會 404，屬正常現象。

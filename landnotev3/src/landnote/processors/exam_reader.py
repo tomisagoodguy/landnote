@@ -33,6 +33,14 @@ from landnote.processors.exam_bank import (
     ocr_cache_path,
     split_questions,
 )
+from landnote.processors.interpretation import (
+    interp_mentions,
+    interp_refs,
+    interp_slug,
+    interp_sort_key,
+    interp_url,
+    iter_interps,
+)
 from landnote.processors.law_timeline import LAW_REF, LawTimeline, law_refs
 
 # (SUBJECT_FAMILIES 的家族名, 網址 slug, 頁面名稱)；slug 的底線版即 JSON 檔名（land-law → land_law.json）
@@ -54,6 +62,7 @@ DRILL_PAGE = "drill"  # 申論題連續刷題頁：exam-reader/<slug>/drill/
 DRILL_CHOICE_PAGE = "drill-choice"  # 測驗題連續刷題頁：exam-reader/<slug>/drill-choice/
 TOPIC_DIR = "topics"  # 跨年度比較頁：exam-reader/<slug>/topics/
 LAW_DIR = "laws"  # 依法條比較頁：exam-reader/<slug>/laws/
+INTERP_DIR = "interpretations"  # 大法官解釋與憲法判決：exam-reader/interpretations/（跨科目）
 
 # 跨年度比較的主題：(主題, 核心詞 regex, 一般詞 regex)，計分規則同 exam_bank.best_topic。
 # 估價、投資、經濟沿用估價師題庫；其餘三科範圍比估價師的對應科目廣，另訂清單。
@@ -614,7 +623,8 @@ class ArticleIndex:
             # path：相對 docs/ 的原始檔路徑（blog/posts/… 或 jasper/posts/…），供頁面連結
             doc = {"file": f.name, "path": f"{f.parent.parent.name}/posts/{f.name}",
                    "title": title, "author": author,
-                   "laws": {r for r in law_refs(body) if "第" in r}}
+                   "laws": {r for r in law_refs(body) if "第" in r},
+                   "interps": interp_mentions(body)}  # 解釋字號 → 文中第一次提到的那一句
             m_ans = ANSWER_MARK.search(body)
             if m_ans:  # 老師解題文：「題目原文…【解答】…」
                 question = ADMONITION.sub("", body[:m_ans.start()])
@@ -749,6 +759,19 @@ def _law_tags(hits: List[Tuple[str, str]], pages: Dict[str, str], up: str, limit
     return tags
 
 
+def _q_interps(q: dict) -> Tuple[List[str], List[str]]:
+    """題目引用的解釋字號 (題目／選項, 只出現在詳解)。"""
+    stem = interp_refs(q["text"] + " " + " ".join(q.get("options", [])))
+    return stem, [k for k in interp_refs("".join(q["answer"])) if k not in stem]
+
+
+def _interp_tags(q: dict, up: str) -> List[str]:
+    """解釋字號標籤，連到 exam-reader/interpretations/ 的解釋頁；up 為從目前網址到 exam-reader/ 的前綴。"""
+    stem, answer = _q_interps(q)
+    return [f'<a class="pb-count er-law er-interp" title="{"題目" if k in stem else "詳解"}引用的解釋，'
+            f'看歷屆怎麼考" href="{up}{INTERP_DIR}/{interp_slug(k)}/">{k}</a>' for k in stem + answer]
+
+
 def _mark_attrs(p: dict, q: dict) -> str:
     """題目卡的熟練度標記屬性（study_tools.js 讀取）：data-q 跨頁面相同，同一題在考卷頁、刷題頁、比較頁共用狀態；
     data-href 相對 exam-reader/，供「我的複習清單」連回原題。p["slug"] 由 _write_family 填入。"""
@@ -765,6 +788,7 @@ def _question_md(q: dict, hits: List[Tuple[str, str]], law_pages: Dict[str, str]
     if q["score"]:
         meta.append(f'<span class="pb-count">{q["score"]} 分</span>')
     meta += _law_tags(hits, law_pages, "../")
+    meta += _interp_tags(q, "../../")
     out = [f'<div class="qb-item" id="{qid(q)}"{mark} markdown>', f'<p class="qb-meta">{"".join(meta)}</p>', "",
            _md_escape(q["text"]), ""]
     if q.get("options"):
@@ -909,10 +933,14 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
             nav.append((name, f"{READER_ROOT}/{slug}/index.md"))
             written.append((slug, name, papers))
     if written:
-        _link_articles(docs_dir, backlinks, law_links)
+        interp_links, law_interps = _write_interpretations(docs_dir / READER_ROOT / INTERP_DIR, written, index,
+                                                           law_links)
+        _link_articles(docs_dir, backlinks, law_links, interp_links)
         _link_law_families(docs_dir / READER_ROOT, examined)
+        _link_law_interps(docs_dir / READER_ROOT, examined, law_interps)
         changes = _write_law_changes(docs_dir / READER_ROOT, examined, laws.timeline)
-        _write_overview(docs_dir / READER_ROOT, written, changes)
+        _write_overview(docs_dir / READER_ROOT, written, changes,
+                        sum(1 for n, _ in interp_links.values() if n))
         _write_review_page(docs_dir / READER_ROOT)
         _write_question_index(docs_dir / READER_ROOT, written)
         _write_practice_page(docs_dir / READER_ROOT)
@@ -921,6 +949,8 @@ def write_pages(docs_dir: Path, posts_dir: Union[Path, List[Path]],
         nav.insert(2, ("我的複習清單", f"{READER_ROOT}/{REVIEW_PAGE}.md"))
         if changes:
             nav.insert(3, ("近期修法考點", f"{READER_ROOT}/{LAW_CHANGES_PAGE}.md"))
+        if interp_links:
+            nav.insert(4 if changes else 3, ("大法官解釋與憲法判決", f"{READER_ROOT}/{INTERP_DIR}/index.md"))
     return nav
 
 
@@ -929,10 +959,11 @@ def _has_key(q: dict) -> bool:
     return bool(q.get("key") if q["kind"] == "choice" else q.get("answer"))
 
 
-def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], changes: int = 0) -> None:
+def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], changes: int = 0,
+                    interps: int = 0) -> None:
     """exam-reader/index.md：各科考卷數、題數與詳解涵蓋率一覽。
 
-    changes 為近期修法考點頁的考過條文數，0 表示沒有該頁。
+    changes 為近期修法考點頁的考過條文數，interps 為考過的解釋號數；0 表示沒有該頁。
     """
     out.mkdir(parents=True, exist_ok=True)
     rows = []
@@ -965,6 +996,9 @@ def _write_overview(out: Path, families: List[Tuple[str, str, List[dict]]], chan
         *([f'!!! warning "近 {LAW_CHANGES_YEARS} 年修法：{changes} 條考過的條文改了"',
            f"    [近期修法考點]({LAW_CHANGES_PAGE}.md) 列出最近修正、而且歷屆考過的條文，"
            "這些是新法上路後的熱門出題點，舊題的詳解也可能已不適用。", ""] if changes else []),
+        *([f'!!! abstract "大法官解釋與憲法判決：{interps} 號考過"',
+           f"    [大法官解釋與憲法判決]({INTERP_DIR}/index.md) 把題目或詳解引用的釋字、憲判字整理成一號一頁，"
+           "附老師文章的說明與相關法條；文章提過但還沒考的新判決也列在裡面。", ""] if interps else []),
         "| 科目 | 年度 | 考卷 | 附詳解考卷 | 題數 | 有解答的題目 |",
         "|---|---|---:|---:|---:|---:|",
         *rows,
@@ -1238,12 +1272,13 @@ _MD_LINK = re.compile(r"!?\[[^\]]*\]\([^)]*\)|<[^>]+>|https?://\S+")
 
 
 def _link_articles(docs_dir: Path, backlinks: Dict[str, list],
-                   law_links: Dict[str, Tuple[int, str, str]]) -> None:
-    """改寫已產生的文章頁：文末（「文章圖片」之前）列出對應的歷屆考題，內文法條有比較頁的改連站內。
+                   law_links: Dict[str, Tuple[int, str, str]],
+                   interp_links: Optional[Dict[str, Tuple[int, str]]] = None) -> None:
+    """改寫已產生的文章頁：文末（「文章圖片」之前）列出對應的歷屆考題，內文法條、解釋字號有站內頁的改連站內。
 
     文章由 site_generator 每次重建，這裡直接覆寫不會累加；ArticleIndex 讀文章時會剔除反向連結區塊。
     """
-    n_back = n_law = 0
+    n_back = n_law = n_interp = 0
     for f in [f for d in ("blog", "jasper") for f in (docs_dir / d / "posts").glob("*.md")]:
         text = f.read_text(encoding="utf-8")
         fm = re.match(r"---\n.*?\n---\n", text, re.S)
@@ -1252,13 +1287,17 @@ def _link_articles(docs_dir: Path, backlinks: Dict[str, list],
         up = os.path.relpath(docs_dir, f.parent).replace(os.sep, "/")
         main, n = _link_laws(main, law_links, up)
         n_law += n
+        if interp_links:
+            main, n_i = _link_interps(main, interp_links, up)
+            n_interp += n_i
+            n += n_i
         items = backlinks.get(f"{f.parent.parent.name}/posts/{f.name}")
         if items:
             main = main.rstrip("\n") + "\n\n" + "\n".join(_backlinks_md(items, up)) + "\n\n"
             n_back += 1
         if n or items:
             f.write_text(head + main + sep + images, encoding="utf-8")
-    print(f"  文章反向連結：{n_back} 篇列出歷屆考題，{n_law} 處法條改連站內比較頁")
+    print(f"  文章反向連結：{n_back} 篇列出歷屆考題，{n_law} 處法條改連站內比較頁，{n_interp} 處解釋字號改連解釋頁")
 
 
 def _link_laws(md: str, law_links: Dict[str, Tuple[int, str, str]], up: str) -> Tuple[str, int]:
@@ -1310,6 +1349,197 @@ def _backlinks_md(items: list, up: str) -> List[str]:
     if more > 0:
         lines += ["", f"另有 {more} 題相近，可從題目頁的「延伸閱讀」找到本文。"]
     return lines + ["", "</div>", BACKLINKS_END]
+
+
+# ---- 大法官解釋與憲法判決 ----
+
+INTERP_EXCERPTS_MAX = 6
+INTERP_LAWS_MAX = 8
+INTERP_TAGS_MAX = 6
+
+
+def _write_interpretations(out: Path, families: List[Tuple[str, str, List[dict]]], index: ArticleIndex,
+                           law_links: Dict[str, Tuple[int, str, str]]
+                           ) -> Tuple[Dict[str, Tuple[int, str]], Dict[str, Counter]]:
+    """exam-reader/interpretations/：題目、詳解或文章提到的每號解釋一頁，加總覽。
+
+    回傳 (字號 → (考題數, 相對 docs/ 的頁面), 法條 → Counter(字號))；後者是同一題明寫的條號與解釋，
+    供法條頁列出「相關大法官解釋」。沒有任何字號時不產生頁面。
+    """
+    qs_by: Dict[str, list] = defaultdict(list)  # 字號 → [(科目名, 考卷, 題目, 來源)]
+    laws_by: Dict[str, Counter] = defaultdict(Counter)
+    law_interps: Dict[str, Counter] = defaultdict(Counter)
+    for _, name, papers in families:
+        for p in papers:
+            for q in p["questions"]:
+                stem, answer = _q_interps(q)
+                if not stem and not answer:
+                    continue
+                text = q["text"] + " " + " ".join(q.get("options", [])) + "".join(q["answer"])
+                refs = {r for r in law_refs(text) if "第" in r}
+                for k in stem + answer:
+                    qs_by[k].append((name, p, q, "題目" if k in stem else "詳解"))
+                    laws_by[k].update(refs)
+                    for r in refs:
+                        law_interps[r][k] += 1
+    docs_by: Dict[str, List[Tuple[dict, str]]] = defaultdict(list)
+    for d in sorted(index.docs, key=lambda d: d["path"], reverse=True):
+        for k, excerpt in d.get("interps", {}).items():
+            docs_by[k].append((d, excerpt))
+    keys = sorted(set(qs_by) | set(docs_by), key=interp_sort_key)
+    if not keys:
+        return {}, {}
+    out.mkdir(parents=True, exist_ok=True)
+    for k in keys:
+        _write_interp_page(out / f"{interp_slug(k)}.md", k, qs_by[k], docs_by[k], laws_by[k], law_links)
+    _write_interp_index(out, keys, qs_by, docs_by)
+    links = {k: (len(qs_by[k]), f"{READER_ROOT}/{INTERP_DIR}/{interp_slug(k)}.md") for k in keys}
+    print(f"  大法官解釋：{sum(1 for k in keys if qs_by[k])} 號考過、{len(keys)} 號有頁面")
+    return links, law_interps
+
+
+def _write_interp_page(path: Path, key: str, qs: list, docs: List[Tuple[dict, str]], laws: Counter,
+                       law_links: Dict[str, Tuple[int, str, str]]) -> None:
+    is_interp = key.startswith("釋字")
+    full = "解釋全文（憲法法庭網站）" if is_interp else "憲法判決列表（憲法法庭網站）"
+    meta = []
+    by_year: Dict[int, list] = defaultdict(list)
+    for item in qs:
+        by_year[item[1]["year"]].append(item)
+    years = sorted(by_year, reverse=True)
+    if qs:
+        span = f"{years[-1]}–{years[0]} 年" if len(years) > 1 else f"{years[0]} 年"
+        fams = Counter(name for name, _, _, _ in qs)
+        meta += [f'<span class="pb-count">{len(qs)} 題</span>', f'<span class="pb-count">{span}</span>']
+        meta += [f'<span class="pb-count">{name} {n}</span>' for name, n in fams.most_common()]
+    lines = [
+        "---\nhide:\n  - navigation\n---\n",
+        f"# {key}",
+        "",
+        f'<p class="qb-meta">{"".join(meta)}<a href="{interp_url(key)}" target="_blank" rel="noopener">{full}</a>'
+        '<a href="../">回解釋總覽</a></p>',
+        "",
+    ]
+    if not qs:
+        lines += ['!!! tip "文章提過，歷屆考題還沒出現"',
+                  "    新的解釋或憲法判決常在公布後一兩年內入題，尤其是推翻舊見解或宣告法條違憲的；"
+                  "先讀老師文章的說明，再對照相關條文。", ""]
+    if docs:
+        lines += ["## 老師文章怎麼說", ""]
+        for d, excerpt in docs[:INTERP_EXCERPTS_MAX]:
+            who = f"｜{d['author']}" if d["author"] else ""
+            lines += [f"- 「{_md_escape(excerpt)}」<br>— [{_md_escape(d['title'] + who)}](<../../{d['path']}>)"]
+        if len(docs) > INTERP_EXCERPTS_MAX:
+            lines += ["", f"另有 {len(docs) - INTERP_EXCERPTS_MAX} 篇文章也提到{key}，可用站內搜尋找「{key}」。"]
+        lines += [""]
+    if laws:
+        top = sorted(laws.items(), key=lambda kv: (kv[0] not in law_links, -kv[1], kv[0]))[:INTERP_LAWS_MAX]
+        tags = []
+        for ref, n in top:
+            tip = f'title="同一題一起引用 {n} 次"'
+            if ref in law_links:
+                tags.append(f'<a class="pb-count er-law" {tip} href="../../../{law_links[ref][2][:-3]}/">{ref}</a>')
+            else:
+                tags.append(f'<span class="pb-count er-law" {tip}>{ref}</span>')
+        lines += ['<p class="er-related-title">題目一起引用的法條（點條文看歷屆怎麼考）</p>',
+                  f'<p class="qb-meta">{"".join(tags)}</p>', ""]
+    if qs:
+        lines += ["## 歷屆考題", "", "出題年度：" + "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years), ""]
+        for y in years:
+            lines += [f"### {y} 年 {{#y{y}}}", ""]
+            for name, p, q, source in sorted(by_year[y], key=lambda t: (t[2]["kind"] != "essay", t[0], t[1]["exam"])):
+                badges = [f'<span class="pb-count">{name}</span>',
+                          f'<span class="pb-count er-law" title="{source}引用{key}">{source}</span>']
+                lines += _card_md(p, q, badges, up=f"../../{p['slug']}/")
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _write_interp_index(out: Path, keys: List[str], qs_by: Dict[str, list],
+                        docs_by: Dict[str, List[Tuple[dict, str]]]) -> None:
+    examined = sorted((k for k in keys if qs_by[k]), key=lambda k: (-len(qs_by[k]), interp_sort_key(k)))
+    pending = sorted((k for k in keys if not qs_by[k]),
+                     key=lambda k: (-interp_sort_key(k)[0], -len(docs_by[k]), interp_sort_key(k)))
+    n_q = len({(p["id"], qid(q)) for k in examined for _, p, q, _ in qs_by[k]})
+    lines = [
+        "---\nhide:\n  - navigation\n---\n",
+        "# 大法官解釋與憲法判決",
+        "",
+        f"歷屆考題共 **{n_q}** 題在題目或詳解引用了 **{len(examined)}** 號大法官解釋或憲法判決；"
+        f"老師文章另提到 **{len(pending)}** 號還沒出現在考題裡。每號一頁，列出老師文章的說明、"
+        "同一題一起引用的法條，以及歷屆怎麼考。",
+        "",
+        '!!! tip "怎麼用這一頁"',
+        "    - 申論題引用解釋字號是常見的加分點：先看「考過的解釋」前幾號，記住字號與一句話的結論。",
+        "    - 考題、文章裡的字號都會連到這裡，法條頁也會列出相關的解釋，可以從任一端串著讀。",
+        "    - 字號由程式從文字中擷取；只出現在詳解的，代表題目沒點名、但答題時可以引用。",
+        "",
+    ]
+    if examined:
+        lines += [f"## 考過的解釋（{len(examined)}）", "",
+                  "| 解釋 | 題數 | 科目 | 出題年度 | 文章 |", "|---|---:|---|---|---:|"]
+        for k in examined:
+            years = sorted({p["year"] for _, p, _, _ in qs_by[k]})
+            span = f"{years[0]}–{years[-1]}" if len(years) > 1 else str(years[0])
+            fams = "、".join(n for n, _ in Counter(name for name, _, _, _ in qs_by[k]).most_common())
+            lines.append(f"| [{k}]({interp_slug(k)}.md) | {len(qs_by[k])} | {fams} | {span} | "
+                         f"{len(docs_by[k]) or ''} |")
+        lines += [""]
+    if pending:
+        lines += [f"## 文章提過、還沒考過（{len(pending)}）", "",
+                  "憲法判決（憲判字）是 111 年起的新制，排在最前面。", "",
+                  "| 解釋 | 文章 | 文章怎麼說 |", "|---|---:|---|"]
+        for k in pending:
+            excerpt = docs_by[k][0][1]
+            excerpt = excerpt[:48] + ("…" if len(excerpt) > 48 else "")
+            lines.append(f"| [{k}]({interp_slug(k)}.md) | {len(docs_by[k])} | "
+                         f"{_md_escape(excerpt).replace('|', '｜')} |")
+        lines += [""]
+    (out / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def _link_law_interps(root: Path, examined: Dict[str, list], law_interps: Dict[str, Counter]) -> None:
+    """法條頁的 INTERP_MARK 換成「相關大法官解釋」（同一題一起引用的解釋），沒有就移除。"""
+    for ref, fams in examined.items():
+        counts = law_interps.get(ref)
+        block = ""
+        if counts:
+            tags = "".join(f'<a class="pb-count er-law er-interp" href="../../../{INTERP_DIR}/{interp_slug(k)}/" '
+                           f'title="同一題一起引用 {n} 次">{k}<small> ×{n}</small></a>'
+                           for k, n in sorted(counts.items(), key=lambda kv: (-kv[1], interp_sort_key(kv[0])))
+                           [:INTERP_TAGS_MAX])
+            block = (f'<p class="er-related-title">相關大法官解釋（同一題一起引用）</p>\n'
+                     f'<p class="qb-meta">{tags}</p>')
+        for _, slug, page, _ in fams:
+            path = root / slug / LAW_DIR / f"{page}.md" if page else None
+            if path and path.exists():
+                path.write_text(path.read_text(encoding="utf-8").replace(INTERP_MARK, block), encoding="utf-8")
+
+
+_HTML_A = re.compile(r"<a\b[^>]*>.*?</a>", re.I)  # Jasper 文章的 HTML 連結：連結文字內不能再插連結
+
+
+def _link_interps(md: str, links: Dict[str, Tuple[int, str]], up: str) -> Tuple[str, int]:
+    """文章內的解釋字號改連解釋頁；略過標題、程式碼區塊與既有連結／HTML 標籤內的文字（同 _link_laws）。"""
+    out, n, fenced = [], 0, False
+    for line in md.split("\n"):
+        if line.lstrip().startswith("```"):
+            fenced = not fenced
+        if fenced or line.lstrip().startswith("#") or BACKLINKS_START in line:
+            out.append(line)
+            continue
+        protected = [m.span() for m in _MD_LINK.finditer(line)] + [m.span() for m in _HTML_A.finditer(line)]
+        pieces, last = [], 0
+        for start, end, key in iter_interps(line):
+            target = links.get(key)
+            if not target or start < last or any(a < end and start < b for a, b in protected):
+                continue
+            count, path = target
+            tip = f"歷屆考過 {count} 題：看考題與老師說明" if count else "看老師文章的說明與相關法條"
+            pieces += [line[last:start], f'[{line[start:end]}]({up}/{path} "{tip}")']
+            last = end
+            n += 1
+        out.append("".join(pieces) + line[last:])
+    return "\n".join(out), n
 
 
 # ---- 跨年度比較 ----
@@ -1458,8 +1688,11 @@ def _write_topic_page(path: Path, topic: str, qs: List[Tuple[dict, dict]], name:
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def _card_md(p: dict, q: dict, badges: Optional[List[str]] = None) -> List[str]:
-    """比較頁（topics/、laws/ 下一層）的題目卡：考試別、題型、額外標籤、題目、選項、可收合答案。"""
+def _card_md(p: dict, q: dict, badges: Optional[List[str]] = None, up: str = "../../") -> List[str]:
+    """比較頁（topics/、laws/ 下一層）的題目卡：考試別、題型、額外標籤、題目、選項、可收合答案。
+
+    up 為從頁面網址到考卷所在家族目錄的前綴；跨科目的頁面（解釋頁）要帶上科目 slug。
+    """
     if q["kind"] == "essay":
         kind = f"申論 {q['score']} 分" if q["score"] else "申論"
     else:
@@ -1468,7 +1701,7 @@ def _card_md(p: dict, q: dict, badges: Optional[List[str]] = None) -> List[str]:
         f'<div class="qb-item"{_mark_attrs(p, q)} markdown>',
         f'<p class="qb-meta"><span class="pb-count">{_exam_short(p["exam"])}</span>'
         f'<span class="pb-count">{kind}</span>{"".join(badges or [])}'
-        f'<a href="../../{p["id"]}/#{qid(q)}">{"看詳解" if q["answer"] else "看原題"} →</a></p>',
+        f'<a href="{up}{p["id"]}/#{qid(q)}">{"看詳解" if q["answer"] else "看原題"} →</a></p>',
         "",
         f"《{_md_escape(p['subject'])}》第 {q['no']} 題：{_md_escape(q['text'])}",
         "",
@@ -1684,6 +1917,7 @@ def _law_of(ref: str) -> str:
 
 LAW_RELATED_MAX = 6
 OTHER_FAMILIES_MARK = "<!-- other-families -->"  # write_pages 全部科目寫完後換成「其他科目也考過」
+INTERP_MARK = "<!-- interpretations -->"  # write_pages 寫完解釋頁後換成「相關大法官解釋」
 
 
 def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws: LawIndex, name: str,
@@ -1734,6 +1968,7 @@ def _write_law_page(path: Path, ref: str, qs: List[Tuple[dict, dict, str]], laws
                        for r, n, page in related)
         lines += ['<p class="er-related-title">常一起考的條文（同一題也對到的條文，可串起來讀）</p>',
                   f'<p class="qb-meta">{tags}</p>', ""]
+    lines += [INTERP_MARK, ""]
     lines += ["出題年度："+ "・".join(f"[{y}](#y{y})（{len(by_year[y])}）" for y in years), ""]
     for y in years:
         lines += [f"## {y} 年 {{#y{y}}}", ""]
