@@ -12,7 +12,8 @@ import json
 import re
 import tempfile
 import zipfile
-from collections import defaultdict
+from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from urllib.parse import quote
@@ -20,7 +21,11 @@ from urllib.parse import quote
 from landnote.config import EXAM_READER_DATA_DIR, SITE_URL
 from landnote.processors.exam_bank import REPO_BLOB
 from landnote.processors.exam_reader import (
+    LAW_ARTICLES_MAX,
+    LAW_CHANGES_YEARS,
+    LAW_RELATED_MAX,
     READER_TOPICS,
+    RECENT_YEARS,
     ArticleIndex,
     LawIndex,
     SimilarIndex,
@@ -81,6 +86,13 @@ class Vault:
         self.paper_names: Dict[str, str] = {}
         self.written_papers: set = set()
         self.counts: Dict[str, int] = defaultdict(int)
+        # 法條筆記的串連資料（同網站法條頁）：題目所屬科目、對到的法條、推薦的文章
+        self.q_family: Dict[Tuple[str, str], str] = {}
+        self.q_hits: Dict[Tuple[str, str], List[str]] = {}
+        self.q_articles: Dict[Tuple[str, str], List[str]] = {}
+        self.latest = 0
+        today = date.today()
+        self.change_cutoff = f"{today.year - LAW_CHANGES_YEARS}-{today.month:02d}-{today.day:02d}"
 
     # ---- 共用 ----
 
@@ -159,6 +171,7 @@ class Vault:
             papers = json.loads(data_file(slug, self.data_dir).read_text(encoding="utf-8"))
             families.append((slug, name, [p for p in papers if p["questions"]]))
         self._assign_names(families)
+        self.latest = max((p["year"] for _, _, papers in families for p in papers), default=0)
 
         by_law: Dict[str, List[Tuple[dict, dict, str]]] = defaultdict(list)
         written_q: set = set()
@@ -177,6 +190,8 @@ class Vault:
                     if key in written_q:
                         continue
                     written_q.add(key)
+                    self.q_family[key] = name
+                    self.q_hits[key] = [ref for ref, _ in hits]
                     for ref, source in hits:
                         by_law[ref].append((p, q, source))
                     self._question_note(name, p, q, hits, topic, similar.of(p, q))
@@ -186,7 +201,7 @@ class Vault:
             self._family_note(name, papers, by_topic)
             family_summary.append((name, papers, by_topic))
         for ref, qs in by_law.items():
-            self._law_note(ref, qs)
+            self._law_note(ref, qs, by_law)
         self._home_note(family_summary, by_law)
         return dict(self.counts)
 
@@ -259,6 +274,7 @@ class Vault:
             for r in self.index.related(q["text"] + "".join(q.get("options", [])), [ref for ref, _ in hits])
             if not doc or r["file"] != doc["file"]
         ]
+        self.q_articles[(p["id"], qid(q))] = ([doc["path"]] if doc else []) + [r["path"] for r in related]
         if related:
             body += ["## 延伸閱讀：老師相關文章", ""]
             for r in related:
@@ -297,11 +313,47 @@ class Vault:
         self._write(rel, body, props)
         self.counts["考卷"] += 1
 
-    def _law_note(self, ref: str, qs: List[Tuple[dict, dict, str]]) -> None:
+    def _recent(self, qs: List[Tuple[dict, dict, str]]) -> int:
+        """最近 RECENT_YEARS 個年度（以全部考卷最新年度往回算）的題數。"""
+        return sum(p["year"] > self.latest - RECENT_YEARS for p, _, _ in qs)
+
+    def _law_links(self, ref: str, qs: List[Tuple[dict, dict, str]], by_law: Dict[str, list]) -> List[str]:
+        """法條筆記的串連段落：各科題數、常一起考的條文、老師相關文章（規則同網站法條頁）。"""
+        keys = [(p["id"], qid(q)) for p, q, _ in qs]
+        body = []
+        fams = Counter(self.q_family.get(k, "") for k in keys)
+        if len(fams) > 1:
+            body += ["各科考過：" + "・".join(f"{n} {c} 題" for n, c in fams.most_common() if n), ""]
+        co = Counter(r for k in keys for r in set(self.q_hits.get(k, [])) if r != ref and r in by_law)
+        if co:
+            body += ["## 常一起考的條文", ""]
+            body += [f"- [[{self._law_name(r)}]]（同一題一起考過 {n} 次）" for r, n in co.most_common(LAW_RELATED_MAX)]
+            body.append("")
+        score: Counter = Counter()
+        for k in keys:
+            score.update(set(self.q_articles.get(k, [])))
+        docs = {d["path"]: d for d in self.index.docs}
+        for path, d in docs.items():
+            if ref in d["laws"]:
+                score[path] += 2
+        best = [path for s, path in sorted(((s, p) for p, s in score.items() if s >= 2), reverse=True)
+                if path in docs][:LAW_ARTICLES_MAX]
+        if best:
+            body += ["## 老師相關文章", ""]
+            for path in best:
+                d = docs[path]
+                who = f"｜{d['author']}" if d["author"] else ""
+                body.append(f"- [{_esc(d['title'])}{who}]({self.urls.get(path, SITE_URL)})")
+            body.append("")
+        return body
+
+    def _law_note(self, ref: str, qs: List[Tuple[dict, dict, str]], by_law: Dict[str, list]) -> None:
         law = re.sub(r"第\d+條.*$", "", ref)
         amended = self.laws.timeline.amended(ref)
         url = self.laws.timeline.url(ref)
-        props: Dict[str, object] = {"法規": law, "題數": len(qs), "tags": ["法條"]}
+        recent = self._recent(qs)
+        tags = ["法條"] + (["近期修法"] if amended and amended[0] >= self.change_cutoff else [])
+        props: Dict[str, object] = {"法規": law, "題數": len(qs), f"近{RECENT_YEARS}年題數": recent, "tags": tags}
         if amended:
             props["最近修正"] = amended[0]
         props[STATUS_KEY] = STATUS_DEFAULT
@@ -323,7 +375,11 @@ class Vault:
                 + (f" 等 {len(amended)} 次" if len(amended) > 8 else ""),
                 "",
             ]
-        body += [f"## 歷屆考題（{len(qs)} 題）", ""]
+            if amended[0] >= self.change_cutoff:
+                body += [f"> [!warning] 近 {LAW_CHANGES_YEARS} 年內修正過（{amended[0]}）",
+                         "> 新舊法差異是熱門考點；下方舊題依修正前條文出題，詳解可能已不適用。", ""]
+        body += self._law_links(ref, qs, by_law)
+        body += [f"## 歷屆考題（{len(qs)} 題，近 {RECENT_YEARS} 年 {recent} 題）", ""]
         for p, q, source in sorted(qs, key=lambda t: (-t[0]["year"], t[0]["exam"], t[1]["no"])):
             flags = []
             if source == LawIndex.MATCH:
@@ -393,6 +449,25 @@ class Vault:
         top = sorted(by_law, key=lambda r: (-len(by_law[r]), r))[:30]
         body += ["", "## 最常考的 30 條法條", ""]
         body += [f"- [[{self._law_name(r)}]]（{len(by_law[r])} 題）" for r in top]
+        hot = sorted((r for r in by_law if self._recent(by_law[r]) >= 2),
+                     key=lambda r: (-self._recent(by_law[r]), -len(by_law[r]), r))[:15]
+        if hot:
+            body += ["", f"## 近 {RECENT_YEARS} 年的熱門法條", "",
+                     f"{self.latest - RECENT_YEARS + 1}–{self.latest} 年考過兩題以上，依近年題數排序；"
+                     "歷年題數高但近年少考的，出題重心可能已轉移。", ""]
+            body += [f"- [[{self._law_name(r)}]]（近 {RECENT_YEARS} 年 {self._recent(by_law[r])} 題，"
+                     f"歷年 {len(by_law[r])} 題）" for r in hot]
+        changed = []
+        for r in by_law:
+            amended = self.laws.timeline.amended(r)
+            if amended and amended[0] >= self.change_cutoff:
+                changed.append((amended[0], r))
+        if changed:
+            body += ["", "## 近期修法、而且考過的條文", "",
+                     f"{self.change_cutoff} 以來修正過的條文；新舊法差異是熱門考點，舊題詳解可能已不適用。"
+                     "法條筆記也有 `#近期修法` 標籤。", ""]
+            body += [f"- [[{self._law_name(r)}]]（{d} 修正，歷屆 {len(by_law[r])} 題）"
+                     for d, r in sorted(changed, reverse=True)]
         body += [
             "",
             "## 複習清單（需安裝 Dataview 外掛）",
